@@ -313,11 +313,11 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
           <div className="flex-1 min-w-0">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full min-w-[760px]">
                   <thead>
                     <tr className="bg-primary-50 dark:bg-primary-900/30 border-b border-gray-200 dark:border-gray-700">
-                      <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Unit Name</th>
-                      <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Subject</th>
+                      <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 min-w-[130px]">Unit Name</th>
+                      <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 min-w-[190px]">Subject</th>
                       <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Final Mark (%)</th>
                       <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Credit Points</th>
                       <th className="px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Actions</th>
@@ -326,7 +326,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                   <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                     {subjects.map((s, i) => (
                       <tr key={s.id} className="group hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors">
-                        <td className="px-4 py-3 relative">
+                        <td className="px-4 py-3 relative min-w-[130px]">
                           <input
                             type="text"
                             placeholder={`e.g. FIT${1000 + i}`}
@@ -338,10 +338,10 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                             onFocus={e => openSuggestions(s.id, 'unit', e.target.value)}
                             onBlur={() => window.setTimeout(closeSuggestions, 120)}
                             onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'unit', s.unit)}
-                            className="w-full bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
+                            className="w-full min-w-[110px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
                           />
                           {suggestionState && suggestionState.rowId === s.id && suggestionState.field === 'unit' && suggestionState.items.length > 0 && (
-                            <div className="absolute left-4 right-4 bottom-full mb-1 z-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
+                            <div className="absolute left-4 right-4 top-full mt-1 md:top-auto md:bottom-full md:mt-0 md:mb-1 z-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
                               {suggestionState.items.map((option, optionIndex) => (
                                 <button
                                   key={option}
@@ -359,7 +359,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                             </div>
                           )}
                         </td>
-                        <td className="px-4 py-3 relative">
+                        <td className="px-4 py-3 relative min-w-[190px]">
                           <input
                             type="text"
                             placeholder="e.g. Introduction to Programming"
@@ -371,10 +371,10 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                             onFocus={e => openSuggestions(s.id, 'subject', e.target.value)}
                             onBlur={() => window.setTimeout(closeSuggestions, 120)}
                             onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'subject', s.subject)}
-                            className="w-full bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
+                            className="w-full min-w-[170px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
                           />
                           {suggestionState && suggestionState.rowId === s.id && suggestionState.field === 'subject' && suggestionState.items.length > 0 && (
-                            <div className="absolute left-4 right-4 bottom-full mb-1 z-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
+                            <div className="absolute left-4 right-4 top-full mt-1 md:top-auto md:bottom-full md:mt-0 md:mb-1 z-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
                               {suggestionState.items.map((option, optionIndex) => (
                                 <button
                                   key={option}

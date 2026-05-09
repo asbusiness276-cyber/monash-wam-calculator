@@ -13,14 +13,14 @@ export default function ProductPopup({ recommendation, isOpen, onClose }: Produc
   const isWeak = recommendation.strength === 'weak';
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center p-3 md:p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px] animate-fadeIn" onClick={onClose} />
 
-      <div className="relative w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xl p-5 md:p-6 animate-[slideUp_220ms_ease-out]">
+      <div className="relative w-full max-w-[96vw] md:max-w-5xl max-h-[92vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xl p-4 md:p-6 animate-[slideUp_220ms_ease-out]">
         <button
           onClick={onClose}
           aria-label="Close recommendation popup"
-          className="absolute top-3 right-3 p-1.5 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800"
+          className="absolute -top-3 right-3 p-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 shadow-sm"
         >
           <X size={18} />
         </button>
@@ -36,7 +36,7 @@ export default function ProductPopup({ recommendation, isOpen, onClose }: Produc
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">{recommendation.message}</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           <div>
             <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">Recommended for current result</p>
             <ProductCard product={isWeak ? recommendation.products.weak : recommendation.products.strong} compact />
