@@ -21,6 +21,7 @@ interface SeoProps {
 }
 
 const BASE_URL = 'https://monashwamcalculator.com';
+const DEFAULT_OG_IMAGE = `${BASE_URL}/favicon.svg?v=2`;
 
 function upsertMeta(selector: string, attribute: 'name' | 'property', key: string, content: string) {
   let element = document.head.querySelector(selector) as HTMLMetaElement | null;
@@ -43,6 +44,13 @@ function upsertJsonLd(id: string, data: Record<string, unknown>) {
   script.textContent = JSON.stringify(data);
 }
 
+function removeJsonLd(id: string) {
+  const script = document.head.querySelector(`script[data-schema-id="${id}"]`);
+  if (script) {
+    script.remove();
+  }
+}
+
 export default function Seo({ title, description, canonicalPath, faqItems = [], noIndex = false, article }: SeoProps) {
   useEffect(() => {
     const canonicalUrl = `${BASE_URL}${canonicalPath}`;
@@ -50,10 +58,17 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
 
     upsertMeta('meta[name="description"]', 'name', 'description', description);
     upsertMeta('meta[property="og:title"]', 'property', 'og:title', title);
+    upsertMeta('meta[property="og:type"]', 'property', 'og:type', article ? 'article' : 'website');
+    upsertMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'Monash WAM Calculator');
     upsertMeta('meta[property="og:description"]', 'property', 'og:description', description);
     upsertMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
+    upsertMeta('meta[property="og:image"]', 'property', 'og:image', DEFAULT_OG_IMAGE);
+    upsertMeta('meta[property="og:image:alt"]', 'property', 'og:image:alt', 'Monash WAM Calculator');
+    upsertMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
     upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
     upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description);
+    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', DEFAULT_OG_IMAGE);
+    upsertMeta('meta[name="twitter:url"]', 'name', 'twitter:url', canonicalUrl);
     upsertMeta(
       'meta[name="robots"]',
       'name',
@@ -95,6 +110,8 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
           },
         })),
       });
+    } else {
+      removeJsonLd('faq');
     }
     if (article) {
       upsertJsonLd('article', {
@@ -116,6 +133,8 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
         url: canonicalUrl,
         keywords: article.keywords.join(', '),
       });
+    } else {
+      removeJsonLd('article');
     }
   }, [title, description, canonicalPath, faqItems, noIndex, article]);
 
