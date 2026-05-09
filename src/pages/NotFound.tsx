@@ -1,8 +1,10 @@
 import Seo from '../components/Seo';
 import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [notFoundHome, notFoundWtg] = PAGE_KEYWORD_LINKS['/404'];
 
 const notFoundFaqs = [
   {
@@ -40,19 +42,16 @@ export default function NotFound() {
 
       <section className="max-w-3xl mx-auto px-4 py-20 text-center">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">404 - Page Not Found</h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">
-          The page you are looking for does not exist or may have been moved.
+        <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto leading-relaxed">
+          The page you are looking for does not exist or may have been moved. Try the{' '}
+          <a href={absoluteUrl(notFoundHome.path)} className={INLINE_LINK_CLASS}>{notFoundHome.keyword}</a>
+          {' '}homepage, or continue with the{' '}
+          <a href={absoluteUrl(notFoundWtg.path)} className={INLINE_LINK_CLASS}>{notFoundWtg.keyword}</a>
+          {' '}if you were converting grades.
         </p>
-        <a
-          href="/"
-          className="inline-flex items-center px-5 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold transition-colors"
-        >
-          Back to Home
-        </a>
       </section>
       <LongFormContent topic="navigation recovery, internal linking, and page discovery" />
       <PageFaq title="404 Page FAQs" items={notFoundFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/404')} title="Go to main site sections" />
     </>
   );
 }

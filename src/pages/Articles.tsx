@@ -1,7 +1,9 @@
 import Seo from '../components/Seo';
-import InternalLinks from '../components/InternalLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { articles } from '../data/articles';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [articlesHome, articlesHowTo] = PAGE_KEYWORD_LINKS['/articles'];
 
 export default function Articles() {
   return (
@@ -15,7 +17,11 @@ export default function Articles() {
         <div className="max-w-3xl">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Student Articles</h1>
           <p className="mt-3 text-gray-600 dark:text-gray-400">
-            In-depth guides focused on WAM strategy, conversion methods, and academic planning.
+            In-depth guides focused on WAM strategy, conversion methods, and academic planning. Use the{' '}
+            <a href={absoluteUrl(articlesHome.path)} className={INLINE_LINK_CLASS}>{articlesHome.keyword}</a>
+            {' '}when you want live numbers first, or open{' '}
+            <a href={absoluteUrl(articlesHowTo.path)} className={INLINE_LINK_CLASS}>{articlesHowTo.keyword}</a>
+            {' '}for a step-by-step explanation.
           </p>
         </div>
 
@@ -50,8 +56,6 @@ export default function Articles() {
           ))}
         </div>
       </section>
-
-      <InternalLinks links={getPageKeywordLinks('/articles')} title="Explore related resources" />
     </>
   );
 }

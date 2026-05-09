@@ -4,8 +4,10 @@ import FAQSection from '../components/FAQSection';
 import Seo from '../components/Seo';
 import ProductShowcase from '../components/ProductShowcase';
 import ArticlesSection from '../components/ArticlesSection';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [homeWtg, homeGtw] = PAGE_KEYWORD_LINKS['/'];
 
 const homeFaqs = [
   {
@@ -99,7 +101,11 @@ export default function Home() {
               WAM stands for <strong className="text-gray-800 dark:text-gray-200">Weighted Average Mark</strong>. It is a numerical average used by Monash University to measure a student's overall academic performance across all completed units.
             </p>
             <p>
-              Unlike GPA, which converts grades into points, WAM uses your actual percentage marks and weighs them according to the credit points of each subject.
+              Unlike GPA, which converts grades into points, WAM uses your actual percentage marks and weighs them according to the credit points of each subject. When an application asks for a different scale, use our{' '}
+              <a href={absoluteUrl(homeWtg.path)} className={INLINE_LINK_CLASS}>{homeWtg.keyword}</a>
+              {' '}or{' '}
+              <a href={absoluteUrl(homeGtw.path)} className={INLINE_LINK_CLASS}>{homeGtw.keyword}</a>
+              {' '}for quick conversions.
             </p>
             <p className="font-medium text-gray-700 dark:text-gray-300">Your WAM is commonly used for:</p>
             <ul className="space-y-1.5 ml-4">
@@ -172,8 +178,6 @@ export default function Home() {
 
       {/* Articles */}
       <ArticlesSection />
-
-      <InternalLinks links={getPageKeywordLinks('/')} />
 
     </>
   );

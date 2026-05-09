@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import Seo from '../components/Seo';
 import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
 import ProductShowcase from '../components/ProductShowcase';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [finalHome, finalWtg] = PAGE_KEYWORD_LINKS['/final-grade-calculator'];
 import ProductPopup from '../components/ProductPopup';
 import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
 
@@ -200,12 +202,14 @@ export default function FinalGrade() {
           </table>
         </div>
 
-        <div className="mt-6 text-center">
-          <a href="/" className="text-sm text-primary-600 dark:text-primary-400 hover:underline">&larr; Back to Monash WAM Calculator</a>
-        </div>
-
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">How to Plan Your Final Exam Target</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            Semester-wide averages roll into your{' '}
+            <a href={absoluteUrl(finalHome.path)} className={INLINE_LINK_CLASS}>{finalHome.keyword}</a>
+            , while scholarship forms may still ask for GPA via the{' '}
+            <a href={absoluteUrl(finalWtg.path)} className={INLINE_LINK_CLASS}>{finalWtg.keyword}</a>.
+          </p>
           <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <li>Use your current weighted coursework score from official results.</li>
             <li>Enter exact percentage weights for coursework and final exam.</li>
@@ -219,7 +223,6 @@ export default function FinalGrade() {
 
       <LongFormContent topic="final exam target planning and grade strategy" />
       <PageFaq items={finalGradeFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/final-grade-calculator')} />
       <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>
   );

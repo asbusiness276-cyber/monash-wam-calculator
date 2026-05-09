@@ -1,7 +1,9 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [privacyTerms, privacyDisclaimer] = PAGE_KEYWORD_LINKS['/privacy-policy'];
 
 const privacyFaqs = [
   {
@@ -43,7 +45,10 @@ export default function PrivacyPolicy() {
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
             Monash WAM Calculator is designed to be privacy-friendly. The calculator works directly in your browser, and
-            we do not require account sign-up to access core features.
+            we do not require account sign-up to access core features. Please read this policy alongside our{' '}
+            <a href={absoluteUrl(privacyTerms.path)} className={INLINE_LINK_CLASS}>{privacyTerms.keyword}</a>
+            {' '}and{' '}
+            <a href={absoluteUrl(privacyDisclaimer.path)} className={INLINE_LINK_CLASS}>{privacyDisclaimer.keyword}</a>.
           </p>
 
           <div>
@@ -97,7 +102,6 @@ export default function PrivacyPolicy() {
         </div>
       </section>
       <PageFaq title="Privacy Policy FAQs" items={privacyFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/privacy-policy')} title="Related policies" />
     </>
   );
 }

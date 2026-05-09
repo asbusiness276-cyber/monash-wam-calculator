@@ -1,10 +1,12 @@
 import Seo from '../components/Seo';
 import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
 import ProductShowcase from '../components/ProductShowcase';
 import WamToGpaToolCore from '../components/WamToGpaToolCore';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [wamToGpaHome, wamToGpaFinal] = PAGE_KEYWORD_LINKS['/wam-to-gpa-calculator'];
 
 const wamToGpaFaqs = [
   {
@@ -55,6 +57,12 @@ export default function WAMtoGPA() {
           Convert your Monash University WAM to GPA. Supports both 4.0 and 7.0 GPA scales used by Australian and
           international universities.
         </p>
+        <p className="text-blue-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
+          Need your overall WAM from units first? Use the{' '}
+          <a href={absoluteUrl(wamToGpaHome.path)} className={HERO_INLINE_LINK_CLASS}>{wamToGpaHome.keyword}</a>
+          , then return here. Planning one subject&apos;s exam weighting? Open the{' '}
+          <a href={absoluteUrl(wamToGpaFinal.path)} className={HERO_INLINE_LINK_CLASS}>{wamToGpaFinal.keyword}</a>.
+        </p>
       </section>
 
       <section className="max-w-xl mx-auto px-4 py-12">
@@ -75,7 +83,6 @@ export default function WAMtoGPA() {
 
       <LongFormContent topic="WAM to GPA conversion for domestic and international applications" />
       <PageFaq items={wamToGpaFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/wam-to-gpa-calculator')} />
     </>
   );
 }

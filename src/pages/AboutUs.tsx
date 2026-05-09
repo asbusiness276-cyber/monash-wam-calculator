@@ -1,7 +1,9 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [aboutArticles, aboutContact] = PAGE_KEYWORD_LINKS['/about-us'];
 
 const aboutFaqs = [
   {
@@ -42,7 +44,10 @@ export default function AboutUs() {
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
             Monash WAM Calculator was built to help students quickly understand their academic standing using clear,
-            accessible tools. Our focus is speed, simplicity, and practical guidance.
+            accessible tools. Our focus is speed, simplicity, and practical guidance. Browse{' '}
+            <a href={absoluteUrl(aboutArticles.path)} className={INLINE_LINK_CLASS}>{aboutArticles.keyword}</a>
+            {' '}for strategy guides, or reach out through{' '}
+            <a href={absoluteUrl(aboutContact.path)} className={INLINE_LINK_CLASS}>{aboutContact.keyword}</a>.
           </p>
 
           <div>
@@ -73,7 +78,6 @@ export default function AboutUs() {
         </div>
       </section>
       <PageFaq title="About Us FAQs" items={aboutFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/about-us')} title="More on this site" />
     </>
   );
 }

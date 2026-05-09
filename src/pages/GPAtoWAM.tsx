@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import Seo from '../components/Seo';
 import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
 import ProductShowcase from '../components/ProductShowcase';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [gpaToWamHome, gpaToWamWtg] = PAGE_KEYWORD_LINKS['/gpa-to-wam-calculator'];
 import ProductPopup from '../components/ProductPopup';
 import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
 
@@ -182,7 +184,11 @@ export default function GPAtoWAM() {
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Why GPA to WAM Conversion Is Approximate</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
             Universities map grades differently across faculties and countries. This tool provides practical ranges based
-            on common Monash grading bands.
+            on common Monash grading bands. Pair the estimate with your{' '}
+            <a href={absoluteUrl(gpaToWamHome.path)} className={INLINE_LINK_CLASS}>{gpaToWamHome.keyword}</a>
+            {' '}for semester-wide tracking, and use the{' '}
+            <a href={absoluteUrl(gpaToWamWtg.path)} className={INLINE_LINK_CLASS}>{gpaToWamWtg.keyword}</a>
+            {' '}when applications ask for GPA-style reporting.
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             For scholarship, visa, or graduate application decisions, always confirm requirements using official
@@ -195,7 +201,6 @@ export default function GPAtoWAM() {
 
       <LongFormContent topic="GPA to WAM conversion strategy and interpretation" />
       <PageFaq items={gpaToWamFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/gpa-to-wam-calculator')} />
       <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>
   );

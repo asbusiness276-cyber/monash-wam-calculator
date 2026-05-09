@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import Seo from '../components/Seo';
-import { absoluteUrl } from '../constants/site';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug } from '../data/articles';
 
 interface ArticlePostProps {
@@ -48,7 +48,7 @@ function renderKeywordLinkedParagraph(
       return <span key={`${part}-${index}`}>{part}</span>;
     }
     return (
-      <a key={`${match.href}-${index}`} href={absoluteUrl(match.href)} className="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+      <a key={`${match.href}-${index}`} href={absoluteUrl(match.href)} className={INLINE_LINK_CLASS}>
         {part}
       </a>
     );

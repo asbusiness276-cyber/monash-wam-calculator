@@ -1,7 +1,9 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [writeContactPage, writeHomeCalc] = PAGE_KEYWORD_LINKS['/write-for-us'];
 
 const writeForUsFaqs = [
   {
@@ -158,7 +160,11 @@ export default function WriteForUs() {
               We review quality, relevance, originality, and policy compliance before approval.
             </p>
             <p className="mt-2">
-              You can also use our Contact Us page for submission queries, update requests, and editorial communication.
+              You can also route submission queries through our{' '}
+              <a href={absoluteUrl(writeContactPage.path)} className={INLINE_LINK_CLASS}>{writeContactPage.keyword}</a>
+              . While drafting, keep the{' '}
+              <a href={absoluteUrl(writeHomeCalc.path)} className={INLINE_LINK_CLASS}>{writeHomeCalc.keyword}</a>
+              {' '}open if you need to reference live calculator workflows.
             </p>
           </div>
 
@@ -242,7 +248,6 @@ export default function WriteForUs() {
       </section>
 
       <PageFaq title="Write For Us FAQs" items={writeForUsFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/write-for-us')} title="More on this site" />
     </>
   );
 }

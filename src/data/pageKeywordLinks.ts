@@ -59,8 +59,3 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
   ],
 };
 
-const FALLBACK_LINKS: readonly [KeywordInternalLink, KeywordInternalLink] = PAGE_KEYWORD_LINKS['/404'];
-
-export function getPageKeywordLinks(pathname: string): readonly [KeywordInternalLink, KeywordInternalLink] {
-  return PAGE_KEYWORD_LINKS[pathname] ?? FALLBACK_LINKS;
-}

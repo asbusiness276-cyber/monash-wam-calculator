@@ -1,8 +1,10 @@
 import { FormEvent, useState } from 'react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [contactPrivacy, contactHomeCalc] = PAGE_KEYWORD_LINKS['/contact-us'];
 
 const contactFaqs = [
   {
@@ -87,7 +89,11 @@ export default function ContactUs() {
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Contact Us</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
           Have feedback, found an issue, or want to suggest improvements? We welcome constructive input that helps make
-          these student tools more accurate and useful.
+          these student tools more accurate and useful. Our{' '}
+          <a href={absoluteUrl(contactPrivacy.path)} className={INLINE_LINK_CLASS}>{contactPrivacy.keyword}</a>
+          {' '}explains how we handle information, and you can jump back to the{' '}
+          <a href={absoluteUrl(contactHomeCalc.path)} className={INLINE_LINK_CLASS}>{contactHomeCalc.keyword}</a>
+          {' '}anytime you want fresh estimates.
         </p>
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
@@ -167,7 +173,6 @@ export default function ContactUs() {
       </section>
 
       <PageFaq title="Contact FAQs" items={contactFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/contact-us')} title="More on this site" />
     </>
   );
 }

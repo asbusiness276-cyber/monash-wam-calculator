@@ -1,8 +1,10 @@
 import Seo from '../components/Seo';
 import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [disclaimerPrivacy, disclaimerTerms] = PAGE_KEYWORD_LINKS['/disclaimer'];
 
 const disclaimerFaqs = [
   {
@@ -44,7 +46,10 @@ export default function Disclaimer() {
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
             Monash WAM Calculator is an independent educational tool. It is not an official Monash University website
-            and is not endorsed by Monash University.
+            and is not endorsed by Monash University. Governance pages on this site include our{' '}
+            <a href={absoluteUrl(disclaimerPrivacy.path)} className={INLINE_LINK_CLASS}>{disclaimerPrivacy.keyword}</a>
+            {' '}and{' '}
+            <a href={absoluteUrl(disclaimerTerms.path)} className={INLINE_LINK_CLASS}>{disclaimerTerms.keyword}</a>.
           </p>
 
           <div>
@@ -82,7 +87,6 @@ export default function Disclaimer() {
       </section>
       <LongFormContent topic="academic disclaimers, independence, and external link transparency" />
       <PageFaq title="Disclaimer FAQs" items={disclaimerFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/disclaimer')} title="Related policies" />
     </>
   );
 }

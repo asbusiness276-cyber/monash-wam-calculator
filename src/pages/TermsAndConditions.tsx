@@ -1,7 +1,9 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import InternalLinks from '../components/InternalLinks';
-import { getPageKeywordLinks } from '../data/pageKeywordLinks';
+import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [termsPrivacy, termsContact] = PAGE_KEYWORD_LINKS['/terms-and-conditions'];
 
 const termsFaqs = [
   {
@@ -43,7 +45,10 @@ export default function TermsAndConditions() {
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
             By using Monash WAM Calculator, you agree to these terms. If you do not agree, please discontinue use of
-            the website.
+            the website. For how we handle data, read our{' '}
+            <a href={absoluteUrl(termsPrivacy.path)} className={INLINE_LINK_CLASS}>{termsPrivacy.keyword}</a>
+            , and for enquiries you can use{' '}
+            <a href={absoluteUrl(termsContact.path)} className={INLINE_LINK_CLASS}>{termsContact.keyword}</a>.
           </p>
 
           <div>
@@ -96,7 +101,6 @@ export default function TermsAndConditions() {
         </div>
       </section>
       <PageFaq title="Terms & Conditions FAQs" items={termsFaqs} />
-      <InternalLinks links={getPageKeywordLinks('/terms-and-conditions')} title="Related policies" />
     </>
   );
 }
