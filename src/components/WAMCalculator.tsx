@@ -233,6 +233,31 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
     }
   };
 
+  const renderSuggestions = (rowId: number, field: 'unit' | 'subject', query: string) => {
+    if (!suggestionState || suggestionState.rowId !== rowId || suggestionState.field !== field || suggestionState.items.length === 0) {
+      return null;
+    }
+
+    return (
+      <div className="absolute left-0 right-0 top-full mt-1 z-30 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
+        {suggestionState.items.map((option, optionIndex) => (
+          <button
+            key={option}
+            type="button"
+            onMouseDown={() => selectSuggestion(rowId, field, option)}
+            className={`w-full text-left px-3 py-2 text-xs ${
+              suggestionState.activeIndex === optionIndex
+                ? 'bg-primary-50 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
+                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+            }`}
+          >
+            {renderHighlightedSuggestion(option, query)}
+          </button>
+        ))}
+      </div>
+    );
+  };
+
   const reset = () => {
     setSubjects([
       { id: 1, unit: '', subject: '', mark: '', credits: '6' },
@@ -312,7 +337,93 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
         <div className="flex flex-col lg:flex-row gap-6 items-start" data-article-tool-screenshot="monash-wam">
           <div className="flex-1 min-w-0">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-              <div className="overflow-x-auto">
+              <div className="md:hidden p-3 space-y-3">
+                {subjects.map((s, i) => (
+                  <div key={`mobile-${s.id}`} className="rounded-xl border border-gray-200 dark:border-gray-700 p-3 space-y-3">
+                    <div className="grid grid-cols-1 gap-3">
+                      <label className="block">
+                        <span className="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Unit Name</span>
+                        <div className="relative mt-1">
+                          <input
+                            type="text"
+                            placeholder={`e.g. FIT${1000 + i}`}
+                            value={s.unit}
+                            onChange={e => {
+                              updateSubject(s.id, 'unit', e.target.value);
+                              openSuggestions(s.id, 'unit', e.target.value);
+                            }}
+                            onFocus={e => openSuggestions(s.id, 'unit', e.target.value)}
+                            onBlur={() => window.setTimeout(closeSuggestions, 120)}
+                            onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'unit', s.unit)}
+                            className="w-full h-11 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
+                          />
+                          {renderSuggestions(s.id, 'unit', s.unit)}
+                        </div>
+                      </label>
+
+                      <label className="block">
+                        <span className="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Subject</span>
+                        <div className="relative mt-1">
+                          <input
+                            type="text"
+                            placeholder="e.g. Introduction to Programming"
+                            value={s.subject}
+                            onChange={e => {
+                              updateSubject(s.id, 'subject', e.target.value);
+                              openSuggestions(s.id, 'subject', e.target.value);
+                            }}
+                            onFocus={e => openSuggestions(s.id, 'subject', e.target.value)}
+                            onBlur={() => window.setTimeout(closeSuggestions, 120)}
+                            onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'subject', s.subject)}
+                            className="w-full h-11 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
+                          />
+                          {renderSuggestions(s.id, 'subject', s.subject)}
+                        </div>
+                      </label>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <label className="block">
+                          <span className="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Final Mark</span>
+                          <input
+                            type="number"
+                            min="0"
+                            max="100"
+                            placeholder="0-100"
+                            value={s.mark}
+                            onChange={e => {
+                              if (validateMark(e.target.value)) updateSubject(s.id, 'mark', e.target.value);
+                            }}
+                            className="w-full h-11 mt-1 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
+                          />
+                        </label>
+                        <label className="block">
+                          <span className="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Credit Points</span>
+                          <input
+                            type="number"
+                            min="1"
+                            placeholder="6"
+                            value={s.credits}
+                            onChange={e => updateSubject(s.id, 'credits', e.target.value)}
+                            className="w-full h-11 mt-1 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
+                          />
+                        </label>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <button
+                        onClick={() => removeSubject(s.id)}
+                        disabled={subjects.length <= 1}
+                        className="p-2 text-gray-400 hover:text-red-500 disabled:opacity-30 disabled:cursor-not-allowed transition-colors rounded"
+                        aria-label="Remove subject"
+                      >
+                        <Trash2 size={18} />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="hidden md:block overflow-x-auto">
                 <table className="w-full min-w-[760px]">
                   <thead>
                     <tr className="bg-primary-50 dark:bg-primary-900/30 border-b border-gray-200 dark:border-gray-700">
@@ -340,24 +451,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                             onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'unit', s.unit)}
                             className="w-full min-w-[110px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
                           />
-                          {suggestionState && suggestionState.rowId === s.id && suggestionState.field === 'unit' && suggestionState.items.length > 0 && (
-                            <div className="absolute left-4 right-4 top-full mt-1 md:top-auto md:bottom-full md:mt-0 md:mb-1 z-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
-                              {suggestionState.items.map((option, optionIndex) => (
-                                <button
-                                  key={option}
-                                  type="button"
-                                  onMouseDown={() => selectSuggestion(s.id, 'unit', option)}
-                                  className={`w-full text-left px-3 py-2 text-xs ${
-                                    suggestionState.activeIndex === optionIndex
-                                      ? 'bg-primary-50 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
-                                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-                                  }`}
-                                >
-                                  {renderHighlightedSuggestion(option, s.unit)}
-                                </button>
-                              ))}
-                            </div>
-                          )}
+                          {renderSuggestions(s.id, 'unit', s.unit)}
                         </td>
                         <td className="px-4 py-3 relative min-w-[190px]">
                           <input
@@ -373,24 +467,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                             onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'subject', s.subject)}
                             className="w-full min-w-[170px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
                           />
-                          {suggestionState && suggestionState.rowId === s.id && suggestionState.field === 'subject' && suggestionState.items.length > 0 && (
-                            <div className="absolute left-4 right-4 top-full mt-1 md:top-auto md:bottom-full md:mt-0 md:mb-1 z-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
-                              {suggestionState.items.map((option, optionIndex) => (
-                                <button
-                                  key={option}
-                                  type="button"
-                                  onMouseDown={() => selectSuggestion(s.id, 'subject', option)}
-                                  className={`w-full text-left px-3 py-2 text-xs ${
-                                    suggestionState.activeIndex === optionIndex
-                                      ? 'bg-primary-50 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
-                                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-                                  }`}
-                                >
-                                  {renderHighlightedSuggestion(option, s.subject)}
-                                </button>
-                              ))}
-                            </div>
-                          )}
+                          {renderSuggestions(s.id, 'subject', s.subject)}
                         </td>
                         <td className="px-4 py-3">
                           <input
