@@ -239,7 +239,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
     }
 
     return (
-      <div className="absolute left-0 right-0 top-full mt-1 z-30 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
+      <div className="absolute left-0 right-0 bottom-full mb-1 z-30 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
         {suggestionState.items.map((option, optionIndex) => (
           <button
             key={option}

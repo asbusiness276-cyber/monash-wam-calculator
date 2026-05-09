@@ -20,7 +20,7 @@ export default function ProductPopup({ recommendation, isOpen, onClose }: Produc
         <button
           onClick={onClose}
           aria-label="Close recommendation popup"
-          className="absolute -top-3 right-3 p-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 shadow-sm"
+          className="absolute top-3 right-3 z-10 p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-gray-900/95 text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors shadow-sm"
         >
           <X size={18} />
         </button>

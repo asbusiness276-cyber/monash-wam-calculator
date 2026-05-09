@@ -49,7 +49,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 transition-colors">
+    <div className="min-h-screen flex flex-col overflow-x-hidden bg-gray-50 dark:bg-gray-900 transition-colors">
       <Navbar dark={dark} toggleDark={toggle} />
       <main className="flex-1">
         {getPage(path)}

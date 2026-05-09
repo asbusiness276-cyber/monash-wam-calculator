@@ -5,8 +5,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  #root {
+    overflow-x: hidden;
   }
 }

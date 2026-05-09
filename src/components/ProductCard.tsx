@@ -51,10 +51,11 @@ export default function ProductCard({ product, compact = false }: ProductCardPro
           href={product.url || '#'}
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className="mt-auto inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold transition-colors"
+          className="group mt-auto inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-amber-500 hover:bg-emerald-600 text-white text-sm font-semibold transition-colors"
         >
           <ExternalLink size={14} />
-          View on Amazon
+          <span className="group-hover:hidden">View on Amazon</span>
+          <span className="hidden group-hover:inline">Buy Now on Amazon</span>
         </a>
       </div>
     </article>
