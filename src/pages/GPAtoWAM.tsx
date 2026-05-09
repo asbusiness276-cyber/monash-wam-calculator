@@ -4,6 +4,7 @@ import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
 import ProductShowcase from '../components/ProductShowcase';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 import ProductPopup from '../components/ProductPopup';
 import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
 
@@ -177,10 +178,6 @@ export default function GPAtoWAM() {
           </table>
         </div>
 
-        <div className="mt-6 text-center">
-          <a href="/" className="text-sm text-primary-600 dark:text-primary-400 hover:underline">&larr; Back to Monash WAM Calculator</a>
-        </div>
-
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Why GPA to WAM Conversion Is Approximate</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
@@ -198,7 +195,7 @@ export default function GPAtoWAM() {
 
       <LongFormContent topic="GPA to WAM conversion strategy and interpretation" />
       <PageFaq items={gpaToWamFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/gpa-to-wam-calculator')} />
       <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>
   );

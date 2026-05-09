@@ -1,6 +1,7 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const privacyFaqs = [
   {
@@ -96,7 +97,7 @@ export default function PrivacyPolicy() {
         </div>
       </section>
       <PageFaq title="Privacy Policy FAQs" items={privacyFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/privacy-policy')} title="Related policies" />
     </>
   );
 }

@@ -4,6 +4,7 @@ import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
 import ProductShowcase from '../components/ProductShowcase';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 import ProductPopup from '../components/ProductPopup';
 import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
 
@@ -218,7 +219,7 @@ export default function FinalGrade() {
 
       <LongFormContent topic="final exam target planning and grade strategy" />
       <PageFaq items={finalGradeFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/final-grade-calculator')} />
       <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>
   );

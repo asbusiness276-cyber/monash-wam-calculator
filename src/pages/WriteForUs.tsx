@@ -1,6 +1,7 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const writeForUsFaqs = [
   {
@@ -157,11 +158,7 @@ export default function WriteForUs() {
               We review quality, relevance, originality, and policy compliance before approval.
             </p>
             <p className="mt-2">
-              You can also use our
-              {' '}
-              <a href="/contact-us" className="text-primary-600 dark:text-primary-400 hover:underline">Contact Us page</a>
-              {' '}
-              for submission queries, update requests, and editorial communication.
+              You can also use our Contact Us page for submission queries, update requests, and editorial communication.
             </p>
           </div>
 
@@ -237,18 +234,15 @@ export default function WriteForUs() {
               longer matches our education-first scope. Maintaining quality for readers is our top editorial priority.
             </p>
             <p className="mt-2">
-              If you agree with these guidelines, send your pitch through email or via the
-              {' '}
-              <a href="/contact-us" className="text-primary-600 dark:text-primary-400 hover:underline">Contact Us page</a>
-              {' '}
-              and we will respond with next steps.
+              If you agree with these guidelines, send your pitch through email or via the Contact Us page and we will
+              respond with next steps.
             </p>
           </div>
         </div>
       </section>
 
       <PageFaq title="Write For Us FAQs" items={writeForUsFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/write-for-us')} title="More on this site" />
     </>
   );
 }

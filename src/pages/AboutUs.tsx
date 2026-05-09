@@ -1,6 +1,7 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const aboutFaqs = [
   {
@@ -72,7 +73,7 @@ export default function AboutUs() {
         </div>
       </section>
       <PageFaq title="About Us FAQs" items={aboutFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/about-us')} title="More on this site" />
     </>
   );
 }

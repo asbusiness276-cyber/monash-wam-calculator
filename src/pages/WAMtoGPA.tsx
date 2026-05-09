@@ -4,6 +4,7 @@ import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
 import ProductShowcase from '../components/ProductShowcase';
 import WamToGpaToolCore from '../components/WamToGpaToolCore';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const wamToGpaFaqs = [
   {
@@ -59,12 +60,6 @@ export default function WAMtoGPA() {
       <section className="max-w-xl mx-auto px-4 py-12">
         <WamToGpaToolCore />
 
-        <div className="mt-6 text-center">
-          <a href="/" className="text-sm text-primary-600 dark:text-primary-400 hover:underline">
-            &larr; Back to Monash WAM Calculator
-          </a>
-        </div>
-
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">How to Use This WAM to GPA Converter</h2>
           <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
@@ -80,7 +75,7 @@ export default function WAMtoGPA() {
 
       <LongFormContent topic="WAM to GPA conversion for domestic and international applications" />
       <PageFaq items={wamToGpaFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/wam-to-gpa-calculator')} />
     </>
   );
 }

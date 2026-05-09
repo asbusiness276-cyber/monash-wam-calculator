@@ -2,6 +2,7 @@ import Seo from '../components/Seo';
 import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const disclaimerFaqs = [
   {
@@ -81,7 +82,7 @@ export default function Disclaimer() {
       </section>
       <LongFormContent topic="academic disclaimers, independence, and external link transparency" />
       <PageFaq title="Disclaimer FAQs" items={disclaimerFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/disclaimer')} title="Related policies" />
     </>
   );
 }

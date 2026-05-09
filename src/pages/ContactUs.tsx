@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const contactFaqs = [
   {
@@ -166,7 +167,7 @@ export default function ContactUs() {
       </section>
 
       <PageFaq title="Contact FAQs" items={contactFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/contact-us')} title="More on this site" />
     </>
   );
 }

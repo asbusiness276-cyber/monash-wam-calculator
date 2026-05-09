@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import InternalLinks from '../components/InternalLinks';
 import { articles } from '../data/articles';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 export default function Articles() {
   return (
@@ -48,6 +50,8 @@ export default function Articles() {
           ))}
         </div>
       </section>
+
+      <InternalLinks links={getPageKeywordLinks('/articles')} title="Explore related resources" />
     </>
   );
 }

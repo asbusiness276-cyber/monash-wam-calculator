@@ -1,10 +1,11 @@
 import { BookOpen, CheckCircle, ArrowDown } from 'lucide-react';
 import WAMCalculator from '../components/WAMCalculator';
 import FAQSection from '../components/FAQSection';
-import RelatedCalculators from '../components/RelatedCalculators';
 import Seo from '../components/Seo';
 import ProductShowcase from '../components/ProductShowcase';
 import ArticlesSection from '../components/ArticlesSection';
+import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const homeFaqs = [
   {
@@ -166,32 +167,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WAM to GPA CTA */}
-      <section className="max-w-3xl mx-auto px-4 pb-10">
-        <div className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-teal-900/20 dark:to-blue-900/20 border border-teal-200 dark:border-teal-800 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 justify-between">
-          <div>
-            <h3 className="font-bold text-gray-900 dark:text-white mb-1">Need to Convert WAM to GPA?</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Use our WAM to GPA calculator to estimate how your Monash WAM compares to GPA scales used by Australian and international universities.
-            </p>
-          </div>
-          <a
-            href="/wam-to-gpa-calculator"
-            className="shrink-0 px-5 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm rounded-xl transition-colors whitespace-nowrap"
-          >
-            Open WAM to GPA Calculator
-          </a>
-        </div>
-      </section>
-
-      {/* Related Calculators */}
-      <RelatedCalculators />
-
       {/* FAQ */}
       <FAQSection />
 
       {/* Articles */}
       <ArticlesSection />
+
+      <InternalLinks links={getPageKeywordLinks('/')} />
 
     </>
   );

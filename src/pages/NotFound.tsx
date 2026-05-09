@@ -2,6 +2,7 @@ import Seo from '../components/Seo';
 import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const notFoundFaqs = [
   {
@@ -51,7 +52,7 @@ export default function NotFound() {
       </section>
       <LongFormContent topic="navigation recovery, internal linking, and page discovery" />
       <PageFaq title="404 Page FAQs" items={notFoundFaqs} />
-      <InternalLinks title="Go to Main Site Sections" />
+      <InternalLinks links={getPageKeywordLinks('/404')} title="Go to main site sections" />
     </>
   );
 }

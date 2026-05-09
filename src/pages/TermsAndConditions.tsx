@@ -1,6 +1,7 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import InternalLinks from '../components/InternalLinks';
+import { getPageKeywordLinks } from '../data/pageKeywordLinks';
 
 const termsFaqs = [
   {
@@ -95,7 +96,7 @@ export default function TermsAndConditions() {
         </div>
       </section>
       <PageFaq title="Terms & Conditions FAQs" items={termsFaqs} />
-      <InternalLinks />
+      <InternalLinks links={getPageKeywordLinks('/terms-and-conditions')} title="Related policies" />
     </>
   );
 }
