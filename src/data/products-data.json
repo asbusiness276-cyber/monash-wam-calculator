@@ -2,19 +2,9 @@
   {
     "id": 1,
     "subjectType": "Programming / Coding",
-    "keywords": [
-      "FIT",
-      "Programming",
-      "Coding",
-      "Java",
-      "Python"
-    ],
+    "keywords": ["FIT", "Programming", "Coding", "Java", "Python"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your result suggests weak programming logic and implementation skills. Rebuilding your coding fundamentals now is strongly recommended before advanced technical subjects become harder.",
       "bestBook": "Python Crash Course",
@@ -26,11 +16,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already show strong programming ability. Advanced coding practices and clean architecture concepts can help you move toward professional-level software engineering.",
       "bestBook": "Clean Code",
@@ -45,19 +31,9 @@
   {
     "id": 2,
     "subjectType": "Java Programming",
-    "keywords": [
-      "FIT",
-      "Programming",
-      "Coding",
-      "Java",
-      "Python"
-    ],
+    "keywords": ["FIT", "Programming", "Coding", "Java", "Python"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your score indicates difficulty understanding object-oriented programming concepts and coding structure. Strengthening Java fundamentals now can significantly improve future development subjects.",
       "bestBook": "Head First Java",
@@ -69,11 +45,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already demonstrate strong Java understanding. Advanced coding architecture and professional development practices can help you excel further.",
       "bestBook": "Effective Java",
@@ -88,17 +60,9 @@
   {
     "id": 3,
     "subjectType": "Algorithms / DSA",
-    "keywords": [
-      "FIT",
-      "Algorithms",
-      "Data Structures"
-    ],
+    "keywords": ["FIT", "Algorithms", "Data Structures"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your performance suggests weak logical reasoning and algorithmic thinking. Improving this area is critical for technical interviews and future computing subjects.",
       "bestBook": "Grokking Algorithms",
@@ -110,11 +74,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "Your analytical and problem-solving ability is already strong. Advanced algorithms knowledge can provide a major technical advantage.",
       "bestBook": "Introduction to Algorithms",
@@ -129,17 +89,9 @@
   {
     "id": 4,
     "subjectType": "Mathematics",
-    "keywords": [
-      "MAT",
-      "Calculus",
-      "Algebra"
-    ],
+    "keywords": ["MAT", "Calculus", "Algebra"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your result suggests major gaps in mathematical reasoning and problem-solving confidence. Rebuilding core concepts now can greatly improve future technical performance.",
       "bestBook": "Calculus For Dummies",
@@ -151,11 +103,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already demonstrate strong mathematical reasoning ability. Advanced analytical problem-solving can sharpen your technical skills further.",
       "bestBook": "Advanced Engineering Mathematics",
@@ -170,18 +118,9 @@
   {
     "id": 5,
     "subjectType": "Statistics / Data",
-    "keywords": [
-      "ETC",
-      "STA",
-      "Statistics",
-      "Analytics"
-    ],
+    "keywords": ["ETC", "STA", "Statistics", "Analytics"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your score suggests difficulty understanding statistics and analytical reasoning concepts. Stronger statistical foundations are recommended before advanced analytics subjects.",
       "bestBook": "Practical Statistics for Data Scientists",
@@ -193,11 +132,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "Your analytical reasoning skills are already strong. Advanced statistical thinking can help you excel in analytics and data science fields.",
       "bestBook": "Think Stats",
@@ -212,17 +147,9 @@
   {
     "id": 6,
     "subjectType": "Artificial Intelligence / Data Science",
-    "keywords": [
-      "AI",
-      "ML",
-      "Machine Learning"
-    ],
+    "keywords": ["AI", "ML", "Machine Learning"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your performance suggests gaps in machine learning concepts and practical implementation skills. Structured project-based learning is highly recommended.",
       "bestBook": "Data Science from Scratch",
@@ -234,11 +161,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already show strong AI and analytical capability. Advanced machine learning systems knowledge can help you move toward professional-level expertise.",
       "bestBook": "Hands-On Machine Learning",
@@ -253,17 +176,9 @@
   {
     "id": 7,
     "subjectType": "Cybersecurity",
-    "keywords": [
-      "Security",
-      "Cyber",
-      "Networks"
-    ],
+    "keywords": ["Security", "Cyber", "Networks"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your score indicates weak understanding of cybersecurity fundamentals and system protection concepts. Strengthening your basics is strongly recommended.",
       "bestBook": "Cybersecurity Essentials",
@@ -275,11 +190,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already demonstrate strong security awareness and technical understanding. Advanced ethical hacking and defense concepts can help you stand out professionally.",
       "bestBook": "The Web Application Hacker's Handbook",
@@ -294,16 +205,9 @@
   {
     "id": 8,
     "subjectType": "Electrical Engineering",
-    "keywords": [
-      "ECE",
-      "Electrical"
-    ],
+    "keywords": ["ECE", "Electrical"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your score suggests difficulty understanding circuits, electrical systems, and applied technical concepts. Strengthening your engineering fundamentals is strongly recommended.",
       "bestBook": "Electrical Engineering",
@@ -315,11 +219,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already demonstrate strong electrical engineering reasoning ability. Advanced systems and circuit analysis can sharpen your technical expertise further.",
       "bestBook": "Electrical Engineering Principles and Applications",
@@ -334,32 +234,21 @@
   {
     "id": 9,
     "subjectType": "Physics",
-    "keywords": [
-      "PHY",
-      "Physics"
-    ],
+    "keywords": ["PHY", "Physics"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your result suggests difficulty understanding conceptual and applied physics principles. Rebuilding foundational understanding can significantly improve future performance.",
       "bestBook": "Fundamentals of Physics",
       "product": {
         "name": "Fundamentals of Physics I: Mechanics, Relativity, and Thermodynamics ",
         "image": "https://m.media-amazon.com/images/I/71pgVzyNi-L._SY466_.jpg",
-        "url": "https://amzn.asia/d/0cgnKktt",
+        "url": "https://amzn.to/4dLR3Xa",
         "price": "41"
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already have strong conceptual physics understanding. Advanced applied physics practice can sharpen engineering reasoning further.",
       "bestBook": "University Physics",
@@ -374,16 +263,9 @@
   {
     "id": 10,
     "subjectType": "Accounting",
-    "keywords": [
-      "ACC",
-      "Accounting"
-    ],
+    "keywords": ["ACC", "Accounting"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your performance suggests weak understanding of financial principles and accounting structure. Practical learning resources are strongly recommended.",
       "bestBook": "Accounting Made Simple",
@@ -395,11 +277,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already demonstrate strong accounting understanding. Advanced financial analysis concepts can improve your professional readiness further.",
       "bestBook": "Financial Intelligence",
@@ -414,39 +292,28 @@
   {
     "id": 11,
     "subjectType": "Finance",
-    "keywords": [
-      "BFC",
-      "Finance"
-    ],
+    "keywords": ["BFC", "Finance"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your score indicates difficulty understanding financial frameworks and applied calculations. Improving fundamentals now can greatly help future subjects.",
       "bestBook": "The Basics of Finance",
       "product": {
-        "name": "Basic Finance : An Introduction to Financial Institutions, Investments, and Management",
+        "name": "Basic Finance : An Introduction to Financial Institutions, Investments, and Management ",
         "image": "https://m.media-amazon.com/images/I/61Uv5OEXh6L._SY342_.jpg",
-        "url": "https://amzn.to/4tAIqTS",
+        "url": "https://amzn.asia/d/06mC1Gcp",
         "price": "185"
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already show strong financial reasoning ability. Advanced investment and valuation knowledge can help you excel professionally.",
       "bestBook": "The Intelligent Investor",
       "product": {
         "name": "The Intelligent Investor Rev Ed.",
         "image": "https://m.media-amazon.com/images/I/71BOVaxBKHL._SX342_.jpg",
-        "url": "https://amzn.to/4ddIUL2",
+        "url": "https://amzn.asia/d/006yhP4t",
         "price": "Free"
       }
     }
@@ -454,16 +321,9 @@
   {
     "id": 12,
     "subjectType": "Economics",
-    "keywords": [
-      "ECC",
-      "Economics"
-    ],
+    "keywords": ["ECC", "Economics"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your result suggests difficulty understanding economic reasoning and market concepts. Concept-based learning can significantly improve comprehension.",
       "bestBook": "Principles of Economics",
@@ -475,11 +335,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already demonstrate strong economic understanding. Advanced economic thinking can strengthen analytical and strategic decision-making further.",
       "bestBook": "Freakonomics",
@@ -494,39 +350,28 @@
   {
     "id": 13,
     "subjectType": "Marketing",
-    "keywords": [
-      "MKC",
-      "Marketing"
-    ],
+    "keywords": ["MKC", "Marketing"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your score suggests weak understanding of branding, strategy, and consumer behavior concepts. Real-world examples can improve understanding significantly.",
       "bestBook": "Marketing Made Simple",
       "product": {
         "name": "Marketing Made Simple: A Step-by-Step StoryBrand Guide for Any Business",
         "image": "https://m.media-amazon.com/images/I/71BNi0d6S0L._SX342_.jpg",
-        "url": "https://amzn.to/4wEhAxd",
+        "url": "https://amzn.asia/d/03sIMPOW",
         "price": "Free"
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already understand core marketing concepts well. Advanced strategic marketing knowledge can help you stand out professionally.",
       "bestBook": "This Is Marketing",
       "product": {
         "name": "This is Marketing: You Can’t Be Seen Until You Learn To See",
         "image": "https://m.media-amazon.com/images/I/71N1NPi34mL._SX342_.jpg",
-        "url": "https://amzn.to/4nwVvMQ",
+        "url": "https://amzn.asia/d/0fCmudgs",
         "price": "Free"
       }
     }
@@ -534,16 +379,9 @@
   {
     "id": 14,
     "subjectType": "Business / Commerce",
-    "keywords": [
-      "Commerce",
-      "Business"
-    ],
+    "keywords": ["Commerce", "Business"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your performance indicates gaps in business fundamentals and applied commercial understanding. Building stronger conceptual clarity is recommended.",
       "bestBook": "The Personal MBA",
@@ -555,11 +393,7 @@
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already show strong business understanding. Advanced strategic thinking can help you stand out academically and professionally.",
       "bestBook": "Good to Great",
@@ -574,39 +408,28 @@
   {
     "id": 15,
     "subjectType": "Civil Engineering",
-    "keywords": [
-      "CIV",
-      "Civil"
-    ],
+    "keywords": ["CIV", "Civil"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your result indicates gaps in structural concepts, engineering calculations, and construction fundamentals. Rebuilding these concepts early is important for future technical subjects.",
       "bestBook": "Civil Engineering",
       "product": {
         "name": "Civil Engineering: A Very Short Introduction",
         "image": "https://m.media-amazon.com/images/I/31I3BKSWXdL._SY445_SX342_ML2_.jpg",
-        "url": "https://amzn.to/49DENWf",
+        "url": "https://amzn.asia/d/0cAoGENj",
         "price": "16"
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already demonstrate strong mechanical engineering understanding. Advanced design and applied mechanics knowledge can help you excel professionally.",
       "bestBook": "Engineering Mechanics For Dummies",
       "product": {
         "name": "Mechanics of Materials For Dummies",
         "image": "https://m.media-amazon.com/images/I/81X8br3nKML._SY385_.jpg",
-        "url": "https://amzn.to/4nGsMVR",
+        "url": "https://amzn.asia/d/027oQtpU",
         "price": "31"
       }
     }
@@ -614,32 +437,21 @@
   {
     "id": 16,
     "subjectType": "Mechanical Engineering",
-    "keywords": [
-      "MEC",
-      "Mechanical"
-    ],
+    "keywords": ["MEC", "Mechanical"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your performance suggests weak understanding of mechanical systems, applied physics, and engineering fundamentals. Strengthening conceptual problem-solving now is highly recommended before advanced units become harder.",
       "bestBook": "The Beginner's Guide to Engineering: Mechanical Engineering",
       "product": {
         "name": "The Beginner's Guide to Engineering: Mechanical Engineering",
         "image": "https://m.media-amazon.com/images/I/71Bj17-ZlnL._SY385_.jpg",
-        "url": "https://amzn.to/3P8P5H3",
+        "url": "https://amzn.asia/d/0cB7zfvy",
         "price": "35"
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "You already show strong civil engineering understanding. Advanced structural and design concepts can help you move toward professional-level expertise.",
       "bestBook": "Structural Analysis",
@@ -654,40 +466,28 @@
   {
     "id": 17,
     "subjectType": "Computer Science / Algorithms",
-    "keywords": [
-      "FIT",
-      "Algorithms",
-      "Data Structures"
-    ],
+    "keywords": ["FIT", "Algorithms", "Data Structures"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your performance suggests weak logical reasoning and algorithmic thinking. Improving this area is critical for technical interviews and future computing subjects.",
       "bestBook": "Grokking Algorithms",
       "product": {
         "name": "Grokking Algorithms, Second Edition",
         "image": "https://m.media-amazon.com/images/I/81z6kHdpu2L._SX342_.jpg",
-        "url": "https://amzn.to/49yvU06",
+        "url": "https://amzn.asia/d/07rkSwAN",
         "price": "Free"
       }
     },
     "strong": {
-      "range": {
-        "min": 60,
-        "max": 100,
-        "raw": "60–100"
-      },
+      "range": { "min": 60, "max": 100, "raw": "60–100" },
       "status": "Good / Strong / Elite",
       "message": "Your analytical and problem-solving ability is already strong. Advanced algorithms knowledge can provide a major technical advantage.",
       "bestBook": "Grokking Algorithms",
       "product": {
         "name": "Grokking Algorithms",
         "image": "https://m.media-amazon.com/images/I/91ZwLB+BipL._SX342_.jpg",
-        "url": "https://amzn.to/4wMtHs6",
+        "url": "https://amzn.asia/d/0asBhZiH",
         "price": "Free"
       }
     }
@@ -695,38 +495,28 @@
   {
     "id": 18,
     "subjectType": "Engineering Fundamentals",
-    "keywords": [
-      "ENG"
-    ],
+    "keywords": ["ENG"],
     "weak": {
-      "range": {
-        "min": 0,
-        "max": 59,
-        "raw": "0–59"
-      },
+      "range": { "min": 0, "max": 59, "raw": "0–59" },
       "status": "Weak / Fail",
       "message": "Your engineering fundamentals appear weak and may create difficulties in advanced technical subjects. Rebuilding conceptual understanding early is important.",
       "bestBook": "Engineering Fundamentals",
       "product": {
         "name": "Fundamentals of Data Engineering: Plan and Build Robust Data Systems",
         "image": "https://m.media-amazon.com/images/I/51lh3a7XMIL._SY342_.jpg",
-        "url": "https://amzn.to/4dsbZRJ",
+        "url": "https://amzn.asia/d/0aljEz4D",
         "price": "148"
       }
     },
     "strong": {
-      "range": {
-        "min": 0,
-        "max": 100,
-        "raw": ""
-      },
+      "range": { "min": 0, "max": 100, "raw": "" },
       "status": "",
       "message": "You already demonstrate solid engineering reasoning and technical understanding. Advanced applied problem-solving can help you move toward mastery.",
       "bestBook": "Practical Engineering Problem Solving",
       "product": {
-        "name": "Engineering Fundamentals and Problem Solving ISE",
+        "name": "Engineering Fundamentals and Problem Solving ISE ",
         "image": "https://m.media-amazon.com/images/I/514HcbEkfBL._SY425_.jpg",
-        "url": "https://amzn.to/42BmtcE",
+        "url": "https://amzn.asia/d/07COy7Sz",
         "price": "136"
       }
     }
