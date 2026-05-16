@@ -16,7 +16,7 @@ export default function ProductPopup({ recommendation, isOpen, onClose }: Produc
     <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center p-3 md:p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px] animate-fadeIn" onClick={onClose} />
 
-      <div className="relative w-full max-w-[96vw] md:max-w-5xl max-h-[92vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xl p-4 md:p-6 animate-[slideUp_220ms_ease-out]">
+      <div className="relative w-full max-w-[96vw] md:max-w-5xl max-h-[92vh] overflow-y-auto bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xl p-4 md:p-6 animate-slideUp">
         <button
           onClick={onClose}
           aria-label="Close recommendation popup"

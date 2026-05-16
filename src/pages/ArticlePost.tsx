@@ -95,7 +95,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           keywords: [article.keyword, 'Monash WAM calculator', 'WAM', 'GPA conversion'],
         }}
       />
-      <article className="max-w-4xl mx-auto px-4 py-8 md:py-10">
+      <div className="max-w-4xl mx-auto px-4 pt-8 md:pt-10 pb-6">
         <a href="/articles" className="inline-flex text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
           ← Back to articles
         </a>
@@ -143,14 +143,16 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
             </section>
           ))}
         </div>
+      </div>
 
+      <div className="px-4 pb-10 md:pb-12 overflow-x-hidden">
         <ArticleFaqProducts
           slug={slug}
           faqs={article.faqs}
           openFaq={openFaq}
           onToggleFaq={index => setOpenFaq(openFaq === index ? null : index)}
         />
-      </article>
+      </div>
     </>
   );
 }
