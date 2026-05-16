@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import Seo from '../components/Seo';
 import ArticleFaqProducts from '../components/ArticleFaqProducts';
+import ArticleRecommendedProducts from '../components/ArticleRecommendedProducts';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug } from '../data/articles';
 
@@ -95,7 +96,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           keywords: [article.keyword, 'Monash WAM calculator', 'WAM', 'GPA conversion'],
         }}
       />
-      <div className="max-w-4xl mx-auto px-4 pt-8 md:pt-10 pb-6">
+      <article className="max-w-4xl mx-auto px-4 pt-8 md:pt-10 pb-10 md:pb-12">
         <a href="/articles" className="inline-flex text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
           ← Back to articles
         </a>
@@ -143,16 +144,16 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
             </section>
           ))}
         </div>
-      </div>
 
-      <div className="px-4 pb-10 md:pb-12 overflow-x-hidden">
+        <ArticleRecommendedProducts slug={slug} />
+
         <ArticleFaqProducts
           slug={slug}
           faqs={article.faqs}
           openFaq={openFaq}
           onToggleFaq={index => setOpenFaq(openFaq === index ? null : index)}
         />
-      </div>
+      </article>
     </>
   );
 }
