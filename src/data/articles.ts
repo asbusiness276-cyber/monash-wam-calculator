@@ -14,7 +14,9 @@ export interface ArticleData {
   description: string;
   featuredImage: string;
   featuredImageAlt: string;
-  referenceEmbed: ArticleReferenceEmbed;
+  /** When false, article page shows featured image only (no calculator iframe). */
+  showToolEmbed?: boolean;
+  referenceEmbed?: ArticleReferenceEmbed;
   publishedAt: string;
   updatedAt: string;
   sections: Array<{ heading: string; paragraphs: string[] }>;
@@ -31,12 +33,7 @@ export const articles: ArticleData[] = [
     featuredImage: '/article-images/featured-monash-university-australia.png',
     featuredImageAlt:
       'Monash University Australia student guide — Melbourne campuses, rankings, courses and academic planning banner',
-    referenceEmbed: {
-      path: '/embed/monash-wam',
-      title: 'Monash WAM Calculator — live preview',
-      caption:
-        'Live tool: estimate your Weighted Average Mark (WAM) at Monash — useful after you enrol and receive unit results.',
-    },
+    showToolEmbed: false,
     publishedAt: '2026-03-19',
     updatedAt: '2026-03-19',
     sections: [

@@ -106,17 +106,28 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           Published {article.publishedAt} • Updated {article.updatedAt}
         </p>
 
-        <figure className="mt-8 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-950">
-          <iframe
-            src={article.referenceEmbed.path}
-            title={article.referenceEmbed.title}
-            className="w-full h-[min(70vh,520px)] min-h-[320px] block border-0"
-            loading="eager"
-            sandbox="allow-scripts allow-same-origin allow-forms"
-          />
-          <figcaption className="px-4 py-3 text-xs text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 leading-relaxed">
-            {article.referenceEmbed.caption}
-          </figcaption>
+        <figure className="mt-8 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden bg-gray-100 dark:bg-gray-900">
+          {article.showToolEmbed !== false && article.referenceEmbed ? (
+            <>
+              <iframe
+                src={article.referenceEmbed.path}
+                title={article.referenceEmbed.title}
+                className="w-full h-[min(70vh,520px)] min-h-[320px] block border-0"
+                loading="eager"
+                sandbox="allow-scripts allow-same-origin allow-forms"
+              />
+              <figcaption className="px-4 py-3 text-xs text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 leading-relaxed">
+                {article.referenceEmbed.caption}
+              </figcaption>
+            </>
+          ) : (
+            <img
+              src={article.featuredImage}
+              alt={article.featuredImageAlt}
+              className="w-full aspect-video object-cover block"
+              loading="eager"
+            />
+          )}
         </figure>
 
         <div className="mt-8 space-y-8">
