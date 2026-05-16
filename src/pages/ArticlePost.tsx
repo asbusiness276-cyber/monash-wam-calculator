@@ -60,7 +60,7 @@ function renderKeywordLinkedParagraph(
 }
 
 export default function ArticlePost({ slug }: ArticlePostProps) {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const article = useMemo(() => getArticleBySlug(slug), [slug]);
   const internalLinks = useMemo(
     () => keywordInternalLinks.filter(item => item.href !== `/articles/${slug}`).slice(0, 2),
