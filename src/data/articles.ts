@@ -28,9 +28,9 @@ export const articles: ArticleData[] = [
     title: 'Monash University Australia: Student Guide 2026',
     description:
       'Monash University Australia guide: Melbourne & Victoria campuses, world rankings, courses, fees, scholarships, how to apply, campus location, and WAM planning.',
-    featuredImage: '/article-images/featured-monash-university-australia.svg',
+    featuredImage: '/article-images/featured-monash-university-australia.png',
     featuredImageAlt:
-      'Banner illustration for Monash University Australia student guide — campuses and academic planning theme',
+      'Monash University Australia student guide — Melbourne campuses, rankings, courses and academic planning banner',
     referenceEmbed: {
       path: '/embed/monash-wam',
       title: 'Monash WAM Calculator — live preview',
