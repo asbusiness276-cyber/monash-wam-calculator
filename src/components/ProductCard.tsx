@@ -22,7 +22,7 @@ export default function ProductCard({ product, compact = false, rail = false }: 
   const imageHeight = rail ? 'h-28 sm:h-32' : compact ? 'h-40' : 'h-52';
   const padding = rail ? 'p-2.5 sm:p-3' : 'p-4';
   const titleClass = rail
-    ? 'font-semibold text-[11px] sm:text-xs text-gray-900 dark:text-white line-clamp-3 leading-snug'
+    ? 'font-semibold text-[11px] sm:text-xs text-gray-900 dark:text-white line-clamp-3 leading-snug min-h-[3.75rem]'
     : 'font-semibold text-sm text-gray-900 dark:text-white line-clamp-2';
 
   return (

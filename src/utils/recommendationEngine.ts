@@ -206,8 +206,25 @@ export interface ArticleSideRecommendations {
   subjectType: string;
   left: ProductInfo;
   right: ProductInfo;
+  /** Extra desktop-only rail product (neighbor catalog, weak band). */
+  leftSecondary: ProductInfo | null;
+  /** Extra desktop-only rail product (neighbor catalog, strong band). */
+  rightSecondary: ProductInfo | null;
   leftCaption: string;
   rightCaption: string;
+  leftSecondaryCaption: string;
+  rightSecondaryCaption: string;
+}
+
+function toProductInfo(band: CatalogBand): ProductInfo {
+  return { ...band.product, description: band.bestBook };
+}
+
+function getNeighborCatalogItem(primaryId: number, offset: number): CatalogItem | null {
+  const sorted = [...data].sort((a, b) => a.id - b.id);
+  const index = sorted.findIndex(entry => entry.id === primaryId);
+  if (index === -1) return sorted[0] ?? null;
+  return sorted[(index + offset + sorted.length) % sorted.length] ?? null;
 }
 
 /** Article slug → product catalog row (weak left, strong right). */
@@ -225,12 +242,23 @@ export function getArticleSideRecommendations(slug: string): ArticleSideRecommen
   const item = data.find(entry => entry.id === catalogId);
   if (!item) return null;
 
+  const prevItem = getNeighborCatalogItem(catalogId, -1);
+  const nextItem = getNeighborCatalogItem(catalogId, 1);
+
   return {
     subjectType: item.subjectType,
-    left: { ...item.weak.product, description: item.weak.bestBook },
-    right: { ...item.strong.product, description: item.strong.bestBook },
+    left: toProductInfo(item.weak),
+    right: toProductInfo(item.strong),
+    leftSecondary: prevItem ? toProductInfo(prevItem.weak) : null,
+    rightSecondary: nextItem ? toProductInfo(nextItem.strong) : null,
     leftCaption: 'Recommended for building fundamentals',
     rightCaption: 'Recommended for advancing further',
+    leftSecondaryCaption: prevItem
+      ? `Also helpful for ${prevItem.subjectType.toLowerCase()}`
+      : 'Also recommended',
+    rightSecondaryCaption: nextItem
+      ? `Also helpful for ${nextItem.subjectType.toLowerCase()}`
+      : 'Also recommended',
   };
 }
 
