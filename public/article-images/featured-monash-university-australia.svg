@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Monash University Australia guide banner">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f4c81"/>
+      <stop offset="50%" style="stop-color:#1d4ed8"/>
+      <stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1050" cy="120" r="180" fill="#ffffff" opacity="0.06"/>
+  <circle cx="200" cy="600" r="220" fill="#ffffff" opacity="0.05"/>
+  <text x="80" y="300" fill="#ffffff" font-family="system-ui,sans-serif" font-size="56" font-weight="700">Monash University Australia</text>
+  <text x="80" y="370" fill="#bfdbfe" font-family="system-ui,sans-serif" font-size="28">Campuses, rankings, courses &amp; student planning</text>
+  <rect x="80" y="420" width="320" height="8" rx="4" fill="#38bdf8" opacity="0.9"/>
+</svg>

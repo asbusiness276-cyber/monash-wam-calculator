@@ -10,6 +10,8 @@ interface ArticlePostProps {
 const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'how to calculate wam', href: '/articles/how-to-calculate-wam' },
   { keyword: 'what is a good wam', href: '/articles/what-is-a-good-wam' },
+  { keyword: 'WAM to GPA calculator', href: '/wam-to-gpa-calculator' },
+  { keyword: 'Monash WAM calculator', href: '/' },
   { keyword: 'how to convert wam from one university to another', href: '/articles/how-to-convert-wam-from-one-university-to-another' },
 ];
 
