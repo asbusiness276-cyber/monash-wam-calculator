@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import Seo from '../components/Seo';
+import ArticleFaqProducts from '../components/ArticleFaqProducts';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug } from '../data/articles';
 
@@ -143,24 +144,12 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           ))}
         </div>
 
-        <section className="mt-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
-          <div className="mt-4 space-y-3">
-            {article.faqs.map((faq, index) => (
-              <div key={faq.question} className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full text-left p-4 font-semibold text-gray-900 dark:text-gray-100"
-                >
-                  {faq.question}
-                </button>
-                {openFaq === index && (
-                  <p className="px-4 pb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{faq.answer}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
+        <ArticleFaqProducts
+          slug={slug}
+          faqs={article.faqs}
+          openFaq={openFaq}
+          onToggleFaq={index => setOpenFaq(openFaq === index ? null : index)}
+        />
       </article>
     </>
   );

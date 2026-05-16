@@ -201,3 +201,45 @@ export function evaluateRecommendationTrigger(params: {
   localStorage.setItem(POPUP_TIME_KEY, String(now));
   return recommendation;
 }
+
+export interface ArticleSideRecommendations {
+  subjectType: string;
+  left: ProductInfo;
+  right: ProductInfo;
+  leftCaption: string;
+  rightCaption: string;
+}
+
+/** Article slug → product catalog row (weak left, strong right). */
+const ARTICLE_CATALOG_IDS: Record<string, number> = {
+  'monash-university-australia': 14,
+  'what-is-a-good-wam': 4,
+  'how-to-convert-wam-from-one-university-to-another': 5,
+  'how-to-calculate-wam': 1,
+};
+
+const ARTICLE_RAIL_SESSION_PREFIX = 'articleProductRail-';
+
+export function getArticleSideRecommendations(slug: string): ArticleSideRecommendations | null {
+  const catalogId = ARTICLE_CATALOG_IDS[slug] ?? 1;
+  const item = data.find(entry => entry.id === catalogId);
+  if (!item) return null;
+
+  return {
+    subjectType: item.subjectType,
+    left: { ...item.weak.product, description: item.weak.bestBook },
+    right: { ...item.strong.product, description: item.strong.bestBook },
+    leftCaption: 'Recommended for building fundamentals',
+    rightCaption: 'Recommended for advancing further',
+  };
+}
+
+export function wasArticleRailDismissed(slug: string): boolean {
+  if (typeof sessionStorage === 'undefined') return false;
+  return sessionStorage.getItem(`${ARTICLE_RAIL_SESSION_PREFIX}${slug}`) === '1';
+}
+
+export function markArticleRailDismissed(slug: string): void {
+  if (typeof sessionStorage === 'undefined') return;
+  sessionStorage.setItem(`${ARTICLE_RAIL_SESSION_PREFIX}${slug}`, '1');
+}
