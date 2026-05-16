@@ -30,18 +30,18 @@ export default function ArticleFaqProducts({ slug, faqs, openFaq, onToggleFaq }:
 
       {showProducts && recommendations && (
         <div
-          className="grid md:hidden mt-4 grid-cols-1 min-[400px]:grid-cols-2 gap-2.5 sm:gap-3 animate-slideUp"
+          className="flex md:hidden flex-col gap-6 mt-4 animate-slideUp"
           role="group"
           aria-label="Recommended study resources"
         >
-          <div className="min-w-0">
-            <p className="text-[10px] font-semibold text-gray-600 dark:text-gray-400 mb-1.5 leading-snug min-h-[2rem] line-clamp-2">
+          <div className="flex min-w-0 flex-col gap-2">
+            <p className="text-[10px] font-semibold text-gray-600 dark:text-gray-400 leading-snug">
               {recommendations.leftCaption}
             </p>
             <ProductCard product={recommendations.left} rail />
           </div>
-          <div className="min-w-0">
-            <p className="text-[10px] font-semibold text-gray-600 dark:text-gray-400 mb-1.5 leading-snug min-h-[2rem] line-clamp-2">
+          <div className="flex min-w-0 flex-col gap-2">
+            <p className="text-[10px] font-semibold text-gray-600 dark:text-gray-400 leading-snug">
               {recommendations.rightCaption}
             </p>
             <ProductCard product={recommendations.right} rail />
