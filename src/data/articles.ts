@@ -11,6 +11,11 @@ export interface ArticleData {
   slug: string;
   title: string;
   keyword: string;
+  /**
+   * Optional products-data.json row id for affiliate recommendations on this article.
+   * Omit on new articles to auto-match from keywords/title/body, or set explicitly when needed.
+   */
+  productCatalogId?: number;
   description: string;
   featuredImage: string;
   featuredImageAlt: string;
@@ -23,10 +28,12 @@ export interface ArticleData {
   faqs: FaqItem[];
 }
 
+/** Every entry in this list automatically gets mobile + desktop product recommendations on publish. */
 export const articles: ArticleData[] = [
   {
     slug: 'monash-university-australia',
     keyword: 'monash university australia',
+    productCatalogId: 14,
     title: 'Monash University Australia: Student Guide 2026',
     description:
       'Monash University Australia guide: Melbourne & Victoria campuses, world rankings, courses, fees, scholarships, how to apply, campus location, and WAM planning.',
@@ -134,6 +141,7 @@ export const articles: ArticleData[] = [
   {
     slug: 'what-is-a-good-wam',
     keyword: 'what is a good wam',
+    productCatalogId: 4,
     title: 'What Is a Good WAM? Complete Benchmark Guide for Students',
     description:
       'Understand what is a good WAM, how benchmark ranges work at university, and how to raise your score with practical planning strategies.',
@@ -190,6 +198,7 @@ export const articles: ArticleData[] = [
   {
     slug: 'how-to-convert-wam-from-one-university-to-another',
     keyword: 'how to convert wam from one university to another',
+    productCatalogId: 5,
     title: 'How to Convert WAM from One University to Another Accurately',
     description:
       'Learn how to convert WAM from one university to another using practical methods, GPA mapping logic, and application-safe reporting tips.',
@@ -247,6 +256,7 @@ export const articles: ArticleData[] = [
   {
     slug: 'how-to-calculate-wam',
     keyword: 'how to calculate wam',
+    productCatalogId: 1,
     title: 'How to Calculate WAM Correctly: Step-by-Step Weighted Method',
     description:
       'Learn how to calculate WAM with weighted formulas, examples, common mistakes, and practical semester planning techniques.',

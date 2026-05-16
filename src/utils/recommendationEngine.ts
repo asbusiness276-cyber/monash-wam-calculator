@@ -1,4 +1,5 @@
 import catalog from '../data/products-data.json';
+import { getArticleBySlug } from '../data/articles';
 
 export interface ProductInfo {
   name: string;
@@ -227,19 +228,38 @@ function getNeighborCatalogItem(primaryId: number, offset: number): CatalogItem 
   return sorted[(index + offset + sorted.length) % sorted.length] ?? null;
 }
 
-/** Article slug → product catalog row (weak left, strong right). */
-const ARTICLE_CATALOG_IDS: Record<string, number> = {
-  'monash-university-australia': 14,
-  'what-is-a-good-wam': 4,
-  'how-to-convert-wam-from-one-university-to-another': 5,
-  'how-to-calculate-wam': 1,
-};
-
 const ARTICLE_RAIL_SESSION_PREFIX = 'articleProductRail-';
 
+function buildArticleSearchText(slug: string): string {
+  const article = getArticleBySlug(slug);
+  if (!article) return slug.replace(/-/g, ' ');
+
+  const sectionText = article.sections
+    .map(section => `${section.heading} ${section.paragraphs.join(' ')}`)
+    .join(' ');
+
+  return `${article.title} ${article.keyword} ${article.description} ${sectionText}`.toLowerCase();
+}
+
+/** Picks a catalog row for any article slug (explicit id, keyword match, or stable fallback). */
+export function resolveArticleCatalogId(slug: string): number {
+  const article = getArticleBySlug(slug);
+  if (article?.productCatalogId) return article.productCatalogId;
+
+  const haystack = buildArticleSearchText(slug);
+  const keywordMatch = data.find(item =>
+    item.keywords.some(keyword => haystack.includes(keyword.toLowerCase()))
+  );
+  if (keywordMatch) return keywordMatch.id;
+
+  const sortedIds = [...data].map(item => item.id).sort((a, b) => a - b);
+  const hash = slug.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return sortedIds[hash % sortedIds.length] ?? sortedIds[0] ?? 1;
+}
+
 export function getArticleSideRecommendations(slug: string): ArticleSideRecommendations | null {
-  const catalogId = ARTICLE_CATALOG_IDS[slug] ?? 1;
-  const item = data.find(entry => entry.id === catalogId);
+  const catalogId = resolveArticleCatalogId(slug);
+  const item = data.find(entry => entry.id === catalogId) ?? data[0];
   if (!item) return null;
 
   const prevItem = getNeighborCatalogItem(catalogId, -1);
