@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
 import Seo from '../components/Seo';
+import ArticleAuthorBio from '../components/ArticleAuthorBio';
 import ArticleFaqProducts from '../components/ArticleFaqProducts';
 import ArticleRecommendedProducts from '../components/ArticleRecommendedProducts';
+import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug } from '../data/articles';
 
@@ -92,7 +94,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           headline: article.title,
           datePublished: article.publishedAt,
           dateModified: article.updatedAt,
-          author: 'Monash WAM Calculator',
+          author: ARTICLE_AUTHOR.name,
           keywords: [article.keyword, 'Monash WAM calculator', 'WAM', 'GPA conversion'],
         }}
       />
@@ -144,6 +146,8 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
             </section>
           ))}
         </div>
+
+        <ArticleAuthorBio />
 
         <ArticleRecommendedProducts slug={slug} />
 
