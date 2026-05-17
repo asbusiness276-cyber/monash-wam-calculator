@@ -7,15 +7,19 @@ export default function ArticleAuthorBio() {
       className="mt-10 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 p-5 sm:p-6"
       aria-labelledby="article-author-heading"
     >
-      <div className="flex gap-4 sm:gap-5">
-        <img
-          src={ARTICLE_AUTHOR.avatar}
-          alt={ARTICLE_AUTHOR.avatarAlt}
-          width={80}
-          height={80}
-          loading="lazy"
-          className="h-16 w-16 sm:h-20 sm:w-20 shrink-0 rounded-full object-cover object-[center_20%] border-2 border-white dark:border-gray-700 shadow-sm"
-        />
+      <div className="flex items-center gap-4 sm:gap-5">
+        <div
+          className="relative h-16 w-16 sm:h-20 sm:w-20 shrink-0 overflow-hidden rounded-full border-2 border-white dark:border-gray-700 shadow-sm bg-gray-200 dark:bg-gray-700"
+        >
+          <img
+            src={ARTICLE_AUTHOR.avatar}
+            alt={ARTICLE_AUTHOR.avatarAlt}
+            width={80}
+            height={80}
+            loading="lazy"
+            className="h-full w-full object-cover object-center scale-[1.45]"
+          />
+        </div>
 
         <div className="min-w-0 flex-1">
           <p className="text-[10px] font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
