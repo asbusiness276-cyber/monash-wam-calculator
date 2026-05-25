@@ -1,4 +1,4 @@
-import { BookOpen, CheckCircle, ArrowDown } from 'lucide-react';
+import { BookOpen, CheckCircle, ArrowDown, ArrowRight } from 'lucide-react';
 import WAMCalculator from '../components/WAMCalculator';
 import FAQSection from '../components/FAQSection';
 import Seo from '../components/Seo';
@@ -46,8 +46,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Monash WAM Calculator - Calculate Your Weighted Average Mark"
-        description="Use our free Monash WAM Calculator to estimate your Weighted Average Mark instantly. Includes WAM to GPA, GPA to WAM, and final grade planning tools."
+        title="Monash WAM Calculator — Free & Instant (2026)"
+        description="Free Monash WAM calculator: add units, marks & credit points. Instant WAM + WAM to GPA & GPA to WAM. No signup."
         canonicalPath="/"
         faqItems={homeFaqs}
       />
@@ -75,6 +75,13 @@ export default function Home() {
               Calculate WAM
             </a>
             <a
+              href={absoluteUrl(homeWtg.path)}
+              className="flex items-center gap-2 px-6 py-3 bg-emerald-500 text-white font-semibold rounded-xl hover:bg-emerald-400 transition-colors shadow-lg ring-2 ring-white/30"
+            >
+              WAM to GPA
+              <ArrowRight size={16} />
+            </a>
+            <a
               href="#how-wam-calculated"
               className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-colors border border-white/20"
             >
@@ -86,6 +93,29 @@ export default function Home() {
 
       {/* Calculator */}
       <WAMCalculator />
+
+      <section className="max-w-3xl mx-auto px-4 -mt-2 mb-2">
+        <a
+          href={absoluteUrl(homeWtg.path)}
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-2xl border-2 border-emerald-500/40 bg-emerald-50 dark:bg-emerald-950/40 dark:border-emerald-600/50 px-5 py-4 shadow-sm hover:border-emerald-500 transition-colors group"
+        >
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400 mb-1">
+              Popular tool
+            </p>
+            <p className="text-base font-bold text-gray-900 dark:text-white">
+              WAM to GPA Calculator — free Monash converter
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+              Convert your WAM to 4.0 and 7.0 GPA scales in seconds — ideal for scholarships and overseas applications.
+            </p>
+          </div>
+          <span className="inline-flex items-center justify-center gap-2 shrink-0 px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-semibold group-hover:bg-emerald-500 transition-colors">
+            Open WAM to GPA
+            <ArrowRight size={16} />
+          </span>
+        </a>
+      </section>
 
       <ProductShowcase startIndex={1} endIndex={6} />
 

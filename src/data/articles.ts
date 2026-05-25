@@ -142,9 +142,9 @@ export const articles: ArticleData[] = [
     slug: 'what-is-a-good-wam',
     keyword: 'what is a good wam',
     productCatalogId: 4,
-    title: 'What Is a Good WAM? Complete Benchmark Guide for Students',
+    title: 'What Is a Good WAM at Monash? (2026 Benchmarks)',
     description:
-      'Understand what is a good WAM, how benchmark ranges work at university, and how to raise your score with practical planning strategies.',
+      'What is a good WAM at Monash? HD 80+, distinction 70–79, credit 60–69 — benchmark bands and how to improve your weighted average.',
     featuredImage: '/article-images/featured-what-is-a-good-wam.png',
     featuredImageAlt:
       'Abstract banner illustration for academic benchmark guide — trending performance theme in teal and blue',
