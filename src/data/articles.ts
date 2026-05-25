@@ -167,7 +167,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'What WAM Ranges Usually Mean',
         paragraphs: [
-          'Although exact interpretations can vary by institution, students often think in rough ranges: below 60 can indicate performance issues in some contexts, 60 to 69 can be considered solid credit-level progress, 70 to 79 is often seen as strong distinction territory, and 80 plus is usually high distinction territory. These bands are useful for self-checking but should never replace official policy interpretation. Some opportunities care about trend performance over time, not just one semester average.',
+          'Although exact interpretations can vary by institution, students often think in rough ranges: below 60 can indicate performance issues in some contexts, 60 to 69 can be considered solid credit-level progress, 70 to 79 is often seen as strong distinction territory, and 80 plus is usually high distinction territory. These bands are useful for self-checking but should never replace official policy interpretation. For honours-specific planning, read monash honours wam requirements alongside faculty handbooks. Some opportunities care about trend performance over time, not just one semester average.',
           'Trend direction matters more than many students realize. If your WAM improves steadily over multiple terms, that progression can strengthen scholarship and employer confidence, especially when your transcript includes difficult technical units. Panels often appreciate consistency, resilience, and upward trajectory. This is why regular re-calculation after assessments is important. It gives you early visibility of whether you are trending up, flat, or down, and lets you adjust strategy before the semester ends.',
         ],
       },
@@ -291,7 +291,114 @@ export const articles: ArticleData[] = [
       {
         question: 'Where do I check if my WAM is good enough for honours?',
         answer:
-          'Use faculty honours guidelines on the official Monash site, then compare your current WAM with benchmark bands in what is a good wam and your live calculator results.',
+          'Use faculty honours guidelines on the official Monash site, then compare your current WAM with benchmark bands in what is a good wam and your live calculator results. See monash honours wam requirements for faculty-style planning notes.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-honours-wam-requirements',
+    keyword: 'monash honours wam requirements',
+    productCatalogId: 4,
+    title: 'Monash Honours WAM Requirements (2026 Planning Guide)',
+    description:
+      'Monash honours WAM requirements explained: how faculties set cutoffs, typical WAM bands, scholarships vs honours, and free calculators to check your standing.',
+    featuredImage: '/article-images/featured-monash-honours-wam.svg',
+    featuredImageAlt:
+      'Banner illustration for Monash honours WAM requirements — academic pathways theme in indigo and violet',
+    referenceEmbed: {
+      path: '/embed/monash-wam',
+      title: 'Monash WAM Calculator — live preview',
+      caption:
+        'Check your current weighted average before comparing it to honours or scholarship planning bands on this page.',
+    },
+    publishedAt: '2026-05-26',
+    updatedAt: '2026-05-26',
+    sections: [
+      {
+        heading: 'What Honours Means at Monash (and Why WAM Matters)',
+        paragraphs: [
+          'Honours at Monash University is an additional study year (or integrated pathway in some courses) that deepens research or advanced coursework in your discipline. Admission is competitive and faculty-specific. While requirements include completed credit points, prerequisite units, and sometimes interviews or portfolios, academic merit is central — and merit is often expressed through your Weighted Average Mark (WAM).',
+          'Students searching monash honours wam requirements usually want one answer: “What WAM do I need?” There is rarely a single university-wide number. Monash faculties publish their own honours entry information, and cutoffs can move with cohort strength, available places, and policy updates. Treat any general benchmark on the web — including this guide — as planning context. Confirm current rules on official Monash and faculty pages before you commit to a pathway.',
+        ],
+      },
+      {
+        heading: 'How Faculties Set WAM Expectations',
+        paragraphs: [
+          'Faculties such as Science, Arts, Business, Engineering, IT, Medicine, Nursing, and Law each describe honours eligibility differently. Some list a minimum WAM (for example, a floor near distinction level), others say “competitive entry” without a fixed cutoff, and some weight later-year units more heavily through separate merit processes. Double degrees and specialist majors can add extra criteria.',
+          'Because of this variability, compare three sources: (1) your faculty honours handbook page for the year you intend to apply; (2) your course map for prerequisite units; (3) your own transcript-backed WAM from the Monash WAM calculator. If a faculty states both WAM and GPA for international partners, use the WAM to GPA calculator only as a secondary view, not as a replacement for Monash WAM on domestic honours forms.',
+          'When faculties say entry is competitive, think in bands rather than one magic number. A WAM in high distinction territory is often safer for popular programmes, while mid-distinction may be viable in less oversubscribed pathways — but only faculty data for your year can confirm that.',
+        ],
+      },
+      {
+        heading: 'Planning Bands: How Students Interpret WAM Ranges',
+        paragraphs: [
+          'Although not official Monash policy, students commonly use these planning bands when discussing honours readiness: around 60–69 (credit) for baseline progression conversations; around 70–79 (distinction) for competitive entry in many faculties; around 80+ (high distinction) for the strongest research honours and scholarship positioning. Read what is a good wam for fuller benchmark context and how to set layered targets.',
+          'Your faculty may also care about trend, not just one number. An upward trajectory across level two and three units can support an application even when your cumulative WAM is slightly below a stated floor. Conversely, a single strong semester rarely offsets a weak multi-year pattern in highly competitive honours streams.',
+          'Use how to calculate wam whenever you model “what if” scenarios — weighted credit points change outcomes and simple averages mislead. For recovery plans, pair benchmarks with how to improve wam at monash so you know which high-credit units can still move your average before applications close.',
+        ],
+      },
+      {
+        heading: 'Honours WAM vs Scholarships and Graduate Entry',
+        paragraphs: [
+          'Honours WAM requirements are not identical to scholarship thresholds or postgraduate coursework minima. Scholarships may use separate merit formulas, equity criteria, or application essays. Graduate certificates and masters coursework programs often publish minimum entry WAM or GPA that differ from honours research years.',
+          'If you are preparing documents for overseas universities, convert carefully and disclose methodology. The WAM to GPA calculator helps you estimate reporting formats, but the receiving institution may apply its own curve. For cross-institution comparisons, see how to convert wam from one university to another and always keep Monash WAM visible when it is the primary metric.',
+          'Some students pursue honours primarily for research training; others for employability signalling. Clarify your goal early because the WAM you need for a competitive lab-based honours place may differ from a coursework-heavy honours stream in another faculty.',
+        ],
+      },
+      {
+        heading: 'Checklist Before You Apply',
+        paragraphs: [
+          'Step 1 — Confirm official criteria: download the current honours guide for your faculty and note WAM floors, prerequisites, and deadlines. Step 2 — Calculate official WAM: enter confirmed marks and credit points in the Monash WAM calculator; label estimates separately. Step 3 — Gap analysis: compare your WAM to planning bands and faculty language (minimum vs competitive).',
+          'Step 4 — Semester plan: for remaining units, use the final grade calculator on subjects with high remaining weight so you know what exam marks you need. Step 5 — Advisor check: email course coordinators or honours coordinators with factual questions; do not rely on social media cutoffs from previous years.',
+          'Step 6 — Document consistency: if applications ask for WAM and GPA, report both clearly with dates and scale notes. Step 7 — Recompute after results release each semester until your application is submitted.',
+        ],
+      },
+      {
+        heading: 'When Your WAM Is Below the Stated Range',
+        paragraphs: [
+          'A below-target WAM is not always the end of honours plans. Options can include strengthening later-year results, repeating policy-allowed units (check faculty rules first), shifting to a related honours stream with different demand, or pausing application by one year while building research experience. Some pathways accept strong project marks or supervisor support letters when WAM is borderline — faculty discretion varies.',
+          'Avoid comparing yourself to outdated cohort stories (“my friend got in with 68”). Cohorts and quotas change. Focus on what you can control this semester: high-credit performance, assessment weighting, and exam preparation tied to numeric targets.',
+          'If honours is unlikely on current trajectory, you may still pursue coursework masters or graduate diplomas with different thresholds. Use the same calculators to stay data-driven rather than guessing.',
+        ],
+      },
+      {
+        heading: 'Tools to Use on This Site',
+        paragraphs: [
+          'Workflow for honours planning: start with the Monash WAM calculator for your current position; read what is a good wam for benchmark language; follow how to improve wam at monash if you need a structured lift before applications; use the final grade calculator for exam targets in remaining units; convert with the WAM to GPA calculator only when an external form requires it.',
+          'Revisit monash honours wam requirements each year you approach application season — faculty pages update, and your strategy should update with them. Independent calculators on this site are educational tools, not official Monash systems. Always submit faculty-verified figures on formal applications.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is there one Monash-wide honours WAM cutoff?',
+        answer:
+          'No. Honours entry is faculty- and course-specific. Use official faculty honours pages for the year you apply, not a single internet average.',
+      },
+      {
+        question: 'What WAM is usually competitive for honours?',
+        answer:
+          'Many students plan around distinction-level WAM (often near 70+) or higher for competitive streams, but your faculty handbook is the source of truth.',
+      },
+      {
+        question: 'Do faculties look at WAM trend or only total WAM?',
+        answer:
+          'Some consider recent performance and unit relevance, especially for competitive research honours. Check whether your faculty mentions stage-specific merit.',
+      },
+      {
+        question: 'Can I still get honours with one weak semester?',
+        answer:
+          'Sometimes, if later weighted results are strong and overall WAM recovers, but highly competitive places may still disadvantage inconsistent records.',
+      },
+      {
+        question: 'How do I check my WAM before applying?',
+        answer:
+          'Use the Monash WAM calculator with transcript marks and credit points, then compare against faculty honours guidelines and planning bands in what is a good wam.',
+      },
+      {
+        question: 'Is honours WAM the same as scholarship WAM?',
+        answer:
+          'Not always. Scholarships may use separate criteria, timelines, and merit formulas. Read each scholarship page independently.',
       },
     ],
   },
