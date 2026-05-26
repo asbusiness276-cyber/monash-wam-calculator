@@ -7,9 +7,9 @@ interface PageFaqProps {
 
 export default function PageFaq({ title = 'Frequently Asked Questions', items }: PageFaqProps) {
   return (
-    <section className="max-w-4xl mx-auto px-4 pb-6">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-7 md:p-8 shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-5">{title}</h2>
+    <section className="max-w-3xl mx-auto px-4 pt-2 pb-8">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 md:p-6 shadow-sm">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{title}</h2>
         <div className="space-y-3">
           {items.map(item => (
             <details

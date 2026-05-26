@@ -55,7 +55,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-primary-700 via-primary-800 to-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.2),transparent_60%)]" />
-        <div className="relative max-w-4xl mx-auto px-4 py-20 text-center">
+        <div className="relative max-w-4xl mx-auto px-4 py-14 md:py-16 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 text-primary-200 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
             <CheckCircle size={14} />
             Free • Instant Results • Mobile Friendly • No Signup Required
@@ -120,7 +120,7 @@ export default function Home() {
       <ProductShowcase startIndex={1} endIndex={6} />
 
       {/* What is WAM */}
-      <section id="what-is-wam" className="scroll-mt-20 max-w-3xl mx-auto px-4 py-10">
+      <section id="what-is-wam" className="scroll-mt-20 max-w-3xl mx-auto px-4 py-8">
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <BookOpen size={22} className="text-primary-600 dark:text-primary-400" />
@@ -158,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* How WAM is Calculated */}
-      <section id="how-wam-calculated" className="scroll-mt-20 max-w-3xl mx-auto px-4 pb-10">
+      <section id="how-wam-calculated" className="scroll-mt-20 max-w-3xl mx-auto px-4 pb-8">
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How is Monash WAM Calculated?</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">

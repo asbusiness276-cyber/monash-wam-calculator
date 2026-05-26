@@ -1,9 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FaqItem } from './Seo';
 import ProductCard from './ProductCard';
 import { getArticleSideRecommendations } from '../utils/recommendationEngine';
-
-const SHOW_DELAY_MS = 5500;
 
 interface ArticleFaqProductsProps {
   slug: string;
@@ -14,21 +12,14 @@ interface ArticleFaqProductsProps {
 
 export default function ArticleFaqProducts({ slug, faqs, openFaq, onToggleFaq }: ArticleFaqProductsProps) {
   const recommendations = useMemo(() => getArticleSideRecommendations(slug), [slug]);
-  const [showProducts, setShowProducts] = useState(false);
-
-  useEffect(() => {
-    if (!recommendations) return;
-    const timer = window.setTimeout(() => setShowProducts(true), SHOW_DELAY_MS);
-    return () => window.clearTimeout(timer);
-  }, [recommendations, slug]);
 
   return (
-    <section className="mt-10" aria-labelledby="article-faq-heading">
+    <section className="mt-8" aria-labelledby="article-faq-heading">
       <h2 id="article-faq-heading" className="text-2xl font-bold text-gray-900 dark:text-white">
         Frequently Asked Questions
       </h2>
 
-      {showProducts && recommendations && (
+      {recommendations && (
         <div
           className="flex md:hidden flex-col gap-6 mt-4 animate-slideUp"
           role="group"

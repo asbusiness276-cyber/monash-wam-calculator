@@ -38,7 +38,7 @@ export default function AboutUs() {
         faqItems={aboutFaqs}
       />
 
-      <section className="max-w-3xl mx-auto px-4 py-10">
+      <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Us</h1>
 
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">

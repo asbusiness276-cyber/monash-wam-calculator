@@ -2,7 +2,7 @@ import { articles } from '../data/articles';
 
 export default function ArticlesSection() {
   return (
-    <section className="max-w-6xl mx-auto px-4 pb-10">
+    <section className="max-w-6xl mx-auto px-4 pb-8">
       <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 md:p-7">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
           <div>

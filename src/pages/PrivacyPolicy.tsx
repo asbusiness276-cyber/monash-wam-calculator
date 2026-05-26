@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
         faqItems={privacyFaqs}
       />
 
-      <section className="max-w-3xl mx-auto px-4 py-10">
+      <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Privacy Policy</h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">Last updated: May 8, 2026</p>
 

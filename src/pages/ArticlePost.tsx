@@ -101,7 +101,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           keywords: [article.keyword, 'Monash WAM calculator', 'WAM', 'GPA conversion'],
         }}
       />
-      <article className="max-w-4xl mx-auto px-4 pt-8 md:pt-10 pb-10 md:pb-12">
+      <article className="max-w-4xl mx-auto px-4 pt-6 md:pt-8 pb-8 md:pb-10">
         <a href="/articles" className="inline-flex text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
           ← Back to articles
         </a>
@@ -119,7 +119,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
               <iframe
                 src={article.referenceEmbed.path}
                 title={article.referenceEmbed.title}
-                className="w-full h-[min(70vh,520px)] min-h-[320px] block border-0"
+                className="w-full h-[min(52vh,400px)] min-h-[220px] block border-0"
                 loading="eager"
                 sandbox="allow-scripts allow-same-origin allow-forms"
               />
@@ -137,7 +137,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           )}
         </figure>
 
-        <div className="mt-8 space-y-8">
+        <div className="mt-6 space-y-6">
           {article.sections.map(section => (
             <section key={section.heading}>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{section.heading}</h2>

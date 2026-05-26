@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Seo from '../components/Seo';
-import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import ProductShowcase from '../components/ProductShowcase';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
@@ -107,14 +106,14 @@ export default function GPAtoWAM() {
         faqItems={gpaToWamFaqs}
       />
 
-      <section className="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-16 text-center px-4">
+      <section className="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">GPA to WAM Calculator</h1>
         <p className="text-teal-100 max-w-xl mx-auto">
           Convert your GPA back to an approximate Monash University WAM. Choose your GPA scale and enter your GPA below.
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-12">
+      <section className="max-w-xl mx-auto px-4 py-8">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
           <div className="flex gap-3 mb-5">
             {scales.map((s, i) => (
@@ -199,7 +198,6 @@ export default function GPAtoWAM() {
 
       <ProductShowcase startIndex={12} endIndex={17} />
 
-      <LongFormContent topic="GPA to WAM conversion strategy and interpretation" />
       <PageFaq items={gpaToWamFaqs} />
       <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>

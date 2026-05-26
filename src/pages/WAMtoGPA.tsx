@@ -1,5 +1,4 @@
 import Seo from '../components/Seo';
-import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import ProductShowcase from '../components/ProductShowcase';
 import WamToGpaToolCore from '../components/WamToGpaToolCore';
@@ -51,7 +50,7 @@ export default function WAMtoGPA() {
         faqItems={wamToGpaFaqs}
       />
 
-      <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-16 text-center px-4">
+      <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">WAM to GPA Calculator</h1>
         <p className="text-blue-100 max-w-xl mx-auto">
           Convert your Monash University WAM to GPA. Supports both 4.0 and 7.0 GPA scales used by Australian and
@@ -65,7 +64,7 @@ export default function WAMtoGPA() {
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-12">
+      <section className="max-w-xl mx-auto px-4 py-8">
         <WamToGpaToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
@@ -132,7 +131,6 @@ export default function WAMtoGPA() {
 
       <ProductShowcase startIndex={6} endIndex={11} />
 
-      <LongFormContent topic="WAM to GPA conversion for domestic and international applications" />
       <PageFaq items={wamToGpaFaqs} />
     </>
   );

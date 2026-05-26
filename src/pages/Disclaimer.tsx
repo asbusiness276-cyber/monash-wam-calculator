@@ -1,5 +1,4 @@
 import Seo from '../components/Seo';
-import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -39,7 +38,7 @@ export default function Disclaimer() {
         faqItems={disclaimerFaqs}
       />
 
-      <section className="max-w-3xl mx-auto px-4 py-10">
+      <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Disclaimer</h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">Last updated: May 8, 2026</p>
 
@@ -85,7 +84,6 @@ export default function Disclaimer() {
           </div>
         </div>
       </section>
-      <LongFormContent topic="academic disclaimers, independence, and external link transparency" />
       <PageFaq title="Disclaimer FAQs" items={disclaimerFaqs} />
     </>
   );

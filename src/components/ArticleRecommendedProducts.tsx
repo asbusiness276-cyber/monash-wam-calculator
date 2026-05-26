@@ -1,8 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import ProductCard from './ProductCard';
 import { getArticleSideRecommendations, ProductInfo } from '../utils/recommendationEngine';
-
-const SHOW_DELAY_MS = 5500;
 
 interface ArticleRecommendedProductsProps {
   slug: string;
@@ -15,15 +13,8 @@ interface ProductSlot {
 
 export default function ArticleRecommendedProducts({ slug }: ArticleRecommendedProductsProps) {
   const recommendations = useMemo(() => getArticleSideRecommendations(slug), [slug]);
-  const [showProducts, setShowProducts] = useState(false);
 
-  useEffect(() => {
-    if (!recommendations) return;
-    const timer = window.setTimeout(() => setShowProducts(true), SHOW_DELAY_MS);
-    return () => window.clearTimeout(timer);
-  }, [recommendations, slug]);
-
-  if (!recommendations || !showProducts) return null;
+  if (!recommendations) return null;
 
   const products: ProductSlot[] = [
     { product: recommendations.left, caption: recommendations.leftCaption },
@@ -38,7 +29,7 @@ export default function ArticleRecommendedProducts({ slug }: ArticleRecommendedP
 
   return (
     <section
-      className="hidden md:block mt-10 animate-slideUp"
+      className="hidden md:block mt-8 animate-slideUp"
       aria-label="Recommended study resources"
     >
       <p className="text-[10px] font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400 mb-1">
@@ -52,7 +43,7 @@ export default function ArticleRecommendedProducts({ slug }: ArticleRecommendedP
       <div className="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((slot, index) => (
           <div key={`${slot.product.url}-${index}`} className="min-w-0 flex flex-col">
-            <p className="text-xs text-gray-600 dark:text-gray-400 mb-2 min-h-[2.5rem] line-clamp-2 leading-snug">
+            <p className="text-xs text-gray-600 dark:text-gray-400 mb-2 line-clamp-2 leading-snug">
               {slot.caption}
             </p>
             <ProductCard product={slot.product} rail />

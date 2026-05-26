@@ -326,7 +326,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
   return (
     <>
       <section id="calculator" className="scroll-mt-20">
-        <div className="max-w-6xl mx-auto px-4 py-10">
+        <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">Calculate Your Monash WAM</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">

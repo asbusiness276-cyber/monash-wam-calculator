@@ -1,5 +1,4 @@
 import Seo from '../components/Seo';
-import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -50,7 +49,6 @@ export default function NotFound() {
           {' '}if you were converting grades.
         </p>
       </section>
-      <LongFormContent topic="navigation recovery, internal linking, and page discovery" />
       <PageFaq title="404 Page FAQs" items={notFoundFaqs} />
     </>
   );

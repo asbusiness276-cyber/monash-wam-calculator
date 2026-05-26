@@ -4,7 +4,7 @@ import { ARTICLE_AUTHOR } from '../constants/author';
 export default function ArticleAuthorBio() {
   return (
     <aside
-      className="mt-10 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 p-5 sm:p-6"
+      className="mt-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 p-5 sm:p-6"
       aria-labelledby="article-author-heading"
     >
       <div className="flex items-center gap-4 sm:gap-5">

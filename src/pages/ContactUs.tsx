@@ -85,7 +85,7 @@ export default function ContactUs() {
         faqItems={contactFaqs}
       />
 
-      <section className="max-w-3xl mx-auto px-4 py-10">
+      <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Contact Us</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-6">
           Have feedback, found an issue, or want to suggest improvements? We welcome constructive input that helps make

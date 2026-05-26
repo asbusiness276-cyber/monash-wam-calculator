@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Seo from '../components/Seo';
-import LongFormContent from '../components/LongFormContent';
 import PageFaq from '../components/PageFaq';
 import ProductShowcase from '../components/ProductShowcase';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
@@ -95,14 +94,14 @@ export default function FinalGrade() {
         faqItems={finalGradeFaqs}
       />
 
-      <section className="bg-gradient-to-br from-sky-700 to-sky-900 text-white py-16 text-center px-4">
+      <section className="bg-gradient-to-br from-sky-700 to-sky-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">Final Grade Calculator</h1>
         <p className="text-sky-100 max-w-xl mx-auto">
           Find out exactly what mark you need in your final exam to achieve your target grade.
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-12">
+      <section className="max-w-xl mx-auto px-4 py-8">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
           <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-6">Enter Your Details</h2>
 
@@ -221,7 +220,6 @@ export default function FinalGrade() {
 
       <ProductShowcase startIndex={1} endIndex={6} />
 
-      <LongFormContent topic="final exam target planning and grade strategy" />
       <PageFaq items={finalGradeFaqs} />
       <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>

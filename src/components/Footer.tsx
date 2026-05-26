@@ -2,7 +2,7 @@ import { Calculator } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="mt-10 bg-gray-900 dark:bg-gray-950 text-gray-400 overflow-x-hidden">
+    <footer className="mt-6 bg-gray-900 dark:bg-gray-950 text-gray-400 overflow-x-hidden">
       <div className="max-w-6xl mx-auto px-4 py-10 md:py-12 min-w-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5">

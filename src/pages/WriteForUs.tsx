@@ -34,7 +34,7 @@ export default function WriteForUs() {
         faqItems={writeForUsFaqs}
       />
 
-      <section className="max-w-4xl mx-auto px-4 py-10">
+      <section className="max-w-4xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Write For Us</h1>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
           We welcome education writers, teachers, student mentors, and academic professionals who can contribute
