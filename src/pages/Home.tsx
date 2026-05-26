@@ -203,6 +203,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Site links — helps crawlers discover support pages from the homepage */}
+      <section className="max-w-3xl mx-auto px-4 pb-4" aria-label="Site pages">
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-5 py-4 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-3">
+            Guides &amp; site information
+          </p>
+          <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium">
+            <a href="/articles" className="text-primary-600 dark:text-primary-400 hover:underline">
+              Student articles
+            </a>
+            <a href="/about-us" className="text-primary-600 dark:text-primary-400 hover:underline">
+              About us
+            </a>
+            <a href="/contact-us" className="text-primary-600 dark:text-primary-400 hover:underline">
+              Contact us
+            </a>
+            <a href="/privacy-policy" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:underline">
+              Privacy policy
+            </a>
+            <a href="/terms-and-conditions" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:underline">
+              Terms &amp; conditions
+            </a>
+            <a href="/disclaimer" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:underline">
+              Disclaimer
+            </a>
+          </nav>
+        </div>
+      </section>
+
       {/* FAQ */}
       <FAQSection />
 
