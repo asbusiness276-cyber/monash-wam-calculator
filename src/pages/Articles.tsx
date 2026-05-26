@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import ArticleGridCard from '../components/ArticleGridCard';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { articles } from '../data/articles';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -25,34 +26,9 @@ export default function Articles() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-8 grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
           {articles.map(article => (
-            <article
-              key={article.slug}
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="aspect-video w-full bg-gray-100 dark:bg-gray-800">
-                <img
-                  src={article.featuredImage}
-                  alt={article.featuredImageAlt}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
-                  {article.keyword}
-                </p>
-                <h2 className="mt-2 text-lg font-bold text-gray-900 dark:text-white">{article.title}</h2>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{article.description}</p>
-                <a
-                  href={`/articles/${article.slug}`}
-                  className="inline-flex mt-4 text-sm font-semibold text-primary-600 dark:text-primary-400 hover:underline"
-                >
-                  Read article
-                </a>
-              </div>
-            </article>
+            <ArticleGridCard key={article.slug} article={article} />
           ))}
         </div>
       </section>

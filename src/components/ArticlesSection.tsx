@@ -1,3 +1,4 @@
+import ArticleGridCard from './ArticleGridCard';
 import { articles } from '../data/articles';
 
 export default function ArticlesSection() {
@@ -16,33 +17,9 @@ export default function ArticlesSection() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 lg:grid-cols-3">
           {articles.slice(0, 3).map(article => (
-            <article
-              key={article.slug}
-              className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden bg-gray-50 dark:bg-gray-900/50"
-            >
-              <div className="aspect-video w-full bg-gray-100 dark:bg-gray-800">
-                <img
-                  src={article.featuredImage}
-                  alt={article.featuredImageAlt}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
-                  {article.keyword}
-                </p>
-                <h3 className="mt-1 text-sm font-bold text-gray-900 dark:text-white line-clamp-2">{article.title}</h3>
-                <a
-                  href={`/articles/${article.slug}`}
-                  className="inline-flex mt-3 text-xs font-semibold text-primary-600 dark:text-primary-400 hover:underline"
-                >
-                  Read article
-                </a>
-              </div>
-            </article>
+            <ArticleGridCard key={article.slug} article={article} compact />
           ))}
         </div>
       </div>
