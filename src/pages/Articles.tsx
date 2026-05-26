@@ -26,9 +26,11 @@ export default function Articles() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
           {articles.map(article => (
-            <ArticleGridCard key={article.slug} article={article} />
+            <div key={article.slug} className="flex min-h-0 h-full">
+              <ArticleGridCard article={article} />
+            </div>
           ))}
         </div>
       </section>

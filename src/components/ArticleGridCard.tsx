@@ -8,7 +8,7 @@ interface ArticleGridCardProps {
 
 export default function ArticleGridCard({ article, compact = false }: ArticleGridCardProps) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
+    <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
       <div className="aspect-video w-full shrink-0 bg-gray-100 dark:bg-gray-800">
         <img
           src={article.featuredImage}
@@ -18,29 +18,32 @@ export default function ArticleGridCard({ article, compact = false }: ArticleGri
         />
       </div>
 
-      <div className={`flex min-h-0 flex-1 flex-col ${compact ? 'p-4' : 'p-5'}`}>
+      <div
+        className={`flex min-h-0 flex-1 flex-col ${compact ? 'p-4' : 'p-5'}`}
+      >
         <p
-          className={`shrink-0 font-semibold uppercase leading-snug text-primary-600 dark:text-primary-400 line-clamp-2 ${
-            compact ? 'min-h-[2.25rem] text-[11px] tracking-wide' : 'min-h-[2.75rem] text-xs tracking-wide'
+          className={`shrink-0 overflow-hidden font-semibold uppercase leading-snug text-primary-600 line-clamp-2 dark:text-primary-400 ${
+            compact ? 'h-9 text-[11px] tracking-wide' : 'h-11 text-xs tracking-wide'
           }`}
         >
           {article.keyword}
         </p>
         <h2
-          className={`mt-2 shrink-0 font-bold leading-snug text-gray-900 line-clamp-2 dark:text-white ${
-            compact ? 'min-h-[2.5rem] text-sm' : 'min-h-[3.5rem] text-lg'
+          className={`mt-2 shrink-0 overflow-hidden font-bold leading-snug text-gray-900 line-clamp-2 dark:text-white ${
+            compact ? 'h-10 text-sm' : 'h-14 text-lg'
           }`}
         >
           {article.title}
         </h2>
         {!compact && (
-          <p className="mt-2 min-h-[4.25rem] flex-1 text-sm leading-relaxed text-gray-600 line-clamp-3 dark:text-gray-400">
+          <p className="mt-2 h-[4.5rem] shrink-0 overflow-hidden text-sm leading-relaxed text-gray-600 line-clamp-3 dark:text-gray-400">
             {article.description}
           </p>
         )}
+        <div className="min-h-0 flex-1" aria-hidden />
         <a
           href={`/articles/${article.slug}`}
-          className={`mt-auto inline-flex shrink-0 font-semibold text-primary-600 hover:underline dark:text-primary-400 ${
+          className={`inline-flex shrink-0 font-semibold text-primary-600 hover:underline dark:text-primary-400 ${
             compact ? 'pt-3 text-xs' : 'pt-4 text-sm'
           }`}
         >

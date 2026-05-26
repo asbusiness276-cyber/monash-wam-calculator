@@ -17,9 +17,11 @@ export default function ArticlesSection() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
           {articles.slice(0, 3).map(article => (
-            <ArticleGridCard key={article.slug} article={article} compact />
+            <div key={article.slug} className="flex min-h-0 h-full">
+              <ArticleGridCard article={article} compact />
+            </div>
           ))}
         </div>
       </div>
