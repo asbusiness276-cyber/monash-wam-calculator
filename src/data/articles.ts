@@ -167,7 +167,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'What WAM Ranges Usually Mean',
         paragraphs: [
-          'Although exact interpretations can vary by institution, students often think in rough ranges: below 60 can indicate performance issues in some contexts, 60 to 69 can be considered solid credit-level progress, 70 to 79 is often seen as strong distinction territory, and 80 plus is usually high distinction territory. These bands are useful for self-checking but should never replace official policy interpretation. For honours-specific planning, read monash honours wam requirements alongside faculty handbooks. Some opportunities care about trend performance over time, not just one semester average.',
+          'Although exact interpretations can vary by institution, students often think in rough ranges: below 60 can indicate performance issues in some contexts, 60 to 69 can be considered solid credit-level progress, 70 to 79 is often seen as strong distinction territory, and 80 plus is usually high distinction territory. These bands are useful for self-checking but should never replace official policy interpretation. For honours-specific planning, read monash honours wam requirements alongside faculty handbooks; for scholarships, see monash scholarship wam requirements. Some opportunities care about trend performance over time, not just one semester average.',
           'Trend direction matters more than many students realize. If your WAM improves steadily over multiple terms, that progression can strengthen scholarship and employer confidence, especially when your transcript includes difficult technical units. Panels often appreciate consistency, resilience, and upward trajectory. This is why regular re-calculation after assessments is important. It gives you early visibility of whether you are trending up, flat, or down, and lets you adjust strategy before the semester ends.',
         ],
       },
@@ -398,7 +398,114 @@ export const articles: ArticleData[] = [
       {
         question: 'Is honours WAM the same as scholarship WAM?',
         answer:
-          'Not always. Scholarships may use separate criteria, timelines, and merit formulas. Read each scholarship page independently.',
+          'Not always. Scholarships may use separate criteria, timelines, and merit formulas. Read monash scholarship wam requirements and each scholarship page independently.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-scholarship-wam-requirements',
+    keyword: 'monash scholarship wam requirements',
+    productCatalogId: 4,
+    title: 'Monash Scholarship WAM Requirements (2026 Guide)',
+    description:
+      'Monash scholarship WAM requirements explained: merit vs equity awards, example WAM bands from 60 to 85+, renewal rules, and free calculators to check eligibility.',
+    featuredImage: '/article-images/featured-monash-scholarship-wam.svg',
+    featuredImageAlt:
+      'Banner illustration for Monash scholarship WAM requirements — merit and planning theme in amber and gold',
+    referenceEmbed: {
+      path: '/embed/monash-wam',
+      title: 'Monash WAM Calculator — live preview',
+      caption:
+        'Enter your official unit marks and credit points to compare your current WAM against scholarship planning bands on this page.',
+    },
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-05-29',
+    sections: [
+      {
+        heading: 'Why Scholarship WAM Is Not One Fixed Number',
+        paragraphs: [
+          'Students searching monash scholarship wam requirements often expect a single cutoff such as “you need 75 WAM for every scholarship.” Monash does not work that way. Scholarships are listed individually on the official Find a Scholarship portal, and each award can specify different academic floors, residency rules, faculty limits, and application timelines. Some scholarships auto-consider high ATAR or IB entrants; others require a separate form; equity and humanitarian schemes may weigh circumstances beyond raw marks.',
+          'WAM still matters for many continuing-student and merit pathways because it summarises credit-weighted performance across completed units. Before you plan applications, calculate your current standing with the Monash WAM calculator using transcript-backed marks only. Treat this guide as a planning map, not an official eligibility decision — always confirm the live scholarship page for the year you apply.',
+        ],
+      },
+      {
+        heading: 'Merit Scholarships: Typical WAM Planning Bands',
+        paragraphs: [
+          'Merit scholarships usually reward strong academic performance, leadership, or combined achievement. Published examples on Monash pages have ranged from moderate floors for specific equity-linked awards to very high merit thresholds for competitive international schemes. For planning conversations, students often group expectations like this: around 60 WAM for some access-oriented continuing-student pathways; around 70–79 (distinction band) for solid merit competitiveness; around 80+ for high distinction positioning; and around 85+ where published international merit scholarships have stated minimum WAM requirements in recent cycles.',
+          'These bands are illustrative, not universal. A scholarship may instead require ATAR for commencing students, faculty nomination, or “academic achievement” without publishing a numeric WAM at all. Read what is a good wam for broader benchmark language, then compare your number to each scholarship’s own criteria rather than to social media averages.',
+          'If you are below a published floor today, use how to improve wam at monash to model whether remaining high-credit units can lift your average before deadlines. Small improvements in weighted subjects can change eligibility more than perfect marks in low-credit electives.',
+        ],
+      },
+      {
+        heading: 'Equity, Humanitarian, and Faculty-Specific Awards',
+        paragraphs: [
+          'Not every Monash scholarship is a pure merit race. Humanitarian, access, and equity-linked schemes may combine academic minimums with visa status, financial need, campus location, or course level. Some published continuing-student examples have listed minimum WAM near credit level (for example around 60) alongside other eligibility tests — but your award may differ entirely.',
+          'Faculty scholarships can also restrict eligible degrees or require nomination by a school. That means two students with the same WAM may have different options depending on course code, citizenship, and intake year. Build a shortlist from the official scholarship search tool, export deadlines to a calendar, and note whether each award uses WAM, ATAR, or qualitative assessment.',
+          'Honours and scholarship planning overlap but are not identical. If you are comparing research pathways, read monash honours wam requirements separately — honours cutoffs and scholarship merit floors come from different policy pages and can change independently.',
+        ],
+      },
+      {
+        heading: 'Renewals, Progress Reports, and WAM Maintenance',
+        paragraphs: [
+          'Receiving a scholarship is not always the end of WAM scrutiny. Many Monash awards require satisfactory academic progress each year and may ask for annual reporting. Renewal language often references continuing enrolment, minimum progress standards, or maintaining performance — sometimes without repeating the original entry WAM explicitly. If your WAM drops after a difficult semester, check whether your scholarship terms allow recovery, probation, or appeal processes.',
+          'Track WAM after every major results release rather than once per year. If you need to protect renewal, prioritise high-credit units and use the final grade calculator before finals to see what marks are required in remaining assessments. Early visibility prevents last-minute surprises when progress reports are due.',
+          'When applying overseas or submitting external forms, some panels ask for GPA instead of WAM. Use the WAM to GPA calculator for reporting estimates, but keep Monash WAM visible when it is the primary metric on your transcript.',
+        ],
+      },
+      {
+        heading: 'How to Build a Scholarship Application Plan',
+        paragraphs: [
+          'Step 1 — List target scholarships from official Monash pages with deadlines and WAM/ATAR language. Step 2 — Confirm your WAM with the Monash WAM calculator. Step 3 — Gap analysis: mark which awards are realistic now, which need one stronger semester, and which are stretch goals. Step 4 — Gather non-academic evidence early (leadership, community, employment, references). Step 5 — Recompute WAM after each results period until submissions close.',
+          'Do not copy outdated student forum cutoffs. Scholarship quotas and published minima can change when funding changes. If a page says “competitive” without a number, use planning bands from what is a good wam and treat your application as merit positioning rather than checkbox eligibility.',
+          'For cross-institution reporting, see how to convert wam from one university to another when you must explain Monash results to external assessors. Clarity and transcript alignment matter more than rounding up.',
+        ],
+      },
+      {
+        heading: 'When Your WAM Is Below Published Scholarship Floors',
+        paragraphs: [
+          'A below-target WAM does not automatically mean zero scholarship options. You may still qualify for equity schemes, faculty nominations, or awards where WAM is one factor among several. You can also shift strategy toward the next application cycle while using how to improve wam at monash for structured recovery in high-weight units.',
+          'Avoid applying to purely merit awards far above your current band without a realistic improvement path — effort is better spent on awards that match your profile and on raising weighted performance where credit points are highest.',
+          'If scholarships remain unlikely on current trajectory, use the same WAM workflow for internships, honours, or postgraduate planning so your academic story stays coherent across applications.',
+        ],
+      },
+      {
+        heading: 'Tools and Related Guides on This Site',
+        paragraphs: [
+          'Recommended workflow: Monash WAM calculator for current standing → what is a good wam for benchmark context → how to improve wam at monash if you need a lift → monash scholarship wam requirements (this page) for award planning → final grade calculator for exam targets → WAM to GPA calculator only when external forms require conversion.',
+          'Independent tools on this site support planning; they do not determine official Monash scholarship outcomes. Submit verified transcript figures and follow each scholarship’s live instructions for the application year.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is there one WAM required for all Monash scholarships?',
+        answer:
+          'No. Each scholarship sets its own criteria. Use Monash’s official Find a Scholarship pages for the awards you target rather than one site-wide number.',
+      },
+      {
+        question: 'What WAM is competitive for merit scholarships at Monash?',
+        answer:
+          'Many merit pathways align with distinction or high distinction bands, and some published international merit examples have cited minimum WAM around 85. Always verify the current scholarship page.',
+      },
+      {
+        question: 'Can I get a scholarship with a WAM near 60?',
+        answer:
+          'Some equity or access-linked schemes have published lower academic floors for continuing students, but eligibility depends on the full criteria set, not WAM alone.',
+      },
+      {
+        question: 'Do scholarships use WAM or ATAR?',
+        answer:
+          'Commencing domestic and international pathways may use ATAR or equivalent, while continuing students are often assessed on WAM. Read each award’s eligibility section.',
+      },
+      {
+        question: 'How do I check my WAM before applying?',
+        answer:
+          'Use the Monash WAM calculator with official marks and credit points, then compare against each scholarship’s published requirements and planning bands in what is a good wam.',
+      },
+      {
+        question: 'Is scholarship WAM the same as honours WAM?',
+        answer:
+          'Not necessarily. Honours entry and scholarship merit can follow different rules. Compare monash honours wam requirements separately when planning research pathways.',
       },
     ],
   },

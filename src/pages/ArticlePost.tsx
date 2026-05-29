@@ -16,6 +16,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'what is a good wam', href: '/articles/what-is-a-good-wam' },
   { keyword: 'how to improve wam at monash', href: '/articles/how-to-improve-wam-at-monash' },
   { keyword: 'monash honours wam requirements', href: '/articles/monash-honours-wam-requirements' },
+  { keyword: 'monash scholarship wam requirements', href: '/articles/monash-scholarship-wam-requirements' },
   { keyword: 'WAM to GPA calculator', href: '/wam-to-gpa-calculator' },
   { keyword: 'final grade calculator', href: '/final-grade-calculator' },
   { keyword: 'Monash WAM calculator', href: '/' },
