@@ -248,7 +248,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'Common Mistakes That Stall WAM Growth',
         paragraphs: [
-          'Avoid treating all marks as equally influential. Avoid copying last semester’s timetable when credit loads change. Do not ignore failed or near-fail units if policy includes them in WAM — confirm faculty rules on the official Monash site. Never submit application documents using calculator outputs without transcript verification.',
+          'Avoid treating all marks as equally influential. Avoid copying last semester’s timetable when credit loads change. Do not ignore failed or near-fail units if policy includes them in WAM — read failed unit wam monash for recovery planning and confirm faculty rules on the official Monash site. Never submit application documents using calculator outputs without transcript verification.',
           'Another stall is comparing yourself to students in different courses. A 72 WAM in one degree can be competitive while the same number is mid-pack elsewhere. Benchmark against your goals (internship, honours, scholarship), not social media averages. When comparing institutions, use how to convert wam from one university to another only for transparent reporting, not for self-judgment.',
           'Burnout is a hidden WAM risk. Sustainable schedules protect high-weight finals. Sleep, spaced repetition, and office-hour clarification often outperform all-nighters that produce pass-level finals in 12-credit units.',
         ],
@@ -506,6 +506,113 @@ export const articles: ArticleData[] = [
         question: 'Is scholarship WAM the same as honours WAM?',
         answer:
           'Not necessarily. Honours entry and scholarship merit can follow different rules. Compare monash honours wam requirements separately when planning research pathways.',
+      },
+    ],
+  },
+  {
+    slug: 'failed-unit-wam-impact-monash',
+    keyword: 'failed unit wam monash',
+    productCatalogId: 4,
+    title: 'Failed Unit WAM Impact at Monash (2026 Recovery Guide)',
+    description:
+      'Failed unit WAM impact at Monash explained: how N grades affect weighted averages, repeat-unit planning, recovery maths, and free calculators to model your next semester.',
+    featuredImage: '/article-images/featured-failed-unit-wam-monash.svg',
+    featuredImageAlt:
+      'Banner illustration for failed unit WAM impact at Monash — recovery and planning theme in red and orange',
+    referenceEmbed: {
+      path: '/embed/monash-wam',
+      title: 'Monash WAM Calculator — live preview',
+      caption:
+        'Include failed units with their official marks and credit points to see the real weighted impact on your WAM.',
+    },
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    sections: [
+      {
+        heading: 'What Counts as a Failed Unit at Monash',
+        paragraphs: [
+          'At Monash University, a final mark below 50 is generally treated as a fail (N grade band: 0–49). Students searching failed unit wam monash usually want to know two things immediately: whether the fail appears in WAM, and how much it moves the number. In most standard WAM calculations, attempted units with recorded marks are included in the credit-weighted average unless official policy for your course says otherwise.',
+          'WAM is not the same as “best-of” GPA systems used elsewhere. It reflects performance across completed attempts as reported on your transcript. That is why one failed 12-credit unit can hurt more than a low mark in a 6-credit elective. Before you panic, confirm your exact mark, credit points, and faculty rules on Monash’s official WAM and assessment pages — this guide supports planning, not formal academic decisions.',
+        ],
+      },
+      {
+        heading: 'How a Fail Changes Your WAM (Weighted Maths)',
+        paragraphs: [
+          'Monash WAM uses: sum(mark × credit points) ÷ sum(credit points). A fail near 45 in a 12-credit unit adds 540 weighted points; the same unit at 75 would add 900. That 360-point gap spreads across your total credits and can pull WAM down sharply, especially early in a degree when total credit volume is smaller.',
+          'Example logic: if you have three 6-credit units at 80, 75, and 70, your WAM is 75. Add a fourth 6-credit unit failed at 48 and WAM drops to about 68.25. The fail did not just “remove” progress — it actively lowered the weighted total. Use how to calculate wam whenever you model scenarios so you never rely on a simple average of percentages.',
+          'Enter your real transcript values in the Monash WAM calculator, including failed units, to see your current position. Label any projected repeats separately until results are official.',
+        ],
+      },
+      {
+        heading: 'Fails vs Repeats, Withdrawals, and Special Grades',
+        paragraphs: [
+          'Policy treatment can differ for withdrawn units, intermission, academic penalty grades, or repeated attempts. Some faculties publish specific rules on how repeats appear on transcripts and whether earlier attempts remain visible in WAM-related reporting. Do not assume a repeat automatically replaces the first attempt in every context — verify your handbook and ask faculty student services when unsure.',
+          'If you are planning a repeat, model two scenarios: current WAM with the fail included, and a future scenario if the repeated unit reaches your target band. The second scenario is for motivation and planning only until Monash publishes official results.',
+          'For honours, scholarships, and competitive applications, decision-makers may review trend and unit mix, not only cumulative WAM. Read monash honours wam requirements and monash scholarship wam requirements alongside this page when deciding recovery priorities.',
+        ],
+      },
+      {
+        heading: 'Recovery Plan After a Failed Unit',
+        paragraphs: [
+          'Step 1 — Confirm official mark and credit weight on your transcript. Step 2 — Recalculate WAM with the fail included. Step 3 — Identify whether the unit will be repeated, substituted, or managed under faculty progression rules. Step 4 — Focus next semester on high-credit units where remaining assessment weight still allows strong outcomes.',
+          'Use how to improve wam at monash for semester strategy: map assessment weights, protect high-value finals with the final grade calculator, and update WAM after each release. Recovery is usually a multi-semester process, not one exam fix.',
+          'Avoid hiding failed units in personal spreadsheets — planning with incomplete data creates false confidence. Include every attempted unit with official marks when using calculators on this site.',
+        ],
+      },
+      {
+        heading: 'How Much WAM Can You Realistically Recover',
+        paragraphs: [
+          'Recovery speed depends on total credits already completed and how many high-credit units remain. Early in a degree, strong semesters can move WAM quickly because the denominator is smaller. Late in a degree, one fail hurts, but large prior credit volume can slow visible movement — consistent distinction-level results are still worth pursuing for applications and progression.',
+          'Run monthly scenarios: conservative, target, and stretch marks for upcoming units. Compare outcomes in the Monash WAM calculator and set bands using what is a good wam. If your target is honours or merit scholarships, know the gap numerically instead of guessing.',
+          'If you need to report WAM internationally, keep Monash WAM primary and use the WAM to GPA calculator only as a secondary view for forms that require GPA format.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes After Failing a Unit',
+        paragraphs: [
+          'Students often exclude the fail from personal WAM calculations, underestimate 12-credit impact, or assume a repeat instantly fixes historical reporting. Others overload the next semester with hard units while emotionally recovering from the fail — which can create a second drop.',
+          'Better approach: stabilise workload, rebuild fundamentals in the failed subject area, and prioritise weighted assessments in remaining units. Seek faculty advice on progression requirements early if the fail affects course completion timelines.',
+          'Do not make formal submissions using calculator outputs without transcript verification. Use this site for planning; use Monash official channels for progression decisions.',
+        ],
+      },
+      {
+        heading: 'Tools to Use on This Site',
+        paragraphs: [
+          'Workflow after a fail: Monash WAM calculator (with fail included) → how to calculate wam for formula checks → how to improve wam at monash for next-semester strategy → final grade calculator for exam targets → what is a good wam for benchmark context → honours or scholarship guides if applications are affected.',
+          'Revisit failed unit wam monash after each results period until your recovery trend is clear. Independent calculators here are educational tools, not official Monash systems.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Are failed units included in Monash WAM?',
+        answer:
+          'In most cases, yes — WAM reflects attempted units with recorded marks unless your specific course policy states otherwise. Confirm on official Monash WAM guidance.',
+      },
+      {
+        question: 'How much does one fail lower WAM?',
+        answer:
+          'It depends on the fail mark, credit points, and your other units. High-credit fails early in a degree usually cause a larger visible drop.',
+      },
+      {
+        question: 'If I repeat a unit, does the fail disappear from WAM?',
+        answer:
+          'Not automatically in every reporting context. Repeat and transcript rules vary by faculty and attempt type — verify official policy before assuming replacement.',
+      },
+      {
+        question: 'Can I still get honours or scholarships after a fail?',
+        answer:
+          'Sometimes, if later weighted results are strong and overall WAM recovers, but competitive pathways may still review full academic history.',
+      },
+      {
+        question: 'Should I include failed units in the WAM calculator?',
+        answer:
+          'Yes. Include official marks and credit points for all attempted units so your planning number matches transcript logic.',
+      },
+      {
+        question: 'What WAM should I target after a fail?',
+        answer:
+          'Use what is a good wam for benchmark bands, then follow how to improve wam at monash to set realistic semester targets based on remaining credit weight.',
       },
     ],
   },
