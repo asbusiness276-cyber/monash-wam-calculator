@@ -34,6 +34,7 @@ export default function ContactUs() {
   const [email, setEmail] = useState('');
   const [topic, setTopic] = useState('General Feedback');
   const [message, setMessage] = useState('');
+  const [company, setCompany] = useState('');
   const [status, setStatus] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
@@ -42,7 +43,7 @@ export default function ContactUs() {
     setSubmitting(true);
     setStatus('');
     try {
-      const response = await fetch('https://formsubmit.co/ajax/monashwamcalculator@gmail.com', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,21 +54,24 @@ export default function ContactUs() {
           email,
           topic,
           message,
-          _subject: `[${topic}] New message from ${name.trim() || 'Website Visitor'}`,
-          _template: 'table',
-          _captcha: 'false',
+          company,
+          pageUrl: window.location.href,
         }),
       });
 
-      const payload = await response.json();
-      if (response.ok && payload.success === 'true') {
+      const payload = await response.json().catch(() => ({}));
+      if (response.ok && payload.success) {
         setStatus('Message sent successfully. We will get back to you soon.');
         setName('');
         setEmail('');
         setTopic('General Feedback');
         setMessage('');
+        setCompany('');
       } else {
-        setStatus('Submission failed. Please email us directly at monashwamcalculator@gmail.com.');
+        setStatus(
+          payload.message ||
+            'Submission failed. Please email us directly at monashwamcalculator@gmail.com.'
+        );
       }
     } catch {
       setStatus('Submission failed. Please email us directly at monashwamcalculator@gmail.com.');
@@ -109,6 +113,16 @@ export default function ContactUs() {
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Contact Form</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              name="company"
+              value={company}
+              onChange={e => setCompany(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
               <input
