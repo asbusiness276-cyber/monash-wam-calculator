@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import Seo from '../components/Seo';
 import ArticleAuthorBio from '../components/ArticleAuthorBio';
+import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleFaqProducts from '../components/ArticleFaqProducts';
 import ArticleRecommendedProducts from '../components/ArticleRecommendedProducts';
 import { ARTICLE_AUTHOR } from '../constants/author';
@@ -115,28 +116,8 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           Published {article.publishedAt} • Updated {article.updatedAt}
         </p>
 
-        <figure className="mt-8 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden bg-gray-100 dark:bg-gray-900">
-          {article.showToolEmbed !== false && article.referenceEmbed ? (
-            <>
-              <iframe
-                src={article.referenceEmbed.path}
-                title={article.referenceEmbed.title}
-                className="w-full h-[min(52vh,400px)] min-h-[220px] block border-0"
-                loading="eager"
-                sandbox="allow-scripts allow-same-origin allow-forms"
-              />
-              <figcaption className="px-4 py-3 text-xs text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 leading-relaxed">
-                {article.referenceEmbed.caption}
-              </figcaption>
-            </>
-          ) : (
-            <img
-              src={article.featuredImage}
-              alt={article.featuredImageAlt}
-              className="w-full aspect-video object-cover block"
-              loading="eager"
-            />
-          )}
+        <figure className="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-900">
+          <ArticleFeaturedImage article={article} priority className="w-full aspect-video object-cover block" />
         </figure>
 
         <div className="mt-6 space-y-6">

@@ -1,12 +1,5 @@
 import { FaqItem } from '../components/Seo';
 
-/** Live tool iframe for articles — always matches monashwamcalculator.com calculators */
-export interface ArticleReferenceEmbed {
-  path: string;
-  title: string;
-  caption: string;
-}
-
 export interface ArticleData {
   slug: string;
   title: string;
@@ -17,11 +10,12 @@ export interface ArticleData {
    */
   productCatalogId?: number;
   description: string;
+  /**
+   * Lightweight banner (prefer SVG under /public/article-images/).
+   * Same file is shown on /articles cards and the article header — keep paths in sync.
+   */
   featuredImage: string;
   featuredImageAlt: string;
-  /** When false, article page shows featured image only (no calculator iframe). */
-  showToolEmbed?: boolean;
-  referenceEmbed?: ArticleReferenceEmbed;
   publishedAt: string;
   updatedAt: string;
   sections: Array<{ heading: string; paragraphs: string[] }>;
@@ -37,10 +31,9 @@ export const articles: ArticleData[] = [
     title: 'Monash University Australia: Student Guide 2026',
     description:
       'Monash University Australia guide: Melbourne & Victoria campuses, world rankings, courses, fees, scholarships, how to apply, campus location, and WAM planning.',
-    featuredImage: '/article-images/featured-monash-university-australia.png',
+    featuredImage: '/article-images/featured-monash-university-australia.svg',
     featuredImageAlt:
       'Monash University Australia student guide — Melbourne campuses, rankings, courses and academic planning banner',
-    showToolEmbed: false,
     publishedAt: '2026-03-19',
     updatedAt: '2026-03-19',
     sections: [
@@ -145,15 +138,9 @@ export const articles: ArticleData[] = [
     title: 'What Is a Good WAM at Monash? (2026 Benchmarks)',
     description:
       'What is a good WAM at Monash? HD 80+, distinction 70–79, credit 60–69 — benchmark bands and how to improve your weighted average.',
-    featuredImage: '/article-images/featured-what-is-a-good-wam.png',
+    featuredImage: '/article-images/featured-what-is-a-good-wam.svg',
     featuredImageAlt:
       'Abstract banner illustration for academic benchmark guide — trending performance theme in teal and blue',
-    referenceEmbed: {
-      path: '/embed/monash-wam',
-      title: 'Monash WAM Calculator — live preview',
-      caption:
-        'Live tool: Monash WAM Calculator on monashwamcalculator.com — enter units, marks, and credits to relate benchmarks to your numbers.',
-    },
     publishedAt: '2026-05-09',
     updatedAt: '2026-05-09',
     sections: [
@@ -206,12 +193,6 @@ export const articles: ArticleData[] = [
     featuredImage: '/article-images/featured-improve-wam-at-monash.svg',
     featuredImageAlt:
       'Banner illustration for improving Monash WAM — growth and academic planning theme in green and teal',
-    referenceEmbed: {
-      path: '/embed/monash-wam',
-      title: 'Monash WAM Calculator — live preview',
-      caption:
-        'Model your current WAM, then test what happens if your next units score higher — same weighted calculator as on the homepage.',
-    },
     publishedAt: '2026-05-25',
     updatedAt: '2026-05-25',
     sections: [
@@ -305,12 +286,6 @@ export const articles: ArticleData[] = [
     featuredImage: '/article-images/featured-monash-honours-wam.svg',
     featuredImageAlt:
       'Banner illustration for Monash honours WAM requirements — academic pathways theme in indigo and violet',
-    referenceEmbed: {
-      path: '/embed/monash-wam',
-      title: 'Monash WAM Calculator — live preview',
-      caption:
-        'Check your current weighted average before comparing it to honours or scholarship planning bands on this page.',
-    },
     publishedAt: '2026-05-26',
     updatedAt: '2026-05-26',
     sections: [
@@ -412,12 +387,6 @@ export const articles: ArticleData[] = [
     featuredImage: '/article-images/featured-monash-scholarship-wam.svg',
     featuredImageAlt:
       'Banner illustration for Monash scholarship WAM requirements — merit and planning theme in amber and gold',
-    referenceEmbed: {
-      path: '/embed/monash-wam',
-      title: 'Monash WAM Calculator — live preview',
-      caption:
-        'Enter your official unit marks and credit points to compare your current WAM against scholarship planning bands on this page.',
-    },
     publishedAt: '2026-05-29',
     updatedAt: '2026-05-29',
     sections: [
@@ -519,12 +488,6 @@ export const articles: ArticleData[] = [
     featuredImage: '/article-images/featured-failed-unit-wam-monash.svg',
     featuredImageAlt:
       'Banner illustration for failed unit WAM impact at Monash — recovery and planning theme in red and orange',
-    referenceEmbed: {
-      path: '/embed/monash-wam',
-      title: 'Monash WAM Calculator — live preview',
-      caption:
-        'Include failed units with their official marks and credit points to see the real weighted impact on your WAM.',
-    },
     publishedAt: '2026-05-30',
     updatedAt: '2026-05-30',
     sections: [
@@ -623,15 +586,9 @@ export const articles: ArticleData[] = [
     title: 'How to Convert WAM from One University to Another Accurately',
     description:
       'Learn how to convert WAM from one university to another using practical methods, GPA mapping logic, and application-safe reporting tips.',
-    featuredImage: '/article-images/featured-convert-wam.png',
+    featuredImage: '/article-images/featured-convert-wam.svg',
     featuredImageAlt:
       'Abstract banner illustration for university grade conversion — institutions and pathways theme',
-    referenceEmbed: {
-      path: '/embed/wam-to-gpa',
-      title: 'WAM to GPA Calculator — live preview',
-      caption:
-        'Live tool: WAM to GPA Calculator — enter your Monash WAM for estimated GPA on 4.0 and 7.0 scales.',
-    },
     publishedAt: '2026-05-09',
     updatedAt: '2026-05-09',
     sections: [
@@ -681,15 +638,9 @@ export const articles: ArticleData[] = [
     title: 'How to Calculate WAM Correctly: Step-by-Step Weighted Method',
     description:
       'Learn how to calculate WAM with weighted formulas, examples, common mistakes, and practical semester planning techniques.',
-    featuredImage: '/article-images/featured-calculate-wam.png',
+    featuredImage: '/article-images/featured-calculate-wam.svg',
     featuredImageAlt:
       'Abstract banner illustration for weighted average calculation — formula and weighting theme',
-    referenceEmbed: {
-      path: '/embed/monash-wam',
-      title: 'Monash WAM Calculator — live preview',
-      caption:
-        'Live tool: Monash WAM Calculator — same weighted rows (units × credits) as in the formula sections.',
-    },
     publishedAt: '2026-05-09',
     updatedAt: '2026-05-09',
     sections: [

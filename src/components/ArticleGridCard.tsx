@@ -1,4 +1,5 @@
 import type { ArticleData } from '../data/articles';
+import ArticleFeaturedImage from './ArticleFeaturedImage';
 
 interface ArticleGridCardProps {
   article: ArticleData;
@@ -10,12 +11,7 @@ export default function ArticleGridCard({ article, compact = false }: ArticleGri
   return (
     <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
       <div className="aspect-video w-full shrink-0 bg-gray-100 dark:bg-gray-800">
-        <img
-          src={article.featuredImage}
-          alt={article.featuredImageAlt}
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
+        <ArticleFeaturedImage article={article} className="h-full w-full object-cover" />
       </div>
 
       <div
