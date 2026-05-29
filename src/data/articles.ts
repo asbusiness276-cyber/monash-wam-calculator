@@ -11,7 +11,7 @@ export interface ArticleData {
   productCatalogId?: number;
   description: string;
   /**
-   * Lightweight banner (prefer SVG under /public/article-images/).
+   * Optimized WebP banner (1280×720) under /public/article-images/.
    * Same file is shown on /articles cards and the article header — keep paths in sync.
    */
   featuredImage: string;
@@ -31,7 +31,7 @@ export const articles: ArticleData[] = [
     title: 'Monash University Australia: Student Guide 2026',
     description:
       'Monash University Australia guide: Melbourne & Victoria campuses, world rankings, courses, fees, scholarships, how to apply, campus location, and WAM planning.',
-    featuredImage: '/article-images/featured-monash-university-australia.svg',
+    featuredImage: '/article-images/featured-monash-university-australia.webp',
     featuredImageAlt:
       'Monash University Australia student guide — Melbourne campuses, rankings, courses and academic planning banner',
     publishedAt: '2026-03-19',
@@ -138,7 +138,7 @@ export const articles: ArticleData[] = [
     title: 'What Is a Good WAM at Monash? (2026 Benchmarks)',
     description:
       'What is a good WAM at Monash? HD 80+, distinction 70–79, credit 60–69 — benchmark bands and how to improve your weighted average.',
-    featuredImage: '/article-images/featured-what-is-a-good-wam.svg',
+    featuredImage: '/article-images/featured-what-is-a-good-wam.webp',
     featuredImageAlt:
       'Abstract banner illustration for academic benchmark guide — trending performance theme in teal and blue',
     publishedAt: '2026-05-09',
@@ -190,7 +190,7 @@ export const articles: ArticleData[] = [
     title: 'How to Improve Your WAM at Monash (2026 Student Guide)',
     description:
       'How to improve WAM at Monash: credit-point strategy, high-weight assessments, exam planning with free calculators, and realistic semester targets.',
-    featuredImage: '/article-images/featured-improve-wam-at-monash.svg',
+    featuredImage: '/article-images/featured-improve-wam-at-monash.webp',
     featuredImageAlt:
       'Banner illustration for improving Monash WAM — growth and academic planning theme in green and teal',
     publishedAt: '2026-05-25',
@@ -283,7 +283,7 @@ export const articles: ArticleData[] = [
     title: 'Monash Honours WAM Requirements (2026 Planning Guide)',
     description:
       'Monash honours WAM requirements explained: how faculties set cutoffs, typical WAM bands, scholarships vs honours, and free calculators to check your standing.',
-    featuredImage: '/article-images/featured-monash-honours-wam.svg',
+    featuredImage: '/article-images/featured-monash-honours-wam.webp',
     featuredImageAlt:
       'Banner illustration for Monash honours WAM requirements — academic pathways theme in indigo and violet',
     publishedAt: '2026-05-26',
@@ -384,7 +384,7 @@ export const articles: ArticleData[] = [
     title: 'Monash Scholarship WAM Requirements (2026 Guide)',
     description:
       'Monash scholarship WAM requirements explained: merit vs equity awards, example WAM bands from 60 to 85+, renewal rules, and free calculators to check eligibility.',
-    featuredImage: '/article-images/featured-monash-scholarship-wam.svg',
+    featuredImage: '/article-images/featured-monash-scholarship-wam.webp',
     featuredImageAlt:
       'Banner illustration for Monash scholarship WAM requirements — merit and planning theme in amber and gold',
     publishedAt: '2026-05-29',
@@ -485,7 +485,7 @@ export const articles: ArticleData[] = [
     title: 'Failed Unit WAM Impact at Monash (2026 Recovery Guide)',
     description:
       'Failed unit WAM impact at Monash explained: how N grades affect weighted averages, repeat-unit planning, recovery maths, and free calculators to model your next semester.',
-    featuredImage: '/article-images/featured-failed-unit-wam-monash.svg',
+    featuredImage: '/article-images/featured-failed-unit-wam-monash.webp',
     featuredImageAlt:
       'Banner illustration for failed unit WAM impact at Monash — recovery and planning theme in red and orange',
     publishedAt: '2026-05-30',
@@ -586,7 +586,7 @@ export const articles: ArticleData[] = [
     title: 'How to Convert WAM from One University to Another Accurately',
     description:
       'Learn how to convert WAM from one university to another using practical methods, GPA mapping logic, and application-safe reporting tips.',
-    featuredImage: '/article-images/featured-convert-wam.svg',
+    featuredImage: '/article-images/featured-convert-wam.webp',
     featuredImageAlt:
       'Abstract banner illustration for university grade conversion — institutions and pathways theme',
     publishedAt: '2026-05-09',
@@ -638,7 +638,7 @@ export const articles: ArticleData[] = [
     title: 'How to Calculate WAM Correctly: Step-by-Step Weighted Method',
     description:
       'Learn how to calculate WAM with weighted formulas, examples, common mistakes, and practical semester planning techniques.',
-    featuredImage: '/article-images/featured-calculate-wam.svg',
+    featuredImage: '/article-images/featured-calculate-wam.webp',
     featuredImageAlt:
       'Abstract banner illustration for weighted average calculation — formula and weighting theme',
     publishedAt: '2026-05-09',
