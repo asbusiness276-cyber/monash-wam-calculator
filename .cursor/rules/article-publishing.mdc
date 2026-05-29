@@ -1,0 +1,45 @@
+---
+description: Checklist for adding new Monash WAM blog articles with images, SEO, and sitemap
+globs: src/data/articles.ts,src/pages/ArticlePost.tsx,public/sitemap.xml,public/article-images/**
+alwaysApply: false
+---
+
+# New blog article workflow
+
+When adding a blog to `monash-wam-calculator`, follow this exact pattern.
+
+## Featured image (required)
+
+1. Create a **realistic photo-style** banner matching the article topic (16:9, editorial/stock look — not flat SVG gradients).
+2. Save as `public/article-images/featured-{slug}.webp`.
+3. Compress to **1280×720 WebP** (~50–200 KB). Run from repo root:
+   ```bash
+   node scripts/compress-featured-image.mjs featured-{slug}.jpg
+   ```
+   (Pass the source JPG/PNG filename if starting from a generated image.)
+4. Set `featuredImage: '/article-images/featured-{slug}.webp'` in `articles.ts`.
+5. Write `featuredImageAlt` — describe **what is in the photo** (students, laptop, campus, etc.). Never use “banner”, “illustration”, or color-theme-only text.
+6. **Do not** add calculator iframe heroes. Cards and article pages both use `ArticleFeaturedImage` → same file, same alt.
+
+## Article entry (`src/data/articles.ts`)
+
+- Add full entry to `articles` array: slug, keyword, title, description, featuredImage, featuredImageAlt, dates, sections, faqs.
+- Optional `productCatalogId` — omit to auto-match recommendations.
+- Include internal link phrases in body text for existing guides/calculators (max 2 auto-linked per article via `ArticlePost`).
+
+## SEO wiring
+
+1. Add URL to `public/sitemap.xml`:
+   `https://monashwamcalculator.com/articles/{slug}`
+2. If the primary keyword is new, add to `keywordInternalLinks` in `src/pages/ArticlePost.tsx`.
+3. Cross-link from 1–2 related existing articles in paragraph text.
+
+## Do not
+
+- Use `.svg` or multi-MB `.png`/`.jpg` for featured images in production.
+- Use different images on `/articles` cards vs article header.
+- Reintroduce `referenceEmbed` / iframe as the hero image.
+
+## After deploy
+
+- Search Console → URL inspection → Request indexing for the new article URL.

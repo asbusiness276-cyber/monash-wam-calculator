@@ -27,6 +27,17 @@ export interface ArticleData {
 }
 
 /** Every entry in this list automatically gets mobile + desktop product recommendations on publish. */
+/**
+ * NEW ARTICLE CHECKLIST (same pattern for every blog):
+ * 1. Realistic featured photo → compress to public/article-images/featured-{slug}.webp (1280×720)
+ *    node scripts/compress-featured-image.mjs featured-{slug}.jpg
+ * 2. featuredImage + featuredImageAlt (describe the photo; no “banner”/“illustration” wording)
+ * 3. Add entry below (cards + article header share the same image via ArticleFeaturedImage)
+ * 4. Add URL to public/sitemap.xml
+ * 5. Add keyword to keywordInternalLinks in src/pages/ArticlePost.tsx if new
+ * 6. Cross-link from 1–2 related articles in paragraph text
+ * See .cursor/rules/article-publishing.mdc for full workflow.
+ */
 export const articles: ArticleData[] = [
   {
     slug: 'monash-university-australia',
