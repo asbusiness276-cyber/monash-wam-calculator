@@ -84,6 +84,27 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
     }
     canonical.href = canonicalUrl;
 
+    if (canonicalPath === '/') {
+      upsertJsonLd('webapp', {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: 'Monash WAM Calculator',
+        alternateName: ['WAM Calculator', 'Monash WAM calculator', 'WAM calculator Monash'],
+        description:
+          'Free WAM calculator for Monash University students to compute Weighted Average Mark from unit marks and credit points.',
+        url: BASE_URL,
+        applicationCategory: 'EducationalApplication',
+        operatingSystem: 'Any',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'AUD',
+        },
+      });
+    } else {
+      removeJsonLd('webapp');
+    }
+
     upsertJsonLd('webpage', {
       '@context': 'https://schema.org',
       '@type': 'WebPage',

@@ -39,7 +39,42 @@ When adding a blog to `monash-wam-calculator`, follow this exact pattern.
 - Use `.svg` or multi-MB `.png`/`.jpg` for featured images in production.
 - Use different images on `/articles` cards vs article header.
 - Reintroduce `referenceEmbed` / iframe as the hero image.
+- **Repeat a topic or primary keyword** already covered below. Each article must have one distinct search intent.
 
-## After deploy
+## Covered topics (do not duplicate)
+
+Before writing a new article, check this list. If the primary keyword or intent is already taken, pick a different angle from “Future-safe topics” or ask the user.
+
+| Slug | Primary keyword | Unique intent (only this article) |
+|------|-----------------|-----------------------------------|
+| `monash-university-australia` | monash university australia | Campus, courses, rankings, applying — not WAM maths |
+| `what-is-a-good-wam` | what is a good wam | Benchmark bands (HD/D/C/P) — not conversion or honours cutoffs |
+| `how-to-improve-wam-at-monash` | how to improve wam monash | Study strategy, credit-weight planning — not formula |
+| `monash-honours-wam-requirements` | monash honours wam requirements | Honours entry WAM cutoffs — not scholarships or postgrad |
+| `monash-scholarship-wam-requirements` | monash scholarship wam requirements | Scholarship WAM thresholds — not honours or postgrad |
+| `failed-unit-wam-impact-monash` | failed unit wam monash | Fail / near-fail impact and recovery — not general improvement |
+| `monash-wam-vs-gpa-postgraduate` | monash wam vs gpa postgraduate | **Which metric to submit** on postgrad forms — not how to convert |
+| `monash-wam-to-gpa-conversion` | wam to gpa | **How to convert** Monash WAM ↔ GPA bands — not postgrad strategy |
+| `how-to-convert-wam-from-one-university-to-another` | how to convert wam from one university to another | Cross-institution WAM reporting — not Monash GPA bands |
+| `how-to-calculate-wam` | how to calculate wam | Weighted WAM formula and steps — not improvement tips |
+
+**Related pairs (allowed — different intent):**
+- `monash-wam-to-gpa-conversion` vs `monash-wam-vs-gpa-postgraduate` — convert numbers vs choose what to report
+- `how-to-calculate-wam` vs `how-to-improve-wam-at-monash` — maths vs strategy
+- `what-is-a-good-wam` vs honours/scholarship articles — general benchmarks vs specific program cutoffs
+
+## Future-safe topics (not yet published)
+
+Use these before revisiting anything above:
+
+- Find WAM on Monash transcript / Callista
+- Monash dean’s list or faculty excellence awards (WAM criteria)
+- Credit points explained (6 vs 12 cp and WAM weight)
+- Repeat unit / supplementary exam and WAM
+- WAM for internships and graduate employers (non-postgrad)
+- Study abroad / exchange grades and WAM
+- Monash first-year level 0.5 weighting (deep dive — only if not duplicating `how-to-calculate-wam`)
+- GPA to WAM reverse guide (only if clearly different from `monash-wam-to-gpa-conversion`)
+
 
 - Search Console → URL inspection → Request indexing for the new article URL.

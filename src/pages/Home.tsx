@@ -11,6 +11,11 @@ const [homeWtg, homeGtw] = PAGE_KEYWORD_LINKS['/'];
 
 const homeFaqs = [
   {
+    question: 'What is a WAM calculator?',
+    answer:
+      'A WAM calculator is a tool that computes your Weighted Average Mark from unit marks and credit points. Monash WAM Calculator is a free WAM calculator built for Monash University students, with credit-weighted maths and optional WAM to GPA conversion.',
+  },
+  {
     question: 'Is this Monash WAM Calculator official?',
     answer:
       'No, this is an independent educational calculator. It is useful for planning, but official academic outcomes should always be confirmed through your Monash transcript and faculty policies.',
@@ -46,8 +51,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Monash WAM Calculator — Free & Instant (2026)"
-        description="Free Monash WAM calculator: add units, marks & credit points. Instant WAM + WAM to GPA & GPA to WAM. No signup."
+        title="WAM Calculator | Monash WAM Calculator — Free & Instant (2026)"
+        description="Free WAM calculator for Monash University students. Monash WAM Calculator: add units, marks & credit points for instant WAM + WAM to GPA. No signup."
         canonicalPath="/"
         faqItems={homeFaqs}
       />
@@ -60,11 +65,14 @@ export default function Home() {
             <CheckCircle size={14} />
             Free • Instant Results • Mobile Friendly • No Signup Required
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
             Monash WAM Calculator
           </h1>
+          <p className="text-xl md:text-2xl font-semibold text-primary-100 mb-4">
+            Free WAM Calculator for Monash University
+          </p>
           <p className="text-lg text-primary-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Calculate your Monash University Weighted Average Mark (WAM) instantly with our free and accurate WAM calculator. Add your subjects, marks, and credit points to get your real-time WAM score.
+            Use this WAM calculator to compute your Monash Weighted Average Mark instantly — add subjects, marks, and credit points for a real-time WAM score. Trusted by Monash students; no signup required.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
@@ -93,6 +101,30 @@ export default function Home() {
 
       {/* Calculator */}
       <WAMCalculator />
+
+      {/* WAM Calculator — keyword section for SEO + users */}
+      <section id="wam-calculator" className="scroll-mt-20 max-w-3xl mx-auto px-4 pt-4 pb-2">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Why Use This WAM Calculator?
+          </h2>
+          <div className="text-sm leading-relaxed space-y-3 text-gray-600 dark:text-gray-400">
+            <p>
+              Searching for a <strong className="text-gray-800 dark:text-gray-200">WAM calculator</strong> usually means you want a fast, accurate weighted average — not a simple mean of percentages. <strong className="text-gray-800 dark:text-gray-200">Monash WAM Calculator</strong> is built for that: enter each unit&apos;s mark and credit points, and the tool applies Monash-style credit weighting so high-credit subjects count more.
+            </p>
+            <p>
+              Unlike generic calculators, this WAM calculator is tuned for Monash University workflows — honours planning, scholarship targets, and semester tracking. Pair it with our{' '}
+              <a href={absoluteUrl(homeWtg.path)} className={INLINE_LINK_CLASS}>{homeWtg.keyword}</a>
+              {' '}when applications need GPA, or read{' '}
+              <a href={absoluteUrl('/articles/how-to-calculate-wam')} className={INLINE_LINK_CLASS}>how to calculate wam</a>
+              {' '}for the full formula.
+            </p>
+            <p>
+              The calculator runs in your browser, updates as you type, and works on mobile — so you can recalculate after every results release without spreadsheets.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="max-w-3xl mx-auto px-4 -mt-2 mb-2">
         <a

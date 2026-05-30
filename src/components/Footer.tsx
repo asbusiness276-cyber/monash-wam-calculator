@@ -13,7 +13,7 @@ export default function Footer() {
               <span>MonashWAM Calculator</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Free online WAM calculator for Monash University students. Instantly calculate your Weighted Average Mark, convert WAM to GPA, and plan your academic future.
+              <strong className="text-gray-300 font-medium">Monash WAM Calculator</strong> — free online WAM calculator for Monash University students. Instantly calculate your Weighted Average Mark, convert WAM to GPA, and plan your academic future.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
               <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary-900/40 text-primary-300">Free to Use</span>
@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">
               <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Calculators</h3>
               <ul className="space-y-2.5 text-sm">
-                <li><a href="/" className="hover:text-white transition-colors">Monash WAM Calculator</a></li>
+                <li><a href="/" className="hover:text-white transition-colors">WAM Calculator (Monash)</a></li>
                 <li><a href="/wam-to-gpa-calculator" className="hover:text-white transition-colors">WAM to GPA Calculator</a></li>
                 <li><a href="/gpa-to-wam-calculator" className="hover:text-white transition-colors">GPA to WAM Calculator</a></li>
                 <li><a href="/final-grade-calculator" className="hover:text-white transition-colors">Final Grade Calculator</a></li>

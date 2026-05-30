@@ -328,7 +328,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
       <section id="calculator" className="scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">Calculate Your Monash WAM</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">WAM Calculator — Enter Your Marks</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
             Enter your subject marks and credit points below to instantly calculate your Weighted Average Mark (WAM).
           </p>
