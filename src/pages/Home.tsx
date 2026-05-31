@@ -11,6 +11,16 @@ const [homeWtg, homeGtw] = PAGE_KEYWORD_LINKS['/'];
 
 const homeFaqs = [
   {
+    question: 'How is WAM calculated at Monash?',
+    answer:
+      'Monash WAM = sum of (mark × credit points) ÷ sum of credit points, with first-year units weighted at 0.5. Enter each unit in our free Monash WAM calculator for an instant result — verify final numbers on your official transcript.',
+  },
+  {
+    question: 'What is a good WAM at Monash?',
+    answer:
+      'Rough bands: HD 80+, distinction 70–79, credit 60–69, pass 50–59. What counts as good depends on honours, scholarships, and your course — use our calculator to track your WAM against your goals.',
+  },
+  {
     question: 'What is a WAM calculator?',
     answer:
       'A WAM calculator is a tool that computes your Weighted Average Mark from unit marks and credit points. Monash WAM Calculator is a free WAM calculator built for Monash University students, with credit-weighted maths and optional WAM to GPA conversion.',
@@ -51,8 +61,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="WAM Calculator | Monash WAM Calculator — Free & Instant (2026)"
-        description="Free WAM calculator for Monash University students. Monash WAM Calculator: add units, marks & credit points for instant WAM + WAM to GPA. No signup."
+        title="Monash WAM Calculator - Free WAM Calculator Online (2026)"
+        description="Calculate Monash WAM in seconds. Free WAM calculator for Monash students - enter marks & credit points, get instant WAM + HD/D grade. WAM to GPA included. No signup."
         canonicalPath="/"
         faqItems={homeFaqs}
       />
@@ -69,10 +79,10 @@ export default function Home() {
             Monash WAM Calculator
           </h1>
           <p className="text-xl md:text-2xl font-semibold text-primary-100 mb-4">
-            Free WAM Calculator for Monash University
+            Free WAM Calculator — Monash University Students
           </p>
           <p className="text-lg text-primary-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Use this WAM calculator to compute your Monash Weighted Average Mark instantly — add subjects, marks, and credit points for a real-time WAM score. Trusted by Monash students; no signup required.
+            Calculate Monash WAM instantly: add unit marks and credit points, see your weighted average and grade band in seconds. Free WAM calculator with WAM to GPA — no signup.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

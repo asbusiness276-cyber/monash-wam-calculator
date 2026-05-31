@@ -88,16 +88,16 @@ export default function FinalGrade() {
   return (
     <>
       <Seo
-        title="Final Grade Calculator | Monash WAM Calculator"
-        description="Calculate the final exam mark you need to reach your target subject grade. Fast and free final grade planning calculator."
+        title="Monash Final Grade Calculator - Free Exam Mark Planner (2026)"
+        description="Free final grade calculator for Monash students. Find the exam mark you need to hit your target grade - Monash grade calculator for unit & WAM planning."
         canonicalPath="/final-grade-calculator"
         faqItems={finalGradeFaqs}
       />
 
       <section className="bg-gradient-to-br from-sky-700 to-sky-900 text-white py-12 text-center px-4">
-        <h1 className="text-4xl font-bold mb-3">Final Grade Calculator</h1>
+        <h1 className="text-4xl font-bold mb-3">Monash Final Grade Calculator</h1>
         <p className="text-sky-100 max-w-xl mx-auto">
-          Find out exactly what mark you need in your final exam to achieve your target grade.
+          Free grade calculator for Monash students — find exactly what final exam mark you need for your target grade.
         </p>
       </section>
 

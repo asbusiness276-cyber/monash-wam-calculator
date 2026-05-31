@@ -101,8 +101,32 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
           priceCurrency: 'AUD',
         },
       });
+      upsertJsonLd('howto', {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to calculate WAM at Monash',
+        description: 'Use the free Monash WAM calculator to compute your Weighted Average Mark from unit marks and credit points.',
+        step: [
+          {
+            '@type': 'HowToStep',
+            name: 'Add your units',
+            text: 'Enter each unit code, mark (0–100), and credit points.',
+          },
+          {
+            '@type': 'HowToStep',
+            name: 'Check credit weighting',
+            text: 'Higher-credit units affect your WAM more than low-credit electives.',
+          },
+          {
+            '@type': 'HowToStep',
+            name: 'Read your WAM',
+            text: 'The calculator shows your weighted average, grade band (HD/D/C/P), and optional WAM to GPA conversion.',
+          },
+        ],
+      });
     } else {
       removeJsonLd('webapp');
+      removeJsonLd('howto');
     }
 
     upsertJsonLd('webpage', {

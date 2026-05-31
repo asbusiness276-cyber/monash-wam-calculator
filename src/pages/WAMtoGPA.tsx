@@ -9,6 +9,11 @@ const [wamToGpaHome, wamToGpaFinal] = PAGE_KEYWORD_LINKS['/wam-to-gpa-calculator
 
 const wamToGpaFaqs = [
   {
+    question: 'How does WAM to GPA conversion work at Monash?',
+    answer:
+      'Enter your Monash WAM and this WAM to GPA calculator maps it to Monash grade bands (HD, D, C, P) on 4.0 and 7.0 scales. Use it for planning; confirm official GPA on your transcript when available.',
+  },
+  {
     question: 'Is WAM to GPA conversion exact?',
     answer:
       'It is an estimate, not an official conversion. Institutions may apply different mappings, faculty rules, or rounding logic, so you should treat the result as directional guidance.',
@@ -44,8 +49,8 @@ export default function WAMtoGPA() {
   return (
     <>
       <Seo
-        title="WAM to GPA Calculator (Free) | Monash 4.0 & 7.0 Scale"
-        description="Free WAM to GPA calculator for Monash students. Convert WAM to 4.0 and 7.0 GPA instantly — WAM to GPA converter for applications and planning."
+        title="WAM to GPA Calculator - Free Monash WAM to GPA Converter (2026)"
+        description="WAM to GPA conversion in one click. Free WAM to GPA calculator for Monash - convert to 4.0 & 7.0 GPA for scholarships, postgrad & overseas apps. No signup."
         canonicalPath="/wam-to-gpa-calculator"
         faqItems={wamToGpaFaqs}
       />
@@ -53,8 +58,7 @@ export default function WAMtoGPA() {
       <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">WAM to GPA Calculator</h1>
         <p className="text-blue-100 max-w-xl mx-auto">
-          Convert your Monash University WAM to GPA. Supports both 4.0 and 7.0 GPA scales used by Australian and
-          international universities.
+          Free WAM to GPA conversion for Monash University students. Convert WAM to 4.0 and 7.0 GPA scales instantly.
         </p>
         <p className="text-blue-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Need your overall WAM from units first? Use the{' '}
