@@ -221,7 +221,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'Why Credit Points Change Your Strategy',
         paragraphs: [
-          'At Monash, WAM is credit-weighted: a 12-credit unit moves your average more than a 6-credit elective. Improving WAM is therefore partly a portfolio problem — where you place effort matters as much as how many hours you study. List upcoming units by credit points and assessment weight. Prioritise revision blocks for high-credit, high-weight subjects before low-impact tasks that feel urgent but barely move WAM.',
+          'At Monash, WAM is credit-weighted: a 12-credit unit moves your average more than a 6-credit elective. For a full 6 vs 12 cp breakdown, read monash credit points wam. Improving WAM is therefore partly a portfolio problem — where you place effort matters as much as how many hours you study. List upcoming units by credit points and assessment weight. Prioritise revision blocks for high-credit, high-weight subjects before low-impact tasks that feel urgent but barely move WAM.',
           'If you are choosing electives, remember that a strong mark in a large-credit core unit can lift WAM faster than a perfect mark in a tiny breadth. This does not mean ignoring breadth requirements; it means scheduling peak performance when weighting is highest. Pair this planning with how to calculate wam so you always use weighted maths, not a simple average of percentages.',
         ],
       },
@@ -764,7 +764,7 @@ export const articles: ArticleData[] = [
         heading: 'Core Formula and Inputs',
         paragraphs: [
           'If you want to know how to calculate WAM, begin with the weighted formula: sum of (mark multiplied by credit points) divided by total credit points. The formula is simple, but accuracy depends on clean inputs. You need correct unit marks and matching credit values. If either input is wrong, the output can look precise but still be misleading. Reliable calculation starts with reliable data.',
-          'Students often confuse simple average with weighted average. In a simple average, each unit contributes equally. In WAM, higher-credit units contribute more than lower-credit units. This is why weighting can change your result meaningfully, especially when your strongest or weakest unit has higher credits. Always apply weighting, not plain averaging, when calculating WAM.',
+          'Students often confuse simple average with weighted average. In a simple average, each unit contributes equally. In WAM, higher-credit units contribute more than lower-credit units. See monash credit points wam for how 6 cp and 12 cp units change your result differently. Always apply weighting, not plain averaging, when calculating WAM.',
         ],
       },
       {
@@ -1001,6 +1001,109 @@ export const articles: ArticleData[] = [
         question: 'When should I use the Monash WAM calculator after checking WES?',
         answer:
           'Use it to model future semesters, verify manual maths, or plan targets — after copying confirmed marks from WES or your transcript.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-credit-points-wam-explained',
+    keyword: 'monash credit points wam',
+    productCatalogId: 4,
+    title: 'Monash Credit Points & WAM: 6 vs 12 cp Explained (2026)',
+    description:
+      'How Monash credit points affect WAM: why 12 cp units move your average more than 6 cp, worked examples, and free calculator planning for electives and core subjects.',
+    featuredImage: '/article-images/featured-monash-credit-points-wam.webp',
+    featuredImageAlt:
+      'Student reviewing unit credit points and marks in a notebook beside a laptop at a university study desk',
+    publishedAt: '2026-06-02',
+    updatedAt: '2026-06-02',
+    sections: [
+      {
+        heading: 'Why Credit Points Matter for Monash WAM',
+        paragraphs: [
+          'Students who search monash credit points wam usually hit the same wall: two units can both be “distinction” level, yet one shifts their Weighted Average Mark far more than the other. The reason is credit weighting. Monash WAM is not a simple average of percentages — each unit mark is multiplied by that unit’s credit points (and, for first-year undergraduate units, an additional level weighting of 0.5). More credit points mean more influence on your final WAM.',
+          'Credit points reflect academic load. A standard full-time undergraduate semester is often 24 credit points total. Units commonly appear as 6 cp (typical single-semester subject) or 12 cp (double-weight or full-year style load), and some cores — especially in later years — can be 12 cp or even higher. When you enter marks in the Monash WAM calculator, getting credit points wrong is one of the fastest ways to produce a misleading WAM.',
+        ],
+      },
+      {
+        heading: '6 Credit Points vs 12 Credit Points — What Changes',
+        paragraphs: [
+          'At the same year level, a 12 cp unit counts twice as much as a 6 cp unit in the weighted sum. Example: 70% in a 6 cp unit contributes 70 × 6 = 420 weighted mark points; 70% in a 12 cp unit contributes 70 × 12 = 840 — double the pull on WAM.',
+          'That does not mean 12 cp units are “harder” in the calculator — it means they carry twice the weight in the average. A strong HD in a 12 cp core can lift WAM noticeably in one semester. A weak pass in the same-sized unit can drag WAM down just as hard. This is why how to improve wam at monash emphasises prioritising high-credit, high-weight subjects before low-impact electives.',
+          'Check each unit’s credit value on WES, your monash wam transcript, or the handbook — do not assume every subject is 6 cp. Mixed portfolios (several 6 cp plus one 12 cp) are normal; the calculator needs each row accurate.',
+        ],
+      },
+      {
+        heading: 'Worked Example: Same Mark, Different Credit Points',
+        paragraphs: [
+          'Imagine two units at the same year level (level weight 1.0): Unit A scores 68 (credit) with 6 cp; Unit B scores 68 with 12 cp. Unit A contributes 408 weighted mark points; Unit B contributes 816. If those were your only two units, WAM would be 68% either way — but add a third 6 cp unit at 90 (HD) and the story changes.',
+          'With Unit A (6 cp, 68) + Unit C (6 cp, 90): total weighted marks = 408 + 540 = 948; total cp = 12; WAM = 79. With Unit B (12 cp, 68) + Unit C (6 cp, 90): weighted marks = 816 + 540 = 1356; total cp = 18; WAM ≈ 75.3. The larger 12 cp unit at 68 pulled the average down more than the 6 cp unit at the same mark because it had double weight.',
+          'Run your own numbers in the Monash WAM calculator — swap 6 cp and 12 cp on identical marks to see impact. For the full Monash formula including first-year 0.5 weighting, read how to calculate wam.',
+        ],
+      },
+      {
+        heading: 'First-Year Units Still Use 0.5 Level Weighting',
+        paragraphs: [
+          'Monash applies a year-level multiplier on top of credit points: first-year undergraduate units use 0.5; all other levels use 1.0. So a first-year 12 cp unit is not identical to a second-year 12 cp unit in WAM maths — the first-year row is discounted in the level weighting even if credit points look large on your enrolment.',
+          'Official Monash example: a first-year HD (80) in a 12 cp unit contributes weighted mark 480 and weighted credit 6 (12 × 0.5), not 12. A second-year 24 cp HD (96) contributes weighted mark 2304 and weighted credit 24. Credit points and level weighting work together — this article focuses on credit-point strategy; the level rule is why transcript WAM can differ from a naive average.',
+          'When planning electives, confirm both credit points and whether the unit is classified first-year in Monash systems before assuming full weight.',
+        ],
+      },
+      {
+        heading: 'Planning Strategy: Where Credit Points Should Guide Effort',
+        paragraphs: [
+          'List upcoming units by credit points descending. Put revision and assignment quality peaks on the largest cp rows still open in the semester. A distinction in a 12 cp core usually beats a high distinction in a 6 cp breadth for WAM movement — not because grades differ, but because weight differs.',
+          'When choosing electives, breadth requirements still matter for graduation — this is not advice to ignore them. It is advice to schedule peak performance when cp load is highest. Pair scheduling with what is a good wam so you know whether you are protecting a scholarship band or pushing for honours.',
+          'After results release, copy official marks and cp from WES into the Monash WAM calculator and note which units moved WAM most — those are the units to protect next semester.',
+        ],
+      },
+      {
+        heading: 'Common Credit-Point Mistakes in WAM Calculators',
+        paragraphs: [
+          'Entering 6 cp for every unit when one subject is 12 cp — instantly skews WAM.',
+          'Using planned cp from the handbook instead of enrolled cp if you study a variant or split unit.',
+          'Mixing semester halves of a 12 cp unit incorrectly (enter one final mark for the full cp once completed, not half twice unless policy treats them as separate rows on your transcript).',
+          'Ignoring failed 6 cp vs 12 cp fails — a fail in a large cp unit hurts more; see failed unit wam monash for recovery framing.',
+          'Forgetting first-year 0.5 weight on top of cp when comparing to friends at other year levels — compare weighted outcomes, not raw marks alone.',
+        ],
+      },
+      {
+        heading: 'Tools and Next Steps',
+        paragraphs: [
+          'Workflow: confirm cp on monash wam transcript or WES → enter all units in the Monash WAM calculator → read how to calculate wam if numbers disagree with WES → use how to improve wam at monash to plan effort on high-cp finals → convert for forms with wam to gpa if needed.',
+          'Credit points are the silent lever in Monash WAM. Once you track them explicitly, semester planning becomes clearer — you know which exam is worth the most to your average before swot week starts.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Do 12 credit point units affect WAM more than 6 cp units?',
+        answer:
+          'Yes, at the same year level. WAM weights each mark by credit points, so 12 cp has twice the influence of 6 cp unless first-year 0.5 level weighting applies.',
+      },
+      {
+        question: 'How many credit points is a full-time Monash semester?',
+        answer:
+          'Many undergraduate students enrol in 24 credit points per semester, often as four 6 cp units or a mix including 12 cp subjects — confirm your faculty load rules.',
+      },
+      {
+        question: 'Where do I find credit points for each unit?',
+        answer:
+          'Check WES, your academic transcript, or the unit entry in the Monash handbook for the enrolled credit point value.',
+      },
+      {
+        question: 'Can a 6 cp HD lift WAM more than a 12 cp pass?',
+        answer:
+          'Sometimes on small totals, but usually strong performance in higher-cp units moves WAM more because weighting multiplies the mark contribution.',
+      },
+      {
+        question: 'Does the Monash WAM calculator use credit points correctly?',
+        answer:
+          'Yes — enter each unit’s mark and credit points. The tool applies credit-weighted averaging; verify inputs against WES for official planning.',
+      },
+      {
+        question: 'How do first-year units differ if they are 12 cp?',
+        answer:
+          'Monash still applies 0.5 year-level weighting to first-year undergraduate units, so effective weighted credit is half the nominal cp in the official WAM formula.',
       },
     ],
   },
