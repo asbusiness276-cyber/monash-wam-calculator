@@ -23,6 +23,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'wam to gpa', href: '/articles/monash-wam-to-gpa-conversion' },
   { keyword: 'WAM to GPA calculator', href: '/wam-to-gpa-calculator' },
   { keyword: 'final grade calculator', href: '/final-grade-calculator' },
+  { keyword: 'monash wam transcript', href: '/articles/how-to-find-wam-on-monash-transcript' },
   { keyword: 'Monash WAM calculator', href: '/' },
   { keyword: 'how to convert wam from one university to another', href: '/articles/how-to-convert-wam-from-one-university-to-another' },
 ];

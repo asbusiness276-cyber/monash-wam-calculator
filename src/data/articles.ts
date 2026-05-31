@@ -215,7 +215,7 @@ export const articles: ArticleData[] = [
         heading: 'Start With a Clear Target, Not a Vague Goal',
         paragraphs: [
           'Students who search how to improve wam monash usually already know their number feels too low for honours, scholarships, or graduate entry. The first step is not studying harder at random — it is defining what “better” means for your faculty and timeline. Read what is a good wam to see typical HD, distinction, and credit bands, then choose one realistic target for this semester and one stretch target for next year.',
-          'Write down your current weighted average using the Monash WAM calculator with official marks only. Label projected units separately so you do not confuse hope with fact. If you are also preparing overseas applications, run the WAM to GPA calculator after you confirm WAM so you report consistent figures. A clear baseline makes every later decision measurable.',
+          'Write down your current weighted average using the Monash WAM calculator with official marks only — copy unit marks from WES or your monash wam transcript first. Label projected units separately so you do not confuse hope with fact. If you are also preparing overseas applications, run the WAM to GPA calculator after you confirm WAM so you report consistent figures. A clear baseline makes every later decision measurable.',
         ],
       },
       {
@@ -780,7 +780,7 @@ export const articles: ArticleData[] = [
         paragraphs: [
           'Frequent mistakes include mixing confirmed and estimated marks without labels, using incorrect credit values, forgetting failed units where policy includes them, and copying old data after grade updates. To avoid this, maintain one updated table per semester and clearly mark whether each value is official or projected.',
           'Another mistake is recalculating too late. If you only calculate at semester end, you lose the chance to improve strategy while assessments remain. Better approach: update after every major release. This keeps your trajectory visible and helps you decide where study effort should go next.',
-          'Students also underuse internal linking between planning tools. WAM alone tells current standing, but not always what to do next. Pair WAM with final grade target planning and conversion tools so you can move from measurement to action.',
+          'Students also underuse internal linking between planning tools. WAM alone tells current standing, but not always what to do next. Pair WAM with final grade target planning and conversion tools so you can move from measurement to action. Before you calculate, confirm marks from your monash wam transcript in WES or your official record so inputs match Monash systems.',
         ],
       },
       {
@@ -897,6 +897,110 @@ export const articles: ArticleData[] = [
         question: 'Why is my WAM higher than my GPA suggests?',
         answer:
           'WAM reflects actual marks and can be pulled up by high percentages inside a grade band. GPA assigns the same point value to all marks within a band, so HD at 81 and HD at 99 both count as 4.0 — which can lower GPA relative to a strong WAM built from high distinction marks.',
+      },
+    ],
+  },
+  {
+    slug: 'how-to-find-wam-on-monash-transcript',
+    keyword: 'monash wam transcript',
+    productCatalogId: 4,
+    title: 'How to Find Your WAM on Monash Transcript & WES (2026)',
+    description:
+      'Find WAM on Monash transcript, WES, and Student Portal: step-by-step guide to unofficial records, official transcripts, and verifying marks with our free calculator.',
+    featuredImage: '/article-images/featured-how-to-find-wam-on-monash-transcript.webp',
+    featuredImageAlt:
+      'Student viewing an academic transcript and student portal grades on a laptop at a study desk',
+    publishedAt: '2026-06-01',
+    updatedAt: '2026-06-01',
+    sections: [
+      {
+        heading: 'Where Monash Shows Your WAM (Quick Answer)',
+        paragraphs: [
+          'Students searching monash wam transcript usually want one number fast — but Monash publishes WAM in more than one place. Your latest official-style figure appears on your unofficial academic record in the Web Enrolment System (WES), on the Monash Student Portal course progress screen, and on your formal academic record (transcript). Unit-level marks live in WES results; the headline WAM and GPA summaries sit on progress views and transcripts.',
+          'Important clarification: Callista is Monash’s backend student management system used by staff — not a portal students log into to view WAM. If someone says “check Callista,” they usually mean WES or the Student Portal. This guide uses Monash’s current student-facing paths; always confirm the latest menu labels on the official Monash student site if layouts change.',
+        ],
+      },
+      {
+        heading: 'Step 1 — Check WAM in WES (Unofficial Academic Record)',
+        paragraphs: [
+          'The fastest way to see your cumulative WAM during your degree is through WES (Web Enrolment System). Log in via my.monash, open WES, and navigate to your exam/results area — Monash lists “view your latest WAM in your unofficial academic record” from the results section. That record aggregates completed semesters and shows your WAM to three decimal places alongside GPA where applicable.',
+          'Use WES when you need an official Monash-calculated WAM after results release — for example before scholarship forms, honours expressions of interest, or semester planning. Screenshot or note the date you checked; WAM updates when new results are certified, not when you receive provisional marks in every unit.',
+          'WES also shows individual unit marks and grades. Copy those into the Monash WAM calculator on this site if you want to sanity-check the headline WAM, model projected units, or test what-if scenarios before results are final. For the weighted formula Monash uses, read how to calculate wam — especially first-year 0.5 level weighting, which differs from a plain credit average.',
+        ],
+      },
+      {
+        heading: 'Step 2 — Student Portal (Course Progress & GPA/WAM Widget)',
+        paragraphs: [
+          'Monash also displays WAM through the Student Portal (profile.student.monash — course progress). Look for the course progress screen or the GPA/WAM widget. This is useful on mobile when you want a quick glance without downloading documents.',
+          'Treat Student Portal and WES as complementary checks. If both show the same WAM after results release, you can confidently use that number on planning forms. If they differ temporarily, wait until all results are certified or contact Monash via their virtual assistant enquiry path listed on the official WAM page — do not guess.',
+          'After confirming WAM, benchmark it with what is a good wam if you are comparing against honours or scholarship bands, or follow how to improve wam at monash if you need a structured lift next semester.',
+        ],
+      },
+      {
+        heading: 'Step 3 — Official Academic Record (Transcript)',
+        paragraphs: [
+          'Your formal academic record (transcript) includes WAM for award courses where Monash calculates it (generally if you commenced on or after semester 1, 2008). Graduates receive a free digital transcript; currently enrolled students can order a paid digital transcript through WES, delivered via My eQuals. Hard copies can also be ordered for mail delivery.',
+          'Transcripts are what employers, other universities, and credential evaluators expect. Use transcript WAM on formal applications. Use WES or the Monash WAM calculator for interim planning while you are still completing units — calculator outputs are estimates until certified on your record.',
+          'Monash does not calculate WAM for Masters by Research and PhD courses in the same way — check your faculty guidance if you are in a research-only pathway. Coursework students should see WAM on transcript once enough completed units are recorded.',
+        ],
+      },
+      {
+        heading: 'What Appears on Your Transcript Besides WAM',
+        paragraphs: [
+          'A Monash academic record lists unit codes, marks, grades, credit points, and cumulative WAM/GPA summaries. Failed units and repeated attempts are included in WAM unless excluded by specific grade categories (for example some withdrawn or not-assessed codes). If a fail appears on your transcript, read failed unit wam monash for recovery planning — the headline WAM on your record already reflects those units.',
+          'GPA may appear alongside WAM. They are related but calculated differently: WAM uses percentage marks with level weighting; GPA maps letter grades to point values. For conversion planning, use wam to gpa after you copy your transcript WAM — not the other way around unless a form specifies GPA only.',
+          'Some grades are excluded from WAM calculations (for example certain withdrawn, not assessed, or faculty-requirement codes). If a unit looks missing from WAM maths, check Monash’s published exclusion list on the official WAM methodology page before assuming an error.',
+        ],
+      },
+      {
+        heading: 'Verify WAM Before You Submit Forms',
+        paragraphs: [
+          'Workflow students use successfully: (1) read WAM from WES unofficial record or transcript; (2) export or note unit marks + credit points; (3) enter confirmed data in the Monash WAM calculator and compare to the headline WAM — small rounding differences can occur, large gaps mean a data or policy issue; (4) label any projected units separately if you are forecasting; (5) submit only transcript or WES-backed WAM on official forms.',
+          'If you believe WAM is incorrect, Monash directs students to log into their virtual assistant and submit an enquiry rather than relying on third-party tools. Independent calculators on this site support planning only.',
+          'For postgraduate or international forms that ask for GPA, read monash wam vs gpa postgraduate to decide whether to lead with transcript WAM, transcript GPA, or both with a short note.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes When Finding WAM',
+        paragraphs: [
+          'Checking too early: provisional marks in one unit do not always update cumulative WAM immediately. Wait until results are certified across units.',
+          'Using a simple average of marks instead of Monash weighting — first-year units count at 0.5 level weight; high-credit units matter more within each level band.',
+          'Searching “Callista login” as a student — use WES and Student Portal instead.',
+          'Submitting calculator estimates where transcript WAM is required — always prefer Monash-issued numbers for official documents.',
+          'Ignoring failed or repeated units when manually recalculating — Monash includes them in WAM unless a specific grade code excludes them.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Where can I see my WAM at Monash?',
+        answer:
+          'View it in WES via your unofficial academic record (results area), on the Student Portal course progress screen or GPA/WAM widget, and on your official academic transcript.',
+      },
+      {
+        question: 'Is Callista where Monash students check WAM?',
+        answer:
+          'No. Callista is a staff system. Students use WES, the Student Portal, and official transcripts — not Callista directly.',
+      },
+      {
+        question: 'Does my transcript show WAM and GPA?',
+        answer:
+          'Most coursework award students who commenced from 2008 onward see WAM on their academic record. GPA may also appear. Research-only pathways may differ.',
+      },
+      {
+        question: 'How do I get an official Monash transcript?',
+        answer:
+          'Order a digital transcript through WES (My eQuals delivery) or a hard copy via WES mail options. Graduates receive a free digital record.',
+      },
+      {
+        question: 'Why does my calculator WAM differ from WES?',
+        answer:
+          'Usually input differences — wrong credit points, projected marks mixed with final marks, or missing failed units. Re-enter official transcript data only.',
+      },
+      {
+        question: 'When should I use the Monash WAM calculator after checking WES?',
+        answer:
+          'Use it to model future semesters, verify manual maths, or plan targets — after copying confirmed marks from WES or your transcript.',
       },
     ],
   },
