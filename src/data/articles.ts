@@ -228,7 +228,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'Use High-Impact Assessments and Exam Planning',
         paragraphs: [
-          'Most WAM movement comes from a small number of assessments: final exams, major projects, and heavily weighted mid-semester tasks. Map each subject’s breakdown early in the semester. For any subject where the final exam dominates, use the final grade calculator to work backwards from your target — for example, what exam mark you need if coursework is already 68%.',
+          'Most WAM movement comes from a small number of assessments: final exams, major projects, and heavily weighted mid-semester tasks. Map each subject’s breakdown early in the semester. For any subject where the final exam dominates, use the final grade calculator to work backwards from your target — for example, what exam mark you need if coursework is already 68%. For a full Monash exam-mark guide with HD/D examples, read grade calculator monash on this site.',
           'After each marked task, update your Monash WAM calculator and note which subjects still have enough remaining weight to recover. If one unit is mathematically unlikely to reach your goal, shift effort to units where a distinction or high distinction is still achievable. Recovery planning beats spreading thin effort across lost causes.',
           'Exam technique matters at Monash scale: practice timed conditions, review marking criteria, and fix recurring errors (misread questions, incomplete working, weak structure). Students often gain one grade band in high-weight finals through process fixes alone — clearer layouts in STEM, rubric-aligned introductions in essays, and checklist reviews before submission.',
         ],
@@ -1104,6 +1104,116 @@ export const articles: ArticleData[] = [
         question: 'How do first-year units differ if they are 12 cp?',
         answer:
           'Monash still applies 0.5 year-level weighting to first-year undergraduate units, so effective weighted credit is half the nominal cp in the official WAM formula.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-final-exam-mark-calculator-guide',
+    keyword: 'grade calculator monash',
+    productCatalogId: 4,
+    title: 'How Much Do You Need on Your Final Exam at Monash? (2026)',
+    description:
+      'Monash grade calculator guide: find the final exam mark you need for HD, D, C, or P. Free final grade calculator with worked examples and WAM planning tips.',
+    featuredImage: '/article-images/featured-monash-final-exam-mark-calculator.webp',
+    featuredImageAlt:
+      'Student preparing for final exams with laptop, calculator, and study notes on a desk',
+    publishedAt: '2026-06-03',
+    updatedAt: '2026-06-03',
+    sections: [
+      {
+        heading: 'Why Monash Students Search a Grade Calculator Before Finals',
+        paragraphs: [
+          'If you are looking for a grade calculator monash students use before swot week, you usually have one question: what final exam mark do I actually need? Coursework is partly done, the exam weight is published in the unit guide, and you want to know whether HD (80+), distinction (70+), or just passing is still realistic. Guessing wastes revision time; a two-minute calculation tells you where to aim.',
+          'This guide explains the maths Monash-style units use, walks through worked examples, and points you to the free final grade calculator on this site. After you know your unit target, use the Monash WAM calculator to see how that subject result affects your overall Weighted Average Mark across the semester.',
+        ],
+      },
+      {
+        heading: 'The Formula: Final Exam Mark Required',
+        paragraphs: [
+          'Most Monash units split assessment between coursework (assignments, tests, participation) and a final exam or final assessment. If coursework is worth Wc% and your average on completed work is C%, and the final is worth Wf%, then to reach an overall target T% you need final exam mark F where: T = C × (Wc/100) + F × (Wf/100). Rearranged: F = (T − C × Wc/100) ÷ (Wf/100).',
+          'Example: coursework 65% on 40% weight, exam 60% weight, target distinction 70% overall. F = (70 − 65×0.4) ÷ 0.6 = (70 − 26) ÷ 0.6 ≈ 73.3%. You need about 73% on the final — tough but achievable. Enter the same numbers in the final grade calculator to verify instantly.',
+          'If the result is above 100%, the target is not mathematically possible with current coursework — adjust expectations or speak with your unit coordinator. If negative, coursework already secures the target and any reasonable exam mark keeps you there.',
+        ],
+      },
+      {
+        heading: 'Monash Grade Bands — What to Target',
+        paragraphs: [
+          'Monash standard grades map to percentage bands: High Distinction (HD) 80–100, Distinction (D) 70–79, Credit (C) 60–69, Pass (P) 50–59, Fail below 50. When using a grade calculator monash workflow, set your target to the band floor you need — 80 for HD, 70 for D, 60 for C, 50 for P — unless you need a specific WAM number for scholarships or honours.',
+          'Borderline targets matter: 79 vs 80 changes the letter grade but may barely move WAM in a 6 cp elective; in a 12 cp core, one band can shift your semester average noticeably. See monash credit points wam for why unit weight matters alongside exam targets.',
+          'For overall WAM benchmarks, read what is a good wam before you chase HD in every subject — sometimes securing D in one unit while maxing a high-credit core is smarter for honours planning.',
+        ],
+      },
+      {
+        heading: 'Worked Example 1 — Chasing HD (80)',
+        paragraphs: [
+          'Unit: coursework average 72% on 50% weight; final exam 50% weight; target HD 80%. F = (80 − 72×0.5) ÷ 0.5 = (80 − 36) ÷ 0.5 = 88%. You need 88% on the final — plan intensive revision or consider whether distinction (70) is a safer target at 56% required on the exam.',
+          'Run both scenarios in the final grade calculator. Many students feel less anxious after seeing that a distinction target needs a realistic mark while HD needs a stretch goal — revision can then match the honest target.',
+        ],
+      },
+      {
+        heading: 'Worked Example 2 — Protecting Pass After Weak Coursework',
+        paragraphs: [
+          'Unit: coursework 48% on 60% weight; final 40% weight; target pass 50%. F = (50 − 48×0.6) ÷ 0.4 = (50 − 28.8) ÷ 0.4 = 53%. You need 53% on the final to reach 50 overall — not easy after weak coursework, but clearer than panic-studying without numbers.',
+          'If pass is not achievable, check Monash supplementary assessment rules early. A fail affects WAM — read failed unit wam monash for context. Before results release, model recovery in remaining units with how to improve wam at monash and update the Monash WAM calculator after official marks land.',
+        ],
+      },
+      {
+        heading: 'When Unit Weightings Are Not Simple 40/60',
+        paragraphs: [
+          'Some faculties use multiple components: mid-semester test, project, exam, hurdle tasks. Combine all non-final work into one coursework percentage and weight, or calculate step-by-step if the unit guide lists separate buckets. The final grade calculator expects total coursework weight plus exam weight to sum to 100%.',
+          'Hurdle requirements (must pass exam to pass unit) are policy rules the calculator cannot enforce — even if overall math shows 65%, failing an exam hurdle still fails the unit. Always read the official unit guide alongside calculator output.',
+          'After each marked task, update coursework average and re-run the calculator. Targets move — a strong project week can drop required exam mark significantly.',
+        ],
+      },
+      {
+        heading: 'From Unit Target to Overall WAM',
+        paragraphs: [
+          'One subject result feeds your transcript WAM, not just the letter grade. After finals, enter all unit marks and credit points in the Monash WAM calculator. If you are planning before results, label projected marks clearly and run conservative vs target scenarios.',
+          'Pair unit-level planning with semester strategy: use final grade calculator per high-weight subject, then WAM calculator for cumulative impact. Copy official marks from WES using monash wam transcript steps when verifying.',
+          'Recommended flow: final grade calculator (each unit) → Monash WAM calculator (semester) → what is a good wam (benchmark) → wam to gpa if applications need GPA.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes',
+        paragraphs: [
+          'Using hoped-for coursework marks instead of confirmed averages from Moodle or feedback.',
+          'Forgetting that weights must total 100% — double-check the unit guide.',
+          'Targeting HD when pass protects progression — match effort to stakes and credit points.',
+          'Ignoring how one unit feeds WAM while obsessing over letter grade only.',
+          'Calculating once at start of semester and never updating after mid-semester results.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do I calculate what I need on my Monash final exam?',
+        answer:
+          'Use F = (target − coursework×coursework weight) ÷ exam weight. The free final grade calculator on this site does this automatically when you enter current mark, weights, and target.',
+      },
+      {
+        question: 'What exam mark do I need for HD at Monash?',
+        answer:
+          'Set target 80 in the calculator with your confirmed coursework average and exam weight. Required mark varies — strong coursework lowers the exam mark needed; weak coursework raises it.',
+      },
+      {
+        question: 'Is there an official Monash grade calculator?',
+        answer:
+          'Monash publishes official WAM and GPA calculators on the student site. This independent final grade calculator helps with per-unit exam targets before you check official results in WES.',
+      },
+      {
+        question: 'What if I need more than 100% on the exam?',
+        answer:
+          'Your target overall grade is not achievable with current coursework. Consider a lower band target, special consideration if eligible, or course advice from your faculty.',
+      },
+      {
+        question: 'Does this grade calculator update my WAM?',
+        answer:
+          'No — it calculates one unit’s required exam mark. Enter projected or final unit results into the Monash WAM calculator to see overall WAM impact.',
+      },
+      {
+        question: 'When should I recalculate before finals?',
+        answer:
+          'After every major assessment release and again the week before the exam when coursework marks are final. Updated inputs give reliable targets.',
       },
     ],
   },

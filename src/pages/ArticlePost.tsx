@@ -22,6 +22,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'monash wam vs gpa postgraduate', href: '/articles/monash-wam-vs-gpa-postgraduate' },
   { keyword: 'wam to gpa', href: '/articles/monash-wam-to-gpa-conversion' },
   { keyword: 'WAM to GPA calculator', href: '/wam-to-gpa-calculator' },
+  { keyword: 'grade calculator monash', href: '/articles/monash-final-exam-mark-calculator-guide' },
   { keyword: 'final grade calculator', href: '/final-grade-calculator' },
   { keyword: 'monash credit points wam', href: '/articles/monash-credit-points-wam-explained' },
   { keyword: 'monash wam transcript', href: '/articles/how-to-find-wam-on-monash-transcript' },
