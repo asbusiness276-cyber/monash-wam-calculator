@@ -33,7 +33,7 @@ const homeFaqs = [
   {
     question: 'How accurate is the WAM result?',
     answer:
-      'Accuracy depends on your inputs. Credit-weighted marks usually match closely, but official Monash WAM also uses first-year 0.5 level weighting and may exclude some grade codes. Always verify on WES or your transcript.',
+      'With correct marks, credit points, and year levels, official Monash WAM (0.5 weighting for Year 1) should be close to WES. Special grade codes or exclusions may still differ — always verify on your transcript.',
   },
   {
     question: 'Can I include ongoing units?',
@@ -204,19 +204,25 @@ export default function Home() {
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How is Monash WAM Calculated?</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">
-            Monash University calculates WAM using credit-weighted marks. Each unit mark is multiplied by credit points
-            (and for official WAM, first-year undergraduate units also use a 0.5 year-level weight). This calculator uses
-            credit-weighted maths for fast planning — confirm your official WAM on WES or your transcript.
+            Monash official WAM multiplies each unit by credit points and year-level weight (Year 1 = 0.5, Year 2+ = 1.0).
+            Our calculator shows both official Monash WAM and a simpler planning WAM so you can compare scenarios and
+            verify against WES.
           </p>
 
-          <div className="bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-xl p-4 mb-6 text-center">
-            <p className="text-sm text-primary-700 dark:text-primary-300 font-medium mb-1">Planning formula (credit-weighted)</p>
-            <p className="font-mono text-primary-800 dark:text-primary-200 text-base font-bold">
-              WAM = &Sigma;(Mark &times; Credit Points) &divide; &Sigma;(Credit Points)
-            </p>
-            <p className="text-xs text-primary-600 dark:text-primary-400 mt-2">
-              Official Monash WAM also applies 0.5 weighting to first-year units.
-            </p>
+          <div className="space-y-3 mb-6">
+            <div className="bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-xl p-4 text-center">
+              <p className="text-sm text-primary-700 dark:text-primary-300 font-medium mb-1">Official Monash WAM</p>
+              <p className="font-mono text-primary-800 dark:text-primary-200 text-sm font-bold leading-relaxed">
+                &Sigma;(Mark &times; CP &times; Year weight) &divide; &Sigma;(CP &times; Year weight)
+              </p>
+              <p className="text-xs text-primary-600 dark:text-primary-400 mt-2">Year 1 weight = 0.5 · Year 2+ = 1.0</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900/40 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center">
+              <p className="text-sm text-gray-700 dark:text-gray-300 font-medium mb-1">Planning WAM (simple)</p>
+              <p className="font-mono text-gray-800 dark:text-gray-200 text-sm font-bold">
+                &Sigma;(Mark &times; Credit Points) &divide; &Sigma;(Credit Points)
+              </p>
+            </div>
           </div>
 
           <h3 className="font-semibold text-gray-700 dark:text-gray-300 text-sm mb-3">Example Calculation</h3>

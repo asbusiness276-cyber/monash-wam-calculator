@@ -40,6 +40,31 @@ function mapGpaToMonashBand(gpa, scaleMax) {
   return thresholds.find(e => gpa >= e.min)?.grade ?? null;
 }
 
+function getMonashYearLevelWeight(yearLevel) {
+  return yearLevel === 1 ? 0.5 : 1.0;
+}
+
+function inferMonashYearLevelFromUnitCode(unitCode) {
+  const match = unitCode.trim().match(/\d+/);
+  if (!match) return null;
+  const firstDigit = Number.parseInt(match[0][0] ?? '', 10);
+  if (Number.isNaN(firstDigit) || firstDigit < 1) return null;
+  return firstDigit;
+}
+
+function calculateMonashOfficialWam(units) {
+  let weightedMarks = 0;
+  let weightedCredits = 0;
+  for (const unit of units) {
+    if (Number.isNaN(unit.mark) || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
+    const levelWeight = getMonashYearLevelWeight(unit.yearLevel);
+    weightedMarks += unit.mark * unit.credits * levelWeight;
+    weightedCredits += unit.credits * levelWeight;
+  }
+  if (weightedCredits === 0) return null;
+  return Math.round((weightedMarks / weightedCredits) * 100) / 100;
+}
+
 function calculateCreditWeightedWam(units) {
   let weighted = 0;
   let credits = 0;
@@ -176,6 +201,39 @@ test('Repeat: both attempts count in WAM', () => {
 test('Breakeven repeat mark vs supplementary pass', () => {
   const mark = calculateBreakevenRepeatMark(68.25, 24, 6, 48);
   assert(mark === 70.75, `expected 70.75, got ${mark}`);
+});
+
+test('Year level inference from unit code', () => {
+  assert(inferMonashYearLevelFromUnitCode('FIT1045') === 1, 'FIT1045 = year 1');
+  assert(inferMonashYearLevelFromUnitCode('ENG2005') === 2, 'ENG2005 = year 2');
+});
+
+test('Official WAM: year 1 counts at half weight', () => {
+  const official = calculateMonashOfficialWam([
+    { mark: 60, credits: 6, yearLevel: 1 },
+    { mark: 90, credits: 6, yearLevel: 2 },
+  ]);
+  const planning = calculateCreditWeightedWam([
+    { mark: 60, credits: 6 },
+    { mark: 90, credits: 6 },
+  ]);
+  assert(official === 80, `expected official 80, got ${official}`);
+  assert(planning === 75, `expected planning 75, got ${planning}`);
+});
+
+test('Official WAM: Monash published example (incl. withdrawn fail credits)', () => {
+  const wam = calculateMonashOfficialWam([
+    { mark: 63, credits: 6, yearLevel: 1 },
+    { mark: 80, credits: 12, yearLevel: 1 },
+    { mark: 40, credits: 6, yearLevel: 1 },
+    { mark: 85, credits: 6, yearLevel: 1 },
+    { mark: 96, credits: 24, yearLevel: 2 },
+    { mark: 0, credits: 6, yearLevel: 2 },
+    { mark: 65, credits: 6, yearLevel: 3 },
+    { mark: 77, credits: 6, yearLevel: 3 },
+    { mark: 82, credits: 6, yearLevel: 4 },
+  ]);
+  assert(wam === 74.48, `expected 74.48, got ${wam}`);
 });
 
 console.log(`\n${passed} tests passed`);

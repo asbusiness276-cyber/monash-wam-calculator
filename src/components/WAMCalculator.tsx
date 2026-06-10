@@ -3,6 +3,12 @@ import { Plus, Trash2, RotateCcw, Copy, Check, TrendingUp } from 'lucide-react';
 import ProductPopup from './ProductPopup';
 import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
 import { unitSubjectCatalog } from '../data/unitSubjectCatalog';
+import {
+  calculateCreditWeightedWam,
+  calculateMonashOfficialWam,
+  getMonashGradeFromMark,
+  inferMonashYearLevelFromUnitCode,
+} from '../utils/monashGrades';
 
 interface Subject {
   id: number;
@@ -10,6 +16,7 @@ interface Subject {
   subject: string;
   mark: string;
   credits: string;
+  yearLevel: string;
 }
 
 interface SuggestionState {
@@ -20,7 +27,8 @@ interface SuggestionState {
 }
 
 interface WAMResult {
-  wam: number;
+  officialWam: number;
+  planningWam: number;
   totalCredits: number;
   totalSubjects: number;
   avgMark: number;
@@ -29,12 +37,10 @@ interface WAMResult {
   gradeColor: string;
 }
 
-function getGrade(wam: number): { grade: string; label: string; color: string } {
-  if (wam >= 80) return { grade: 'HD', label: 'High Distinction', color: 'text-emerald-600 dark:text-emerald-400' };
-  if (wam >= 70) return { grade: 'D', label: 'Distinction', color: 'text-blue-600 dark:text-blue-400' };
-  if (wam >= 60) return { grade: 'C', label: 'Credit', color: 'text-sky-600 dark:text-sky-400' };
-  if (wam >= 50) return { grade: 'P', label: 'Pass', color: 'text-amber-600 dark:text-amber-400' };
-  return { grade: 'N', label: 'Fail', color: 'text-red-600 dark:text-red-400' };
+const yearLevelOptions = ['1', '2', '3', '4'] as const;
+
+function defaultYearLevelForUnit(unitCode: string): string {
+  return String(inferMonashYearLevelFromUnitCode(unitCode) ?? 1);
 }
 
 let nextId = 4;
@@ -93,9 +99,30 @@ function renderHighlightedSuggestion(value: string, query: string) {
 }
 
 const defaultSubjects: Subject[] = [
-  { id: 1, unit: 'FIT1045', subject: matchSubjectByUnit('FIT1045') ?? '', mark: '80', credits: '6' },
-  { id: 2, unit: 'MAT1830', subject: matchSubjectByUnit('MAT1830') ?? '', mark: '75', credits: '6' },
-  { id: 3, unit: 'ENG1005', subject: matchSubjectByUnit('ENG1005') ?? '', mark: '70', credits: '6' },
+  {
+    id: 1,
+    unit: 'FIT1045',
+    subject: matchSubjectByUnit('FIT1045') ?? '',
+    mark: '80',
+    credits: '6',
+    yearLevel: defaultYearLevelForUnit('FIT1045'),
+  },
+  {
+    id: 2,
+    unit: 'MAT1830',
+    subject: matchSubjectByUnit('MAT1830') ?? '',
+    mark: '75',
+    credits: '6',
+    yearLevel: defaultYearLevelForUnit('MAT1830'),
+  },
+  {
+    id: 3,
+    unit: 'ENG1005',
+    subject: matchSubjectByUnit('ENG1005') ?? '',
+    mark: '70',
+    credits: '6',
+    yearLevel: defaultYearLevelForUnit('ENG1005'),
+  },
 ];
 
 interface WAMCalculatorProps {
@@ -115,40 +142,43 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
     const valid = subjects.filter(s => s.mark !== '' && s.credits !== '');
     if (valid.length === 0) return null;
 
-    let totalWeighted = 0;
-    let totalCredits = 0;
-    let totalMark = 0;
+    const parsedUnits = valid
+      .map(s => ({
+        mark: parseFloat(s.mark),
+        credits: parseFloat(s.credits),
+        yearLevel: parseInt(s.yearLevel, 10) || 1,
+      }))
+      .filter(unit => !Number.isNaN(unit.mark) && !Number.isNaN(unit.credits) && unit.credits > 0);
 
-    for (const s of valid) {
-      const mark = parseFloat(s.mark);
-      const credits = parseFloat(s.credits);
-      if (isNaN(mark) || isNaN(credits) || credits <= 0) continue;
-      totalWeighted += mark * credits;
-      totalCredits += credits;
-      totalMark += mark;
-    }
+    if (parsedUnits.length === 0) return null;
 
-    if (totalCredits === 0) return null;
+    const planningWam = calculateCreditWeightedWam(parsedUnits);
+    const officialWam = calculateMonashOfficialWam(parsedUnits);
+    if (planningWam === null || officialWam === null) return null;
 
-    const wam = totalWeighted / totalCredits;
-    const avgMark = totalMark / valid.length;
-    const { grade, label, color } = getGrade(wam);
+    const totalCredits = parsedUnits.reduce((sum, unit) => sum + unit.credits, 0);
+    const avgMark = parsedUnits.reduce((sum, unit) => sum + unit.mark, 0) / parsedUnits.length;
+    const gradeBand = getMonashGradeFromMark(officialWam);
 
     return {
-      wam: Math.round(wam * 100) / 100,
+      officialWam,
+      planningWam,
       totalCredits,
-      totalSubjects: valid.length,
+      totalSubjects: parsedUnits.length,
       avgMark: Math.round(avgMark * 100) / 100,
-      grade,
-      gradeLabel: label,
-      gradeColor: color,
+      grade: gradeBand?.grade ?? '—',
+      gradeLabel: gradeBand?.label ?? 'Unknown',
+      gradeColor: gradeBand?.color ?? 'text-gray-500',
     };
   }, [subjects]);
 
   const result = calculateWAM();
 
   const addSubject = () => {
-    setSubjects(prev => [...prev, { id: nextId++, unit: '', subject: '', mark: '', credits: '6' }]);
+    setSubjects(prev => [
+      ...prev,
+      { id: nextId++, unit: '', subject: '', mark: '', credits: '6', yearLevel: '1' },
+    ]);
   };
 
   const removeSubject = (id: number) => {
@@ -165,6 +195,8 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
         if (field === 'unit') {
           const matchedSubject = matchSubjectByUnit(normalizedValue);
           if (matchedSubject) next.subject = matchedSubject;
+          const inferredYear = inferMonashYearLevelFromUnitCode(normalizedValue);
+          if (inferredYear !== null) next.yearLevel = String(inferredYear);
         }
 
         if (field === 'subject') {
@@ -260,14 +292,14 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
 
   const reset = () => {
     setSubjects([
-      { id: 1, unit: '', subject: '', mark: '', credits: '6' },
-      { id: 2, unit: '', subject: '', mark: '', credits: '6' },
+      { id: 1, unit: '', subject: '', mark: '', credits: '6', yearLevel: '1' },
+      { id: 2, unit: '', subject: '', mark: '', credits: '6', yearLevel: '1' },
     ]);
   };
 
   const copyResult = async () => {
     if (!result) return;
-    const text = `Monash WAM: ${result.wam.toFixed(2)} | Grade: ${result.grade} (${result.gradeLabel}) | Credits: ${result.totalCredits} | Subjects: ${result.totalSubjects}`;
+    const text = `Official Monash WAM: ${result.officialWam.toFixed(2)} | Planning WAM: ${result.planningWam.toFixed(2)} | Grade: ${result.grade} (${result.gradeLabel}) | Credits: ${result.totalCredits} | Subjects: ${result.totalSubjects}`;
     await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -329,8 +361,10 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
         <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">WAM Calculator — Enter Your Marks</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
-            Enter your subject marks and credit points below to instantly calculate your Weighted Average Mark (WAM).
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Enter marks, credit points, and year level for each unit. We calculate{' '}
+            <strong className="text-gray-700 dark:text-gray-300">official Monash WAM</strong> (first-year 0.5 weighting)
+            plus a simple planning WAM for comparison.
           </p>
         </div>
 
@@ -408,6 +442,20 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                           />
                         </label>
                       </div>
+                      <label className="block">
+                        <span className="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Year Level</span>
+                        <select
+                          value={s.yearLevel}
+                          onChange={e => updateSubject(s.id, 'yearLevel', e.target.value)}
+                          className="w-full h-11 mt-1 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
+                        >
+                          {yearLevelOptions.map(level => (
+                            <option key={level} value={level}>
+                              Year {level}{level === '1' ? ' (0.5 weight)' : ''}
+                            </option>
+                          ))}
+                        </select>
+                      </label>
                     </div>
                     <div className="flex justify-end">
                       <button
@@ -424,13 +472,14 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
               </div>
 
               <div className="hidden md:block overflow-x-auto">
-                <table className="w-full min-w-[760px]">
+                <table className="w-full min-w-[860px]">
                   <thead>
                     <tr className="bg-primary-50 dark:bg-primary-900/30 border-b border-gray-200 dark:border-gray-700">
                       <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 min-w-[130px]">Unit Name</th>
                       <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 min-w-[190px]">Subject</th>
                       <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Final Mark (%)</th>
                       <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Credit Points</th>
+                      <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 min-w-[110px]">Year</th>
                       <th className="px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300">Actions</th>
                     </tr>
                   </thead>
@@ -491,6 +540,19 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                             onChange={e => updateSubject(s.id, 'credits', e.target.value)}
                             className="w-full bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
                           />
+                        </td>
+                        <td className="px-4 py-3">
+                          <select
+                            value={s.yearLevel}
+                            onChange={e => updateSubject(s.id, 'yearLevel', e.target.value)}
+                            className="w-full bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm border border-gray-200 dark:border-gray-600 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-primary-400"
+                          >
+                            {yearLevelOptions.map(level => (
+                              <option key={level} value={level}>
+                                Y{level}{level === '1' ? ' (0.5)' : ''}
+                              </option>
+                            ))}
+                          </select>
                         </td>
                         <td className="px-4 py-3 text-center">
                           <button
@@ -554,10 +616,16 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                 </div>
                 {result ? (
                   <>
-                    <div className="text-5xl font-bold text-white mt-1">{result.wam.toFixed(2)}</div>
+                    <div className="text-xs text-primary-200 uppercase tracking-wide">Official Monash WAM</div>
+                    <div className="text-5xl font-bold text-white mt-1">{result.officialWam.toFixed(2)}</div>
                     <div className={`text-sm font-semibold mt-1 ${result.gradeColor} text-white opacity-90`}>
                       {result.grade} — {result.gradeLabel}
                     </div>
+                    {result.planningWam !== result.officialWam && (
+                      <div className="text-xs text-primary-100/90 mt-2">
+                        Planning WAM: {result.planningWam.toFixed(2)}
+                      </div>
+                    )}
                   </>
                 ) : (
                   <div className="text-3xl font-bold text-primary-200 mt-1">—</div>
@@ -568,7 +636,8 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                 {result ? (
                   <>
                     <div className="space-y-3">
-                      <ResultRow label="Current WAM" value={result.wam.toFixed(2)} />
+                      <ResultRow label="Official Monash WAM" value={result.officialWam.toFixed(2)} />
+                      <ResultRow label="Planning WAM" value={result.planningWam.toFixed(2)} />
                       <ResultRow label="Total Credit Points" value={String(result.totalCredits)} />
                       <ResultRow label="Total Subjects" value={String(result.totalSubjects)} />
                       <ResultRow label="Average Mark" value={`${result.avgMark.toFixed(2)}%`} />
@@ -578,8 +647,8 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                       </div>
                     </div>
                     <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                      Planning estimate using credit-weighted marks. Official Monash WAM on WES may differ when first-year
-                      0.5 level weighting applies.
+                      Official WAM uses Monash year-level weighting (Year 1 = 0.5, Year 2+ = 1.0). Planning WAM is
+                      simple credit-weighted maths. Verify special grades and exclusions on WES.
                     </p>
                     <button
                       onClick={copyResult}

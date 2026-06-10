@@ -111,6 +111,36 @@ export function mapGpaToMonashBand(gpa: number, scaleMax: 4 | 7): GpaBandStep | 
   return thresholds.find(entry => gpa >= entry.min)?.step ?? null;
 }
 
+export function getMonashYearLevelWeight(yearLevel: number): number {
+  return yearLevel === 1 ? 0.5 : 1.0;
+}
+
+/** First digit of the numeric portion of a Monash unit code (e.g. FIT1045 → 1). */
+export function inferMonashYearLevelFromUnitCode(unitCode: string): number | null {
+  const match = unitCode.trim().match(/\d+/);
+  if (!match) return null;
+  const firstDigit = Number.parseInt(match[0][0] ?? '', 10);
+  if (Number.isNaN(firstDigit) || firstDigit < 1) return null;
+  return firstDigit;
+}
+
+export function calculateMonashOfficialWam(
+  units: Array<{ mark: number; credits: number; yearLevel: number }>
+): number | null {
+  let weightedMarks = 0;
+  let weightedCredits = 0;
+
+  for (const unit of units) {
+    if (Number.isNaN(unit.mark) || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
+    const levelWeight = getMonashYearLevelWeight(unit.yearLevel);
+    weightedMarks += unit.mark * unit.credits * levelWeight;
+    weightedCredits += unit.credits * levelWeight;
+  }
+
+  if (weightedCredits === 0) return null;
+  return Math.round((weightedMarks / weightedCredits) * 100) / 100;
+}
+
 export function calculateCreditWeightedWam(
   units: Array<{ mark: number; credits: number }>
 ): number | null {
