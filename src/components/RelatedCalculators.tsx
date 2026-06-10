@@ -19,13 +19,25 @@ const calculators = [
     href: '/final-grade-calculator',
     color: 'from-sky-500 to-sky-700',
   },
+  {
+    title: 'Mark to Grade Calculator',
+    desc: 'Convert a unit percentage to Monash HD, D, C, P, or N instantly.',
+    href: '/mark-to-grade-calculator',
+    color: 'from-violet-500 to-violet-700',
+  },
+  {
+    title: 'WAM Target Calculator',
+    desc: 'See what average you need on remaining units to hit your target WAM.',
+    href: '/wam-target-calculator',
+    color: 'from-indigo-500 to-indigo-700',
+  },
 ];
 
 export default function RelatedCalculators() {
   return (
     <section className="max-w-6xl mx-auto px-4 py-10">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Related Student Calculators</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {calculators.map(calc => (
           <a
             key={calc.href}

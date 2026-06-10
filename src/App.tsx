@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import WAMtoGPA from './pages/WAMtoGPA';
 import GPAtoWAM from './pages/GPAtoWAM';
 import FinalGrade from './pages/FinalGrade';
+import MarkToGrade from './pages/MarkToGrade';
+import WamTarget from './pages/WamTarget';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Disclaimer from './pages/Disclaimer';
@@ -22,6 +24,8 @@ function getPage(path: string) {
   if (path === '/wam-to-gpa-calculator') return <WAMtoGPA />;
   if (path === '/gpa-to-wam-calculator') return <GPAtoWAM />;
   if (path === '/final-grade-calculator') return <FinalGrade />;
+  if (path === '/mark-to-grade-calculator') return <MarkToGrade />;
+  if (path === '/wam-target-calculator') return <WamTarget />;
   if (path === '/articles') return <Articles />;
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');

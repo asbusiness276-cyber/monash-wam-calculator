@@ -30,6 +30,8 @@ export default function Footer() {
                 <li><a href="/wam-to-gpa-calculator" className="hover:text-white transition-colors">WAM to GPA Calculator</a></li>
                 <li><a href="/gpa-to-wam-calculator" className="hover:text-white transition-colors">GPA to WAM Calculator</a></li>
                 <li><a href="/final-grade-calculator" className="hover:text-white transition-colors">Final Grade Calculator</a></li>
+                <li><a href="/mark-to-grade-calculator" className="hover:text-white transition-colors">Mark to Grade Calculator</a></li>
+                <li><a href="/wam-target-calculator" className="hover:text-white transition-colors">WAM Target Calculator</a></li>
               </ul>
             </div>
             <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">

@@ -11,6 +11,8 @@ const calculatorLinks = [
   { label: 'WAM to GPA', href: '/wam-to-gpa-calculator' },
   { label: 'GPA to WAM', href: '/gpa-to-wam-calculator' },
   { label: 'Final Grade', href: '/final-grade-calculator' },
+  { label: 'Mark to Grade', href: '/mark-to-grade-calculator' },
+  { label: 'WAM Target', href: '/wam-target-calculator' },
 ];
 
 const infoLinks = [
