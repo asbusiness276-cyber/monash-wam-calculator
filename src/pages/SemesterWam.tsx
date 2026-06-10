@@ -1,6 +1,5 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
 import SemesterWamToolCore from '../components/SemesterWamToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -67,21 +66,45 @@ export default function SemesterWam() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <SemesterWamToolCore />
 
-        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Example</h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Examples</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Four 6-credit units at 78%, 72%, 81%, and 69% → semester WAM = (78+72+81+69) × 6 ÷ 24 ={' '}
             <strong className="text-gray-800 dark:text-gray-200">75.00%</strong>.
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             A 12-credit unit at 85% and a 6-credit unit at 70% → weighted average = (85×12 + 70×6) ÷ 18 ={' '}
             <strong className="text-gray-800 dark:text-gray-200">80.00%</strong>, while the simple unit average is
-            77.50%.
+            77.50%. Credit weighting matters — never average unit percentages without weighting when cp differs.
+          </p>
+        </div>
+
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Semester WAM vs Cumulative WAM</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Your semester WAM measures performance in one teaching period only. Your degree WAM on a Monash transcript
+            includes every completed unit across all semesters, weighted by credit points (and, for official WAM,
+            year-level rules). A strong semester can lift cumulative WAM slowly if you already have many cp behind you;
+            a weak semester has the same gradual effect in reverse.
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Use this calculator after results to review how the current semester went before planning the next enrolment.
+            Then open the{' '}
+            <a href={absoluteUrl(swHome.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              Monash WAM calculator
+            </a>{' '}
+            for your full cumulative average, or the{' '}
+            <a href={absoluteUrl(swTarget.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              WAM target tool
+            </a>{' '}
+            to see what you need going forward. Our{' '}
+            <a href="/articles/monash-credit-points-wam-explained" className="text-primary-600 dark:text-primary-400 hover:underline">
+              credit points and WAM guide
+            </a>{' '}
+            explains how cp weighting shapes both semester and degree averages.
           </p>
         </div>
       </section>
-
-      <ProductShowcase startIndex={13} endIndex={18} />
       <PageFaq items={semesterWamFaqs} />
     </>
   );

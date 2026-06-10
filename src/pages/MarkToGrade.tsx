@@ -1,6 +1,5 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
 import MarkToGradeToolCore from '../components/MarkToGradeToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -60,7 +59,7 @@ export default function MarkToGrade() {
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <section className="max-w-2xl mx-auto px-4 py-8">
         <MarkToGradeToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
@@ -69,12 +68,73 @@ export default function MarkToGrade() {
             <li>Enter a unit mark from 0 to 100 (decimals allowed).</li>
             <li>Read the Monash grade letter and full label instantly.</li>
             <li>Check approximate GPA band values for planning.</li>
-            <li>Use the table below for quick reference across all bands.</li>
+            <li>Use the reference table below for all standard bands.</li>
           </ul>
         </div>
-      </section>
 
-      <ProductShowcase startIndex={13} endIndex={18} />
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Monash Standard Grading Scale</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Monash coursework units typically use percentage marks mapped to letter grades. High Distinction (HD) starts
+            at 80%, Distinction (D) covers 70–79%, Credit (C) is 60–69%, Pass (P) is 50–59%, and below 50% is a fail (N).
+            A single percentage point can change your band — 79% is D, while 80% is HD — so this converter is useful right
+            after results release or when estimating where a weighted unit mark might land.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="bg-gray-50 dark:bg-gray-700">
+                  <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300 rounded-tl-lg">Grade</th>
+                  <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300">Mark range</th>
+                  <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300 rounded-tr-lg">Typical meaning</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 dark:divide-gray-700 text-gray-700 dark:text-gray-300">
+                <tr>
+                  <td className="px-3 py-2 font-medium">HD</td>
+                  <td className="px-3 py-2">80–100%</td>
+                  <td className="px-3 py-2">Outstanding performance</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 font-medium">D</td>
+                  <td className="px-3 py-2">70–79%</td>
+                  <td className="px-3 py-2">Strong, above-average work</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 font-medium">C</td>
+                  <td className="px-3 py-2">60–69%</td>
+                  <td className="px-3 py-2">Sound satisfactory standard</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 font-medium">P</td>
+                  <td className="px-3 py-2">50–59%</td>
+                  <td className="px-3 py-2">Minimum pass threshold</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 font-medium">N</td>
+                  <td className="px-3 py-2">0–49%</td>
+                  <td className="px-3 py-2">Fail — may affect WAM and progression</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            This tool converts one percentage to a grade band. Your cumulative{' '}
+            <a href={absoluteUrl(mtgHome.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              Monash WAM
+            </a>{' '}
+            is a separate credit-weighted average across all completed units. For application planning, read our{' '}
+            <a href="/articles/monash-wam-to-gpa-conversion" className="text-primary-600 dark:text-primary-400 hover:underline">
+              WAM to GPA conversion guide
+            </a>{' '}
+            or use the{' '}
+            <a href={absoluteUrl(mtgFinal.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              final grade calculator
+            </a>{' '}
+            when you still have assessments pending.
+          </p>
+        </div>
+      </section>
       <PageFaq items={markToGradeFaqs} />
     </>
   );

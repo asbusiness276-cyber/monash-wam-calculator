@@ -1,6 +1,5 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
 import UnitMarkToolCore from '../components/UnitMarkToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -67,9 +66,9 @@ export default function UnitMark() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <UnitMarkToolCore />
 
-        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Formula</h2>
-          <p className="font-mono text-sm text-gray-700 dark:text-gray-300 mb-3">
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Formula</h2>
+          <p className="font-mono text-sm text-gray-700 dark:text-gray-300">
             Unit mark = Σ(assessment mark × weight ÷ 100)
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -77,9 +76,39 @@ export default function UnitMark() {
             <strong className="text-gray-800 dark:text-gray-200">71.75%</strong> overall (Distinction band).
           </p>
         </div>
-      </section>
 
-      <ProductShowcase startIndex={6} endIndex={11} />
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Reading Your Unit Guide</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Every Monash unit publishes assessment weights in the handbook or Moodle site. Weights must total 100% for
+            this calculator to return a valid overall mark. If your unit uses hurdle requirements — such as a minimum
+            exam mark to pass — this tool shows the weighted percentage only; it does not replace faculty pass rules.
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Enter marks as released percentages (0–100). For group work or scaled marks, use the final adjusted score
+            shown on Moodle. Once you know your running unit total, check the letter band with the{' '}
+            <a href="/mark-to-grade-calculator" className="text-primary-600 dark:text-primary-400 hover:underline">
+              mark to grade calculator
+            </a>{' '}
+            or plan the remaining exam with the{' '}
+            <a href={absoluteUrl(umFinal.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              final grade calculator
+            </a>
+            . When the unit is complete, add it to your{' '}
+            <a href={absoluteUrl(umHome.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              cumulative WAM
+            </a>
+            .
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            For a full walkthrough of exam-weight planning, see our{' '}
+            <a href="/articles/monash-final-exam-mark-calculator-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
+              final exam mark calculator guide
+            </a>
+            .
+          </p>
+        </div>
+      </section>
       <PageFaq items={unitMarkFaqs} />
     </>
   );

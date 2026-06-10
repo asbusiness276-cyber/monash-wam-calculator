@@ -1,6 +1,5 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
 import UnitTargetToolCore from '../components/UnitTargetToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -66,17 +65,47 @@ export default function UnitTarget() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <UnitTargetToolCore />
 
-        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Example</h2>
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Example</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Assignment 75% (25%), mid-sem 68% (25%), final pending (50%), target 75% → completed contribution = 35.75 →
             need (75 − 35.75) ÷ 0.5 = <strong className="text-gray-800 dark:text-gray-200">78.50%</strong> on the
             final.
           </p>
         </div>
-      </section>
 
-      <ProductShowcase startIndex={7} endIndex={12} />
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Planning Multiple Assessments</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Many Monash units split marks across assignments, labs, tests, and a final exam. This calculator supports
+            any number of weighted components: enter marks you already have, leave pending rows empty, set your target
+            unit percentage, and read the required average on whatever remains. Weights must still sum to 100%.
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            If only the final exam is outstanding, the simpler{' '}
+            <a href={absoluteUrl(utFinal.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              final grade calculator
+            </a>{' '}
+            may be faster. Use this tool when you have three or more assessment types with different weights — common in
+            science, engineering, and arts units with participation or portfolio tasks.
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            After you know the required mark, convert it to a letter band with the{' '}
+            <a href="/mark-to-grade-calculator" className="text-primary-600 dark:text-primary-400 hover:underline">
+              mark to grade tool
+            </a>
+            , or see how the unit affects degree standing via the{' '}
+            <a href={absoluteUrl(utUnit.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              unit mark calculator
+            </a>
+            . Read our{' '}
+            <a href="/articles/monash-final-exam-mark-calculator-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
+              final exam planning guide
+            </a>{' '}
+            for study tactics once you know the number you need.
+          </p>
+        </div>
+      </section>
       <PageFaq items={unitTargetFaqs} />
     </>
   );

@@ -1,6 +1,5 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
 import WamTargetToolCore from '../components/WamTargetToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -63,22 +62,79 @@ export default function WamTarget() {
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <section className="max-w-2xl mx-auto px-4 py-8">
         <WamTargetToolCore />
 
-        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Formula</h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">How the Formula Works</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Required average on remaining units = (target WAM × total cp − current WAM × completed cp) ÷ remaining cp.
+            Credit points weight each unit in your WAM, so a 12-credit unit moves your average more than a 6-credit unit.
+            Enter completed cp only for units already on your transcript — not future enrolments you have not finished.
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Example: WAM 72 on 96 cp done, 24 cp left, target 75 → need (75×120 − 72×96) ÷ 24 = 87% average on
-            remaining units.
+            remaining units. If the result exceeds 100%, the target is not reachable with that remaining load unless you
+            add more credit-bearing performance later.
+          </p>
+        </div>
+
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Common Target Bands at Monash</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Students use this calculator for honours cut-offs, scholarship benchmarks, and personal goals. Requirements
+            vary by faculty and year — always confirm with Monash — but these bands are a practical starting point for
+            planning.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="bg-gray-50 dark:bg-gray-700">
+                  <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300 rounded-tl-lg">Goal</th>
+                  <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300">Typical WAM band</th>
+                  <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300 rounded-tr-lg">Planning note</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 dark:divide-gray-700 text-gray-700 dark:text-gray-300">
+                <tr>
+                  <td className="px-3 py-2 font-medium">Distinction average</td>
+                  <td className="px-3 py-2">70+</td>
+                  <td className="px-3 py-2">Strong baseline for many pathways</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 font-medium">Competitive honours</td>
+                  <td className="px-3 py-2">75–80+</td>
+                  <td className="px-3 py-2">Faculty-specific; check handbook</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 font-medium">Scholarship planning</td>
+                  <td className="px-3 py-2">Varies</td>
+                  <td className="px-3 py-2">Merit and equity schemes differ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Verify your current WAM with the{' '}
+            <a href={absoluteUrl(wtHome.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              Monash WAM calculator
+            </a>
+            . For deeper context read{' '}
+            <a href="/articles/monash-honours-wam-requirements" className="text-primary-600 dark:text-primary-400 hover:underline">
+              honours WAM requirements
+            </a>
+            ,{' '}
+            <a href="/articles/what-is-a-good-wam" className="text-primary-600 dark:text-primary-400 hover:underline">
+              what is a good WAM
+            </a>
+            , and our{' '}
+            <a href={absoluteUrl(wtWtg.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              WAM to GPA converter
+            </a>{' '}
+            for postgraduate applications.
           </p>
         </div>
       </section>
-
-      <ProductShowcase startIndex={1} endIndex={6} />
       <PageFaq items={wamTargetFaqs} />
     </>
   );

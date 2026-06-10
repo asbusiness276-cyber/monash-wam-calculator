@@ -17,8 +17,10 @@ export default function Articles() {
       <section className="max-w-6xl mx-auto px-4 py-10 md:py-12">
         <div className="max-w-3xl">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Student Articles</h1>
-          <p className="mt-3 text-gray-600 dark:text-gray-400">
-            In-depth guides focused on WAM strategy, conversion methods, and academic planning. Use the{' '}
+          <p className="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">
+            In-depth guides on WAM benchmarks, honours and scholarship planning, credit points, transcript reading, and
+            recovery after a failed unit. Each article is written for Monash students and pairs with our free calculators
+            — use the{' '}
             <a href={absoluteUrl(articlesHome.path)} className={INLINE_LINK_CLASS}>{articlesHome.keyword}</a>
             {' '}when you want live numbers first, or open{' '}
             <a href={absoluteUrl(articlesHowTo.path)} className={INLINE_LINK_CLASS}>{articlesHowTo.keyword}</a>

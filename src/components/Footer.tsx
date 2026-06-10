@@ -42,6 +42,7 @@ export default function Footer() {
             <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">
               <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Company &amp; Legal</h3>
               <ul className="space-y-2.5 text-sm">
+                <li><a href="/articles" className="hover:text-white transition-colors">Student Articles</a></li>
                 <li><a href="/about-us" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="/contact-us" className="hover:text-white transition-colors">Contact Us</a></li>
                 <li><a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a></li>

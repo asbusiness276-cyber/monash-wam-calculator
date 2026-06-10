@@ -19,7 +19,12 @@ const privacyFaqs = [
   {
     question: 'Are cookies required?',
     answer:
-      'Essential functions may use lightweight cookies or local storage. You can disable cookies, but some usability features may be reduced.',
+      'Essential functions may use lightweight cookies or local storage. Advertising partners such as Google AdSense may also set cookies when ads are displayed. You can disable cookies, but some features may be reduced.',
+  },
+  {
+    question: 'Does this site use Google AdSense?',
+    answer:
+      'We may display third-party advertisements through Google AdSense or similar programmes. These services use cookies to serve and measure ads. You can manage personalized advertising at Google Ad Settings.',
   },
   {
     question: 'How should I share sensitive information?',
@@ -40,7 +45,7 @@ export default function PrivacyPolicy() {
 
       <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Privacy Policy</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">Last updated: May 8, 2026</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">Last updated: May 29, 2026</p>
 
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
@@ -71,13 +76,55 @@ export default function PrivacyPolicy() {
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">3. Cookies and Tracking</h2>
             <p>
-              This website may use essential cookies and basic analytics tools to understand site usage. You can disable
-              cookies in your browser settings, though some features may not function as intended.
+              This website may use essential cookies, local storage, and basic analytics tools to understand site usage
+              and improve performance. Third-party advertising services, including Google AdSense when enabled, may use
+              cookies, web beacons, and similar technologies to deliver ads, limit ad frequency, and measure campaign
+              effectiveness.
+            </p>
+            <p className="mt-2">
+              You can disable cookies in your browser settings, though some features may not function as intended. For
+              personalized advertising from Google, visit{' '}
+              <a
+                href="https://www.google.com/settings/ads"
+                className={INLINE_LINK_CLASS}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Ad Settings
+              </a>
+              . You can also learn how Google uses data from partner sites at{' '}
+              <a
+                href="https://policies.google.com/technologies/partner-sites"
+                className={INLINE_LINK_CLASS}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google&apos;s partner sites policy
+              </a>
+              .
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. Third-Party Links</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. Advertising (Google AdSense)</h2>
+            <p>
+              Monash WAM Calculator may display advertisements provided by Google AdSense or other advertising partners
+              to help fund free calculator tools and editorial content. Ad partners may collect information such as your
+              IP address, browser type, pages visited, and ad interactions to show relevant ads and report performance.
+            </p>
+            <p className="mt-2">
+              We do not sell your personal academic data to advertisers. Calculator inputs are processed locally in your
+              browser and are not transmitted to ad networks as part of normal calculator use. Advertising cookies are
+              separate from calculator functionality.
+            </p>
+            <p className="mt-2">
+              Non-personalized ads may still appear if you opt out of personalized advertising. Affiliate links on some
+              pages are disclosed separately and are not the same as display advertising served through AdSense.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">5. Third-Party Links</h2>
             <p>
               Some pages include external links, including affiliate links. Third-party websites have their own privacy
               policies and we are not responsible for their content or practices.
@@ -85,7 +132,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">5. Data Security</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">6. Data Security</h2>
             <p>
               We apply reasonable technical measures to protect site integrity, but no web platform can guarantee
               absolute security. Please avoid sharing confidential personal information through public forms.
@@ -93,7 +140,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">6. Contact</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">7. Contact</h2>
             <p>
               If you have questions about this policy, please contact us through the official contact details listed on
               the site.

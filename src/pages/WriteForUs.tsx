@@ -11,12 +11,14 @@ const writeForUsFaqs = [
     answer: 'We only accept education-focused content relevant to student success, academic planning, calculators, and study strategy.',
   },
   {
-    question: 'What is your publishing fee?',
-    answer: 'Our current editorial and publishing fee is USD $30 per approved article.',
+    question: 'Do you charge a publishing fee?',
+    answer:
+      'No. We do not sell guest posts or paid link placement. Accepted articles are published on editorial merit when they genuinely help students.',
   },
   {
-    question: 'How many dofollow links are allowed?',
-    answer: 'One dofollow link in the article body and one dofollow link in the author bio are allowed.',
+    question: 'Are promotional links allowed?',
+    answer:
+      'Authors may include one relevant link in a short bio when the article is accepted. Paid, excessive, or manipulative linking is not permitted.',
   },
   {
     question: 'Which topics are rejected?',
@@ -29,7 +31,7 @@ export default function WriteForUs() {
     <>
       <Seo
         title="Write For Us | Monash WAM Calculator"
-        description="Contribute education-focused guest content. Read our editorial quality standards, accepted topics, pricing, and link guidelines."
+        description="Contribute education-focused guest content. Read our editorial quality standards, accepted topics, and contributor guidelines."
         canonicalPath="/write-for-us"
         faqItems={writeForUsFaqs}
       />
@@ -86,19 +88,21 @@ export default function WriteForUs() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Pricing & Link Policy</h2>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Publishing fee: <strong>$30 USD</strong> per approved article.</li>
-              <li>Allowed links: <strong>1 dofollow link in article content</strong> + <strong>1 dofollow link in author bio</strong>.</li>
-              <li>Links must be contextually relevant and naturally placed.</li>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Contributor & Link Guidelines</h2>
+            <p>
+              We welcome original education writing from teachers, mentors, and students with real experience. We do not
+              sell guest posts, paid dofollow links, or sponsored placements disguised as editorial content. Submissions
+              are reviewed for usefulness, accuracy, and fit with our student audience.
+            </p>
+            <ul className="list-disc list-inside space-y-1 mt-2">
+              <li>One contextual author bio link may be included when an article is accepted.</li>
+              <li>In-article links should support the reader — official university pages, cited sources, or our calculators.</li>
+              <li>Commercial, affiliate, or SEO-only linking is not accepted.</li>
             </ul>
             <p className="mt-2">
-              We do not allow excessive linking, hidden linking, forced anchor stuffing, or irrelevant commercial links.
-              If link placement appears manipulative, the article will be rejected or returned for revision.
-            </p>
-            <p className="mt-2">
-              To avoid confusion, mention your target URL and anchor preference clearly at submission time. This helps
-              us complete review faster and prevents delays in publishing.
+              If link placement appears manipulative or unrelated to student learning, the article will be rejected or
+              returned for revision. Mention your background and any bio link in your initial pitch so review stays
+              transparent.
             </p>
           </div>
 

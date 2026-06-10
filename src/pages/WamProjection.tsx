@@ -1,6 +1,5 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
 import WamProjectionToolCore from '../components/WamProjectionToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -67,8 +66,8 @@ export default function WamProjection() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <WamProjectionToolCore />
 
-        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Worked Example</h2>
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Worked Example</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Current WAM <strong className="text-gray-800 dark:text-gray-200">72</strong> on{' '}
             <strong className="text-gray-800 dark:text-gray-200">96 cp</strong>. Upcoming: 80% (6 cp), 75% (6 cp), 85%
@@ -76,9 +75,40 @@ export default function WamProjection() {
             <strong className="text-gray-800 dark:text-gray-200">73.85%</strong> (+1.85).
           </p>
         </div>
-      </section>
 
-      <ProductShowcase startIndex={1} endIndex={6} />
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">When to Use Projection vs Target</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Use this projection tool when you already have realistic marks in mind for enrolled units — for example after
+            mid-semester results or practice exams. It answers: &quot;if I finish at these levels, where will my cumulative
+            WAM land?&quot; That is different from the{' '}
+            <a href={absoluteUrl(wpTarget.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              WAM target calculator
+            </a>
+            , which works backwards from a goal to tell you what average you still need.
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Higher credit-point units move your WAM more. If you are carrying a 12-credit capstone, model conservative
+            and optimistic marks for that row first — small changes there often swing the projected total more than
+            elective units. Pair projections with the{' '}
+            <a href={absoluteUrl(wpHome.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
+              main WAM calculator
+            </a>{' '}
+            to confirm your starting point matches your transcript.
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            For semester-by-semester improvement strategies, read{' '}
+            <a href="/articles/how-to-improve-wam-at-monash" className="text-primary-600 dark:text-primary-400 hover:underline">
+              how to improve WAM at Monash
+            </a>{' '}
+            and{' '}
+            <a href="/articles/how-to-calculate-wam" className="text-primary-600 dark:text-primary-400 hover:underline">
+              how to calculate WAM
+            </a>
+            . Official Monash WAM may apply year-level weighting not reflected in simple planning projections.
+          </p>
+        </div>
+      </section>
       <PageFaq items={wamProjectionFaqs} />
     </>
   );
