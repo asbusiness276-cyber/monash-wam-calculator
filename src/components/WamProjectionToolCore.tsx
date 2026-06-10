@@ -25,8 +25,8 @@ const defaultUpcoming: UpcomingUnit[] = [
 ];
 
 export default function WamProjectionToolCore({ enableProductPopup = true }: WamProjectionToolCoreProps) {
-  const [currentWam, setCurrentWam] = useState('72');
-  const [completedCredits, setCompletedCredits] = useState('96');
+  const [currentWam, setCurrentWam] = useState('');
+  const [completedCredits, setCompletedCredits] = useState('');
   const [upcoming, setUpcoming] = useState<UpcomingUnit[]>(defaultUpcoming);
   const { hasUserInteracted, markUserInteracted } = useUserInteractionFlag();
 
