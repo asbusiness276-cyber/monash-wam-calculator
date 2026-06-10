@@ -577,6 +577,10 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                         <span className={`text-sm font-bold ${result.gradeColor}`}>{result.grade} — {result.gradeLabel}</span>
                       </div>
                     </div>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                      Planning estimate using credit-weighted marks. Official Monash WAM on WES may differ when first-year
+                      0.5 level weighting applies.
+                    </p>
                     <button
                       onClick={copyResult}
                       className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-50 dark:bg-primary-900/30 hover:bg-primary-100 dark:hover:bg-primary-900/50 text-primary-700 dark:text-primary-400 text-sm font-medium rounded-lg transition-colors"

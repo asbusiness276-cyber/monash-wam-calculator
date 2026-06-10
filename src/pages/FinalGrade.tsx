@@ -8,6 +8,7 @@ import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 const [finalHome, finalWtg] = PAGE_KEYWORD_LINKS['/final-grade-calculator'];
 import ProductPopup from '../components/ProductPopup';
 import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { calculateRequiredFinalExamMark } from '../utils/monashGrades';
 
 const finalGradeFaqs = [
   {
@@ -50,20 +51,14 @@ export default function FinalGrade() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
-  const calculate = () => {
+  const needed = (() => {
     const cm = parseFloat(currentMark);
     const cw = parseFloat(currentWeight) / 100;
     const target = parseFloat(targetMark);
     const ew = parseFloat(examWeight) / 100;
-
     if (isNaN(cm) || isNaN(cw) || isNaN(target) || isNaN(ew)) return null;
-    if (cw + ew > 1.001) return null;
-
-    const needed = (target - cm * cw) / ew;
-    return Math.round(needed * 100) / 100;
-  };
-
-  const needed = calculate();
+    return calculateRequiredFinalExamMark(cm, cw, ew, target);
+  })();
 
   const getStatus = (n: number | null) => {
     if (n === null) return null;

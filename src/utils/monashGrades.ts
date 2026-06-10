@@ -63,6 +63,165 @@ export function getMonashGradeFromMark(mark: number): MonashGradeResult | null {
 
 export const monashGradeBands = gradeBands;
 
+export interface GpaBandStep {
+  gpa: number;
+  wamMin: number;
+  wamMax: number;
+  grade: string;
+  gradeLabel: string;
+}
+
+const gpa4Steps: GpaBandStep[] = [
+  { gpa: 4.0, wamMin: 80, wamMax: 100, grade: 'HD', gradeLabel: 'High Distinction' },
+  { gpa: 3.0, wamMin: 70, wamMax: 79, grade: 'D', gradeLabel: 'Distinction' },
+  { gpa: 2.0, wamMin: 60, wamMax: 69, grade: 'C', gradeLabel: 'Credit' },
+  { gpa: 1.0, wamMin: 50, wamMax: 59, grade: 'P', gradeLabel: 'Pass' },
+  { gpa: 0.0, wamMin: 0, wamMax: 49, grade: 'N', gradeLabel: 'Fail' },
+];
+
+const gpa7Steps: GpaBandStep[] = [
+  { gpa: 7.0, wamMin: 80, wamMax: 100, grade: 'HD', gradeLabel: 'High Distinction' },
+  { gpa: 6.0, wamMin: 70, wamMax: 79, grade: 'D', gradeLabel: 'Distinction' },
+  { gpa: 5.0, wamMin: 60, wamMax: 69, grade: 'C', gradeLabel: 'Credit' },
+  { gpa: 4.0, wamMin: 50, wamMax: 59, grade: 'P', gradeLabel: 'Pass' },
+  { gpa: 0.0, wamMin: 0, wamMax: 49, grade: 'N', gradeLabel: 'Fail' },
+];
+
+/** Map a GPA value to the closest Monash-style grade band for planning. */
+export function mapGpaToMonashBand(gpa: number, scaleMax: 4 | 7): GpaBandStep | null {
+  if (Number.isNaN(gpa) || gpa < 0 || gpa > scaleMax) return null;
+  const steps = scaleMax === 4 ? gpa4Steps : gpa7Steps;
+  const thresholds =
+    scaleMax === 4
+      ? [
+          { min: 3.5, step: steps[0] },
+          { min: 2.5, step: steps[1] },
+          { min: 1.5, step: steps[2] },
+          { min: 0.5, step: steps[3] },
+          { min: 0, step: steps[4] },
+        ]
+      : [
+          { min: 6.5, step: steps[0] },
+          { min: 5.5, step: steps[1] },
+          { min: 4.5, step: steps[2] },
+          { min: 3.5, step: steps[3] },
+          { min: 0, step: steps[4] },
+        ];
+
+  return thresholds.find(entry => gpa >= entry.min)?.step ?? null;
+}
+
+export function calculateCreditWeightedWam(
+  units: Array<{ mark: number; credits: number }>
+): number | null {
+  let weighted = 0;
+  let credits = 0;
+  for (const unit of units) {
+    if (Number.isNaN(unit.mark) || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
+    weighted += unit.mark * unit.credits;
+    credits += unit.credits;
+  }
+  if (credits === 0) return null;
+  return Math.round((weighted / credits) * 100) / 100;
+}
+
+/** Final exam mark required for unit target (weights as decimals 0–1). */
+export function calculateRequiredFinalExamMark(
+  currentMark: number,
+  courseworkWeight: number,
+  examWeight: number,
+  targetMark: number
+): number | null {
+  if (
+    Number.isNaN(currentMark) ||
+    Number.isNaN(courseworkWeight) ||
+    Number.isNaN(examWeight) ||
+    Number.isNaN(targetMark) ||
+    examWeight <= 0 ||
+    courseworkWeight + examWeight > 1.001
+  ) {
+    return null;
+  }
+  const needed = (targetMark - currentMark * courseworkWeight) / examWeight;
+  return Math.round(needed * 100) / 100;
+}
+
+const MONASH_SUPP_PASS_MARK = 50;
+
+/** WAM after replacing one unit's mark (e.g. supplementary pass capped at 50). */
+export function calculateWamAfterReplacingUnitMark(
+  currentWam: number,
+  totalCredits: number,
+  unitCredits: number,
+  oldMark: number,
+  newMark: number
+): number | null {
+  if (
+    Number.isNaN(currentWam) ||
+    Number.isNaN(totalCredits) ||
+    Number.isNaN(unitCredits) ||
+    Number.isNaN(oldMark) ||
+    Number.isNaN(newMark) ||
+    totalCredits <= 0 ||
+    unitCredits <= 0 ||
+    unitCredits > totalCredits
+  ) {
+    return null;
+  }
+
+  const weighted = currentWam * totalCredits;
+  const adjusted = weighted - oldMark * unitCredits + newMark * unitCredits;
+  return Math.round((adjusted / totalCredits) * 100) / 100;
+}
+
+/** WAM when a repeat attempt is added (Monash includes failed and repeated units). */
+export function calculateWamAfterRepeatAttempt(
+  currentWam: number,
+  totalCredits: number,
+  unitCredits: number,
+  repeatMark: number
+): number | null {
+  if (
+    Number.isNaN(currentWam) ||
+    Number.isNaN(totalCredits) ||
+    Number.isNaN(unitCredits) ||
+    Number.isNaN(repeatMark) ||
+    totalCredits <= 0 ||
+    unitCredits <= 0
+  ) {
+    return null;
+  }
+
+  const weighted = currentWam * totalCredits;
+  const newTotal = totalCredits + unitCredits;
+  return Math.round(((weighted + repeatMark * unitCredits) / newTotal) * 100) / 100;
+}
+
+/** Repeat mark needed to beat passing a supplementary assessment (capped at 50). */
+export function calculateBreakevenRepeatMark(
+  currentWam: number,
+  totalCredits: number,
+  unitCredits: number,
+  failMark: number,
+  suppPassMark: number = MONASH_SUPP_PASS_MARK
+): number | null {
+  const suppWam = calculateWamAfterReplacingUnitMark(
+    currentWam,
+    totalCredits,
+    unitCredits,
+    failMark,
+    suppPassMark
+  );
+  if (suppWam === null) return null;
+
+  const weighted = currentWam * totalCredits;
+  const newTotal = totalCredits + unitCredits;
+  const required = (suppWam * newTotal - weighted) / unitCredits;
+  return Math.round(required * 100) / 100;
+}
+
+export const monashSupplementaryPassMark = MONASH_SUPP_PASS_MARK;
+
 /** Required average mark on remaining credit points to reach target WAM. */
 export function calculateRequiredRemainingAverage(
   currentWam: number,

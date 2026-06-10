@@ -33,7 +33,7 @@ const homeFaqs = [
   {
     question: 'How accurate is the WAM result?',
     answer:
-      'Accuracy depends on your inputs. If marks and credit points are correct, the estimate is usually very close. Differences can occur due to exclusions, special grading rules, or rounding by official systems.',
+      'Accuracy depends on your inputs. Credit-weighted marks usually match closely, but official Monash WAM also uses first-year 0.5 level weighting and may exclude some grade codes. Always verify on WES or your transcript.',
   },
   {
     question: 'Can I include ongoing units?',
@@ -120,7 +120,7 @@ export default function Home() {
           </h2>
           <div className="text-sm leading-relaxed space-y-3 text-gray-600 dark:text-gray-400">
             <p>
-              Searching for a <strong className="text-gray-800 dark:text-gray-200">WAM calculator</strong> usually means you want a fast, accurate weighted average — not a simple mean of percentages. <strong className="text-gray-800 dark:text-gray-200">Monash WAM Calculator</strong> is built for that: enter each unit&apos;s mark and credit points, and the tool applies Monash-style credit weighting so high-credit subjects count more.
+              Searching for a <strong className="text-gray-800 dark:text-gray-200">WAM calculator</strong> usually means you want a fast, credit-weighted average — not a simple mean of percentages. <strong className="text-gray-800 dark:text-gray-200">Monash WAM Calculator</strong> is built for that: enter each unit&apos;s mark and credit points, and the tool applies Monash-style credit weighting so high-credit subjects count more.
             </p>
             <p>
               Unlike generic calculators, this WAM calculator is tuned for Monash University workflows — honours planning, scholarship targets, and semester tracking. Pair it with our{' '}
@@ -204,13 +204,18 @@ export default function Home() {
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How is Monash WAM Calculated?</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">
-            Monash University calculates WAM using a weighted formula based on your marks and the credit points of each subject. Each subject mark is multiplied by its credit points. The total weighted marks are then divided by the total credit points attempted.
+            Monash University calculates WAM using credit-weighted marks. Each unit mark is multiplied by credit points
+            (and for official WAM, first-year undergraduate units also use a 0.5 year-level weight). This calculator uses
+            credit-weighted maths for fast planning — confirm your official WAM on WES or your transcript.
           </p>
 
           <div className="bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-xl p-4 mb-6 text-center">
-            <p className="text-sm text-primary-700 dark:text-primary-300 font-medium mb-1">WAM Formula</p>
+            <p className="text-sm text-primary-700 dark:text-primary-300 font-medium mb-1">Planning formula (credit-weighted)</p>
             <p className="font-mono text-primary-800 dark:text-primary-200 text-base font-bold">
               WAM = &Sigma;(Mark &times; Credit Points) &divide; &Sigma;(Credit Points)
+            </p>
+            <p className="text-xs text-primary-600 dark:text-primary-400 mt-2">
+              Official Monash WAM also applies 0.5 weighting to first-year units.
             </p>
           </div>
 

@@ -33,6 +33,10 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
   ],
+  '/supp-repeat-wam-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-monash' },
+  ],
   '/articles': [
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'how to calculate WAM', path: '/articles/how-to-calculate-wam' },

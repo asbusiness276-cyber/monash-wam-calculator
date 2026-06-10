@@ -13,6 +13,7 @@ const calculatorLinks = [
   { label: 'Final Grade', href: '/final-grade-calculator' },
   { label: 'Mark to Grade', href: '/mark-to-grade-calculator' },
   { label: 'WAM Target', href: '/wam-target-calculator' },
+  { label: 'Supp vs Repeat', href: '/supp-repeat-wam-calculator' },
 ];
 
 const infoLinks = [

@@ -8,6 +8,7 @@ import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 const [gpaToWamHome, gpaToWamWtg] = PAGE_KEYWORD_LINKS['/gpa-to-wam-calculator'];
 import ProductPopup from '../components/ProductPopup';
 import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { mapGpaToMonashBand, type GpaBandStep } from '../utils/monashGrades';
 
 const gpaToWamFaqs = [
   {
@@ -44,8 +45,8 @@ const gpaToWamFaqs = [
 
 interface Scale {
   label: string;
-  max: number;
-  steps: { gpa: number; wamMin: number; wamMax: number; grade: string; gradeLabel: string }[];
+  max: 4 | 7;
+  steps: GpaBandStep[];
 }
 
 const scales: Scale[] = [
@@ -81,9 +82,7 @@ export default function GPAtoWAM() {
 
   const scale = scales[scaleIdx];
   const gpaNum = parseFloat(gpa);
-  const result = gpa !== '' && !isNaN(gpaNum)
-    ? scale.steps.find(s => gpaNum >= s.gpa - 0.5 && gpaNum <= s.gpa + 0.5) || scale.steps.find(s => gpaNum >= s.gpa)
-    : null;
+  const result = gpa !== '' && !isNaN(gpaNum) ? mapGpaToMonashBand(gpaNum, scale.max) : null;
 
   useEffect(() => {
     const markEquivalent = gpa === '' ? null : (parseFloat(gpa) / scale.max) * 100;
