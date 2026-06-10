@@ -10,6 +10,8 @@ import WamTarget from './pages/WamTarget';
 import SuppRepeatWam from './pages/SuppRepeatWam';
 import SemesterWam from './pages/SemesterWam';
 import UnitMark from './pages/UnitMark';
+import WamProjection from './pages/WamProjection';
+import UnitTarget from './pages/UnitTarget';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Disclaimer from './pages/Disclaimer';
@@ -32,6 +34,8 @@ function getPage(path: string) {
   if (path === '/supp-repeat-wam-calculator') return <SuppRepeatWam />;
   if (path === '/semester-wam-calculator') return <SemesterWam />;
   if (path === '/unit-mark-calculator') return <UnitMark />;
+  if (path === '/wam-projection-calculator') return <WamProjection />;
+  if (path === '/unit-target-calculator') return <UnitTarget />;
   if (path === '/articles') return <Articles />;
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');

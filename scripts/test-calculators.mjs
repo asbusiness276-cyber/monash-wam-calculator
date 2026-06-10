@@ -79,6 +79,28 @@ function calculateWeightedUnitMark(assessments) {
   return Math.round(weightedSum * 100) / 100;
 }
 
+function calculateProjectedWam(currentWam, completedCredits, upcomingUnits) {
+  if (Number.isNaN(currentWam) || Number.isNaN(completedCredits) || completedCredits <= 0) return null;
+  const validUpcoming = upcomingUnits.filter(
+    unit => !Number.isNaN(unit.mark) && !Number.isNaN(unit.credits) && unit.credits > 0
+  );
+  if (validUpcoming.length === 0) return null;
+  const weightedDone = currentWam * completedCredits;
+  let upcomingWeighted = 0;
+  let upcomingCredits = 0;
+  for (const unit of validUpcoming) {
+    upcomingWeighted += unit.mark * unit.credits;
+    upcomingCredits += unit.credits;
+  }
+  const totalCreditsAfter = completedCredits + upcomingCredits;
+  const projectedWam = Math.round(((weightedDone + upcomingWeighted) / totalCreditsAfter) * 100) / 100;
+  return {
+    projectedWam,
+    delta: Math.round((projectedWam - currentWam) * 100) / 100,
+    totalCreditsAfter,
+  };
+}
+
 function calculateSemesterWamSummary(units) {
   const valid = units.filter(
     unit => !Number.isNaN(unit.mark) && !Number.isNaN(unit.credits) && unit.credits > 0
@@ -246,6 +268,79 @@ test('Official WAM: year 1 counts at half weight', () => {
   ]);
   assert(official === 80, `expected official 80, got ${official}`);
   assert(planning === 75, `expected planning 75, got ${planning}`);
+});
+
+function calculateRequiredRemainingAssessmentMark(assessments, targetUnitMark) {
+  if (Number.isNaN(targetUnitMark) || targetUnitMark < 0 || targetUnitMark > 100) return null;
+  let totalWeight = 0;
+  let completedContribution = 0;
+  let remainingWeight = 0;
+  for (const assessment of assessments) {
+    if (Number.isNaN(assessment.weightPercent) || assessment.weightPercent < 0) continue;
+    totalWeight += assessment.weightPercent;
+    if (assessment.mark === null || Number.isNaN(assessment.mark)) {
+      remainingWeight += assessment.weightPercent;
+      continue;
+    }
+    completedContribution += assessment.mark * (assessment.weightPercent / 100);
+  }
+  if (totalWeight === 0 || Math.abs(totalWeight - 100) > 0.5 || remainingWeight <= 0) return null;
+  return Math.round(((targetUnitMark - completedContribution) / (remainingWeight / 100)) * 100) / 100;
+}
+
+test('Unit target: required mark on remaining assessments', () => {
+  const needed = calculateRequiredRemainingAssessmentMark(
+    [
+      { mark: 75, weightPercent: 25 },
+      { mark: 68, weightPercent: 25 },
+      { mark: null, weightPercent: 50 },
+    ],
+    75
+  );
+  assert(needed === 78.5, `expected 78.5, got ${needed}`);
+});
+
+test('Unit target: target already secured on remaining', () => {
+  const needed = calculateRequiredRemainingAssessmentMark(
+    [
+      { mark: 85, weightPercent: 50 },
+      { mark: null, weightPercent: 50 },
+    ],
+    40
+  );
+  assert(needed === -5, `expected -5, got ${needed}`);
+});
+
+test('Unit target: not achievable above 100%', () => {
+  const needed = calculateRequiredRemainingAssessmentMark(
+    [
+      { mark: 40, weightPercent: 50 },
+      { mark: null, weightPercent: 50 },
+    ],
+    80
+  );
+  assert(needed === 120, `expected 120, got ${needed}`);
+});
+
+test('WAM projection: upcoming units increase WAM', () => {
+  const result = calculateProjectedWam(72, 96, [
+    { mark: 80, credits: 6 },
+    { mark: 75, credits: 6 },
+    { mark: 85, credits: 12 },
+  ]);
+  assert(result.projectedWam === 73.85, `expected 73.85, got ${result.projectedWam}`);
+  assert(result.delta === 1.85, `expected delta 1.85, got ${result.delta}`);
+  assert(result.totalCreditsAfter === 120, `expected 120 cp, got ${result.totalCreditsAfter}`);
+});
+
+test('WAM projection: weak upcoming marks lower WAM', () => {
+  const result = calculateProjectedWam(75, 96, [{ mark: 45, credits: 24 }]);
+  assert(result.projectedWam === 69, `expected 69, got ${result.projectedWam}`);
+  assert(result.delta === -6, `expected -6, got ${result.delta}`);
+});
+
+test('WAM projection: rejects zero completed credits', () => {
+  assert(calculateProjectedWam(72, 0, [{ mark: 80, credits: 6 }]) === null, 'should be null');
 });
 
 test('Unit mark: weighted assessments', () => {

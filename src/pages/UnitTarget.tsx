@@ -1,0 +1,83 @@
+import Seo from '../components/Seo';
+import PageFaq from '../components/PageFaq';
+import ProductShowcase from '../components/ProductShowcase';
+import UnitTargetToolCore from '../components/UnitTargetToolCore';
+import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
+import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+
+const [utUnit, utFinal] = PAGE_KEYWORD_LINKS['/unit-target-calculator'];
+
+const unitTargetFaqs = [
+  {
+    question: 'How do I calculate required mark on remaining assessments?',
+    answer:
+      'Enter completed assessment marks and weights, leave pending assessments blank, and set your target unit mark. The tool calculates the weighted average needed on remaining components.',
+  },
+  {
+    question: 'Is this different from the final grade calculator?',
+    answer:
+      'Yes. Final grade handles one coursework block and one exam. This tool supports multiple assessments (assignments, labs, tests, exam) with separate weights.',
+  },
+  {
+    question: 'Do weights need to total 100%?',
+    answer: 'Yes. Assessment weights must add up to 100% for a valid unit mark calculation.',
+  },
+  {
+    question: 'What if required mark is above 100%?',
+    answer:
+      'Your target is not achievable with current marks unless weights or expectations change. Consider adjusting your target or speaking with your unit coordinator.',
+  },
+  {
+    question: 'Can I leave multiple assessments blank?',
+    answer:
+      'Yes. The result is the average mark needed across the combined weight of all pending assessments.',
+  },
+  {
+    question: 'Does this match Monash official grading?',
+    answer:
+      'It uses standard weighted percentage maths from your unit guide. Hurdles, scaling, or special rules may differ — confirm on official unit information.',
+  },
+];
+
+export default function UnitTarget() {
+  return (
+    <>
+      <Seo
+        title="Unit Target Mark Calculator - What Do You Need? (Monash 2026)"
+        description="Free Monash unit target calculator: enter completed assessment marks and weights to see what you need on remaining tasks to reach your target unit mark."
+        canonicalPath="/unit-target-calculator"
+        faqItems={unitTargetFaqs}
+      />
+
+      <section className="bg-gradient-to-br from-sky-700 to-sky-900 text-white py-12 text-center px-4">
+        <h1 className="text-4xl font-bold mb-3">Unit Target Mark Calculator</h1>
+        <p className="text-sky-100 max-w-2xl mx-auto">
+          Assignments done, exam pending? Enter completed marks and weights to find what you need on remaining
+          assessments to hit your target unit percentage.
+        </p>
+        <p className="text-sky-100/95 max-w-2xl mx-auto text-sm mt-4 leading-relaxed">
+          Already know all marks? Use the{' '}
+          <a href={absoluteUrl(utUnit.path)} className={HERO_INLINE_LINK_CLASS}>{utUnit.keyword}</a>
+          . Simple coursework + exam only? Try the{' '}
+          <a href={absoluteUrl(utFinal.path)} className={HERO_INLINE_LINK_CLASS}>{utFinal.keyword}</a>.
+        </p>
+      </section>
+
+      <section className="max-w-2xl mx-auto px-4 py-8">
+        <UnitTargetToolCore />
+
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Example</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Assignment 75% (25%), mid-sem 68% (25%), final pending (50%), target 75% → completed contribution = 35.75 →
+            need (75 − 35.75) ÷ 0.5 = <strong className="text-gray-800 dark:text-gray-200">78.50%</strong> on the
+            final.
+          </p>
+        </div>
+      </section>
+
+      <ProductShowcase startIndex={7} endIndex={12} />
+      <PageFaq items={unitTargetFaqs} />
+    </>
+  );
+}

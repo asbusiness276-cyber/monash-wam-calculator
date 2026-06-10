@@ -16,6 +16,8 @@ const calculatorLinks = [
   { label: 'Supp vs Repeat', href: '/supp-repeat-wam-calculator' },
   { label: 'Semester WAM', href: '/semester-wam-calculator' },
   { label: 'Unit Mark', href: '/unit-mark-calculator' },
+  { label: 'WAM What-If', href: '/wam-projection-calculator' },
+  { label: 'Unit Target', href: '/unit-target-calculator' },
 ];
 
 const infoLinks = [

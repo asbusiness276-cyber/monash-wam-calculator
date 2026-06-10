@@ -45,6 +45,14 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'final grade calculator', path: '/final-grade-calculator' },
     { keyword: 'Monash WAM calculator', path: '/' },
   ],
+  '/wam-projection-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM target calculator', path: '/wam-target-calculator' },
+  ],
+  '/unit-target-calculator': [
+    { keyword: 'unit mark calculator', path: '/unit-mark-calculator' },
+    { keyword: 'final grade calculator', path: '/final-grade-calculator' },
+  ],
   '/articles': [
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'how to calculate WAM', path: '/articles/how-to-calculate-wam' },

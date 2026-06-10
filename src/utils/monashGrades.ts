@@ -153,6 +153,40 @@ export interface WeightedAssessmentInput {
   weightPercent: number;
 }
 
+export interface AssessmentRowInput {
+  mark: number | null;
+  weightPercent: number;
+}
+
+/** Mark needed on remaining (unmarked) assessments to reach target unit %. */
+export function calculateRequiredRemainingAssessmentMark(
+  assessments: AssessmentRowInput[],
+  targetUnitMark: number
+): number | null {
+  if (Number.isNaN(targetUnitMark) || targetUnitMark < 0 || targetUnitMark > 100) return null;
+
+  let totalWeight = 0;
+  let completedContribution = 0;
+  let remainingWeight = 0;
+
+  for (const assessment of assessments) {
+    if (Number.isNaN(assessment.weightPercent) || assessment.weightPercent < 0) continue;
+    totalWeight += assessment.weightPercent;
+
+    if (assessment.mark === null || Number.isNaN(assessment.mark)) {
+      remainingWeight += assessment.weightPercent;
+      continue;
+    }
+
+    completedContribution += assessment.mark * (assessment.weightPercent / 100);
+  }
+
+  if (totalWeight === 0 || Math.abs(totalWeight - 100) > 0.5 || remainingWeight <= 0) return null;
+
+  const needed = (targetUnitMark - completedContribution) / (remainingWeight / 100);
+  return Math.round(needed * 100) / 100;
+}
+
 export function calculateWeightedUnitMark(
   assessments: WeightedAssessmentInput[]
 ): number | null {
@@ -195,6 +229,53 @@ export function calculateSemesterWamSummary(
     simpleAverage,
     totalCredits,
     unitCount: valid.length,
+  };
+}
+
+export interface ProjectedWamResult {
+  projectedWam: number;
+  currentWam: number;
+  delta: number;
+  completedCredits: number;
+  upcomingCredits: number;
+  totalCreditsAfter: number;
+}
+
+/** Project cumulative WAM after adding upcoming unit marks (credit-weighted planning). */
+export function calculateProjectedWam(
+  currentWam: number,
+  completedCredits: number,
+  upcomingUnits: Array<{ mark: number; credits: number }>
+): ProjectedWamResult | null {
+  if (Number.isNaN(currentWam) || Number.isNaN(completedCredits) || completedCredits <= 0) {
+    return null;
+  }
+
+  const validUpcoming = upcomingUnits.filter(
+    unit => !Number.isNaN(unit.mark) && !Number.isNaN(unit.credits) && unit.credits > 0
+  );
+  if (validUpcoming.length === 0) return null;
+
+  const weightedDone = currentWam * completedCredits;
+  let upcomingWeighted = 0;
+  let upcomingCredits = 0;
+
+  for (const unit of validUpcoming) {
+    upcomingWeighted += unit.mark * unit.credits;
+    upcomingCredits += unit.credits;
+  }
+
+  const totalCreditsAfter = completedCredits + upcomingCredits;
+  const projectedWam =
+    Math.round(((weightedDone + upcomingWeighted) / totalCreditsAfter) * 100) / 100;
+
+  return {
+    projectedWam,
+    currentWam: Math.round(currentWam * 100) / 100,
+    delta: Math.round((projectedWam - currentWam) * 100) / 100,
+    completedCredits,
+    upcomingCredits,
+    totalCreditsAfter,
   };
 }
 
