@@ -74,7 +74,7 @@ export default function UnitMark() {
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Example: Assignment 75% (25%), mid-sem 68% (25%), final 72% (50%) → 18.75 + 17 + 36 ={' '}
-            <strong className="text-gray-800 dark:text-gray-200">71.75%</strong> overall (Credit band).
+            <strong className="text-gray-800 dark:text-gray-200">71.75%</strong> overall (Distinction band).
           </p>
         </div>
       </section>
