@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import ProductShowcase from '../components/ProductShowcase';
@@ -7,7 +7,7 @@ import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
 const [gpaToWamHome, gpaToWamWtg] = PAGE_KEYWORD_LINKS['/gpa-to-wam-calculator'];
 import ProductPopup from '../components/ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
 import { mapGpaToMonashBand, type GpaBandStep } from '../utils/monashGrades';
 
 const gpaToWamFaqs = [
@@ -77,24 +77,18 @@ const scales: Scale[] = [
 export default function GPAtoWAM() {
   const [gpa, setGpa] = useState('');
   const [scaleIdx, setScaleIdx] = useState(0);
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
   const scale = scales[scaleIdx];
   const gpaNum = parseFloat(gpa);
   const result = gpa !== '' && !isNaN(gpaNum) ? mapGpaToMonashBand(gpaNum, scale.max) : null;
+  const markEquivalent = gpa === '' ? null : (parseFloat(gpa) / scale.max) * 100;
 
-  useEffect(() => {
-    const markEquivalent = gpa === '' ? null : (parseFloat(gpa) / scale.max) * 100;
-    const rec = evaluateRecommendationTrigger({
-      route: '/gpa-to-wam-calculator',
-      subjects: [{ code: 'MAT1830', mark: Number.isFinite(markEquivalent) ? markEquivalent : null }],
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [gpa, scale.max]);
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    hasResult: result !== null,
+    userReady: gpa !== '',
+    route: '/gpa-to-wam-calculator',
+    subjects: [{ code: 'MAT1830', mark: Number.isFinite(markEquivalent as number) ? markEquivalent : null }],
+  });
 
   return (
     <>

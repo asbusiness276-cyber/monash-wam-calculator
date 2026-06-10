@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Plus, Trash2 } from 'lucide-react';
 import ProductPopup from './ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { useDelayedProductPopup, useUserInteractionFlag } from '../hooks/useDelayedProductPopup';
 import {
   calculateRequiredRemainingAssessmentMark,
   getMonashGradeFromMark,
@@ -43,8 +43,7 @@ function getStatus(needed: number | null) {
 export default function UnitTargetToolCore({ enableProductPopup = true }: UnitTargetToolCoreProps) {
   const [rows, setRows] = useState<AssessmentRow[]>(defaultRows);
   const [targetMark, setTargetMark] = useState('75');
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
+  const { hasUserInteracted, markUserInteracted } = useUserInteractionFlag();
 
   const parsed = rows
     .filter(row => row.weight !== '')
@@ -70,28 +69,27 @@ export default function UnitTargetToolCore({ enableProductPopup = true }: UnitTa
       : null;
 
   const updateRow = (id: number, field: keyof AssessmentRow, value: string) => {
+    markUserInteracted();
     setRows(prev => prev.map(row => (row.id === id ? { ...row, [field]: value } : row)));
   };
 
   const addRow = () => {
+    markUserInteracted();
     setRows(prev => [...prev, { id: nextId++, name: '', mark: '', weight: '' }]);
   };
 
   const removeRow = (id: number) => {
+    markUserInteracted();
     setRows(prev => (prev.length <= 1 ? prev : prev.filter(row => row.id !== id)));
   };
 
-  useEffect(() => {
-    if (!enableProductPopup || needed === null) return;
-    const rec = evaluateRecommendationTrigger({
-      route: '/unit-target-calculator',
-      subjects: [{ code: 'UNIT', mark: needed }],
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [rows, targetMark, needed, enableProductPopup]);
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    enabled: enableProductPopup,
+    hasResult: needed !== null,
+    userReady: hasUserInteracted,
+    route: '/unit-target-calculator',
+    subjects: [{ code: 'UNIT', mark: needed }],
+  });
 
   return (
     <>
@@ -179,7 +177,10 @@ export default function UnitTargetToolCore({ enableProductPopup = true }: UnitTa
               step="0.1"
               placeholder="e.g. 75"
               value={targetMark}
-              onChange={e => setTargetMark(e.target.value)}
+              onChange={e => {
+                markUserInteracted();
+                setTargetMark(e.target.value);
+              }}
               className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-500"
             />
             {targetGrade && targetNum !== null && (

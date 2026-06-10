@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Plus, Trash2 } from 'lucide-react';
 import ProductPopup from './ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import UnitAutocompleteInput from './UnitAutocompleteInput';
+import { useDelayedProductPopup, useUserInteractionFlag } from '../hooks/useDelayedProductPopup';
 import { calculateSemesterWamSummary, getMonashGradeFromMark } from '../utils/monashGrades';
 
 interface SemesterUnit {
@@ -26,8 +27,7 @@ const defaultUnits: SemesterUnit[] = [
 
 export default function SemesterWamToolCore({ enableProductPopup = true }: SemesterWamToolCoreProps) {
   const [units, setUnits] = useState<SemesterUnit[]>(defaultUnits);
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
+  const { hasUserInteracted, markUserInteracted } = useUserInteractionFlag();
 
   const parsedUnits = units
     .filter(row => row.mark !== '' && row.credits !== '')
@@ -41,33 +41,32 @@ export default function SemesterWamToolCore({ enableProductPopup = true }: Semes
   const gradeBand = summary ? getMonashGradeFromMark(summary.weightedWam) : null;
 
   const updateUnit = (id: number, field: keyof SemesterUnit, value: string) => {
+    markUserInteracted();
     setUnits(prev =>
       prev.map(row => (row.id === id ? { ...row, [field]: field === 'unit' ? value.toUpperCase() : value } : row))
     );
   };
 
   const addUnit = () => {
+    markUserInteracted();
     setUnits(prev => [...prev, { id: nextId++, unit: '', mark: '', credits: '6' }]);
   };
 
   const removeUnit = (id: number) => {
+    markUserInteracted();
     setUnits(prev => (prev.length <= 1 ? prev : prev.filter(row => row.id !== id)));
   };
 
-  useEffect(() => {
-    if (!enableProductPopup || !summary) return;
-    const rec = evaluateRecommendationTrigger({
-      route: '/semester-wam-calculator',
-      subjects: units.map(row => ({
-        code: row.unit.trim() || 'SEM',
-        mark: row.mark === '' ? null : parseFloat(row.mark),
-      })),
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [units, summary, enableProductPopup]);
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    enabled: enableProductPopup,
+    hasResult: summary !== null,
+    userReady: hasUserInteracted,
+    route: '/semester-wam-calculator',
+    subjects: units.map(row => ({
+      code: row.unit.trim() || 'SEM',
+      mark: row.mark === '' ? null : parseFloat(row.mark),
+    })),
+  });
 
   return (
     <>
@@ -89,12 +88,12 @@ export default function SemesterWamToolCore({ enableProductPopup = true }: Semes
                   <label className="block text-xs font-semibold text-gray-600 dark:text-gray-300 mb-1.5">
                     Unit (optional)
                   </label>
-                  <input
-                    type="text"
-                    placeholder={`e.g. FIT${1000 + index}`}
+                  <UnitAutocompleteInput
+                    field="unit"
                     value={row.unit}
-                    onChange={e => updateUnit(row.id, 'unit', e.target.value)}
-                    className="w-full px-3 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm"
+                    onChange={v => updateUnit(row.id, 'unit', v)}
+                    placeholder={`e.g. FIT${1000 + index}`}
+                    inputClassName="w-full px-3 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm"
                   />
                 </div>
                 <div>

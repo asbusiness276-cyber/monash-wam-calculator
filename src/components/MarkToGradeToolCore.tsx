@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ProductPopup from './ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
 import { getMonashGradeFromMark, monashGradeBands } from '../utils/monashGrades';
 
 interface MarkToGradeToolCoreProps {
@@ -13,22 +13,16 @@ export default function MarkToGradeToolCore({
   enableProductPopup = true,
 }: MarkToGradeToolCoreProps) {
   const [mark, setMark] = useState(initialMark);
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
   const parsed = mark === '' ? null : parseFloat(mark);
   const result = parsed !== null ? getMonashGradeFromMark(parsed) : null;
 
-  useEffect(() => {
-    if (!enableProductPopup) return;
-    const rec = evaluateRecommendationTrigger({
-      route: '/mark-to-grade-calculator',
-      subjects: [{ code: 'ENG1005', mark: mark === '' ? null : parseFloat(mark) }],
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [mark, enableProductPopup]);
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    enabled: enableProductPopup,
+    hasResult: result !== null,
+    userReady: mark !== '',
+    route: '/mark-to-grade-calculator',
+    subjects: [{ code: 'ENG1005', mark: mark === '' ? null : parseFloat(mark) }],
+  });
 
   return (
     <>

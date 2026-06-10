@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ProductPopup from './ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
 import { calculateRequiredRemainingAverage, getMonashGradeFromMark } from '../utils/monashGrades';
 
 interface WamTargetToolCoreProps {
@@ -32,8 +32,6 @@ export default function WamTargetToolCore({ enableProductPopup = true }: WamTarg
   const [completedCredits, setCompletedCredits] = useState('');
   const [remainingCredits, setRemainingCredits] = useState('');
   const [targetWam, setTargetWam] = useState('');
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
   const required =
     currentWam !== '' && completedCredits !== '' && remainingCredits !== '' && targetWam !== ''
@@ -48,17 +46,16 @@ export default function WamTargetToolCore({ enableProductPopup = true }: WamTarg
   const status = getStatus(required);
   const gradeBand = required !== null && required >= 0 && required <= 100 ? getMonashGradeFromMark(required) : null;
 
-  useEffect(() => {
-    if (!enableProductPopup) return;
-    const rec = evaluateRecommendationTrigger({
-      route: '/wam-target-calculator',
-      subjects: [{ code: 'FIT1045', mark: targetWam === '' ? null : parseFloat(targetWam) }],
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [currentWam, completedCredits, remainingCredits, targetWam, enableProductPopup]);
+  const allFieldsFilled =
+    currentWam !== '' && completedCredits !== '' && remainingCredits !== '' && targetWam !== '';
+
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    enabled: enableProductPopup,
+    hasResult: status !== null,
+    userReady: allFieldsFilled,
+    route: '/wam-target-calculator',
+    subjects: [{ code: 'FIT1045', mark: targetWam === '' ? null : parseFloat(targetWam) }],
+  });
 
   return (
     <>

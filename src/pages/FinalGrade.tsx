@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import ProductShowcase from '../components/ProductShowcase';
@@ -7,7 +7,7 @@ import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
 const [finalHome, finalWtg] = PAGE_KEYWORD_LINKS['/final-grade-calculator'];
 import ProductPopup from '../components/ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
 import { calculateRequiredFinalExamMark } from '../utils/monashGrades';
 
 const finalGradeFaqs = [
@@ -48,8 +48,6 @@ export default function FinalGrade() {
   const [currentWeight, setCurrentWeight] = useState('');
   const [targetMark, setTargetMark] = useState('');
   const [examWeight, setExamWeight] = useState('');
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
   const needed = (() => {
     const cm = parseFloat(currentMark);
@@ -69,16 +67,15 @@ export default function FinalGrade() {
 
   const status = getStatus(needed);
 
-  useEffect(() => {
-    const rec = evaluateRecommendationTrigger({
-      route: '/final-grade-calculator',
-      subjects: [{ code: 'ENG1005', mark: currentMark === '' ? null : parseFloat(currentMark) }],
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [currentMark, currentWeight, targetMark, examWeight]);
+  const allFieldsFilled =
+    currentMark !== '' && currentWeight !== '' && targetMark !== '' && examWeight !== '';
+
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    hasResult: status !== null,
+    userReady: allFieldsFilled,
+    route: '/final-grade-calculator',
+    subjects: [{ code: 'ENG1005', mark: currentMark === '' ? null : parseFloat(currentMark) }],
+  });
 
   return (
     <>

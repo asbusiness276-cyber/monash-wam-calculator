@@ -1,8 +1,9 @@
-import { useState, useCallback, useEffect, useRef, type KeyboardEvent } from 'react';
+import { useState, useCallback } from 'react';
 import { Plus, Trash2, RotateCcw, Copy, Check, TrendingUp } from 'lucide-react';
 import ProductPopup from './ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
-import { unitSubjectCatalog } from '../data/unitSubjectCatalog';
+import UnitAutocompleteInput from './UnitAutocompleteInput';
+import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
+import { matchSubjectByUnit, matchUnitBySubject } from '../utils/unitSubjectSuggestions';
 import {
   calculateCreditWeightedWam,
   calculateMonashOfficialWam,
@@ -17,13 +18,6 @@ interface Subject {
   mark: string;
   credits: string;
   yearLevel: string;
-}
-
-interface SuggestionState {
-  rowId: number;
-  field: 'unit' | 'subject';
-  items: string[];
-  activeIndex: number;
 }
 
 interface WAMResult {
@@ -44,59 +38,6 @@ function defaultYearLevelForUnit(unitCode: string): string {
 }
 
 let nextId = 4;
-
-const unitToSubject = new Map(
-  unitSubjectCatalog.map(item => [item.unitCode.toUpperCase(), item.specificSubject])
-);
-
-const subjectToUnits = new Map<string, string[]>();
-for (const item of unitSubjectCatalog) {
-  const key = item.specificSubject.trim().toLowerCase();
-  const current = subjectToUnits.get(key) ?? [];
-  current.push(item.unitCode.toUpperCase());
-  subjectToUnits.set(key, current);
-}
-
-const unitOptions = Array.from(new Set(unitSubjectCatalog.map(item => item.unitCode.toUpperCase())));
-const subjectOptions = Array.from(new Set(unitSubjectCatalog.map(item => item.specificSubject)));
-
-function matchSubjectByUnit(unitCode: string): string | null {
-  const normalized = unitCode.trim().toUpperCase();
-  return normalized ? unitToSubject.get(normalized) ?? null : null;
-}
-
-function matchUnitBySubject(specificSubject: string): string | null {
-  const normalized = specificSubject.trim().toLowerCase();
-  const matches = subjectToUnits.get(normalized);
-  return matches && matches.length > 0 ? matches[0] : null;
-}
-
-function getSmartSuggestions(options: string[], query: string, limit = 10): string[] {
-  const normalized = query.trim().toLowerCase();
-  if (!normalized) return options.slice(0, limit);
-
-  const startsWith = options.filter(item => item.toLowerCase().startsWith(normalized));
-  const contains = options.filter(
-    item => item.toLowerCase().includes(normalized) && !item.toLowerCase().startsWith(normalized)
-  );
-  return [...startsWith, ...contains].slice(0, limit);
-}
-
-function escapeRegex(value: string): string {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function renderHighlightedSuggestion(value: string, query: string) {
-  if (!query.trim()) return value;
-  const regex = new RegExp(`(${escapeRegex(query)})`, 'ig');
-  const parts = value.split(regex);
-  const normalizedQuery = query.toLowerCase();
-  return parts.map((part, index) => (
-    part.toLowerCase() === normalizedQuery
-      ? <mark key={`${part}-${index}`} className="bg-amber-100 dark:bg-amber-500/30 text-inherit rounded px-0.5">{part}</mark>
-      : <span key={`${part}-${index}`}>{part}</span>
-  ));
-}
 
 const defaultSubjects: Subject[] = [
   {
@@ -133,10 +74,6 @@ interface WAMCalculatorProps {
 export default function WAMCalculator({ embedSuppressRecommendations = false }: WAMCalculatorProps) {
   const [subjects, setSubjects] = useState<Subject[]>(defaultSubjects);
   const [copied, setCopied] = useState(false);
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
-  const [suggestionState, setSuggestionState] = useState<SuggestionState | null>(null);
-  const popupTimerRef = useRef<number | null>(null);
 
   const calculateWAM = useCallback((): WAMResult | null => {
     const valid = subjects.filter(s => s.mark !== '' && s.credits !== '');
@@ -174,6 +111,22 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
 
   const result = calculateWAM();
 
+  const addedSubjects = subjects.slice(defaultSubjects.length);
+  const hasCompletedAddedSubject = addedSubjects.some(
+    s => (s.unit.trim() !== '' || s.subject.trim() !== '') && s.credits.trim() !== '' && s.mark.trim() !== ''
+  );
+
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    enabled: !embedSuppressRecommendations,
+    hasResult: result !== null,
+    userReady: hasCompletedAddedSubject,
+    route: '/',
+    subjects: subjects.map(s => ({
+      code: s.unit.trim() || s.subject.trim(),
+      mark: s.mark === '' ? null : parseFloat(s.mark),
+    })),
+  });
+
   const addSubject = () => {
     setSubjects(prev => [
       ...prev,
@@ -209,87 +162,6 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
     );
   };
 
-  const openSuggestions = (rowId: number, field: 'unit' | 'subject', value: string) => {
-    const source = field === 'unit' ? unitOptions : subjectOptions;
-    const items = getSmartSuggestions(source, value);
-    setSuggestionState({ rowId, field, items, activeIndex: items.length > 0 ? 0 : -1 });
-  };
-
-  const closeSuggestions = () => setSuggestionState(null);
-
-  const selectSuggestion = (rowId: number, field: 'unit' | 'subject', value: string) => {
-    updateSubject(rowId, field, value);
-    closeSuggestions();
-  };
-
-  const handleSuggestionKeyDown = (
-    event: KeyboardEvent<HTMLInputElement>,
-    rowId: number,
-    field: 'unit' | 'subject',
-    currentValue: string
-  ) => {
-    const source = field === 'unit' ? unitOptions : subjectOptions;
-    const current = suggestionState && suggestionState.rowId === rowId && suggestionState.field === field
-      ? suggestionState
-      : { rowId, field, items: getSmartSuggestions(source, currentValue), activeIndex: 0 };
-
-    if (event.key === 'ArrowDown') {
-      event.preventDefault();
-      const nextItems = current.items.length > 0 ? current.items : getSmartSuggestions(source, currentValue);
-      if (nextItems.length === 0) return;
-      const nextIndex = current.activeIndex < nextItems.length - 1 ? current.activeIndex + 1 : 0;
-      setSuggestionState({ rowId, field, items: nextItems, activeIndex: nextIndex });
-      return;
-    }
-
-    if (event.key === 'ArrowUp') {
-      event.preventDefault();
-      const nextItems = current.items.length > 0 ? current.items : getSmartSuggestions(source, currentValue);
-      if (nextItems.length === 0) return;
-      const nextIndex = current.activeIndex > 0 ? current.activeIndex - 1 : nextItems.length - 1;
-      setSuggestionState({ rowId, field, items: nextItems, activeIndex: nextIndex });
-      return;
-    }
-
-    if (event.key === 'Enter' && suggestionState && suggestionState.rowId === rowId && suggestionState.field === field) {
-      const selected = suggestionState.items[suggestionState.activeIndex];
-      if (selected) {
-        event.preventDefault();
-        selectSuggestion(rowId, field, selected);
-      }
-      return;
-    }
-
-    if (event.key === 'Escape') {
-      closeSuggestions();
-    }
-  };
-
-  const renderSuggestions = (rowId: number, field: 'unit' | 'subject', query: string) => {
-    if (!suggestionState || suggestionState.rowId !== rowId || suggestionState.field !== field || suggestionState.items.length === 0) {
-      return null;
-    }
-
-    return (
-      <div className="absolute left-0 right-0 top-full mt-1 md:top-auto md:bottom-full md:mt-0 md:mb-1 z-30 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-56 overflow-y-auto">
-        {suggestionState.items.map((option, optionIndex) => (
-          <button
-            key={option}
-            type="button"
-            onMouseDown={() => selectSuggestion(rowId, field, option)}
-            className={`w-full text-left px-3 py-2 text-xs ${
-              suggestionState.activeIndex === optionIndex
-                ? 'bg-primary-50 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-            }`}
-          >
-            {renderHighlightedSuggestion(option, query)}
-          </button>
-        ))}
-      </div>
-    );
-  };
-
   const reset = () => {
     setSubjects([
       { id: 1, unit: '', subject: '', mark: '', credits: '6', yearLevel: '1' },
@@ -309,51 +181,6 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
     const n = parseFloat(val);
     return val === '' || (n >= 0 && n <= 100);
   };
-
-  useEffect(() => {
-    if (embedSuppressRecommendations) return;
-    // Only trigger from newly added subject rows after user fills all required fields.
-    const addedSubjects = subjects.slice(defaultSubjects.length);
-    const hasCompletedAddedSubject = addedSubjects.some(
-      s => (s.unit.trim() !== '' || s.subject.trim() !== '') && s.credits.trim() !== '' && s.mark.trim() !== ''
-    );
-    const hasResult = result !== null;
-
-    if (!hasCompletedAddedSubject || !hasResult) {
-      if (popupTimerRef.current !== null) {
-        window.clearTimeout(popupTimerRef.current);
-        popupTimerRef.current = null;
-      }
-      return;
-    }
-
-    if (popupTimerRef.current !== null) {
-      window.clearTimeout(popupTimerRef.current);
-    }
-
-    popupTimerRef.current = window.setTimeout(() => {
-      const rec = evaluateRecommendationTrigger({
-        route: '/',
-        subjects: subjects.map(s => ({
-          code: s.unit.trim() || s.subject.trim(),
-          mark: s.mark === '' ? null : parseFloat(s.mark),
-        })),
-      });
-
-      if (rec) {
-        setRecommendation(rec);
-        setPopupOpen(true);
-      }
-      popupTimerRef.current = null;
-    }, 3000);
-
-    return () => {
-      if (popupTimerRef.current !== null) {
-        window.clearTimeout(popupTimerRef.current);
-        popupTimerRef.current = null;
-      }
-    };
-  }, [subjects, result, embedSuppressRecommendations]);
 
   return (
     <>
@@ -377,42 +204,26 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                     <div className="grid grid-cols-1 gap-3">
                       <label className="block">
                         <span className="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Unit Name</span>
-                        <div className="relative mt-1">
-                          <input
-                            type="text"
-                            placeholder={`e.g. FIT${1000 + i}`}
-                            value={s.unit}
-                            onChange={e => {
-                              updateSubject(s.id, 'unit', e.target.value);
-                              openSuggestions(s.id, 'unit', e.target.value);
-                            }}
-                            onFocus={e => openSuggestions(s.id, 'unit', e.target.value)}
-                            onBlur={() => window.setTimeout(closeSuggestions, 120)}
-                            onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'unit', s.unit)}
-                            className="w-full h-11 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
-                          />
-                          {renderSuggestions(s.id, 'unit', s.unit)}
-                        </div>
+                        <UnitAutocompleteInput
+                          field="unit"
+                          value={s.unit}
+                          onChange={v => updateSubject(s.id, 'unit', v)}
+                          placeholder={`e.g. FIT${1000 + i}`}
+                          className="mt-1"
+                          inputClassName="w-full h-11 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
+                        />
                       </label>
 
                       <label className="block">
                         <span className="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Subject</span>
-                        <div className="relative mt-1">
-                          <input
-                            type="text"
-                            placeholder="e.g. Introduction to Programming"
-                            value={s.subject}
-                            onChange={e => {
-                              updateSubject(s.id, 'subject', e.target.value);
-                              openSuggestions(s.id, 'subject', e.target.value);
-                            }}
-                            onFocus={e => openSuggestions(s.id, 'subject', e.target.value)}
-                            onBlur={() => window.setTimeout(closeSuggestions, 120)}
-                            onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'subject', s.subject)}
-                            className="w-full h-11 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
-                          />
-                          {renderSuggestions(s.id, 'subject', s.subject)}
-                        </div>
+                        <UnitAutocompleteInput
+                          field="subject"
+                          value={s.subject}
+                          onChange={v => updateSubject(s.id, 'subject', v)}
+                          placeholder="e.g. Introduction to Programming"
+                          className="mt-1"
+                          inputClassName="w-full h-11 px-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm"
+                        />
                       </label>
 
                       <div className="grid grid-cols-2 gap-3">
@@ -487,36 +298,22 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                     {subjects.map((s, i) => (
                       <tr key={s.id} className="group hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors">
                         <td className="px-4 py-3 relative min-w-[130px]">
-                          <input
-                            type="text"
-                            placeholder={`e.g. FIT${1000 + i}`}
+                          <UnitAutocompleteInput
+                            field="unit"
                             value={s.unit}
-                            onChange={e => {
-                              updateSubject(s.id, 'unit', e.target.value);
-                              openSuggestions(s.id, 'unit', e.target.value);
-                            }}
-                            onFocus={e => openSuggestions(s.id, 'unit', e.target.value)}
-                            onBlur={() => window.setTimeout(closeSuggestions, 120)}
-                            onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'unit', s.unit)}
-                            className="w-full min-w-[110px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
+                            onChange={v => updateSubject(s.id, 'unit', v)}
+                            placeholder={`e.g. FIT${1000 + i}`}
+                            inputClassName="w-full min-w-[110px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
                           />
-                          {renderSuggestions(s.id, 'unit', s.unit)}
                         </td>
                         <td className="px-4 py-3 relative min-w-[190px]">
-                          <input
-                            type="text"
-                            placeholder="e.g. Introduction to Programming"
+                          <UnitAutocompleteInput
+                            field="subject"
                             value={s.subject}
-                            onChange={e => {
-                              updateSubject(s.id, 'subject', e.target.value);
-                              openSuggestions(s.id, 'subject', e.target.value);
-                            }}
-                            onFocus={e => openSuggestions(s.id, 'subject', e.target.value)}
-                            onBlur={() => window.setTimeout(closeSuggestions, 120)}
-                            onKeyDown={e => handleSuggestionKeyDown(e, s.id, 'subject', s.subject)}
-                            className="w-full min-w-[170px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
+                            onChange={v => updateSubject(s.id, 'subject', v)}
+                            placeholder="e.g. Introduction to Programming"
+                            inputClassName="w-full min-w-[170px] bg-transparent text-gray-800 dark:text-gray-200 placeholder-gray-400 text-sm focus:outline-none focus:ring-1 focus:ring-primary-400 rounded px-1 py-0.5"
                           />
-                          {renderSuggestions(s.id, 'subject', s.subject)}
                         </td>
                         <td className="px-4 py-3">
                           <input

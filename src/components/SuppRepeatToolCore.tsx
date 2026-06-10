@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ProductPopup from './ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
 import {
   calculateBreakevenRepeatMark,
   calculateWamAfterRepeatAttempt,
@@ -30,8 +30,6 @@ export default function SuppRepeatToolCore({ enableProductPopup = true }: SuppRe
   const [failMark, setFailMark] = useState('');
   const [unitCredits, setUnitCredits] = useState('');
   const [repeatMark, setRepeatMark] = useState('70');
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
   const wamNum = currentWam === '' ? null : parseFloat(currentWam);
   const creditsNum = totalCredits === '' ? null : parseFloat(totalCredits);
@@ -79,17 +77,13 @@ export default function SuppRepeatToolCore({ enableProductPopup = true }: SuppRe
   const repeatGrade =
     repeatNum !== null && !Number.isNaN(repeatNum) ? getMonashGradeFromMark(repeatNum) : null;
 
-  useEffect(() => {
-    if (!enableProductPopup) return;
-    const rec = evaluateRecommendationTrigger({
-      route: '/supp-repeat-wam-calculator',
-      subjects: [{ code: 'FIT1045', mark: failNum }],
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [currentWam, totalCredits, failMark, unitCredits, failNum, enableProductPopup]);
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    enabled: enableProductPopup,
+    hasResult: hasInputs,
+    userReady: hasInputs,
+    route: '/supp-repeat-wam-calculator',
+    subjects: [{ code: 'FIT1045', mark: failNum }],
+  });
 
   return (
     <>

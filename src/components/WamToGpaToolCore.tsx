@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ProductPopup from './ProductPopup';
-import { Recommendation, evaluateRecommendationTrigger } from '../utils/recommendationEngine';
+import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
 
 interface ConversionRow {
   wamMin: number;
@@ -34,21 +34,15 @@ export default function WamToGpaToolCore({
   enableProductPopup = true,
 }: WamToGpaToolCoreProps) {
   const [wam, setWam] = useState(initialWam);
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
   const result = wam !== '' ? convertWAMtoGPA(parseFloat(wam)) : null;
 
-  useEffect(() => {
-    if (!enableProductPopup) return;
-    const rec = evaluateRecommendationTrigger({
-      route: '/wam-to-gpa-calculator',
-      subjects: [{ code: 'FIT1045', mark: wam === '' ? null : parseFloat(wam) }],
-    });
-    if (rec) {
-      setRecommendation(rec);
-      setPopupOpen(true);
-    }
-  }, [wam, enableProductPopup]);
+  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
+    enabled: enableProductPopup,
+    hasResult: result !== null,
+    userReady: wam !== '',
+    route: '/wam-to-gpa-calculator',
+    subjects: [{ code: 'FIT1045', mark: wam === '' ? null : parseFloat(wam) }],
+  });
 
   return (
     <>
