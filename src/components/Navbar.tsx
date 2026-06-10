@@ -14,6 +14,8 @@ const calculatorLinks = [
   { label: 'Mark to Grade', href: '/mark-to-grade-calculator' },
   { label: 'WAM Target', href: '/wam-target-calculator' },
   { label: 'Supp vs Repeat', href: '/supp-repeat-wam-calculator' },
+  { label: 'Semester WAM', href: '/semester-wam-calculator' },
+  { label: 'Unit Mark', href: '/unit-mark-calculator' },
 ];
 
 const infoLinks = [

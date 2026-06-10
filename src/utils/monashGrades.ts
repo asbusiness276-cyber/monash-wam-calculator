@@ -141,6 +141,63 @@ export function calculateMonashOfficialWam(
   return Math.round((weightedMarks / weightedCredits) * 100) / 100;
 }
 
+export interface SemesterWamSummary {
+  weightedWam: number;
+  simpleAverage: number;
+  totalCredits: number;
+  unitCount: number;
+}
+
+export interface WeightedAssessmentInput {
+  mark: number;
+  weightPercent: number;
+}
+
+export function calculateWeightedUnitMark(
+  assessments: WeightedAssessmentInput[]
+): number | null {
+  let totalWeight = 0;
+  let weightedSum = 0;
+
+  for (const assessment of assessments) {
+    if (
+      Number.isNaN(assessment.mark) ||
+      Number.isNaN(assessment.weightPercent) ||
+      assessment.weightPercent < 0
+    ) {
+      continue;
+    }
+    totalWeight += assessment.weightPercent;
+    weightedSum += assessment.mark * (assessment.weightPercent / 100);
+  }
+
+  if (totalWeight === 0 || Math.abs(totalWeight - 100) > 0.5) return null;
+  return Math.round(weightedSum * 100) / 100;
+}
+
+export function calculateSemesterWamSummary(
+  units: Array<{ mark: number; credits: number }>
+): SemesterWamSummary | null {
+  const valid = units.filter(
+    unit => !Number.isNaN(unit.mark) && !Number.isNaN(unit.credits) && unit.credits > 0
+  );
+  if (valid.length === 0) return null;
+
+  const weightedWam = calculateCreditWeightedWam(valid);
+  if (weightedWam === null) return null;
+
+  const simpleAverage =
+    Math.round((valid.reduce((sum, unit) => sum + unit.mark, 0) / valid.length) * 100) / 100;
+  const totalCredits = valid.reduce((sum, unit) => sum + unit.credits, 0);
+
+  return {
+    weightedWam,
+    simpleAverage,
+    totalCredits,
+    unitCount: valid.length,
+  };
+}
+
 export function calculateCreditWeightedWam(
   units: Array<{ mark: number; credits: number }>
 ): number | null {

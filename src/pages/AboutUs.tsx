@@ -56,7 +56,7 @@ export default function AboutUs() {
               <li>Monash WAM calculator with weighted unit support</li>
               <li>WAM to GPA and GPA to WAM conversion tools</li>
               <li>Final grade target calculator for exam planning</li>
-              <li>Mark to grade, WAM target, and supplementary vs repeat WAM calculators</li>
+              <li>Mark to grade, WAM target, semester WAM, unit mark, and supplementary vs repeat calculators</li>
               <li>Student-friendly guides and reference information</li>
             </ul>
           </div>

@@ -8,6 +8,8 @@ import FinalGrade from './pages/FinalGrade';
 import MarkToGrade from './pages/MarkToGrade';
 import WamTarget from './pages/WamTarget';
 import SuppRepeatWam from './pages/SuppRepeatWam';
+import SemesterWam from './pages/SemesterWam';
+import UnitMark from './pages/UnitMark';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Disclaimer from './pages/Disclaimer';
@@ -28,6 +30,8 @@ function getPage(path: string) {
   if (path === '/mark-to-grade-calculator') return <MarkToGrade />;
   if (path === '/wam-target-calculator') return <WamTarget />;
   if (path === '/supp-repeat-wam-calculator') return <SuppRepeatWam />;
+  if (path === '/semester-wam-calculator') return <SemesterWam />;
+  if (path === '/unit-mark-calculator') return <UnitMark />;
   if (path === '/articles') return <Articles />;
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');

@@ -65,6 +65,33 @@ function calculateMonashOfficialWam(units) {
   return Math.round((weightedMarks / weightedCredits) * 100) / 100;
 }
 
+function calculateWeightedUnitMark(assessments) {
+  let totalWeight = 0;
+  let weightedSum = 0;
+  for (const assessment of assessments) {
+    if (Number.isNaN(assessment.mark) || Number.isNaN(assessment.weightPercent) || assessment.weightPercent < 0) {
+      continue;
+    }
+    totalWeight += assessment.weightPercent;
+    weightedSum += assessment.mark * (assessment.weightPercent / 100);
+  }
+  if (totalWeight === 0 || Math.abs(totalWeight - 100) > 0.5) return null;
+  return Math.round(weightedSum * 100) / 100;
+}
+
+function calculateSemesterWamSummary(units) {
+  const valid = units.filter(
+    unit => !Number.isNaN(unit.mark) && !Number.isNaN(unit.credits) && unit.credits > 0
+  );
+  if (valid.length === 0) return null;
+  const weightedWam = calculateCreditWeightedWam(valid);
+  if (weightedWam === null) return null;
+  const simpleAverage =
+    Math.round((valid.reduce((sum, unit) => sum + unit.mark, 0) / valid.length) * 100) / 100;
+  const totalCredits = valid.reduce((sum, unit) => sum + unit.credits, 0);
+  return { weightedWam, simpleAverage, totalCredits, unitCount: valid.length };
+}
+
 function calculateCreditWeightedWam(units) {
   let weighted = 0;
   let credits = 0;
@@ -219,6 +246,44 @@ test('Official WAM: year 1 counts at half weight', () => {
   ]);
   assert(official === 80, `expected official 80, got ${official}`);
   assert(planning === 75, `expected planning 75, got ${planning}`);
+});
+
+test('Unit mark: weighted assessments', () => {
+  const mark = calculateWeightedUnitMark([
+    { mark: 75, weightPercent: 25 },
+    { mark: 68, weightPercent: 25 },
+    { mark: 72, weightPercent: 50 },
+  ]);
+  assert(mark === 71.75, `expected 71.75, got ${mark}`);
+});
+
+test('Unit mark: rejects weights not totalling 100%', () => {
+  const mark = calculateWeightedUnitMark([
+    { mark: 80, weightPercent: 30 },
+    { mark: 70, weightPercent: 30 },
+  ]);
+  assert(mark === null, 'should be null when weights sum to 60%');
+});
+
+test('Semester WAM: equal 6 cp units', () => {
+  const summary = calculateSemesterWamSummary([
+    { mark: 78, credits: 6 },
+    { mark: 72, credits: 6 },
+    { mark: 81, credits: 6 },
+    { mark: 69, credits: 6 },
+  ]);
+  assert(summary.weightedWam === 75, `expected 75, got ${summary.weightedWam}`);
+  assert(summary.simpleAverage === 75, `expected simple 75, got ${summary.simpleAverage}`);
+  assert(summary.totalCredits === 24, `expected 24 cp, got ${summary.totalCredits}`);
+});
+
+test('Semester WAM: 12 cp weighs more than 6 cp', () => {
+  const summary = calculateSemesterWamSummary([
+    { mark: 85, credits: 12 },
+    { mark: 70, credits: 6 },
+  ]);
+  assert(summary.weightedWam === 80, `expected 80, got ${summary.weightedWam}`);
+  assert(summary.simpleAverage === 77.5, `expected 77.5, got ${summary.simpleAverage}`);
 });
 
 test('Official WAM: Monash published example (incl. withdrawn fail credits)', () => {
