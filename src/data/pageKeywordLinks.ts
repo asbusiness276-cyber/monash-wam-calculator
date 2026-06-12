@@ -53,6 +53,26 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'unit mark calculator', path: '/unit-mark-calculator' },
     { keyword: 'final grade calculator', path: '/final-grade-calculator' },
   ],
+  '/monash-gpa-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
+  ],
+  '/monash-cgpa-calculator': [
+    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
+    { keyword: 'Monash WAM calculator', path: '/' },
+  ],
+  '/monash-target-gpa-calculator': [
+    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
+    { keyword: 'WAM target calculator', path: '/wam-target-calculator' },
+  ],
+  '/monash-honours-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'monash honours WAM requirements', path: '/articles/monash-honours-wam-requirements' },
+  ],
+  '/monash-grade-converter': [
+    { keyword: 'mark to grade calculator', path: '/mark-to-grade-calculator' },
+    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
+  ],
   '/articles': [
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'how to calculate WAM', path: '/articles/how-to-calculate-wam' },

@@ -23,6 +23,11 @@ import ArticlePost from './pages/ArticlePost';
 import EmbedWamToGpa from './pages/EmbedWamToGpa';
 import EmbedMonashWam from './pages/EmbedMonashWam';
 import WriteForUs from './pages/WriteForUs';
+import MonashGpa from './pages/MonashGpa';
+import MonashCgpa from './pages/MonashCgpa';
+import MonashTargetGpa from './pages/MonashTargetGpa';
+import MonashHonours from './pages/MonashHonours';
+import MonashGradeConverter from './pages/MonashGradeConverter';
 
 function getPage(path: string) {
   if (path === '/') return <Home />;
@@ -36,6 +41,11 @@ function getPage(path: string) {
   if (path === '/unit-mark-calculator') return <UnitMark />;
   if (path === '/wam-projection-calculator') return <WamProjection />;
   if (path === '/unit-target-calculator') return <UnitTarget />;
+  if (path === '/monash-gpa-calculator') return <MonashGpa />;
+  if (path === '/monash-cgpa-calculator') return <MonashCgpa />;
+  if (path === '/monash-target-gpa-calculator') return <MonashTargetGpa />;
+  if (path === '/monash-honours-calculator') return <MonashHonours />;
+  if (path === '/monash-grade-converter') return <MonashGradeConverter />;
   if (path === '/articles') return <Articles />;
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');

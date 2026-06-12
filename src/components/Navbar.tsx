@@ -18,6 +18,11 @@ const calculatorLinks = [
   { label: 'Unit Mark', href: '/unit-mark-calculator' },
   { label: 'WAM What-If', href: '/wam-projection-calculator' },
   { label: 'Unit Target', href: '/unit-target-calculator' },
+  { label: 'Monash GPA', href: '/monash-gpa-calculator' },
+  { label: 'Monash CGPA', href: '/monash-cgpa-calculator' },
+  { label: 'Target GPA', href: '/monash-target-gpa-calculator' },
+  { label: 'Honours Class', href: '/monash-honours-calculator' },
+  { label: 'Grade Converter', href: '/monash-grade-converter' },
 ];
 
 const infoLinks = [

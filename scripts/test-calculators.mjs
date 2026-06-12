@@ -169,6 +169,81 @@ function calculateRequiredRemainingAverage(currentWam, completedCredits, remaini
   return Math.round(((targetWam * totalCredits - weightedDone) / remainingCredits) * 100) / 100;
 }
 
+const monashOfficialGpaGradeValues = {
+  HD: 4.0,
+  D: 3.0,
+  C: 2.0,
+  P: 1.0,
+  NP: 0.7,
+  N: 0.3,
+  NH: 0.3,
+  WN: 0.0,
+};
+
+function calculateMonashOfficialGpa(units) {
+  let totalGradePoints = 0;
+  let totalCredits = 0;
+  for (const unit of units) {
+    const gradeValue = monashOfficialGpaGradeValues[unit.grade];
+    if (gradeValue === undefined || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
+    totalGradePoints += gradeValue * unit.credits;
+    totalCredits += unit.credits;
+  }
+  if (totalCredits === 0) return null;
+  return {
+    gpa: Math.round((totalGradePoints / totalCredits) * 1000) / 1000,
+    totalCredits,
+    totalGradePoints: Math.round(totalGradePoints * 1000) / 1000,
+  };
+}
+
+function calculateMonashCgpa(priorGpa, priorCredits, semesterUnits) {
+  if (Number.isNaN(priorGpa) || Number.isNaN(priorCredits) || priorCredits < 0) return null;
+  const semester = calculateMonashOfficialGpa(semesterUnits);
+  if (!semester) return null;
+  const totalCredits = priorCredits + semester.totalCredits;
+  if (totalCredits === 0) return null;
+  const priorPoints = priorGpa * priorCredits;
+  return {
+    cgpa: Math.round(((priorPoints + semester.totalGradePoints) / totalCredits) * 1000) / 1000,
+    semesterGpa: semester.gpa,
+  };
+}
+
+function calculateRequiredTermGpa(currentGpa, creditsEarned, plannedCredits, targetGpa) {
+  if (
+    Number.isNaN(currentGpa) ||
+    Number.isNaN(creditsEarned) ||
+    Number.isNaN(plannedCredits) ||
+    Number.isNaN(targetGpa) ||
+    creditsEarned < 0 ||
+    plannedCredits <= 0
+  ) {
+    return null;
+  }
+  const weightedDone = currentGpa * creditsEarned;
+  const totalCredits = creditsEarned + plannedCredits;
+  return Math.round(((targetGpa * totalCredits - weightedDone) / plannedCredits) * 1000) / 1000;
+}
+
+function getMonashHonoursFromWam(wam) {
+  if (Number.isNaN(wam) || wam < 0 || wam > 100) return null;
+  if (wam >= 80) return 'H1';
+  if (wam >= 70) return 'H2A';
+  if (wam >= 60) return 'H2B';
+  if (wam >= 50) return 'P';
+  return 'BELOW';
+}
+
+function getMonashOfficialGpaGradeFromMark(mark) {
+  if (Number.isNaN(mark) || mark < 0 || mark > 100) return null;
+  if (mark >= 80) return 'HD';
+  if (mark >= 70) return 'D';
+  if (mark >= 60) return 'C';
+  if (mark >= 50) return 'P';
+  return 'N';
+}
+
 let passed = 0;
 
 function test(name, fn) {
@@ -394,6 +469,49 @@ test('Official WAM: Monash published example (incl. withdrawn fail credits)', ()
     { mark: 82, credits: 6, yearLevel: 4 },
   ]);
   assert(wam === 74.48, `expected 74.48, got ${wam}`);
+});
+
+test('Monash GPA: official published example (fail = 0.3)', () => {
+  const result = calculateMonashOfficialGpa([
+    { grade: 'C', credits: 6 },
+    { grade: 'HD', credits: 12 },
+    { grade: 'N', credits: 6 },
+    { grade: 'HD', credits: 6 },
+    { grade: 'HD', credits: 24 },
+    { grade: 'WN', credits: 6 },
+    { grade: 'P', credits: 6 },
+    { grade: 'D', credits: 6 },
+    { grade: 'HD', credits: 6 },
+  ]);
+  assert(result.gpa === 2.946, `expected 2.946, got ${result.gpa}`);
+  assert(result.totalCredits === 78, `expected 78 cp, got ${result.totalCredits}`);
+});
+
+test('Monash CGPA: combines prior GPA with semester', () => {
+  const result = calculateMonashCgpa(2.5, 60, [
+    { grade: 'HD', credits: 6 },
+    { grade: 'HD', credits: 6 },
+    { grade: 'HD', credits: 6 },
+  ]);
+  assert(result.semesterGpa === 4.0, `expected semester 4.0, got ${result.semesterGpa}`);
+  assert(result.cgpa === 2.846, `expected cgpa 2.846, got ${result.cgpa}`);
+});
+
+test('Target GPA: required next term GPA', () => {
+  const req = calculateRequiredTermGpa(2.75, 96, 24, 3.0);
+  assert(req === 4.0, `expected 4.0, got ${req}`);
+});
+
+test('Honours: Monash H2A starts at 70, H1 at 80', () => {
+  assert(getMonashHonoursFromWam(80) === 'H1', '80 = H1');
+  assert(getMonashHonoursFromWam(79.5) === 'H2A', '79.5 = H2A');
+  assert(getMonashHonoursFromWam(70) === 'H2A', '70 = H2A');
+  assert(getMonashHonoursFromWam(69) === 'H2B', '69 = H2B');
+});
+
+test('GPA grade from mark: fail maps to N (0.3 GPA value)', () => {
+  assert(getMonashOfficialGpaGradeFromMark(45) === 'N', '45 = N');
+  assert(getMonashOfficialGpaGradeFromMark(80) === 'HD', '80 = HD');
 });
 
 console.log(`\n${passed} tests passed`);

@@ -413,3 +413,278 @@ export function calculateRequiredRemainingAverage(
   const required = (targetWam * totalCredits - weightedDone) / remainingCredits;
   return Math.round(required * 100) / 100;
 }
+
+/** Monash official GPA letter codes (Grading Schema Procedure). */
+export type MonashOfficialGpaGrade = 'HD' | 'D' | 'C' | 'P' | 'NP' | 'N' | 'NH' | 'WN';
+
+/** Official Monash 4.0 GPA grade values — fail (N/NH) = 0.3, not 0.0. */
+export const monashOfficialGpaGradeValues: Record<MonashOfficialGpaGrade, number> = {
+  HD: 4.0,
+  D: 3.0,
+  C: 2.0,
+  P: 1.0,
+  NP: 0.7,
+  N: 0.3,
+  NH: 0.3,
+  WN: 0.0,
+};
+
+export const monashOfficialGpaGradeOptions: Array<{
+  grade: MonashOfficialGpaGrade;
+  label: string;
+  gpaValue: number;
+  markRange: string;
+}> = [
+  { grade: 'HD', label: 'High Distinction', gpaValue: 4.0, markRange: '80–100' },
+  { grade: 'D', label: 'Distinction', gpaValue: 3.0, markRange: '70–79' },
+  { grade: 'C', label: 'Credit', gpaValue: 2.0, markRange: '60–69' },
+  { grade: 'P', label: 'Pass', gpaValue: 1.0, markRange: '50–59' },
+  { grade: 'NP', label: 'Near Pass', gpaValue: 0.7, markRange: 'Special grade' },
+  { grade: 'N', label: 'Fail', gpaValue: 0.3, markRange: '0–49' },
+  { grade: 'NH', label: 'Hurdle Fail', gpaValue: 0.3, markRange: 'Special grade' },
+  { grade: 'WN', label: 'Withdrawn Fail', gpaValue: 0.0, markRange: 'Special grade' },
+];
+
+/** Map a percentage mark to the standard Monash coursework letter used in official GPA. */
+export function getMonashOfficialGpaGradeFromMark(mark: number): MonashOfficialGpaGrade | null {
+  if (Number.isNaN(mark) || mark < 0 || mark > 100) return null;
+  if (mark >= 80) return 'HD';
+  if (mark >= 70) return 'D';
+  if (mark >= 60) return 'C';
+  if (mark >= 50) return 'P';
+  return 'N';
+}
+
+export interface MonashGpaUnitInput {
+  grade: MonashOfficialGpaGrade;
+  credits: number;
+}
+
+export interface MonashGpaResult {
+  gpa: number;
+  totalCredits: number;
+  totalGradePoints: number;
+  unitCount: number;
+}
+
+/**
+ * Official Monash GPA: Σ(grade value × credit points) ÷ Σ(credit points), 3 decimal places.
+ * @see https://www.monash.edu/students/admin/assessments/results/gpa
+ */
+export function calculateMonashOfficialGpa(units: MonashGpaUnitInput[]): MonashGpaResult | null {
+  let totalGradePoints = 0;
+  let totalCredits = 0;
+  let unitCount = 0;
+
+  for (const unit of units) {
+    const gradeValue = monashOfficialGpaGradeValues[unit.grade];
+    if (gradeValue === undefined || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
+    totalGradePoints += gradeValue * unit.credits;
+    totalCredits += unit.credits;
+    unitCount += 1;
+  }
+
+  if (totalCredits === 0) return null;
+
+  return {
+    gpa: Math.round((totalGradePoints / totalCredits) * 1000) / 1000,
+    totalCredits,
+    totalGradePoints: Math.round(totalGradePoints * 1000) / 1000,
+    unitCount,
+  };
+}
+
+export interface MonashCgpaResult {
+  cgpa: number;
+  semesterGpa: number;
+  semesterCredits: number;
+  totalCredits: number;
+}
+
+/** Cumulative GPA after combining prior GPA/credits with current semester units. */
+export function calculateMonashCgpa(
+  priorGpa: number,
+  priorCredits: number,
+  semesterUnits: MonashGpaUnitInput[]
+): MonashCgpaResult | null {
+  if (Number.isNaN(priorGpa) || Number.isNaN(priorCredits) || priorCredits < 0) return null;
+
+  const semester = calculateMonashOfficialGpa(semesterUnits);
+  if (!semester) return null;
+
+  const totalCredits = priorCredits + semester.totalCredits;
+  if (totalCredits === 0) return null;
+
+  const priorPoints = priorGpa * priorCredits;
+  const cgpa = Math.round(((priorPoints + semester.totalGradePoints) / totalCredits) * 1000) / 1000;
+
+  return {
+    cgpa,
+    semesterGpa: semester.gpa,
+    semesterCredits: semester.totalCredits,
+    totalCredits,
+  };
+}
+
+/** GPA needed next term to reach target cumulative GPA (Monash 4.0 scale). */
+export function calculateRequiredTermGpa(
+  currentGpa: number,
+  creditsEarned: number,
+  plannedCredits: number,
+  targetGpa: number
+): number | null {
+  if (
+    Number.isNaN(currentGpa) ||
+    Number.isNaN(creditsEarned) ||
+    Number.isNaN(plannedCredits) ||
+    Number.isNaN(targetGpa) ||
+    currentGpa < 0 ||
+    currentGpa > 4 ||
+    targetGpa < 0 ||
+    targetGpa > 4 ||
+    creditsEarned < 0 ||
+    plannedCredits <= 0
+  ) {
+    return null;
+  }
+
+  const weightedDone = currentGpa * creditsEarned;
+  const totalCredits = creditsEarned + plannedCredits;
+  const required = (targetGpa * totalCredits - weightedDone) / plannedCredits;
+  return Math.round(required * 1000) / 1000;
+}
+
+export interface MonashHonoursClassification {
+  code: 'H1' | 'H2A' | 'H2B' | 'P' | 'BELOW';
+  title: string;
+  description: string;
+  minWam: number;
+  maxWam: number;
+}
+
+/**
+ * Monash honours degree grading schema (course grade from WAM).
+ * H2A starts at 70 — not 75 like some generic Australian calculators.
+ */
+export function getMonashHonoursFromWam(wam: number): MonashHonoursClassification | null {
+  if (Number.isNaN(wam) || wam < 0 || wam > 100) return null;
+
+  if (wam >= 80) {
+    return {
+      code: 'H1',
+      title: 'First Class Honours (H1)',
+      description: 'WAM 80 or above — highest honours classification at Monash.',
+      minWam: 80,
+      maxWam: 100,
+    };
+  }
+  if (wam >= 70) {
+    return {
+      code: 'H2A',
+      title: 'Second Class Honours Division A (H2A)',
+      description: 'WAM 70 to below 80 — strong honours performance.',
+      minWam: 70,
+      maxWam: 79.999,
+    };
+  }
+  if (wam >= 60) {
+    return {
+      code: 'H2B',
+      title: 'Second Class Honours Division B (H2B)',
+      description: 'WAM 60 to below 70 — satisfactory honours level.',
+      minWam: 60,
+      maxWam: 69.999,
+    };
+  }
+  if (wam >= 50) {
+    return {
+      code: 'P',
+      title: 'Pass (no honours classification)',
+      description: 'WAM 50 to below 60 — degree pass without honours grade.',
+      minWam: 50,
+      maxWam: 59.999,
+    };
+  }
+  return {
+    code: 'BELOW',
+    title: 'Below pass threshold',
+    description: 'WAM below 50 — not a passing average for degree completion.',
+    minWam: 0,
+    maxWam: 49.999,
+  };
+}
+
+/** Monash distinction average: WAM 70+ or GPA 3.0+ on the official 4.0 scale. */
+export function isMonashDistinctionAverage(wam: number | null, gpa: number | null): boolean {
+  if (wam !== null && !Number.isNaN(wam) && wam >= 70) return true;
+  if (gpa !== null && !Number.isNaN(gpa) && gpa >= 3.0) return true;
+  return false;
+}
+
+export type MonashGradeConverterField = 'mark' | 'letter' | 'gpa';
+
+export interface MonashGradeConversionResult {
+  mark: number;
+  letter: MonashOfficialGpaGrade;
+  gpa: number;
+  label: string;
+}
+
+function monashGradeMidpointMark(grade: MonashOfficialGpaGrade): number {
+  switch (grade) {
+    case 'HD':
+      return 90;
+    case 'D':
+      return 75;
+    case 'C':
+      return 65;
+    case 'P':
+      return 55;
+    case 'NP':
+      return 48;
+    case 'N':
+      return 25;
+    case 'NH':
+      return 45;
+    case 'WN':
+      return 0;
+    default:
+      return 0;
+  }
+}
+
+/** Convert between Monash mark, letter grade, and official 4.0 GPA value. */
+export function convertMonashGrade(
+  value: number | MonashOfficialGpaGrade,
+  from: MonashGradeConverterField
+): MonashGradeConversionResult | null {
+  let letter: MonashOfficialGpaGrade | null = null;
+
+  if (from === 'letter') {
+    if (typeof value !== 'string' || !(value in monashOfficialGpaGradeValues)) return null;
+    letter = value;
+  } else if (from === 'mark') {
+    if (typeof value !== 'number' || Number.isNaN(value)) return null;
+    letter = getMonashOfficialGpaGradeFromMark(value);
+  } else if (from === 'gpa') {
+    if (typeof value !== 'number' || Number.isNaN(value)) return null;
+    if (value >= 3.5) letter = 'HD';
+    else if (value >= 2.5) letter = 'D';
+    else if (value >= 1.5) letter = 'C';
+    else if (value >= 0.65) letter = 'P';
+    else if (value >= 0.15) letter = 'N';
+    else letter = 'WN';
+  }
+
+  if (!letter) return null;
+
+  const option = monashOfficialGpaGradeOptions.find(o => o.grade === letter);
+  const mark = from === 'mark' && typeof value === 'number' ? value : monashGradeMidpointMark(letter);
+
+  return {
+    mark,
+    letter,
+    gpa: monashOfficialGpaGradeValues[letter],
+    label: option?.label ?? letter,
+  };
+}

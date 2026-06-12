@@ -37,6 +37,11 @@ export default function Footer() {
                 <li><a href="/unit-mark-calculator" className="hover:text-white transition-colors">Unit Mark Calculator</a></li>
                 <li><a href="/wam-projection-calculator" className="hover:text-white transition-colors">WAM Projection Calculator</a></li>
                 <li><a href="/unit-target-calculator" className="hover:text-white transition-colors">Unit Target Mark Calculator</a></li>
+                <li><a href="/monash-gpa-calculator" className="hover:text-white transition-colors">Monash GPA Calculator</a></li>
+                <li><a href="/monash-cgpa-calculator" className="hover:text-white transition-colors">Monash CGPA Calculator</a></li>
+                <li><a href="/monash-target-gpa-calculator" className="hover:text-white transition-colors">Monash Target GPA Calculator</a></li>
+                <li><a href="/monash-honours-calculator" className="hover:text-white transition-colors">Monash Honours Calculator</a></li>
+                <li><a href="/monash-grade-converter" className="hover:text-white transition-colors">Monash Grade Converter</a></li>
               </ul>
             </div>
             <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">
