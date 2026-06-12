@@ -113,7 +113,7 @@ export default function Home() {
       <WAMCalculator />
 
       {/* WAM Calculator — keyword section for SEO + users */}
-      <section id="wam-calculator" className="scroll-mt-20 max-w-3xl mx-auto px-4 pt-4 pb-2">
+      <section id="wam-calculator" className="scroll-mt-20 max-w-3xl mx-auto px-4 pt-6 pb-2">
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Why Use This WAM Calculator?

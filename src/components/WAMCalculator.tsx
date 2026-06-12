@@ -195,8 +195,8 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 items-start" data-article-tool-screenshot="monash-wam">
-          <div className="flex-1 min-w-0">
+        <div className="relative lg:pb-2" data-article-tool-screenshot="monash-wam">
+          <div className="min-w-0 lg:pr-80">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
               <div className="md:hidden p-3 space-y-3">
                 {subjects.map((s, i) => (
@@ -404,7 +404,8 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
             </div>
           </div>
 
-          <div className="lg:sticky lg:top-24 w-full lg:w-72 shrink-0">
+          <aside className="mt-6 w-full lg:mt-0 lg:absolute lg:top-0 lg:right-0 lg:w-72">
+            <div className="lg:sticky lg:top-24 space-y-4">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
               <div className="bg-gradient-to-br from-primary-600 to-primary-800 px-6 py-5">
                 <div className="flex items-center gap-2 text-primary-100 text-sm font-medium mb-1">
@@ -433,15 +434,12 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                 {result ? (
                   <>
                     <div className="space-y-3">
-                      <ResultRow label="Official Monash WAM" value={result.officialWam.toFixed(2)} />
-                      <ResultRow label="Planning WAM" value={result.planningWam.toFixed(2)} />
+                      {result.planningWam !== result.officialWam && (
+                        <ResultRow label="Planning WAM" value={result.planningWam.toFixed(2)} />
+                      )}
                       <ResultRow label="Total Credit Points" value={String(result.totalCredits)} />
                       <ResultRow label="Total Subjects" value={String(result.totalSubjects)} />
                       <ResultRow label="Average Mark" value={`${result.avgMark.toFixed(2)}%`} />
-                      <div className="flex justify-between items-center py-1">
-                        <span className="text-sm text-gray-500 dark:text-gray-400">Grade Standing</span>
-                        <span className={`text-sm font-bold ${result.gradeColor}`}>{result.grade} — {result.gradeLabel}</span>
-                      </div>
                     </div>
                     <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                       Official WAM uses Monash year-level weighting (Year 1 = 0.5, Year 2+ = 1.0). Planning WAM is
@@ -463,7 +461,7 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
               </div>
             </div>
 
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4">
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4">
               <p className="text-sm text-blue-700 dark:text-blue-300 font-medium mb-2">Need to convert WAM to GPA?</p>
               <a
                 href="/wam-to-gpa-calculator"
@@ -472,7 +470,8 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
                 Open WAM to GPA Calculator →
               </a>
             </div>
-          </div>
+            </div>
+          </aside>
         </div>
         </div>
       </section>
