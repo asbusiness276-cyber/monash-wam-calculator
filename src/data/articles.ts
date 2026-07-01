@@ -525,6 +525,7 @@ export const articles: ArticleData[] = [
         heading: 'Fails vs Repeats, Withdrawals, and Special Grades',
         paragraphs: [
           'Policy treatment can differ for withdrawn units, intermission, academic penalty grades, or repeated attempts. Some faculties publish specific rules on how repeats appear on transcripts and whether earlier attempts remain visible in WAM-related reporting. Do not assume a repeat automatically replaces the first attempt in every context — verify your handbook and ask faculty student services when unsure.',
+          'If you were offered supplementary assessment instead of progressing straight to a repeat, read monash supplementary exam wam for how a capped 50 (P) pass changes WAM compared with keeping your fail mark or re-enrolling later.',
           'If you are planning a repeat, model two scenarios: current WAM with the fail included, and a future scenario if the repeated unit reaches your target band. The second scenario is for motivation and planning only until Monash publishes official results.',
           'For honours, scholarships, and competitive applications, decision-makers may review trend and unit mix, not only cumulative WAM. Read monash honours wam requirements and monash scholarship wam requirements alongside this page when deciding recovery priorities.',
         ],
@@ -1214,6 +1215,109 @@ export const articles: ArticleData[] = [
         question: 'When should I recalculate before finals?',
         answer:
           'After every major assessment release and again the week before the exam when coursework marks are final. Updated inputs give reliable targets.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-supplementary-exam-wam-guide',
+    keyword: 'monash supplementary exam wam',
+    productCatalogId: 4,
+    title: 'Monash Supplementary Exam & WAM Impact (2026 Guide)',
+    description:
+      'Monash supplementary exam WAM impact explained: supp pass capped at 50 (P), how NS grades work, supp vs repeat planning, and free calculators to model your weighted average.',
+    featuredImage: '/article-images/featured-monash-supplementary-exam-wam.webp',
+    featuredImageAlt:
+      'University student reviewing exam results on a laptop in a study space while planning supplementary assessment options',
+    publishedAt: '2026-05-30',
+    updatedAt: '2026-05-30',
+    sections: [
+      {
+        heading: 'What Is a Supplementary Assessment at Monash?',
+        paragraphs: [
+          'A supplementary assessment (often called a supp exam) is Monash University\'s final opportunity to pass a unit after you have completed all required assessment but received a fail grade. If you are eligible, you are usually granted supplementary assessment automatically — you do not need to apply in most cases. While results are pending, your unit may show an NS (supplementary assessment) grade on WES.',
+          'Students searching monash supplementary exam wam want a clear answer: what happens to my weighted average if I pass or fail the supp? The short version: if you pass, your final unit result is capped at 50 (P). That capped mark is what counts in WAM — not your original fail mark. If you fail the supplementary assessment, your original fail mark remains.',
+          'This guide explains official-style WAM maths for planning. Always confirm eligibility, deadlines, and faculty rules on Monash\'s supplementary assessments page and your unit handbook before making enrolment decisions.',
+        ],
+      },
+      {
+        heading: 'How a Supplementary Pass Affects Your WAM',
+        paragraphs: [
+          'Monash WAM is credit-weighted: each unit\'s percentage mark multiplies by credit points (with Year 1 units weighted at 0.5 in the official calculation). When you pass a supplementary assessment, the unit result becomes 50 — even if you performed better on the supp paper itself. That 50 replaces the fail mark in WAM maths.',
+          'Example: your current WAM is 68.25 across 24 credit points, including one 6-credit unit failed at 48. Passing the supp replaces 48 with 50 for that unit. The weighted total rises slightly — in this case WAM moves to about 68.75. The gain is real but modest because 50 is still a pass-level mark, not a distinction.',
+          'Use the Monash WAM calculator with your full transcript, then model the swap with our supp vs repeat WAM calculator to compare supplementary pass (50) against keeping the fail or repeating the unit later. Enter official marks and credit points only; label projections clearly until results are certified on WES.',
+        ],
+      },
+      {
+        heading: 'Supplementary Pass vs Fail — What Stays on Your Record',
+        paragraphs: [
+          'If you do not sit the supplementary assessment, your result is finalised based on assessments already completed — typically the original N or NH fail grade. If you sit and fail the supp, the original fail mark also remains. Only a supplementary pass changes the reported unit result to 50 (P).',
+          'Because WAM includes failed and repeated units under normal Monash policy, a fail can drag your average down for the entire degree unless later strong results offset it. A supp pass stops the unit at 50, which is often better than a mid-40s fail but worse than a repeat attempt where you might score 70+.',
+          'Read failed unit wam monash for broader fail recovery strategy. This article focuses specifically on the supplementary pathway — not general improvement tips or honours cutoffs.',
+        ],
+      },
+      {
+        heading: 'Supplementary Assessment vs Repeating the Unit',
+        paragraphs: [
+          'Monash\'s official guidance asks students to consider WAM impact before deciding whether to complete a supplementary assessment or change enrolment. Supplementary pass guarantees progression with a 50 cap. Repeating the unit adds another attempt — both marks may count toward WAM depending on policy — but gives you a chance at a higher final mark if you perform well.',
+          'Breakeven thinking: if your fail was 48 in a 6-credit unit, a supp pass lifts the unit to 50. Repeating might require roughly 71% or higher on the repeat attempt (depending on your overall credit load) to beat the WAM outcome of passing the supp. Our supp vs repeat WAM calculator runs that comparison with your real numbers.',
+          'Repeating also costs time, fees, and timetable space. Supplementary assessment is one sitting with a fixed ceiling. Faculty course advisers can help if progression rules require a minimum mark above 50 in core units — a bare supp pass may not satisfy every prerequisite.',
+        ],
+      },
+      {
+        heading: 'NS Grades, Timing, and WES',
+        paragraphs: [
+          'Between fail release and supplementary results, WES may show NS for the unit. Your degree WAM on WES might not update until supplementary results are published. Do not assume your dashboard WAM already reflects a supp outcome while NS is showing.',
+          'If you need to adjust next-semester enrolment based on the outcome, plan for both scenarios before census dates where possible. Monash notes you may apply for a Withdrawn (WDN) grade within a limited window after finalisation in some circumstances — check current policy if you are considering that route instead of sitting the supp.',
+          'After results are official, recalculate using how to calculate wam if you want to verify the formula by hand, then confirm the figure matches WES or your unofficial academic record.',
+        ],
+      },
+      {
+        heading: 'Step-by-Step WAM Planning After a Supp Offer',
+        paragraphs: [
+          'Step 1 — Note your fail mark, credit points, and year level for the unit. Step 2 — Calculate current WAM including the fail in the Monash WAM calculator. Step 3 — Model supplementary pass at 50 for that unit only. Step 4 — Model a repeat scenario with your realistic target mark. Step 5 — Compare outcomes and speak with faculty if progression depends on the result.',
+          'If honours or scholarships are on your timeline, combine this planning with monash honours wam requirements and monash scholarship wam requirements so you know whether a 50 pass keeps you on track or whether a repeat is worth the WAM trade-off.',
+          'Independent calculators on this site are for planning. Official WAM appears on your Monash transcript after results are certified.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes When Estimating Supp WAM Impact',
+        paragraphs: [
+          'Assuming the supp exam mark (e.g. 62%) becomes your unit mark — Monash caps a supp pass at 50 (P). Expecting WAM to jump to distinction level after a supp pass — 50 is still a pass band. Excluding the unit from WAM while NS shows — planning should include the fail until 50 is official.',
+          'Ignoring credit weight: a supp pass in a 12-credit unit moves WAM more than in a 6-credit unit. Forgetting Year 1 weighting: official Monash WAM applies 0.5 multiplier to level-1 units in the standard formula.',
+          'Using calculator outputs on formal applications without transcript verification. Use Monash official channels for progression and award decisions.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What mark do I get if I pass a Monash supplementary exam?',
+        answer:
+          'Your final unit result is 50 (P). You cannot receive a higher mark after passing a supplementary assessment, even if your supp paper scored higher.',
+      },
+      {
+        question: 'Does a supplementary pass improve my WAM?',
+        answer:
+          'Usually yes compared with keeping a fail in the 40s, because 50 replaces the lower fail mark in credit-weighted WAM maths. The improvement is often modest because 50 is still a pass-level result.',
+      },
+      {
+        question: 'What happens to WAM if I fail the supplementary assessment?',
+        answer:
+          'Your original fail mark remains and continues to count in WAM like any other completed unit mark under standard Monash weighting.',
+      },
+      {
+        question: 'Is supplementary pass better than repeating the unit for WAM?',
+        answer:
+          'A supp pass fixes the unit at 50. A repeat can yield a higher mark if you perform well, but both attempts may affect WAM. Use the supp vs repeat calculator to compare with your credit load.',
+      },
+      {
+        question: 'What does NS mean on my transcript?',
+        answer:
+          'NS indicates supplementary assessment has been granted and results are not yet final. WAM may not update until supplementary results are released.',
+      },
+      {
+        question: 'Where can I calculate supplementary WAM impact?',
+        answer:
+          'Use the Monash WAM calculator for your current position and the supp vs repeat WAM calculator to model pass-at-50 versus repeat scenarios with your unit marks and credit points.',
       },
     ],
   },

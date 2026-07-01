@@ -60,6 +60,7 @@ Before writing a new article, check this list. If the primary keyword or intent 
 | `how-to-find-wam-on-monash-transcript` | monash wam transcript | WAM in WES, Student Portal & transcript — not formula |
 | `monash-credit-points-wam-explained` | monash credit points wam | 6 vs 12 cp WAM weight — not full formula or improvement only |
 | `monash-final-exam-mark-calculator-guide` | grade calculator monash | Final exam mark needed per unit — not overall WAM formula |
+| `monash-supplementary-exam-wam-guide` | monash supplementary exam wam | Supp pass capped at 50 (P) and WAM impact — not general fail recovery |
 
 **Related pairs (allowed — different intent):**
 - `monash-wam-to-gpa-conversion` vs `monash-wam-vs-gpa-postgraduate` — convert numbers vs choose what to report
@@ -71,7 +72,6 @@ Before writing a new article, check this list. If the primary keyword or intent 
 Use these before revisiting anything above:
 
 - Monash dean’s list or faculty excellence awards (WAM criteria)
-- Repeat unit / supplementary exam and WAM
 - WAM for internships and graduate employers (non-postgrad)
 - Study abroad / exchange grades and WAM
 - Monash first-year level 0.5 weighting (deep dive — only if not duplicating `how-to-calculate-wam`)
