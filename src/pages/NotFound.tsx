@@ -14,7 +14,7 @@ const notFoundFaqs = [
   {
     question: 'How do I find the correct calculator page?',
     answer:
-      'Open the calculators directory for all 24 tools, or use the homepage navigation for WAM, GPA, and final grade calculators.',
+      'Open the calculators directory for all 26 tools, or use the homepage navigation for WAM, GPA, and final grade calculators.',
   },
   {
     question: 'Can this affect SEO performance?',

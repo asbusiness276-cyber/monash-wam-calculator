@@ -30,7 +30,7 @@ const aboutFaqs = [
   {
     question: 'How many calculators does the site offer?',
     answer:
-      'Twenty-four free calculators covering WAM, GPA, CGPA, exam targets, distinction average, scholarships, failed units, exchange planning, and honours classification.',
+      'Twenty-six free calculators covering WAM, GPA, CGPA, exam targets, distinction average, scholarships, failed units, exchange planning, and honours classification.',
   },
   {
     question: 'Is calculator content original?',
@@ -79,7 +79,7 @@ export default function AboutUs() {
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">What We Provide</h2>
             <p className="mb-3">
-              Monash WAM Calculator hosts 24 free academic planning tools and 19 long-form student guides. Every
+              Monash WAM Calculator hosts 26 free academic planning tools and 19 long-form student guides. Every
               calculator page includes worked examples, formula explanations, and FAQs — not just an input form.
             </p>
             <ul className="list-disc list-inside space-y-1">

@@ -38,6 +38,11 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         description: 'Average needed on remaining units to hit your goal.',
       },
       {
+        href: '/wam-milestones-calculator',
+        title: 'WAM Milestones Checker',
+        description: 'Check pass, exchange, distinction, HD, and merit WAM bands.',
+      },
+      {
         href: '/monash-official-wam-calculator',
         title: 'Official vs Simple WAM',
         description: 'Compare planning WAM with Year 1 half-weighted official WAM.',
@@ -147,6 +152,11 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/failed-unit-wam-calculator',
         title: 'Failed Unit WAM Impact',
         description: 'How a fail, supp pass, or recovery changes WAM.',
+      },
+      {
+        href: '/withdrawn-fail-impact-calculator',
+        title: 'Withdrawn Fail Impact',
+        description: 'WN GPA value 0.0 plus WAM excluded vs worst-case scenarios.',
       },
       {
         href: '/supp-repeat-wam-calculator',

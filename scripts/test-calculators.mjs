@@ -669,4 +669,57 @@ test('Pass mark: 58 coursework at 60% weight needs 38% exam for 50 overall', () 
   assert(needed === 38, `expected 38, got ${needed}`);
 });
 
+function calculateWamMilestones(currentWam, completedCredits, remainingCredits) {
+  const milestones = [
+    { label: 'Pass / progression floor', wam: 50 },
+    { label: 'Exchange planning floor', wam: 60 },
+    { label: 'Distinction average', wam: 70 },
+    { label: 'High distinction territory', wam: 80 },
+    { label: 'Top merit stretch', wam: 85 },
+  ];
+  if (Number.isNaN(currentWam) || currentWam < 0 || currentWam > 100) return null;
+  const firstUnmet = milestones.find(m => currentWam < m.wam)?.wam ?? null;
+  return milestones.map(m => ({
+    ...m,
+    status: currentWam >= m.wam ? 'met' : firstUnmet === m.wam ? 'next' : 'future',
+    gap: Math.round((m.wam - currentWam) * 100) / 100,
+    requiredAverage:
+      completedCredits !== undefined && remainingCredits !== undefined
+        ? calculateRequiredRemainingAverage(currentWam, completedCredits, remainingCredits, m.wam)
+        : null,
+  }));
+}
+
+function calculateWithdrawnFailImpact(currentGpa, gpaCredits, unitCredits, currentWam, wamCredits) {
+  if (currentGpa < 0 || currentGpa > 4 || gpaCredits <= 0 || unitCredits <= 0) return null;
+  const totalGpaCredits = gpaCredits + unitCredits;
+  const gpaAfterWn = Math.round(((currentGpa * gpaCredits) / totalGpaCredits) * 1000) / 1000;
+  const gpaAfterStandardFail =
+    Math.round(((currentGpa * gpaCredits + 0.3 * unitCredits) / totalGpaCredits) * 1000) / 1000;
+  const wamIfZeroCounted =
+    currentWam !== undefined && wamCredits !== undefined
+      ? Math.round(((currentWam * wamCredits) / (wamCredits + unitCredits)) * 100) / 100
+      : null;
+  return {
+    gpaAfterWn,
+    gpaAfterStandardFail,
+    gpaDeltaVsStandardFail: Math.round((gpaAfterWn - gpaAfterStandardFail) * 1000) / 1000,
+    wamIfZeroCounted,
+  };
+}
+
+test('WAM milestones: 68 WAM next target is distinction 70', () => {
+  const rows = calculateWamMilestones(68, 96, 24);
+  const distinction = rows.find(row => row.wam === 70);
+  assert(distinction.status === 'next', `expected next, got ${distinction.status}`);
+  assert(distinction.requiredAverage === 78, `expected 78, got ${distinction.requiredAverage}`);
+});
+
+test('Withdrawn fail: WN GPA is lower than standard fail N', () => {
+  const result = calculateWithdrawnFailImpact(3.0, 96, 6, 70, 96);
+  assert(result.gpaAfterWn === 2.824, `expected 2.824, got ${result.gpaAfterWn}`);
+  assert(result.gpaAfterWn < result.gpaAfterStandardFail, 'WN should be lower than standard fail');
+  assert(result.wamIfZeroCounted === 65.88, `expected 65.88, got ${result.wamIfZeroCounted}`);
+});
+
 console.log(`\n${passed} tests passed`);

@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">
               <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Calculators</h3>
               <ul className="space-y-2.5 text-sm">
-                <li><a href="/calculators" className="hover:text-white transition-colors font-medium text-primary-300">All Calculators (24 tools)</a></li>
+                <li><a href="/calculators" className="hover:text-white transition-colors font-medium text-primary-300">All Calculators (26 tools)</a></li>
                 <li><a href="/" className="hover:text-white transition-colors">WAM Calculator (Monash)</a></li>
                 <li><a href="/wam-to-gpa-calculator" className="hover:text-white transition-colors">WAM to GPA Calculator</a></li>
                 <li><a href="/gpa-to-wam-calculator" className="hover:text-white transition-colors">GPA to WAM Calculator</a></li>
@@ -37,6 +37,7 @@ export default function Footer() {
                 <li><a href="/semester-wam-calculator" className="hover:text-white transition-colors">Semester WAM Calculator</a></li>
                 <li><a href="/unit-mark-calculator" className="hover:text-white transition-colors">Unit Mark Calculator</a></li>
                 <li><a href="/wam-projection-calculator" className="hover:text-white transition-colors">WAM Projection Calculator</a></li>
+                <li><a href="/wam-milestones-calculator" className="hover:text-white transition-colors">WAM Milestones Calculator</a></li>
                 <li><a href="/unit-target-calculator" className="hover:text-white transition-colors">Unit Target Mark Calculator</a></li>
                 <li><a href="/monash-gpa-calculator" className="hover:text-white transition-colors">Monash GPA Calculator</a></li>
                 <li><a href="/monash-cgpa-calculator" className="hover:text-white transition-colors">Monash CGPA Calculator</a></li>
@@ -45,6 +46,7 @@ export default function Footer() {
                 <li><a href="/monash-distinction-average-calculator" className="hover:text-white transition-colors">Distinction Average Calculator</a></li>
                 <li><a href="/monash-scholarship-wam-calculator" className="hover:text-white transition-colors">Scholarship WAM Calculator</a></li>
                 <li><a href="/failed-unit-wam-calculator" className="hover:text-white transition-colors">Failed Unit WAM Calculator</a></li>
+                <li><a href="/withdrawn-fail-impact-calculator" className="hover:text-white transition-colors">Withdrawn Fail Impact Calculator</a></li>
                 <li><a href="/monash-deans-honours-calculator" className="hover:text-white transition-colors">Dean&apos;s Honours List Calculator</a></li>
                 <li><a href="/monash-exchange-wam-calculator" className="hover:text-white transition-colors">Exchange WAM Calculator</a></li>
                 <li><a href="/monash-grade-converter" className="hover:text-white transition-colors">Monash Grade Converter</a></li>

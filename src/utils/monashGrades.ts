@@ -794,6 +794,124 @@ export function getMonashDistinctionStatus(
   };
 }
 
+export interface WamMilestone {
+  label: string;
+  wam: number;
+  status: 'met' | 'next' | 'future';
+  gap: number;
+  requiredAverage: number | null;
+}
+
+export const MONASH_WAM_MILESTONES: Array<{ label: string; wam: number }> = [
+  { label: 'Pass / progression floor', wam: 50 },
+  { label: 'Exchange planning floor', wam: MONASH_EXCHANGE_MIN_WAM_THRESHOLD },
+  { label: 'Distinction average', wam: MONASH_DISTINCTION_WAM_THRESHOLD },
+  { label: 'High distinction territory', wam: 80 },
+  { label: 'Top merit stretch', wam: 85 },
+];
+
+/** Check common WAM milestones and optionally solve the remaining-average needed for each. */
+export function calculateWamMilestones(
+  currentWam: number,
+  completedCredits?: number,
+  remainingCredits?: number,
+  milestones: Array<{ label: string; wam: number }> = MONASH_WAM_MILESTONES
+): WamMilestone[] | null {
+  if (Number.isNaN(currentWam) || currentWam < 0 || currentWam > 100) return null;
+
+  const canProject =
+    completedCredits !== undefined &&
+    remainingCredits !== undefined &&
+    !Number.isNaN(completedCredits) &&
+    !Number.isNaN(remainingCredits) &&
+    completedCredits >= 0 &&
+    remainingCredits > 0;
+
+  const firstUnmet = milestones.find(m => currentWam < m.wam)?.wam ?? null;
+
+  return milestones.map(milestone => {
+    const met = currentWam >= milestone.wam;
+    return {
+      ...milestone,
+      status: met ? 'met' : firstUnmet === milestone.wam ? 'next' : 'future',
+      gap: Math.round((milestone.wam - currentWam) * 100) / 100,
+      requiredAverage: canProject
+        ? calculateRequiredRemainingAverage(
+            currentWam,
+            completedCredits!,
+            remainingCredits!,
+            milestone.wam
+          )
+        : null,
+    };
+  });
+}
+
+export interface WithdrawnFailImpactResult {
+  gpaAfterWn: number;
+  gpaAfterStandardFail: number;
+  gpaDeltaWn: number;
+  gpaDeltaVsStandardFail: number;
+  wamIfExcluded: number;
+  wamIfZeroCounted: number | null;
+  wamWorstCaseDelta: number | null;
+}
+
+/** WN has GPA value 0.0. WAM treatment can vary, so show excluded and worst-case counted-as-zero scenarios. */
+export function calculateWithdrawnFailImpact(
+  currentGpa: number,
+  gpaCredits: number,
+  unitCredits: number,
+  currentWam?: number,
+  wamCredits?: number
+): WithdrawnFailImpactResult | null {
+  if (
+    Number.isNaN(currentGpa) ||
+    Number.isNaN(gpaCredits) ||
+    Number.isNaN(unitCredits) ||
+    currentGpa < 0 ||
+    currentGpa > 4 ||
+    gpaCredits <= 0 ||
+    unitCredits <= 0
+  ) {
+    return null;
+  }
+
+  const totalGpaCredits = gpaCredits + unitCredits;
+  const gpaAfterWn =
+    Math.round(((currentGpa * gpaCredits + monashOfficialGpaGradeValues.WN * unitCredits) / totalGpaCredits) * 1000) /
+    1000;
+  const gpaAfterStandardFail =
+    Math.round(((currentGpa * gpaCredits + monashOfficialGpaGradeValues.N * unitCredits) / totalGpaCredits) * 1000) /
+    1000;
+
+  const hasWam =
+    currentWam !== undefined &&
+    wamCredits !== undefined &&
+    !Number.isNaN(currentWam) &&
+    !Number.isNaN(wamCredits) &&
+    currentWam >= 0 &&
+    currentWam <= 100 &&
+    wamCredits > 0;
+
+  const wamIfZeroCounted = hasWam
+    ? Math.round(((currentWam! * wamCredits!) / (wamCredits! + unitCredits)) * 100) / 100
+    : null;
+
+  return {
+    gpaAfterWn,
+    gpaAfterStandardFail,
+    gpaDeltaWn: Math.round((gpaAfterWn - currentGpa) * 1000) / 1000,
+    gpaDeltaVsStandardFail: Math.round((gpaAfterWn - gpaAfterStandardFail) * 1000) / 1000,
+    wamIfExcluded: hasWam ? currentWam! : NaN,
+    wamIfZeroCounted,
+    wamWorstCaseDelta:
+      hasWam && wamIfZeroCounted !== null
+        ? Math.round((wamIfZeroCounted - currentWam!) * 100) / 100
+        : null,
+  };
+}
+
 export interface UnitMarkScenario {
   label: string;
   mark: number;

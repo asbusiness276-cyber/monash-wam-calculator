@@ -109,6 +109,14 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'monash credit points wam', path: '/articles/monash-credit-points-wam-explained' },
   ],
+  '/wam-milestones-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'what is a good wam', path: '/articles/what-is-a-good-wam' },
+  ],
+  '/withdrawn-fail-impact-calculator': [
+    { keyword: 'Monash grade converter', path: '/monash-grade-converter' },
+    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-monash' },
+  ],
   '/articles': [
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'how to calculate WAM', path: '/articles/how-to-calculate-wam' },

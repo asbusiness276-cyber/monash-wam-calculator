@@ -37,6 +37,8 @@ import Calculators from './pages/Calculators';
 import MonashOfficialWam from './pages/MonashOfficialWam';
 import PassMark from './pages/PassMark';
 import DegreeProgress from './pages/DegreeProgress';
+import WamMilestones from './pages/WamMilestones';
+import WithdrawnFailImpact from './pages/WithdrawnFailImpact';
 
 function getPage(path: string) {
   if (path === '/') return <Home />;
@@ -64,6 +66,8 @@ function getPage(path: string) {
   if (path === '/monash-official-wam-calculator') return <MonashOfficialWam />;
   if (path === '/pass-mark-calculator') return <PassMark />;
   if (path === '/degree-progress-calculator') return <DegreeProgress />;
+  if (path === '/wam-milestones-calculator') return <WamMilestones />;
+  if (path === '/withdrawn-fail-impact-calculator') return <WithdrawnFailImpact />;
   if (path === '/articles') return <Articles />;
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');

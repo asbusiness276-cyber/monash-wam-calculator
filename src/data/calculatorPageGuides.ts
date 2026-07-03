@@ -601,6 +601,55 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
       },
     ],
   },
+  '/wam-milestones-calculator': {
+    sections: [
+      {
+        heading: 'What Are WAM Milestones?',
+        paragraphs: [
+          'WAM milestones are practical planning bands students use to understand academic standing. They are not all official cutoffs, but they help translate one WAM number into common goals: pass progression, exchange readiness, distinction average, high distinction, and top merit positioning.',
+          'This checker is deliberately broad. Use specialised tools for exact planning: WAM target for one target, scholarship WAM for merit tiers, and distinction average for the WAM 70 / GPA 3.0 benchmark.',
+        ],
+      },
+      {
+        heading: 'How to Use Remaining Credit Points',
+        paragraphs: [
+          'If you enter completed and remaining credit points, the calculator estimates the average needed on all remaining units to reach each milestone. This is useful before final-year enrolment or when deciding whether a target is realistic.',
+        ],
+        table: {
+          headers: ['Milestone', 'Typical planning meaning', 'Related tool'],
+          rows: [
+            ['50 WAM', 'Pass / progression floor', 'Final grade and pass mark calculators'],
+            ['60 WAM', 'Exchange or standing planning floor', 'Exchange WAM calculator'],
+            ['70 WAM', 'Distinction average', 'Distinction average calculator'],
+            ['80+ WAM', 'High distinction territory', 'Scholarship and dean\'s honours calculators'],
+          ],
+        },
+      },
+    ],
+  },
+  '/withdrawn-fail-impact-calculator': {
+    sections: [
+      {
+        heading: 'WN vs Standard Fail at Monash',
+        paragraphs: [
+          'On the Monash 4.0 GPA scale, a standard fail (N or NH) has GPA value 0.3, while withdrawn fail (WN) has GPA value 0.0. That difference matters when GPA or CGPA is used for forms, international reporting, or internal progress checks.',
+          'WAM treatment is more nuanced because Monash publishes exclusion rules for certain result codes. Instead of guessing, this tool shows a confirmed GPA scenario plus WAM excluded and worst-case counted-as-zero scenarios.',
+        ],
+      },
+      {
+        heading: 'How to Read the Result',
+        bullets: [
+          'GPA after WN assumes the WN unit contributes 0.0 grade points.',
+          'Standard fail comparison shows how much harsher WN is than N on GPA.',
+          'WAM excluded means your WAM stays unchanged if WN is excluded from WAM maths.',
+          'Worst-case WAM counts a 0 mark, useful for conservative planning only.',
+        ],
+        paragraphs: [
+          'Always check your WES record or ask your faculty before making enrolment or appeal decisions. Calculator outputs are planning estimates, not official academic advice.',
+        ],
+      },
+    ],
+  },
 };
 
 export function getCalculatorPageGuide(path: string): CalculatorPageGuideData | undefined {

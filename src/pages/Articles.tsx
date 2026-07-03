@@ -67,7 +67,7 @@ export default function Articles() {
             Every article links to relevant calculators so you can move from reading to modelling your own marks in one
             session. Browse the full{' '}
             <a href={absoluteUrl('/calculators')} className={INLINE_LINK_CLASS}>calculators directory</a>
-            {' '}for all 24 tools. Content is updated when student questions or Monash policy emphasis shifts — check the
+            {' '}for all 26 tools. Content is updated when student questions or Monash policy emphasis shifts — check the
             published date on each guide.
           </p>
         </div>
