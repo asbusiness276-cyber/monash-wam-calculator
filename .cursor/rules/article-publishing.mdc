@@ -65,6 +65,7 @@ Before writing a new article, check this list. If the primary keyword or intent 
 | `monash-deans-honours-list-wam-guide` | monash dean's honours list | Faculty graduation excellence awards and percentile WAM — not honours degree entry or scholarships |
 | `monash-repeat-unit-wam-guide` | monash repeat unit wam | Both attempts count in WAM/GPA, no grade replacement — not general fail recovery or supplementary pass |
 | `monash-wam-internship-graduate-jobs-guide` | monash wam internship | Employer and internship WAM benchmarks — not postgraduate study applications or scholarships |
+| `monash-year-1-wam-weighting-guide` | monash year 1 wam weighting | Year 1 = 0.5 official WAM weight deep dive — not generic formula-only how-to-calculate-wam |
 
 **Related pairs (allowed — different intent):**
 - `monash-wam-to-gpa-conversion` vs `monash-wam-vs-gpa-postgraduate` — convert numbers vs choose what to report
@@ -75,6 +76,7 @@ Before writing a new article, check this list. If the primary keyword or intent 
 
 Use these before revisiting anything above:
 
-- Monash first-year level 0.5 weighting (deep dive — only if not duplicating `how-to-calculate-wam`)
+- Monash withdrawn fail (WN) WAM and GPA impact guide (pairs with withdrawn-fail-impact calculator)
+- WAM milestones / academic standing explained (pairs with wam-milestones-calculator)
 
 - Search Console → URL inspection → Request indexing for the new article URL.

@@ -751,7 +751,7 @@ export const articles: ArticleData[] = [
         heading: 'Core Formula and Inputs',
         paragraphs: [
           'If you want to know how to calculate WAM, begin with the weighted formula: sum of (mark multiplied by credit points) divided by total credit points. The formula is simple, but accuracy depends on clean inputs. You need correct unit marks and matching credit values. If either input is wrong, the output can look precise but still be misleading. Reliable calculation starts with reliable data.',
-          'Students often confuse simple average with weighted average. In a simple average, each unit contributes equally. In WAM, higher-credit units contribute more than lower-credit units. See monash credit points wam for how 6 cp and 12 cp units change your result differently. Always apply weighting, not plain averaging, when calculating WAM.',
+          'Students often confuse simple average with weighted average. In a simple average, each unit contributes equally. In WAM, higher-credit units contribute more than lower-credit units. See monash credit points wam for how 6 cp and 12 cp units change your result differently. Monash also applies Year 1 half weighting in official WAM — for a dedicated explanation with examples, read monash year 1 wam weighting. Always apply weighting, not plain averaging, when calculating WAM.',
         ],
       },
       {
@@ -1857,6 +1857,108 @@ export const articles: ArticleData[] = [
         question: 'Which calculators help plan WAM before recruitment?',
         answer:
           'Use the Monash WAM calculator for current standing and the WAM target calculator to see required averages on remaining units before applications close.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-year-1-wam-weighting-guide',
+    keyword: 'monash year 1 wam weighting',
+    title: 'Monash Year 1 WAM Weighting Explained (0.5 Rule, 2026)',
+    description:
+      'Monash Year 1 WAM weighting explained: why first-year units count at 0.5, official formula vs simple average, worked examples, and free calculators to compare planning WAM with transcript WAM.',
+    featuredImage: '/article-images/featured-monash-year-1-wam-weighting.webp',
+    featuredImageAlt:
+      'First-year Monash student at a library desk reviewing a weighted average formula on a laptop alongside study notes and a printed unit list',
+    publishedAt: '2026-07-03',
+    updatedAt: '2026-07-03',
+    sections: [
+      {
+        heading: 'Why Monash Year 1 Units Use Half Weighting',
+        paragraphs: [
+          'Students searching monash year 1 wam weighting usually notice a gap: their spreadsheet average does not match the Weighted Average Mark (WAM) on WES. Monash official WAM is not a plain credit-weighted mean of percentage marks. Undergraduate Year 1 units are weighted at 0.5, while Year 2 and above use 1.0. That policy means first-year performance still counts, but each Year 1 mark influences your cumulative WAM less than the same mark in a later-year unit.',
+          'The intent is transitional: Year 1 is an adjustment period, and Monash does not want early marks to dominate your long-run average as heavily as final-year marks. For planning, the practical takeaway is simple: strong Year 1 marks help, but they pull official WAM up more slowly than identical marks in Year 2 or Year 3. Weak Year 1 marks also hurt official WAM less than students expect when they use a non-Monash calculator.',
+          'This guide focuses only on year-level weighting — not the full WAM formula from scratch. For step-by-step weighted maths, read how to calculate wam. For credit-point effects (6 cp vs 12 cp), see monash credit points wam. Here we explain the 0.5 rule, when it applies, and how to model it with the official vs simple WAM calculator on this site.',
+        ],
+      },
+      {
+        heading: 'Official Monash WAM Formula With Year Level',
+        paragraphs: [
+          'Monash publishes WAM as: sum(mark × credit points × year-level weight) ÷ sum(credit points × year-level weight). Year-level weight is 0.5 for Year 1 undergraduate units and 1.0 for Year 2 and above (including honours-level units in coursework programs unless policy states otherwise). Credit points still matter — a 12 cp Year 1 unit has more influence than a 6 cp Year 1 unit, but both are discounted relative to later-year credit.',
+          'Unit codes often signal year level: the first digit of the unit number frequently maps to Year 1 (e.g. FIT1045), Year 2 (FIT2004), or Year 3+ (FIT3161). Faculties can use different numbering in edge cases, so treat code-based inference as a planning hint and confirm against your handbook or WES if a unit is borderline.',
+          'A simple planning WAM ignores year level: sum(mark × cp) ÷ sum(cp). That is useful for quick estimates but will diverge from WES whenever Year 1 units are in the mix. Use the Monash WAM calculator on the homepage for official-style results, or the dedicated official vs simple WAM compare tool to see both numbers side by side.',
+        ],
+      },
+      {
+        heading: 'Worked Example: Year 1 Marks Matter Less in Official WAM',
+        paragraphs: [
+          'Example A — mixed years: FIT1045 Year 1, 78%, 6 cp; MAT1830 Year 1, 72%, 6 cp; FIT2004 Year 2, 85%, 6 cp. Simple average (credit-weighted, no year level): (78×6 + 72×6 + 85×6) ÷ 18 = 78.33%. Official WAM applies 0.5 to Year 1: numerator = 78×6×0.5 + 72×6×0.5 + 85×6×1.0 = 234 + 216 + 510 = 960; denominator = 6×0.5 + 6×0.5 + 6×1.0 = 3 + 3 + 6 = 12; official WAM = 960 ÷ 12 = 80.00%. The strong Year 2 mark pulls official WAM above the simple 78.33% because Year 1 units are half-weighted.',
+          'Example B — weak Year 1, strong later years: three Year 1 units at 58, 62, 60 (6 cp each) and two Year 2 units at 82, 80 (6 cp each). Simple credit-weighted WAM ≈ 68.57%. Official WAM weights the softer Year 1 block at 0.5, so the same transcript can read closer to 72–74% on WES — exact value depends on full credit totals. The pattern: mediocre Year 1 hurts less in official WAM than a simple spreadsheet suggests.',
+          'Run your own units through the official vs simple WAM calculator instead of hand-calculating. If you are chasing distinction average (70+) or employer screens, pair results with the WAM milestones checker to see which bands you already meet.',
+        ],
+      },
+      {
+        heading: 'When Planning WAM and Official WAM Diverge Most',
+        paragraphs: [
+          'The biggest gaps appear early in a degree when a large share of completed credit is still Year 1. After 96+ cp mostly at Year 2+, simple and official WAM usually move closer because the 0.5-weighted block is a smaller fraction of the total. Students in double degrees or accelerated pathways should still model year level per unit — do not assume all first-year subjects share the same calendar year of study.',
+          'Transferred credit, cross-faculty units, and summer intensives can complicate year-level labelling on planning sheets. If WES shows a WAM you cannot reproduce, first verify year-level weights, then credit points, then whether any units are excluded from WAM (certain withdrawn or special grades). Read how to find wam on monash transcript for where official figures appear before you debug formula differences.',
+          'Honours entry, scholarships, and dean\'s list recognition typically reference official WAM from your record — not a simple average from a generic calculator. When forums quote “my WAM is X,” check whether they used Monash rules or a plain mean.',
+        ],
+      },
+      {
+        heading: 'Year 1 Weighting and GPA (Different Systems)',
+        paragraphs: [
+          'WAM year-level weighting does not automatically mean GPA uses the same 0.5 rule in every display context students see. Monash GPA on the 4.0 scale is grade-value weighted by credit points from letter results. WAM preserves percentage marks with year-level multipliers. Your transcript may show both metrics — they can tell slightly different stories if marks cluster inside grade bands.',
+          'A Year 1 distinction (70–79%) and a Year 3 distinction both map to GPA 3.0 for that unit, but WAM treats the Year 1 distinction at half weight in the official WAM formula. Students comparing wam to gpa should read monash wam to gpa conversion for band mapping, then remember year weighting is a WAM-specific layer on top of credit weighting.',
+          'For cumulative GPA updates across semesters, use the Monash CGPA calculator guide. For semester-only averages without year-level complexity, the semester WAM calculator isolates one teaching period — still credit-weighted, but useful when all units in that semester share similar year level.',
+        ],
+      },
+      {
+        heading: 'Planning Strategy With the 0.5 Rule',
+        paragraphs: [
+          'If you are in Year 1, do not treat low marks as “only half a problem” — they still appear on your transcript and affect GPA. The 0.5 WAM weighting reduces long-run drag, not visibility. Use Year 1 to build study systems; Year 2 and Year 3 marks will move official WAM faster because they enter at full weight.',
+          'If you are in Year 2+ recovering from soft Year 1 marks, your required averages on remaining units may be lower than a simple WAM target calculator implies — because new full-weight units outweigh the old half-weight block over time. Use the WAM target calculator with certified completed credit and model scenarios with the WAM what-if projection tool before enrolment changes.',
+          'Before competitive applications, snapshot official WAM from WES, then sanity-check with the Monash WAM calculator. For merit bands, read what is a good wam and faculty-specific guides such as monash scholarship wam requirements or monash honours wam requirements where relevant.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes About Year 1 WAM Weighting',
+        paragraphs: [
+          'Assuming Year 1 units are excluded from WAM entirely — they are included, just at 0.5 weight. Using the first digit of a unit code without checking faculty exceptions. Comparing your simple Excel WAM to a friend’s WES WAM without knowing whether they used official rules.',
+          'Expecting exchange SFR units to change WAM after Year 1 — exchange credit usually does not import marks into WAM regardless of year level; see monash exchange grades wam. Ignoring failed Year 1 units — fails still count when certified on your record and can weigh at 0.5 in WAM maths while also affecting GPA.',
+          'Independent calculators on this site support planning only. Faculty progression and award decisions use certified Monash results after results release.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is Year 1 WAM weighting at Monash?',
+        answer:
+          'Year 1 undergraduate units use a year-level weight of 0.5 in official WAM. Year 2 and above use 1.0, on top of credit-point weighting.',
+      },
+      {
+        question: 'Are Year 1 units excluded from Monash WAM?',
+        answer:
+          'No. They are included in official WAM calculations but contribute at half the year-level weight compared with later-year units.',
+      },
+      {
+        question: 'Why does my spreadsheet WAM differ from WES?',
+        answer:
+          'Generic averages often omit year-level 0.5 weighting. Use the official vs simple WAM calculator to compare both methods with your units.',
+      },
+      {
+        question: 'How do I know a unit’s year level?',
+        answer:
+          'The first digit of the unit number often indicates year level (e.g. 1xxx = Year 1). Confirm against your faculty handbook if unsure.',
+      },
+      {
+        question: 'Does Year 1 half weighting apply to GPA?',
+        answer:
+          'Official WAM uses year-level weights. GPA is calculated from grade values and credit points on letter results — a separate metric from WAM.',
+      },
+      {
+        question: 'Which calculator should I use for official-style WAM?',
+        answer:
+          'Use the Monash WAM calculator on the homepage or the official vs simple WAM compare tool with year level entered for each unit.',
       },
     ],
   },
