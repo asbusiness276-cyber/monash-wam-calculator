@@ -322,7 +322,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'Planning Bands: How Students Interpret WAM Ranges',
         paragraphs: [
-          'Although not official Monash policy, students commonly use these planning bands when discussing honours readiness: around 60–69 (credit) for baseline progression conversations; around 70–79 (distinction) for competitive entry in many faculties; around 80+ (high distinction) for the strongest research honours and scholarship positioning. Read what is a good wam for fuller benchmark context and how to set layered targets.',
+          'Although not official Monash policy, students commonly use these planning bands when discussing honours readiness: around 60–69 (credit) for baseline progression conversations; around 70–79 (distinction) for competitive entry in many faculties; around 80+ (high distinction) for the strongest research honours and scholarship positioning. Read what is a good wam for fuller benchmark context and how to set layered targets. For graduation excellence awards such as monash dean's honours list, faculty percentile rules may sit above generic distinction bands — see the dedicated dean\'s list guide.',
           'Your faculty may also care about trend, not just one number. An upward trajectory across level two and three units can support an application even when your cumulative WAM is slightly below a stated floor. Conversely, a single strong semester rarely offsets a weak multi-year pattern in highly competitive honours streams.',
           'Use how to calculate wam whenever you model “what if” scenarios — weighted credit points change outcomes and simple averages mislead. For recovery plans, pair benchmarks with how to improve wam at monash so you know which high-credit units can still move your average before applications close.',
         ],
@@ -1538,6 +1538,116 @@ export const articles: ArticleData[] = [
         question: 'How do I check my WAM after exchange?',
         answer:
           'Use WES or the Monash WAM calculator with only Monash-graded units. SFR exchange units are excluded from WAM maths.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-deans-honours-list-wam-guide',
+    keyword: "monash dean's honours list",
+    title: "Monash Dean's Honours List & WAM (2026 Guide)",
+    description:
+      "Monash Dean's Honours List explained: faculty excellence awards, typical WAM percentile rules, distinction average benchmarks, and how to track standing with free calculators.",
+    featuredImage: '/article-images/featured-monash-deans-honours-list-wam.webp',
+    featuredImageAlt:
+      'Monash graduate in academic gown celebrating at a university graduation ceremony while holding a diploma folder',
+    publishedAt: '2026-07-03',
+    updatedAt: '2026-07-03',
+    sections: [
+      {
+        heading: "What Is the Dean's Honours List at Monash?",
+        paragraphs: [
+          'Students searching monash dean\'s honours list usually mean a faculty graduation award that recognises top academic achievement — not the same thing as an honours research degree (H1/H2A classification) or a cash scholarship. Monash faculties run their own excellence schemes: Dean\'s Honours List, Dean\'s Commendation, course awards, and Dean\'s Student Excellence Award nights. Names and criteria differ by school, but WAM or GPA almost always drives eligibility.',
+          'A well-known example is Monash Business School, where the Dean\'s Honours List recognises bachelor graduates whose WAM places them in the top two percentile of their graduating cohort. That is a relative rank — not a fixed mark like “80 WAM everywhere.” Another faculty may use distinction average language (often WAM 70+ or GPA 3.0+) for commendation tiers. Always read your faculty\'s current course awards page rather than assuming Business School rules apply university-wide.',
+          'This guide explains how dean\'s list-style awards work, how WAM is used, how they differ from scholarships and honours degrees, and how to model your standing before final year. For research honours entry cutoffs, read monash honours wam requirements separately.',
+        ],
+      },
+      {
+        heading: "Dean's List vs Scholarships vs Honours Degree",
+        paragraphs: [
+          'Three Monash terms sound similar but serve different purposes. Scholarships are usually money or fee support with application or auto-consideration rules — see monash scholarship wam requirements. Honours degree pathways add an advanced study year with H1/H2A/H2B course grades from WAM — different policy again. Dean\'s Honours List and faculty excellence awards are recognition at graduation: certificates, events, resume lines, and faculty prestige — typically without ongoing renewal conditions like scholarships.',
+          'You can hold multiple outcomes: a merit scholarship during study, a strong WAM for dean\'s list recognition at graduation, and a separate decision about whether to apply for a research honours year. Do not merge them in planning documents. Employers may ask for “WAM” or “achievements” — dean\'s list belongs in an achievements section; WAM belongs in academics with the number from your transcript.',
+          'When a LinkedIn post says “Dean\'s Honours List — top 2% WAM,” that describes one faculty\'s cohort ranking. Another student with 78 WAM might make a dean\'s commendation in a different faculty while missing Business School\'s percentile cut because cohort strength varies year to year.',
+        ],
+      },
+      {
+        heading: 'How Faculties Use WAM for Excellence Awards',
+        paragraphs: [
+          'Most faculty schemes anchor to Monash official WAM: credit-weighted percentage marks with Year 1 units at 0.5 weighting and later years at 1.0. Some award nights also reference GPA or distinction average (commonly WAM 70+ / GPA 3.0+ as a planning benchmark). Percentile-based lists compare you only to graduates in your faculty and degree cohort that year — so the cutoff WAM floats. Fixed-threshold commendations may publish a minimum WAM or “distinction average required” in faculty handbooks.',
+          'Course awards — top student in each degree program — can go to a graduate with slightly lower cumulative WAM than the dean\'s list if their performance in that specific course map ranks first. Unit excellence awards recognise individual subjects. Understanding which award type you are targeting changes how you prioritise units in final semesters.',
+          'Calculate your WAM with the Monash WAM calculator using certified marks only. For GPA-based faculty wording, cross-check monash cgpa calculator guide and your WES record. Year-level weighting details sit in how to calculate wam and monash credit points wam explained.',
+        ],
+      },
+      {
+        heading: 'Monash Business School: Dean\'s Honours List Example',
+        paragraphs: [
+          'Monash Business School publicly celebrates Dean\'s Student Excellence Awards each year, including Dean\'s Honours List recipients. Recent graduate recognition has described the Dean\'s Honours List as bachelor graduates ranked in the top two percentile by WAM within their cohort. That implies very high distinction or high distinction territory in strong cohorts — often well above the generic 70 distinction floor — but the exact WAM moves every year.',
+          'The same event also recognises course award winners (top in each program), unit excellence, Dean\'s Commendations, and other leadership prizes. Making the dean\'s list is not the only form of faculty recognition. If your WAM is strong but not top-two-percentile, course or unit awards may still be realistic.',
+          'Treat percentile targets as stretch planning: model whether final-year high-credit units can lift your WAM enough using the WAM target calculator. Compare required averages against what is a good wam bands before assuming a fixed number like 85 will always suffice.',
+        ],
+      },
+      {
+        heading: 'Distinction Average and Dean\'s Commendation Tiers',
+        paragraphs: [
+          'Many Monash faculties use distinction average language for merit pathways — broadly WAM 70+ or GPA 3.0+ on the standard scale. Dean\'s Commendation or faculty merit certificates sometimes sit at or above distinction, while Dean\'s Honours List sits higher (percentile or high distinction bands). Arts Dean\'s Scholars and similar programs may require maintaining distinction-level performance across years — a living requirement, not a one-time graduation award.',
+          'Because GPA compresses marks into bands, two students near 70 WAM can have similar GPA but different dean\'s list outcomes if one clustered marks at 79 versus 71. WAM preserves those differences — faculties that rank by WAM reward consistent high marks inside the distinction band.',
+          'If you are borderline at 69–71 WAM, read how to improve wam at monash and use the final grade calculator on high-weight final assessments. Small moves across the 70 line can change distinction-average eligibility even when dean\'s list percentile remains out of reach.',
+        ],
+      },
+      {
+        heading: 'Planning Timeline: When WAM Locks In',
+        paragraphs: [
+          'Graduation awards use your completing degree WAM when results are certified — not mid-degree estimates. Units still in progress or showing NS do not count until finalised. Exchange SFR credit does not add marks to WAM; see monash exchange grades wam if you studied abroad. Failed units and repeats both remain in WAM under normal Monash rules, which can block percentile recognition even after a strong recovery semester.',
+          'Practical timeline: after each results release in your final year, recalculate WAM and note remaining credit points. Before final exams, run the WAM target calculator to see what average you need on remaining units to reach personal goals (70 distinction, 80 HD, or a self-set percentile stretch). After graduation, verify the figure on monash wam transcript matches your planning.',
+          'Faculty award notifications often arrive after graduation processes. Do not list dean\'s honours list on job applications until officially confirmed by faculty communication.',
+        ],
+      },
+      {
+        heading: 'Resume, LinkedIn, and Employer Reporting',
+        paragraphs: [
+          'When verified, you may write: “Dean\'s Honours List, Monash [Faculty] — WAM in top [X] percentile of graduating cohort ([Year]).” Include your numeric WAM if the employer requests academic average. Avoid claiming university-wide dean\'s list if the award was faculty-specific. Dean\'s Commendation and course award titles should be named exactly as the faculty certificate states.',
+          'International employers may ask for GPA. Report transcript CGPA when available; use wam to gpa only as a secondary estimate if the form lacks a WAM field. For postgraduate forms, monash wam vs gpa postgraduate explains which metric to lead with.',
+          'Independent calculators on this site support planning. Official award decisions rest with Monash faculties and published course award criteria for your graduation year.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes About Dean\'s List and WAM',
+        paragraphs: [
+          'Confusing Dean\'s Honours List with honours degree classification (H1/H2A). Assuming a fixed 80 WAM guarantees dean\'s list in every faculty — percentile rules depend on cohort. Ignoring Year 1 half-weighting when hand-calculating WAM before comparing yourself to peers.',
+          'Listing the award before faculty confirmation. Using Malaysia campus or partner-university GPA rules for Melbourne award planning. Overlooking that course awards and dean\'s list use different selection logic.',
+          'Chasing dean\'s list while neglecting prerequisite units or progression rules — academic standing and completion matter before any excellence recognition.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What WAM do you need for Monash Dean's Honours List?",
+        answer:
+          'There is no single university-wide WAM. Monash Business School uses top two percentile of the graduating bachelor cohort; other faculties publish their own criteria — check your faculty course awards page.',
+      },
+      {
+        question: "Is Dean's Honours List the same as an honours degree?",
+        answer:
+          'No. Dean\'s Honours List is a graduation excellence award. An honours degree is an additional study pathway with H1/H2A/H2B classifications — different rules and calculators apply.',
+      },
+      {
+        question: "Is Dean's Honours List a scholarship?",
+        answer:
+          'Usually not. It is recognition (awards events, certificates, resume prestige). Scholarships involve separate funding and eligibility — see the scholarship WAM guide.',
+      },
+      {
+        question: 'What is distinction average at Monash for faculty awards?',
+        answer:
+          'Planning benchmarks often use WAM 70+ or GPA 3.0+. Some commendation tiers require distinction average; dean\'s list percentile tiers are typically higher.',
+      },
+      {
+        question: 'Does exchange affect Dean\'s List WAM?',
+        answer:
+          'Exchange units normally appear as SFR and do not add host marks to WAM. Your average reflects Monash-graded units only.',
+      },
+      {
+        question: 'How can I track my WAM for graduation awards?',
+        answer:
+          'Use the Monash WAM calculator with transcript marks, then the WAM target calculator to model final-year requirements before results certify.',
       },
     ],
   },
