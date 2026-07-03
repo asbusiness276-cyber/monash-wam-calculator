@@ -57,26 +57,33 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-6">
-          <li className="relative">
+          <li
+            className="relative"
+            onMouseEnter={() => setDesktopDropdownOpen(true)}
+            onMouseLeave={() => setDesktopDropdownOpen(false)}
+          >
             <button
               type="button"
               onClick={() => setDesktopDropdownOpen(open => !open)}
+              aria-expanded={desktopDropdownOpen}
               className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               Calculators
               <ChevronDown size={14} className={`transition-transform ${desktopDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             {desktopDropdownOpen && (
-              <div className="absolute left-0 top-full mt-2 min-w-52 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg py-2 z-50">
-                {calculatorLinks.map(link => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+              <div className="absolute left-0 top-full pt-2 z-50">
+                <div className="min-w-52 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg py-2">
+                  {calculatorLinks.map(link => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             )}
           </li>

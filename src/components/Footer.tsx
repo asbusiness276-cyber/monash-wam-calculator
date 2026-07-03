@@ -35,7 +35,10 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-2 gap-4 min-w-0">
-            <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">
+            <div
+              className="pl-0 sm:pl-4 lg:pl-8 min-w-0"
+              onMouseLeave={() => setCalculatorsOpen(false)}
+            >
               <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Calculators</h3>
               <button
                 type="button"
