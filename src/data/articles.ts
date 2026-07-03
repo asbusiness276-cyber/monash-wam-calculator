@@ -576,7 +576,7 @@ export const articles: ArticleData[] = [
       {
         question: 'If I repeat a unit, does the fail disappear from WAM?',
         answer:
-          'Not automatically in every reporting context. Repeat and transcript rules vary by faculty and attempt type — verify official policy before assuming replacement.',
+          'Not automatically — Monash normally includes both the failed attempt and the repeat in WAM. See the repeat unit WAM guide for breakeven planning versus supplementary pass.',
       },
       {
         question: 'Can I still get honours or scholarships after a fail?',
@@ -1259,7 +1259,7 @@ export const articles: ArticleData[] = [
         heading: 'Supplementary Assessment vs Repeating the Unit',
         paragraphs: [
           'Monash\'s official guidance asks students to consider WAM impact before deciding whether to complete a supplementary assessment or change enrolment. Supplementary pass guarantees progression with a 50 cap. Repeating the unit adds another attempt — both marks may count toward WAM depending on policy — but gives you a chance at a higher final mark if you perform well.',
-          'Breakeven thinking: if your fail was 48 in a 6-credit unit, a supp pass lifts the unit to 50. Repeating might require roughly 71% or higher on the repeat attempt (depending on your overall credit load) to beat the WAM outcome of passing the supp. Our supp vs repeat WAM calculator runs that comparison with your real numbers.',
+          'Breakeven thinking: if your fail was 48 in a 6-credit unit, a supp pass lifts the unit to 50. Repeating might require roughly 71% or higher on the repeat attempt (depending on your overall credit load) to beat the WAM outcome of passing the supp. Our supp vs repeat WAM calculator runs that comparison with your real numbers. For full repeat rules when both attempts count, read monash repeat unit wam.',
           'Repeating also costs time, fees, and timetable space. Supplementary assessment is one sitting with a fixed ceiling. Faculty course advisers can help if progression rules require a minimum mark above 50 in core units — a bare supp pass may not satisfy every prerequisite.',
         ],
       },
@@ -1648,6 +1648,116 @@ export const articles: ArticleData[] = [
         question: 'How can I track my WAM for graduation awards?',
         answer:
           'Use the Monash WAM calculator with transcript marks, then the WAM target calculator to model final-year requirements before results certify.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-repeat-unit-wam-guide',
+    keyword: 'monash repeat unit wam',
+    title: 'Monash Repeat Unit WAM Impact (2026 Guide)',
+    description:
+      'Monash repeat unit WAM impact explained: both attempts count, no grade replacement, GPA effect, breakeven maths vs supplementary pass, and free calculators to plan recovery.',
+    featuredImage: '/article-images/featured-monash-repeat-unit-wam.webp',
+    featuredImageAlt:
+      'University student comparing two semester result sheets at a desk while using a laptop and calculator to plan a repeated unit',
+    publishedAt: '2026-07-03',
+    updatedAt: '2026-07-03',
+    sections: [
+      {
+        heading: 'What Happens to WAM When You Repeat a Unit at Monash?',
+        paragraphs: [
+          'Students searching monash repeat unit wam want a direct answer: if I fail and enrol again, does the new mark replace the old one? Under standard Monash policy, your Weighted Average Mark (WAM) includes failed and repeated units. When you repeat, both the original fail mark and the repeat attempt normally stay in WAM maths — Monash does not use a simple “grade replacement” rule that deletes the first attempt from your average.',
+          'That differs from some overseas universities where only the best attempt counts. At Monash, repeating is still worthwhile when you need to pass for progression or when a strong repeat mark offsets the fail enough to lift your cumulative average — but you should model both attempts honestly before assuming a repeat erases history.',
+          'This guide covers WAM and GPA impact, how repeats compare with supplementary pass at 50, breakeven mark planning, and tools on this site. For general fail recovery strategy, read failed unit wam monash. For supplementary-specific rules, see monash supplementary exam wam.',
+        ],
+      },
+      {
+        heading: 'No Grade Replacement: Both Attempts in the Average',
+        paragraphs: [
+          'Monash Connect states that under normal circumstances WAM includes failed and repeated units. Practically, that means your transcript can show two rows for the same unit code across semesters — a fail (or near-fail) and a later pass or higher mark — and WAM calculations weight each completed attempt by credit points and year level.',
+          'Repeating adds credit to the denominator, not just swaps numerators. Example from standard credit-weighted maths: WAM 68.25 across 24 credit points including a 48% fail in a 6-credit unit. If you repeat and score 75%, WAM becomes about 69.6 because both the 48 and the 75 count in the weighted total across 30 credit points — not 24 with the 48 removed.',
+          'Use the Monash WAM calculator with every certified unit on your record. For side-by-side supplementary versus repeat scenarios, the supp vs repeat WAM calculator runs the same comparison with your real numbers.',
+        ],
+      },
+      {
+        heading: 'Repeat vs Supplementary Pass — Which Helps WAM More?',
+        paragraphs: [
+          'A supplementary pass caps the unit at 50% (P) and replaces the fail mark in that single WAM entry — it does not add a second attempt. Repeating adds a second weighted entry but allows any mark up to 100 if you perform well. Which wins depends on your fail mark, credit points, and realistic repeat target.',
+          'Using the same planning example: WAM 68.25 on 24 cp with a 48% fail in 6 cp. Supplementary pass lifts the unit to 50 → WAM about 68.75. A repeat at 75% yields about 69.6 because both attempts count — better than supp, but you needed 75%, not 50. The breakeven repeat mark to beat supplementary pass in that scenario is about 70.75%.',
+          'If your fail was 45–49 and you are eligible for supplementary assessment, model supp first — it is one sitting with a fixed ceiling. Choose repeat when you need a higher final mark for prerequisites, honours positioning, or when supp is not offered. Read monash supplementary exam wam for NS grades and timing.',
+        ],
+      },
+      {
+        heading: 'How Repeats Affect Monash GPA and CGPA',
+        paragraphs: [
+          'GPA uses letter-grade point values, not raw percentages, but the same inclusion logic applies: Monash official guidance states that all grades, including fails and grades from repeated units, feed GPA and cumulative GPA calculations unless your specific record shows otherwise. A fail (N) carries GPA value 0.3 on the standard 4.0 scale — not zero — yet still drags averages.',
+          'A repeat pass at P, C, D, or HD adds another weighted GPA entry. Two rows for one unit can mean two contributions to cumulative GPA — the fail at 0.3 and the repeat at 1.0–4.0 depending on mark. Model semester and cumulative impact with the Monash GPA calculator and Monash CGPA calculator using both attempts as separate units when planning.',
+          'WAM and GPA can move differently after the same repeat because GPA bands compress marks. A repeat at 74% (D) helps WAM more visibly than jumping from fail to bare pass at 52% (P) helps GPA. Report transcript figures on applications; use calculators for forward planning only.',
+        ],
+      },
+      {
+        heading: 'When Repeating Is Still the Right Call',
+        paragraphs: [
+          'Repeat despite double-counting when: you must pass for core progression and supplementary is unavailable or failed; the unit is a prerequisite with a minimum mark above 50; you can realistically score well above breakeven (often low-70s or higher depending on load); or you need mastery for later units regardless of WAM maths.',
+          'Delay repeating when: supplementary pass at 50 meets progression; timetable clash blocks other priority units; emotional burnout risks a second fail; or breakeven repeat marks are unrealistically high relative to your history in that subject area.',
+          'Faculty advisers can confirm whether your course treats any attempt differently on official progression screens versus public WAM display. Independent tools here follow standard Monash weighting for education — not faculty exceptions.',
+        ],
+      },
+      {
+        heading: 'Step-by-Step WAM Planning Before You Re-enrol',
+        paragraphs: [
+          'Step 1 — List the fail mark, credit points, and year level for the unit. Step 2 — Calculate current WAM including the fail in the Monash WAM calculator. Step 3 — Model supplementary pass at 50 if eligible. Step 4 — Model repeat at realistic marks (60, 70, 80) with both attempts counted. Step 5 — Compare outcomes and check census dates before re-enrolment.',
+          'If honours, scholarships, or dean\'s list targets matter, combine repeat planning with monash honours wam requirements, monash scholarship wam requirements, or monash dean\'s honours list benchmarks. Exchange students should confirm repeat timing does not clash with approved overseas semesters — see monash exchange grades wam.',
+          'After results certify, verify WES matches your model using how to calculate wam and monash wam transcript guidance.',
+        ],
+      },
+      {
+        heading: 'Credit Points, Year Level, and High-Weight Units',
+        paragraphs: [
+          'A repeat in a 12-credit core unit moves WAM more than a 6-credit elective because each attempt multiplies by credit points in the weighted sum. Year 1 units use 0.5 level weighting in official Monash WAM — repeating a first-year fail may move overall WAM less than repeating a third-year 12-credit unit. See monash credit points wam explained for weighting intuition.',
+          'Failing a high-credit unit twice — original fail plus weak repeat — can damage averages severely. Prioritise preparation before the repeat sitting: use the final grade calculator on remaining assessments within the repeat semester and avoid overloading hard units in the same term.',
+          'If targeting a specific WAM after repeat, the WAM target calculator shows required averages on remaining units once you include both attempts in your completed base.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes About Repeat Units and WAM',
+        paragraphs: [
+          'Assuming the repeat replaces the fail on WAM — it usually does not; both count. Expecting one distinction repeat to fix a multi-unit fail pattern instantly. Ignoring GPA/CGPA when only WAM was checked on WES.',
+          'Comparing Monash to US grade-replacement policies. Enrolling in a repeat while still NS or awaiting supplementary outcome without modelling both paths. Using calculator outputs on formal appeals without transcript verification.',
+          'Forgetting withdrawn fail (WN) and special grades follow different GPA values — confirm letter codes on your record before manual maths.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Does repeating a unit remove the fail from Monash WAM?',
+        answer:
+          'Normally no. Monash WAM typically includes both the failed attempt and the repeat attempt in credit-weighted calculations rather than replacing the first mark.',
+      },
+      {
+        question: 'How much does a repeat improve WAM if I score 75%?',
+        answer:
+          'It depends on your fail mark, unit credit points, and total credit load. Both attempts count — use the supp vs repeat WAM calculator with your transcript numbers.',
+      },
+      {
+        question: 'Is repeat or supplementary better for WAM?',
+        answer:
+          'Supplementary pass fixes the unit at 50 in one entry. Repeat allows higher marks but adds a second weighted attempt. Compare breakeven marks with the calculator.',
+      },
+      {
+        question: 'Do repeated units affect GPA?',
+        answer:
+          'Yes. Monash includes fail grades and repeated unit grades in GPA and CGPA calculations using official grade point values.',
+      },
+      {
+        question: 'What repeat mark beats a supplementary pass?',
+        answer:
+          'Breakeven varies. In a common 6-credit example with a 48% fail, you may need about 71% on the repeat to beat a supp pass at 50 — run your own scenario in the calculator.',
+      },
+      {
+        question: 'Where can I model repeat WAM impact?',
+        answer:
+          'Use the Monash WAM calculator for your current position and the supp vs repeat WAM calculator to compare supplementary pass versus repeat outcomes.',
       },
     ],
   },
