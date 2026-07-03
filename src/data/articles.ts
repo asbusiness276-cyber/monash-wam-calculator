@@ -1761,6 +1761,124 @@ export const articles: ArticleData[] = [
       },
     ],
   },
+  {
+    slug: 'monash-wam-internship-graduate-jobs-guide',
+    keyword: 'monash wam internship',
+    title: 'Monash WAM for Internships & Graduate Jobs (2026)',
+    description:
+      'Monash WAM for internships and graduate jobs: what employers screen for, distinction benchmarks, GPA reporting, penultimate-year planning, and free calculators to track standing.',
+    featuredImage: '/article-images/featured-monash-wam-internship-graduate-jobs.webp',
+    featuredImageAlt:
+      'Monash university student in business attire at a career fair speaking with a recruiter while holding a portfolio folder',
+    publishedAt: '2026-07-03',
+    updatedAt: '2026-07-03',
+    sections: [
+      {
+        heading: 'Do Employers Ask for WAM When You Apply from Monash?',
+        paragraphs: [
+          'Students searching monash wam internship usually want to know whether Australian employers actually filter on academic average — and what number is “enough.” For many internship and graduate program pipelines, the answer is yes: WAM or GPA often appears on application forms, especially in accounting, consulting, banking, engineering, law, and government grad schemes. Monash students typically report Weighted Average Mark (WAM) because it is the primary metric on the official transcript, though some multinational firms also request GPA on a 4.0 scale.',
+          'WAM is not the only screen. Leadership, work experience, case interviews, psychometric tests, and degree relevance matter — but academic merit can be a first-pass filter when applications are competitive. Treat WAM as one line in a broader employability story, not the whole story. Still, knowing your certified WAM early helps you target realistic programs and plan semesters before penultimate-year recruitment peaks.',
+          'This guide focuses on internships and graduate employer programs — not postgraduate study applications (see monash wam vs gpa postgraduate for masters pathways). For general benchmark bands, read what is a good wam first, then return here for career-specific planning.',
+        ],
+      },
+      {
+        heading: 'WAM Benchmarks Employers Use (Planning Bands)',
+        paragraphs: [
+          'Employers rarely publish Monash-specific cutoffs, but Australian campus recruiters often think in Monash grade bands: credit near 60–69, distinction near 70–79, high distinction 80+. Penultimate-year internship campaigns for competitive firms frequently cluster applicants with distinction or high distinction WAM — not because 69.9 is impossible, but because volume forces ranking. Government and mid-market roles may be more flexible if experience and interviews are strong.',
+          'Distinction average (WAM 70+ or GPA 3.0+) is a common informal threshold on grad job FAQs and faculty career slides. High distinction territory (80+) helps for the most selective vacation programs, but students with mid–high distinction and strong extracurriculars still secure excellent roles. Do not treat 70 as a hard universal minimum — treat it as a planning anchor.',
+          'Verify your WAM on WES before applications open. Use the Monash WAM calculator with transcript marks, then the WAM target calculator to see what average you need on remaining units to reach a personal target before recruitment season.',
+        ],
+      },
+      {
+        heading: 'Internships: Penultimate Year and Timing',
+        paragraphs: [
+          'Most large Australian internship programs target penultimate-year students — typically the year before your final undergraduate year. Recruitment often runs 6–12 months ahead of the summer intake, which means your WAM at application close matters, not your projected final WAM. If you are in second year of a three-year bachelor, internship windows may open earlier than you expect.',
+          'Practical timeline: identify target firms in first semester of the year before internship; confirm WAM on WES after prior results release; use how to improve wam at monash to prioritise high-credit units if one stronger semester can lift your average before applications close; practise interviews in parallel — waiting until results to start prep loses time.',
+          'Smaller firms and startups may hire year-round with flexible WAM expectations. Faculty career services and Monash Career Connect list programs with varying academic requirements — always read each employer’s current eligibility page rather than forum posts from prior years.',
+        ],
+      },
+      {
+        heading: 'Graduate Programs vs Internships: Different WAM Pressure',
+        paragraphs: [
+          'Graduate programs (full-time roles after degree completion) sometimes see your final WAM including last-semester results. Internships often lock in WAM earlier. If your final year lifts WAM significantly, graduate applications may reflect that improvement even if internship screens missed it — a reason some students pursue graduate programs after a weaker penultimate year.',
+          'Structured grad schemes at major employers may state “credit average minimum” or “competitive academic record” without a number. When unclear, email graduate recruitment with factual questions or attend campus sessions. Report exact WAM from transcript when forms allow free text; use whole numbers or one decimal only if the form specifies format.',
+          'Double degrees and combined courses can lengthen the penultimate window — map your course progression against employer degree-completion rules so you do not apply in the wrong year.',
+        ],
+      },
+      {
+        heading: 'WAM vs GPA on Job Applications',
+        paragraphs: [
+          'Australian domestic recruiters usually prefer WAM because Monash transcripts emphasise it. Multinationals with US-style HR systems may ask for GPA on 4.0 — use transcript GPA when listed; otherwise provide WAM and note Monash grading schema if comments are allowed. Do not convert casually without stating methodology — see wam to gpa for band-based planning estimates and monash cgpa calculator guide if cumulative GPA is requested.',
+          'Never inflate or round up WAM. Employers can request academic transcripts or verification services. A mismatch between claimed and certified WAM ends candidacies. If your WAM is still provisional because results are pending, label it clearly as “expected” or wait until certification.',
+          'Honours classification (H1/H2A) on embedded honours degrees is separate from employer WAM questions unless you are applying during or after honours — see monash honours wam requirements for degree classification, not internship forms.',
+        ],
+      },
+      {
+        heading: 'When WAM Is Weak: Strategy That Still Works',
+        paragraphs: [
+          'Competitive WAM is helpful but not mandatory for every role. Offset lower averages with relevant paid work, faculty projects, case competition results, leadership in clubs, and strong references. Target employers where academic cutoffs are published as guidelines rather than hard filters.',
+          'If a fail or repeat dragged WAM, model recovery with failed unit wam monash and monash repeat unit wam so you understand trajectory — upward trend in later years can be discussed honestly in interviews. One fail with strong recovery reads better than stagnant mid-pass averages.',
+          'Consider roles that value portfolios (IT, design, media) or licencing pathways (engineering graduate + PE track) where technical assessment outweighs raw WAM. Regional and public-sector programs sometimes emphasise equity and experience over top-percentile marks.',
+        ],
+      },
+      {
+        heading: 'Faculty and Industry Differences',
+        paragraphs: [
+          'Business and law employers often discuss WAM openly in campus presentations. Engineering and IT may weight project experience and coding tests more heavily but still collect WAM for graduate lists. Health and education placements use different compliance screens — clinical or placement requirements can dominate over WAM alone.',
+          'International students should confirm work-rights and visa conditions separately from WAM. Some firms cap international intake percentages regardless of marks. Malaysia-campus students reporting to global employers should use Monash-certified documents — not third-party GPA tables from other universities.',
+          'Dean\'s list or faculty excellence awards can strengthen a CV line but do not replace WAM on forms — see monash dean\'s honours list for recognition separate from employer screening numbers.',
+        ],
+      },
+      {
+        heading: 'Calculator Workflow Before Application Season',
+        paragraphs: [
+          'Step 1 — Certified WAM from WES via monash wam transcript steps. Step 2 — Monash WAM calculator sanity check. Step 3 — WAM target calculator for remaining semesters before application close. Step 4 — Final grade calculator on units with heavy exam weight this term. Step 5 — Update CV and application forms with certified figures only after results release.',
+          'If targeting distinction (70+) or high distinction (80+), compare against what is a good wam bands and scholarship-style merit floors in monash scholarship wam requirements — some merit language overlaps with employer “distinction average” wording even when money is not involved.',
+          'Calculators on this site support planning. Hiring decisions rest with employers and your full application — not calculator outputs alone.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes on WAM and Job Applications',
+        paragraphs: [
+          'Using simple average of marks instead of Monash credit-weighted WAM. Omitting fails or repeats that appear on transcript. Converting WAM to GPA with linear formulas employers do not recognise.',
+          'Applying only to tier-one firms when WAM fits mid-market better — spreads thin and burns penultimate year. Waiting until final semester to start internship search when penultimate recruitment already closed.',
+          'Listing dean\'s list or achievements not yet confirmed. Copying outdated WAM from a spreadsheet after new results certified on WES.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What WAM do I need for internships at Monash?',
+        answer:
+          'There is no single Monash-wide minimum. Competitive firms often see distinction-level WAM (70+) as strong; many programs consider full applications. Check each employer’s current eligibility page.',
+      },
+      {
+        question: 'Do graduate employers want WAM or GPA?',
+        answer:
+          'Australian employers usually prefer WAM from your Monash transcript. Some multinationals request GPA on 4.0 — use certified transcript GPA when available.',
+      },
+      {
+        question: 'When should I check my WAM for internship applications?',
+        answer:
+          'After every results release before application deadlines — often penultimate year, sometimes 6–12 months before the internship starts.',
+      },
+      {
+        question: 'Can I get an internship with a WAM below 70?',
+        answer:
+          'Yes, depending on employer, role, and experience. Distinction is a common competitive benchmark, not a universal rule.',
+      },
+      {
+        question: 'Does a failed unit ruin internship chances?',
+        answer:
+          'It can hurt competitive screens, but recovery, experience, and interview performance still matter. Model WAM trajectory with failed-unit and repeat guides.',
+      },
+      {
+        question: 'Which calculators help plan WAM before recruitment?',
+        answer:
+          'Use the Monash WAM calculator for current standing and the WAM target calculator to see required averages on remaining units before applications close.',
+      },
+    ],
+  },
 ];
 
 export function getArticleBySlug(slug: string): ArticleData | undefined {

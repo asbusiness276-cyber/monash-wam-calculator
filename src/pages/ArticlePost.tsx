@@ -24,6 +24,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'monash exchange grades wam', href: '/articles/monash-exchange-grades-wam-guide' },
   { keyword: "monash dean's honours list", href: '/articles/monash-deans-honours-list-wam-guide' },
   { keyword: 'monash repeat unit wam', href: '/articles/monash-repeat-unit-wam-guide' },
+  { keyword: 'monash wam internship', href: '/articles/monash-wam-internship-graduate-jobs-guide' },
   { keyword: 'monash wam vs gpa postgraduate', href: '/articles/monash-wam-vs-gpa-postgraduate' },
   { keyword: 'wam to gpa', href: '/articles/monash-wam-to-gpa-conversion' },
   { keyword: 'WAM to GPA calculator', href: '/wam-to-gpa-calculator' },
