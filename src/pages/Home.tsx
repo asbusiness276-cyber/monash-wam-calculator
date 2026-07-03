@@ -105,6 +105,13 @@ export default function Home() {
             >
               Learn How WAM Works
             </a>
+            <a
+              href={absoluteUrl('/calculators')}
+              className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-colors border border-white/20"
+            >
+              All Calculators
+              <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>

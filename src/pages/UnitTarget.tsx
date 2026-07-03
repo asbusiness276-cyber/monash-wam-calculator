@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
+import RelatedCalculators from '../components/RelatedCalculators';
 import UnitTargetToolCore from '../components/UnitTargetToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -106,6 +108,8 @@ export default function UnitTarget() {
           </p>
         </div>
       </section>
+      <CalculatorPageGuide path="/unit-target-calculator" />
+      <RelatedCalculators maxItems={6} />
       <PageFaq items={unitTargetFaqs} />
     </>
   );

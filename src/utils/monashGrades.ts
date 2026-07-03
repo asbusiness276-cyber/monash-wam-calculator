@@ -293,7 +293,79 @@ export function calculateCreditWeightedWam(
   return Math.round((weighted / credits) * 100) / 100;
 }
 
-/** Final exam mark required for unit target (weights as decimals 0–1). */
+export interface WamComparisonResult {
+  simpleWam: number;
+  officialWam: number;
+  difference: number;
+  totalCredits: number;
+}
+
+/** Side-by-side planning WAM (credit-weighted) vs official Monash WAM (year-level weighting). */
+export function compareSimpleAndOfficialWam(
+  units: Array<{ mark: number; credits: number; yearLevel: number }>
+): WamComparisonResult | null {
+  const simpleWam = calculateCreditWeightedWam(units);
+  const officialWam = calculateMonashOfficialWam(units);
+  if (simpleWam === null || officialWam === null) return null;
+
+  const totalCredits = units
+    .filter(u => !Number.isNaN(u.mark) && !Number.isNaN(u.credits) && u.credits > 0)
+    .reduce((sum, u) => sum + u.credits, 0);
+
+  return {
+    simpleWam,
+    officialWam,
+    difference: Math.round((officialWam - simpleWam) * 100) / 100,
+    totalCredits,
+  };
+}
+
+export const MONASH_DEFAULT_DEGREE_CREDITS = 192;
+
+export interface DegreeProgressResult {
+  completedCredits: number;
+  totalCredits: number;
+  remainingCredits: number;
+  percentComplete: number;
+  semestersRemaining: number | null;
+}
+
+/** Degree completion progress from completed vs total credit points. */
+export function calculateDegreeProgress(
+  completedCredits: number,
+  totalCredits: number,
+  creditsPerSemester?: number
+): DegreeProgressResult | null {
+  if (
+    Number.isNaN(completedCredits) ||
+    Number.isNaN(totalCredits) ||
+    completedCredits < 0 ||
+    totalCredits <= 0 ||
+    completedCredits > totalCredits
+  ) {
+    return null;
+  }
+
+  const remainingCredits = totalCredits - completedCredits;
+  const percentComplete = Math.round((completedCredits / totalCredits) * 1000) / 10;
+  const semestersRemaining =
+    creditsPerSemester !== undefined &&
+    !Number.isNaN(creditsPerSemester) &&
+    creditsPerSemester > 0
+      ? Math.ceil(remainingCredits / creditsPerSemester)
+      : null;
+
+  return {
+    completedCredits,
+    totalCredits,
+    remainingCredits,
+    percentComplete,
+    semestersRemaining,
+  };
+}
+
+export const MONASH_PASS_MARK = 50;
+
 export function calculateRequiredFinalExamMark(
   currentMark: number,
   courseworkWeight: number,

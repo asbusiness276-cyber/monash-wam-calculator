@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import MonashExchangeWamToolCore from '../components/MonashExchangeWamToolCore';
@@ -62,6 +63,7 @@ export default function MonashExchangeWam() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <MonashExchangeWamToolCore />
       </section>
+      <CalculatorPageGuide path="/monash-exchange-wam-calculator" />
       <RelatedCalculators
         hrefs={['/wam-target-calculator', '/monash-distinction-average-calculator', '/', '/wam-projection-calculator']}
       />

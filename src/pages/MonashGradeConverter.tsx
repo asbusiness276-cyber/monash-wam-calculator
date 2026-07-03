@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
+import RelatedCalculators from '../components/RelatedCalculators';
 import MonashGradeConverterToolCore from '../components/MonashGradeConverterToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -65,6 +67,8 @@ export default function MonashGradeConverter() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <MonashGradeConverterToolCore />
       </section>
+      <CalculatorPageGuide path="/monash-grade-converter" />
+      <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />
     </>
   );

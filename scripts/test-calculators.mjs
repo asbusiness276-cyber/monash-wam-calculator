@@ -621,4 +621,52 @@ test('Exchange WAM: SFR credit does not change WAM', () => {
   assert(p.meetsExchangeWamFloor === true, '74 meets 60 floor');
 });
 
+function compareSimpleAndOfficialWam(units) {
+  let simpleWeighted = 0;
+  let simpleCredits = 0;
+  let officialMarks = 0;
+  let officialCredits = 0;
+  for (const unit of units) {
+    if (Number.isNaN(unit.mark) || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
+    simpleWeighted += unit.mark * unit.credits;
+    simpleCredits += unit.credits;
+    const lw = unit.yearLevel === 1 ? 0.5 : 1.0;
+    officialMarks += unit.mark * unit.credits * lw;
+    officialCredits += unit.credits * lw;
+  }
+  if (simpleCredits === 0 || officialCredits === 0) return null;
+  const simpleWam = Math.round((simpleWeighted / simpleCredits) * 100) / 100;
+  const officialWam = Math.round((officialMarks / officialCredits) * 100) / 100;
+  return { simpleWam, officialWam, difference: Math.round((officialWam - simpleWam) * 100) / 100 };
+}
+
+function calculateDegreeProgress(completed, total, cpPerSemester) {
+  if (completed < 0 || total <= 0 || completed > total) return null;
+  const remaining = total - completed;
+  const percent = Math.round((completed / total) * 1000) / 10;
+  const semesters =
+    cpPerSemester !== undefined && cpPerSemester > 0 ? Math.ceil(remaining / cpPerSemester) : null;
+  return { remainingCredits: remaining, percentComplete: percent, semestersRemaining: semesters };
+}
+
+test('WAM compare: Year 1 half-weight lowers official vs simple when Y1 marks lower', () => {
+  const r = compareSimpleAndOfficialWam([
+    { mark: 60, credits: 6, yearLevel: 1 },
+    { mark: 80, credits: 6, yearLevel: 2 },
+  ]);
+  assert(r.simpleWam === 70, `simple expected 70, got ${r.simpleWam}`);
+  assert(r.officialWam > r.simpleWam, 'official should exceed simple when Y2 mark higher');
+});
+
+test('Degree progress: 96 of 192 cp is 50%', () => {
+  const p = calculateDegreeProgress(96, 192, 24);
+  assert(p.percentComplete === 50, `expected 50%, got ${p.percentComplete}`);
+  assert(p.semestersRemaining === 4, `expected 4 semesters, got ${p.semestersRemaining}`);
+});
+
+test('Pass mark: 58 coursework at 60% weight needs 38% exam for 50 overall', () => {
+  const needed = calculateRequiredFinalExamMark(58, 0.6, 0.4, 50);
+  assert(needed === 38, `expected 38, got ${needed}`);
+});
+
 console.log(`\n${passed} tests passed`);

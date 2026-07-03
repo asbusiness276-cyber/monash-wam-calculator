@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import SuppRepeatToolCore from '../components/SuppRepeatToolCore';
@@ -89,6 +90,7 @@ export default function SuppRepeatWam() {
         </div>
       </section>
 
+      <CalculatorPageGuide path="/supp-repeat-wam-calculator" />
       <RelatedCalculators
         hrefs={['/', '/wam-target-calculator', '/final-grade-calculator', '/monash-gpa-calculator', '/wam-to-gpa-calculator', '/supp-repeat-wam-calculator']}
         title="Related Planning Tools"

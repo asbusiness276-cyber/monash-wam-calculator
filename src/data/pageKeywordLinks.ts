@@ -93,6 +93,22 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'monash exchange grades wam', path: '/articles/monash-exchange-grades-wam-guide' },
   ],
+  '/calculators': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'student articles', path: '/articles' },
+  ],
+  '/monash-official-wam-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'how to calculate wam', path: '/articles/how-to-calculate-wam' },
+  ],
+  '/pass-mark-calculator': [
+    { keyword: 'final grade calculator', path: '/final-grade-calculator' },
+    { keyword: 'unit mark calculator', path: '/unit-mark-calculator' },
+  ],
+  '/degree-progress-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'monash credit points wam', path: '/articles/monash-credit-points-wam-explained' },
+  ],
   '/articles': [
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'how to calculate WAM', path: '/articles/how-to-calculate-wam' },

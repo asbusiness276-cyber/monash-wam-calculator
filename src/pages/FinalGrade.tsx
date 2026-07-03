@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
@@ -201,6 +202,7 @@ export default function FinalGrade() {
         </div>
       </section>
 
+      <CalculatorPageGuide path="/final-grade-calculator" />
       <RelatedCalculators
         hrefs={['/', '/unit-mark-calculator', '/unit-target-calculator', '/wam-target-calculator', '/mark-to-grade-calculator', '/wam-to-gpa-calculator']}
       />

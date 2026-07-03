@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
+import RelatedCalculators from '../components/RelatedCalculators';
 import WamTargetToolCore from '../components/WamTargetToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -135,6 +137,8 @@ export default function WamTarget() {
           </p>
         </div>
       </section>
+      <CalculatorPageGuide path="/wam-target-calculator" />
+      <RelatedCalculators maxItems={6} />
       <PageFaq items={wamTargetFaqs} />
     </>
   );

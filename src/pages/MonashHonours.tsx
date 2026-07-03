@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
+import RelatedCalculators from '../components/RelatedCalculators';
 import MonashHonoursToolCore from '../components/MonashHonoursToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -66,6 +68,8 @@ export default function MonashHonours() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <MonashHonoursToolCore />
       </section>
+      <CalculatorPageGuide path="/monash-honours-calculator" />
+      <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />
     </>
   );

@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
+import RelatedCalculators from '../components/RelatedCalculators';
 import MonashTargetGpaToolCore from '../components/MonashTargetGpaToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -75,6 +77,8 @@ export default function MonashTargetGpa() {
           </p>
         </div>
       </section>
+      <CalculatorPageGuide path="/monash-target-gpa-calculator" />
+      <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />
     </>
   );

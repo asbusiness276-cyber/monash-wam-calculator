@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
@@ -180,6 +181,7 @@ export default function GPAtoWAM() {
         </div>
       </section>
 
+      <CalculatorPageGuide path="/gpa-to-wam-calculator" />
       <RelatedCalculators
         hrefs={['/wam-to-gpa-calculator', '/monash-gpa-calculator', '/', '/wam-target-calculator', '/monash-cgpa-calculator', '/monash-grade-converter']}
       />

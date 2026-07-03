@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
+import RelatedCalculators from '../components/RelatedCalculators';
 import MarkToGradeToolCore from '../components/MarkToGradeToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -135,6 +137,8 @@ export default function MarkToGrade() {
           </p>
         </div>
       </section>
+      <CalculatorPageGuide path="/mark-to-grade-calculator" />
+      <RelatedCalculators maxItems={6} />
       <PageFaq items={markToGradeFaqs} />
     </>
   );

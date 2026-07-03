@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import FailedUnitWamToolCore from '../components/FailedUnitWamToolCore';
@@ -64,6 +65,7 @@ export default function FailedUnitWam() {
       <section className="max-w-3xl mx-auto px-4 py-8">
         <FailedUnitWamToolCore />
       </section>
+      <CalculatorPageGuide path="/failed-unit-wam-calculator" />
       <RelatedCalculators
         hrefs={['/supp-repeat-wam-calculator', '/wam-target-calculator', '/', '/wam-projection-calculator']}
       />

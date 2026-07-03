@@ -26,6 +26,7 @@ export default function Footer() {
             <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">
               <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Calculators</h3>
               <ul className="space-y-2.5 text-sm">
+                <li><a href="/calculators" className="hover:text-white transition-colors font-medium text-primary-300">All Calculators (24 tools)</a></li>
                 <li><a href="/" className="hover:text-white transition-colors">WAM Calculator (Monash)</a></li>
                 <li><a href="/wam-to-gpa-calculator" className="hover:text-white transition-colors">WAM to GPA Calculator</a></li>
                 <li><a href="/gpa-to-wam-calculator" className="hover:text-white transition-colors">GPA to WAM Calculator</a></li>
@@ -47,12 +48,16 @@ export default function Footer() {
                 <li><a href="/monash-deans-honours-calculator" className="hover:text-white transition-colors">Dean&apos;s Honours List Calculator</a></li>
                 <li><a href="/monash-exchange-wam-calculator" className="hover:text-white transition-colors">Exchange WAM Calculator</a></li>
                 <li><a href="/monash-grade-converter" className="hover:text-white transition-colors">Monash Grade Converter</a></li>
+                <li><a href="/monash-official-wam-calculator" className="hover:text-white transition-colors">Official WAM Calculator</a></li>
+                <li><a href="/pass-mark-calculator" className="hover:text-white transition-colors">Pass Mark Calculator</a></li>
+                <li><a href="/degree-progress-calculator" className="hover:text-white transition-colors">Degree Progress Calculator</a></li>
               </ul>
             </div>
             <div className="pl-0 sm:pl-4 lg:pl-8 min-w-0">
               <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-wide">Company &amp; Legal</h3>
               <ul className="space-y-2.5 text-sm">
                 <li><a href="/articles" className="hover:text-white transition-colors">Student Articles</a></li>
+                <li><a href="/write-for-us" className="hover:text-white transition-colors">Write For Us</a></li>
                 <li><a href="/about-us" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="/contact-us" className="hover:text-white transition-colors">Contact Us</a></li>
                 <li><a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a></li>

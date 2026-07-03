@@ -27,6 +27,16 @@ const aboutFaqs = [
     answer:
       'Combine the main WAM calculator with target, projection, and final-grade tools each semester. Read strategy articles for honours, scholarships, and recovery planning.',
   },
+  {
+    question: 'How many calculators does the site offer?',
+    answer:
+      'Twenty-four free calculators covering WAM, GPA, CGPA, exam targets, distinction average, scholarships, failed units, exchange planning, and honours classification.',
+  },
+  {
+    question: 'Is calculator content original?',
+    answer:
+      'Yes. Each tool page includes Monash-specific explanations, formulas, examples, and FAQs written for students — not auto-generated filler around a widget.',
+  },
 ];
 
 export default function AboutUs() {
@@ -68,13 +78,33 @@ export default function AboutUs() {
 
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">What We Provide</h2>
+            <p className="mb-3">
+              Monash WAM Calculator hosts 24 free academic planning tools and 19 long-form student guides. Every
+              calculator page includes worked examples, formula explanations, and FAQs — not just an input form.
+            </p>
             <ul className="list-disc list-inside space-y-1">
               <li>Official-style Monash WAM calculator with year-level weighting and planning WAM</li>
-              <li>WAM to GPA and GPA to WAM conversion tools</li>
+              <li>WAM to GPA, GPA to WAM, Monash GPA, CGPA, target GPA, and grade converter tools</li>
               <li>Final grade, unit mark, unit target, and mark-to-grade calculators</li>
               <li>WAM target, WAM projection, semester WAM, and supplementary vs repeat planners</li>
-              <li>13+ student articles on honours, scholarships, credit points, transcripts, and recovery</li>
+              <li>Distinction average, scholarship WAM, failed unit impact, dean&apos;s honours, and exchange WAM tools</li>
+              <li>Honours classification calculator (H1, H2A, H2B) with official Monash thresholds</li>
+              <li>19 student articles on honours, scholarships, credit points, transcripts, exchange, and recovery</li>
             </ul>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">How We Build Content</h2>
+            <p>
+              Each calculator page explains what the metric means at Monash, how the formula works, when to use the tool,
+              and how results compare to official WES records. Articles go deeper on faculty rules, worked scenarios, and
+              semester planning workflows. We test calculator maths with automated scripts and update copy when Monash
+              grading guidance changes.
+            </p>
+            <p className="mt-2">
+              This site is designed as a complete student resource — readable guides first, fast tools second — so you can
+              understand your academic standing before making enrolment or recovery decisions.
+            </p>
           </div>
 
           <div>

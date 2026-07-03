@@ -1,5 +1,7 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
+import RelatedCalculators from '../components/RelatedCalculators';
 import WamProjectionToolCore from '../components/WamProjectionToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -109,6 +111,8 @@ export default function WamProjection() {
           </p>
         </div>
       </section>
+      <CalculatorPageGuide path="/wam-projection-calculator" />
+      <RelatedCalculators maxItems={6} />
       <PageFaq items={wamProjectionFaqs} />
     </>
   );

@@ -14,7 +14,7 @@ const notFoundFaqs = [
   {
     question: 'How do I find the correct calculator page?',
     answer:
-      'Go to the homepage and use the navigation links for WAM Calculator, WAM to GPA, GPA to WAM, and Final Grade tools.',
+      'Open the calculators directory for all 24 tools, or use the homepage navigation for WAM, GPA, and final grade calculators.',
   },
   {
     question: 'Can this affect SEO performance?',
@@ -46,7 +46,8 @@ export default function NotFound() {
           <a href={absoluteUrl(notFoundHome.path)} className={INLINE_LINK_CLASS}>{notFoundHome.keyword}</a>
           {' '}homepage, or continue with the{' '}
           <a href={absoluteUrl(notFoundWtg.path)} className={INLINE_LINK_CLASS}>{notFoundWtg.keyword}</a>
-          {' '}if you were converting grades.
+          {' '}if you were converting grades, or browse{' '}
+          <a href={absoluteUrl('/calculators')} className={INLINE_LINK_CLASS}>all calculators</a>.
         </p>
       </section>
       <PageFaq title="404 Page FAQs" items={notFoundFaqs} />

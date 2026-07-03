@@ -7,6 +7,7 @@ interface NavbarProps {
 }
 
 const calculatorLinks = [
+  { label: 'All Calculators', href: '/calculators' },
   { label: 'WAM Calculator', href: '/' },
   { label: 'WAM to GPA', href: '/wam-to-gpa-calculator' },
   { label: 'GPA to WAM', href: '/gpa-to-wam-calculator' },
@@ -27,7 +28,9 @@ const calculatorLinks = [
   { label: 'Scholarship WAM', href: '/monash-scholarship-wam-calculator' },
   { label: 'Failed Unit Impact', href: '/failed-unit-wam-calculator' },
   { label: "Dean's Honours List", href: '/monash-deans-honours-calculator' },
-  { label: 'Exchange WAM', href: '/monash-exchange-wam-calculator' },
+  { label: 'Official vs Simple WAM', href: '/monash-official-wam-calculator' },
+  { label: 'Degree Progress', href: '/degree-progress-calculator' },
+  { label: 'Pass Mark', href: '/pass-mark-calculator' },
 ];
 
 const infoLinks = [

@@ -33,6 +33,10 @@ import MonashScholarshipWam from './pages/MonashScholarshipWam';
 import FailedUnitWam from './pages/FailedUnitWam';
 import MonashDeansHonours from './pages/MonashDeansHonours';
 import MonashExchangeWam from './pages/MonashExchangeWam';
+import Calculators from './pages/Calculators';
+import MonashOfficialWam from './pages/MonashOfficialWam';
+import PassMark from './pages/PassMark';
+import DegreeProgress from './pages/DegreeProgress';
 
 function getPage(path: string) {
   if (path === '/') return <Home />;
@@ -56,6 +60,10 @@ function getPage(path: string) {
   if (path === '/failed-unit-wam-calculator') return <FailedUnitWam />;
   if (path === '/monash-deans-honours-calculator') return <MonashDeansHonours />;
   if (path === '/monash-exchange-wam-calculator') return <MonashExchangeWam />;
+  if (path === '/calculators') return <Calculators />;
+  if (path === '/monash-official-wam-calculator') return <MonashOfficialWam />;
+  if (path === '/pass-mark-calculator') return <PassMark />;
+  if (path === '/degree-progress-calculator') return <DegreeProgress />;
   if (path === '/articles') return <Articles />;
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');

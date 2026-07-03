@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import WamToGpaToolCore from '../components/WamToGpaToolCore';
@@ -133,6 +134,7 @@ export default function WAMtoGPA() {
         </div>
       </section>
 
+      <CalculatorPageGuide path="/wam-to-gpa-calculator" />
       <RelatedCalculators
         hrefs={['/gpa-to-wam-calculator', '/monash-gpa-calculator', '/monash-cgpa-calculator', '/wam-target-calculator', '/final-grade-calculator', '/']}
       />

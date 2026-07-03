@@ -1,84 +1,9 @@
 import { ArrowRight, Calculator } from 'lucide-react';
 import { absoluteUrl } from '../constants/site';
+import { ALL_CALCULATOR_LINKS, type CalculatorLink } from '../data/calculatorCatalog';
 
-export interface CalculatorLink {
-  href: string;
-  title: string;
-  description: string;
-}
-
-export const CALCULATOR_LINKS: CalculatorLink[] = [
-  {
-    href: '/',
-    title: 'Monash WAM Calculator',
-    description: 'Official-style credit-weighted WAM with Year 1 half-weighting.',
-  },
-  {
-    href: '/wam-to-gpa-calculator',
-    title: 'WAM to GPA Calculator',
-    description: 'Convert overall WAM to 4.0 and 7.0 GPA bands.',
-  },
-  {
-    href: '/monash-gpa-calculator',
-    title: 'Monash GPA Calculator',
-    description: 'Unit-by-unit GPA on the official 4.0 scale.',
-  },
-  {
-    href: '/monash-cgpa-calculator',
-    title: 'Monash CGPA Calculator',
-    description: 'Update cumulative GPA after each semester.',
-  },
-  {
-    href: '/wam-target-calculator',
-    title: 'WAM Target Calculator',
-    description: 'Average needed on remaining units to hit your goal.',
-  },
-  {
-    href: '/final-grade-calculator',
-    title: 'Final Grade Calculator',
-    description: 'Exam mark required for HD, D, C, or P.',
-  },
-  {
-    href: '/supp-repeat-wam-calculator',
-    title: 'Supp vs Repeat WAM',
-    description: 'Compare supplementary pass at 50 vs repeating a unit.',
-  },
-  {
-    href: '/monash-honours-calculator',
-    title: 'Monash Honours Calculator',
-    description: 'H1, H2A, H2B classification from WAM.',
-  },
-  {
-    href: '/monash-distinction-average-calculator',
-    title: 'Distinction Average Calculator',
-    description: 'Check WAM 70+ or GPA 3.0+ distinction status.',
-  },
-  {
-    href: '/monash-scholarship-wam-calculator',
-    title: 'Scholarship WAM Calculator',
-    description: 'Merit WAM tiers — average needed on remaining units.',
-  },
-  {
-    href: '/failed-unit-wam-calculator',
-    title: 'Failed Unit WAM Impact',
-    description: 'How a fail, supp pass, or recovery changes WAM.',
-  },
-  {
-    href: '/monash-deans-honours-calculator',
-    title: "Dean's Honours List Calculator",
-    description: 'Faculty excellence planning bands from your WAM.',
-  },
-  {
-    href: '/monash-exchange-wam-calculator',
-    title: 'Exchange WAM Calculator',
-    description: 'SFR study abroad credit — WAM unchanged, CP progress.',
-  },
-  {
-    href: '/articles',
-    title: 'Student Articles',
-    description: 'WAM guides, honours, scholarships, and recovery tips.',
-  },
-];
+export type { CalculatorLink };
+export { ALL_CALCULATOR_LINKS as CALCULATOR_LINKS };
 
 interface RelatedCalculatorsProps {
   title?: string;
@@ -87,6 +12,7 @@ interface RelatedCalculatorsProps {
   hrefs?: string[];
   maxItems?: number;
   className?: string;
+  showViewAll?: boolean;
 }
 
 export default function RelatedCalculators({
@@ -95,11 +21,10 @@ export default function RelatedCalculators({
   hrefs,
   maxItems = 6,
   className = '',
+  showViewAll = true,
 }: RelatedCalculatorsProps) {
-  const items = (hrefs
-    ? CALCULATOR_LINKS.filter(link => hrefs.includes(link.href))
-    : CALCULATOR_LINKS.filter(link => link.href !== '/articles')
-  ).slice(0, maxItems);
+  const pool = ALL_CALCULATOR_LINKS;
+  const items = (hrefs ? pool.filter(link => hrefs.includes(link.href)) : pool).slice(0, maxItems);
 
   if (items.length === 0) return null;
 
@@ -132,6 +57,18 @@ export default function RelatedCalculators({
           </a>
         ))}
       </div>
+
+      {showViewAll && (
+        <p className="text-center mt-6">
+          <a
+            href={absoluteUrl('/calculators')}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 dark:text-primary-400 hover:underline"
+          >
+            Browse all {pool.length} Monash calculators
+            <ArrowRight size={14} aria-hidden />
+          </a>
+        </p>
+      )}
     </section>
   );
 }

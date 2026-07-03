@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import MonashDeansHonoursToolCore from '../components/MonashDeansHonoursToolCore';
@@ -62,6 +63,7 @@ export default function MonashDeansHonours() {
       <section className="max-w-2xl mx-auto px-4 py-8">
         <MonashDeansHonoursToolCore />
       </section>
+      <CalculatorPageGuide path="/monash-deans-honours-calculator" />
       <RelatedCalculators
         hrefs={['/monash-distinction-average-calculator', '/monash-scholarship-wam-calculator', '/monash-honours-calculator', '/wam-target-calculator']}
       />
