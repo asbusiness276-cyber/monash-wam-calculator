@@ -833,7 +833,7 @@ export const articles: ArticleData[] = [
         paragraphs: [
           'Monash GPA is calculated from grade point values assigned to each unit result, multiplied by credit points, then averaged. On the standard 4.0 GPA scale used for many Monash transcripts: HD = 4.0, D = 3.0, C = 2.0, P = 1.0, near pass = 0.7, fail = 0.3, withdrawn fail = 0.0. The formula is: sum of (grade value × unit credit points) ÷ sum of unit credit points, rounded to three decimal places. Confirm current grade values on the official Monash GPA page for your cohort.',
           'Monash WAM uses your actual unit marks, not letter-grade buckets. WAM is also weighted by credit points and by year level: first-year undergraduate units use a 0.5 level weighting; all other levels use 1.0. That means early-year marks influence WAM less than later-year marks — a detail generic WAM calculators often miss. For the full weighted formula, read how to calculate wam and use the Monash WAM calculator with official marks from Callista.',
-          'Because GPA compresses marks into bands while WAM preserves percentage precision, your transcript GPA and WAM will not always imply each other perfectly. Example: a student with many high distinctions at 81–84 may have a similar GPA to one with marks at 95+, but their WAM can differ noticeably. When a form asks for GPA, check whether your transcript already lists it before estimating from WAM alone.',
+          'Because GPA compresses marks into bands while WAM preserves percentage precision, your transcript GPA and WAM will not always imply each other perfectly. Example: a student with many high distinctions at 81–84 may have a similar GPA to one with marks at 95+, but their WAM can differ noticeably. When a form asks for GPA, check whether your transcript already lists it before estimating from WAM alone. For cumulative GPA updates across semesters, read monash cgpa calculator planning guide after you understand band conversion basics.',
         ],
       },
       {
@@ -1318,6 +1318,226 @@ export const articles: ArticleData[] = [
         question: 'Where can I calculate supplementary WAM impact?',
         answer:
           'Use the Monash WAM calculator for your current position and the supp vs repeat WAM calculator to model pass-at-50 versus repeat scenarios with your unit marks and credit points.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-cgpa-explained-guide',
+    keyword: 'monash cgpa calculator',
+    title: 'Monash CGPA Explained: Cumulative GPA Guide (2026)',
+    description:
+      'Monash CGPA explained: how cumulative GPA differs from semester GPA and WAM, where to find it on WES, the official update formula, worked examples, and a free CGPA calculator.',
+    featuredImage: '/article-images/featured-monash-cgpa-explained.webp',
+    featuredImageAlt:
+      'Monash student at a library desk reviewing cumulative GPA figures on a laptop alongside a printed semester transcript and study notes',
+    publishedAt: '2026-07-03',
+    updatedAt: '2026-07-03',
+    sections: [
+      {
+        heading: 'What Is CGPA at Monash University?',
+        paragraphs: [
+          'If you searched monash cgpa calculator, you probably need your cumulative grade point average — the single number that rolls up every completed semester on your Monash transcript. CGPA (cumulative GPA) is your overall GPA across all certified unit results, weighted by credit points on Monash\'s standard 4.0 scale. It is not the same as one semester\'s average, and it is not your Weighted Average Mark (WAM).',
+          'Monash publishes GPA and CGPA on WES, the Student Portal, and official academic records for most coursework awards that commenced from 2008 onward. Employers, scholarship panels, and postgraduate forms sometimes ask for CGPA specifically — especially international resume formats — while Australian pathways more often quote WAM. Knowing both metrics helps you answer forms accurately without guessing.',
+          'This guide explains how Monash CGPA is built, how it updates after each results release, where to read it on your record, and how to model next semester using the free Monash CGPA calculator on this site. For band-style WAM estimates, see wam to gpa; for application wording, read monash wam vs gpa postgraduate.',
+        ],
+      },
+      {
+        heading: 'GPA, Semester GPA, and CGPA — What Is the Difference?',
+        paragraphs: [
+          'Monash students encounter three related terms. Semester GPA (sometimes called SGPA in planning tools) averages only the units in one teaching period — for example Semester 1 2026. GPA on your transcript usually refers to the cumulative figure at that point in time, which is CGPA in everyday language. Both use the same grade-value table and credit-weighted formula; the difference is which units are included in the sum.',
+          'A strong semester does not always move CGPA as much as you expect if you already have 120+ credit points behind you. Conversely, one bad semester early in your degree can pull CGPA down for years because later high marks must offset a larger credit base. That is why students use cumulative calculators before enrolment decisions — to see whether a realistic semester can recover a target.',
+          'WAM is separate: it uses percentage marks and Monash year-level weighting (Year 1 units at 0.5, later years at 1.0). Your CGPA can sit near 3.0 while WAM is 74 or 76 depending on how marks cluster inside grade bands. Never assume CGPA and WAM are interchangeable on forms — report what the form requests and verify on monash wam transcript where both appear.',
+        ],
+      },
+      {
+        heading: 'Official Monash CGPA Formula',
+        paragraphs: [
+          'Monash CGPA follows the same structure as semester GPA: sum of (grade value × unit credit points) ÷ sum of unit credit points, rounded to three decimal places. Grade values on the standard 4.0 scale are: High Distinction 4.0, Distinction 3.0, Credit 2.0, Pass 1.0, Near pass 0.7, Fail 0.3, Hurdle fail 0.3, Withdrawn fail 0.0. Failed units and repeated attempts both count when they appear on your academic record — Monash does not drop the first fail from GPA maths.',
+          'To update CGPA after a new semester manually: take your prior cumulative GPA and multiply by prior total credit points earned (grade points so far). Add this semester\'s grade points from each unit. Divide by total credit points including the new semester. Example: CGPA 2.85 on 60 cp plus a 24-credit semester averaging distinction-level grades (3.0 points) adds 72 grade points → (2.85×60 + 72) ÷ 84 ≈ 2.929 CGPA.',
+          'The Monash CGPA calculator on this site automates that merge: enter prior CGPA and credits from WES, then add current-semester units by letter grade or percentage mark. It also shows semester GPA separately so you can see whether the teaching period itself was strong even when cumulative movement is small.',
+        ],
+      },
+      {
+        heading: 'Where to Find Your CGPA on WES and Transcript',
+        paragraphs: [
+          'Before modelling, pull official numbers. Log into WES and open your unofficial academic record — cumulative GPA is listed alongside WAM for eligible courses. The Student Portal course progress screen and GPA/WAM widget show the same figures after results are certified. If you are mid-semester, the displayed CGPA reflects completed units only; in-progress enrolments do not count until grades are final.',
+          'For total credit points earned, sum completed units on your record or read the credit total your faculty quotes on progression documents. Do not guess remaining cp from your study plan — use certified completions only. Step-by-step screenshots and paths are in how to find wam on monash transcript; the GPA field sits on the same documents.',
+          'Malaysia-campus students requesting resume letters sometimes need Monash Connect to confirm documented CGPA. This site\'s calculator uses published Monash grade values for planning; formal submissions should match your certified transcript.',
+        ],
+      },
+      {
+        heading: 'CGPA vs WAM — Which Number Should You Report?',
+        paragraphs: [
+          'Australian honours cutoffs, many Monash scholarships, and faculty progression rules reference WAM because it preserves percentage precision. International employers, US-style forms, and some campus mobility programs ask for CGPA on a 4.0 scale. When both are accepted, lead with whichever is stronger and supported by your transcript — but never invent a conversion if the form provides a WAM field.',
+          'Because GPA compresses marks into bands, two students with similar WAM can have different CGPA if one earned more high-distinction grades in high-credit units. A 79% distinction and an 80% HD both help WAM, but HD carries 4.0 GPA value versus 3.0 for D — CGPA rewards band jumps more visibly than WAM rewards small percentage shifts inside a band.',
+          'Use the Monash WAM calculator for WAM, the Monash GPA calculator for single-semester GPA from units, and the Monash CGPA calculator when you need cumulative updates. For target planning, pair this guide with the Monash target GPA calculator once you know your current cumulative figure.',
+        ],
+      },
+      {
+        heading: 'Worked Example: Semester Impact on CGPA',
+        paragraphs: [
+          'Scenario: you hold CGPA 2.946 on 78 credit points — matching the pattern Monash uses in its official GPA worked example. This semester you complete three units totalling 24 credit points: 82 (HD, 12 cp), 77 (D, 6 cp), and 65 (C, 6 cp). Semester grade points = (4.0×12) + (3.0×6) + (2.0×6) = 48 + 18 + 12 = 78 on 24 cp → semester GPA 3.25.',
+          'New CGPA = (2.946×78 + 78) ÷ (78+24) = (229.788 + 78) ÷ 102 ≈ 3.017. One distinction-heavy semester lifted cumulative GPA above 3.0 even though your prior average was below distinction. That is the key planning insight: semester quality matters, but your existing credit base determines how far CGPA moves.',
+          'Run your own units through the Monash CGPA calculator instead of hand-calculating. If you are chasing distinction average (GPA 3.0 / WAM 70+), benchmark with what is a good wam and model required future performance before census changes.',
+        ],
+      },
+      {
+        heading: 'Planning CGPA Targets for Scholarships and Progression',
+        paragraphs: [
+          'Scholarship renewals and faculty excellence awards sometimes cite GPA or WAM thresholds. Read monash scholarship wam requirements for WAM-centric awards; when a form lists GPA 3.0 or above, use your transcript CGPA first. If you need a future semester average to hit a cumulative target, the Monash target GPA calculator solves: required semester GPA = (target CGPA × total future cp − current grade points) ÷ next semester cp.',
+          'Fails affect CGPA more than many students expect because N grades carry 0.3 — not zero — but still drag averages, especially in 12-credit core units. Repeats add another weighted entry; both attempts typically remain on your record. For fail recovery maths, see failed unit wam monash and the supp vs repeat calculator when choosing supplementary versus repeat pathways.',
+          'Independent calculators support planning only. Monash progression and award decisions use certified results from WES after results release.',
+        ],
+      },
+      {
+        heading: 'Common CGPA Mistakes Monash Students Make',
+        paragraphs: [
+          'Using a semester GPA from one teaching period as if it were cumulative CGPA on applications. Mixing Malaysia resume CGPA with Australia transcript GPA without checking which document Monash will certify. Excluding failed units from manual calculations — Monash includes them when certified.',
+          'Expecting CGPA to move identically to WAM after the same semester — band compression and year-level WAM weighting diverge the two metrics. Entering planned future credit as already earned when modelling cumulative updates before results are final.',
+          'Relying on third-party CGPA tables from non-Monash universities — grade values and fail handling differ. Always anchor planning to Monash published grade values and your own transcript.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between GPA and CGPA at Monash?',
+        answer:
+          'Semester GPA averages one teaching period. CGPA (cumulative GPA) averages all completed units on your record to date, both using Monash 4.0 grade values weighted by credit points.',
+      },
+      {
+        question: 'Where can I find my Monash CGPA?',
+        answer:
+          'Check WES unofficial academic record, the Student Portal GPA/WAM widget, or your official transcript after results are certified.',
+      },
+      {
+        question: 'How do I calculate updated CGPA after a new semester?',
+        answer:
+          'Combine prior grade points (CGPA × prior credits) with new semester grade points, then divide by total credits. Use the Monash CGPA calculator on this site for instant results.',
+      },
+      {
+        question: 'Is CGPA the same as WAM?',
+        answer:
+          'No. CGPA uses letter-grade point values on a 4.0 scale. WAM uses percentage marks with Monash year-level weighting. Both may appear on your transcript.',
+      },
+      {
+        question: 'Do failed units count in Monash CGPA?',
+        answer:
+          'Yes. Fail grades (N) use GPA value 0.3 and remain in cumulative calculations, including repeated attempts unless policy states otherwise on your record.',
+      },
+      {
+        question: 'What CGPA is distinction average at Monash?',
+        answer:
+          'Planning benchmarks often treat GPA 3.0 or above as distinction average, roughly aligned with WAM 70+. Confirm specific award rules with your faculty.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-exchange-grades-wam-guide',
+    keyword: 'monash exchange grades wam',
+    title: 'Monash Exchange Grades & WAM: SFR Explained (2026)',
+    description:
+      'Monash exchange grades and WAM explained: why overseas marks show as SFR, how study abroad affects your weighted average, eligibility rules, and planning before you go.',
+    featuredImage: '/article-images/featured-monash-exchange-grades-wam.webp',
+    featuredImageAlt:
+      'University student with luggage and study documents preparing for an international semester exchange while reviewing enrolment details on a laptop',
+    publishedAt: '2026-07-03',
+    updatedAt: '2026-07-03',
+    sections: [
+      {
+        heading: 'What Happens to Your Grades on Monash Exchange?',
+        paragraphs: [
+          'Students searching monash exchange grades wam usually want one clear answer before they fly out: will my marks overseas help or hurt my weighted average? At Monash University, units completed on an approved semester exchange or study abroad program normally transfer as SFR — Satisfied Faculty Requirement — when you pass. Your host university percentage or letter grade does not appear as a mark on your Monash transcript, and those units do not enter WAM or GPA calculations.',
+          'That is different from a standard Monash unit where your final percentage feeds directly into credit-weighted WAM maths. Exchange is credit toward your degree, not a graded Monash result in the usual sense. Failed exchange units can still appear as Fail on your Monash record if credit is not granted. Understanding SFR early prevents surprises when you return and check WES.',
+          'Monash official guidance and the Credit Procedure state that grades from other institutions are not transferable into Monash WAM, GPA, or CGPA. This guide explains how that works in practice, what you must do at your host university, and how exchange still fits honours, scholarship, and progression planning.',
+        ],
+      },
+      {
+        heading: 'What Is SFR on Your Monash Transcript?',
+        paragraphs: [
+          'SFR means Satisfied Faculty Requirement. On your academic record it signals that you met the faculty-approved requirements for an exchange or complementary study unit without recording the host institution numeric mark. Pass/fail style reporting is the norm for successfully completed outbound exchange credit. You still earn credit points toward your Monash degree when the faculty applies approved credit after receiving your host transcript.',
+          'Complementary study within Australia or New Zealand follows a similar pattern: approved external units also appear as SFR or Fail once credit is processed — not as a Monash percentage. If you do not submit the host transcript within faculty deadlines, Monash may record Fail against placeholder units until documentation is resolved.',
+          'SFR is not a free pass for academic standing. You must still pass at the host institution to receive credit. A fail abroad can block credit and create progression issues just like a fail at Monash — it simply does not drag your WAM down because no mark enters the weighted average formula.',
+        ],
+      },
+      {
+        heading: 'Why Exchange Grades Do Not Change Your WAM',
+        paragraphs: [
+          'Monash WAM is calculated from certified percentage marks on Monash-graded coursework units, weighted by credit points and year level. Because exchange results are not imported as marks, they sit outside that formula entirely. Your WAM before exchange remains the average of all other completed units; your WAM after exchange is unchanged unless you also completed Monash-graded units in the same period.',
+          'GPA and CGPA follow the same rule: exchange SFR units do not assign HD/D/C/P grade values for GPA maths. Students sometimes expect a strong semester abroad to boost WAM — it cannot under standard exchange credit rules. The benefit is degree progress and international experience without mark risk to your average, assuming you pass.',
+          'Verify your own WAM with the Monash WAM calculator using only Monash-graded units. For how WAM is built, read how to calculate wam. For transcript fields including WAM and GPA, see monash wam transcript.',
+        ],
+      },
+      {
+        heading: 'Graded Credit at the Host University — Monash Requires It',
+        paragraphs: [
+          'Monash instructs students: when the host institution offers a choice between pass/fail and graded assessment for a unit, you must choose graded credit. Even though the grade will not transfer numerically to Monash, faculties need evidence of satisfactory graded performance to approve credit. Choosing pass/fail only at the host can complicate credit approval even though WAM still would not have changed.',
+          'Keep your host transcript and unit outlines. Forward documents to Monash Abroad and your faculty within required timeframes — often within six weeks of host results release for complementary study, with exchange processes managed through Monash Abroad and your managing faculty. Delays can leave provisional fails on your record until credit is applied.',
+          'If you are comparing outbound exchange with complementary study at another Australian university, the SFR outcome is similar: external grades do not enter Monash WAM. The enrolment approval path differs — exchange stays enrolled at Monash paying Monash fees; complementary study involves separate host enrolment.',
+        ],
+      },
+      {
+        heading: 'Exchange Eligibility and WAM Requirements',
+        paragraphs: [
+          'Exchange is not only about grades abroad — Monash assesses your standing before you go. You generally need to remain in good standing, meet minimum credit completion for your stage, and satisfy faculty rules. Monash guidance for students who recently failed notes you may still go overseas if you are in good standing, meet minimum credits, your WAM is not pulled below 60% by the application assessment, and you are not required to repeat the failed unit during the exchange period.',
+          'That 60% WAM floor is a planning threshold, not a guarantee of approval. Faculties and Monash Abroad may apply additional criteria. Use the Monash WAM calculator with your current transcript before applying. If a fail recently lowered your WAM, model recovery with how to improve wam at monash and check failed unit wam monash for repeat timing.',
+          'Strong WAM still matters for competitive internal scholarships and post-exchange honours planning even though exchange itself does not add marks. Treat pre-exchange WAM as your academic baseline for everything that happens after you return.',
+        ],
+      },
+      {
+        heading: 'Failed Units, Repeats, and Exchange Timing',
+        paragraphs: [
+          'A failed Monash unit does not automatically block exchange, but you cannot ignore timetable clashes. If you must repeat a unit during the semester you are abroad, exchange in that period may be impossible. Plan repeats and supplementary pathways before committing to host dates. The supp vs repeat WAM calculator helps compare supplementary pass at 50 versus a later repeat when WAM is part of your decision — see monash supplementary exam wam for supp-specific rules.',
+          'Credit for external study after a Monash fail is sometimes possible when the fail occurred first and later approved external study addresses faculty requirements — policy details sit in the Credit Procedure. That is a faculty credit decision, not automatic WAM repair. Repeats of Monash units still count both attempts in WAM when both appear on your record.',
+          'Speak with your managing faculty and Monash Abroad before assuming a fail abroad or at Monash will be solved by exchange credit. Independent calculators on this site support planning; progression decisions are faculty-specific.',
+        ],
+      },
+      {
+        heading: 'Planning WAM and GPA Before and After Exchange',
+        paragraphs: [
+          'Before departure: snapshot WAM and CGPA from WES. List remaining Monash-graded credit required for honours or scholarship deadlines after return. Exchange semesters often reduce your Monash-graded load — your WAM can move more sharply in remaining semesters because fewer units are left in the denominator.',
+          'After return: confirm SFR credit appears correctly on WES. Recalculate WAM including only Monash-graded units. If you need distinction average for dean\'s list or scholarship renewal, use the WAM target calculator on remaining credit. CGPA updates only from Monash-graded letter results — see monash cgpa calculator guide for cumulative GPA maths.',
+          'Postgraduate applications sometimes ask for WAM and a transcript listing exchange without marks. Report WAM from Monash records and describe exchange separately if forms allow — monash wam vs gpa postgraduate covers which metric to lead with on applications.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes About Exchange and WAM',
+        paragraphs: [
+          'Assuming a 90% average abroad will raise Monash WAM — it will not under SFR credit. Choosing pass/fail only at the host when graded assessment was available. Forgetting to submit the host transcript and receiving Fail placeholders on WES.',
+          'Including exchange placeholder units in manual WAM calculations — exclude SFR units; only enter Monash-graded marks. Expecting exchange to hide a recent Monash fail from standing review — fails remain on your record and WAM.',
+          'Using non-Monash WAM calculators that treat all credits as graded percentages. For Monash-specific planning, use tools built for Monash credit weighting and year-level rules.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Do exchange grades count toward Monash WAM?',
+        answer:
+          'No. Successfully completed exchange units normally appear as SFR and do not include host marks in Monash WAM, GPA, or CGPA calculations.',
+      },
+      {
+        question: 'What does SFR mean on my Monash transcript?',
+        answer:
+          'SFR (Satisfied Faculty Requirement) means you met faculty requirements for approved external or exchange credit without a numeric Monash mark being recorded.',
+      },
+      {
+        question: 'Can a failed unit stop me going on exchange?',
+        answer:
+          'Not always. You must remain in good standing, meet credit rules, keep WAM above faculty thresholds (often 60%), and not need to repeat the failed unit during the exchange semester.',
+      },
+      {
+        question: 'Should I choose pass/fail or graded credit at my host university?',
+        answer:
+          'Monash requires graded credit when the host offers a choice, even though the mark will not transfer numerically to your Monash transcript.',
+      },
+      {
+        question: 'Will exchange credit points count toward my degree?',
+        answer:
+          'Yes, when your faculty approves and applies credit after receiving your official host transcript. Credit points progress your degree without changing WAM.',
+      },
+      {
+        question: 'How do I check my WAM after exchange?',
+        answer:
+          'Use WES or the Monash WAM calculator with only Monash-graded units. SFR exchange units are excluded from WAM maths.',
       },
     ],
   },
