@@ -23,6 +23,11 @@ const calculatorLinks = [
   { label: 'Target GPA', href: '/monash-target-gpa-calculator' },
   { label: 'Honours Class', href: '/monash-honours-calculator' },
   { label: 'Grade Converter', href: '/monash-grade-converter' },
+  { label: 'Distinction Average', href: '/monash-distinction-average-calculator' },
+  { label: 'Scholarship WAM', href: '/monash-scholarship-wam-calculator' },
+  { label: 'Failed Unit Impact', href: '/failed-unit-wam-calculator' },
+  { label: "Dean's Honours List", href: '/monash-deans-honours-calculator' },
+  { label: 'Exchange WAM', href: '/monash-exchange-wam-calculator' },
 ];
 
 const infoLinks = [

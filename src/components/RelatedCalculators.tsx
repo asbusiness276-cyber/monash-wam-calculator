@@ -49,6 +49,31 @@ export const CALCULATOR_LINKS: CalculatorLink[] = [
     description: 'H1, H2A, H2B classification from WAM.',
   },
   {
+    href: '/monash-distinction-average-calculator',
+    title: 'Distinction Average Calculator',
+    description: 'Check WAM 70+ or GPA 3.0+ distinction status.',
+  },
+  {
+    href: '/monash-scholarship-wam-calculator',
+    title: 'Scholarship WAM Calculator',
+    description: 'Merit WAM tiers — average needed on remaining units.',
+  },
+  {
+    href: '/failed-unit-wam-calculator',
+    title: 'Failed Unit WAM Impact',
+    description: 'How a fail, supp pass, or recovery changes WAM.',
+  },
+  {
+    href: '/monash-deans-honours-calculator',
+    title: "Dean's Honours List Calculator",
+    description: 'Faculty excellence planning bands from your WAM.',
+  },
+  {
+    href: '/monash-exchange-wam-calculator',
+    title: 'Exchange WAM Calculator',
+    description: 'SFR study abroad credit — WAM unchanged, CP progress.',
+  },
+  {
     href: '/articles',
     title: 'Student Articles',
     description: 'WAM guides, honours, scholarships, and recovery tips.',

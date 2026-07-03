@@ -169,6 +169,71 @@ function calculateRequiredRemainingAverage(currentWam, completedCredits, remaini
   return Math.round(((targetWam * totalCredits - weightedDone) / remainingCredits) * 100) / 100;
 }
 
+const MONASH_DISTINCTION_WAM_THRESHOLD = 70;
+const MONASH_DISTINCTION_GPA_THRESHOLD = 3.0;
+const MONASH_EXCHANGE_MIN_WAM_THRESHOLD = 60;
+
+function getMonashDistinctionStatus(wam, gpa) {
+  const hasWam = wam !== null && !Number.isNaN(wam);
+  const hasGpa = gpa !== null && !Number.isNaN(gpa);
+  if (!hasWam && !hasGpa) return null;
+  const qualifiesByWam = hasWam && wam >= MONASH_DISTINCTION_WAM_THRESHOLD;
+  const qualifiesByGpa = hasGpa && gpa >= MONASH_DISTINCTION_GPA_THRESHOLD;
+  return {
+    qualifiesByWam,
+    qualifiesByGpa,
+    qualifies: qualifiesByWam || qualifiesByGpa,
+    wamGap: hasWam ? Math.round((MONASH_DISTINCTION_WAM_THRESHOLD - wam) * 100) / 100 : null,
+    gpaGap: hasGpa ? Math.round((MONASH_DISTINCTION_GPA_THRESHOLD - gpa) * 1000) / 1000 : null,
+  };
+}
+
+function calculateUnitMarkScenarios(currentWam, totalCredits, unitCredits, currentMark, scenarioMarks) {
+  if (totalCredits <= 0 || unitCredits <= 0 || unitCredits > totalCredits) return null;
+  return scenarioMarks.map(({ label, mark }) => {
+    const wam =
+      calculateWamAfterReplacingUnitMark(currentWam, totalCredits, unitCredits, currentMark, mark) ?? currentWam;
+    return { label, mark, wam, wamDelta: Math.round((wam - currentWam) * 100) / 100 };
+  });
+}
+
+function calculateScholarshipTierRequirements(currentWam, completedCredits, remainingCredits, tiers) {
+  if (completedCredits < 0 || remainingCredits <= 0) return null;
+  return tiers.map(({ label, wam: targetWam }) => {
+    const requiredAverage = calculateRequiredRemainingAverage(
+      currentWam,
+      completedCredits,
+      remainingCredits,
+      targetWam
+    );
+    return {
+      label,
+      targetWam,
+      requiredAverage,
+      alreadyMet: currentWam >= targetWam,
+      achievable: requiredAverage !== null && requiredAverage <= 100,
+    };
+  });
+}
+
+function getDeansHonoursStanding(wam) {
+  if (Number.isNaN(wam)) return null;
+  if (wam < 70) return { tier: 'below_distinction', distinctionAverage: false };
+  if (wam < 80) return { tier: 'distinction_average', distinctionAverage: true };
+  if (wam < 85) return { tier: 'high_distinction', distinctionAverage: true };
+  return { tier: 'deans_list_stretch', distinctionAverage: true };
+}
+
+function calculateExchangeWamPlanning(currentWam, monashGradedCredits, exchangeCredits, minWamFloor = 60) {
+  if (monashGradedCredits < 0 || exchangeCredits < 0) return null;
+  return {
+    currentWam,
+    wamAfterExchange: currentWam,
+    totalDegreeCredits: monashGradedCredits + exchangeCredits,
+    meetsExchangeWamFloor: currentWam >= minWamFloor,
+  };
+}
+
 const monashOfficialGpaGradeValues = {
   HD: 4.0,
   D: 3.0,
@@ -512,6 +577,48 @@ test('Honours: Monash H2A starts at 70, H1 at 80', () => {
 test('GPA grade from mark: fail maps to N (0.3 GPA value)', () => {
   assert(getMonashOfficialGpaGradeFromMark(45) === 'N', '45 = N');
   assert(getMonashOfficialGpaGradeFromMark(80) === 'HD', '80 = HD');
+});
+
+test('Distinction average: WAM 70+ qualifies', () => {
+  const s = getMonashDistinctionStatus(72, null);
+  assert(s.qualifiesByWam === true, '72 WAM qualifies');
+  assert(s.wamGap <= 0, 'gap non-positive when above 70');
+  const below = getMonashDistinctionStatus(68, null);
+  assert(below.qualifies === false, '68 does not qualify');
+  assert(below.wamGap === 2, `expected gap 2, got ${below.wamGap}`);
+});
+
+test('Distinction average: GPA 3.0+ qualifies', () => {
+  const s = getMonashDistinctionStatus(null, 3.1);
+  assert(s.qualifiesByGpa === true, '3.1 GPA qualifies');
+});
+
+test('Failed unit scenarios: supp pass raises WAM vs keeping fail', () => {
+  const rows = calculateUnitMarkScenarios(68, 72, 6, 42, [
+    { label: 'keep', mark: 42 },
+    { label: 'supp', mark: 50 },
+  ]);
+  assert(rows[1].wam > rows[0].wam, 'supp pass should beat keeping fail');
+  assert(rows[1].wamDelta > 0, 'positive delta on recovery');
+});
+
+test('Scholarship tiers: 70 WAM target from 68 with 96 done, 24 left', () => {
+  const tiers = calculateScholarshipTierRequirements(68, 96, 24, [{ label: 'Distinction', wam: 70 }]);
+  assert(tiers[0].requiredAverage === 78, `expected 78, got ${tiers[0].requiredAverage}`);
+});
+
+test('Deans honours standing: bands at 69, 75, 82, 86', () => {
+  assert(getDeansHonoursStanding(69).tier === 'below_distinction', '69 below');
+  assert(getDeansHonoursStanding(75).tier === 'distinction_average', '75 distinction');
+  assert(getDeansHonoursStanding(82).tier === 'high_distinction', '82 HD');
+  assert(getDeansHonoursStanding(86).tier === 'deans_list_stretch', '86 stretch');
+});
+
+test('Exchange WAM: SFR credit does not change WAM', () => {
+  const p = calculateExchangeWamPlanning(74, 96, 24);
+  assert(p.wamAfterExchange === 74, 'WAM unchanged');
+  assert(p.totalDegreeCredits === 120, 'CP progress sums');
+  assert(p.meetsExchangeWamFloor === true, '74 meets 60 floor');
 });
 
 console.log(`\n${passed} tests passed`);

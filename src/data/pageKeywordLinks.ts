@@ -73,6 +73,26 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'mark to grade calculator', path: '/mark-to-grade-calculator' },
     { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
   ],
+  '/monash-distinction-average-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'monash scholarship wam requirements', path: '/articles/monash-scholarship-wam-requirements' },
+  ],
+  '/monash-scholarship-wam-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'monash scholarship wam requirements', path: '/articles/monash-scholarship-wam-requirements' },
+  ],
+  '/failed-unit-wam-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-monash' },
+  ],
+  '/monash-deans-honours-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: "monash dean's honours list", path: '/articles/monash-deans-honours-list-wam-guide' },
+  ],
+  '/monash-exchange-wam-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'monash exchange grades wam', path: '/articles/monash-exchange-grades-wam-guide' },
+  ],
   '/articles': [
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'how to calculate WAM', path: '/articles/how-to-calculate-wam' },

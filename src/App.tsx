@@ -28,6 +28,11 @@ import MonashCgpa from './pages/MonashCgpa';
 import MonashTargetGpa from './pages/MonashTargetGpa';
 import MonashHonours from './pages/MonashHonours';
 import MonashGradeConverter from './pages/MonashGradeConverter';
+import MonashDistinctionAverage from './pages/MonashDistinctionAverage';
+import MonashScholarshipWam from './pages/MonashScholarshipWam';
+import FailedUnitWam from './pages/FailedUnitWam';
+import MonashDeansHonours from './pages/MonashDeansHonours';
+import MonashExchangeWam from './pages/MonashExchangeWam';
 
 function getPage(path: string) {
   if (path === '/') return <Home />;
@@ -46,6 +51,11 @@ function getPage(path: string) {
   if (path === '/monash-target-gpa-calculator') return <MonashTargetGpa />;
   if (path === '/monash-honours-calculator') return <MonashHonours />;
   if (path === '/monash-grade-converter') return <MonashGradeConverter />;
+  if (path === '/monash-distinction-average-calculator') return <MonashDistinctionAverage />;
+  if (path === '/monash-scholarship-wam-calculator') return <MonashScholarshipWam />;
+  if (path === '/failed-unit-wam-calculator') return <FailedUnitWam />;
+  if (path === '/monash-deans-honours-calculator') return <MonashDeansHonours />;
+  if (path === '/monash-exchange-wam-calculator') return <MonashExchangeWam />;
   if (path === '/articles') return <Articles />;
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');

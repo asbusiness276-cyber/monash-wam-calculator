@@ -688,3 +688,219 @@ export function convertMonashGrade(
     label: option?.label ?? letter,
   };
 }
+
+export const MONASH_DISTINCTION_WAM_THRESHOLD = 70;
+export const MONASH_DISTINCTION_GPA_THRESHOLD = 3.0;
+export const MONASH_EXCHANGE_MIN_WAM_THRESHOLD = 60;
+
+export interface MonashDistinctionStatus {
+  qualifiesByWam: boolean;
+  qualifiesByGpa: boolean;
+  qualifies: boolean;
+  wamGap: number | null;
+  gpaGap: number | null;
+}
+
+/** Distinction average at Monash: WAM 70+ or GPA 3.0+ on the official 4.0 scale. */
+export function getMonashDistinctionStatus(
+  wam: number | null,
+  gpa: number | null
+): MonashDistinctionStatus | null {
+  const hasWam = wam !== null && !Number.isNaN(wam);
+  const hasGpa = gpa !== null && !Number.isNaN(gpa);
+  if (!hasWam && !hasGpa) return null;
+
+  const qualifiesByWam = hasWam && wam! >= MONASH_DISTINCTION_WAM_THRESHOLD;
+  const qualifiesByGpa = hasGpa && gpa! >= MONASH_DISTINCTION_GPA_THRESHOLD;
+
+  return {
+    qualifiesByWam,
+    qualifiesByGpa,
+    qualifies: qualifiesByWam || qualifiesByGpa,
+    wamGap: hasWam ? Math.round((MONASH_DISTINCTION_WAM_THRESHOLD - wam!) * 100) / 100 : null,
+    gpaGap: hasGpa ? Math.round((MONASH_DISTINCTION_GPA_THRESHOLD - gpa!) * 1000) / 1000 : null,
+  };
+}
+
+export interface UnitMarkScenario {
+  label: string;
+  mark: number;
+  wam: number;
+  wamDelta: number;
+}
+
+/** Compare WAM outcomes when one unit mark changes (fail, supp pass, recovery marks). */
+export function calculateUnitMarkScenarios(
+  currentWam: number,
+  totalCredits: number,
+  unitCredits: number,
+  currentMark: number,
+  scenarioMarks: Array<{ label: string; mark: number }>
+): UnitMarkScenario[] | null {
+  if (
+    Number.isNaN(currentWam) ||
+    Number.isNaN(totalCredits) ||
+    Number.isNaN(unitCredits) ||
+    Number.isNaN(currentMark) ||
+    totalCredits <= 0 ||
+    unitCredits <= 0 ||
+    unitCredits > totalCredits
+  ) {
+    return null;
+  }
+
+  return scenarioMarks
+    .map(({ label, mark }) => {
+      const wam =
+        calculateWamAfterReplacingUnitMark(currentWam, totalCredits, unitCredits, currentMark, mark) ??
+        currentWam;
+      return {
+        label,
+        mark,
+        wam,
+        wamDelta: Math.round((wam - currentWam) * 100) / 100,
+      };
+    })
+    .filter(row => !Number.isNaN(row.wam));
+}
+
+export interface ScholarshipTierResult {
+  label: string;
+  targetWam: number;
+  requiredAverage: number | null;
+  alreadyMet: boolean;
+  achievable: boolean;
+}
+
+export const MONASH_SCHOLARSHIP_WAM_TIERS: Array<{ label: string; wam: number }> = [
+  { label: 'Solid credit', wam: 65 },
+  { label: 'Distinction average', wam: 70 },
+  { label: 'Strong distinction', wam: 75 },
+  { label: 'High distinction', wam: 80 },
+  { label: 'Top merit tier', wam: 85 },
+];
+
+/** Required remaining-unit averages for common scholarship WAM planning bands. */
+export function calculateScholarshipTierRequirements(
+  currentWam: number,
+  completedCredits: number,
+  remainingCredits: number,
+  tiers: Array<{ label: string; wam: number }> = MONASH_SCHOLARSHIP_WAM_TIERS
+): ScholarshipTierResult[] | null {
+  if (
+    Number.isNaN(currentWam) ||
+    Number.isNaN(completedCredits) ||
+    Number.isNaN(remainingCredits) ||
+    completedCredits < 0 ||
+    remainingCredits <= 0
+  ) {
+    return null;
+  }
+
+  return tiers.map(({ label, wam: targetWam }) => {
+    const requiredAverage = calculateRequiredRemainingAverage(
+      currentWam,
+      completedCredits,
+      remainingCredits,
+      targetWam
+    );
+    const alreadyMet = currentWam >= targetWam;
+    const achievable = requiredAverage !== null && requiredAverage <= 100;
+    return { label, targetWam, requiredAverage, alreadyMet, achievable };
+  });
+}
+
+export type DeansHonoursTierId =
+  | 'below_distinction'
+  | 'distinction_average'
+  | 'high_distinction'
+  | 'deans_list_stretch';
+
+export interface DeansHonoursStanding {
+  tier: DeansHonoursTierId;
+  title: string;
+  description: string;
+  distinctionAverage: boolean;
+}
+
+/** Planning bands for dean's honours list / faculty excellence awards (not official selection). */
+export function getDeansHonoursStanding(wam: number): DeansHonoursStanding | null {
+  if (Number.isNaN(wam)) return null;
+
+  const distinctionAverage = wam >= MONASH_DISTINCTION_WAM_THRESHOLD;
+
+  if (wam < MONASH_DISTINCTION_WAM_THRESHOLD) {
+    return {
+      tier: 'below_distinction',
+      title: 'Below distinction average',
+      description:
+        'Distinction average at Monash is WAM 70+ (GPA 3.0+). Many dean\'s commendation tiers start here — plan recovery on high-credit units.',
+      distinctionAverage: false,
+    };
+  }
+
+  if (wam < 80) {
+    return {
+      tier: 'distinction_average',
+      title: 'Distinction average range',
+      description:
+        'WAM 70–79 meets distinction average. Dean\'s Commendation or faculty merit certificates may be possible — faculty rules vary.',
+      distinctionAverage: true,
+    };
+  }
+
+  if (wam < 85) {
+    return {
+      tier: 'high_distinction',
+      title: 'High distinction territory',
+      description:
+        'WAM 80+ strengthens course awards and percentile-based dean\'s list positioning. Top-2% cohort cutoffs still float each year.',
+      distinctionAverage: true,
+    };
+  }
+
+  return {
+    tier: 'deans_list_stretch',
+    title: 'Dean\'s list stretch zone',
+    description:
+      'WAM 85+ is competitive for faculty dean\'s honours list-style awards in strong cohorts — confirm percentile rules with your faculty.',
+    distinctionAverage: true,
+  };
+}
+
+export interface ExchangeWamPlanning {
+  currentWam: number;
+  wamAfterExchange: number;
+  monashGradedCredits: number;
+  exchangeCredits: number;
+  totalDegreeCredits: number;
+  meetsExchangeWamFloor: boolean;
+}
+
+/** Exchange SFR units do not change WAM — only degree credit progress. */
+export function calculateExchangeWamPlanning(
+  currentWam: number,
+  monashGradedCredits: number,
+  exchangeCredits: number,
+  minWamFloor: number = MONASH_EXCHANGE_MIN_WAM_THRESHOLD
+): ExchangeWamPlanning | null {
+  if (
+    Number.isNaN(currentWam) ||
+    Number.isNaN(monashGradedCredits) ||
+    Number.isNaN(exchangeCredits) ||
+    Number.isNaN(minWamFloor) ||
+    monashGradedCredits < 0 ||
+    exchangeCredits < 0
+  ) {
+    return null;
+  }
+
+  return {
+    currentWam,
+    wamAfterExchange: currentWam,
+    monashGradedCredits,
+    exchangeCredits,
+    totalDegreeCredits: monashGradedCredits + exchangeCredits,
+    meetsExchangeWamFloor: currentWam >= minWamFloor,
+  };
+}
