@@ -20,7 +20,7 @@ const aboutFaqs = [
   {
     question: 'Is this service free?',
     answer:
-      'Yes, core calculators and articles are freely accessible. The site may display advertising or include disclosed affiliate links to help maintain the platform.',
+      'Yes, core calculators and articles are freely accessible. The site may display advertising to help maintain the platform.',
   },
   {
     question: 'How can students use this for long-term planning?',

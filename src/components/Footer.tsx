@@ -59,10 +59,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-5 mt-6 flex flex-col gap-3 md:flex-row md:items-start md:justify-between min-w-0">
-          <p className="text-xs text-gray-500 min-w-0 leading-relaxed">
-            This website may contain affiliate links. We may earn a commission at no additional cost to you if you purchase through these links.
-          </p>
-          <p className="text-xs text-gray-600 min-w-0 leading-relaxed break-words md:max-w-sm lg:max-w-md md:text-right">
+          <p className="text-xs text-gray-600 min-w-0 leading-relaxed break-words md:max-w-xl">
             &copy; {new Date().getFullYear()} MonashWAMCalculator.com — Not affiliated with Monash University. For informational purposes only.
           </p>
         </div>

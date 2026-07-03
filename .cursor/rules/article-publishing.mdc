@@ -24,7 +24,6 @@ When adding a blog to `monash-wam-calculator`, follow this exact pattern.
 ## Article entry (`src/data/articles.ts`)
 
 - Add full entry to `articles` array: slug, keyword, title, description, featuredImage, featuredImageAlt, dates, sections, faqs.
-- Optional `productCatalogId` — omit to auto-match recommendations.
 - Include internal link phrases in body text for existing guides/calculators (max 2 auto-linked per article via `ArticlePost`).
 
 ## SEO wiring

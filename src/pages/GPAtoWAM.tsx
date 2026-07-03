@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
+import RelatedCalculators from '../components/RelatedCalculators';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+import { mapGpaToMonashBand, type GpaBandStep } from '../utils/monashGrades';
 
 const [gpaToWamHome, gpaToWamWtg] = PAGE_KEYWORD_LINKS['/gpa-to-wam-calculator'];
-import ProductPopup from '../components/ProductPopup';
-import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
-import { mapGpaToMonashBand, type GpaBandStep } from '../utils/monashGrades';
 
 const gpaToWamFaqs = [
   {
@@ -82,13 +80,6 @@ export default function GPAtoWAM() {
   const gpaNum = parseFloat(gpa);
   const result = gpa !== '' && !isNaN(gpaNum) ? mapGpaToMonashBand(gpaNum, scale.max) : null;
   const markEquivalent = gpa === '' ? null : (parseFloat(gpa) / scale.max) * 100;
-
-  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
-    hasResult: result !== null,
-    userReady: gpa !== '',
-    route: '/gpa-to-wam-calculator',
-    subjects: [{ code: 'MAT1830', mark: Number.isFinite(markEquivalent as number) ? markEquivalent : null }],
-  });
 
   return (
     <>
@@ -189,10 +180,11 @@ export default function GPAtoWAM() {
         </div>
       </section>
 
-      <ProductShowcase startIndex={12} endIndex={17} />
+      <RelatedCalculators
+        hrefs={['/wam-to-gpa-calculator', '/monash-gpa-calculator', '/', '/wam-target-calculator', '/monash-cgpa-calculator', '/monash-grade-converter']}
+      />
 
       <PageFaq items={gpaToWamFaqs} />
-      <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>
   );
 }

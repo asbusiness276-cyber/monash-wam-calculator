@@ -18,7 +18,6 @@ export interface GpaUnitRow {
 interface GpaUnitRowsProps {
   units: GpaUnitRow[];
   onChange: (units: GpaUnitRow[]) => void;
-  onUserEdit?: () => void;
   heading?: string;
   description?: string;
 }
@@ -46,14 +45,10 @@ let nextGpaRowId = 100;
 export default function GpaUnitRows({
   units,
   onChange,
-  onUserEdit,
   heading = 'Your Units',
   description = 'Enter each unit grade or percentage mark and credit points. Monash GPA uses the official 4.0 scale (fail = 0.3).',
 }: GpaUnitRowsProps) {
-  const touch = () => onUserEdit?.();
-
   const updateRow = (id: number, patch: Partial<GpaUnitRow>) => {
-    touch();
     onChange(
       units.map(row => {
         if (row.id !== id) return row;
@@ -69,7 +64,6 @@ export default function GpaUnitRows({
   };
 
   const addRow = () => {
-    touch();
     onChange([
       ...units,
       { id: nextGpaRowId++, unit: '', credits: '6', inputMode: 'mark', grade: 'P', mark: '' },
@@ -77,7 +71,6 @@ export default function GpaUnitRows({
   };
 
   const removeRow = (id: number) => {
-    touch();
     if (units.length <= 1) return;
     onChange(units.filter(row => row.id !== id));
   };

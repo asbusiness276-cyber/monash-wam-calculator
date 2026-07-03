@@ -1,6 +1,6 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
+import RelatedCalculators from '../components/RelatedCalculators';
 import WamToGpaToolCore from '../components/WamToGpaToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -133,7 +133,9 @@ export default function WAMtoGPA() {
         </div>
       </section>
 
-      <ProductShowcase startIndex={6} endIndex={11} />
+      <RelatedCalculators
+        hrefs={['/gpa-to-wam-calculator', '/monash-gpa-calculator', '/monash-cgpa-calculator', '/wam-target-calculator', '/final-grade-calculator', '/']}
+      />
 
       <PageFaq items={wamToGpaFaqs} />
     </>

@@ -1,9 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Seo from '../components/Seo';
 import ArticleAuthorBio from '../components/ArticleAuthorBio';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
-import ArticleFaqProducts from '../components/ArticleFaqProducts';
-import ArticleRecommendedProducts from '../components/ArticleRecommendedProducts';
+import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug } from '../data/articles';
@@ -79,7 +78,6 @@ function renderKeywordLinkedParagraph(
 }
 
 export default function ArticlePost({ slug }: ArticlePostProps) {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const article = useMemo(() => getArticleBySlug(slug), [slug]);
   const internalLinks = useMemo(
     () => keywordInternalLinks.filter(item => item.href !== `/articles/${slug}`).slice(0, 2),
@@ -146,14 +144,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
 
         <ArticleAuthorBio />
 
-        <ArticleRecommendedProducts slug={slug} />
-
-        <ArticleFaqProducts
-          slug={slug}
-          faqs={article.faqs}
-          openFaq={openFaq}
-          onToggleFaq={index => setOpenFaq(openFaq === index ? null : index)}
-        />
+        <ArticleRelatedTools faqs={article.faqs} />
       </article>
     </>
   );

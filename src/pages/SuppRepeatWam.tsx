@@ -1,6 +1,6 @@
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
+import RelatedCalculators from '../components/RelatedCalculators';
 import SuppRepeatToolCore from '../components/SuppRepeatToolCore';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -89,7 +89,10 @@ export default function SuppRepeatWam() {
         </div>
       </section>
 
-      <ProductShowcase startIndex={7} endIndex={12} />
+      <RelatedCalculators
+        hrefs={['/', '/wam-target-calculator', '/final-grade-calculator', '/monash-gpa-calculator', '/wam-to-gpa-calculator', '/supp-repeat-wam-calculator']}
+        title="Related Planning Tools"
+      />
       <PageFaq items={suppRepeatFaqs} />
     </>
   );

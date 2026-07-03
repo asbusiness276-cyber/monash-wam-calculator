@@ -1,8 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Plus, Trash2, RotateCcw, Copy, Check, TrendingUp } from 'lucide-react';
-import ProductPopup from './ProductPopup';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
-import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
 import { matchSubjectByUnit, matchUnitBySubject } from '../utils/unitSubjectSuggestions';
 import {
   calculateCreditWeightedWam,
@@ -67,11 +65,11 @@ const defaultSubjects: Subject[] = [
 ];
 
 interface WAMCalculatorProps {
-  /** Hide recommendation popup (e.g. article iframe embeds) */
+  /** Reserved for embed contexts (e.g. article iframes). */
   embedSuppressRecommendations?: boolean;
 }
 
-export default function WAMCalculator({ embedSuppressRecommendations = false }: WAMCalculatorProps) {
+export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
   const [subjects, setSubjects] = useState<Subject[]>(defaultSubjects);
   const [copied, setCopied] = useState(false);
 
@@ -110,22 +108,6 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
   }, [subjects]);
 
   const result = calculateWAM();
-
-  const addedSubjects = subjects.slice(defaultSubjects.length);
-  const hasCompletedAddedSubject = addedSubjects.some(
-    s => (s.unit.trim() !== '' || s.subject.trim() !== '') && s.credits.trim() !== '' && s.mark.trim() !== ''
-  );
-
-  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
-    enabled: !embedSuppressRecommendations,
-    hasResult: result !== null,
-    userReady: hasCompletedAddedSubject,
-    route: '/',
-    subjects: subjects.map(s => ({
-      code: s.unit.trim() || s.subject.trim(),
-      mark: s.mark === '' ? null : parseFloat(s.mark),
-    })),
-  });
 
   const addSubject = () => {
     setSubjects(prev => [
@@ -475,9 +457,6 @@ export default function WAMCalculator({ embedSuppressRecommendations = false }: 
         </div>
         </div>
       </section>
-      {!embedSuppressRecommendations && (
-        <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
-      )}
     </>
   );
 }

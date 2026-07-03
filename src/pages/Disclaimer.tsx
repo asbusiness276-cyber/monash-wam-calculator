@@ -17,11 +17,6 @@ const disclaimerFaqs = [
       'Use results for planning, not as official proof. Always use transcript-backed values where formal verification is required.',
   },
   {
-    question: 'Why are affiliate disclosures included?',
-    answer:
-      'Some pages include affiliate links to support maintenance costs. This does not add extra cost to users who choose to purchase through those links.',
-  },
-  {
     question: 'Who is responsible for external website content?',
     answer:
       'External websites operate independently. Their policies, content, and practices are controlled by their own owners.',
@@ -33,7 +28,7 @@ export default function Disclaimer() {
     <>
       <Seo
         title="Disclaimer | Monash WAM Calculator"
-        description="Read the Monash WAM Calculator disclaimer regarding academic accuracy, affiliate links, and non-affiliation with Monash University."
+        description="Read the Monash WAM Calculator disclaimer regarding academic accuracy and non-affiliation with Monash University."
         canonicalPath="/disclaimer"
         faqItems={disclaimerFaqs}
       />
@@ -64,14 +59,6 @@ export default function Disclaimer() {
             <p>
               Content on this website is general information only and does not constitute academic, legal, or
               professional advice.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Affiliate Disclosure</h2>
-            <p>
-              Some pages include affiliate links. If you purchase through these links, we may receive a commission at no
-              additional cost to you.
             </p>
           </div>
 

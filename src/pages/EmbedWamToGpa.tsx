@@ -12,7 +12,7 @@ export default function EmbedWamToGpa() {
         noIndex
       />
       <div className="max-w-xl mx-auto px-3 py-4 sm:px-4">
-        <WamToGpaToolCore initialWam="76" enableProductPopup={false} />
+        <WamToGpaToolCore initialWam="76" />
       </div>
     </>
   );

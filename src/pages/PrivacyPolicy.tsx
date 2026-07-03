@@ -118,15 +118,14 @@ export default function PrivacyPolicy() {
               separate from calculator functionality.
             </p>
             <p className="mt-2">
-              Non-personalized ads may still appear if you opt out of personalized advertising. Affiliate links on some
-              pages are disclosed separately and are not the same as display advertising served through AdSense.
+              Non-personalized ads may still appear if you opt out of personalized advertising.
             </p>
           </div>
 
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">5. Third-Party Links</h2>
             <p>
-              Some pages include external links, including affiliate links. Third-party websites have their own privacy
+              Some pages include external links to official university resources and other references. Third-party websites have their own privacy
               policies and we are not responsible for their content or practices.
             </p>
           </div>

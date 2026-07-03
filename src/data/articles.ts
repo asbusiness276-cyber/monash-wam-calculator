@@ -4,11 +4,6 @@ export interface ArticleData {
   slug: string;
   title: string;
   keyword: string;
-  /**
-   * Optional products-data.json row id for affiliate recommendations on this article.
-   * Omit on new articles to auto-match from keywords/title/body, or set explicitly when needed.
-   */
-  productCatalogId?: number;
   description: string;
   /**
    * Optimized WebP banner (1280×720) under /public/article-images/.
@@ -42,7 +37,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-university-australia',
     keyword: 'monash university australia',
-    productCatalogId: 14,
     title: 'Monash University Australia: Student Guide 2026',
     description:
       'Monash University Australia guide: Melbourne & Victoria campuses, world rankings, courses, fees, scholarships, how to apply, campus location, and WAM planning.',
@@ -149,7 +143,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'what-is-a-good-wam',
     keyword: 'what is a good wam',
-    productCatalogId: 4,
     title: 'What Is a Good WAM at Monash? (2026 Benchmarks)',
     description:
       'What is a good WAM at Monash? HD 80+, distinction 70–79, credit 60–69 — benchmark bands and how to improve your weighted average.',
@@ -201,7 +194,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'how-to-improve-wam-at-monash',
     keyword: 'how to improve wam monash',
-    productCatalogId: 4,
     title: 'How to Improve Your WAM at Monash (2026 Student Guide)',
     description:
       'How to improve WAM at Monash: credit-point strategy, high-weight assessments, exam planning with free calculators, and realistic semester targets.',
@@ -294,7 +286,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-honours-wam-requirements',
     keyword: 'monash honours wam requirements',
-    productCatalogId: 4,
     title: 'Monash Honours WAM Requirements (2026 Planning Guide)',
     description:
       'Monash honours WAM requirements explained: how faculties set cutoffs, typical WAM bands, scholarships vs honours, and free calculators to check your standing.',
@@ -395,7 +386,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-scholarship-wam-requirements',
     keyword: 'monash scholarship wam requirements',
-    productCatalogId: 4,
     title: 'Monash Scholarship WAM Requirements (2026 Guide)',
     description:
       'Monash scholarship WAM requirements explained: merit vs equity awards, example WAM bands from 60 to 85+, renewal rules, and free calculators to check eligibility.',
@@ -496,7 +486,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'failed-unit-wam-impact-monash',
     keyword: 'failed unit wam monash',
-    productCatalogId: 4,
     title: 'Failed Unit WAM Impact at Monash (2026 Recovery Guide)',
     description:
       'Failed unit WAM impact at Monash explained: how N grades affect weighted averages, repeat-unit planning, recovery maths, and free calculators to model your next semester.',
@@ -598,7 +587,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-wam-vs-gpa-postgraduate',
     keyword: 'monash wam vs gpa postgraduate',
-    productCatalogId: 5,
     title: 'Monash WAM vs GPA for Postgraduate Applications (2026 Guide)',
     description:
       'Monash WAM vs GPA for postgraduate applications: when to report each metric, 4.0 and 7.0 scale tips, and free calculators for masters and PhD entry planning.',
@@ -699,7 +687,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'how-to-convert-wam-from-one-university-to-another',
     keyword: 'how to convert wam from one university to another',
-    productCatalogId: 5,
     title: 'How to Convert WAM from One University to Another Accurately',
     description:
       'Learn how to convert WAM from one university to another using practical methods, GPA mapping logic, and application-safe reporting tips.',
@@ -751,7 +738,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'how-to-calculate-wam',
     keyword: 'how to calculate wam',
-    productCatalogId: 1,
     title: 'How to Calculate WAM Correctly: Step-by-Step Weighted Method',
     description:
       'Learn how to calculate WAM with weighted formulas, examples, common mistakes, and practical semester planning techniques.',
@@ -804,7 +790,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-wam-to-gpa-conversion',
     keyword: 'wam to gpa',
-    productCatalogId: 5,
     title: 'Monash WAM to GPA: How to Convert (2026 Guide)',
     description:
       'Convert Monash WAM to GPA on 4.0 and 7.0 scales: grade bands, transcript GPA vs WAM, worked examples, and free WAM to GPA calculator.',
@@ -904,7 +889,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'how-to-find-wam-on-monash-transcript',
     keyword: 'monash wam transcript',
-    productCatalogId: 4,
     title: 'How to Find Your WAM on Monash Transcript & WES (2026)',
     description:
       'Find WAM on Monash transcript, WES, and Student Portal: step-by-step guide to unofficial records, official transcripts, and verifying marks with our free calculator.',
@@ -1008,7 +992,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-credit-points-wam-explained',
     keyword: 'monash credit points wam',
-    productCatalogId: 4,
     title: 'Monash Credit Points & WAM: 6 vs 12 cp Explained (2026)',
     description:
       'How Monash credit points affect WAM: why 12 cp units move your average more than 6 cp, worked examples, and free calculator planning for electives and core subjects.',
@@ -1111,7 +1094,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-final-exam-mark-calculator-guide',
     keyword: 'grade calculator monash',
-    productCatalogId: 4,
     title: 'How Much Do You Need on Your Final Exam at Monash? (2026)',
     description:
       'Monash grade calculator guide: find the final exam mark you need for HD, D, C, or P. Free final grade calculator with worked examples and WAM planning tips.',
@@ -1221,7 +1203,6 @@ export const articles: ArticleData[] = [
   {
     slug: 'monash-supplementary-exam-wam-guide',
     keyword: 'monash supplementary exam wam',
-    productCatalogId: 4,
     title: 'Monash Supplementary Exam & WAM Impact (2026 Guide)',
     description:
       'Monash supplementary exam WAM impact explained: supp pass capped at 50 (P), how NS grades work, supp vs repeat planning, and free calculators to model your weighted average.',

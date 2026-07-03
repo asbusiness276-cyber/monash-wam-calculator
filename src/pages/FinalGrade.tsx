@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import ProductShowcase from '../components/ProductShowcase';
+import RelatedCalculators from '../components/RelatedCalculators';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+import { calculateRequiredFinalExamMark } from '../utils/monashGrades';
 
 const [finalHome, finalWtg] = PAGE_KEYWORD_LINKS['/final-grade-calculator'];
-import ProductPopup from '../components/ProductPopup';
-import { useDelayedProductPopup } from '../hooks/useDelayedProductPopup';
-import { calculateRequiredFinalExamMark } from '../utils/monashGrades';
 
 const finalGradeFaqs = [
   {
@@ -69,13 +67,6 @@ export default function FinalGrade() {
 
   const allFieldsFilled =
     currentMark !== '' && currentWeight !== '' && targetMark !== '' && examWeight !== '';
-
-  const { popupOpen, setPopupOpen, recommendation } = useDelayedProductPopup({
-    hasResult: status !== null,
-    userReady: allFieldsFilled,
-    route: '/final-grade-calculator',
-    subjects: [{ code: 'ENG1005', mark: currentMark === '' ? null : parseFloat(currentMark) }],
-  });
 
   return (
     <>
@@ -210,10 +201,11 @@ export default function FinalGrade() {
         </div>
       </section>
 
-      <ProductShowcase startIndex={1} endIndex={6} />
+      <RelatedCalculators
+        hrefs={['/', '/unit-mark-calculator', '/unit-target-calculator', '/wam-target-calculator', '/mark-to-grade-calculator', '/wam-to-gpa-calculator']}
+      />
 
       <PageFaq items={finalGradeFaqs} />
-      <ProductPopup recommendation={recommendation} isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </>
   );
 }

@@ -1,59 +1,109 @@
-import { Calculator, ArrowRight } from 'lucide-react';
+import { ArrowRight, Calculator } from 'lucide-react';
+import { absoluteUrl } from '../constants/site';
 
-const calculators = [
+export interface CalculatorLink {
+  href: string;
+  title: string;
+  description: string;
+}
+
+export const CALCULATOR_LINKS: CalculatorLink[] = [
   {
-    title: 'WAM to GPA Calculator',
-    desc: 'Convert your Monash WAM to GPA scale used by Australian and international universities.',
+    href: '/',
+    title: 'Monash WAM Calculator',
+    description: 'Official-style credit-weighted WAM with Year 1 half-weighting.',
+  },
+  {
     href: '/wam-to-gpa-calculator',
-    color: 'from-blue-500 to-blue-700',
+    title: 'WAM to GPA Calculator',
+    description: 'Convert overall WAM to 4.0 and 7.0 GPA bands.',
   },
   {
-    title: 'GPA to WAM Calculator',
-    desc: 'Reverse convert your GPA back to an approximate Monash WAM percentage.',
-    href: '/gpa-to-wam-calculator',
-    color: 'from-teal-500 to-teal-700',
+    href: '/monash-gpa-calculator',
+    title: 'Monash GPA Calculator',
+    description: 'Unit-by-unit GPA on the official 4.0 scale.',
   },
   {
-    title: 'Final Grade Calculator',
-    desc: 'Calculate what final exam mark you need to achieve your target grade.',
-    href: '/final-grade-calculator',
-    color: 'from-sky-500 to-sky-700',
+    href: '/monash-cgpa-calculator',
+    title: 'Monash CGPA Calculator',
+    description: 'Update cumulative GPA after each semester.',
   },
   {
-    title: 'Mark to Grade Calculator',
-    desc: 'Convert a unit percentage to Monash HD, D, C, P, or N instantly.',
-    href: '/mark-to-grade-calculator',
-    color: 'from-violet-500 to-violet-700',
-  },
-  {
-    title: 'WAM Target Calculator',
-    desc: 'See what average you need on remaining units to hit your target WAM.',
     href: '/wam-target-calculator',
-    color: 'from-indigo-500 to-indigo-700',
+    title: 'WAM Target Calculator',
+    description: 'Average needed on remaining units to hit your goal.',
+  },
+  {
+    href: '/final-grade-calculator',
+    title: 'Final Grade Calculator',
+    description: 'Exam mark required for HD, D, C, or P.',
+  },
+  {
+    href: '/supp-repeat-wam-calculator',
+    title: 'Supp vs Repeat WAM',
+    description: 'Compare supplementary pass at 50 vs repeating a unit.',
+  },
+  {
+    href: '/monash-honours-calculator',
+    title: 'Monash Honours Calculator',
+    description: 'H1, H2A, H2B classification from WAM.',
+  },
+  {
+    href: '/articles',
+    title: 'Student Articles',
+    description: 'WAM guides, honours, scholarships, and recovery tips.',
   },
 ];
 
-export default function RelatedCalculators() {
+interface RelatedCalculatorsProps {
+  title?: string;
+  description?: string;
+  /** Subset of calculator hrefs; defaults to first six tools. */
+  hrefs?: string[];
+  maxItems?: number;
+  className?: string;
+}
+
+export default function RelatedCalculators({
+  title = 'More Monash Calculators',
+  description = 'Free planning tools built for Monash coursework — no signup required.',
+  hrefs,
+  maxItems = 6,
+  className = '',
+}: RelatedCalculatorsProps) {
+  const items = (hrefs
+    ? CALCULATOR_LINKS.filter(link => hrefs.includes(link.href))
+    : CALCULATOR_LINKS.filter(link => link.href !== '/articles')
+  ).slice(0, maxItems);
+
+  if (items.length === 0) return null;
+
   return (
-    <section className="max-w-6xl mx-auto px-4 py-10">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Related Student Calculators</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {calculators.map(calc => (
+    <section className={`max-w-6xl mx-auto px-4 py-6 ${className}`}>
+      <div className="text-center mb-5">
+        <div className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 text-xs font-semibold uppercase tracking-wide mb-2">
+          <Calculator size={14} aria-hidden />
+          Planning tools
+        </div>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-1.5">{title}</h2>
+        <p className="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">{description}</p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {items.map(link => (
           <a
-            key={calc.href}
-            href={calc.href}
-            className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col gap-3"
+            key={link.href}
+            href={absoluteUrl(link.href)}
+            className="group flex flex-col rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all"
           >
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${calc.color} flex items-center justify-center`}>
-              <Calculator size={18} className="text-white" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">{calc.title}</h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{calc.desc}</p>
-            </div>
-            <div className="flex items-center gap-1 text-primary-600 dark:text-primary-400 text-xs font-medium mt-auto group-hover:gap-2 transition-all">
-              Open Calculator <ArrowRight size={12} />
-            </div>
+            <p className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+              {link.title}
+            </p>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">{link.description}</p>
+            <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400">
+              Open tool
+              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" aria-hidden />
+            </span>
           </a>
         ))}
       </div>

@@ -2,7 +2,7 @@ import { BookOpen, CheckCircle, ArrowDown, ArrowRight } from 'lucide-react';
 import WAMCalculator from '../components/WAMCalculator';
 import FAQSection from '../components/FAQSection';
 import Seo from '../components/Seo';
-import ProductShowcase from '../components/ProductShowcase';
+import RelatedCalculators from '../components/RelatedCalculators';
 import ArticlesSection from '../components/ArticlesSection';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -159,7 +159,7 @@ export default function Home() {
         </a>
       </section>
 
-      <ProductShowcase startIndex={1} endIndex={6} />
+      <RelatedCalculators />
 
       {/* What is WAM */}
       <section id="what-is-wam" className="scroll-mt-20 max-w-3xl mx-auto px-4 py-8">
