@@ -1,4 +1,4 @@
-import { BookOpen, CheckCircle, ArrowDown, ArrowRight } from 'lucide-react';
+import { BookOpen, CheckCircle, ArrowDown, ArrowRight, ListOrdered, Monitor } from 'lucide-react';
 import WAMCalculator from '../components/WAMCalculator';
 import FAQSection from '../components/FAQSection';
 import Seo from '../components/Seo';
@@ -6,65 +6,31 @@ import RelatedCalculators from '../components/RelatedCalculators';
 import ArticlesSection from '../components/ArticlesSection';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+import { HOME_FAQS } from '../data/homeFaqs';
 
 const [homeWtg, homeGtw] = PAGE_KEYWORD_LINKS['/'];
 
-const homeFaqs = [
-  {
-    question: 'How is WAM calculated at Monash?',
-    answer:
-      'Monash WAM = sum of (mark × credit points) ÷ sum of credit points, with first-year units weighted at 0.5. Enter each unit in our free Monash WAM calculator for an instant result — verify final numbers on your official transcript.',
-  },
-  {
-    question: 'What is a good WAM at Monash?',
-    answer:
-      'Rough bands: HD 80+, distinction 70–79, credit 60–69, pass 50–59. What counts as good depends on honours, scholarships, and your course — use our calculator to track your WAM against your goals.',
-  },
-  {
-    question: 'What is a WAM calculator?',
-    answer:
-      'A WAM calculator is a tool that computes your Weighted Average Mark from unit marks and credit points. Monash WAM Calculator is a free WAM calculator built for Monash University students, with credit-weighted maths and optional WAM to GPA conversion.',
-  },
-  {
-    question: 'Is this Monash WAM Calculator official?',
-    answer:
-      'No, this is an independent educational calculator. It is useful for planning, but official academic outcomes should always be confirmed through your Monash transcript and faculty policies.',
-  },
-  {
-    question: 'How accurate is the WAM result?',
-    answer:
-      'With correct marks, credit points, and year levels, official Monash WAM (0.5 weighting for Year 1) should be close to WES. Special grade codes or exclusions may still differ — always verify on your transcript.',
-  },
-  {
-    question: 'Can I include ongoing units?',
-    answer:
-      'Yes, you can add expected marks for ongoing units to model scenarios. Keep these clearly separated from confirmed marks so you can compare optimistic and conservative forecasts.',
-  },
-  {
-    question: 'Why should I use WAM and GPA tools together?',
-    answer:
-      'WAM is common for local academic tracking, while GPA is often required for external applications. Using both tools helps you communicate your performance clearly across different systems.',
-  },
-  {
-    question: 'Do failed units matter in WAM?',
-    answer:
-      'In many cases, yes. Failed units can affect weighted averages depending on policy. Always verify treatment of failed or repeated units in official Monash documentation.',
-  },
-  {
-    question: 'What is the best way to improve WAM?',
-    answer:
-      'Focus on high-weight assessments, track progress weekly, and review mistakes systematically. Consistent improvement across the semester usually gives better outcomes than last-minute cramming.',
-  },
+const HOME_OG_IMAGE = '/article-images/featured-calculate-wam.webp';
+const HOME_OG_ALT =
+  'Monash university student using a laptop to calculate weighted average mark from unit marks and credit points';
+
+const useSteps = [
+  'Copy unit marks and credit points from WES or your unofficial academic record.',
+  'Enter each unit code, mark (0–100), credit points, and year level (Year 1 uses 0.5 official weight).',
+  'Read official Monash WAM and planning WAM instantly — compare against WES after results release.',
+  'Use WAM to GPA or WAM target tools if you are planning scholarships, honours, or next semester.',
 ];
 
 export default function Home() {
   return (
     <>
       <Seo
-        title="Monash WAM Calculator - Free WAM Calculator Online (2026)"
-        description="Calculate Monash WAM in seconds. Free WAM calculator for Monash students - enter marks & credit points, get instant WAM + HD/D grade. WAM to GPA included. No signup."
+        title="Monash WAM Calculator | Free WAM Calculator Monash University (2026)"
+        description="Free Monash WAM calculator with official Year 1 (0.5) weighting. Enter marks & credit points — instant weighted average, HD/D bands & WAM to GPA. No signup."
         canonicalPath="/"
-        faqItems={homeFaqs}
+        faqItems={HOME_FAQS}
+        ogImage={HOME_OG_IMAGE}
+        ogImageAlt={HOME_OG_ALT}
       />
 
       {/* Hero */}
@@ -79,10 +45,15 @@ export default function Home() {
             Monash WAM Calculator
           </h1>
           <p className="text-xl md:text-2xl font-semibold text-primary-100 mb-4">
-            Free WAM Calculator — Monash University Students
+            Free WAM Calculator for Monash University Students
           </p>
           <p className="text-lg text-primary-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Calculate Monash WAM instantly: add unit marks and credit points, see your weighted average and grade band in seconds. Free WAM calculator with WAM to GPA — no signup.
+            The only free <strong className="text-white font-semibold">WAM calculator Monash</strong> students need:
+            official Year 1 (0.5) weighting, credit-point maths, HD/D/C/P bands, and{' '}
+            <a href={absoluteUrl(homeWtg.path)} className="text-white underline underline-offset-2 hover:text-primary-50">
+              WAM to GPA
+            </a>
+            {' '}— instant results, no signup.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
@@ -119,15 +90,66 @@ export default function Home() {
       {/* Calculator */}
       <WAMCalculator />
 
+      {/* How to use — steps for users + HowTo schema support */}
+      <section id="how-to-use-wam-calculator" className="scroll-mt-20 max-w-3xl mx-auto px-4 pt-8 pb-2">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <ListOrdered size={22} className="text-primary-600 dark:text-primary-400 shrink-0" />
+            How to Use This Monash WAM Calculator
+          </h2>
+          <ol className="space-y-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed list-decimal list-inside marker:font-semibold marker:text-primary-600 dark:marker:text-primary-400">
+            {useSteps.map(step => (
+              <li key={step} className="pl-1">
+                {step}
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            For the full weighted formula, read{' '}
+            <a href={absoluteUrl('/articles/how-to-calculate-wam')} className={INLINE_LINK_CLASS}>
+              how to calculate wam
+            </a>
+            . For Year 1 half weighting details, see{' '}
+            <a href={absoluteUrl('/articles/monash-year-1-wam-weighting-guide')} className={INLINE_LINK_CLASS}>
+              monash year 1 wam weighting
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+
+      {/* WES verification */}
+      <section id="wes-wam" className="scroll-mt-20 max-w-3xl mx-auto px-4 pt-6 pb-2">
+        <div className="bg-primary-50 dark:bg-primary-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            <Monitor size={22} className="text-primary-600 dark:text-primary-400 shrink-0" />
+            Check Your WAM on Monash WES
+          </h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            Your certified cumulative WAM appears on your unofficial academic record in the Web Enrolment System (WES).
+            After each results release, compare WES with this calculator using the same marks, credit points, and year
+            levels. Step-by-step screenshots and paths are in our{' '}
+            <a href={absoluteUrl('/articles/how-to-find-wam-on-monash-transcript')} className={INLINE_LINK_CLASS}>
+              monash wam transcript
+            </a>{' '}
+            guide.
+          </p>
+        </div>
+      </section>
+
       {/* WAM Calculator — keyword section for SEO + users */}
       <section id="wam-calculator" className="scroll-mt-20 max-w-3xl mx-auto px-4 pt-6 pb-2">
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Why Use This WAM Calculator?
+            Why Use This Monash WAM Calculator?
           </h2>
           <div className="text-sm leading-relaxed space-y-3 text-gray-600 dark:text-gray-400">
             <p>
-              Searching for a <strong className="text-gray-800 dark:text-gray-200">WAM calculator</strong> usually means you want a fast, credit-weighted average — not a simple mean of percentages. <strong className="text-gray-800 dark:text-gray-200">Monash WAM Calculator</strong> is built for that: enter each unit&apos;s mark and credit points, and the tool applies Monash-style credit weighting so high-credit subjects count more.
+              Searching for a <strong className="text-gray-800 dark:text-gray-200">WAM calculator</strong> or{' '}
+              <strong className="text-gray-800 dark:text-gray-200">wam calculator monash</strong> usually means you
+              want credit-weighted maths — not a simple mean of percentages. MonashWAMCalculator.com applies{' '}
+              <strong className="text-gray-800 dark:text-gray-200">official-style year-level weighting</strong> (Year 1 =
+              0.5) so your result aligns with WES more closely than generic Australian WAM tools.
             </p>
             <p>
               Unlike generic calculators, this WAM calculator is tuned for Monash University workflows — honours planning, scholarship targets, and semester tracking. Pair it with our{' '}
@@ -232,24 +254,26 @@ export default function Home() {
             </div>
           </div>
 
-          <h3 className="font-semibold text-gray-700 dark:text-gray-300 text-sm mb-3">Example Calculation</h3>
+          <h3 className="font-semibold text-gray-700 dark:text-gray-300 text-sm mb-3">Example: Year 1 vs Year 2 Weighting</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-50 dark:bg-gray-700">
                   <th className="text-left px-4 py-2 text-gray-600 dark:text-gray-400 font-semibold rounded-tl-lg">Unit</th>
+                  <th className="text-left px-4 py-2 text-gray-600 dark:text-gray-400 font-semibold">Year</th>
                   <th className="text-left px-4 py-2 text-gray-600 dark:text-gray-400 font-semibold">Mark</th>
-                  <th className="text-left px-4 py-2 text-gray-600 dark:text-gray-400 font-semibold rounded-tr-lg">Credits</th>
+                  <th className="text-left px-4 py-2 text-gray-600 dark:text-gray-400 font-semibold rounded-tr-lg">CP</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                 {[
-                  { unit: 'FIT1045', mark: 80, credits: 6 },
-                  { unit: 'MAT1830', mark: 75, credits: 6 },
-                  { unit: 'ENG1005', mark: 70, credits: 6 },
+                  { unit: 'FIT1045', year: '1', mark: 78, credits: 6 },
+                  { unit: 'MAT1830', year: '1', mark: 72, credits: 6 },
+                  { unit: 'FIT2004', year: '2', mark: 85, credits: 6 },
                 ].map(row => (
                   <tr key={row.unit} className="hover:bg-gray-50 dark:hover:bg-gray-750">
                     <td className="px-4 py-2 text-gray-800 dark:text-gray-200 font-medium">{row.unit}</td>
+                    <td className="px-4 py-2 text-gray-600 dark:text-gray-400">{row.year}</td>
                     <td className="px-4 py-2 text-gray-600 dark:text-gray-400">{row.mark}</td>
                     <td className="px-4 py-2 text-gray-600 dark:text-gray-400">{row.credits}</td>
                   </tr>
@@ -257,14 +281,22 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-            Using the above example, the calculated WAM would be <strong className="text-gray-800 dark:text-gray-200">75.00</strong>.
+          <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+            <strong className="text-gray-800 dark:text-gray-200">Planning WAM</strong> (simple credit average) ≈{' '}
+            <strong className="text-gray-800 dark:text-gray-200">78.33</strong>.{' '}
+            <strong className="text-gray-800 dark:text-gray-200">Official Monash WAM</strong> with Year 1 at 0.5 weight ≈{' '}
+            <strong className="text-gray-800 dark:text-gray-200">80.00</strong> — the strong Year 2 mark counts fully
+            while Year 1 units are half-weighted. Track your bands with the{' '}
+            <a href={absoluteUrl('/wam-milestones-calculator')} className={INLINE_LINK_CLASS}>
+              WAM milestones checker
+            </a>
+            .
           </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <FAQSection />
+      <FAQSection items={HOME_FAQS} title="Monash WAM Calculator — FAQs" />
 
       {/* Articles */}
       <ArticlesSection />

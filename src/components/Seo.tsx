@@ -11,6 +11,8 @@ interface SeoProps {
   canonicalPath: string;
   faqItems?: FaqItem[];
   noIndex?: boolean;
+  ogImage?: string;
+  ogImageAlt?: string;
   article?: {
     headline: string;
     datePublished: string;
@@ -51,7 +53,16 @@ function removeJsonLd(id: string) {
   }
 }
 
-export default function Seo({ title, description, canonicalPath, faqItems = [], noIndex = false, article }: SeoProps) {
+export default function Seo({
+  title,
+  description,
+  canonicalPath,
+  faqItems = [],
+  noIndex = false,
+  ogImage = DEFAULT_OG_IMAGE,
+  ogImageAlt = 'Monash WAM Calculator',
+  article,
+}: SeoProps) {
   useEffect(() => {
     const canonicalUrl = `${BASE_URL}${canonicalPath}`;
     document.title = title;
@@ -62,12 +73,12 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
     upsertMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'Monash WAM Calculator');
     upsertMeta('meta[property="og:description"]', 'property', 'og:description', description);
     upsertMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
-    upsertMeta('meta[property="og:image"]', 'property', 'og:image', DEFAULT_OG_IMAGE);
-    upsertMeta('meta[property="og:image:alt"]', 'property', 'og:image:alt', 'Monash WAM Calculator');
+    upsertMeta('meta[property="og:image"]', 'property', 'og:image', ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`);
+    upsertMeta('meta[property="og:image:alt"]', 'property', 'og:image:alt', ogImageAlt);
     upsertMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
     upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
     upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description);
-    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', DEFAULT_OG_IMAGE);
+    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`);
     upsertMeta('meta[name="twitter:url"]', 'name', 'twitter:url', canonicalUrl);
     upsertMeta(
       'meta[name="robots"]',
@@ -85,21 +96,45 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
     canonical.href = canonicalUrl;
 
     if (canonicalPath === '/') {
+      upsertJsonLd('breadcrumb', {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Monash WAM Calculator',
+            item: BASE_URL,
+          },
+        ],
+      });
       upsertJsonLd('webapp', {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'Monash WAM Calculator',
-        alternateName: ['WAM Calculator', 'Monash WAM calculator', 'WAM calculator Monash'],
+        alternateName: [
+          'WAM Calculator',
+          'Monash WAM calculator',
+          'WAM calculator Monash',
+          'Monash University WAM calculator',
+        ],
         description:
-          'Free WAM calculator for Monash University students to compute Weighted Average Mark from unit marks and credit points.',
+          'Free WAM calculator for Monash University students. Compute official Weighted Average Mark with Year 1 half weighting, credit points, and HD/D grade bands.',
         url: BASE_URL,
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'Any',
+        browserRequirements: 'Requires JavaScript',
         offers: {
           '@type': 'Offer',
           price: '0',
           priceCurrency: 'AUD',
         },
+        featureList: [
+          'Official Monash WAM with Year 1 0.5 weighting',
+          'Planning WAM comparison',
+          'WAM to GPA conversion',
+          'Mobile-friendly unit entry',
+        ],
       });
       upsertJsonLd('howto', {
         '@context': 'https://schema.org',
@@ -127,6 +162,7 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
     } else {
       removeJsonLd('webapp');
       removeJsonLd('howto');
+      removeJsonLd('breadcrumb');
     }
 
     upsertJsonLd('webpage', {
@@ -181,7 +217,7 @@ export default function Seo({ title, description, canonicalPath, faqItems = [], 
     } else {
       removeJsonLd('article');
     }
-  }, [title, description, canonicalPath, faqItems, noIndex, article]);
+  }, [title, description, canonicalPath, faqItems, noIndex, ogImage, ogImageAlt, article]);
 
   return null;
 }

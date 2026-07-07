@@ -34,6 +34,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'final grade calculator', href: '/final-grade-calculator' },
   { keyword: 'monash credit points wam', href: '/articles/monash-credit-points-wam-explained' },
   { keyword: 'monash wam transcript', href: '/articles/how-to-find-wam-on-monash-transcript' },
+  { keyword: 'wam calculator monash', href: '/' },
   { keyword: 'Monash WAM calculator', href: '/' },
   { keyword: 'how to convert wam from one university to another', href: '/articles/how-to-convert-wam-from-one-university-to-another' },
 ];
