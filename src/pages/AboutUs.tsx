@@ -79,7 +79,7 @@ export default function AboutUs() {
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">What We Provide</h2>
             <p className="mb-3">
-              Monash WAM Calculator hosts 26 free academic planning tools and 19 long-form student guides. Every
+              Monash WAM Calculator hosts 26 free academic planning tools and 23 long-form student guides. Every
               calculator page includes worked examples, formula explanations, and FAQs — not just an input form.
             </p>
             <ul className="list-disc list-inside space-y-1">
@@ -89,7 +89,7 @@ export default function AboutUs() {
               <li>WAM target, WAM projection, semester WAM, and supplementary vs repeat planners</li>
               <li>Distinction average, scholarship WAM, failed unit impact, dean&apos;s honours, and exchange WAM tools</li>
               <li>Honours classification calculator (H1, H2A, H2B) with official Monash thresholds</li>
-              <li>19 student articles on honours, scholarships, credit points, transcripts, exchange, and recovery</li>
+              <li>23 student articles on honours, scholarships, credit points, transcripts, exchange, and recovery</li>
             </ul>
           </div>
 

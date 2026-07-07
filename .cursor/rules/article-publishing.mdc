@@ -66,6 +66,8 @@ Before writing a new article, check this list. If the primary keyword or intent 
 | `monash-repeat-unit-wam-guide` | monash repeat unit wam | Both attempts count in WAM/GPA, no grade replacement — not general fail recovery or supplementary pass |
 | `monash-wam-internship-graduate-jobs-guide` | monash wam internship | Employer and internship WAM benchmarks — not postgraduate study applications or scholarships |
 | `monash-year-1-wam-weighting-guide` | monash year 1 wam weighting | Year 1 = 0.5 official WAM weight deep dive — not generic formula-only how-to-calculate-wam |
+| `monash-withdrawn-fail-wam-guide` | monash withdrawn fail wam | WN GPA 0.0, WAM exclusion vs worst case — not general fail recovery |
+| `monash-wam-milestones-guide` | monash wam milestones | Pass, exchange, distinction, HD, merit planning bands — not general what-is-a-good-wam only |
 
 **Related pairs (allowed — different intent):**
 - `monash-wam-to-gpa-conversion` vs `monash-wam-vs-gpa-postgraduate` — convert numbers vs choose what to report
@@ -75,8 +77,5 @@ Before writing a new article, check this list. If the primary keyword or intent 
 ## Future-safe topics (not yet published)
 
 Use these before revisiting anything above:
-
-- Monash withdrawn fail (WN) WAM and GPA impact guide (pairs with withdrawn-fail-impact calculator)
-- WAM milestones / academic standing explained (pairs with wam-milestones-calculator)
 
 - Search Console → URL inspection → Request indexing for the new article URL.

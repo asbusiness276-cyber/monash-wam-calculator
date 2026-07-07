@@ -179,7 +179,7 @@ export const articles: ArticleData[] = [
         heading: 'Use Calculators and Internal Tools',
         paragraphs: [
           'For practical planning, use the site tools together instead of in isolation. Start with the main WAM tool for current performance, then use Final Grade Calculator to estimate required exam outcomes, and if needed use WAM to GPA conversion for external applications. This integrated approach gives you a complete view of current standing, target feasibility, and reporting formats. It is especially useful when deadlines cluster and you need fast, accurate decisions.',
-          'Recommended tools: use the `Monash WAM Calculator` for ongoing tracking, the `Final Grade Calculator` before exam preparation starts, and the `WAM to GPA Calculator` for scholarship or postgraduate comparisons. Internal linking between these tools helps you move from diagnosis to action quickly. Students who combine tracking and target planning generally make better semester decisions than those who calculate only once at the end.',
+          'Recommended tools: use the `Monash WAM Calculator` for ongoing tracking, the `Final Grade Calculator` before exam preparation starts, and the `WAM to GPA Calculator` for scholarship or postgraduate comparisons. To see which planning bands you already meet — pass, exchange floor, distinction, HD — read monash wam milestones and use the milestones checker with your current WAM. Internal linking between these tools helps you move from diagnosis to action quickly. Students who combine tracking and target planning generally make better semester decisions than those who calculate only once at the end.',
           'A good WAM is ultimately the one that supports your next academic step while keeping performance sustainable. Chasing one perfect number can create burnout. Building consistent systems, reviewing performance trends, and optimizing effort by weight usually gives better long-term outcomes. Use your WAM as a guide for decisions, not as a source of stress, and you will get far more value from the metric.',
         ],
       },
@@ -514,7 +514,7 @@ export const articles: ArticleData[] = [
         heading: 'Fails vs Repeats, Withdrawals, and Special Grades',
         paragraphs: [
           'Policy treatment can differ for withdrawn units, intermission, academic penalty grades, or repeated attempts. Some faculties publish specific rules on how repeats appear on transcripts and whether earlier attempts remain visible in WAM-related reporting. Do not assume a repeat automatically replaces the first attempt in every context — verify your handbook and ask faculty student services when unsure.',
-          'If you were offered supplementary assessment instead of progressing straight to a repeat, read monash supplementary exam wam for how a capped 50 (P) pass changes WAM compared with keeping your fail mark or re-enrolling later.',
+          'If you were offered supplementary assessment instead of progressing straight to a repeat, read monash supplementary exam wam for how a capped 50 (P) pass changes WAM compared with keeping your fail mark or re-enrolling later. If the unit ended as withdrawn fail (WN) rather than a standard N grade, see monash withdrawn fail wam for GPA 0.0 treatment and WAM exclusion rules — the planning maths differ from a normal fail.',
           'If you are planning a repeat, model two scenarios: current WAM with the fail included, and a future scenario if the repeated unit reaches your target band. The second scenario is for motivation and planning only until Monash publishes official results.',
           'For honours, scholarships, and competitive applications, decision-makers may review trend and unit mix, not only cumulative WAM. Read monash honours wam requirements and monash scholarship wam requirements alongside this page when deciding recovery priorities.',
         ],
@@ -1959,6 +1959,211 @@ export const articles: ArticleData[] = [
         question: 'Which calculator should I use for official-style WAM?',
         answer:
           'Use the Monash WAM calculator on the homepage or the official vs simple WAM compare tool with year level entered for each unit.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-withdrawn-fail-wam-guide',
+    keyword: 'monash withdrawn fail wam',
+    title: 'Monash Withdrawn Fail (WN) WAM & GPA Impact (2026 Guide)',
+    description:
+      'Monash withdrawn fail (WN) explained: GPA 0.0 impact, WAM exclusion vs worst-case scenarios, WDN vs WN differences, and free calculator to model your transcript.',
+    featuredImage: '/article-images/featured-monash-withdrawn-fail-wam.webp',
+    featuredImageAlt:
+      'Monash student at a library desk reviewing an academic transcript on a laptop with study notes and a concerned expression',
+    publishedAt: '2026-07-07',
+    updatedAt: '2026-07-07',
+    sections: [
+      {
+        heading: 'What Is a Withdrawn Fail (WN) at Monash?',
+        paragraphs: [
+          'Students searching monash withdrawn fail wam usually received a WN grade on their transcript and want to know how it affects their Weighted Average Mark (WAM) and Grade Point Average (GPA). At Monash University, WN (withdrawn fail) is a final result code indicating you withdrew from a unit after the census date in circumstances that attract a fail penalty — it is not the same as a standard fail (N) where your actual percentage mark appears on the record.',
+          'On Monash\'s official 4.0 GPA scale, WN carries a GPA value of 0.0 — lower than a standard fail (N), which is typically valued at 0.3. That means WN can pull cumulative GPA down more sharply than a near-fail mark in the 40s on the same credit load. WAM treatment is a separate question: certain result codes may be excluded from WAM calculations under Monash published rules, while GPA still records the attempt with the fixed grade value.',
+          'This guide explains WN vs other withdrawal codes, how to model GPA impact, what to check on WES, and when to use the withdrawn fail impact calculator on this site. For general fail recovery planning, read failed unit wam monash; for repeating after a fail, see monash repeat unit wam.',
+        ],
+      },
+      {
+        heading: 'WN vs WDN vs N — Why the Code Matters',
+        paragraphs: [
+          'Monash uses multiple withdrawal and fail codes. WDN (withdrawn) generally reflects withdrawal without the withdrawn-fail penalty when done within permitted windows. N (fail) records your actual mark in the 0–49 range. WN sits in a different category: it signals withdrawal treated as a fail for academic standing and GPA purposes with a 0.0 grade value.',
+          'Students often confuse census-date withdrawal with post-census withdrawal outcomes. Census dates determine fee and enrolment consequences; final grade codes determine transcript and GPA/WAM treatment. Always read the official Monash results legend and your faculty handbook for the year you studied — codes and progression rules can be updated.',
+          'If you are deciding whether to withdraw late in a semester, compare scenarios before census where possible. After results are finalised, use your unofficial academic record in WES to confirm the exact letter code rather than assuming from memory.',
+        ],
+      },
+      {
+        heading: 'How WN Affects Monash GPA',
+        paragraphs: [
+          'Monash GPA formula: sum(grade value × credit points) ÷ sum(credit points), rounded to three decimals. WN adds zero grade points for its credit weight. Example: GPA 2.946 on 78 cp plus one 6-credit WN → new GPA = (2.946×78 + 0×6) ÷ 84 ≈ 2.732. The same 6 cp with a standard fail at N (0.3) would yield ≈ 2.739 — slightly less damage than WN, but both hurt.',
+          'Because WN is fixed at 0.0 regardless of how well you were performing before withdrawal, you cannot offset it with a high percentage mark on that row — unlike an N grade where a 48 might still carry some WAM weight if counted. For cumulative updates across semesters, read monash cgpa calculator after you confirm current GPA from WES.',
+          'Run your own numbers in the withdrawn fail impact calculator: enter current GPA, completed credit points, and the WN unit\'s credit load. The tool shows GPA after WN and compares against a standard fail at 0.3 for the same credits.',
+        ],
+      },
+      {
+        heading: 'How WN Affects Monash WAM',
+        paragraphs: [
+          'WAM uses percentage marks weighted by credit points and year level (Year 1 at 0.5, later years at 1.0). Monash publishes a list of grades excluded from WAM — commonly including certain withdrawn and special codes. WN may be excluded from WAM while still appearing on your transcript and affecting GPA. That split confuses students who expect one headline number to move uniformly.',
+          'Planning approach: treat WAM as unchanged in the excluded scenario, but still model a worst case where a zero-equivalent mark is counted — some internal checks or future policy interpretations may differ. The withdrawn fail impact calculator on this site shows both views when you enter current WAM and completed WAM credits.',
+          'If WAM is excluded, your visible WAM on WES might not drop — yet GPA still falls because of the 0.0 grade value. Scholarship or honours panels reviewing full transcripts may still see the WN row even when WAM looks stable. Read monash scholarship wam requirements and monash honours wam requirements with that full-record context.',
+        ],
+      },
+      {
+        heading: 'Worked Example: WN on a 6-Credit Unit',
+        paragraphs: [
+          'Scenario: cumulative WAM 74.20 on 96 completed credit points; cumulative GPA 2.85 on the same credits. You receive WN on a 6-credit unit. GPA after WN ≈ (2.85×96) ÷ 102 ≈ 2.682. If WAM excludes WN, headline WAM may remain 74.20 on WES while GPA drops — a pattern that surprises students comparing WAM-only benchmarks.',
+          'Worst-case WAM if a zero mark were counted: (74.20×96) ÷ 102 ≈ 69.84 — a material drop. Even if official WAM excludes WN, understanding the worst case helps you explain gaps to advisors and plan recovery semesters.',
+          'Pair this maths with how to find wam on monash transcript so you always start from certified WES figures, not forum estimates.',
+        ],
+      },
+      {
+        heading: 'Recovery and Next Steps After WN',
+        paragraphs: [
+          'Step 1 — Confirm code and credit points on WES. Step 2 — Recalculate GPA including WN. Step 3 — Check faculty progression rules (some courses limit repeated withdrawals or fails). Step 4 — Plan the next semester with realistic GPA targets using the Monash target GPA calculator. Step 5 — If re-enrolling in the unit, read monash repeat unit wam for how both attempts may appear.',
+          'Do not hide WN rows in personal spreadsheets — incomplete data creates false confidence for honours and scholarship planning. If you also face supplementary options on other units, read monash supplementary exam wam separately; WN planning is not interchangeable with supp pass maths.',
+          'Seek Monash Connect or faculty student services when progression is at risk. This site supports educational planning only; official decisions use certified results.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes About Withdrawn Fail',
+        paragraphs: [
+          'Assuming WN is “just a withdrawal” with no GPA impact — it carries 0.0 on the 4.0 scale. Expecting WAM to fall the same way as GPA when WN may be WAM-excluded. Comparing WN to a friend\'s N fail without checking credit points and cumulative totals.',
+          'Using generic Australian WAM calculators that ignore Monash grade values and exclusion lists. Applying for scholarships with GPA only while the transcript shows WN — panels may review the full record.',
+          'Independent tools on MonashWAMCalculator.com are not official Monash systems. Verify all outcomes against WES and published Monash assessment policy.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the GPA value of WN at Monash?',
+        answer:
+          'WN (withdrawn fail) has a GPA value of 0.0 on Monash\'s standard 4.0 scale — lower than a standard fail (N) at 0.3.',
+      },
+      {
+        question: 'Does WN affect Monash WAM?',
+        answer:
+          'WN may be excluded from official WAM under Monash published exclusion rules, while still affecting GPA. Check your transcript and model both excluded and worst-case scenarios.',
+      },
+      {
+        question: 'Is WN worse than a normal fail (N)?',
+        answer:
+          'For GPA, WN (0.0) is typically worse than N (0.3). WAM impact depends on whether the code is excluded from WAM calculations.',
+      },
+      {
+        question: 'What is the difference between WN and WDN?',
+        answer:
+          'WDN is a withdrawal code without the withdrawn-fail penalty in normal circumstances. WN is treated as a fail for GPA with value 0.0. Confirm your exact code on WES.',
+      },
+      {
+        question: 'Can I recover GPA after a WN?',
+        answer:
+          'Yes, with strong later semesters, but recovery takes time because cumulative GPA spreads across all completed credit. Use the Monash target GPA calculator to plan required semester averages.',
+      },
+      {
+        question: 'Which calculator models WN impact?',
+        answer:
+          'Use the withdrawn fail impact calculator on this site for GPA changes and WAM excluded vs worst-case comparisons.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-wam-milestones-guide',
+    keyword: 'monash wam milestones',
+    title: 'Monash WAM Milestones Explained (Pass to HD Bands, 2026)',
+    description:
+      'Monash WAM milestones guide: pass floor, exchange planning, distinction 70+, HD 80+, merit stretch — how to check bands and calculate required averages on remaining units.',
+    featuredImage: '/article-images/featured-monash-wam-milestones.webp',
+    featuredImageAlt:
+      'Monash student at a campus library table reviewing academic progress goals on a laptop with notebooks and highlighters',
+    publishedAt: '2026-07-08',
+    updatedAt: '2026-07-08',
+    sections: [
+      {
+        heading: 'What Are WAM Milestones at Monash?',
+        paragraphs: [
+          'When students search monash wam milestones, they usually want a clear map of performance bands — not just a single WAM number on WES. Milestones are planning checkpoints: pass/progression floors, exchange eligibility screens, distinction average (70+), high distinction territory (80+), and competitive merit stretch (85+). Each band answers a different question about your degree journey.',
+          'Unlike honours entry cutoffs or scholarship tiers (which vary by faculty), milestones here are widely used planning benchmarks across Monash coursework degrees. They help you prioritise semesters, interpret what is a good wam in context, and decide whether a target is still mathematically reachable on remaining credit points.',
+          'This guide explains each band, how to check which milestones you already meet, and how to estimate the average needed on future units. Use the WAM milestones checker on this site for instant status labels — met, next target, or future target — plus optional remaining-credit projections.',
+        ],
+      },
+      {
+        heading: 'The Five Common Planning Bands',
+        paragraphs: [
+          'Pass / progression floor (50+): minimum weighted performance for standard grade progression in most coursework contexts. Falling below this on WES signals urgent faculty advice. Credit bands (60–69) and distinction (70–79) sit between pass and HD; milestones focus on the thresholds students plan around most often.',
+          'Exchange planning floor (60+): many Monash exchange and study-abroad screens expect a solid weighted average before approving applications — often cited around 60 WAM as a planning floor, though faculty and partner rules differ. Read monash exchange grades wam for how SFR credit works after you return.',
+          'Distinction average (70+): aligns with Monash distinction recognition on WAM and GPA 3.0 on the 4.0 scale for many merit contexts. Scholarships and dean\'s list planning often reference this band — see monash scholarship wam requirements and monash dean\'s honours list for faculty-specific nuance.',
+          'High distinction territory (80+): competitive for top graduate roles, high merit scholarships, and strong honours narratives. Top merit stretch (85+): aspirational for faculty excellence awards and highly selective programs — not required for most degrees but useful as a stretch milestone.',
+        ],
+      },
+      {
+        heading: 'How to Check Which Milestones You Meet',
+        paragraphs: [
+          'Step 1 — Pull official WAM from WES or your unofficial academic record (read how to find wam on monash transcript). Step 2 — Enter current WAM in the WAM milestones checker. Step 3 — Review labels: bands at or below your WAM show as met; the first band above your WAM is your next target; higher bands are future targets.',
+          'If your WAM is 72.4, you have likely met pass and exchange planning floors and distinction average, with HD (80) as the next milestone. If your WAM is 58.2, pass is met, exchange floor is not, and distinction is a future target — recovery planning should focus on the next target first, not HD.',
+          'Remember official WAM uses Year 1 half weighting — see monash year 1 wam weighting if your simple spreadsheet average differs from WES. Use the Monash WAM calculator with year level for certified-style numbers.',
+        ],
+      },
+      {
+        heading: 'Required Average on Remaining Units',
+        paragraphs: [
+          'Milestones become actionable when you add completed and remaining credit points. Formula: required average = (target WAM × total future cp − current weighted marks) ÷ remaining cp, where current weighted marks = current WAM × completed cp. Example: WAM 68.0 on 120 cp completed, 72 cp remaining, target distinction 70 → required ≈ (70×192 − 68×120) ÷ 72 ≈ 73.3% average on remaining units.',
+          'The milestones checker automates this for each band when you enter remaining credits. If required averages exceed 85–90%, the milestone may be unrealistic without extraordinary performance — adjust targets or timelines. Use the WAM target calculator for a single goal line and the WAM what-if projection tool for multi-unit scenarios.',
+          'High-credit units in remaining semesters move milestones faster — read monash credit points wam before you assume every unit counts equally.',
+        ],
+      },
+      {
+        heading: 'Milestones vs Honours, Scholarships, and GPA',
+        paragraphs: [
+          'Milestones are general planning bands. Honours entry, scholarship renewal, and dean\'s list rules can require higher WAM, faculty nomination, or additional criteria. A student at 71 WAM has met a distinction milestone but may still be below a competitive honours cutoff in some faculties — read monash honours wam requirements separately.',
+          'GPA and WAM tell related but different stories. Distinction on WAM (70+) often pairs with GPA near 3.0, but band compression means they are not identical. For conversion context, see wam to gpa; for cumulative GPA updates, see monash cgpa calculator.',
+          'Employers and internships may cite WAM screens — monash wam internship covers recruiter benchmarks beyond basic milestones.',
+        ],
+      },
+      {
+        heading: 'Semester Planning With Milestones',
+        paragraphs: [
+          'At the start of each semester, list milestones met and your next target. Map assessment weights in each unit and protect high-value finals with the final grade calculator. After each results release, rerun the milestones checker — one strong 12-credit HD can unlock the next band quickly when total completed credit is still moderate.',
+          'If you are recovering from a fail or WN, milestones help sequence goals: stabilise pass margin first, then exchange floor, then distinction. Read failed unit wam monash or monash withdrawn fail wam if special grades affect your baseline.',
+          'For improvement tactics once you know your gap, follow how to improve wam at monash — milestones diagnose where you are; strategy articles explain how to move.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes When Using WAM Milestones',
+        paragraphs: [
+          'Treating 70 WAM as automatic honours entry — faculty cutoffs vary. Chasing HD milestone while below pass progression rules. Using a non-Monash simple average instead of official WAM from WES.',
+          'Ignoring remaining credit volume — a 2-point gap early in a degree needs a lower future average than the same gap with only 24 cp left. Comparing milestone progress with friends without matching credit totals.',
+          'Tools on this site support planning only. Faculty progression and awards use certified Monash results after results release.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What WAM is distinction at Monash?',
+        answer:
+          'Distinction average is commonly planned at 70+ WAM, aligning with many merit and GPA 3.0 benchmarks. Faculty rules may vary for specific awards.',
+      },
+      {
+        question: 'What WAM do I need for exchange at Monash?',
+        answer:
+          'Many exchange planning screens use roughly 60 WAM as a floor, but partner universities and faculties set their own requirements. Confirm with Monash Abroad and your faculty.',
+      },
+      {
+        question: 'What is a good HD milestone WAM?',
+        answer:
+          '80+ WAM is high distinction territory at Monash. Competitive merit stretch planning often uses 85+ as an aspirational band.',
+      },
+      {
+        question: 'How do I find my next WAM milestone?',
+        answer:
+          'Enter your current WAM in the WAM milestones checker — the first band above your WAM is labelled your next target.',
+      },
+      {
+        question: 'Can I still reach distinction if my WAM is 65?',
+        answer:
+          'Often yes, depending on completed and remaining credit points. Add remaining cp to the milestones checker to see the required future average.',
+      },
+      {
+        question: 'Are milestones the same as honours entry WAM?',
+        answer:
+          'No. Milestones are general planning bands. Honours entry uses faculty-specific cutoffs — read monash honours wam requirements for those rules.',
       },
     ],
   },
