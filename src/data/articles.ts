@@ -162,7 +162,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'What WAM Ranges Usually Mean',
         paragraphs: [
-          'Although exact interpretations can vary by institution, students often think in rough ranges: below 60 can indicate performance issues in some contexts, 60 to 69 can be considered solid credit-level progress, 70 to 79 is often seen as strong distinction territory, and 80 plus is usually high distinction territory. These bands are useful for self-checking but should never replace official policy interpretation. For honours-specific planning, read monash honours wam requirements alongside faculty handbooks; for scholarships, see monash scholarship wam requirements. Some opportunities care about trend performance over time, not just one semester average.',
+          'Although exact interpretations can vary by institution, students often think in rough ranges: below 60 can indicate performance issues in some contexts, 60 to 69 can be considered solid credit-level progress, 70 to 79 is often seen as strong distinction territory, and 80 plus is usually high distinction territory. For a full distinction average deep dive (WAM 70+ and GPA 3.0+), read monash distinction average. Honours-specific planning uses monash honours wam requirements alongside faculty handbooks; for scholarships, see monash scholarship wam requirements. Some opportunities care about trend performance over time, not just one semester average.',
           'Trend direction matters more than many students realize. If your WAM improves steadily over multiple terms, that progression can strengthen scholarship and employer confidence, especially when your transcript includes difficult technical units. Panels often appreciate consistency, resilience, and upward trajectory. This is why regular re-calculation after assessments is important. It gives you early visibility of whether you are trending up, flat, or down, and lets you adjust strategy before the semester ends.',
         ],
       },
@@ -2089,7 +2089,7 @@ export const articles: ArticleData[] = [
         paragraphs: [
           'Pass / progression floor (50+): minimum weighted performance for standard grade progression in most coursework contexts. Falling below this on WES signals urgent faculty advice. Credit bands (60–69) and distinction (70–79) sit between pass and HD; milestones focus on the thresholds students plan around most often.',
           'Exchange planning floor (60+): many Monash exchange and study-abroad screens expect a solid weighted average before approving applications — often cited around 60 WAM as a planning floor, though faculty and partner rules differ. Read monash exchange grades wam for how SFR credit works after you return.',
-          'Distinction average (70+): aligns with Monash distinction recognition on WAM and GPA 3.0 on the 4.0 scale for many merit contexts. Scholarships and dean\'s list planning often reference this band — see monash scholarship wam requirements and monash dean\'s honours list for faculty-specific nuance.',
+          'Distinction average (70+): aligns with Monash distinction recognition on WAM and GPA 3.0 on the 4.0 scale for many merit contexts. For how distinction average differs from HD and honours, read monash distinction average. Scholarships and dean\'s list planning often reference this band — see monash scholarship wam requirements and monash dean\'s honours list for faculty-specific nuance.',
           'High distinction territory (80+): competitive for top graduate roles, high merit scholarships, and strong honours narratives. Top merit stretch (85+): aspirational for faculty excellence awards and highly selective programs — not required for most degrees but useful as a stretch milestone.',
         ],
       },
@@ -2164,6 +2164,108 @@ export const articles: ArticleData[] = [
         question: 'Are milestones the same as honours entry WAM?',
         answer:
           'No. Milestones are general planning bands. Honours entry uses faculty-specific cutoffs — read monash honours wam requirements for those rules.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-distinction-average-guide',
+    keyword: 'monash distinction average',
+    title: 'Monash Distinction Average Explained (WAM 70+ & GPA 3.0, 2026)',
+    description:
+      'Monash distinction average explained: WAM 70+ or GPA 3.0+ benchmarks, how it differs from HD and honours, faculty awards, and free calculators to check your standing.',
+    featuredImage: '/article-images/featured-monash-distinction-average.webp',
+    featuredImageAlt:
+      'Monash university graduate on campus holding an academic transcript after achieving distinction-level results',
+    publishedAt: '2026-07-08',
+    updatedAt: '2026-07-08',
+    sections: [
+      {
+        heading: 'What Is Distinction Average at Monash?',
+        paragraphs: [
+          'Students searching monash distinction average usually want one clear benchmark: have I reached strong overall standing, and what does Monash call it? At Monash University, distinction average is widely used planning language for cumulative performance at distinction level — commonly WAM 70 or above, or GPA 3.0 or above on the official 4.0 GPA scale. It describes your whole course average, not a single unit graded D (70–79%).',
+          'Distinction average appears in faculty handbooks, merit certificates, dean\'s commendation tiers, scholarship renewal language, and employer-facing graduate profiles. It is not one universal award with identical rules in every faculty — some schemes use fixed WAM floors, others combine GPA and WAM, and percentile-based dean\'s lists are separate again. Treat this guide as a planning map; confirm live faculty policy for formal decisions.',
+          'This article focuses only on distinction average meaning and maths — not general WAM bands (see what is a good wam), honours degree entry cutoffs (monash honours wam requirements), or scholarship tiers (monash scholarship wam requirements). Use the distinction average calculator on this site to check your gap to WAM 70+ and GPA 3.0+ instantly.',
+        ],
+      },
+      {
+        heading: 'WAM 70+ vs GPA 3.0 — Which Metric Matters?',
+        paragraphs: [
+          'Monash reports both Weighted Average Mark (WAM) and GPA on many transcripts. WAM uses percentage marks with credit and year-level weighting. GPA converts letter results to grade values on the 4.0 scale (HD 4.0, D 3.0, C 2.0, P 1.0, fail 0.3, WN 0.0). Distinction average planning often cites WAM 70+ or GPA 3.0+ because they roughly align for steady distinction-level performance — but they are not mathematically identical on every transcript.',
+          'Example tension: many marks at 71–74 (distinction band) map to GPA 3.0, while a mix of high credits and fails can produce different WAM and GPA stories. Students applying overseas may need GPA format — read wam to gpa for band conversion, then report transcript GPA when the form asks for official grade points.',
+          'Workflow: pull WAM and GPA from WES (see monash wam transcript), enter both in the distinction average calculator, then model improvement with the WAM target calculator if you are below the floor.',
+        ],
+      },
+      {
+        heading: 'How Monash Calculates Whether You Meet Distinction Average',
+        paragraphs: [
+          'For WAM, Monash uses official weighted marks: sum(mark × credit points × year weight) ÷ sum(credit points × year weight), with Year 1 at 0.5 and later years at 1.0 — see monash year 1 wam weighting if your simple average differs from WES. Distinction average on WAM means your cumulative official WAM is at or above 70.',
+          'For GPA, cumulative GPA combines all certified units: sum(grade value × credit points) ÷ sum(credit points). Distinction average on GPA commonly means CGPA ≥ 3.0. Update after each semester with the Monash CGPA calculator guide. Failed units and repeats both count when they appear on your record — Monash does not drop first attempts from GPA maths.',
+          'Distinction average is a cumulative threshold. One HD unit does not qualify you if your overall WAM is still 68. Track after every results release with the Monash WAM calculator and distinction average checker together.',
+        ],
+      },
+      {
+        heading: 'Distinction Average vs HD, Honours, and Dean\'s List',
+        paragraphs: [
+          'High distinction (HD) is a per-unit grade band (typically 80+). Distinction average is a cumulative course benchmark (typically 70+ WAM overall). You can hold distinction average without every unit being HD, and you can score HD on a unit while still below distinction average if earlier semesters were weaker.',
+          'Honours degree classifications (H1, H2A, H2B) use WAM bands on honours-level study — H2A often starts around 70, H1 around 80 — but honours entry and honours course grades follow faculty rules distinct from general distinction average commendation. Read monash honours wam requirements for entry; use monash wam milestones to see where 70 and 80 sit on your current record.',
+          'Dean\'s Honours List and faculty excellence awards may require distinction average as a minimum plus percentile ranking within the graduating cohort — see monash dean\'s honours list. Employer screens may simply ask “distinction average?” on application forms — monash wam internship covers recruiter benchmarks.',
+        ],
+      },
+      {
+        heading: 'Worked Example: Gap to Distinction Average',
+        paragraphs: [
+          'Scenario A — already there: WAM 72.5, GPA 3.05 on WES. Distinction average calculator shows both metrics above floor. Next planning target might be HD territory (80+) via WAM milestones rather than distinction recovery.',
+          'Scenario B — close gap: WAM 68.0 after 120 credit points, 72 cp remaining. Required average on remaining units for WAM 70 ≈ (70×192 − 68×120) ÷ 72 ≈ 73.3%. Achievable with strong semesters but not automatic — use the WAM target calculator with your exact completed credit.',
+          'Scenario C — GPA path: CGPA 2.92 after 96 cp, planning 24 cp next semester. Required semester GPA for CGPA 3.0 ≈ (3.0×120 − 2.92×96) ÷ 24 ≈ 3.32 — distinction-level term performance needed. Model units in the Monash GPA calculator before enrolment changes.',
+        ],
+      },
+      {
+        heading: 'How to Reach or Maintain Distinction Average',
+        paragraphs: [
+          'If you are below 70 WAM, prioritise high-credit units where remaining assessment weight still allows strong marks — see how to improve wam at monash and monash credit points wam. Use the final grade calculator before exams on units that matter most to cumulative credit.',
+          'If you are at 70–72, maintenance matters: one weak 12-credit semester can drop you below distinction average because cumulative denominators are large but not immovable. Recompute monthly during the teaching period.',
+          'If you are recovering from a fail or WN, include all certified attempts in your baseline — read failed unit wam monash or monash withdrawn fail wam as relevant. Distinction recovery is multi-semester maths, not one exam fix.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes About Distinction Average',
+        paragraphs: [
+          'Confusing a D grade on one subject with distinction average overall. Assuming GPA 3.0 on a single semester equals distinction average on your transcript. Using a generic spreadsheet without Year 1 half weighting when comparing to WES WAM.',
+          'Treating distinction average as automatic honours entry or scholarship renewal — each program has extra rules. Reporting converted GPA from WAM alone on official forms without transcript backup.',
+          'Independent calculators on this site support planning only. Faculty awards and academic standing decisions use certified Monash results.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What WAM is distinction average at Monash?',
+        answer:
+          'Planning benchmarks commonly use cumulative WAM 70 or above. Confirm faculty award rules for your course year.',
+      },
+      {
+        question: 'What GPA is distinction average at Monash?',
+        answer:
+          'On the official 4.0 scale, cumulative GPA 3.0 or above is widely used as distinction average language alongside WAM 70+.',
+      },
+      {
+        question: 'Is distinction average the same as high distinction?',
+        answer:
+          'No. Distinction average is overall standing around 70+ WAM. HD is typically 80+ on individual units or high distinction territory overall.',
+      },
+      {
+        question: 'Does Year 1 half weighting affect distinction average?',
+        answer:
+          'Yes. Official WAM uses Year 1 units at 0.5 weight, which can change your cumulative WAM versus a simple average.',
+      },
+      {
+        question: 'Which calculator checks distinction average?',
+        answer:
+          'Use the Monash distinction average calculator on this site for WAM 70+ and GPA 3.0+ gap checks.',
+      },
+      {
+        question: 'Can I reach distinction average in my final year?',
+        answer:
+          'Depends on current WAM, completed credit, and remaining load. Enter remaining cp in the WAM target calculator to see required averages.',
       },
     ],
   },

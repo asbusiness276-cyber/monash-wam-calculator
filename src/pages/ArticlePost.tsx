@@ -16,6 +16,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'monash year 1 wam weighting', href: '/articles/monash-year-1-wam-weighting-guide' },
   { keyword: 'monash withdrawn fail wam', href: '/articles/monash-withdrawn-fail-wam-guide' },
   { keyword: 'monash wam milestones', href: '/articles/monash-wam-milestones-guide' },
+  { keyword: 'monash distinction average', href: '/articles/monash-distinction-average-guide' },
   { keyword: 'what is a good wam', href: '/articles/what-is-a-good-wam' },
   { keyword: 'how to improve wam at monash', href: '/articles/how-to-improve-wam-at-monash' },
   { keyword: 'monash honours wam requirements', href: '/articles/monash-honours-wam-requirements' },
