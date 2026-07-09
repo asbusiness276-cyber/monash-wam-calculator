@@ -171,7 +171,7 @@ export const articles: ArticleData[] = [
         paragraphs: [
           'Improving WAM is not just about studying longer. It is about placing effort where weighting impact is highest. High-weight assignments and final exams usually produce larger movement than small quizzes. Start each unit by mapping assessment weights and deadlines. Then decide where deep revision is needed and where maintenance study is enough. Students who plan effort by weighting tend to get stronger results than those who divide time equally regardless of impact.',
           'Use post-assessment reviews to improve performance quality. After each result, identify what lost marks: concept gaps, interpretation errors, structure issues, or time management. Then update your next study cycle with targeted fixes. This loop turns every assessment into a feedback engine. Over one semester, it can shift average performance significantly. A lot of WAM growth comes from reducing repeated mistakes, not from discovering completely new techniques.',
-          'Another powerful tactic is scenario planning. Use calculators to test outcomes for realistic, conservative, and stretch performance. Scenario modeling reduces anxiety because it replaces uncertainty with visible ranges. If your current path is below target, you can see exactly what future marks are required and where recovery is still possible. If your path is above target, you can protect performance with smarter workload balancing.',
+          'Another powerful tactic is scenario planning. Use calculators to test outcomes for realistic, conservative, and stretch performance — start with monash wam target to see the exact average required on remaining units. Scenario modeling reduces anxiety because it replaces uncertainty with visible ranges. If your current path is below target, you can see exactly what future marks are required and where recovery is still possible. If your path is above target, you can protect performance with smarter workload balancing.',
           'When you are ready to act on benchmarks, follow how to improve wam at monash for credit-weighted study plans, exam targets, and monthly recalculation habits tied to Monash assessment structures.',
         ],
       },
@@ -2222,7 +2222,7 @@ export const articles: ArticleData[] = [
       {
         heading: 'How to Reach or Maintain Distinction Average',
         paragraphs: [
-          'If you are below 70 WAM, prioritise high-credit units where remaining assessment weight still allows strong marks — see how to improve wam at monash and monash credit points wam. Use the final grade calculator before exams on units that matter most to cumulative credit.',
+          'If you are below 70 WAM, prioritise high-credit units where remaining assessment weight still allows strong marks — see how to improve wam at monash and monash credit points wam. Once you know your gap, use monash wam target to calculate the exact average needed on remaining credit before enrolment changes. Use the final grade calculator before exams on units that matter most to cumulative credit.',
           'If you are at 70–72, maintenance matters: one weak 12-credit semester can drop you below distinction average because cumulative denominators are large but not immovable. Recompute monthly during the teaching period.',
           'If you are recovering from a fail or WN, include all certified attempts in your baseline — read failed unit wam monash or monash withdrawn fail wam as relevant. Distinction recovery is multi-semester maths, not one exam fix.',
         ],
@@ -2266,6 +2266,108 @@ export const articles: ArticleData[] = [
         question: 'Can I reach distinction average in my final year?',
         answer:
           'Depends on current WAM, completed credit, and remaining load. Enter remaining cp in the WAM target calculator to see required averages.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-wam-target-guide',
+    keyword: 'monash wam target',
+    title: 'Monash WAM Target Calculator Guide (Required Average, 2026)',
+    description:
+      'Monash WAM target planning: formula for required average on remaining units, worked examples for distinction and HD goals, and free calculator to check if your target is achievable.',
+    featuredImage: '/article-images/featured-monash-wam-target.webp',
+    featuredImageAlt:
+      'Monash student planning a WAM target on a laptop with study notes and calculator at a campus desk',
+    publishedAt: '2026-07-09',
+    updatedAt: '2026-07-09',
+    sections: [
+      {
+        heading: 'What Is a WAM Target at Monash?',
+        paragraphs: [
+          'Students searching monash wam target usually have a number in mind — distinction (70), honours entry, scholarship renewal, or high distinction (80) — and one practical question: what average do I need on my remaining units to get there? A WAM target is not a wish; it is a maths problem tied to credit points you have already completed versus credit points still ahead of you.',
+          'Monash cumulative WAM on WES uses official weighting (credit points plus Year 1 at 0.5). This guide uses planning WAM from certified marks unless you model year level per unit in the Monash WAM calculator. The target formula answers: given my current WAM and completed credit, what mean mark on remaining enrolment hits my goal?',
+          'Pair this guide with the WAM target calculator on this site. For band context (pass, exchange, distinction, HD), read monash wam milestones. For distinction average meaning, see monash distinction average. For study tactics once you know the number, follow how to improve wam at monash.',
+        ],
+      },
+      {
+        heading: 'The WAM Target Formula',
+        paragraphs: [
+          'Required average on remaining units = (target WAM × total future credit − current WAM × completed credit) ÷ remaining credit. Here total future credit = completed credit + remaining credit. Current WAM × completed credit is your weighted marks so far; target WAM × total future credit is the weighted total you need at graduation.',
+          'Example: current WAM 68.0, 120 cp completed, 72 cp remaining, target 70. Total cp = 192. Required = (70×192 − 68×120) ÷ 72 = (13440 − 8160) ÷ 72 ≈ 73.33%. You need roughly distinction-level performance on remaining units — not just low passes.',
+          'If the result is above 100%, the target is not mathematically achievable on remaining credit without repeating units or changing course structure. If negative, your current WAM already meets or exceeds the target. The WAM target calculator returns these states automatically.',
+        ],
+      },
+      {
+        heading: 'Where to Get Inputs (WES First)',
+        paragraphs: [
+          'Current WAM: unofficial academic record in WES — see monash wam transcript for paths. Completed credit: sum certified credit points on your record (include fails unless excluded by policy). Remaining credit: planned enrolment from your course map — standard Monash bachelor awards are often 192 cp but double degrees differ.',
+          'Do not guess remaining credit from “two semesters left” without checking unit cp loads — a 24-cp final year behaves differently from 18 cp. After census changes, update remaining credit and rerun the calculator.',
+          'If your WES WAM uses official year weighting and your manual sheet does not, align inputs using the Monash WAM calculator with year level before target maths — read monash year 1 wam weighting when Year 1 units still dominate completed credit.',
+        ],
+      },
+      {
+        heading: 'Worked Examples for Common Targets',
+        paragraphs: [
+          'Target distinction 70 from WAM 65: 96 cp done, 96 cp left → required ≈ (70×192 − 65×96) ÷ 96 = (13440 − 6240) ÷ 96 ≈ 75%. Early-degree students with balanced remaining load often need mid–high distinction averages to lift cumulative WAM to 70.',
+          'Target HD 80 from WAM 76: 144 cp done, 48 cp left → required ≈ (80×192 − 76×144) ÷ 48 = (15360 − 10944) ÷ 48 ≈ 92%. Narrow remaining credit makes extreme targets possible but demanding.',
+          'Target maintain 72: if required average is negative, you are already above 72 — shift focus to protecting high-credit units rather than chasing more lift. Use the WAM what-if projection tool when modelling specific upcoming units instead of a single average assumption.',
+        ],
+      },
+      {
+        heading: 'WAM Target vs Milestones vs GPA Target',
+        paragraphs: [
+          'WAM milestones checker shows which bands you already meet and the required average for each preset band (50, 60, 70, 80, 85). WAM target calculator accepts any custom target — honours cutoff 75.5, scholarship 78, employer screen 70.',
+          'GPA targets use grade values, not percentage marks — for cumulative GPA goals use the Monash target GPA calculator and monash cgpa calculator guide. Converting a WAM target to GPA for forms is indirect; read wam to gpa for band estimates only.',
+          'Scholarship and honours articles publish typical WAM floors — monash scholarship wam requirements and monash honours wam requirements — then plug faculty numbers into the WAM target tool as your custom target.',
+        ],
+      },
+      {
+        heading: 'Planning Semesters After You Know the Number',
+        paragraphs: [
+          'Translate required average into unit-level plans: high-credit core units need more attention when your target requires 75%+. Use the final grade calculator on each unit before exams. After results, refresh current WAM and completed credit — targets move every release.',
+          'If required average is unrealistic (>85–90% with large remaining load), adjust the target or timeline: consider monash repeat unit wam scenarios, recovery after failed unit wam monash, or honours pathways with different entry years.',
+          'Model optimistic and conservative upcoming semesters in the WAM projection calculator — target maths assumes one flat average; real transcripts vary by unit.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes With WAM Targets',
+        paragraphs: [
+          'Using simple mean of marks instead of WES cumulative WAM. Forgetting fails in completed credit. Setting remaining credit to zero or only one semester when two years remain.',
+          'Treating a negative required average as “no work needed” — borderline targets still need protection on 12 cp units. Comparing required average to friends without matching completed and remaining credit.',
+          'Independent tools on MonashWAMCalculator.com support planning only. Faculty progression and award decisions use certified Monash results.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do I calculate required WAM on remaining units?',
+        answer:
+          'Use (target WAM × total cp − current WAM × completed cp) ÷ remaining cp. The WAM target calculator on this site automates the formula.',
+      },
+      {
+        question: 'What WAM target do I need for distinction average?',
+        answer:
+          'Distinction average is commonly WAM 70+. Enter 70 as your target with current WAM and credit points to see the required remaining average.',
+      },
+      {
+        question: 'What if required average is above 100%?',
+        answer:
+          'The target is not achievable on remaining credit alone at current standing. Adjust the goal, timeline, or recovery plan.',
+      },
+      {
+        question: 'Should I use official or planning WAM for targets?',
+        answer:
+          'Start from WES official WAM for certified planning. If you model year level per unit, use the Monash WAM calculator for aligned inputs.',
+      },
+      {
+        question: 'How often should I recalculate my WAM target?',
+        answer:
+          'After every results release and before census changes when remaining credit shifts.',
+      },
+      {
+        question: 'Which tool models specific upcoming units?',
+        answer:
+          'Use the WAM what-if projection calculator for unit-by-unit scenarios; use WAM target for one overall required average.',
       },
     ],
   },
