@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Mail, BookOpen, Calculator, ShieldCheck } from 'lucide-react';
+import AuthorAvatar from '../components/AuthorAvatar';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import { ARTICLE_AUTHOR } from '../constants/author';
@@ -113,9 +114,7 @@ export default function AboutUs() {
               Who We Are
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/40 text-xl font-bold text-primary-700 dark:text-primary-300">
-                {ARTICLE_AUTHOR.name.charAt(0)}
-              </div>
+              <AuthorAvatar size="lg" priority />
               <div className="min-w-0">
                 <p className="font-semibold text-gray-900 dark:text-white">{ARTICLE_AUTHOR.name}</p>
                 <p className="mt-2">{ARTICLE_AUTHOR.bio}</p>
