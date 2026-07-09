@@ -1,6 +1,8 @@
+import { Mail } from 'lucide-react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { ARTICLE_AUTHOR } from '../constants/author';
+import { absoluteUrl, INLINE_LINK_CLASS, SOCIAL_LINK_BUTTON_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
 const [writeContactPage, writeHomeCalc] = PAGE_KEYWORD_LINKS['/write-for-us'];
@@ -157,11 +159,12 @@ export default function WriteForUs() {
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">How to Contact Us</h2>
             <p>
-              Send your topic pitch, sample outline, and author profile to
-              {' '}
-              <a href="mailto:monashwamcalculator@gmail.com" className="text-primary-600 dark:text-primary-400 hover:underline">monashwamcalculator@gmail.com</a>.
-              {' '}
-              We review quality, relevance, originality, and policy compliance before approval.
+              Send your topic pitch, sample outline, and author profile via{' '}
+              <a href={`mailto:${ARTICLE_AUTHOR.email}`} className={SOCIAL_LINK_BUTTON_CLASS}>
+                <Mail size={16} className="shrink-0" aria-hidden />
+                Email
+              </a>
+              . We review quality, relevance, originality, and policy compliance before approval.
             </p>
             <p className="mt-2">
               You can also route submission queries through our{' '}

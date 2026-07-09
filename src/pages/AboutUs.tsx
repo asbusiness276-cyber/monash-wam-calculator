@@ -1,5 +1,6 @@
-import { Instagram, Linkedin, Mail, BookOpen, Calculator, ShieldCheck } from 'lucide-react';
+import { BookOpen, Calculator, ShieldCheck } from 'lucide-react';
 import AuthorAvatar from '../components/AuthorAvatar';
+import AuthorSocialLinks from '../components/AuthorSocialLinks';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
 import { ARTICLE_AUTHOR } from '../constants/author';
@@ -118,39 +119,7 @@ export default function AboutUs() {
               <div className="min-w-0">
                 <p className="font-semibold text-gray-900 dark:text-white">{ARTICLE_AUTHOR.name}</p>
                 <p className="mt-2">{ARTICLE_AUTHOR.bio}</p>
-                <ul className="mt-3 flex flex-wrap gap-3">
-                  <li>
-                    <a
-                      href={ARTICLE_AUTHOR.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-medium text-primary-600 dark:text-primary-400 hover:underline"
-                    >
-                      <Linkedin size={16} aria-hidden />
-                      LinkedIn
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={ARTICLE_AUTHOR.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-medium text-primary-600 dark:text-primary-400 hover:underline"
-                    >
-                      <Instagram size={16} aria-hidden />
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={`mailto:${ARTICLE_AUTHOR.email}`}
-                      className="inline-flex items-center gap-1.5 font-medium text-primary-600 dark:text-primary-400 hover:underline"
-                    >
-                      <Mail size={16} aria-hidden />
-                      {ARTICLE_AUTHOR.email}
-                    </a>
-                  </li>
-                </ul>
+                <AuthorSocialLinks className="mt-3" />
               </div>
             </div>
             <p className="mt-4 text-gray-600 dark:text-gray-400">

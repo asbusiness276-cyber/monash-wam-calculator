@@ -1,5 +1,5 @@
-import { Instagram, Linkedin, Mail } from 'lucide-react';
 import AuthorAvatar from './AuthorAvatar';
+import AuthorSocialLinks from './AuthorSocialLinks';
 import { ARTICLE_AUTHOR } from '../constants/author';
 
 export default function ArticleAuthorBio() {
@@ -20,39 +20,7 @@ export default function ArticleAuthorBio() {
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{ARTICLE_AUTHOR.bio}</p>
 
-          <ul className="mt-4 flex flex-wrap gap-3 text-sm">
-            <li>
-              <a
-                href={ARTICLE_AUTHOR.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-medium text-primary-600 dark:text-primary-400 hover:underline"
-              >
-                <Linkedin size={16} className="shrink-0" aria-hidden />
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href={ARTICLE_AUTHOR.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-medium text-primary-600 dark:text-primary-400 hover:underline"
-              >
-                <Instagram size={16} className="shrink-0" aria-hidden />
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${ARTICLE_AUTHOR.email}`}
-                className="inline-flex items-center gap-1.5 font-medium text-primary-600 dark:text-primary-400 hover:underline"
-              >
-                <Mail size={16} className="shrink-0" aria-hidden />
-                Email
-              </a>
-            </li>
-          </ul>
+          <AuthorSocialLinks className="mt-4" />
         </div>
       </div>
     </aside>

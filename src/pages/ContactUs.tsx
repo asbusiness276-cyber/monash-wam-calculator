@@ -1,9 +1,9 @@
+import { Mail } from 'lucide-react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import { ARTICLE_AUTHOR } from '../constants/author';
+import { absoluteUrl, INLINE_LINK_CLASS, SOCIAL_LINK_BUTTON_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
-
-const CONTACT_EMAIL = 'monashwamcalculator@gmail.com';
 
 const [contactPrivacy, contactHomeCalc] = PAGE_KEYWORD_LINKS['/contact-us'];
 
@@ -58,19 +58,14 @@ export default function ContactUs() {
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Email</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-            Reach us at{' '}
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="font-semibold text-primary-600 dark:text-primary-400 hover:underline"
-            >
-              {CONTACT_EMAIL}
-            </a>
+            Reach us by email — include the page URL and details so we can help quickly.
           </p>
           <a
-            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Monash WAM Calculator — Website enquiry')}`}
-            className="inline-flex items-center px-4 py-2.5 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-colors"
+            href={`mailto:${ARTICLE_AUTHOR.email}?subject=${encodeURIComponent('Monash WAM Calculator — Website enquiry')}`}
+            className={SOCIAL_LINK_BUTTON_CLASS}
           >
-            Send an email
+            <Mail size={16} className="shrink-0" aria-hidden />
+            Email
           </a>
         </div>
 
