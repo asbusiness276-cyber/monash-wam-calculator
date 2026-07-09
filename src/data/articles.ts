@@ -759,7 +759,7 @@ export const articles: ArticleData[] = [
         paragraphs: [
           'Step one: list each completed unit with mark and credit points. Step two: multiply each mark by its credit points. Step three: add all weighted values. Step four: add all credit points. Step five: divide weighted total by credit total. The result is your WAM. This method is easy to audit and helps catch data mistakes quickly.',
           'Example logic: if Unit A is 80 with 6 credits and Unit B is 70 with 12 credits, Unit B has greater influence due to larger credit weight despite lower mark. Students miss this often and assume each mark affects WAM equally. Working with explicit weighted steps makes impact visible and improves planning decisions for future semesters.',
-          'When estimating ongoing semester outcomes, run scenario calculations instead of one fixed number. Use conservative, expected, and stretch assumptions. This lets you understand best-case and risk-case pathways. Scenario planning is especially useful before finals, when one exam can significantly shift weighted outcomes.',
+          'When estimating ongoing semester outcomes, run scenario calculations instead of one fixed number. Use conservative, expected, and stretch assumptions. For one teaching period only, read monash semester wam and use the semester WAM calculator — cumulative degree WAM is a separate calculation. Scenario planning is especially useful before finals, when one exam can significantly shift weighted outcomes.',
         ],
       },
       {
@@ -2368,6 +2368,100 @@ export const articles: ArticleData[] = [
         question: 'Which tool models specific upcoming units?',
         answer:
           'Use the WAM what-if projection calculator for unit-by-unit scenarios; use WAM target for one overall required average.',
+      },
+    ],
+  },
+  {
+    slug: 'monash-semester-wam-guide',
+    keyword: 'monash semester wam',
+    title: 'Monash Semester WAM Calculator Guide (One Teaching Period, 2026)',
+    description:
+      'Monash semester WAM explained: how to calculate one teaching period average, difference from cumulative WAM on WES, worked examples, and free semester WAM calculator.',
+    featuredImage: '/article-images/featured-monash-semester-wam.webp',
+    featuredImageAlt:
+      'Monash student checking semester exam results on a laptop in a campus study lounge with notes and timetable',
+    publishedAt: '2026-07-09',
+    updatedAt: '2026-07-09',
+    sections: [
+      {
+        heading: 'What Is Semester WAM at Monash?',
+        paragraphs: [
+          'Students searching monash semester wam usually want one number after results release: how did I perform this teaching period only? Semester WAM (sometimes called a semester weighted average) is the credit-weighted mean of marks from units completed in a single semester or teaching period — for example Semester 1 2026 only — not your cumulative degree WAM shown on WES.',
+          'Your official cumulative WAM on your Monash transcript aggregates every certified unit across your course, with Year 1 half weighting in official maths. Semester WAM isolates one block of units so you can review whether that semester was strong, weak, or mixed before you plan the next enrolment. It is a planning metric students calculate themselves; WES headline WAM remains cumulative.',
+          'Use the semester WAM calculator on this site for instant results. For degree-wide WAM, use the Monash WAM calculator on the homepage. For how cumulative maths works, read how to calculate wam. For targets across remaining credit, see monash wam target.',
+        ],
+      },
+      {
+        heading: 'Semester WAM vs Cumulative WAM on WES',
+        paragraphs: [
+          'WES displays cumulative WAM — all completed units to date with official year-level weights. Semester WAM uses only units from one teaching period with credit weighting within that period. A strong semester (semester WAM 78) can nudge cumulative WAM only slightly if you already have 120+ credit points behind you; a weak semester early in your degree can move cumulative WAM more visibly.',
+          'Semester WAM does not replace transcript WAM for honours forms, scholarships, or employer screens that ask for overall WAM. It helps you diagnose performance: if semester WAM is 65 but cumulative is 72, earlier years carried you; if semester WAM is 80 but cumulative is 68, you are trending up and recovery is working.',
+          'After each results period, compare semester WAM from this calculator with the WAM change on WES. Read how to find wam on monash transcript for where official figures appear.',
+        ],
+      },
+      {
+        heading: 'How to Calculate Semester WAM',
+        paragraphs: [
+          'Formula for one teaching period: semester WAM = sum(mark × credit points) ÷ sum(credit points) for units in that semester only. Year-level 0.5 weighting applies to official cumulative WAM on WES, not usually to informal semester snapshots — students typically use plain credit weighting within the semester for clarity.',
+          'Step 1 — List units from one teaching period with final marks and cp. Step 2 — Multiply each mark by cp. Step 3 — Sum weighted marks and total cp. Step 4 — Divide. Example: three 6-cp units at 78, 72, 81 → (468+432+486) ÷ 18 = 76.67% semester WAM.',
+          'If a unit spans two teaching periods or you have summer/winter enrolment, group units by the results release you are reviewing — match how you think about “this semester” rather than calendar year alone.',
+        ],
+      },
+      {
+        heading: 'Worked Example: Strong vs Weak Semester',
+        paragraphs: [
+          'Semester A — four 6-cp units: 85, 82, 79, 77 → semester WAM ≈ 80.75% (HD territory for the period). If cumulative WAM before was 71, this semester lifts the degree average meaningfully when total completed credit is still moderate.',
+          'Semester B — two 12-cp units: 58, 62 → semester WAM = (696+744) ÷ 24 = 60% (credit band). High-credit units dominate — see monash credit points wam. Recovery might need monash wam target maths on remaining degree credit.',
+          'Run your own units in the semester WAM calculator instead of hand-calculating. Then add the same semester to the WAM what-if projection tool to see cumulative impact.',
+        ],
+      },
+      {
+        heading: 'When to Use Semester WAM in Planning',
+        paragraphs: [
+          'After results release: calculate semester WAM before enrolment opens for next term. If below your goal, adjust load or use how to improve wam at monash before census. If strong, protect momentum but avoid overconfidence on cumulative benchmarks — check monash wam milestones for degree-wide bands.',
+          'Before exams: semester WAM is not final until all units certify. Use final grade calculator per unit during the teaching period, then compute semester WAM when marks are official.',
+          'Scholarship renewal mid-degree: panels often review cumulative WAM, but semester trend matters — document improvement if cumulative is still below threshold.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes',
+        paragraphs: [
+          'Confusing semester WAM with WES cumulative WAM. Mixing units from two semesters in one calculation. Forgetting 12-cp units weigh double 6-cp units within the semester.',
+          'Using estimated marks without labelling them, then comparing to official cumulative WAM on WES. Applying Year 1 0.5 weight inside semester maths while comparing to a friend’s simple average — be consistent.',
+          'Tools on this site are for planning. Official progression uses certified Monash results.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is semester WAM at Monash?',
+        answer:
+          'Semester WAM is the credit-weighted average of marks from units in one teaching period only — not your cumulative degree WAM on WES.',
+      },
+      {
+        question: 'Is semester WAM on my Monash transcript?',
+        answer:
+          'WES shows cumulative WAM. Semester WAM is usually calculated yourself for one period using that semester’s unit marks.',
+      },
+      {
+        question: 'How is semester WAM different from cumulative WAM?',
+        answer:
+          'Cumulative WAM includes all certified units. Semester WAM includes only units from one semester or teaching period.',
+      },
+      {
+        question: 'Does Year 1 half weighting apply to semester WAM?',
+        answer:
+          'Informal semester snapshots typically use credit weighting only within the period. Official cumulative WAM on WES uses Year 1 at 0.5 weight.',
+      },
+      {
+        question: 'Which calculator should I use?',
+        answer:
+          'Use the semester WAM calculator for one teaching period. Use the homepage Monash WAM calculator for cumulative official-style WAM.',
+      },
+      {
+        question: 'When should I calculate semester WAM?',
+        answer:
+          'After results are certified for that teaching period, before planning next semester enrolment.',
       },
     ],
   },
