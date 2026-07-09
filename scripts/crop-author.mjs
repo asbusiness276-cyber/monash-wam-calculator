@@ -11,20 +11,14 @@ async function makePassportAvatar(input, outBase) {
   const meta = await sharp(input).metadata();
   const { width = 0, height = 0 } = meta;
 
-  const baseLeft = Math.round(width * 0.22);
-  const baseTop = Math.round(height * 0.08);
-  const baseSize = Math.min(width - baseLeft, height - baseTop, Math.round(Math.min(width, height) * 0.78));
-
-  // Subject sits lower-left inside the full-body frame; passport crop on head + shoulders.
-  const faceCenterX = baseLeft + Math.round(baseSize * 0.18);
-  const faceCenterY = baseTop + Math.round(baseSize * 0.72);
-  const cropSize = Math.round(baseSize * 0.44);
-  const left = Math.max(0, Math.min(faceCenterX - Math.round(cropSize / 2), width - cropSize));
-  const top = Math.max(0, Math.min(faceCenterY - Math.round(cropSize * 0.36), height - cropSize));
-
   const jpgPath = path.join(outDir, `${outBase}.jpg`);
   const webpPath = path.join(outDir, `${outBase}.webp`);
   const tmpPath = path.join(outDir, `${outBase}.tmp.jpg`);
+
+  // Waist-up portrait with subject centred: tight head-and-shoulders square crop.
+  const cropSize = Math.round(Math.min(width, height) * 0.62);
+  const left = Math.max(0, Math.round((width - cropSize) / 2));
+  const top = Math.round(height * 0.04);
 
   await sharp(input)
     .extract({ left, top, width: cropSize, height: cropSize })
@@ -36,11 +30,11 @@ async function makePassportAvatar(input, outBase) {
   await sharp(jpgPath).webp({ quality: 88 }).toFile(webpPath);
   await fs.unlink(tmpPath);
 
-  console.log(`Created ${outBase}: crop ${cropSize}px at (${left},${top})`);
+  console.log(`Created ${outBase}: ${width}x${height} -> ${cropSize}px square from top-centre`);
 }
 
 const source =
   process.argv[2] ||
-  'C:/Users/Hp/.cursor/projects/c-Users-Hp-monash-wam-calculator/assets/c__Users_Hp_AppData_Roaming_Cursor_User_workspaceStorage_empty-window_images_WhatsApp_Image_2026-07-09_at_11.06.05_AM-2b643035-6649-4e85-8d25-47a26a4a33ae.png';
+  'C:/Users/Hp/.cursor/projects/c-Users-Hp-monash-wam-calculator/assets/c__Users_Hp_AppData_Roaming_Cursor_User_workspaceStorage_empty-window_images_Author-Saahil-cb69636a-d468-400d-8741-2ddafaad1051.png';
 
 await makePassportAvatar(source, 'saahil');
