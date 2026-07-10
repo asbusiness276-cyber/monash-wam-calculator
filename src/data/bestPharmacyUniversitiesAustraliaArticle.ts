@@ -250,7 +250,7 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
       blocks: [
         {
           type: 'image',
-          src: 'https://www.griffith.edu.au/__data/assets/image/0006/950618/Griffith-University-Gold-Coast-campus.jpg',
+          src: 'https://static.wixstatic.com/media/1d86af_a4f1ea774d804913bf104412576cf17c~mv2.jpg/v1/fill/w_680,h_385,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.jpg',
           alt: 'Griffith University Gold Coast campus — pharmacy universities in Australia',
         },
         {
