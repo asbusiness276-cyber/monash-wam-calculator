@@ -81,6 +81,7 @@ const SLUG_TO_CATEGORY: Record<string, string> = {
   'monash-university-australia': 'pathways',
   'best-universities-in-australia': 'pathways',
   'best-pharmacy-universities-in-australia': 'pathways',
+  'best-universities-for-economics-in-australia': 'pathways',
   'monash-exchange-grades-wam-guide': 'pathways',
 };
 
@@ -94,6 +95,18 @@ export function getArticleCategory(slug: string): ArticleCategory {
 }
 
 export type ArticleCategoryGroup = ArticleCategory & { articles: ArticleData[] };
+
+export function getCategoryArticleNeighbors(slug: string, articleList: ArticleData[]) {
+  const categoryId = getArticleCategoryId(slug);
+  const inCategory = articleList.filter(article => getArticleCategoryId(article.slug) === categoryId);
+  const index = inCategory.findIndex(article => article.slug === slug);
+
+  return {
+    prev: index > 0 ? inCategory[index - 1] : undefined,
+    next: index >= 0 && index < inCategory.length - 1 ? inCategory[index + 1] : undefined,
+    related: inCategory.filter(article => article.slug !== slug).slice(0, 3),
+  };
+}
 
 export function groupArticlesByCategory(articleList: ArticleData[]): ArticleCategoryGroup[] {
   return ARTICLE_CATEGORIES.map(category => ({

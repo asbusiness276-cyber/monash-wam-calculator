@@ -1,4 +1,5 @@
 import { FaqItem } from '../components/Seo';
+import { bestEconomicsUniversitiesAustraliaArticle } from './bestEconomicsUniversitiesAustraliaArticle';
 import { bestPharmacyUniversitiesAustraliaArticle } from './bestPharmacyUniversitiesAustraliaArticle';
 import { bestUniversitiesAustraliaArticle } from './bestUniversitiesAustraliaArticle';
 
@@ -3027,6 +3028,7 @@ export const articles: ArticleData[] = [
   },
   bestUniversitiesAustraliaArticle,
   bestPharmacyUniversitiesAustraliaArticle,
+  bestEconomicsUniversitiesAustraliaArticle,
 ];
 
 export function getArticleImageAlt(

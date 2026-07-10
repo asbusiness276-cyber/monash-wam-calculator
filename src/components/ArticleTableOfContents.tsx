@@ -9,9 +9,26 @@ export interface ArticleTocItem {
 interface ArticleTableOfContentsProps {
   items: ArticleTocItem[];
   variant?: 'sidebar' | 'mobile';
+  categoryTitle?: string;
+  categoryPath?: string;
+  relatedLinks?: Array<{ title: string; href: string }>;
 }
 
-export default function ArticleTableOfContents({ items, variant = 'sidebar' }: ArticleTableOfContentsProps) {
+function shortenTocLabel(label: string): string {
+  const withoutNumber = label.replace(/^\d+\.\s*/, '');
+  if (withoutNumber.length <= 42) {
+    return withoutNumber || label;
+  }
+  return `${withoutNumber.slice(0, 39).trim()}…`;
+}
+
+export default function ArticleTableOfContents({
+  items,
+  variant = 'sidebar',
+  categoryTitle,
+  categoryPath,
+  relatedLinks = [],
+}: ArticleTableOfContentsProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? '');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -36,8 +53,8 @@ export default function ArticleTableOfContents({ items, variant = 'sidebar' }: A
         }
       },
       {
-        rootMargin: '-20% 0px -55% 0px',
-        threshold: [0, 0.25, 0.5, 1],
+        rootMargin: '-15% 0px -60% 0px',
+        threshold: [0, 0.15, 0.35, 0.6, 1],
       }
     );
 
@@ -73,13 +90,14 @@ export default function ArticleTableOfContents({ items, variant = 'sidebar' }: A
             <button
               type="button"
               onClick={() => scrollToId(item.id)}
+              title={item.label}
               className={`w-full text-left rounded-lg px-3 py-2 text-sm transition-colors ${
                 activeId === item.id
                   ? 'bg-primary-50 text-primary-700 font-semibold dark:bg-primary-900/30 dark:text-primary-300'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200'
               }`}
             >
-              {item.label}
+              {shortenTocLabel(item.label)}
             </button>
           </li>
         ))}
@@ -89,7 +107,7 @@ export default function ArticleTableOfContents({ items, variant = 'sidebar' }: A
 
   if (variant === 'mobile') {
     return (
-      <div className="xl:hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+      <div className="lg:hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
         <button
           type="button"
           className="w-full flex items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-gray-800 dark:text-gray-200"
@@ -109,19 +127,24 @@ export default function ArticleTableOfContents({ items, variant = 'sidebar' }: A
 
   return (
     <>
-      <aside className="hidden xl:block">
-        <div className="sticky top-24 space-y-4">
+      <aside className="hidden lg:block lg:sticky lg:top-24 lg:self-start">
+        <div className="space-y-4">
           <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-3">
               On this page
             </p>
-            <div className="max-h-[calc(100vh-12rem)] overflow-y-auto pr-1">{navList}</div>
+            <div className="max-h-[min(58vh,28rem)] overflow-y-auto pr-1 scroll-smooth">{navList}</div>
           </div>
 
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm space-y-2 text-sm">
+          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm space-y-3 text-sm">
             <a href="/articles" className="block text-primary-600 dark:text-primary-400 hover:underline">
               ← All articles
             </a>
+            {categoryPath && categoryTitle && (
+              <a href={categoryPath} className="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                {categoryTitle} category
+              </a>
+            )}
             <button
               type="button"
               onClick={() => scrollToId('article-faqs')}
@@ -129,6 +152,22 @@ export default function ArticleTableOfContents({ items, variant = 'sidebar' }: A
             >
               Jump to FAQs
             </button>
+            {relatedLinks.length > 0 && (
+              <div className="pt-2 border-t border-gray-100 dark:border-gray-700 space-y-2">
+                <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                  Related guides
+                </p>
+                {relatedLinks.map(link => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 leading-snug"
+                  >
+                    {link.title}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {showBackToTop && (
@@ -149,7 +188,7 @@ export default function ArticleTableOfContents({ items, variant = 'sidebar' }: A
           type="button"
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="xl:hidden fixed bottom-5 right-5 z-40 inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-colors"
+          className="lg:hidden fixed bottom-5 right-5 z-40 inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-colors"
         >
           <ArrowUp size={18} />
         </button>

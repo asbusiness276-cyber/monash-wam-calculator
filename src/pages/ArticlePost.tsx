@@ -2,13 +2,15 @@ import { useMemo } from 'react';
 import Seo from '../components/Seo';
 import ArticleAuthorBio from '../components/ArticleAuthorBio';
 import ArticleContentBlocks from '../components/ArticleContentBlocks';
+import ArticleEndNavigation from '../components/ArticleEndNavigation';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
+import ArticleReadingProgress from '../components/ArticleReadingProgress';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import ArticleTableOfContents from '../components/ArticleTableOfContents';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
-import { getArticleBySlug, getArticleImageAlt } from '../data/articles';
-import { getArticleCategory, getArticleCategoryPath } from '../data/articleCategories';
+import { articles, getArticleBySlug, getArticleImageAlt } from '../data/articles';
+import { getArticleCategory, getArticleCategoryPath, getCategoryArticleNeighbors } from '../data/articleCategories';
 import { slugifyArticleHeading } from '../utils/articleHeading';
 
 interface ArticlePostProps {
@@ -53,6 +55,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'how to convert wam from one university to another', href: '/articles/how-to-convert-wam-from-one-university-to-another' },
   { keyword: 'best universities in australia', href: '/articles/best-universities-in-australia' },
   { keyword: 'best pharmacy universities in australia', href: '/articles/best-pharmacy-universities-in-australia' },
+  { keyword: 'best universities for economics in australia', href: '/articles/best-universities-for-economics-in-australia' },
   { keyword: 'monash university australia', href: '/articles/monash-university-australia' },
 ];
 
@@ -133,9 +136,20 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
   const linkedCountRef = { value: 0 };
   const category = getArticleCategory(article.slug);
   const featuredImageAlt = getArticleImageAlt(article);
+  const categoryPath = getArticleCategoryPath(category.id);
+  const neighbors = useMemo(() => getCategoryArticleNeighbors(slug, articles), [slug]);
+  const sidebarRelatedLinks = useMemo(
+    () =>
+      neighbors.related.map(item => ({
+        title: item.title,
+        href: `/articles/${item.slug}`,
+      })),
+    [neighbors.related]
+  );
 
   return (
     <>
+      <ArticleReadingProgress />
       <Seo
         title={`${article.title} | Monash WAM Calculator`}
         description={article.description}
@@ -173,9 +187,9 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           </figure>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_280px] gap-8 xl:gap-10 items-start">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_272px] gap-8 lg:gap-10 items-start">
           <div className="min-w-0 max-w-4xl">
-            <div className="mb-6">
+            <div className="mb-6 lg:hidden">
               <ArticleTableOfContents items={tocItems} variant="mobile" />
             </div>
 
@@ -226,9 +240,21 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
             <div id="article-faqs" className="scroll-mt-28">
               <ArticleRelatedTools faqs={article.faqs} />
             </div>
+
+            <ArticleEndNavigation
+              prevArticle={neighbors.prev}
+              nextArticle={neighbors.next}
+              relatedArticles={neighbors.related}
+            />
           </div>
 
-          <ArticleTableOfContents items={tocItems} variant="sidebar" />
+          <ArticleTableOfContents
+            items={tocItems}
+            variant="sidebar"
+            categoryTitle={category.title}
+            categoryPath={categoryPath}
+            relatedLinks={sidebarRelatedLinks}
+          />
         </div>
       </article>
     </>
