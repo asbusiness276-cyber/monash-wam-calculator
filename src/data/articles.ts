@@ -2465,6 +2465,108 @@ export const articles: ArticleData[] = [
       },
     ],
   },
+  {
+    slug: 'monash-wam-projection-guide',
+    keyword: 'monash wam projection',
+    title: 'Monash WAM Projection Guide (What-If Scenarios, 2026)',
+    description:
+      'Monash WAM projection explained: credit-weighted what-if formula, worked examples with upcoming units, difference from WAM target, and free projection calculator.',
+    featuredImage: '/article-images/featured-monash-wam-projection.webp',
+    featuredImageAlt:
+      'Monash student planning WAM what-if scenarios on a laptop with study notes and percentage estimates at a campus desk',
+    publishedAt: '2026-07-10',
+    updatedAt: '2026-07-10',
+    sections: [
+      {
+        heading: 'What Is WAM Projection at Monash?',
+        paragraphs: [
+          'Students searching monash wam projection usually want a forward-looking answer: if my next units finish at these marks, what will my cumulative WAM become? WAM projection is what-if planning — you keep your certified WAM and completed credit points fixed, add upcoming units with expected marks, and calculate the new weighted average.',
+          'This is different from your semester WAM (one teaching period only) and different from a WAM target (working backwards from a goal). Projection answers: “I think I will score 78, 72, and 85 on these enrolled units — where does that leave my degree WAM?” Use the WAM projection calculator on this site for instant results.',
+          'For semester-only averages after results, read monash semester wam. For required averages to hit distinction or honours cutoffs, read monash wam target. For band labels once you have a number, see monash wam milestones.',
+        ],
+      },
+      {
+        heading: 'The WAM Projection Formula',
+        paragraphs: [
+          'Projected WAM = (current WAM × completed cp + Σ upcoming mark × cp) ÷ (completed cp + upcoming cp). Each upcoming unit contributes mark × credit points to the numerator; total credit points grow in the denominator. That is standard credit-weighted planning maths — the same structure Monash WAM uses before year-level weighting adjustments.',
+          'Example: current WAM 72.00 on 96 cp. Upcoming units: 80% (6 cp), 75% (6 cp), 85% (12 cp). Weighted total = 72×96 + 80×6 + 75×6 + 85×12 = 6912 + 480 + 450 + 1020 = 8862. Total cp = 120. Projected WAM = 8862 ÷ 120 = 73.85% — a +1.85 lift because upcoming marks average above 72.',
+          'The calculator also shows delta (change from current WAM), upcoming credit points, and total cp after the scenario. Re-run whenever you adjust expected marks — one weak 12-credit row often moves the projection more than two 6-credit electives.',
+        ],
+      },
+      {
+        heading: 'Where to Get Inputs (WES First)',
+        paragraphs: [
+          'Current WAM: unofficial academic record in WES — see monash wam transcript for navigation. Completed credit points: sum certified cp on your record before adding upcoming rows. Do not double-count units you are modelling as upcoming.',
+          'Expected marks: use mid-semester coursework averages, practice exam performance, or conservative vs optimistic bands — but label them as projections, not official results. After results release, replace estimates with certified marks in the Monash WAM calculator.',
+          'Credit points per unit: check the handbook or WES enrolment (6 cp vs 12 cp changes impact). For why weighting matters, read monash credit points wam. Official Monash WAM on WES may also apply Year 1 at 0.5 level weighting — read monash year 1 wam weighting when early-year units still dominate completed credit.',
+        ],
+      },
+      {
+        heading: 'Worked Scenarios: Conservative vs Optimistic',
+        paragraphs: [
+          'Conservative semester: WAM 68 on 120 cp, upcoming four units all modelled at 65% (6+6+6+12 cp). Upcoming weighted = 65×30 = 1950. Projected = (68×120 + 1950) ÷ 150 = (8160+1950)÷150 = 67.40% — slight drop because expected marks sit below current WAM.',
+          'Optimistic capstone: WAM 71 on 168 cp, one remaining 12-credit unit at 85%. Projected = (71×168 + 85×12) ÷ 180 = (11928+1020)÷180 = 71.93% — a strong finish lifts WAM modestly when most credit is already behind you.',
+          'Mixed load: model each unit separately rather than one flat average. If you are unsure on a core unit, run two rows (70% and 80%) by duplicating the scenario offline — the projection tool shows how sensitive your cumulative WAM is to that subject.',
+        ],
+      },
+      {
+        heading: 'Projection vs Target vs Semester WAM',
+        paragraphs: [
+          'WAM target calculator: you enter a goal WAM and remaining credit — it returns the average you need on all future units. Use when honours, scholarships, or distinction average is the question. WAM projection: you enter expected marks per unit — it returns the resulting WAM. Use when enrolment is set and you are estimating outcomes.',
+          'Semester WAM calculator: one teaching period only, no cumulative blending. After semester results, you can take that semester average and model how it blends into cumulative WAM using projection with all units from that semester as upcoming rows (before they appear on WES).',
+          'Milestones checker maps projected or current WAM to pass, credit, distinction, HD, and merit bands. GPA planning uses grade points — for forms requiring GPA, read monash cgpa calculator and wam to gpa after you settle on a projected WAM.',
+        ],
+      },
+      {
+        heading: 'Planning Across Multiple Semesters',
+        paragraphs: [
+          'Add every unit you want in the scenario — the tool supports multiple rows until you reach the credit total you are modelling. Students planning two semesters ahead often run a conservative scenario (credit-level marks on hard cores) and an optimistic scenario (distinction on electives) before census.',
+          'After each results release: (1) update current WAM and completed cp from WES; (2) remove certified units from upcoming rows; (3) add the next semester enrolment. Pair with how to improve wam at monash for study tactics when projection shows you below a scholarship or honours line.',
+          'If projection drops after modelling a likely fail, read failed unit wam monash and monash supplementary exam wam before assuming recovery paths. Projection is planning maths — faculty progression rules stay on Monash official channels.',
+        ],
+      },
+      {
+        heading: 'Common Mistakes With WAM Projection',
+        paragraphs: [
+          'Using hoped-for HD marks on every row when coursework already shows credit-level performance — projections should be evidence-based. Forgetting that 12-credit units move WAM more than 6-credit electives at the same percentage.',
+          'Mixing semester WAM with cumulative WAM as the starting point. Counting the same unit in both completed cp and upcoming rows. Ignoring year-level weighting when comparing projection output to WES headline WAM.',
+          'Treating projection as certified — employers and faculties use transcript WAM only. Tools on MonashWAMCalculator.com support student planning; verify official numbers on WES before formal submissions.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'How do I project my WAM at Monash?',
+        answer:
+          'Enter current WAM, completed credit points, and each upcoming unit with expected mark and cp. Projected WAM = (current WAM × completed cp + Σ mark × cp) ÷ total cp.',
+      },
+      {
+        question: 'What is the difference between WAM projection and WAM target?',
+        answer:
+          'Projection works forwards from expected marks. Target works backwards from a goal WAM to show the average you need on remaining units.',
+      },
+      {
+        question: 'Can I model more than one semester?',
+        answer:
+          'Yes. Add all upcoming units in the scenario until you reach the credit total you want to model.',
+      },
+      {
+        question: 'Where do I get current WAM and completed credit points?',
+        answer:
+          'Use WES unofficial academic record or your transcript. See the monash wam transcript guide for step-by-step paths.',
+      },
+      {
+        question: 'Will projected WAM match WES exactly?',
+        answer:
+          'It should be close for planning when inputs are correct, but official WAM applies year-level weighting and faculty rules. Always verify on WES.',
+      },
+      {
+        question: 'When should I recalculate my projection?',
+        answer:
+          'After mid-semester marks, before census changes, and after every official results release when you update your baseline WAM.',
+      },
+    ],
+  },
 ];
 
 export function getArticleBySlug(slug: string): ArticleData | undefined {

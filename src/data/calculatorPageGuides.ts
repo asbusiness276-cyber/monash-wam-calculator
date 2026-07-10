@@ -363,7 +363,7 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'Compare projection results with WAM target goals for honours or scholarships.',
         ],
         paragraphs: [
-          'Label estimated marks clearly — only confirmed transcript marks belong in official planning documents. Update projections after every results release.',
+          'Label estimated marks clearly — only confirmed transcript marks belong in official planning documents. Update projections after every results release. For a full walkthrough with worked examples, read the monash wam projection guide.',
         ],
       },
     ],

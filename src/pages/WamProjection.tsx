@@ -100,6 +100,10 @@ export default function WamProjection() {
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             For semester-by-semester improvement strategies, read{' '}
+            <a href="/articles/monash-wam-projection-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
+              monash wam projection
+            </a>
+            ,{' '}
             <a href="/articles/how-to-improve-wam-at-monash" className="text-primary-600 dark:text-primary-400 hover:underline">
               how to improve WAM at Monash
             </a>{' '}

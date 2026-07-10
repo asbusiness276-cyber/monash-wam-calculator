@@ -47,7 +47,7 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
   ],
   '/wam-projection-calculator': [
     { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'WAM target calculator', path: '/wam-target-calculator' },
+    { keyword: 'monash wam projection guide', path: '/articles/monash-wam-projection-guide' },
   ],
   '/unit-target-calculator': [
     { keyword: 'unit mark calculator', path: '/unit-mark-calculator' },
