@@ -52,6 +52,7 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'Monash WAM calculator', href: '/' },
   { keyword: 'how to convert wam from one university to another', href: '/articles/how-to-convert-wam-from-one-university-to-another' },
   { keyword: 'best universities in australia', href: '/articles/best-universities-in-australia' },
+  { keyword: 'best pharmacy universities in australia', href: '/articles/best-pharmacy-universities-in-australia' },
   { keyword: 'monash university australia', href: '/articles/monash-university-australia' },
 ];
 
