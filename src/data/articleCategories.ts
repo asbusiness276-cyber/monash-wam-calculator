@@ -79,6 +79,7 @@ const SLUG_TO_CATEGORY: Record<string, string> = {
   'monash-withdrawn-fail-wam-guide': 'recovery-exams',
   'monash-final-exam-mark-calculator-guide': 'recovery-exams',
   'monash-university-australia': 'pathways',
+  'best-universities-in-australia': 'pathways',
   'monash-exchange-grades-wam-guide': 'pathways',
 };
 

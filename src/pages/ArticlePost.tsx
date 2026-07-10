@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import Seo from '../components/Seo';
 import ArticleAuthorBio from '../components/ArticleAuthorBio';
+import ArticleContentBlocks from '../components/ArticleContentBlocks';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import { ARTICLE_AUTHOR } from '../constants/author';
@@ -48,6 +49,8 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'wam calculator monash', href: '/' },
   { keyword: 'Monash WAM calculator', href: '/' },
   { keyword: 'how to convert wam from one university to another', href: '/articles/how-to-convert-wam-from-one-university-to-another' },
+  { keyword: 'best universities in australia', href: '/articles/best-universities-in-australia' },
+  { keyword: 'monash university australia', href: '/articles/monash-university-australia' },
 ];
 
 function renderKeywordLinkedParagraph(
@@ -152,15 +155,31 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           <ArticleFeaturedImage article={article} priority className="w-full aspect-video object-cover block" />
         </figure>
 
-        <div className="mt-6 space-y-6">
+        <div className="mt-6 space-y-8">
           {article.sections.map(section => (
             <section key={section.heading}>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{section.heading}</h2>
-              <div className="mt-3 space-y-4 text-gray-700 dark:text-gray-300 leading-8">
-                {section.paragraphs.map((paragraph, index) => (
-                  <p key={index}>{renderKeywordLinkedParagraph(paragraph, internalLinks, linkedCountRef, 2)}</p>
-                ))}
-              </div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                {section.headingLink ? (
+                  <a
+                    href={section.headingLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
+                  >
+                    {section.heading}
+                  </a>
+                ) : (
+                  section.heading
+                )}
+              </h2>
+              {section.blocks && <div className="mt-4"><ArticleContentBlocks blocks={section.blocks} /></div>}
+              {section.paragraphs && (
+                <div className={`space-y-4 text-gray-700 dark:text-gray-300 leading-8 ${section.blocks ? 'mt-4' : 'mt-3'}`}>
+                  {section.paragraphs.map((paragraph, index) => (
+                    <p key={index}>{renderKeywordLinkedParagraph(paragraph, internalLinks, linkedCountRef, 2)}</p>
+                  ))}
+                </div>
+              )}
             </section>
           ))}
         </div>

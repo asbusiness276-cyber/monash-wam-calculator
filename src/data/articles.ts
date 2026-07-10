@@ -1,4 +1,19 @@
 import { FaqItem } from '../components/Seo';
+import { bestUniversitiesAustraliaArticle } from './bestUniversitiesAustraliaArticle';
+
+export type ArticleContentBlock =
+  | { type: 'paragraph'; text: string }
+  | { type: 'quote'; text: string; attribution?: string }
+  | { type: 'image'; src: string; alt: string }
+  | { type: 'facts'; title?: string; items: string[] }
+  | { type: 'table'; caption?: string; headers: string[]; rows: string[][] };
+
+export interface ArticleSection {
+  heading: string;
+  headingLink?: string;
+  paragraphs?: string[];
+  blocks?: ArticleContentBlock[];
+}
 
 export interface ArticleData {
   slug: string;
@@ -17,7 +32,7 @@ export interface ArticleData {
   featuredImageAlt: string;
   publishedAt: string;
   updatedAt: string;
-  sections: Array<{ heading: string; paragraphs: string[] }>;
+  sections: ArticleSection[];
   faqs: FaqItem[];
 }
 
@@ -3009,6 +3024,7 @@ export const articles: ArticleData[] = [
       },
     ],
   },
+  bestUniversitiesAustraliaArticle,
 ];
 
 export function getArticleImageAlt(
