@@ -30,8 +30,8 @@ export const bestUniversitiesAustraliaArticle: ArticleData = {
       blocks: [
         {
           type: 'image',
-          src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Monash_University_Clgtn1.jpg/1280px-Monash_University_Clgtn1.jpg',
-          alt: 'Monash University Clayton campus buildings and lawns — best universities in Australia guide',
+          src: 'https://manoa.hawaii.edu/mix/wp-content/uploads/2017/11/1SM_3974cm-2000x1000.jpg',
+          alt: 'Monash University campus buildings and study environment — best universities in Australia guide',
         },
         {
           type: 'quote',

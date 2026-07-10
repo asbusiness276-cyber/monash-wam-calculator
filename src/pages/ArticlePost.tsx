@@ -4,10 +4,12 @@ import ArticleAuthorBio from '../components/ArticleAuthorBio';
 import ArticleContentBlocks from '../components/ArticleContentBlocks';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
+import ArticleTableOfContents from '../components/ArticleTableOfContents';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug, getArticleImageAlt } from '../data/articles';
 import { getArticleCategory, getArticleCategoryPath } from '../data/articleCategories';
+import { slugifyArticleHeading } from '../utils/articleHeading';
 
 interface ArticlePostProps {
   slug: string;
@@ -101,6 +103,19 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
     () => keywordInternalLinks.filter(item => item.href !== `/articles/${slug}`).slice(0, 2),
     [slug]
   );
+  const tocItems = useMemo(
+    () =>
+      article
+        ? [
+            ...article.sections.map(section => ({
+              id: slugifyArticleHeading(section.heading),
+              label: section.heading,
+            })),
+            { id: 'article-faqs', label: 'FAQs' },
+          ]
+        : [],
+    [article]
+  );
 
   if (!article) {
     return (
@@ -135,58 +150,85 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           keywords: [article.keyword, 'Monash WAM calculator', 'WAM', 'GPA conversion'],
         }}
       />
-      <article className="max-w-4xl mx-auto px-4 pt-6 md:pt-8 pb-8 md:pb-10">
-        <a href="/articles" className="inline-flex text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
-          ← Back to articles
-        </a>
-        <a
-          href={getArticleCategoryPath(category.id)}
-          className="mt-5 inline-block text-xs font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400 hover:underline"
-        >
-          {category.title}
-        </a>
-        <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">{article.keyword}</p>
-        <h1 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{article.title}</h1>
-        <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-          Published {article.publishedAt} • Updated {article.updatedAt}
-        </p>
+      <article className="max-w-7xl mx-auto px-4 pt-6 md:pt-8 pb-8 md:pb-10">
+        <div className="max-w-4xl">
+          <a href="/articles" className="inline-flex text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
+            ← Back to articles
+          </a>
+          <a
+            href={getArticleCategoryPath(category.id)}
+            className="mt-5 inline-block text-xs font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400 hover:underline"
+          >
+            {category.title}
+          </a>
+          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">{article.keyword}</p>
+          <h1 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{article.title}</h1>
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+            Published {article.publishedAt} • Updated {article.updatedAt}
+          </p>
 
-        <figure className="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-900">
-          <ArticleFeaturedImage article={article} priority className="w-full aspect-video object-cover block" />
-        </figure>
-
-        <div className="mt-6 space-y-8">
-          {article.sections.map(section => (
-            <section key={section.heading}>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                {section.headingLink ? (
-                  <a
-                    href={section.headingLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
-                  >
-                    {section.heading}
-                  </a>
-                ) : (
-                  section.heading
-                )}
-              </h2>
-              {section.blocks && <div className="mt-4"><ArticleContentBlocks blocks={section.blocks} /></div>}
-              {section.paragraphs && (
-                <div className={`space-y-4 text-gray-700 dark:text-gray-300 leading-8 ${section.blocks ? 'mt-4' : 'mt-3'}`}>
-                  {section.paragraphs.map((paragraph, index) => (
-                    <p key={index}>{renderKeywordLinkedParagraph(paragraph, internalLinks, linkedCountRef, 2)}</p>
-                  ))}
-                </div>
-              )}
-            </section>
-          ))}
+          <figure className="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-900">
+            <ArticleFeaturedImage article={article} priority className="w-full aspect-video object-cover block" />
+          </figure>
         </div>
 
-        <ArticleAuthorBio />
+        <div className="mt-6 grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_280px] gap-8 xl:gap-10 items-start">
+          <div className="min-w-0 max-w-4xl">
+            <div className="mb-6">
+              <ArticleTableOfContents items={tocItems} variant="mobile" />
+            </div>
 
-        <ArticleRelatedTools faqs={article.faqs} />
+            <div className="space-y-8">
+              {article.sections.map(section => {
+                const sectionId = slugifyArticleHeading(section.heading);
+                return (
+                  <section key={section.heading} id={sectionId} className="scroll-mt-28">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      {section.headingLink ? (
+                        <a
+                          href={section.headingLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
+                        >
+                          {section.heading}
+                        </a>
+                      ) : (
+                        section.heading
+                      )}
+                    </h2>
+                    {section.blocks && (
+                      <div className="mt-4">
+                        <ArticleContentBlocks blocks={section.blocks} />
+                      </div>
+                    )}
+                    {section.paragraphs && (
+                      <div
+                        className={`space-y-4 text-gray-700 dark:text-gray-300 leading-8 ${
+                          section.blocks ? 'mt-4' : 'mt-3'
+                        }`}
+                      >
+                        {section.paragraphs.map((paragraph, index) => (
+                          <p key={index}>
+                            {renderKeywordLinkedParagraph(paragraph, internalLinks, linkedCountRef, 2)}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+                  </section>
+                );
+              })}
+            </div>
+
+            <ArticleAuthorBio />
+
+            <div id="article-faqs" className="scroll-mt-28">
+              <ArticleRelatedTools faqs={article.faqs} />
+            </div>
+          </div>
+
+          <ArticleTableOfContents items={tocItems} variant="sidebar" />
+        </div>
       </article>
     </>
   );
