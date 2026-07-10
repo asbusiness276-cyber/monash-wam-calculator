@@ -2,7 +2,7 @@ import Seo from '../components/Seo';
 import ArticleGridCard from '../components/ArticleGridCard';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { articles } from '../data/articles';
-import { ARTICLE_CATEGORIES, groupArticlesByCategory } from '../data/articleCategories';
+import { ARTICLE_CATEGORIES, getArticleCategoryPath, groupArticlesByCategory } from '../data/articleCategories';
 import { CALCULATOR_COUNT } from '../data/calculatorCatalog';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
@@ -37,7 +37,7 @@ export default function Articles() {
           {ARTICLE_CATEGORIES.map(category => (
             <a
               key={category.id}
-              href={`#${category.id}`}
+              href={getArticleCategoryPath(category.id)}
               className="inline-block rounded-full border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-300 hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               {category.title}
@@ -47,7 +47,7 @@ export default function Articles() {
 
         <div className="mt-8 space-y-12">
           {groupedArticles.map(group => (
-            <section key={group.id} id={group.id} className="scroll-mt-24">
+            <section key={group.id} className="scroll-mt-24">
               <div className="mb-5">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{group.title}</h2>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-2xl">{group.description}</p>

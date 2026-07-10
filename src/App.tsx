@@ -20,6 +20,7 @@ import NotFound from './pages/NotFound';
 import ContactUs from './pages/ContactUs';
 import Articles from './pages/Articles';
 import ArticlePost from './pages/ArticlePost';
+import ArticleCategory from './pages/ArticleCategory';
 import EmbedWamToGpa from './pages/EmbedWamToGpa';
 import EmbedMonashWam from './pages/EmbedMonashWam';
 import WriteForUs from './pages/WriteForUs';
@@ -111,6 +112,10 @@ function getPage(path: string) {
   if (path === '/high-school-gpa-calculator') return <HighSchoolGpa />;
   if (path === '/10-point-gpa-to-wam-calculator') return <Gpa10ToWam />;
   if (path === '/articles') return <Articles />;
+  if (path.startsWith('/articles/category/')) {
+    const categoryId = path.replace('/articles/category/', '');
+    return <ArticleCategory categoryId={categoryId} />;
+  }
   if (path.startsWith('/articles/')) {
     const slug = path.replace('/articles/', '');
     return <ArticlePost slug={slug} />;

@@ -39,6 +39,14 @@ export const ARTICLE_CATEGORIES: ArticleCategory[] = [
   },
 ];
 
+export function getArticleCategoryPath(categoryId: string): string {
+  return `/articles/category/${categoryId}`;
+}
+
+export function getArticleCategoryById(categoryId: string): ArticleCategory | undefined {
+  return ARTICLE_CATEGORIES.find(category => category.id === categoryId);
+}
+
 const SLUG_TO_CATEGORY: Record<string, string> = {
   'how-to-calculate-wam': 'wam-fundamentals',
   'how-to-find-wam-on-monash-transcript': 'wam-fundamentals',

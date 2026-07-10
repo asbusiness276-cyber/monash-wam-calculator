@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Calculator, ChevronDown } from 'lucide-react';
-import { ARTICLE_CATEGORIES } from '../data/articleCategories';
+import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_CATEGORIES, CALCULATOR_COUNT } from '../data/calculatorCatalog';
 
 export default function Footer() {
@@ -102,7 +102,7 @@ export default function Footer() {
                     </li>
                     {ARTICLE_CATEGORIES.map(category => (
                       <li key={category.id}>
-                        <a href={`/articles#${category.id}`} className="hover:text-white transition-colors">
+                        <a href={getArticleCategoryPath(category.id)} className="hover:text-white transition-colors">
                           {category.title}
                         </a>
                       </li>

@@ -1,5 +1,5 @@
 import type { ArticleData } from '../data/articles';
-import { getArticleCategory } from '../data/articleCategories';
+import { getArticleCategory, getArticleCategoryPath } from '../data/articleCategories';
 import ArticleFeaturedImage from './ArticleFeaturedImage';
 
 interface ArticleGridCardProps {
@@ -20,13 +20,14 @@ export default function ArticleGridCard({ article, compact = false }: ArticleGri
       <div
         className={`flex min-h-0 flex-1 flex-col ${compact ? 'p-4' : 'p-5'}`}
       >
-        <p
+        <a
+          href={getArticleCategoryPath(category.id)}
           className={`shrink-0 overflow-hidden font-semibold uppercase leading-snug text-primary-600 line-clamp-1 dark:text-primary-400 ${
             compact ? 'text-[10px] tracking-wide' : 'text-xs tracking-wide'
-          }`}
+          } hover:underline`}
         >
           {category.title}
-        </p>
+        </a>
         <p
           className={`mt-1 shrink-0 overflow-hidden text-gray-500 line-clamp-1 dark:text-gray-400 ${
             compact ? 'text-[10px]' : 'text-xs'

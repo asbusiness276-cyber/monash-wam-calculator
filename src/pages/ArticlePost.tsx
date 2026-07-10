@@ -6,7 +6,7 @@ import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug } from '../data/articles';
-import { getArticleCategory } from '../data/articleCategories';
+import { getArticleCategory, getArticleCategoryPath } from '../data/articleCategories';
 
 interface ArticlePostProps {
   slug: string;
@@ -106,6 +106,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
   }
 
   const linkedCountRef = { value: 0 };
+  const category = getArticleCategory(article.slug);
 
   return (
     <>
@@ -127,10 +128,10 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           ← Back to articles
         </a>
         <a
-          href={`/articles#${getArticleCategory(article.slug).id}`}
+          href={getArticleCategoryPath(category.id)}
           className="mt-5 inline-block text-xs font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400 hover:underline"
         >
-          {getArticleCategory(article.slug).title}
+          {category.title}
         </a>
         <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">{article.keyword}</p>
         <h1 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{article.title}</h1>
