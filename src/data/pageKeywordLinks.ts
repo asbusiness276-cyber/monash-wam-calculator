@@ -15,11 +15,11 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
   ],
   '/wam-to-gpa-calculator': [
     { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'final grade calculator', path: '/final-grade-calculator' },
+    { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
   ],
   '/gpa-to-wam-calculator': [
     { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
+    { keyword: '4.0 GPA to WAM calculator', path: '/4-0-gpa-to-wam-calculator' },
   ],
   '/final-grade-calculator': [
     { keyword: 'Monash WAM calculator', path: '/' },
@@ -116,6 +116,90 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
   '/withdrawn-fail-impact-calculator': [
     { keyword: 'Monash grade converter', path: '/monash-grade-converter' },
     { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-monash' },
+  ],
+  '/weighted-average-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'grade average calculator', path: '/grade-average-calculator' },
+  ],
+  '/grade-average-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'weighted average calculator', path: '/weighted-average-calculator' },
+  ],
+  '/percentage-to-gpa-calculator': [
+    { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
+    { keyword: 'GPA to percentage calculator', path: '/gpa-to-percentage-calculator' },
+  ],
+  '/7-0-scale-gpa-calculator': [
+    { keyword: 'WAM to 7.0 GPA calculator', path: '/wam-to-7-0-gpa-calculator' },
+    { keyword: 'percentage to GPA calculator', path: '/percentage-to-gpa-calculator' },
+  ],
+  '/wam-to-4-0-gpa-calculator': [
+    { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
+    { keyword: '4.0 GPA to WAM calculator', path: '/4-0-gpa-to-wam-calculator' },
+  ],
+  '/wam-to-7-0-gpa-calculator': [
+    { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
+    { keyword: '7.0 GPA to WAM calculator', path: '/7-0-gpa-to-wam-calculator' },
+  ],
+  '/wam-to-cgpa-calculator': [
+    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
+    { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
+  ],
+  '/4-0-gpa-to-wam-calculator': [
+    { keyword: 'GPA to WAM calculator', path: '/gpa-to-wam-calculator' },
+    { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
+  ],
+  '/7-0-gpa-to-wam-calculator': [
+    { keyword: 'GPA to WAM calculator', path: '/gpa-to-wam-calculator' },
+    { keyword: 'WAM to 7.0 GPA calculator', path: '/wam-to-7-0-gpa-calculator' },
+  ],
+  '/cgpa-to-wam-calculator': [
+    { keyword: 'WAM to CGPA calculator', path: '/wam-to-cgpa-calculator' },
+    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
+  ],
+  '/gpa-to-percentage-calculator': [
+    { keyword: 'percentage to GPA calculator', path: '/percentage-to-gpa-calculator' },
+    { keyword: 'GPA to WAM calculator', path: '/gpa-to-wam-calculator' },
+  ],
+  '/4-0-to-7-0-gpa-calculator': [
+    { keyword: '7.0 to 4.0 GPA calculator', path: '/7-0-to-4-0-gpa-calculator' },
+    { keyword: 'WAM to 7.0 GPA calculator', path: '/wam-to-7-0-gpa-calculator' },
+  ],
+  '/7-0-to-4-0-gpa-calculator': [
+    { keyword: '4.0 to 7.0 GPA calculator', path: '/4-0-to-7-0-gpa-calculator' },
+    { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
+  ],
+  '/semester-gpa-calculator': [
+    { keyword: 'GPA to CGPA calculator', path: '/gpa-to-cgpa-calculator' },
+    { keyword: 'semester WAM calculator', path: '/semester-wam-calculator' },
+  ],
+  '/gpa-to-cgpa-calculator': [
+    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
+    { keyword: 'semester GPA calculator', path: '/semester-gpa-calculator' },
+  ],
+  '/cgpa-to-gpa-calculator': [
+    { keyword: 'CGPA to WAM calculator', path: '/cgpa-to-wam-calculator' },
+    { keyword: 'GPA to CGPA calculator', path: '/gpa-to-cgpa-calculator' },
+  ],
+  '/4-0-gpa-calculator': [
+    { keyword: 'GPA calculator', path: '/gpa-calculator' },
+    { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
+  ],
+  '/gpa-calculator': [
+    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
+    { keyword: 'GPA to WAM calculator', path: '/gpa-to-wam-calculator' },
+  ],
+  '/atar-to-gpa-wam-calculator': [
+    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
+  ],
+  '/high-school-gpa-calculator': [
+    { keyword: 'GPA calculator', path: '/gpa-calculator' },
+    { keyword: 'ATAR to GPA calculator', path: '/atar-to-gpa-wam-calculator' },
+  ],
+  '/10-point-gpa-to-wam-calculator': [
+    { keyword: 'CGPA to GPA calculator', path: '/cgpa-to-gpa-calculator' },
+    { keyword: '4.0 GPA to WAM calculator', path: '/4-0-gpa-to-wam-calculator' },
   ],
   '/articles': [
     { keyword: 'Monash WAM calculator', path: '/' },

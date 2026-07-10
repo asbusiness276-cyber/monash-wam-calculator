@@ -669,6 +669,34 @@ test('Pass mark: 58 coursework at 60% weight needs 38% exam for 50 overall', () 
   assert(needed === 38, `expected 38, got ${needed}`);
 });
 
+function calculateSimpleMarkAverage(marks) {
+  const valid = marks.filter(mark => !Number.isNaN(mark) && mark >= 0 && mark <= 100);
+  if (valid.length === 0) return null;
+  return Math.round((valid.reduce((sum, mark) => sum + mark, 0) / valid.length) * 100) / 100;
+}
+
+function percentageFromMarks(obtained, total) {
+  if (Number.isNaN(obtained) || Number.isNaN(total) || total <= 0 || obtained < 0) return null;
+  const percentage = (obtained / total) * 100;
+  if (percentage > 100) return null;
+  return Math.round(percentage * 100) / 100;
+}
+
+test('Grade average: simple mean of four marks', () => {
+  const avg = calculateSimpleMarkAverage([78, 72, 81, 69]);
+  assert(avg === 75, `expected 75, got ${avg}`);
+});
+
+test('Percentage from marks: 68 of 100', () => {
+  assert(percentageFromMarks(68, 100) === 68, '68/100 = 68%');
+  assert(percentageFromMarks(45, 60) === 75, '45/60 = 75%');
+});
+
+test('Percentage from marks: rejects invalid totals', () => {
+  assert(percentageFromMarks(110, 100) === null, 'over 100% invalid');
+  assert(percentageFromMarks(50, 0) === null, 'zero total invalid');
+});
+
 function calculateWamMilestones(currentWam, completedCredits, remainingCredits) {
   const milestones = [
     { label: 'Pass / progression floor', wam: 50 },
@@ -720,6 +748,105 @@ test('Withdrawn fail: WN GPA is lower than standard fail N', () => {
   assert(result.gpaAfterWn === 2.824, `expected 2.824, got ${result.gpaAfterWn}`);
   assert(result.gpaAfterWn < result.gpaAfterStandardFail, 'WN should be lower than standard fail');
   assert(result.wamIfZeroCounted === 65.88, `expected 65.88, got ${result.wamIfZeroCounted}`);
+});
+
+function convertGpaBetweenScales(gpa, fromScale, toScale) {
+  const band = mapGpaToMonashBand(gpa, fromScale);
+  if (!band) return null;
+  const mapping = {
+    HD: { gpa4: 4.0, gpa7: 7.0 },
+    D: { gpa4: 3.0, gpa7: 6.0 },
+    C: { gpa4: 2.0, gpa7: 5.0 },
+    P: { gpa4: 1.0, gpa7: 4.0 },
+    N: { gpa4: 0.0, gpa7: 0.0 },
+  };
+  const gradeInfo = mapping[band];
+  if (!gradeInfo) return null;
+  return toScale === 4 ? gradeInfo.gpa4 : gradeInfo.gpa7;
+}
+
+function mapGpaToPercentageMidpoint(gpa, scaleMax) {
+  const grade = mapGpaToMonashBand(gpa, scaleMax);
+  if (!grade) return null;
+  const ranges = {
+    HD: { min: 80, max: 100 },
+    D: { min: 70, max: 79 },
+    C: { min: 60, max: 69 },
+    P: { min: 50, max: 59 },
+    N: { min: 0, max: 49 },
+  };
+  const range = ranges[grade];
+  return Math.round((range.min + range.max) / 2);
+}
+
+test('GPA scale: 3.0 on 4.0 converts to 6.0 on 7.0', () => {
+  assert(convertGpaBetweenScales(3.0, 4, 7) === 6.0, '3.0 should map to 6.0');
+});
+
+test('GPA scale: 6.0 on 7.0 converts to 3.0 on 4.0', () => {
+  assert(convertGpaBetweenScales(6.0, 7, 4) === 3.0, '6.0 should map to 3.0');
+});
+
+test('GPA to percentage: 3.0 midpoint is 75', () => {
+  assert(mapGpaToPercentageMidpoint(3.0, 4) === 75, 'expected midpoint 75');
+});
+
+test('WAM 76 maps to GPA 3.0 band', () => {
+  const grade = getMonashGradeFromMark(76);
+  assert(grade.gpa4 === 3.0, `expected 3.0, got ${grade.gpa4}`);
+  assert(grade.grade === 'D', `expected D, got ${grade.grade}`);
+});
+
+function calculateCgpaFromSemesterGpa(priorCgpa, priorCredits, semesterGpa, semesterCredits) {
+  const total = priorCredits + semesterCredits;
+  if (total === 0) return null;
+  return Math.round(((priorCgpa * priorCredits + semesterGpa * semesterCredits) / total) * 1000) / 1000;
+}
+
+function convert10PointCgpaToGpa4(cgpa10) {
+  if (cgpa10 < 0 || cgpa10 > 10) return null;
+  return Math.round((cgpa10 / 10) * 4 * 1000) / 1000;
+}
+
+function convert10PointGpaToWamBand(gpa10) {
+  if (gpa10 < 0 || gpa10 > 10) return null;
+  return getMonashGradeFromMark(gpa10 * 10);
+}
+
+function calculateHighSchoolGpa(courses, weighted) {
+  let weightedSum = 0;
+  let totalCredits = 0;
+  for (const course of courses) {
+    const points = weighted ? Math.min(course.gradePoints + 1, 5) : course.gradePoints;
+    weightedSum += points * course.credits;
+    totalCredits += course.credits;
+  }
+  if (totalCredits === 0) return null;
+  return Math.round((weightedSum / totalCredits) * 1000) / 1000;
+}
+
+test('GPA to CGPA: semester updates cumulative', () => {
+  assert(calculateCgpaFromSemesterGpa(2.8, 72, 3.5, 24) === 2.975, 'expected 2.975');
+});
+
+test('10-point CGPA: 8.5 converts to 3.4 on 4.0', () => {
+  assert(convert10PointCgpaToGpa4(8.5) === 3.4, 'expected 3.4');
+});
+
+test('10-point GPA: 8.0 maps to HD band', () => {
+  const band = convert10PointGpaToWamBand(8.0);
+  assert(band.grade === 'HD', `expected HD, got ${band.grade}`);
+});
+
+test('High school GPA: unweighted average', () => {
+  const gpa = calculateHighSchoolGpa(
+    [
+      { gradePoints: 4, credits: 1 },
+      { gradePoints: 3, credits: 1 },
+    ],
+    false
+  );
+  assert(gpa === 3.5, `expected 3.5, got ${gpa}`);
 });
 
 console.log(`\n${passed} tests passed`);

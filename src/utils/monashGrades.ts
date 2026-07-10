@@ -87,6 +87,43 @@ const gpa7Steps: GpaBandStep[] = [
   { gpa: 0.0, wamMin: 0, wamMax: 49, grade: 'N', gradeLabel: 'Fail' },
 ];
 
+/** Monash GPA ↔ WAM band steps for conversion tables. */
+export function getGpaConversionSteps(scaleMax: 4 | 7): readonly GpaBandStep[] {
+  return scaleMax === 4 ? gpa4Steps : gpa7Steps;
+}
+
+/** Convert GPA on one scale to the equivalent Monash band GPA on the other scale. */
+export function convertGpaBetweenScales(gpa: number, fromScale: 4 | 7, toScale: 4 | 7): number | null {
+  if (Number.isNaN(gpa) || gpa < 0 || gpa > fromScale) return null;
+  if (fromScale === toScale) return gpa;
+  const band = mapGpaToMonashBand(gpa, fromScale);
+  if (!band) return null;
+  const gradeInfo = gradeBands.find(entry => entry.grade === band.grade);
+  if (!gradeInfo) return null;
+  return toScale === 4 ? gradeInfo.gpa4 : gradeInfo.gpa7;
+}
+
+/** Approximate percentage range for a GPA value on 4.0 or 7.0 scale. */
+export function mapGpaToPercentageRange(
+  gpa: number,
+  scaleMax: 4 | 7
+): { wamMin: number; wamMax: number; midpoint: number; grade: string; gradeLabel: string } | null {
+  const band = mapGpaToMonashBand(gpa, scaleMax);
+  if (!band) return null;
+  return {
+    wamMin: band.wamMin,
+    wamMax: band.wamMax,
+    midpoint: Math.round((band.wamMin + band.wamMax) / 2),
+    grade: band.grade,
+    gradeLabel: band.gradeLabel,
+  };
+}
+
+/** Map overall WAM to Monash GPA bands on 4.0 and 7.0 scales. */
+export function convertWamToGpaBands(wam: number): MonashGradeResult | null {
+  return getMonashGradeFromMark(wam);
+}
+
 /** Map a GPA value to the closest Monash-style grade band for planning. */
 export function mapGpaToMonashBand(gpa: number, scaleMax: 4 | 7): GpaBandStep | null {
   if (Number.isNaN(gpa) || gpa < 0 || gpa > scaleMax) return null;
@@ -185,6 +222,21 @@ export function calculateRequiredRemainingAssessmentMark(
 
   const needed = (targetUnitMark - completedContribution) / (remainingWeight / 100);
   return Math.round(needed * 100) / 100;
+}
+
+/** Simple arithmetic mean of percentage marks (equal weight per entry). */
+export function calculateSimpleMarkAverage(marks: number[]): number | null {
+  const valid = marks.filter(mark => !Number.isNaN(mark) && mark >= 0 && mark <= 100);
+  if (valid.length === 0) return null;
+  return Math.round((valid.reduce((sum, mark) => sum + mark, 0) / valid.length) * 100) / 100;
+}
+
+/** Convert raw marks obtained ÷ total into a percentage (0–100). */
+export function percentageFromMarks(obtained: number, total: number): number | null {
+  if (Number.isNaN(obtained) || Number.isNaN(total) || total <= 0 || obtained < 0) return null;
+  const percentage = (obtained / total) * 100;
+  if (percentage > 100) return null;
+  return Math.round(percentage * 100) / 100;
 }
 
 export function calculateWeightedUnitMark(
@@ -598,7 +650,117 @@ export function calculateMonashCgpa(
   };
 }
 
-/** GPA needed next term to reach target cumulative GPA (Monash 4.0 scale). */
+/** Combine prior CGPA with semester GPA using credit-weighted Monash maths. */
+export function calculateCgpaFromSemesterGpa(
+  priorCgpa: number,
+  priorCredits: number,
+  semesterGpa: number,
+  semesterCredits: number
+): number | null {
+  if (
+    Number.isNaN(priorCgpa) ||
+    Number.isNaN(priorCredits) ||
+    Number.isNaN(semesterGpa) ||
+    Number.isNaN(semesterCredits) ||
+    priorCgpa < 0 ||
+    priorCgpa > 4 ||
+    semesterGpa < 0 ||
+    semesterGpa > 4 ||
+    priorCredits < 0 ||
+    semesterCredits <= 0
+  ) {
+    return null;
+  }
+  const totalCredits = priorCredits + semesterCredits;
+  if (totalCredits === 0) return null;
+  return (
+    Math.round(
+      ((priorCgpa * priorCredits + semesterGpa * semesterCredits) / totalCredits) * 1000
+    ) / 1000
+  );
+}
+
+/** Linear 10-point CGPA/GPA to Monash 4.0 GPA (common international planning). */
+export function convert10PointCgpaToGpa4(cgpa10: number): number | null {
+  if (Number.isNaN(cgpa10) || cgpa10 < 0 || cgpa10 > 10) return null;
+  return Math.round((cgpa10 / 10) * 4 * 1000) / 1000;
+}
+
+/** Map 10-point GPA to indicative Monash WAM via percentage (GPA × 10). */
+export function convert10PointGpaToWamBand(gpa10: number): MonashGradeResult | null {
+  if (Number.isNaN(gpa10) || gpa10 < 0 || gpa10 > 10) return null;
+  return getMonashGradeFromMark(gpa10 * 10);
+}
+
+export interface AtarPlanningBand {
+  atarMin: number;
+  atarMax: number;
+  wamMin: number;
+  wamMax: number;
+  gpa4: number;
+  gpa7: number;
+  label: string;
+}
+
+export const atarPlanningBands: AtarPlanningBand[] = [
+  { atarMin: 95, atarMax: 99.95, wamMin: 85, wamMax: 100, gpa4: 4.0, gpa7: 7.0, label: 'Elite ATAR' },
+  { atarMin: 90, atarMax: 94.99, wamMin: 80, wamMax: 84, gpa4: 4.0, gpa7: 7.0, label: 'Very high ATAR' },
+  { atarMin: 85, atarMax: 89.99, wamMin: 75, wamMax: 79, gpa4: 3.0, gpa7: 6.0, label: 'Strong ATAR' },
+  { atarMin: 80, atarMax: 84.99, wamMin: 70, wamMax: 74, gpa4: 3.0, gpa7: 6.0, label: 'Solid ATAR' },
+  { atarMin: 75, atarMax: 79.99, wamMin: 65, wamMax: 69, gpa4: 2.0, gpa7: 5.0, label: 'Good ATAR' },
+  { atarMin: 70, atarMax: 74.99, wamMin: 60, wamMax: 64, gpa4: 2.0, gpa7: 5.0, label: 'Moderate ATAR' },
+  { atarMin: 50, atarMax: 69.99, wamMin: 50, wamMax: 59, gpa4: 1.0, gpa7: 4.0, label: 'Entry-level ATAR' },
+  { atarMin: 0, atarMax: 49.99, wamMin: 0, wamMax: 49, gpa4: 0.0, gpa7: 0.0, label: 'Below typical entry' },
+];
+
+/** Indicative ATAR → WAM/GPA bands for Australian university planning (not official UAC). */
+export function convertAtarToPlanningBands(atar: number): AtarPlanningBand | null {
+  if (Number.isNaN(atar) || atar < 0 || atar > 99.95) return null;
+  return atarPlanningBands.find(band => atar >= band.atarMin && atar <= band.atarMax) ?? null;
+}
+
+/** Indicative WAM → ATAR range for planning (not official). */
+export function convertWamToAtarRange(wam: number): { atarMin: number; atarMax: number; label: string } | null {
+  if (Number.isNaN(wam) || wam < 0 || wam > 100) return null;
+  const band = atarPlanningBands.find(entry => wam >= entry.wamMin && wam <= entry.wamMax);
+  if (band) return { atarMin: band.atarMin, atarMax: band.atarMax, label: band.label };
+  if (wam >= 85) return { atarMin: 95, atarMax: 99.95, label: 'Elite ATAR' };
+  if (wam >= 80) return { atarMin: 90, atarMax: 94.99, label: 'Very high ATAR' };
+  if (wam >= 75) return { atarMin: 85, atarMax: 89.99, label: 'Strong ATAR' };
+  if (wam >= 70) return { atarMin: 80, atarMax: 84.99, label: 'Solid ATAR' };
+  if (wam >= 65) return { atarMin: 75, atarMax: 79.99, label: 'Good ATAR' };
+  if (wam >= 60) return { atarMin: 70, atarMax: 74.99, label: 'Moderate ATAR' };
+  if (wam >= 50) return { atarMin: 50, atarMax: 69.99, label: 'Entry-level ATAR' };
+  return { atarMin: 0, atarMax: 49.99, label: 'Below typical entry' };
+}
+
+export interface HighSchoolCourseInput {
+  gradePoints: number;
+  credits: number;
+}
+
+/** US-style high school GPA: Σ(grade points × credits) ÷ Σ(credits). */
+export function calculateHighSchoolGpa(
+  courses: HighSchoolCourseInput[],
+  weighted: boolean
+): { gpa: number; totalCredits: number; scaleMax: number } | null {
+  let weightedSum = 0;
+  let totalCredits = 0;
+  for (const course of courses) {
+    if (Number.isNaN(course.gradePoints) || Number.isNaN(course.credits) || course.credits <= 0) continue;
+    const points = weighted ? Math.min(course.gradePoints + 1, 5) : course.gradePoints;
+    if (points < 0 || points > (weighted ? 5 : 4)) continue;
+    weightedSum += points * course.credits;
+    totalCredits += course.credits;
+  }
+  if (totalCredits === 0) return null;
+  return {
+    gpa: Math.round((weightedSum / totalCredits) * 1000) / 1000,
+    totalCredits,
+    scaleMax: weighted ? 5 : 4,
+  };
+}
+
 export function calculateRequiredTermGpa(
   currentGpa: number,
   creditsEarned: number,

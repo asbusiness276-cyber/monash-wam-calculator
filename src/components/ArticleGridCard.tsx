@@ -1,4 +1,5 @@
 import type { ArticleData } from '../data/articles';
+import { getArticleCategory } from '../data/articleCategories';
 import ArticleFeaturedImage from './ArticleFeaturedImage';
 
 interface ArticleGridCardProps {
@@ -8,6 +9,8 @@ interface ArticleGridCardProps {
 }
 
 export default function ArticleGridCard({ article, compact = false }: ArticleGridCardProps) {
+  const category = getArticleCategory(article.slug);
+
   return (
     <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
       <div className="aspect-video w-full shrink-0 bg-gray-100 dark:bg-gray-800">
@@ -18,8 +21,15 @@ export default function ArticleGridCard({ article, compact = false }: ArticleGri
         className={`flex min-h-0 flex-1 flex-col ${compact ? 'p-4' : 'p-5'}`}
       >
         <p
-          className={`shrink-0 overflow-hidden font-semibold uppercase leading-snug text-primary-600 line-clamp-2 dark:text-primary-400 ${
-            compact ? 'h-9 text-[11px] tracking-wide' : 'h-11 text-xs tracking-wide'
+          className={`shrink-0 overflow-hidden font-semibold uppercase leading-snug text-primary-600 line-clamp-1 dark:text-primary-400 ${
+            compact ? 'text-[10px] tracking-wide' : 'text-xs tracking-wide'
+          }`}
+        >
+          {category.title}
+        </p>
+        <p
+          className={`mt-1 shrink-0 overflow-hidden text-gray-500 line-clamp-1 dark:text-gray-400 ${
+            compact ? 'text-[10px]' : 'text-xs'
           }`}
         >
           {article.keyword}

@@ -1,39 +1,11 @@
 import { useState } from 'react';
 import { Moon, Sun, Calculator, Menu, X, ChevronDown } from 'lucide-react';
+import { CALCULATOR_CATEGORIES } from '../data/calculatorCatalog';
 
 interface NavbarProps {
   dark: boolean;
   toggleDark: () => void;
 }
-
-const calculatorLinks = [
-  { label: 'All Calculators', href: '/calculators' },
-  { label: 'WAM Calculator', href: '/' },
-  { label: 'WAM to GPA', href: '/wam-to-gpa-calculator' },
-  { label: 'GPA to WAM', href: '/gpa-to-wam-calculator' },
-  { label: 'Final Grade', href: '/final-grade-calculator' },
-  { label: 'Mark to Grade', href: '/mark-to-grade-calculator' },
-  { label: 'WAM Target', href: '/wam-target-calculator' },
-  { label: 'Supp vs Repeat', href: '/supp-repeat-wam-calculator' },
-  { label: 'Semester WAM', href: '/semester-wam-calculator' },
-  { label: 'Unit Mark', href: '/unit-mark-calculator' },
-  { label: 'WAM What-If', href: '/wam-projection-calculator' },
-  { label: 'WAM Milestones', href: '/wam-milestones-calculator' },
-  { label: 'Unit Target', href: '/unit-target-calculator' },
-  { label: 'Monash GPA', href: '/monash-gpa-calculator' },
-  { label: 'Monash CGPA', href: '/monash-cgpa-calculator' },
-  { label: 'Target GPA', href: '/monash-target-gpa-calculator' },
-  { label: 'Honours Class', href: '/monash-honours-calculator' },
-  { label: 'Grade Converter', href: '/monash-grade-converter' },
-  { label: 'Distinction Average', href: '/monash-distinction-average-calculator' },
-  { label: 'Scholarship WAM', href: '/monash-scholarship-wam-calculator' },
-  { label: 'Failed Unit Impact', href: '/failed-unit-wam-calculator' },
-  { label: 'Withdrawn Fail Impact', href: '/withdrawn-fail-impact-calculator' },
-  { label: "Dean's Honours List", href: '/monash-deans-honours-calculator' },
-  { label: 'Official vs Simple WAM', href: '/monash-official-wam-calculator' },
-  { label: 'Degree Progress', href: '/degree-progress-calculator' },
-  { label: 'Pass Mark', href: '/pass-mark-calculator' },
-];
 
 const infoLinks = [
   { label: 'Articles', href: '/articles' },
@@ -56,7 +28,7 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden lg:flex items-center gap-6">
           <li
             className="relative"
             onMouseEnter={() => setDesktopDropdownOpen(true)}
@@ -73,19 +45,59 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
             </button>
             {desktopDropdownOpen && (
               <div className="absolute left-0 top-full pt-2 z-50">
-                <div className="min-w-52 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg py-2">
-                  {calculatorLinks.map(link => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
+                <div className="w-[min(90vw,56rem)] rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg p-4">
+                  <a
+                    href="/calculators"
+                    className="block mb-3 px-2 py-1 text-sm font-semibold text-primary-600 dark:text-primary-400 hover:underline"
+                  >
+                    Browse all calculators →
+                  </a>
+                  <div className="grid grid-cols-2 xl:grid-cols-3 gap-4">
+                    {CALCULATOR_CATEGORIES.map(category => (
+                      <div key={category.id}>
+                        <p className="px-2 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">
+                          {category.title}
+                        </p>
+                        <ul className="space-y-0.5">
+                          {category.links.map(link => (
+                            <li key={link.href}>
+                              <a
+                                href={link.href}
+                                className="block px-2 py-1.5 text-sm text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800"
+                              >
+                                {link.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
+          </li>
+          {infoLinks.map(link => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Tablet: hub link only */}
+        <ul className="hidden md:flex lg:hidden items-center gap-6">
+          <li>
+            <a
+              href="/calculators"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              Calculators
+            </a>
           </li>
           {infoLinks.map(link => (
             <li key={link.href}>
@@ -119,7 +131,7 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 space-y-2">
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 space-y-2 max-h-[70vh] overflow-y-auto">
           <button
             type="button"
             className="w-full flex items-center justify-between text-sm font-semibold text-gray-700 dark:text-gray-300 py-2"
@@ -129,16 +141,32 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
             <ChevronDown size={16} className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
           </button>
           {mobileDropdownOpen && (
-            <div className="pl-3 border-l border-gray-200 dark:border-gray-700 space-y-1">
-              {calculatorLinks.map(link => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2 transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
+            <div className="pl-3 border-l border-gray-200 dark:border-gray-700 space-y-4">
+              <a
+                href="/calculators"
+                className="block text-sm font-semibold text-primary-600 dark:text-primary-400 py-1"
+                onClick={() => setMenuOpen(false)}
+              >
+                All calculators hub
+              </a>
+              {CALCULATOR_CATEGORIES.map(category => (
+                <div key={category.id}>
+                  <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">
+                    {category.title}
+                  </p>
+                  <div className="space-y-1">
+                    {category.links.map(link => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-1.5 transition-colors"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {link.title}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           )}

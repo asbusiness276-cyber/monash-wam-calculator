@@ -6,6 +6,7 @@ import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { getArticleBySlug } from '../data/articles';
+import { getArticleCategory } from '../data/articleCategories';
 
 interface ArticlePostProps {
   slug: string;
@@ -125,9 +126,13 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
         <a href="/articles" className="inline-flex text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
           ← Back to articles
         </a>
-        <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
-          {article.keyword}
-        </p>
+        <a
+          href={`/articles#${getArticleCategory(article.slug).id}`}
+          className="mt-5 inline-block text-xs font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400 hover:underline"
+        >
+          {getArticleCategory(article.slug).title}
+        </a>
+        <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">{article.keyword}</p>
         <h1 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{article.title}</h1>
         <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
           Published {article.publishedAt} • Updated {article.updatedAt}
