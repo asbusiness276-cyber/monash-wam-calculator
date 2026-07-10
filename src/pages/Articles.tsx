@@ -1,15 +1,16 @@
 import Seo from '../components/Seo';
 import ArticleGridCard from '../components/ArticleGridCard';
+import { ArticleSearchBar, useArticleSearch } from '../components/ArticleSearch';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
-import { articles } from '../data/articles';
-import { ARTICLE_CATEGORIES, getArticleCategoryPath, groupArticlesByCategory } from '../data/articleCategories';
+import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_COUNT } from '../data/calculatorCatalog';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
 const [articlesHome, articlesHowTo] = PAGE_KEYWORD_LINKS['/articles'];
-const groupedArticles = groupArticlesByCategory(articles);
 
 export default function Articles() {
+  const { query, setQuery, filteredGroups, resultCount, trimmedQuery } = useArticleSearch();
+
   return (
     <>
       <Seo
@@ -30,6 +31,14 @@ export default function Articles() {
           </p>
         </div>
 
+        <div className="mt-8 max-w-2xl">
+          <ArticleSearchBar
+            query={query}
+            onChange={setQuery}
+            resultCount={trimmedQuery ? resultCount : undefined}
+          />
+        </div>
+
         <nav
           className="mt-8 flex flex-wrap gap-2"
           aria-label="Article categories"
@@ -46,7 +55,10 @@ export default function Articles() {
         </nav>
 
         <div className="mt-8 space-y-12">
-          {groupedArticles.map(group => (
+          {filteredGroups.length === 0 ? (
+            <p className="text-sm text-gray-500 dark:text-gray-400">No articles matched your search. Try another keyword.</p>
+          ) : (
+            filteredGroups.map(group => (
             <section key={group.id} className="scroll-mt-24">
               <div className="mb-5">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{group.title}</h2>
@@ -61,7 +73,8 @@ export default function Articles() {
                 ))}
               </div>
             </section>
-          ))}
+            ))
+          )}
         </div>
 
         <p className="mt-12 text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-3xl">

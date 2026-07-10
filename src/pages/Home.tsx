@@ -1,5 +1,6 @@
 import { BookOpen, CheckCircle, ArrowDown, ArrowRight, ListOrdered, Monitor } from 'lucide-react';
 import WAMCalculator from '../components/WAMCalculator';
+import CalculatorSearch from '../components/CalculatorSearch';
 import FAQSection from '../components/FAQSection';
 import Seo from '../components/Seo';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -85,6 +86,10 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </section>
+
+      <section className="max-w-3xl mx-auto px-4 -mt-6 relative z-10 mb-6">
+        <CalculatorSearch />
       </section>
 
       {/* Calculator */}

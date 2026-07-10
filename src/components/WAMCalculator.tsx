@@ -177,8 +177,8 @@ export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
           </p>
         </div>
 
-        <div className="relative lg:pb-2" data-article-tool-screenshot="monash-wam">
-          <div className="min-w-0 lg:pr-80">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_18rem] gap-6 lg:gap-8 items-start" data-article-tool-screenshot="monash-wam">
+          <div className="min-w-0 space-y-4">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
               <div className="md:hidden p-3 space-y-3">
                 {subjects.map((s, i) => (
@@ -386,8 +386,7 @@ export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
             </div>
           </div>
 
-          <aside className="mt-6 w-full lg:mt-0 lg:absolute lg:top-0 lg:right-0 lg:w-72">
-            <div className="lg:sticky lg:top-24 space-y-4">
+          <aside className="min-w-0 w-full lg:sticky lg:top-24 space-y-4">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
               <div className="bg-gradient-to-br from-primary-600 to-primary-800 px-6 py-5">
                 <div className="flex items-center gap-2 text-primary-100 text-sm font-medium mb-1">
@@ -451,7 +450,6 @@ export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
               >
                 Open WAM to GPA Calculator →
               </a>
-            </div>
             </div>
           </aside>
         </div>

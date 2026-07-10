@@ -82,6 +82,8 @@ export default function ArticleTableOfContents({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const activeItem = items.find(item => item.id === activeId);
+
   const navList = (
     <nav aria-label="Table of contents">
       <ul className="space-y-1">
@@ -130,10 +132,19 @@ export default function ArticleTableOfContents({
       <aside className="hidden lg:block lg:sticky lg:top-24 lg:self-start">
         <div className="space-y-4">
           <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-3">
-              On this page
-            </p>
-            <div className="max-h-[min(58vh,28rem)] overflow-y-auto pr-1 scroll-smooth">{navList}</div>
+            <div className="max-h-[min(58vh,28rem)] overflow-y-auto pr-1 scroll-smooth">
+              <div className="sticky top-0 z-10 -mx-1 mb-2 border-b border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 px-1 pb-3">
+                <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                  On this page
+                </p>
+                {activeItem && (
+                  <p className="mt-1.5 text-sm font-semibold text-primary-700 dark:text-primary-300 line-clamp-2">
+                    {activeItem.label}
+                  </p>
+                )}
+              </div>
+              {navList}
+            </div>
           </div>
 
           <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm space-y-3 text-sm">

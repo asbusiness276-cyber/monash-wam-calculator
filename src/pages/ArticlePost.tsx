@@ -4,7 +4,6 @@ import ArticleAuthorBio from '../components/ArticleAuthorBio';
 import ArticleContentBlocks from '../components/ArticleContentBlocks';
 import ArticleEndNavigation from '../components/ArticleEndNavigation';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
-import ArticleReadingProgress from '../components/ArticleReadingProgress';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import ArticleTableOfContents from '../components/ArticleTableOfContents';
 import { ARTICLE_AUTHOR } from '../constants/author';
@@ -149,7 +148,6 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
 
   return (
     <>
-      <ArticleReadingProgress />
       <Seo
         title={`${article.title} | Monash WAM Calculator`}
         description={article.description}
