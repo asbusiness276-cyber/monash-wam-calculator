@@ -2575,7 +2575,7 @@ export const articles: ArticleData[] = [
       'Percentage to GPA calculator guide: convert percentage marks to 4.0 GPA, 7.0 GPA, and Monash-style grade bands with examples, FAQs, and planning warnings.',
     featuredImage: '/article-images/featured-percentage-to-gpa-guide.webp',
     featuredImageAlt:
-      'University student comparing a percentage marks sheet with a GPA scale on a laptop in a library study area',
+      'Student comparing percentage marks with a GPA scale on a laptop in a library — percentage to GPA calculator guide for Monash students',
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     sections: [
@@ -2655,7 +2655,7 @@ export const articles: ArticleData[] = [
       '4.0 GPA calculator guide: calculate GPA out of 4, convert WAM or percentage to 4.0 GPA, and understand HD, D, C, P grade-point bands.',
     featuredImage: '/article-images/featured-4-0-gpa-guide.webp',
     featuredImageAlt:
-      'Student using a laptop and calculator to review a 4.0 GPA scale at a clean study desk',
+      'Student using a laptop and calculator to review a 4.0 GPA scale at a study desk — 4.0 GPA calculator guide for Monash and Australian students',
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     sections: [
@@ -2728,7 +2728,7 @@ export const articles: ArticleData[] = [
       '7.0 scale GPA calculator guide for Australian students: convert marks, WAM, and 4.0 GPA to 7-point GPA with examples and FAQs.',
     featuredImage: '/article-images/featured-7-0-gpa-guide.webp',
     featuredImageAlt:
-      'University student reviewing highlighted grade bands on paper beside a tablet in a modern campus study space',
+      'Student reviewing Australian 7-point GPA grade bands on paper beside a tablet — 7.0 scale GPA calculator guide',
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     sections: [
@@ -2800,7 +2800,7 @@ export const articles: ArticleData[] = [
       'Semester GPA calculator guide: calculate SGPA for one term, compare semester GPA vs CGPA, and plan Monash results using credits and grade points.',
     featuredImage: '/article-images/featured-semester-gpa-guide.webp',
     featuredImageAlt:
-      'Student planning one semester with a laptop grade spreadsheet, timetable, calculator, and study notes',
+      'Student planning one semester GPA with a laptop grade spreadsheet, timetable, and calculator — semester GPA calculator guide for Monash students',
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     sections: [
@@ -2872,7 +2872,7 @@ export const articles: ArticleData[] = [
       'GPA to CGPA calculator guide: update cumulative GPA using current CGPA, completed credits, semester GPA, and new credits with examples and FAQs.',
     featuredImage: '/article-images/featured-gpa-to-cgpa-guide.webp',
     featuredImageAlt:
-      'Student reviewing transcript pages and a cumulative grade spreadsheet on a laptop in a university library',
+      'Student reviewing transcript pages and a cumulative GPA spreadsheet on a laptop — GPA to CGPA calculator guide',
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     sections: [
@@ -2944,7 +2944,7 @@ export const articles: ArticleData[] = [
       'ATAR to GPA and WAM guide: understand why ATAR, GPA, and WAM are different metrics, when indicative conversion helps, and how to plan university performance.',
     featuredImage: '/article-images/featured-atar-to-gpa-wam-guide.webp',
     featuredImageAlt:
-      'Student comparing school results and university planning charts on a laptop with calculator and notebooks',
+      'Student comparing school ATAR results with university GPA and WAM planning charts on a laptop — ATAR to GPA and WAM conversion guide',
     publishedAt: '2026-07-10',
     updatedAt: '2026-07-10',
     sections: [
@@ -3010,6 +3010,16 @@ export const articles: ArticleData[] = [
     ],
   },
 ];
+
+export function getArticleImageAlt(
+  article: Pick<ArticleData, 'featuredImageAlt' | 'title' | 'keyword'>
+): string {
+  const alt = article.featuredImageAlt.trim();
+  if (alt) {
+    return alt;
+  }
+  return `${article.title} — ${article.keyword}`;
+}
 
 export function getArticleBySlug(slug: string): ArticleData | undefined {
   return articles.find(article => article.slug === slug);

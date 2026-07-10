@@ -195,11 +195,18 @@ export default function Seo({
       removeJsonLd('faq');
     }
     if (article) {
+      const articleImageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`;
       upsertJsonLd('article', {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: article.headline,
         description,
+        image: {
+          '@type': 'ImageObject',
+          url: articleImageUrl,
+          caption: ogImageAlt,
+          description: ogImageAlt,
+        },
         author: {
           '@type': 'Organization',
           name: article.author,

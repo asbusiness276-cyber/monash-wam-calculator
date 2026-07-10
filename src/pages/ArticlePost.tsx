@@ -5,7 +5,7 @@ import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
-import { getArticleBySlug } from '../data/articles';
+import { getArticleBySlug, getArticleImageAlt } from '../data/articles';
 import { getArticleCategory, getArticleCategoryPath } from '../data/articleCategories';
 
 interface ArticlePostProps {
@@ -113,6 +113,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
 
   const linkedCountRef = { value: 0 };
   const category = getArticleCategory(article.slug);
+  const featuredImageAlt = getArticleImageAlt(article);
 
   return (
     <>
@@ -120,6 +121,8 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
         title={`${article.title} | Monash WAM Calculator`}
         description={article.description}
         canonicalPath={`/articles/${article.slug}`}
+        ogImage={article.featuredImage}
+        ogImageAlt={featuredImageAlt}
         faqItems={article.faqs}
         article={{
           headline: article.title,

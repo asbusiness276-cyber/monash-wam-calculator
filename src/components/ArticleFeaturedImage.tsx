@@ -1,7 +1,8 @@
 import type { ArticleData } from '../data/articles';
+import { getArticleImageAlt } from '../data/articles';
 
 interface ArticleFeaturedImageProps {
-  article: Pick<ArticleData, 'featuredImage' | 'featuredImageAlt' | 'title'>;
+  article: Pick<ArticleData, 'featuredImage' | 'featuredImageAlt' | 'title' | 'keyword'>;
   /** Cards use lazy loading; article header loads eagerly */
   priority?: boolean;
   className?: string;
@@ -13,10 +14,12 @@ export default function ArticleFeaturedImage({
   priority = false,
   className = 'w-full aspect-video object-cover block',
 }: ArticleFeaturedImageProps) {
+  const alt = getArticleImageAlt(article);
+
   return (
     <img
       src={article.featuredImage}
-      alt={article.featuredImageAlt || article.title}
+      alt={alt}
       loading={priority ? 'eager' : 'lazy'}
       decoding="async"
       className={className}
