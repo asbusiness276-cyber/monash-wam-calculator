@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Moon, Sun, Calculator, Menu, X, ChevronDown } from 'lucide-react';
+import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_CATEGORIES, type CalculatorCategory } from '../data/calculatorCatalog';
 
 interface NavbarProps {
@@ -8,7 +9,6 @@ interface NavbarProps {
 }
 
 const infoLinks = [
-  { label: 'Articles', href: '/articles' },
   { label: 'Write For Us', href: '/write-for-us' },
   { label: 'About Us', href: '/about-us' },
   { label: 'Contact Us', href: '/contact-us' },
@@ -30,6 +30,8 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openCategoryId, setOpenCategoryId] = useState<string | null>(null);
   const [openMobileCategoryId, setOpenMobileCategoryId] = useState<string | null>(null);
+  const [articlesDropdownOpen, setArticlesDropdownOpen] = useState(false);
+  const [mobileArticlesOpen, setMobileArticlesOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-700 shadow-sm">
@@ -91,6 +93,48 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
               All tools
             </a>
           </li>
+          <li
+            className="relative"
+            onMouseEnter={() => setArticlesDropdownOpen(true)}
+            onMouseLeave={() => setArticlesDropdownOpen(false)}
+          >
+            <button
+              type="button"
+              aria-expanded={articlesDropdownOpen}
+              aria-haspopup="true"
+              className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors whitespace-nowrap"
+            >
+              Articles
+              <ChevronDown size={14} className={`transition-transform ${articlesDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {articlesDropdownOpen && (
+              <div className="absolute left-0 top-full pt-2 z-50">
+                <div className="w-80 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg py-2">
+                  <a
+                    href="/articles"
+                    className="block px-3 py-1.5 text-sm font-semibold text-primary-600 dark:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                  >
+                    All articles
+                  </a>
+                  <p className="px-3 pt-2 pb-1 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                    Browse by category
+                  </p>
+                  <ul>
+                    {ARTICLE_CATEGORIES.map(category => (
+                      <li key={category.id}>
+                        <a
+                          href={getArticleCategoryPath(category.id)}
+                          className="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800"
+                        >
+                          {category.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </li>
           {infoLinks.map(link => (
             <li key={link.href}>
               <a
@@ -111,6 +155,14 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
               className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               Calculators
+            </a>
+          </li>
+          <li>
+            <a
+              href="/articles"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              Articles
             </a>
           </li>
           {infoLinks.map(link => (
@@ -182,6 +234,37 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
               </div>
             );
           })}
+          <div className="border-t border-gray-100 dark:border-gray-800">
+            <button
+              type="button"
+              className="w-full flex items-center justify-between text-sm font-semibold text-gray-700 dark:text-gray-300 py-2"
+              onClick={() => setMobileArticlesOpen(open => !open)}
+            >
+              Articles
+              <ChevronDown size={16} className={`transition-transform ${mobileArticlesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {mobileArticlesOpen && (
+              <div className="pl-3 pb-2 border-l border-gray-200 dark:border-gray-700 space-y-1">
+                <a
+                  href="/articles"
+                  className="block text-sm font-semibold text-primary-600 dark:text-primary-400 py-1.5"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  All articles
+                </a>
+                {ARTICLE_CATEGORIES.map(category => (
+                  <a
+                    key={category.id}
+                    href={getArticleCategoryPath(category.id)}
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-1.5 transition-colors"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {category.title}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
           <div className="pt-2 mt-2 border-t border-gray-200 dark:border-gray-700">
             {infoLinks.map(link => (
               <a
