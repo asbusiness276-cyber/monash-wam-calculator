@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { ArrowRight, Search as SearchIcon } from 'lucide-react';
 import { ALL_CALCULATOR_LINKS, CALCULATOR_CATEGORIES } from '../../data/calculatorCatalog';
 import SearchField from '../SearchField';
+import CardIcon from './ui/CardIcon';
 import PremiumCard from './ui/PremiumCard';
 
 function normalizeSearchText(value: string): string {
@@ -29,20 +30,12 @@ export default function HomeCalculatorSearch() {
   const trimmedQuery = query.trim();
 
   return (
-    <PremiumCard
-      hover
-      className="home-animate-in rounded-3xl border border-gray-200/80 bg-white/95 p-6 md:p-8 dark:border-gray-700/80 dark:bg-gray-800/95"
-    >
+    <PremiumCard hover padding="lg" className="home-animate-in">
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div className="max-w-md text-left">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-950/50 dark:text-primary-300">
-            <SearchIcon size={14} aria-hidden />
-            Quick find
-          </div>
-          <h2 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white md:text-2xl">
-            Search calculators
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+          <CardIcon icon={SearchIcon} className="mb-4" />
+          <h2 className="card-title-lg">Search calculators</h2>
+          <p className="card-body mt-2">
             Jump to WAM target, GPA conversion, honours, or exam tools by name or keyword.
           </p>
         </div>
@@ -62,14 +55,12 @@ export default function HomeCalculatorSearch() {
 
       {trimmedQuery && (
         <div
-          className="mt-6 max-h-72 overflow-y-auto rounded-2xl border border-gray-100 bg-gray-50/50 dark:border-gray-700 dark:bg-gray-900/30"
+          className="card-nested mt-6 max-h-72 overflow-y-auto p-0"
           role="listbox"
           aria-label="Calculator search results"
         >
           {results.length === 0 ? (
-            <p className="p-5 text-sm text-gray-500 dark:text-gray-400">
-              No calculators matched your search. Try &ldquo;GPA&rdquo;, &ldquo;target&rdquo;, or &ldquo;honours&rdquo;.
-            </p>
+            <p className="card-body p-5">No calculators matched your search. Try &ldquo;GPA&rdquo;, &ldquo;target&rdquo;, or &ldquo;honours&rdquo;.</p>
           ) : (
             <ul className="divide-y divide-gray-100 dark:divide-gray-700">
               {results.map(link => (
@@ -80,12 +71,10 @@ export default function HomeCalculatorSearch() {
                     role="option"
                   >
                     <div className="min-w-0 text-left">
-                      <p className="text-sm font-semibold text-gray-900 transition-colors group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400">
+                      <p className="card-title-sm transition-colors group-hover:text-primary-600 dark:group-hover:text-primary-400">
                         {link.title}
                       </p>
-                      <p className="mt-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
-                        {link.description}
-                      </p>
+                      <p className="card-caption mt-1">{link.description}</p>
                     </div>
                     <ArrowRight
                       size={16}

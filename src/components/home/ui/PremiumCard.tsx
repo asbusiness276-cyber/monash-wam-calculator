@@ -1,24 +1,49 @@
-import type { ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
+
+type CardPadding = 'none' | 'sm' | 'md' | 'lg';
+type CardVariant = 'default' | 'accent' | 'emerald';
 
 interface PremiumCardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  as?: 'div' | 'article' | 'li';
+  as?: ElementType;
   id?: string;
+  href?: string;
+  padding?: CardPadding;
+  variant?: CardVariant;
 }
+
+const paddingClasses: Record<CardPadding, string> = {
+  none: '',
+  sm: 'card-p-sm',
+  md: 'card-p-md',
+  lg: 'card-p-lg',
+};
+
+const variantClasses: Record<CardVariant, string> = {
+  default: 'card-surface',
+  accent: 'card-surface-accent',
+  emerald: 'card-surface-emerald',
+};
 
 export default function PremiumCard({
   children,
   className = '',
   hover = false,
-  as: Tag = 'div',
+  as,
   id,
+  href,
+  padding = 'md',
+  variant = 'default',
 }: PremiumCardProps) {
+  const Tag = href ? 'a' : (as ?? 'div');
+
   return (
     <Tag
       id={id}
-      className={`premium-card rounded-2xl border border-gray-200/80 bg-white p-6 dark:border-gray-700/80 dark:bg-gray-800/90 ${hover ? 'premium-card-hover' : ''} ${className}`}
+      href={href}
+      className={`${variantClasses[variant]} ${paddingClasses[padding]} ${hover ? 'card-interactive' : ''} ${className}`}
     >
       {children}
     </Tag>

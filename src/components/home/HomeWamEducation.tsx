@@ -1,4 +1,5 @@
 import { BookOpen, CheckCircle } from 'lucide-react';
+import CardIcon from './ui/CardIcon';
 import PremiumCard from './ui/PremiumCard';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../../data/pageKeywordLinks';
@@ -23,14 +24,12 @@ export default function HomeWamEducation() {
     <>
       <section id="what-is-wam" className="home-section scroll-mt-20">
         <div className="home-container max-w-4xl">
-          <PremiumCard className="rounded-3xl p-8 md:p-10">
-            <div className="flex items-start gap-4">
-              <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-600 dark:bg-primary-950/50 dark:text-primary-400">
-                <BookOpen size={22} strokeWidth={2} aria-hidden />
-              </span>
+          <PremiumCard padding="lg">
+            <div className="card-row-header">
+              <CardIcon icon={BookOpen} />
               <div className="min-w-0">
                 <h2 className="home-section-title text-gray-900 dark:text-white">What is WAM at Monash University?</h2>
-                <div className="mt-5 space-y-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                <div className="card-body mt-5 space-y-4">
                   <p>
                     WAM stands for{' '}
                     <strong className="text-gray-800 dark:text-gray-200">Weighted Average Mark</strong>. It is the
@@ -66,23 +65,23 @@ export default function HomeWamEducation() {
 
       <section id="how-wam-calculated" className="home-section scroll-mt-20 pb-4">
         <div className="home-container max-w-4xl">
-          <PremiumCard className="rounded-3xl p-8 md:p-10">
+          <PremiumCard padding="lg">
             <h2 className="home-section-title text-gray-900 dark:text-white">How is Monash WAM Calculated?</h2>
-            <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="card-body mt-4">
               Monash official WAM multiplies each unit by credit points and year-level weight (Year 1 = 0.5, Year 2+ =
               1.0). Our calculator shows both official Monash WAM and a simpler planning WAM so you can compare
               scenarios and verify against WES.
             </p>
 
             <div className="mt-6 space-y-3">
-              <div className="rounded-2xl border border-primary-200/80 bg-primary-50/80 p-5 text-center dark:border-primary-800/60 dark:bg-primary-950/30">
+              <div className="card-nested-accent">
                 <p className="text-sm font-semibold text-primary-700 dark:text-primary-300">Official Monash WAM</p>
                 <p className="mt-2 font-mono text-sm font-bold leading-relaxed text-primary-800 dark:text-primary-200">
                   &Sigma;(Mark &times; CP &times; Year weight) &divide; &Sigma;(CP &times; Year weight)
                 </p>
-                <p className="mt-2 text-xs text-primary-600 dark:text-primary-400">Year 1 weight = 0.5 · Year 2+ = 1.0</p>
+                <p className="card-caption mt-2 text-primary-600 dark:text-primary-400">Year 1 weight = 0.5 · Year 2+ = 1.0</p>
               </div>
-              <div className="rounded-2xl border border-gray-200/80 bg-gray-50/80 p-5 text-center dark:border-gray-700 dark:bg-gray-900/40">
+              <div className="card-nested text-center">
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Planning WAM (simple)</p>
                 <p className="mt-2 font-mono text-sm font-bold text-gray-800 dark:text-gray-200">
                   &Sigma;(Mark &times; Credit Points) &divide; &Sigma;(Credit Points)
@@ -93,7 +92,7 @@ export default function HomeWamEducation() {
             <h3 className="mb-3 mt-8 text-sm font-semibold text-gray-700 dark:text-gray-300">
               Example: Year 1 vs Year 2 Weighting
             </h3>
-            <div className="overflow-x-auto rounded-2xl border border-gray-200/80 dark:border-gray-700">
+            <div className="card-nested overflow-x-auto p-0">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50 dark:bg-gray-800/80">
@@ -119,7 +118,7 @@ export default function HomeWamEducation() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="card-body mt-5">
               <strong className="text-gray-800 dark:text-gray-200">Planning WAM</strong> ≈{' '}
               <strong className="text-gray-800 dark:text-gray-200">78.33</strong>.{' '}
               <strong className="text-gray-800 dark:text-gray-200">Official Monash WAM</strong> with Year 1 at 0.5

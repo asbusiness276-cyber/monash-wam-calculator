@@ -27,21 +27,14 @@ export default function FAQSection({
         </header>
         <div className="space-y-3">
           {items.map((faq, i) => (
-            <div
-              key={faq.question}
-              className={
-                isHome
-                  ? 'premium-card overflow-hidden rounded-2xl border border-gray-200/80 bg-white dark:border-gray-700/80 dark:bg-gray-800/90'
-                  : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden'
-              }
-            >
+            <div key={faq.question} className={isHome ? 'card-faq' : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden'}>
               <button
                 type="button"
                 className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-gray-50/80 dark:hover:bg-gray-800/80"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
               >
-                <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{faq.question}</span>
+                <span className="card-title-sm text-gray-800 dark:text-gray-200">{faq.question}</span>
                 <ChevronDown
                   size={18}
                   className={`shrink-0 text-gray-400 transition-transform duration-200 ${open === i ? 'rotate-180' : ''}`}
@@ -49,7 +42,7 @@ export default function FAQSection({
                 />
               </button>
               {open === i && (
-                <div className="border-t border-gray-100 px-5 pb-4 pt-3 text-sm leading-relaxed text-gray-600 dark:border-gray-700 dark:text-gray-400">
+                <div className="card-body border-t border-gray-100 px-5 pb-4 pt-3 dark:border-gray-700">
                   {faq.answer}
                 </div>
               )}

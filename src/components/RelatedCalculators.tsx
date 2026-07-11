@@ -1,6 +1,7 @@
 import { ArrowRight, Calculator } from 'lucide-react';
 import { absoluteUrl } from '../constants/site';
 import { ALL_CALCULATOR_LINKS, type CalculatorLink } from '../data/calculatorCatalog';
+import LinkCard from './home/ui/LinkCard';
 
 export type { CalculatorLink };
 export { ALL_CALCULATOR_LINKS as CALCULATOR_LINKS };
@@ -53,27 +54,32 @@ export default function RelatedCalculators({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map(link => (
-            <a
-              key={link.href}
-              href={absoluteUrl(link.href)}
-              className={
-                isHome
-                  ? 'premium-card premium-card-hover group flex flex-col rounded-3xl border border-gray-200/80 bg-white p-6 dark:border-gray-700/80 dark:bg-gray-800/90'
-                  : 'group flex flex-col rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all'
-              }
-            >
-              <p className="font-semibold text-gray-900 transition-colors group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400">
-                {link.title}
-              </p>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{link.description}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 dark:text-primary-400">
-                Open tool
-                <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
-              </span>
-            </a>
-          ))}
+        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isHome ? 'card-grid' : 'gap-4'}`}>
+          {items.map(link =>
+            isHome ? (
+              <LinkCard
+                key={link.href}
+                href={absoluteUrl(link.href)}
+                title={link.title}
+                description={link.description}
+              />
+            ) : (
+              <a
+                key={link.href}
+                href={absoluteUrl(link.href)}
+                className="group flex flex-col rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-md transition-all"
+              >
+                <p className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  {link.title}
+                </p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">{link.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400">
+                  Open tool
+                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" aria-hidden />
+                </span>
+              </a>
+            )
+          )}
         </div>
 
         {showViewAll && (

@@ -1,6 +1,7 @@
 import { Mail } from 'lucide-react';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
+import SiteSocialLinks from '../components/SiteSocialLinks';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS, SOCIAL_LINK_BUTTON_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
@@ -79,7 +80,15 @@ export default function ContactUs() {
           </ul>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Follow MonashWAMCalculator</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+            Updates, guides, and calculator tips on our official channels.
+          </p>
+          <SiteSocialLinks variant="buttons" />
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Common reasons to contact us</h2>
           <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             <li>Calculator result looks wrong or unclear</li>

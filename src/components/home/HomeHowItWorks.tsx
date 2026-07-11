@@ -1,7 +1,7 @@
 import { Award, ClipboardList, Target, TrendingUp } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import SectionHeader from './ui/SectionHeader';
-import PremiumCard from './ui/PremiumCard';
+import FeatureCard from './ui/FeatureCard';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../../constants/site';
 
 const useSteps: Array<{ icon: LucideIcon; title: string; description: string }> = [
@@ -40,36 +40,21 @@ export default function HomeHowItWorks() {
           description="From WES export to honours planning — the workflow Monash students use every results period."
         />
 
-        <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {useSteps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <li key={step.title}>
-                <PremiumCard
-                  hover
-                  as="article"
-                  className="relative flex h-full flex-col rounded-3xl p-6"
-                >
-                  <span
-                    className="absolute right-5 top-5 select-none text-3xl font-black text-primary-100 dark:text-primary-900/40"
-                    aria-hidden
-                  >
-                    {index + 1}
-                  </span>
-                  <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-600 dark:bg-primary-950/50 dark:text-primary-400">
-                    <Icon size={22} strokeWidth={2} aria-hidden />
-                  </span>
-                  <h3 className="pr-8 text-base font-bold text-gray-900 dark:text-white">{step.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                    {step.description}
-                  </p>
-                </PremiumCard>
-              </li>
-            );
-          })}
+        <ol className="card-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {useSteps.map((step, index) => (
+            <li key={step.title}>
+              <FeatureCard
+                icon={step.icon}
+                title={step.title}
+                description={step.description}
+                step={index + 1}
+                tone="primary"
+              />
+            </li>
+          ))}
         </ol>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+        <p className="card-body mx-auto mt-8 max-w-2xl text-center">
           Need the full formula? Read{' '}
           <a href={absoluteUrl('/articles/how-to-calculate-wam')} className={INLINE_LINK_CLASS}>
             how to calculate wam

@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import ArticleGridCard from './ArticleGridCard';
+import FeaturedArticleCard from './FeaturedArticleCard';
 import { articles, getArticleBySlug } from '../data/articles';
 
 const FEATURED_SLUGS = [
@@ -89,13 +90,19 @@ export default function ArticlesSection({ featured = false, maxItems = 3, varian
           </div>
 
           <div
-            className={`grid grid-cols-1 gap-5 ${
+            className={`grid grid-cols-1 ${
+              isHome && variant === 'home' ? 'card-grid' : 'gap-5'
+            } ${
               featured ? 'md:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'
             } lg:items-stretch`}
           >
             {displayed.map(article => (
               <div key={article.slug} className="flex min-h-0 h-full">
-                <ArticleGridCard article={article} compact={!featured} />
+                {featured && variant === 'home' ? (
+                  <FeaturedArticleCard article={article} />
+                ) : (
+                  <ArticleGridCard article={article} compact={!featured} />
+                )}
               </div>
             ))}
           </div>
