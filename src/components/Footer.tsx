@@ -62,9 +62,8 @@ export default function Footer() {
     <footer className="footer-premium mt-6 overflow-x-hidden">
       <div className="footer-premium-glow" aria-hidden />
 
-      <div className="home-container relative py-14 md:py-16 lg:py-20">
+      <div className="home-container relative py-12 md:py-14 lg:py-16">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-10">
-          {/* Brand */}
           <div className="lg:col-span-4 xl:col-span-3">
             <div className="inline-flex items-center gap-2.5 text-lg font-bold text-white">
               <SiteLogo size="lg" />
@@ -86,28 +85,8 @@ export default function Footer() {
               <p className="footer-col-title mb-3">Follow us</p>
               <SiteSocialLinks variant="icons" />
             </div>
-
-            <div className="footer-newsletter mt-8">
-              <p className="text-sm font-semibold text-white">Stay updated</p>
-              <p className="mt-1 text-xs leading-relaxed text-gray-400">
-                Monash WAM tips and new guides — newsletter coming soon.
-              </p>
-              <div className="mt-3 flex flex-col gap-2 sm:flex-row">
-                <input
-                  type="email"
-                  disabled
-                  placeholder="Your email address"
-                  aria-label="Email for newsletter (coming soon)"
-                  className="footer-newsletter-input min-w-0 flex-1"
-                />
-                <button type="button" disabled className="footer-newsletter-btn shrink-0">
-                  Notify me
-                </button>
-              </div>
-            </div>
           </div>
 
-          {/* Link columns */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4 xl:col-span-9">
             <FooterColumn title="Popular calculators">
               <FooterLinkList>
@@ -169,34 +148,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Full calculator directory — preserves all existing tool links */}
-        <div className="footer-sitemap mt-12 border-t border-gray-800/80 pt-10">
-          <h3 className="footer-col-title mb-6">All calculator tools</h3>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {CALCULATOR_CATEGORIES.map(category => (
-              <div key={category.id} className="min-w-0">
-                <p className="footer-sitemap-group-title">{category.title}</p>
-                <ul className="footer-sitemap-links mt-2 space-y-1.5">
-                  {category.links.map(link => (
-                    <li key={link.href}>
-                      <a href={link.href} className="footer-sitemap-link">
-                        {link.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="footer-bottom mt-10 flex flex-col gap-5 border-t border-gray-800/80 pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="footer-bottom-copy max-w-2xl">
-            &copy; {new Date().getFullYear()} MonashWAMCalculator.com — Not affiliated with Monash University. For
-            informational purposes only.
-          </p>
-          <SiteSocialLinks variant="icons" />
+        <div className="footer-copyright mt-10 border-t border-gray-800/80 pt-6 text-center">
+          <p className="text-xs text-gray-500">&copy; 2026 MonashWAMCalculator.com. All rights reserved.</p>
         </div>
       </div>
     </footer>

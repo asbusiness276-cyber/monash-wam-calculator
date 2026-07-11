@@ -483,21 +483,20 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 )}
               </div>
             </div>
-
-            <div className="calc-gpa-promo">
-              <p className="text-sm font-semibold text-blue-800 dark:text-blue-200">Need to convert WAM to GPA?</p>
-              <p className="mt-1 text-xs leading-relaxed text-blue-700/90 dark:text-blue-300/90">
-                Free Monash converter for 4.0 and 7.0 GPA scales.
-              </p>
-              <a
-                href="/wam-to-gpa-calculator"
-                className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-              >
-                Open WAM to GPA Calculator →
-              </a>
-            </div>
           </aside>
         </div>
+
+        <a href="/wam-to-gpa-calculator" className="calc-gpa-promo-banner group">
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-blue-800 dark:text-blue-200">Need to convert WAM to GPA?</p>
+            <p className="mt-1 text-xs leading-relaxed text-blue-700/90 dark:text-blue-300/90">
+              Free Monash converter for 4.0 and 7.0 GPA scales.
+            </p>
+          </div>
+          <span className="calc-gpa-promo-link">
+            Open WAM to GPA Calculator →
+          </span>
+        </a>
         </div>
       </section>
     </>

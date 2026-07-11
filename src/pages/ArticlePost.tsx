@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import Seo from '../components/Seo';
 import ArticleAuthorBio from '../components/ArticleAuthorBio';
+import ArticleFaqs from '../components/ArticleFaqs';
 import ArticleContentBlocks from '../components/ArticleContentBlocks';
 import ArticleEndNavigation from '../components/ArticleEndNavigation';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
@@ -233,11 +234,11 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
               })}
             </div>
 
+            <ArticleFaqs items={article.faqs} />
+
             <ArticleAuthorBio />
 
-            <div id="article-faqs" className="scroll-mt-28">
-              <ArticleRelatedTools faqs={article.faqs} />
-            </div>
+            <ArticleRelatedTools />
 
             <ArticleEndNavigation
               prevArticle={neighbors.prev}

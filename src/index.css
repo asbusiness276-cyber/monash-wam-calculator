@@ -374,8 +374,12 @@
     @apply flex flex-col items-center justify-center rounded-2xl border border-dashed border-gray-200 bg-gray-50/60 px-6 py-10 text-center dark:border-gray-700 dark:bg-gray-900/30;
   }
 
-  .calc-gpa-promo {
-    @apply rounded-2xl border border-blue-200/80 bg-gradient-to-br from-blue-50/90 to-white p-5 shadow-premium-sm dark:border-blue-800/60 dark:from-blue-950/30 dark:to-gray-800;
+  .calc-gpa-promo-banner {
+    @apply mt-6 flex flex-col gap-3 rounded-2xl border border-blue-200/80 bg-gradient-to-r from-blue-50/90 via-white to-blue-50/50 p-5 shadow-premium-sm transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-premium dark:border-blue-800/60 dark:from-blue-950/30 dark:via-gray-800/90 dark:to-blue-950/20 dark:hover:border-blue-700/60 sm:flex-row sm:items-center sm:justify-between;
+  }
+
+  .calc-gpa-promo-link {
+    @apply inline-flex shrink-0 items-center text-sm font-semibold text-blue-600 transition-colors group-hover:text-blue-800 dark:text-blue-400 dark:group-hover:text-blue-300;
   }
 
   /* Premium footer */
@@ -467,6 +471,10 @@
   }
 
   .article-card:hover .article-card-image {
+    transform: none;
+  }
+
+  .calc-gpa-promo-banner:hover {
     transform: none;
   }
 }
