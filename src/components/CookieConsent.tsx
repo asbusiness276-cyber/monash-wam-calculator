@@ -34,16 +34,14 @@ export default function CookieConsent() {
       aria-describedby="cookie-consent-description"
     >
       <div className="mx-auto max-w-4xl rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-2xl p-5 sm:p-6">
-        <h2 id="cookie-consent-title" className="text-base font-bold text-gray-900 dark:text-white">
-          Cookie preferences
+        <h2 id="cookie-consent-title" className="text-sm font-bold text-gray-900 dark:text-white">
+          Cookies
         </h2>
-        <p id="cookie-consent-description" className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-          We use essential cookies for site functionality. With your consent, we also use Google Analytics to improve
-          the site and Google AdSense to show ads that help keep our calculators free. Read our{' '}
+        <p id="cookie-consent-description" className="mt-1.5 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          We use cookies to run this site. Accept all also enables analytics and ads (Google).{' '}
           <a href="/privacy-policy" className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
             Privacy Policy
-          </a>{' '}
-          for details.
+          </a>
         </p>
         <div className="mt-4 flex flex-col sm:flex-row gap-2 sm:justify-end">
           <button
