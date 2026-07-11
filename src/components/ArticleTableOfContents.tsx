@@ -128,82 +128,95 @@ export default function ArticleTableOfContents({
   }
 
   return (
-    <>
-      <aside className="hidden lg:block lg:sticky lg:top-24 lg:self-start">
-        <div className="space-y-4">
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
-            <div className="max-h-[min(58vh,28rem)] overflow-y-auto pr-1 scroll-smooth">
-              <div className="sticky top-0 z-10 -mx-1 mb-2 border-b border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 px-1 pb-3">
-                <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                  On this page
+    <aside className="w-full">
+      <div className="space-y-4">
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
+          <div className="max-h-[min(58vh,28rem)] overflow-y-auto pr-1 scroll-smooth">
+            <div className="sticky top-0 z-10 -mx-1 mb-2 border-b border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 px-1 pb-3">
+              <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                On this page
+              </p>
+              {activeItem && (
+                <p className="mt-1.5 text-sm font-semibold text-primary-700 dark:text-primary-300 line-clamp-2">
+                  {activeItem.label}
                 </p>
-                {activeItem && (
-                  <p className="mt-1.5 text-sm font-semibold text-primary-700 dark:text-primary-300 line-clamp-2">
-                    {activeItem.label}
-                  </p>
-                )}
-              </div>
-              {navList}
+              )}
             </div>
+            {navList}
           </div>
+        </div>
 
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm space-y-3 text-sm">
-            <a href="/articles" className="block text-primary-600 dark:text-primary-400 hover:underline">
-              ← All articles
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm space-y-3 text-sm">
+          <a href="/articles" className="block text-primary-600 dark:text-primary-400 hover:underline">
+            ← All articles
+          </a>
+          {categoryPath && categoryTitle && (
+            <a href={categoryPath} className="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+              {categoryTitle} category
             </a>
-            {categoryPath && categoryTitle && (
-              <a href={categoryPath} className="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
-                {categoryTitle} category
-              </a>
-            )}
-            <button
-              type="button"
-              onClick={() => scrollToId('article-faqs')}
-              className="block w-full text-left text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
-            >
-              Jump to FAQs
-            </button>
-            {relatedLinks.length > 0 && (
-              <div className="pt-2 border-t border-gray-100 dark:border-gray-700 space-y-2">
-                <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                  Related guides
-                </p>
-                {relatedLinks.map(link => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 leading-snug"
-                  >
-                    {link.title}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {showBackToTop && (
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 text-white px-4 py-2.5 text-sm font-semibold hover:bg-primary-700 transition-colors"
-            >
-              <ArrowUp size={16} />
-              Back to top
-            </button>
+          )}
+          <button
+            type="button"
+            onClick={() => scrollToId('article-faqs')}
+            className="block w-full text-left text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+          >
+            Jump to FAQs
+          </button>
+          {relatedLinks.length > 0 && (
+            <div className="pt-2 border-t border-gray-100 dark:border-gray-700 space-y-2">
+              <p className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                Related guides
+              </p>
+              {relatedLinks.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 leading-snug"
+                >
+                  {link.title}
+                </a>
+              ))}
+            </div>
           )}
         </div>
-      </aside>
 
-      {showBackToTop && (
-        <button
-          type="button"
-          onClick={scrollToTop}
-          aria-label="Back to top"
-          className="lg:hidden fixed bottom-5 right-5 z-40 inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-colors"
-        >
-          <ArrowUp size={18} />
-        </button>
-      )}
-    </>
+        {showBackToTop && (
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 text-white px-4 py-2.5 text-sm font-semibold hover:bg-primary-700 transition-colors"
+          >
+            <ArrowUp size={16} />
+            Back to top
+          </button>
+        )}
+      </div>
+    </aside>
+  );
+}
+
+export function ArticleMobileBackToTopButton() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowBackToTop(window.scrollY > 480);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  if (!showBackToTop) {
+    return null;
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Back to top"
+      className="lg:hidden fixed bottom-5 right-5 z-40 inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-colors"
+    >
+      <ArrowUp size={18} />
+    </button>
   );
 }

@@ -5,7 +5,7 @@ import ArticleContentBlocks from '../components/ArticleContentBlocks';
 import ArticleEndNavigation from '../components/ArticleEndNavigation';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
-import ArticleTableOfContents from '../components/ArticleTableOfContents';
+import ArticleTableOfContents, { ArticleMobileBackToTopButton } from '../components/ArticleTableOfContents';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { articles, getArticleBySlug, getArticleImageAlt } from '../data/articles';
@@ -246,15 +246,22 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
             />
           </div>
 
-          <ArticleTableOfContents
-            items={tocItems}
-            variant="sidebar"
-            categoryTitle={category.title}
-            categoryPath={categoryPath}
-            relatedLinks={sidebarRelatedLinks}
-          />
+          <div className="hidden lg:block lg:self-start w-full min-w-0">
+            <div className="sticky top-24 z-30 w-full">
+              <div className="max-h-[calc(100vh-6rem)] overflow-y-auto overscroll-y-contain [scrollbar-gutter:stable]">
+                <ArticleTableOfContents
+                  items={tocItems}
+                  variant="sidebar"
+                  categoryTitle={category.title}
+                  categoryPath={categoryPath}
+                  relatedLinks={sidebarRelatedLinks}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </article>
+      <ArticleMobileBackToTopButton />
     </>
   );
 }

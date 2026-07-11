@@ -5,13 +5,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   #root {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 }
