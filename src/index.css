@@ -10,8 +10,89 @@
   body {
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: clip;
+    @apply text-gray-900 antialiased dark:text-gray-100;
   }
   #root {
     overflow-x: clip;
+  }
+}
+
+@layer components {
+  .home-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .home-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-primary-600 dark:text-primary-400;
+  }
+
+  .home-hero-title {
+    @apply text-4xl font-bold tracking-tight sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1];
+  }
+
+  .home-section-title {
+    @apply text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl;
+  }
+
+  .premium-card {
+    @apply shadow-premium-sm;
+  }
+
+  .premium-card-hover {
+    @apply transition-[transform,box-shadow,border-color] duration-200 ease-out;
+  }
+
+  .premium-card-hover:hover {
+    @apply -translate-y-0.5 shadow-premium-lg border-gray-300/80 dark:border-gray-600/80;
+  }
+
+  .home-btn:hover {
+    @apply -translate-y-px;
+  }
+
+  .home-btn:active {
+    @apply translate-y-0;
+  }
+
+  .home-animate-in {
+    animation: fadeIn 500ms ease-out both;
+  }
+
+  .home-animate-delay-1 {
+    animation-delay: 80ms;
+  }
+
+  .home-animate-delay-2 {
+    animation-delay: 160ms;
+  }
+
+  .home-calculator-zone {
+    @apply relative border-t border-gray-200/80 bg-gradient-to-b from-slate-50/80 via-white to-white dark:border-gray-800 dark:from-gray-950/80 dark:via-gray-900 dark:to-gray-900;
+  }
+
+  .home-calculator-zone::before {
+    content: '';
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200/60 to-transparent dark:via-primary-800/40;
+  }
+
+  .home-section {
+    @apply py-12 md:py-16;
+  }
+
+  .home-section-alt {
+    @apply border-y border-gray-200/80 bg-slate-50/70 py-12 md:py-16 dark:border-gray-800 dark:bg-gray-950/40;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-animate-in,
+  .home-animate-delay-1,
+  .home-animate-delay-2 {
+    animation: none;
+  }
+
+  .premium-card-hover:hover,
+  .home-btn:hover {
+    transform: none;
   }
 }

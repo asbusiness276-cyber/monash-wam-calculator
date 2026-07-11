@@ -67,9 +67,12 @@ const defaultSubjects: Subject[] = [
 interface WAMCalculatorProps {
   /** Reserved for embed contexts (e.g. article iframes). */
   embedSuppressRecommendations?: boolean;
+  /** Homepage premium shell — layout and typography only. */
+  shellVariant?: 'default' | 'home';
 }
 
-export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
+export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculatorProps = {}) {
+  const isHomeShell = shellVariant === 'home';
   const [subjects, setSubjects] = useState<Subject[]>(defaultSubjects);
   const [copied, setCopied] = useState(false);
 
@@ -166,11 +169,28 @@ export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
 
   return (
     <>
-      <section id="calculator" className="scroll-mt-20">
-        <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">WAM Calculator — Enter Your Marks</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+      <section id="calculator" className={`scroll-mt-20 ${isHomeShell ? 'pb-4 md:pb-6' : ''}`}>
+        <div className={isHomeShell ? 'home-container py-8 md:py-10' : 'max-w-6xl mx-auto px-4 py-8'}>
+        <div className={`text-center ${isHomeShell ? 'mb-8 md:mb-10 max-w-2xl mx-auto' : 'mb-6'}`}>
+          {isHomeShell && (
+            <p className="home-eyebrow mb-3">Main calculator</p>
+          )}
+          <h2
+            className={
+              isHomeShell
+                ? 'home-section-title text-gray-900 dark:text-white'
+                : 'text-3xl font-bold text-gray-900 dark:text-white mb-3'
+            }
+          >
+            WAM Calculator — Enter Your Marks
+          </h2>
+          <p
+            className={
+              isHomeShell
+                ? 'mt-3 text-base text-gray-600 dark:text-gray-400 leading-relaxed text-pretty'
+                : 'text-gray-600 dark:text-gray-400 max-w-2xl mx-auto'
+            }
+          >
             Enter marks, credit points, and year level for each unit. We calculate{' '}
             <strong className="text-gray-700 dark:text-gray-300">official Monash WAM</strong> (first-year 0.5 weighting)
             plus a simple planning WAM for comparison.
@@ -179,7 +199,13 @@ export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
 
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_18rem] gap-6 lg:gap-8 items-start" data-article-tool-screenshot="monash-wam">
           <div className="min-w-0 space-y-4">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <div
+              className={
+                isHomeShell
+                  ? 'premium-card overflow-hidden rounded-3xl border border-gray-200/80 bg-white shadow-premium-lg dark:border-gray-700/80 dark:bg-gray-800'
+                  : 'bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden'
+              }
+            >
               <div className="md:hidden p-3 space-y-3">
                 {subjects.map((s, i) => (
                   <div key={`mobile-${s.id}`} className="rounded-xl border border-gray-200 dark:border-gray-700 p-3 space-y-3">
@@ -387,8 +413,14 @@ export default function WAMCalculator(_props: WAMCalculatorProps = {}) {
           </div>
 
           <aside className="min-w-0 w-full lg:sticky lg:top-24 space-y-4">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-              <div className="bg-gradient-to-br from-primary-600 to-primary-800 px-6 py-5">
+            <div
+              className={
+                isHomeShell
+                  ? 'premium-card overflow-hidden rounded-3xl border border-gray-200/80 bg-white shadow-premium-lg dark:border-gray-700/80 dark:bg-gray-800'
+                  : 'bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden'
+              }
+            >
+              <div className="bg-gradient-to-br from-primary-600 to-primary-800 px-6 py-5 md:rounded-t-3xl">
                 <div className="flex items-center gap-2 text-primary-100 text-sm font-medium mb-1">
                   <TrendingUp size={16} />
                   Your WAM Results
