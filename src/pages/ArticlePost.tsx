@@ -185,8 +185,8 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           </figure>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_272px] gap-8 lg:gap-10 items-start">
-          <div className="min-w-0 max-w-4xl">
+        <div className="mt-6 flex flex-col lg:flex-row gap-8 lg:gap-10">
+          <div className="min-w-0 max-w-4xl flex-1">
             <div className="mb-6 lg:hidden">
               <ArticleTableOfContents items={tocItems} variant="mobile" />
             </div>
@@ -246,8 +246,8 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
             />
           </div>
 
-          <div className="hidden lg:block lg:self-start w-full min-w-0">
-            <div className="sticky top-24 z-30 w-full">
+          <div className="hidden lg:block w-[272px] shrink-0">
+            <div className="sticky top-24 z-30">
               <div className="max-h-[calc(100vh-6rem)] overflow-y-auto overscroll-y-contain [scrollbar-gutter:stable]">
                 <ArticleTableOfContents
                   items={tocItems}
