@@ -175,7 +175,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
   return (
     <>
       <section id="calculator" className={`scroll-mt-20 ${isHomeShell ? 'pb-4 md:pb-6' : ''}`}>
-        <div className={isHomeShell ? 'home-container home-calc-container py-8 md:py-10' : 'max-w-6xl mx-auto px-4 py-8'}>
+        <div className={isHomeShell ? 'home-container home-calc-container pt-2 pb-8 md:pt-3 md:pb-10' : 'max-w-6xl mx-auto px-4 py-8'}>
         <div className={`text-center ${isHomeShell ? 'mb-8 md:mb-10 max-w-2xl mx-auto' : 'mb-6'}`}>
           {isHomeShell && (
             <p className="home-eyebrow mb-3">Main calculator</p>

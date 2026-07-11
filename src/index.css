@@ -322,18 +322,6 @@
     @apply rounded-[0.875rem] object-cover object-center;
   }
 
-  .home-calc-visual-banner {
-    @apply overflow-hidden rounded-2xl border border-primary-100/80 bg-gradient-to-br from-primary-50/50 via-white to-slate-50 shadow-premium dark:border-primary-900/40 dark:from-primary-900/20 dark:via-gray-900 dark:to-gray-950;
-  }
-
-  .home-calc-visual-banner-wrap {
-    @apply max-h-44 sm:max-h-52 md:max-h-56;
-  }
-
-  .home-calc-visual-banner-image {
-    @apply h-full w-full object-cover object-center;
-  }
-
   .home-calc-container {
     @apply max-w-[88rem];
   }
@@ -437,6 +425,10 @@
 
   .home-calculator-zone {
     @apply relative border-t border-gray-200/80 bg-gradient-to-b from-slate-50/90 via-white to-white dark:border-gray-800 dark:from-gray-950/90 dark:via-gray-900 dark:to-gray-900;
+  }
+
+  .home-calculator-zone-header {
+    @apply pb-4 pt-8 md:pb-5 md:pt-10;
   }
 
   .home-calculator-zone::before {
