@@ -12,14 +12,42 @@ import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, extname, join, resolve } from 'node:path';
-import puppeteer from 'puppeteer';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
 const distDir = join(projectRoot, 'dist');
 const PORT = 5199;
 const ORIGIN = `http://127.0.0.1:${PORT}`;
-const CONCURRENCY = 4;
+const CONCURRENCY = process.env.VERCEL ? 2 : 4;
+
+/** Launch a headless browser that works locally (Windows/Mac) and on Vercel Linux. */
+async function launchBrowser() {
+  if (process.platform === 'linux') {
+    const chromium = (await import('@sparticuz/chromium')).default;
+    const puppeteer = (await import('puppeteer-core')).default;
+
+    chromium.setGraphicsMode = false;
+
+    return puppeteer.launch({
+      args: [
+        ...chromium.args,
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+      ],
+      defaultViewport: { width: 1280, height: 900 },
+      executablePath: await chromium.executablePath(),
+      headless: 'shell',
+    });
+  }
+
+  const puppeteer = (await import('puppeteer')).default;
+  return puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  });
+}
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -102,7 +130,7 @@ async function renderRoute(browser, route) {
   const page = await browser.newPage();
   try {
     await page.setViewport({ width: 1280, height: 900 });
-    await page.goto(`${ORIGIN}${route}`, { waitUntil: 'networkidle0', timeout: 45000 });
+    await page.goto(`${ORIGIN}${route}`, { waitUntil: 'load', timeout: 60000 });
 
     // Wait until React has painted content into #root and Seo.tsx has set a title.
     await page.waitForFunction(
@@ -137,10 +165,7 @@ async function run() {
   console.log(`[prerender] ${routes.length} routes to prerender`);
 
   const server = await startStaticServer();
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-  });
+  const browser = await launchBrowser();
 
   const failures = [];
   let done = 0;
