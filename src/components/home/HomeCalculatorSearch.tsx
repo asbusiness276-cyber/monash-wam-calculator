@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ArrowRight, Search as SearchIcon } from 'lucide-react';
+import { ArrowRight, Calculator, GraduationCap, Search as SearchIcon, Target } from 'lucide-react';
 import { ALL_CALCULATOR_LINKS, CALCULATOR_CATEGORIES } from '../../data/calculatorCatalog';
 import { HOME_IMAGES } from '../../data/homeImages';
 import SearchField from '../SearchField';
@@ -30,18 +30,28 @@ export default function HomeCalculatorSearch() {
   }, [query]);
 
   const trimmedQuery = query.trim();
+  const quickSearches = [
+    { label: 'WAM target', icon: Target },
+    { label: 'GPA converter', icon: GraduationCap },
+    { label: 'Final grade', icon: Calculator },
+  ] as const;
 
   return (
-    <PremiumCard hover padding="lg" className="home-animate-in home-search-card">
+    <PremiumCard hover padding="md" className="home-animate-in home-search-card">
       <div className="home-search-split">
         <div className="home-search-form">
-          <CardIcon icon={SearchIcon} className="mb-4" />
-          <h2 className="card-title-lg">Search calculators</h2>
-          <p className="card-body mt-2">
+          <div className="mb-4 flex items-center gap-3">
+            <CardIcon icon={SearchIcon} className="h-10 w-10" />
+            <div>
+              <p className="home-eyebrow text-[10px]">Find a tool fast</p>
+              <h2 className="card-title-lg">Search calculators</h2>
+            </div>
+          </div>
+          <p className="card-body">
             Jump to WAM target, GPA conversion, honours, or exam tools by name or keyword.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-5">
             <SearchField
               id="home-calculator-search"
               label="Search calculators"
@@ -51,6 +61,24 @@ export default function HomeCalculatorSearch() {
               resultCount={trimmedQuery ? results.length : undefined}
               variant="premium"
             />
+          </div>
+
+          <div className="home-search-chips" aria-label="Popular calculator searches">
+            {quickSearches.map(item => {
+              const Icon = item.icon;
+
+              return (
+                <button
+                  key={item.label}
+                  type="button"
+                  onClick={() => setQuery(item.label)}
+                  className="home-search-chip"
+                >
+                  <Icon size={14} aria-hidden />
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 

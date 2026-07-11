@@ -21,7 +21,7 @@ export default function SearchField({
 }: SearchFieldProps) {
   const inputClass =
     variant === 'premium'
-      ? 'w-full rounded-2xl border border-gray-200/90 bg-white py-4 pl-12 pr-12 text-sm text-gray-900 shadow-premium-sm transition-[border-color,box-shadow] placeholder:text-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-gray-600 dark:bg-gray-900/50 dark:text-white'
+      ? 'w-full rounded-2xl border border-primary-100/90 bg-white/95 py-4 pl-12 pr-12 text-sm font-medium text-gray-900 shadow-premium transition-[border-color,box-shadow,background-color] placeholder:font-normal placeholder:text-gray-400 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/15 dark:border-primary-900/60 dark:bg-gray-900/65 dark:text-white dark:focus:bg-gray-900'
       : 'w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 py-3.5 pl-11 pr-11 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20';
 
   return (
@@ -31,7 +31,9 @@ export default function SearchField({
       </label>
       <Search
         size={variant === 'premium' ? 20 : 18}
-        className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+        className={`pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 ${
+          variant === 'premium' ? 'text-primary-500' : 'text-gray-400'
+        }`}
         aria-hidden
       />
       <input

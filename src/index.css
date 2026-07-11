@@ -286,15 +286,28 @@
   }
 
   .home-search-card {
-    @apply overflow-hidden;
+    @apply relative overflow-hidden bg-gradient-to-br from-white via-white to-primary-50/25 dark:from-gray-800 dark:via-gray-800 dark:to-primary-900/15;
+  }
+
+  .home-search-card::before {
+    content: '';
+    @apply pointer-events-none absolute -left-24 -top-24 h-56 w-56 rounded-full bg-primary-200/25 blur-3xl dark:bg-primary-700/15;
   }
 
   .home-search-split {
-    @apply grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-10 xl:gap-12;
+    @apply relative grid grid-cols-1 items-center gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.78fr)] lg:gap-8 xl:gap-10;
   }
 
   .home-search-form {
     @apply min-w-0 text-left;
+  }
+
+  .home-search-chips {
+    @apply mt-4 flex flex-wrap gap-2;
+  }
+
+  .home-search-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-primary-100 bg-primary-50/80 px-3 py-1.5 text-xs font-semibold text-primary-700 transition-[border-color,background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:border-primary-200 hover:bg-primary-100 dark:border-primary-800/60 dark:bg-primary-900/25 dark:text-primary-300 dark:hover:bg-primary-900/45;
   }
 
   .home-search-visual {
@@ -302,31 +315,27 @@
   }
 
   .home-search-image-wrap {
-    @apply rounded-2xl border border-gray-200/70 bg-gradient-to-br from-slate-50 to-white p-1 shadow-premium dark:border-gray-700/70 dark:from-gray-900 dark:to-gray-800;
+    @apply max-h-56 rounded-2xl border border-gray-200/70 bg-gradient-to-br from-slate-50 to-white p-1 shadow-premium dark:border-gray-700/70 dark:from-gray-900 dark:to-gray-800 lg:max-h-60;
   }
 
   .home-search-image {
-    @apply rounded-[0.875rem];
+    @apply rounded-[0.875rem] object-cover object-center;
   }
 
-  .home-calc-showcase {
-    @apply grid grid-cols-1 items-start gap-8 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:gap-10 2xl:gap-12;
+  .home-calc-visual-banner {
+    @apply overflow-hidden rounded-2xl border border-primary-100/80 bg-gradient-to-br from-primary-50/50 via-white to-slate-50 shadow-premium dark:border-primary-900/40 dark:from-primary-900/20 dark:via-gray-900 dark:to-gray-950;
   }
 
-  .home-calc-showcase-art {
-    @apply order-first xl:order-none;
+  .home-calc-visual-banner-wrap {
+    @apply max-h-44 sm:max-h-52 md:max-h-56;
   }
 
-  .home-calc-showcase-image-wrap {
-    @apply sticky top-24 rounded-2xl border border-primary-100/80 bg-gradient-to-br from-primary-50/60 via-white to-slate-50 p-1.5 shadow-premium-lg dark:border-primary-900/50 dark:from-primary-900/30 dark:via-gray-900 dark:to-gray-900;
+  .home-calc-visual-banner-image {
+    @apply h-full w-full object-cover object-center;
   }
 
-  .home-calc-showcase-image {
-    @apply rounded-xl;
-  }
-
-  .home-calc-showcase-tool {
-    @apply min-w-0;
+  .home-calc-container {
+    @apply max-w-[88rem];
   }
 
   /* How it works — step cards */
@@ -461,7 +470,7 @@
   }
 
   .calc-table {
-    @apply w-full min-w-[860px] border-separate border-spacing-0;
+    @apply w-full min-w-[760px] border-separate border-spacing-0;
   }
 
   .calc-table thead th {

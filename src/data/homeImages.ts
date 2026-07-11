@@ -23,7 +23,7 @@ export const HOME_IMAGES = {
   featuredCalculators: {
     '/wam-to-gpa-calculator': { src: '/home/calc-wam-to-gpa.webp', width: 640, height: 426 },
     '/wam-target-calculator': { src: '/home/calc-target-wam.webp', width: 640, height: 426 },
-    '/final-grade-calculator': { src: '/home/calc-grade-predictor.webp', width: 640, height: 468 },
+    '/final-grade-calculator': { src: '/home/calc-final-grade.webp', width: 640, height: 427 },
     '/monash-distinction-average-calculator': { src: '/home/calc-gpa-to-wam.webp', width: 640, height: 426 },
     '/semester-wam-calculator': { src: '/home/calc-semester-wam.webp', width: 640, height: 426 },
     '/monash-honours-calculator': { src: '/home/calc-honours.webp', width: 640, height: 426 },

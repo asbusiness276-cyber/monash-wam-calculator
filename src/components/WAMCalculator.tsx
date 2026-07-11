@@ -1,8 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Plus, Trash2, RotateCcw, Copy, Check, TrendingUp, Calculator } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
-import HomeImage from './home/ui/HomeImage';
-import { HOME_IMAGES } from '../data/homeImages';
 import { matchSubjectByUnit, matchUnitBySubject } from '../utils/unitSubjectSuggestions';
 import {
   calculateCreditWeightedWam,
@@ -177,7 +175,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
   return (
     <>
       <section id="calculator" className={`scroll-mt-20 ${isHomeShell ? 'pb-4 md:pb-6' : ''}`}>
-        <div className={isHomeShell ? 'home-container py-8 md:py-10' : 'max-w-6xl mx-auto px-4 py-8'}>
+        <div className={isHomeShell ? 'home-container home-calc-container py-8 md:py-10' : 'max-w-6xl mx-auto px-4 py-8'}>
         <div className={`text-center ${isHomeShell ? 'mb-8 md:mb-10 max-w-2xl mx-auto' : 'mb-6'}`}>
           {isHomeShell && (
             <p className="home-eyebrow mb-3">Main calculator</p>
@@ -204,20 +202,14 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
           </p>
         </div>
 
-        <div className={isHomeShell ? 'home-calc-showcase' : undefined}>
-          {isHomeShell && (
-            <div className="home-calc-showcase-art">
-              <HomeImage
-                image={HOME_IMAGES.wamCalculator}
-                alt="Student using the Monash WAM calculator with subject marks, credit points, and live results"
-                wrapperClassName="home-calc-showcase-image-wrap"
-                className="home-calc-showcase-image"
-              />
-            </div>
-          )}
-
-          <div className={isHomeShell ? 'home-calc-showcase-tool' : undefined}>
-        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_19.5rem] lg:gap-8 xl:grid-cols-[minmax(0,1fr)_21rem] xl:gap-10" data-article-tool-screenshot="monash-wam">
+        <div
+          className={
+            isHomeShell
+              ? 'grid grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_21rem] xl:gap-10'
+              : 'grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_19.5rem] lg:gap-8 xl:grid-cols-[minmax(0,1fr)_21rem] xl:gap-10'
+          }
+          data-article-tool-screenshot="monash-wam"
+        >
           <div className="min-w-0 space-y-5">
             <div className={shellClass}>
               {/* Mobile — unit cards */}
@@ -314,18 +306,18 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 <table className="calc-table">
                   <thead>
                     <tr>
-                      <th className="min-w-[130px]">Unit Name</th>
-                      <th className="min-w-[190px]">Subject</th>
-                      <th className="min-w-[7rem]">Final Mark (%)</th>
-                      <th className="min-w-[6rem]">Credits</th>
-                      <th className="min-w-[7rem]">Year</th>
+                      <th className="min-w-[7.5rem]">Unit Name</th>
+                      <th className="min-w-[10rem]">Subject</th>
+                      <th className="min-w-[6.5rem]">Final Mark (%)</th>
+                      <th className="min-w-[5rem]">Credits</th>
+                      <th className="min-w-[6rem]">Year</th>
                       <th className="w-14 text-center">Remove</th>
                     </tr>
                   </thead>
                   <tbody>
                     {subjects.map((s, i) => (
                       <tr key={s.id}>
-                        <td className="relative min-w-[130px]">
+                        <td className="relative min-w-[7.5rem]">
                           <UnitAutocompleteInput
                             field="unit"
                             value={s.unit}
@@ -334,7 +326,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                             inputClassName={tableInputClass}
                           />
                         </td>
-                        <td className="relative min-w-[190px]">
+                        <td className="relative min-w-[10rem]">
                           <UnitAutocompleteInput
                             field="subject"
                             value={s.subject}
@@ -499,8 +491,6 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
               </div>
             </div>
           </aside>
-        </div>
-          </div>
         </div>
 
         <a href="/wam-to-gpa-calculator" className="calc-gpa-promo-banner group">
