@@ -34,7 +34,7 @@ interface SeoProps {
 }
 
 const BASE_URL = 'https://monashwamcalculator.com';
-const DEFAULT_OG_IMAGE = `${BASE_URL}/favicon-192x192.png`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/logo.png`;
 
 function upsertMeta(selector: string, attribute: 'name' | 'property', key: string, content: string) {
   let element = document.head.querySelector(selector) as HTMLMetaElement | null;

@@ -1,5 +1,8 @@
 export const SITE_ORIGIN = 'https://monashwamcalculator.com';
 
+export const SITE_LOGO = '/logo.png';
+export const SITE_LOGO_ALT = 'Monash WAM Calculator — MWC logo';
+
 /** Pill-style button for author/social links (LinkedIn, Instagram, Email). */
 export const SOCIAL_LINK_BUTTON_CLASS =
   'inline-flex items-center gap-1.5 rounded-full border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm font-medium text-primary-600 dark:text-primary-400 hover:border-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors';

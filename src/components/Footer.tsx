@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Calculator, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import SiteLogo from './SiteLogo';
 import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_CATEGORIES, CALCULATOR_COUNT } from '../data/calculatorCatalog';
 
@@ -14,10 +15,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-10 md:py-12 min-w-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4">
-            <div className="inline-flex items-center gap-2 text-white font-bold text-xl mb-3">
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary-500/20 text-primary-300">
-                <Calculator size={20} />
-              </span>
+            <div className="inline-flex items-center gap-2.5 text-white font-bold text-xl mb-3">
+              <SiteLogo size="lg" />
               <span>MonashWAM Calculator</span>
             </div>
             <p className="text-sm leading-relaxed">

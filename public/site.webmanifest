@@ -4,9 +4,15 @@
   "description": "Free WAM calculator for Monash University students",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "background_color": "#00112b",
+  "theme_color": "#00112b",
   "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/favicon-48x48.png",
       "sizes": "48x48",
