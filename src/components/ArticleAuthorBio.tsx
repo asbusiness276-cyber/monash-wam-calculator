@@ -1,6 +1,6 @@
 import AuthorAvatar from './AuthorAvatar';
 import AuthorSocialLinks from './AuthorSocialLinks';
-import { ARTICLE_AUTHOR } from '../constants/author';
+import { ARTICLE_AUTHOR, AUTHOR_PAGE_PATH } from '../constants/author';
 
 export default function ArticleAuthorBio() {
   return (
@@ -16,9 +16,18 @@ export default function ArticleAuthorBio() {
             About the author
           </p>
           <h2 id="article-author-heading" className="mt-1 text-lg font-bold text-gray-900 dark:text-white">
-            {ARTICLE_AUTHOR.name}
+            <a href={AUTHOR_PAGE_PATH} className="hover:text-primary-600 dark:hover:text-primary-400 hover:underline">
+              {ARTICLE_AUTHOR.name}
+            </a>
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{ARTICLE_AUTHOR.bio}</p>
+
+          <a
+            href={AUTHOR_PAGE_PATH}
+            className="mt-3 inline-flex text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline"
+          >
+            Full author profile →
+          </a>
 
           <AuthorSocialLinks className="mt-4" />
         </div>

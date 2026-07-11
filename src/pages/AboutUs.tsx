@@ -3,7 +3,7 @@ import AuthorAvatar from '../components/AuthorAvatar';
 import AuthorSocialLinks from '../components/AuthorSocialLinks';
 import Seo from '../components/Seo';
 import PageFaq from '../components/PageFaq';
-import { ARTICLE_AUTHOR } from '../constants/author';
+import { ARTICLE_AUTHOR, AUTHOR_PAGE_PATH } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 import { articles } from '../data/articles';
@@ -117,7 +117,11 @@ export default function AboutUs() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
               <AuthorAvatar size="lg" priority />
               <div className="min-w-0">
-                <p className="font-semibold text-gray-900 dark:text-white">{ARTICLE_AUTHOR.name}</p>
+                <p className="font-semibold text-gray-900 dark:text-white">
+                  <a href={absoluteUrl(AUTHOR_PAGE_PATH)} className={INLINE_LINK_CLASS}>
+                    {ARTICLE_AUTHOR.name}
+                  </a>
+                </p>
                 <p className="mt-2">{ARTICLE_AUTHOR.bio}</p>
                 <AuthorSocialLinks className="mt-3" />
               </div>

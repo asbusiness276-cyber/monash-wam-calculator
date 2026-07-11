@@ -5,6 +5,16 @@ export interface FaqItem {
   answer: string;
 }
 
+interface SeoPerson {
+  name: string;
+  jobTitle?: string;
+  description: string;
+  image: string;
+  url: string;
+  sameAs: string[];
+  email?: string;
+}
+
 interface SeoProps {
   title: string;
   description: string;
@@ -13,6 +23,7 @@ interface SeoProps {
   noIndex?: boolean;
   ogImage?: string;
   ogImageAlt?: string;
+  person?: SeoPerson;
   article?: {
     headline: string;
     datePublished: string;
@@ -61,6 +72,7 @@ export default function Seo({
   noIndex = false,
   ogImage = DEFAULT_OG_IMAGE,
   ogImageAlt = 'Monash WAM Calculator',
+  person,
   article,
 }: SeoProps) {
   useEffect(() => {
@@ -208,8 +220,9 @@ export default function Seo({
           description: ogImageAlt,
         },
         author: {
-          '@type': 'Organization',
+          '@type': 'Person',
           name: article.author,
+          url: `${BASE_URL}/about-author`,
         },
         publisher: {
           '@type': 'Organization',
@@ -224,7 +237,29 @@ export default function Seo({
     } else {
       removeJsonLd('article');
     }
-  }, [title, description, canonicalPath, faqItems, noIndex, ogImage, ogImageAlt, article]);
+
+    if (person) {
+      const personImageUrl = person.image.startsWith('http') ? person.image : `${BASE_URL}${person.image}`;
+      upsertJsonLd('person', {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: person.name,
+        jobTitle: person.jobTitle,
+        description: person.description,
+        image: personImageUrl,
+        url: `${BASE_URL}${person.url}`,
+        sameAs: person.sameAs,
+        email: person.email,
+        worksFor: {
+          '@type': 'Organization',
+          name: 'Monash WAM Calculator',
+          url: BASE_URL,
+        },
+      });
+    } else {
+      removeJsonLd('person');
+    }
+  }, [title, description, canonicalPath, faqItems, noIndex, ogImage, ogImageAlt, article, person]);
 
   return null;
 }
