@@ -1,6 +1,7 @@
 import { useDarkMode } from './hooks/useDarkMode';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 import Home from './pages/Home';
 import WAMtoGPA from './pages/WAMtoGPA';
 import GPAtoWAM from './pages/GPAtoWAM';
@@ -148,6 +149,7 @@ export default function App() {
         {getPage(path)}
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

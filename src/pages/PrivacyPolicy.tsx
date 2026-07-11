@@ -82,6 +82,12 @@ export default function PrivacyPolicy() {
               effectiveness.
             </p>
             <p className="mt-2">
+              When you first visit, a cookie consent banner lets you choose <strong>Essential only</strong> or{' '}
+              <strong>Accept all</strong>. Essential-only mode keeps calculator tools working without loading Google
+              Analytics or AdSense scripts. Accept all enables analytics and advertising cookies described in this
+              policy.
+            </p>
+            <p className="mt-2">
               You can disable cookies in your browser settings, though some features may not function as intended. For
               personalized advertising from Google, visit{' '}
               <a

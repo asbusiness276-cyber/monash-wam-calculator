@@ -3,6 +3,8 @@ import { Calculator, ChevronDown } from 'lucide-react';
 import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_CATEGORIES, CALCULATOR_COUNT } from '../data/calculatorCatalog';
 
+import { openCookieSettings } from '../utils/cookieConsent';
+
 export default function Footer() {
   const [calculatorsOpen, setCalculatorsOpen] = useState(false);
   const [articlesOpen, setArticlesOpen] = useState(false);
@@ -143,6 +145,15 @@ export default function Footer() {
                     <a href="/disclaimer" className="hover:text-white transition-colors">
                       Disclaimer
                     </a>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={openCookieSettings}
+                      className="hover:text-white transition-colors text-left"
+                    >
+                      Cookie settings
+                    </button>
                   </li>
                 </ul>
               </div>
