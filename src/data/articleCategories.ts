@@ -4,6 +4,7 @@ export interface ArticleCategory {
   id: string;
   title: string;
   description: string;
+  intro: string;
 }
 
 export const ARTICLE_CATEGORIES: ArticleCategory[] = [
@@ -11,31 +12,43 @@ export const ARTICLE_CATEGORIES: ArticleCategory[] = [
     id: 'wam-fundamentals',
     title: 'WAM Fundamentals',
     description: 'How WAM is calculated, credit points, transcripts, semester averages, and milestone bands.',
+    intro:
+      'Weighted Average Mark is the headline number on most Monash transcripts — but the formula catches students off guard. First-year units count at half weight in official WAM, credit points change how much one subject moves your average, and semester WAM differs from cumulative degree WAM. Guides in this category walk through the maths step by step, explain how to read WES exports, and show when to use semester vs cumulative calculators. Start here if you are new to Monash grading or need to reconcile a manual calculation with WES.',
   },
   {
     id: 'wam-planning',
     title: 'WAM Planning & Targets',
     description: 'Improvement strategy, required averages, and what-if projection before results.',
+    intro:
+      'Once you understand how WAM works, the next question is practical: what marks do I need next semester to reach my goal? Planning guides cover target WAM modelling, unit-by-unit mark requirements, projection before results release, and realistic timelines when you are recovering from a weak teaching period. These articles pair directly with our WAM target, projection, and unit target calculators so you can move from strategy to numbers in one session — without guessing whether distinction average is still mathematically reachable.',
   },
   {
     id: 'gpa-conversion',
     title: 'GPA & Conversion',
     description: 'WAM to GPA, CGPA, postgraduate reporting, and cross-university conversion.',
+    intro:
+      'Monash reports WAM as a percentage, but scholarships, US exchange forms, and graduate programs often ask for GPA on a 4.0 or 7.0 scale instead. Conversion is not a simple linear formula — Monash uses discrete grade bands tied to High Distinction, Distinction, Credit, and Pass. This category explains band mapping, when to use cumulative CGPA vs semester GPA, and how international 10-point scales compare to Australian coursework. Use these guides alongside our dedicated WAM-to-GPA and percentage converters when filling applications.',
   },
   {
     id: 'merit-awards',
     title: 'Honours, Scholarships & Merit',
     description: 'Honours entry, scholarships, distinction average, dean\'s list, and employer WAM screens.',
+    intro:
+      'Merit thresholds sit at the intersection of WAM maths and faculty policy. Honours classification cut-offs, Dean\'s list tiers, scholarship renewal GPA floors, and employer graduate screens often cite WAM 70+, distinction average, or GPA 3.0 — but the exact rules vary by course and year. Articles here translate policy language into calculator-ready targets, explain distinction average vs a single D grade, and cover competitive standing without overpromising outcomes Monash has not guaranteed.',
   },
   {
     id: 'recovery-exams',
     title: 'Recovery & Exams',
     description: 'Failed units, supplementary exams, repeats, withdrawn fail, and final exam targets.',
+    intro:
+      'A failed unit, withdrawn fail, or borderline exam mark can feel catastrophic — but the impact on cumulative WAM depends on credit points, remaining enrolment, and whether you repeat or sit a supplementary exam. Recovery guides quantify that impact, model repeat vs supp scenarios, and help you set final exam mark targets when the last assessment still carries heavy weight. Pair these reads with failed unit, supp/repeat, withdrawn fail, and final grade calculators when you need concrete numbers before speaking with course advisers.',
   },
   {
     id: 'pathways',
     title: 'University Life & Pathways',
     description: 'Monash orientation, exchange grades, and degree pathway context.',
+    intro:
+      'Not every academic question is a formula. Orientation timelines, exchange grade conversion, faculty culture, and degree pathway choices shape how you use WAM tools in real life. This category covers Monash-specific context — how exchange marks return to your transcript, what to expect in first semester, and broader Australian university comparisons — so calculators sit inside a realistic picture of student life rather than floating as abstract maths.',
   },
 ];
 

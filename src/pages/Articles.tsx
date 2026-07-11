@@ -4,6 +4,7 @@ import { ArticleSearchBar, useArticleSearch } from '../components/ArticleSearch'
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_COUNT } from '../data/calculatorCatalog';
+import { articles } from '../data/articles';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
 const [articlesHome, articlesHowTo] = PAGE_KEYWORD_LINKS['/articles'];
@@ -29,6 +30,41 @@ export default function Articles() {
             <a href={absoluteUrl(articlesHowTo.path)} className={INLINE_LINK_CLASS}>{articlesHowTo.keyword}</a>
             {' '}for a step-by-step explanation.
           </p>
+        </div>
+
+        <div className="mt-8 max-w-3xl space-y-5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-8 shadow-sm">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">What You Will Find Here</h2>
+            <p>
+              MonashWAMCalculator.com publishes {articles.length} long-form guides written for students who need
+              more than a one-line FAQ. Each article explains Monash grading concepts in plain language — credit
+              points, year-level weighting, distinction average, supplementary exams, exchange grades — and links to
+              the free calculator that matches the topic. Guides typically run 800–1,600 words with worked examples,
+              tables, and actionable checklists rather than generic SEO filler.
+            </p>
+            <p className="mt-3">
+              Content is organised into six categories below. Use the search bar to jump straight to a topic — try
+              &quot;honours&quot;, &quot;scholarship&quot;, &quot;failed unit&quot;, or &quot;GPA conversion&quot; — or
+              browse category pills when you want a structured reading path from fundamentals through to recovery
+              planning.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-6 md:p-8">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">How to Use Articles With Calculators</h2>
+            <p>
+              Articles and calculators are designed to work together. Read first when you need context — for example
+              how Monash treats withdrawn fails, or what distinction average means for scholarships. Open the linked
+              calculator when you have marks ready and want live numbers. Many students run a projection calculator
+              mid-semester, then return to the matching article before final exams to confirm policy details.
+            </p>
+            <ul className="mt-3 list-disc list-inside space-y-1">
+              <li>WAM fundamentals → homepage WAM calculator and semester WAM tools</li>
+              <li>GPA conversion → WAM to GPA, percentage to GPA, and CGPA calculators</li>
+              <li>Merit and honours → distinction average, scholarship WAM, and honours calculators</li>
+              <li>Recovery → failed unit, supp/repeat, and final grade calculators</li>
+            </ul>
+          </div>
         </div>
 
         <div className="mt-8 max-w-2xl">

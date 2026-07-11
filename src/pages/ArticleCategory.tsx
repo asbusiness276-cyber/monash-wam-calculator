@@ -40,6 +40,7 @@ export default function ArticleCategory({ categoryId }: ArticleCategoryProps) {
           </p>
           <h1 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">{category.title}</h1>
           <p className="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">{category.description}</p>
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{category.intro}</p>
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">{categoryArticles.length} guides</p>
         </div>
 

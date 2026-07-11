@@ -61,6 +61,34 @@ export default function Calculators() {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 py-10 space-y-10">
+        <div className="max-w-3xl space-y-5">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 md:p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Built for Monash Coursework Maths</h2>
+            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              Every tool on this page uses Monash-published grading bands and credit-weighted formulas — WAM with
+              Year 1 half-weighting where applicable, official 4.0 grade points for GPA and CGPA, and standard HD/D/C/P
+              cut-offs for conversions. Calculators update live in your browser; nothing is stored on a server and no
+              account is required. Each page includes a full written guide with formulas, worked examples, and FAQs —
+              not just an input form with two sentences of filler.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              This is an independent student resource. Results are for planning and orientation. Always verify final
+              figures on WES and your official transcript before scholarship, honours, or employment submissions.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-6 md:p-8">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Pick Your Starting Point</h2>
+            <ul className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside">
+              <li><strong className="text-gray-800 dark:text-gray-200">New to Monash?</strong> Start with the homepage WAM calculator, then semester WAM for one teaching period.</li>
+              <li><strong className="text-gray-800 dark:text-gray-200">Chasing a target?</strong> Use WAM target, projection, or unit target tools before exams.</li>
+              <li><strong className="text-gray-800 dark:text-gray-200">Forms ask for GPA?</strong> Open WAM to GPA, percentage to GPA, or CGPA calculators in the GPA category.</li>
+              <li><strong className="text-gray-800 dark:text-gray-200">Recovery semester?</strong> Model failed units, supps, repeats, and withdrawn fail impact.</li>
+              <li><strong className="text-gray-800 dark:text-gray-200">Merit planning?</strong> Check distinction average, scholarship WAM, honours, and Dean&apos;s honours tools.</li>
+            </ul>
+          </div>
+        </div>
+
         <div className="max-w-3xl bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 md:p-8 shadow-sm">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">How to Choose a Calculator</h2>
           <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 mb-4">

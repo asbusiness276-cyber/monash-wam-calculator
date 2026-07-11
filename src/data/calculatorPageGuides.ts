@@ -670,6 +670,13 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'For cumulative degree WAM with Year 1 half-weighting, use the main Monash WAM calculator on the homepage.',
         ],
       },
+      {
+        heading: 'Formula Reminder',
+        paragraphs: [
+          'Credit-weighted average = Σ(mark × credit points) ÷ Σ(credit points). A 75 in a 12 cp unit contributes 900 weighted points; the same 75 in a 6 cp unit contributes 450. That is why students with identical simple means can have different official WAM when their credit loads differ.',
+          'Semester-only groups exclude prior years — useful when reviewing one teaching period before full degree weighting applies. Export unit marks from WES or Moodle to populate the calculator accurately.',
+        ],
+      },
     ],
   },
   '/grade-average-calculator': {
@@ -677,8 +684,34 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
       {
         heading: 'Simple vs Weighted Grade Average',
         paragraphs: [
-          'A simple grade average treats every mark equally. A credit-weighted average gives more influence to higher-credit units — the method Monash uses for WAM.',
-          'Enter marks only for a quick mean, or add credit points to see both results side by side.',
+          'A simple grade average treats every mark equally — add all percentages and divide by the number of units. Monash WAM does not work that way. Credit-weighted averaging gives more influence to 12-credit units than 6-credit electives, which is why a distinction in a core unit moves your degree average more than the same mark in a small breadth subject.',
+          'This calculator shows both results side by side so you can see when a simple mean misleads you. If the weighted result is lower, your high-credit units are underperforming relative to lighter loads — a common pattern before students focus revision on core subjects.',
+        ],
+      },
+      {
+        heading: 'Worked Example',
+        table: {
+          headers: ['Unit', 'Mark', 'Credit points', 'Weighted contribution'],
+          rows: [
+            ['FIT1045', '78', '6', '468'],
+            ['MAT1830', '72', '6', '432'],
+            ['ACC1200', '85', '6', '510'],
+          ],
+        },
+        paragraphs: [
+          'Simple average = (78 + 72 + 85) ÷ 3 = 78.33%. Credit-weighted average with equal 6 cp units matches the simple mean here. When credit loads differ — for example one 12 cp core and two 6 cp electives — the weighted result diverges. Use the main Monash WAM calculator for official year-level weighting (Year 1 = 0.5).',
+        ],
+      },
+      {
+        heading: 'When to Use This Tool',
+        bullets: [
+          'Compare simple vs credit-weighted means before results release.',
+          'Check whether a strong elective is masking a weak core unit.',
+          'Pair with the weighted average calculator for semester-only groups.',
+          'Read our how to calculate wam article for the full Monash formula.',
+        ],
+        paragraphs: [
+          'For cumulative degree planning, always confirm final numbers on WES. Calculator outputs are for orientation, not official reporting.',
         ],
       },
     ],
@@ -686,10 +719,40 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/percentage-to-gpa-calculator': {
     sections: [
       {
-        heading: 'Percentage to Monash GPA',
+        heading: 'How Monash Maps Percentage to GPA',
         paragraphs: [
-          'Monash maps percentage bands to letter grades, then to GPA values. HD (80%+) = 4.0 / 7.0, D (70–79%) = 3.0 / 6.0, and so on.',
-          'Enter a percentage directly, or use marks obtained ÷ marks total to derive the percentage first.',
+          'Monash coursework uses percentage marks on your transcript, but scholarships, exchange applications, and some employer forms ask for GPA instead. The university converts percentage bands to letter grades first — High Distinction (80%+), Distinction (70–79%), Credit (60–69%), Pass (50–59%) — then assigns official grade points on the 4.0 and 7.0 scales.',
+          'This calculator applies those published band cut-offs so you can translate a single unit mark or an overall percentage snapshot into GPA values without guessing. It is especially useful when you have a raw exam percentage but need to know whether it sits in Distinction or Credit territory for planning.',
+        ],
+        table: {
+          headers: ['Percentage band', 'Letter grade', 'GPA (4.0)', 'GPA (7.0)'],
+          rows: [
+            ['80–100%', 'HD', '4.0', '7.0'],
+            ['70–79%', 'D', '3.0', '6.0'],
+            ['60–69%', 'C', '2.0', '5.0'],
+            ['50–59%', 'P', '1.0', '4.0'],
+            ['0–49%', 'N', '0.0', '0.0'],
+          ],
+        },
+      },
+      {
+        heading: 'Two Ways to Enter Your Mark',
+        paragraphs: [
+          'Enter a percentage directly if you already know your mark — for example 76% from a Moodle gradebook. Alternatively, enter marks obtained and marks total (such as 38 out of 50) and the tool derives the percentage before mapping to GPA. That second path mirrors how many assignments report partial scores.',
+          'Remember that Monash transcript GPA is credit-weighted across all units, not a straight conversion of one percentage. Use this page for band lookup and single-unit planning; use the Monash CGPA calculator when you need cumulative GPA from a full unit list.',
+        ],
+        bullets: [
+          'Single-unit percentage → instant 4.0 and 7.0 GPA equivalents.',
+          'Partial marks (obtained ÷ total) supported for assignment-style scores.',
+          'Pair with WAM to GPA calculator when you have a degree average, not one mark.',
+          'See our WAM to GPA conversion article for cross-scale strategy.',
+        ],
+      },
+      {
+        heading: 'Common Student Questions',
+        paragraphs: [
+          'A 79% and an 80% are both strong marks, but the GPA step change at 80 can matter for merit cut-offs — this tool shows exactly which band you land in. Borderline marks are worth confirming on WES once results are final.',
+          'International students comparing Monash bands to a home-country 10-point scale should also try the 10-point GPA to WAM calculator after getting the percentage equivalent.',
         ],
       },
     ],
@@ -697,10 +760,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/7-0-scale-gpa-calculator': {
     sections: [
       {
-        heading: 'Australian 7.0 GPA Scale',
+        heading: 'Why Australia Uses a 7-Point GPA Scale',
         paragraphs: [
-          'The 7-point scale is common in Australian university comparisons: HD = 7, D = 6, CR = 5, P = 4, Fail = 0.',
-          'This calculator converts a Monash percentage mark to the 7.0 value using standard coursework bands.',
+          'Australian universities often report GPA on a 7-point scale for HDR entry, graduate certificate comparisons, and cross-institution benchmarking. On this scale, High Distinction maps to 7, Distinction to 6, Credit to 5, Pass to 4, and Fail to 0 — a wider spread than the US-style 4.0 scale.',
+          'Monash still publishes percentage WAM on official transcripts, but when a form asks for "GPA out of 7" you need band-accurate conversion, not a linear guess. This calculator takes your percentage mark and returns the standard Australian 7.0 value used in coursework planning.',
+        ],
+      },
+      {
+        heading: 'Percentage to 7.0 Mapping',
+        table: {
+          headers: ['Mark range', 'Grade', '7.0 GPA'],
+          rows: [
+            ['80%+', 'HD', '7.0'],
+            ['70–79%', 'D', '6.0'],
+            ['60–69%', 'C', '5.0'],
+            ['50–59%', 'P', '4.0'],
+            ['Below 50%', 'N', '0.0'],
+          ],
+        },
+        paragraphs: [
+          'The mapping is discrete — there is no 6.5 for a 75%. Your mark sits entirely within one band until it crosses the next threshold. That is why two students both "in Distinction" can have different percentages but the same 6.0 GPA on a 7-point summary.',
+        ],
+      },
+      {
+        heading: 'When to Use 7.0 vs 4.0',
+        bullets: [
+          'Postgraduate and research program forms often specify 7.0 GPA minimums.',
+          'Compare Monash performance to other Australian universities on a like-for-like scale.',
+          'Convert back to 4.0 with the 7.0 to 4.0 GPA calculator when US forms appear.',
+          'For cumulative degree GPA, use semester or CGPA tools with every completed unit.',
+        ],
+        paragraphs: [
+          'Always cite the scale you used on applications ("GPA 6.2 on a 7.0 scale") to avoid confusion with US 4.0 reporting.',
         ],
       },
     ],
@@ -708,10 +799,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/wam-to-4-0-gpa-calculator': {
     sections: [
       {
-        heading: 'WAM to 4.0 GPA',
+        heading: 'Converting Overall WAM to 4.0 GPA',
         paragraphs: [
-          'Many scholarship and US-style forms request GPA on a 4.0 scale. Monash maps WAM bands to HD = 4.0, D = 3.0, C = 2.0, P = 1.0, and N = 0.0 for coursework planning.',
-          'Official transcript GPA uses per-unit letter grades with credit weighting — this tool gives the band-equivalent 4.0 value from your overall WAM snapshot.',
+          'Your Monash WAM is a credit-weighted percentage average across completed coursework. Many scholarship panels, US exchange programs, and graduate school portals request GPA on a 4.0 scale instead. Monash maps WAM bands to GPA tiers: WAM 80+ aligns with HD (4.0), 70–79 with D (3.0), 60–69 with C (2.0), and 50–59 with P (1.0).',
+          'This calculator gives the band-equivalent 4.0 GPA from your overall WAM snapshot — fast for form filling when you do not need to re-enter every unit. Official transcript GPA still comes from per-unit letter grades with credit weighting, which can differ slightly from a single WAM band mapping.',
+        ],
+      },
+      {
+        heading: 'WAM Band Reference',
+        table: {
+          headers: ['WAM range', 'Typical band', '4.0 GPA equivalent'],
+          rows: [
+            ['80–100', 'High Distinction', '4.0'],
+            ['70–79', 'Distinction', '3.0'],
+            ['60–69', 'Credit', '2.0'],
+            ['50–59', 'Pass', '1.0'],
+            ['Below 50', 'Fail', '0.0'],
+          ],
+        },
+        paragraphs: [
+          'A WAM of 76 sits in the Distinction band, so the planning equivalent is GPA 3.0 — even though your exact transcript GPA might be 3.1 or 2.9 depending on unit mix. Use the Monash CGPA calculator when precision to three decimals matters.',
+        ],
+      },
+      {
+        heading: 'Planning Tips',
+        bullets: [
+          'Scholarship cut-offs often cite WAM 70+ or GPA 3.0+ — check which metric your award uses.',
+          'US-style forms may cap reporting at 4.0; do not inflate beyond Monash bands.',
+          'Pair with WAM target calculator to see marks needed to cross the next GPA band.',
+          'Read our WAM to GPA guide for employer and postgrad reporting context.',
+        ],
+        paragraphs: [
+          'Verify final numbers on WES before submitting official applications. Calculator output is for orientation only.',
         ],
       },
     ],
@@ -719,10 +838,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/wam-to-7-0-gpa-calculator': {
     sections: [
       {
-        heading: 'WAM to 7.0 GPA',
+        heading: 'WAM to Australian 7-Point GPA',
         paragraphs: [
-          'Australian HDR programs and comparison tables often use the 7-point scale. Monash WAM bands map to HD = 7, D = 6, CR = 5, P = 4, Fail = 0.',
-          'Use this when applications specify 7.0 GPA rather than 4.0 or raw WAM.',
+          'Australian HDR programs, government scholarship schemes, and some faculty merit lists reference GPA on a 7-point scale. If you know your Monash WAM but the application form asks for "GPA /7", this tool maps your percentage average to the standard coursework bands: HD = 7, D = 6, CR = 5, P = 4.',
+          'Unlike a linear formula (WAM ÷ 100 × 7), Monash uses discrete grade bands. A WAM of 78 and 72 both fall in Distinction and both plan as 6.0 on the 7-point scale, even though their percentages differ.',
+        ],
+      },
+      {
+        heading: 'Band Mapping Table',
+        table: {
+          headers: ['WAM', '7.0 GPA', 'Letter grade'],
+          rows: [
+            ['80+', '7.0', 'HD'],
+            ['70–79', '6.0', 'D'],
+            ['60–69', '5.0', 'C'],
+            ['50–59', '4.0', 'P'],
+            ['Below 50', '0.0', 'N'],
+          ],
+        },
+        paragraphs: [
+          'Students near band boundaries — for example WAM 79.5 vs 80.1 — should treat the result as sensitive to final unit marks. Small improvements in remaining subjects can shift both WAM and 7.0 GPA tier.',
+        ],
+      },
+      {
+        heading: 'Related Tools',
+        bullets: [
+          'Convert 7.0 back to WAM ranges with the 7.0 GPA to WAM calculator.',
+          'Compare 4.0 and 7.0 reporting with the WAM to 4.0 GPA calculator.',
+          'Build cumulative GPA from unit lists using the Monash CGPA calculator.',
+          'Browse GPA conversion articles for cross-university comparisons.',
+        ],
+        paragraphs: [
+          'When applying interstate, note that other universities may use slightly different band cut-offs — always read the target institution\'s policy.',
         ],
       },
     ],
@@ -730,10 +877,37 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/wam-to-cgpa-calculator': {
     sections: [
       {
-        heading: 'WAM to CGPA Planning',
+        heading: 'WAM vs CGPA at Monash',
         paragraphs: [
-          'Monash CGPA is cumulative GPA on the official 4.0 scale. Converting WAM to a CGPA band helps benchmark scholarship tiers and postgrad cut-offs before you run full unit-by-unit maths.',
-          'For transcript-accurate CGPA, use the Monash CGPA calculator with each unit grade and credit point.',
+          'WAM (Weighted Average Mark) is your percentage-based degree average. CGPA (Cumulative Grade Point Average) is the credit-weighted mean of official 4.0 grade points across all completed units. They measure the same academic record but express it differently — WAM as %, CGPA as grade points.',
+          'This calculator helps you benchmark WAM against CGPA bands for scholarship tiers, Dean\'s list thresholds, and postgrad cut-offs when you only have WAM visible on WES but the form asks for CGPA-style reporting.',
+        ],
+      },
+      {
+        heading: 'Approximate Band Alignment',
+        table: {
+          headers: ['WAM band', 'Typical CGPA range (4.0)', 'Standing'],
+          rows: [
+            ['80+', '3.7–4.0', 'High Distinction average'],
+            ['70–79', '3.0–3.6', 'Distinction average'],
+            ['60–69', '2.0–2.9', 'Credit average'],
+            ['50–59', '1.0–1.9', 'Pass average'],
+          ],
+        },
+        paragraphs: [
+          'Exact CGPA depends on how many units sit at the top or bottom of each band — a WAM of 74 with many 79s plans differently from 74 with many 71s. For transcript-accurate CGPA, enter each unit in the Monash CGPA calculator.',
+        ],
+      },
+      {
+        heading: 'Best Practice',
+        bullets: [
+          'Use WAM-to-CGPA here for quick planning ranges before applications.',
+          'Run full unit-by-unit maths when the form requires official CGPA.',
+          'Track semester movement with the semester GPA calculator.',
+          'See our CGPA article for how repeats and withdrawn fails affect cumulative GPA.',
+        ],
+        paragraphs: [
+          'Monash may display both metrics on different screens — export your academic record if you need the authoritative CGPA figure.',
         ],
       },
     ],
@@ -741,9 +915,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/4-0-gpa-to-wam-calculator': {
     sections: [
       {
-        heading: '4.0 GPA to WAM',
+        heading: 'What 4.0 GPA Means at Monash',
         paragraphs: [
-          'A 4.0 GPA of 3.0 maps to roughly WAM 70–79% at Monash — the Distinction band. Because bands span a range, the result is approximate but useful for transfer and scholarship planning.',
+          'On Monash official 4.0 scale, High Distinction = 4.0, Distinction = 3.0, Credit = 2.0, Pass = 1.0, and Fail = 0.0. When a scholarship brief or transfer guide cites "GPA 3.0 required", that typically maps to Distinction-level performance — roughly WAM 70–79% on the percentage scale.',
+          'This reverse converter takes your 4.0 GPA input and returns the Monash WAM percentage band equivalent. Because each GPA step covers a 10-point WAM range, the result is a planning band, not a precise single percentage.',
+        ],
+      },
+      {
+        heading: 'GPA to WAM Band Table',
+        table: {
+          headers: ['4.0 GPA', 'Letter grade', 'WAM range'],
+          rows: [
+            ['4.0', 'HD', '80–100%'],
+            ['3.0', 'D', '70–79%'],
+            ['2.0', 'C', '60–69%'],
+            ['1.0', 'P', '50–59%'],
+            ['0.0', 'N', 'Below 50%'],
+          ],
+        },
+        paragraphs: [
+          'A GPA of 3.0 therefore plans as WAM 70–79. If you need a single midpoint for mental maths, many students use 75% as a Distinction anchor — but official comparisons should cite the full band.',
+        ],
+      },
+      {
+        heading: 'Use Cases',
+        bullets: [
+          'Translate US-style GPA requirements into Monash WAM targets.',
+          'Check whether your transcript GPA meets a WAM 70 scholarship floor.',
+          'Pair with WAM target calculator once you know your desired band.',
+          'See our GPA to WAM article for employer and postgrad reporting.',
+        ],
+        paragraphs: [
+          'Cumulative transcript GPA can sit between bands when units mix grades — confirm on WES before relying on a single band for competitive applications.',
         ],
       },
     ],
@@ -751,9 +954,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/7-0-gpa-to-wam-calculator': {
     sections: [
       {
-        heading: '7.0 GPA to WAM',
+        heading: '7-Point GPA to Monash WAM',
         paragraphs: [
-          'On the Australian 7-point scale, 6.0 is Distinction (WAM 70–79), 7.0 is HD (WAM 80+). Enter your 7.0 GPA to see the Monash percentage band equivalent.',
+          'Australian institutions commonly describe strong standing as "GPA 6.0/7" (Distinction) or "GPA 7.0/7" (High Distinction). Monash expresses the same performance as WAM percentages on your academic record. This calculator maps 7.0 scale inputs to Monash WAM bands for quick comparison.',
+          'The conversion is band-based, not linear. GPA 6.0 on a 7-point scale corresponds to Distinction — WAM 70–79 — regardless of whether your exact WAM is 71 or 78.',
+        ],
+      },
+      {
+        heading: 'Reference Mapping',
+        table: {
+          headers: ['7.0 GPA', 'Grade', 'WAM equivalent'],
+          rows: [
+            ['7.0', 'HD', '80%+'],
+            ['6.0', 'D', '70–79%'],
+            ['5.0', 'C', '60–69%'],
+            ['4.0', 'P', '50–59%'],
+            ['0.0', 'N', 'Below 50%'],
+          ],
+        },
+        paragraphs: [
+          'Students transferring from universities that report only 7-point GPA can use this tool to set Monash-style WAM goals for remaining semesters.',
+        ],
+      },
+      {
+        heading: 'Next Steps',
+        bullets: [
+          'Convert WAM back to 7.0 with the WAM to 7.0 GPA calculator.',
+          'Model improvement with the WAM projection calculator.',
+          'Compare 4.0 and 7.0 scales using the 4.0 to 7.0 GPA converter.',
+          'Browse merit and honours articles for faculty-specific cut-offs.',
+        ],
+        paragraphs: [
+          'Faculty honours classifications may use WAM directly rather than GPA — check your course map before planning solely on 7-point conversions.',
         ],
       },
     ],
@@ -761,9 +993,37 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/cgpa-to-wam-calculator': {
     sections: [
       {
-        heading: 'CGPA to WAM',
+        heading: 'From Cumulative GPA to WAM Bands',
         paragraphs: [
-          'Cumulative GPA on the 4.0 scale maps to Monash WAM bands the same way as semester GPA — but official CGPA weights every completed unit. Use this for quick planning ranges, then confirm with unit marks in the WAM calculator.',
+          'CGPA summarises your entire completed enrolment as a single grade-point average — at Monash, on the official 4.0 scale. WAM is the parallel percentage average weighted by credit points. Employers and faculties may ask for either metric; this tool translates CGPA bands into Monash WAM ranges for planning.',
+          'Because CGPA aggregates every unit, one failed subject or a string of high distinctions shifts the cumulative figure slowly. Use this converter for snapshot benchmarking, then drill into unit marks when you need to diagnose what moved your average.',
+        ],
+      },
+      {
+        heading: 'Typical CGPA to WAM Alignment',
+        table: {
+          headers: ['CGPA (4.0)', 'Planning WAM band', 'Standing label'],
+          rows: [
+            ['3.5–4.0', '80–100%', 'HD average'],
+            ['3.0–3.4', '70–79%', 'Distinction average'],
+            ['2.0–2.9', '60–69%', 'Credit average'],
+            ['1.0–1.9', '50–59%', 'Pass average'],
+          ],
+        },
+        paragraphs: [
+          'Exact alignment varies with your unit mix. CGPA 3.2 might pair with WAM 74 or WAM 76 depending on whether your Distinction marks cluster high or low in the band.',
+        ],
+      },
+      {
+        heading: 'When Accuracy Matters',
+        bullets: [
+          'Quick planning: use CGPA input here for WAM band orientation.',
+          'Official reporting: pull WAM from WES, not inferred from CGPA alone.',
+          'Improvement modelling: combine with WAM target and projection tools.',
+          'International CGPA: try the 10-point GPA to WAM calculator for non-Monash scales.',
+        ],
+        paragraphs: [
+          'Scholarship renewal letters sometimes cite both metrics — always submit the figure the application explicitly requests.',
         ],
       },
     ],
@@ -771,9 +1031,37 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/gpa-to-percentage-calculator': {
     sections: [
       {
-        heading: 'GPA to Percentage',
+        heading: 'Why Convert GPA Back to Percentage?',
         paragraphs: [
-          'GPA compresses marks into bands. Converting GPA to percentage yields a Monash mark range — e.g. GPA 3.0 ≈ 70–79%. The midpoint estimate helps when forms ask for % but you only know GPA.',
+          'GPA compresses your performance into discrete grade steps — useful for forms, but less intuitive when you think in exam marks. Converting GPA to percentage returns a Monash mark range so you can set realistic unit targets: GPA 3.0 plans as roughly 70–79%, GPA 4.0 as 80%+.',
+          'This is especially helpful when a placement provider asks for "expected percentage average" but your mental model runs on transcript GPA from WES.',
+        ],
+      },
+      {
+        heading: 'Monash Band Midpoints',
+        table: {
+          headers: ['4.0 GPA', 'Grade', 'Percentage range', 'Planning midpoint'],
+          rows: [
+            ['4.0', 'HD', '80–100%', '~85%'],
+            ['3.0', 'D', '70–79%', '~75%'],
+            ['2.0', 'C', '60–69%', '~65%'],
+            ['1.0', 'P', '50–59%', '~55%'],
+          ],
+        },
+        paragraphs: [
+          'Midpoints are illustrative only — Monash does not publish a single "official" percentage for each GPA step. Use ranges when setting targets, not the midpoint alone, if you are near a band boundary.',
+        ],
+      },
+      {
+        heading: 'Practical Uses',
+        bullets: [
+          'Translate scholarship GPA floors into semester mark targets.',
+          'Explain Monash standing to employers used to percentage averages.',
+          'Cross-check 7.0 GPA using the 7.0 scale calculator first, then convert.',
+          'Read our GPA conversion articles for postgrad application tips.',
+        ],
+        paragraphs: [
+          'For unit-level precision, enter actual marks in the Monash WAM calculator rather than inferring from GPA alone.',
         ],
       },
     ],
@@ -781,9 +1069,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/4-0-to-7-0-gpa-calculator': {
     sections: [
       {
-        heading: '4.0 to 7.0 GPA',
+        heading: 'Aligning 4.0 and 7.0 Scales',
         paragraphs: [
-          'Monash grade bands align across scales: 4.0 HD = 7.0 HD, 3.0 D = 6.0 D, and so on. This converter maps your 4.0 input to the Australian 7-point equivalent.',
+          'Monash coursework grade bands align across both common Australian reporting scales. High Distinction is 4.0 on the US-style scale and 7.0 on the Australian scale; Distinction is 3.0 and 6.0 respectively. This one-to-one band mapping means conversion is straightforward once you know which letter grade tier you occupy.',
+          'Use this tool when one application asks for 4.0 GPA and another asks for 7.0 — you should report consistent band standing, not mathematically scaled values that do not exist in Monash policy.',
+        ],
+      },
+      {
+        heading: 'Cross-Scale Reference',
+        table: {
+          headers: ['Letter grade', '4.0 GPA', '7.0 GPA', 'WAM band'],
+          rows: [
+            ['HD', '4.0', '7.0', '80%+'],
+            ['D', '3.0', '6.0', '70–79%'],
+            ['C', '2.0', '5.0', '60–69%'],
+            ['P', '1.0', '4.0', '50–59%'],
+            ['N', '0.0', '0.0', 'Below 50%'],
+          ],
+        },
+        paragraphs: [
+          'Do not multiply 4.0 by 1.75 to get 7.0 — that linear approach misstates Pass and Credit tiers. Always use band mapping.',
+        ],
+      },
+      {
+        heading: 'Application Tips',
+        bullets: [
+          'Label which scale you report on every form ("GPA 3.0/4.0" vs "GPA 6.0/7.0").',
+          'HDR programs often prefer 7.0 — convert from 4.0 here before submitting.',
+          'US exchange forms typically want 4.0 — use the reverse 7.0 to 4.0 converter.',
+          'Pair with percentage to GPA tools when you start from raw marks.',
+        ],
+        paragraphs: [
+          'If your transcript shows only WAM, convert WAM to GPA first, then use this tool for scale switching.',
         ],
       },
     ],
@@ -791,9 +1108,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/7-0-to-4-0-gpa-calculator': {
     sections: [
       {
-        heading: '7.0 to 4.0 GPA',
+        heading: '7.0 to 4.0 GPA for International Forms',
         paragraphs: [
-          'When US-style or Monash official forms need 4.0 GPA, convert from the Australian 7-point scale using standard Monash coursework band mapping.',
+          'Many US graduate programs, LinkedIn profile templates, and global ranking sites default to the 4.0 GPA scale. Australian students with 7-point transcripts need band-accurate conversion — not a naive multiply-by-0.57 formula — to represent Monash standing honestly.',
+          'Monash maps each 7.0 step to the equivalent 4.0 grade point: 7→4, 6→3, 5→2, 4→1, 0→0. This calculator applies that standard coursework alignment.',
+        ],
+      },
+      {
+        heading: 'Conversion Table',
+        table: {
+          headers: ['7.0 GPA', '4.0 GPA', 'Typical standing'],
+          rows: [
+            ['7.0', '4.0', 'High Distinction'],
+            ['6.0', '3.0', 'Distinction'],
+            ['5.0', '2.0', 'Credit'],
+            ['4.0', '1.0', 'Pass'],
+            ['0.0', '0.0', 'Fail'],
+          ],
+        },
+        paragraphs: [
+          'Partial values like 6.3 on a 7-point transcript usually mean your cumulative average sits between bands — check WES for the authoritative Monash 4.0 CGPA rather than inferring from a single converted number.',
+        ],
+      },
+      {
+        heading: 'Reporting Guidance',
+        bullets: [
+          'State both scales if unsure which the reader prefers.',
+          'Attach Monash grading scale documentation to international applications when allowed.',
+          'Use Monash CGPA calculator for cumulative 4.0 to three decimals.',
+          'See our WAM to GPA articles for scholarship-specific reporting.',
+        ],
+        paragraphs: [
+          'Never round Distinction (6.0/7) up to 4.0/4 unless your transcript band is genuinely High Distinction — misreporting can trigger verification issues.',
         ],
       },
     ],
@@ -801,9 +1147,37 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/semester-gpa-calculator': {
     sections: [
       {
-        heading: 'Semester GPA (SGPA)',
+        heading: 'Semester GPA (SGPA) Explained',
         paragraphs: [
-          'Semester GPA measures one teaching period using Monash official 4.0 grade values and credit weighting. It differs from cumulative CGPA which spans your whole degree.',
+          'Semester GPA measures one teaching period — Semester 1, Semester 2, or Summer — using Monash official 4.0 grade values weighted by credit points. It answers "how did I perform this semester?" rather than "how am I tracking overall?" Cumulative CGPA spans your entire degree and moves more slowly.',
+          'Strong semester GPA with weak prior years lifts CGPA gradually; one bad semester after years of HDs barely dents a high cumulative average. Use SGPA to diagnose recent performance and CGPA for long-term standing.',
+        ],
+      },
+      {
+        heading: 'How SGPA Is Calculated',
+        paragraphs: [
+          'For each unit in the semester, multiply the official grade point (HD=4, D=3, C=2, P=1, N=0) by credit points. Sum those products, then divide by total semester credit points. A 12 cp HD contributes twice as much as a 6 cp Pass in the same semester.',
+          'Example SGPA = (24 + 18 + 12) ÷ 18 = 3.0 — Distinction semester average on 18 credit points.',
+        ],
+        table: {
+          headers: ['Unit', 'Grade', 'GP (4.0)', 'Credit pts', 'Weighted GP'],
+          rows: [
+            ['Unit A', 'HD', '4.0', '6', '24'],
+            ['Unit B', 'D', '3.0', '6', '18'],
+            ['Unit C', 'C', '2.0', '6', '12'],
+          ],
+        },
+      },
+      {
+        heading: 'Related Planning Tools',
+        bullets: [
+          'Track percentage-based semester performance with the semester WAM calculator.',
+          'Roll SGPA into degree CGPA using the GPA to CGPA calculator.',
+          'Set next-semester targets with the Monash target GPA calculator.',
+          'Read our semester average article for Monash credit load norms.',
+        ],
+        paragraphs: [
+          'Withdrawn fails and incomplete grades follow Monash policy rules — confirm how WES treats them before calculating SGPA manually.',
         ],
       },
     ],
@@ -811,9 +1185,29 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/gpa-to-cgpa-calculator': {
     sections: [
       {
-        heading: 'Adding Semester GPA to CGPA',
+        heading: 'Updating CGPA After One Semester',
         paragraphs: [
-          'CGPA = (prior CGPA × prior credit points + semester GPA × semester credit points) ÷ total credit points. High-credit semesters move cumulative GPA more than light loads.',
+          'When you finish a semester, your new CGPA blends prior cumulative performance with fresh semester GPA. The formula weights by credit points: CGPA_new = (CGPA_old × CP_old + SGPA × CP_semester) ÷ (CP_old + CP_semester). Higher-credit semesters pull CGPA more than light summer loads.',
+          'This calculator lets you model that merge before results release — useful when asking "if I average Distinction this semester, where does my CGPA land?"',
+        ],
+      },
+      {
+        heading: 'Worked Example',
+        paragraphs: [
+          'Suppose CGPA 2.8 on 96 cp, and you expect SGPA 3.5 on 24 cp this semester. New CGPA = (2.8 × 96 + 3.5 × 24) ÷ 120 = 2.94. The jump looks modest because 96 cp of history anchors the result — realistic for mid-degree students.',
+        ],
+        bullets: [
+          'Enter prior CGPA and completed credit points from WES.',
+          'Add expected semester GPA and enrolled credit points.',
+          'Run multiple scenarios (Credit vs Distinction semester) before exam period.',
+          'Pair with WAM projection for percentage-based planning.',
+        ],
+      },
+      {
+        heading: 'Limitations',
+        paragraphs: [
+          'Repeated units, grade replacement policies, and withdrawn fails may adjust official CGPA differently from this generic formula. Export your academic record when precision matters for honours or scholarship renewal.',
+          'For first-year students, semester GPA and CGPA are often identical until prior credit accumulates.',
         ],
       },
     ],
@@ -821,9 +1215,37 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/cgpa-to-gpa-calculator': {
     sections: [
       {
-        heading: 'CGPA to GPA Conversion',
+        heading: 'CGPA vs GPA Terminology',
         paragraphs: [
-          'On Monash 4.0 transcripts, CGPA and cumulative GPA are the same metric. International 10-point CGPA converts linearly: GPA (4.0) = CGPA ÷ 10 × 4 for planning.',
+          'On Monash official transcripts, CGPA and cumulative GPA refer to the same 4.0 metric — the credit-weighted mean across all completed coursework units. Some international systems use "CGPA" for a 10-point scale instead. Context matters: always note which scale your figure uses.',
+          'This calculator handles Monash-style 4.0 CGPA reporting and includes guidance when you hold a 10-point international CGPA that needs linear scaling for US-style 4.0 comparisons.',
+        ],
+      },
+      {
+        heading: '10-Point to 4.0 Linear Scale',
+        table: {
+          headers: ['10-point CGPA', 'Linear 4.0 equivalent', 'Monash planning note'],
+          rows: [
+            ['9.0–10.0', '3.6–4.0', 'Near HD average'],
+            ['8.0–8.9', '3.2–3.6', 'Strong Distinction'],
+            ['7.0–7.9', '2.8–3.2', 'Distinction/Credit border'],
+            ['6.0–6.9', '2.4–2.8', 'Credit range'],
+          ],
+        },
+        paragraphs: [
+          'Linear conversion (CGPA ÷ 10 × 4) is indicative for cross-country forms — Monash band mapping may differ. Use the 10-point GPA to WAM calculator when translating into Monash percentage bands.',
+        ],
+      },
+      {
+        heading: 'When to Use This Tool',
+        bullets: [
+          'Clarify Monash CGPA = cumulative 4.0 GPA on official records.',
+          'Convert international 10-point CGPA for US application drafts.',
+          'Cross-check WES CGPA before employer background checks.',
+          'Browse GPA conversion articles for faculty-specific rules.',
+        ],
+        paragraphs: [
+          'Semester GPA tools handle one teaching period; this page focuses on cumulative figures and scale translation.',
         ],
       },
     ],
@@ -831,9 +1253,35 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/4-0-gpa-calculator': {
     sections: [
       {
-        heading: 'GPA Out of 4.0',
+        heading: 'Monash 4.0 GPA Calculator',
         paragraphs: [
-          'The 4.0 scale maps HD=4, D=3, C=2, P=1, N=0.3 at Monash. Enter each unit grade and credit points for credit-weighted GPA to three decimal places.',
+          'Monash assigns official grade points on a 4.0 scale: HD=4.0, D=3.0, C=2.0, P=1.0, N=0.0 (with marginal fail nuances per policy). This calculator computes credit-weighted GPA from your unit list — the same structure WES uses for cumulative reporting, simplified for planning.',
+          'Enter each unit\'s letter grade or grade point and credit points. The tool outputs semester or custom-group GPA to three decimal places, matching how scholarship panels often display cut-offs.',
+        ],
+      },
+      {
+        heading: 'Credit Weighting Matters',
+        table: {
+          headers: ['Scenario', 'Units', 'Simple GPA', 'Weighted GPA'],
+          rows: [
+            ['Equal 6 cp', 'HD + D + C (6 cp each)', '3.0', '3.0'],
+            ['Mixed load', 'HD (12 cp) + P (6 cp)', '2.5', '3.33'],
+          ],
+        },
+        paragraphs: [
+          'The mixed load row shows why credit weighting matters: a 12 cp HD paired with one 6 cp Pass yields weighted GPA 3.33, not the simple mean 2.5. Always weight by credit when mirroring Monash maths.',
+        ],
+      },
+      {
+        heading: 'Related Calculators',
+        bullets: [
+          'Cumulative degree GPA: Monash CGPA calculator.',
+          'Single-semester snapshot: semester GPA calculator.',
+          'Convert results to WAM bands with GPA to WAM tools.',
+          'Set improvement targets with Monash target GPA calculator.',
+        ],
+        paragraphs: [
+          'Verify final GPA on WES — grading policy updates and unit exclusions can adjust official figures.',
         ],
       },
     ],
@@ -841,9 +1289,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/gpa-calculator': {
     sections: [
       {
-        heading: 'Australian University GPA',
+        heading: 'Australian University GPA Basics',
         paragraphs: [
-          'Australian students commonly report GPA on 4.0 or 7.0 scales. This calculator uses Monash official 4.0 values — useful for Monash and comparable Australian coursework planning.',
+          'Australian students encounter GPA on both 4.0 and 7.0 scales depending on faculty, scholarship, and destination country. Monash coursework standardises on official 4.0 grade points for transcript GPA while displaying WAM percentages alongside. This general GPA calculator uses Monash published values — the right default for Monash students and a reasonable benchmark for comparable Australian coursework.',
+          'GPA differs from WAM: GPA steps in discrete bands tied to letter grades; WAM preserves percentage detail. A student with marks spread 71–78 may share GPA 3.0 but have different WAM than a peer scoring 78–79 consistently.',
+        ],
+      },
+      {
+        heading: 'Monash Grade Point Reference',
+        table: {
+          headers: ['Grade', 'Mark range', '4.0 GP', '7.0 GP'],
+          rows: [
+            ['HD', '80%+', '4.0', '7.0'],
+            ['D', '70–79%', '3.0', '6.0'],
+            ['C', '60–69%', '2.0', '5.0'],
+            ['P', '50–59%', '1.0', '4.0'],
+            ['N', '<50%', '0.0', '0.0'],
+          ],
+        },
+        paragraphs: [
+          'Enter your units with grades and credit points for weighted GPA. For a single mark conversion, use percentage to GPA or 7.0 scale calculators instead.',
+        ],
+      },
+      {
+        heading: 'Choose the Right Tool',
+        bullets: [
+          'Degree cumulative GPA → Monash CGPA calculator.',
+          'One semester only → semester GPA calculator.',
+          'WAM on WES, form wants GPA → WAM to 4.0 or 7.0 converters.',
+          'Long-form strategy → GPA conversion articles in our library.',
+        ],
+        paragraphs: [
+          'This site is independent of Monash University — always confirm official figures on WES before submitting transcripts or scholarship forms.',
         ],
       },
     ],
@@ -851,9 +1328,29 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/atar-to-gpa-wam-calculator': {
     sections: [
       {
-        heading: 'ATAR and University Grades',
+        heading: 'ATAR vs University Grades',
         paragraphs: [
-          'ATAR ranks school leavers for entry; WAM and GPA measure university performance. There is no official UAC ATAR↔WAM formula — this tool shows indicative bands for planning only.',
+          'ATAR ranks Year 12 performance for university entry through UAC and VTAC — it is a percentile-style rank, not a university GPA. WAM and GPA measure coursework after enrolment. There is no official Monash or UAC formula converting ATAR to WAM because they describe different life stages and statistical models.',
+          'This tool shows indicative bands only: high ATAR correlates with stronger first-year readiness on average, but many students with moderate ATAR achieve Distinction WAM through consistent semester work. Treat output as conversation starter, not prediction.',
+        ],
+      },
+      {
+        heading: 'What the Indicative Bands Mean',
+        paragraphs: [
+          'Planning bands group typical first-year WAM trajectories reported anecdotally by students — not regression models from Monash data. Use them to set initial semester goals, then replace with actual WAM from the homepage calculator once you have results.',
+        ],
+        bullets: [
+          'ATAR reflects scaled school subjects; WAM reflects credit-weighted university units.',
+          'First-year Monash units use 0.5 level weighting in official WAM — GPA tools may differ.',
+          'Scholarships tied to entry rank differ from merit awards tied to university WAM.',
+          'See our university pathways articles for course transfer context.',
+        ],
+      },
+      {
+        heading: 'Better Planning Signals',
+        paragraphs: [
+          'Once enrolled, ignore ATAR for grade planning and track semester WAM, unit targets, and final exam calculators instead. Employers and postgrad programs care about degree outcomes, not secondary school rank.',
+          'If you hold offers from multiple universities, compare course structure and support services — not ATAR-to-WAM guesses alone.',
         ],
       },
     ],
@@ -861,9 +1358,37 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/high-school-gpa-calculator': {
     sections: [
       {
-        heading: 'High School GPA',
+        heading: 'US-Style High School GPA',
         paragraphs: [
-          'US-style high school GPA uses course credits and letter grades. Weighted GPA adds up to +1.0 for advanced courses (cap 5.0). Australian schools typically use ATAR instead.',
+          'American high schools often report GPA from course credits and letter grades, sometimes with "weighted" bumps for Advanced Placement or honours subjects (up to 5.0 on a 4.0 scale). Australian secondary students typically receive ATAR instead — this calculator serves international students, dual-citizens, and Monash students comparing US application requirements.',
+          'Enter course name, letter grade, credit weight, and whether the course is weighted. The tool computes unweighted and weighted GPA using common US conventions — verify against your school\'s exact policy if applying domestically in the US.',
+        ],
+      },
+      {
+        heading: 'Weighted vs Unweighted',
+        table: {
+          headers: ['Course type', 'Grade', 'Unweighted GP', 'Weighted bump'],
+          rows: [
+            ['Standard', 'A', '4.0', '—'],
+            ['Honours/AP', 'A', '4.0', '+1.0 → 5.0 cap'],
+            ['Standard', 'B', '3.0', '—'],
+            ['Honours/AP', 'B', '3.0', '+1.0 → 4.0'],
+          ],
+        },
+        paragraphs: [
+          'Weighted GPA rewards rigour but caps vary by district — some schools use +0.5 instead of +1.0. Use this output for orientation; attach official school transcripts for applications.',
+        ],
+      },
+      {
+        heading: 'Australian Context',
+        bullets: [
+          'Monash entry uses ATAR/IB/diploma pathways — not high school GPA.',
+          'US exchange or grad school may request US-style GPA — use this tool, then verify with registrar.',
+          'University GPA uses different scales — switch to Monash GPA calculators after enrolment.',
+          'Browse pathways articles for Monash orientation and adjustment tips.',
+        ],
+        paragraphs: [
+          'Once at Monash, track WAM and official CGPA on WES — high school GPA rarely appears on Australian employment forms.',
         ],
       },
     ],
@@ -871,9 +1396,38 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
   '/10-point-gpa-to-wam-calculator': {
     sections: [
       {
-        heading: '10-Point Scale to Monash WAM',
+        heading: 'International 10-Point CGPA',
         paragraphs: [
-          'Many international transcripts use a 10-point CGPA. Multiply by 10 for percentage equivalent (8.5 → 85%), then map to Monash HD/D/C/P bands for WAM planning.',
+          'Universities in India, parts of Europe, and other regions often report CGPA on a 10-point scale. Monash admissions and credit transfer teams frequently need those results expressed as percentage or WAM bands. A common planning step: multiply 10-point CGPA by 10 to estimate percentage (8.5 → 85%), then map to Monash HD/D/C/P bands.',
+          'This is indicative — home institutions may use different curves. Always supply official transcripts and Monash grading scale notes when applying for credit assessment.',
+        ],
+      },
+      {
+        heading: '10-Point to Monash Bands',
+        table: {
+          headers: ['10-pt CGPA', 'Est. %', 'Monash band', '4.0 GP'],
+          rows: [
+            ['9.0–10.0', '90–100%', 'HD', '4.0'],
+            ['8.0–8.9', '80–89%', 'HD/D border', '3.0–4.0'],
+            ['7.0–7.9', '70–79%', 'D', '3.0'],
+            ['6.0–6.9', '60–69%', 'C', '2.0'],
+            ['5.0–5.9', '50–59%', 'P', '1.0'],
+          ],
+        },
+        paragraphs: [
+          'Borderline CGPA like 7.9 vs 8.0 can straddle Distinction and HD planning zones — use conservative estimates for scholarship applications until Monash confirms converted grades.',
+        ],
+      },
+      {
+        heading: 'Transfer and Postgrad Use',
+        bullets: [
+          'Estimate Monash WAM targets before starting at Clayton or Caulfield.',
+          'Compare home CGPA to distinction average (WAM 70+) requirements.',
+          'Cross-check with CGPA to WAM calculator for 4.0-scale transcripts.',
+          'Read exchange and pathways articles for credit transfer workflow.',
+        ],
+        paragraphs: [
+          'Monash makes final credit decisions — calculator output does not guarantee advanced standing or GPA recognition on your Australian transcript.',
         ],
       },
     ],

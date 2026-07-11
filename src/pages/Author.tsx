@@ -18,6 +18,11 @@ const authorFaqs = [
       'No. Saahil is an independent creator. This site is not endorsed by Monash University or any faculty.',
   },
   {
+    question: 'How are guides fact-checked?',
+    answer:
+      'Calculator formulas follow Monash grading band references and credit-weighted WAM structure. Articles are updated when students report policy changes or when Monash publishes revised grading documentation. Always confirm final decisions on WES.',
+  },
+  {
     question: 'How can I contact the author?',
     answer: `Use the contact page or email ${ARTICLE_AUTHOR.email} for editorial questions, corrections, or partnership enquiries.`,
   },
@@ -25,6 +30,7 @@ const authorFaqs = [
 
 export default function Author() {
   const articleCount = articles.length;
+  const sampleArticles = articles.slice(0, 4);
 
   return (
     <>
@@ -64,6 +70,45 @@ export default function Author() {
         </div>
 
         <div className="mt-8 space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Editorial approach</h2>
+            <p>
+              Guides are written for Monash and Australian students who need practical maths, not generic blog filler.
+              Each long-form article covers one problem end to end — definition, formula, worked example, common
+              mistakes, and links to the matching calculator. Calculator pages include their own multi-section guides
+              with tables and FAQs so every URL stands alone as a useful resource.
+            </p>
+            <p className="mt-3">
+              When Monash policy language shifts or readers flag outdated cut-offs, content is revised. The site does
+              not scrape Wikipedia summaries or auto-generate bulk pages. {CALCULATOR_COUNT} calculators and{' '}
+              {articleCount} articles are maintained as a coherent toolkit rather than disconnected landing pages.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Sample published guides</h2>
+            <ul className="space-y-2">
+              {sampleArticles.map(article => (
+                <li key={article.slug}>
+                  <a href={absoluteUrl(`/articles/${article.slug}`)} className={INLINE_LINK_CLASS}>
+                    {article.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-gray-600 dark:text-gray-400">
+              Browse all{' '}
+              <a href={absoluteUrl('/articles')} className={INLINE_LINK_CLASS}>
+                {articleCount} student articles
+              </a>{' '}
+              or the{' '}
+              <a href={absoluteUrl('/calculators')} className={INLINE_LINK_CLASS}>
+                calculators directory
+              </a>
+              .
+            </p>
+          </div>
+
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Areas of focus</h2>
             <ul className="list-disc list-inside space-y-1">
