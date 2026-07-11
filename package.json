@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "compress-article-image": "node scripts/compress-featured-image.mjs",
+    "compress-home-images": "node scripts/compress-home-images.mjs",
     "test:calculators": "node scripts/test-calculators.mjs",
     "generate-favicons": "node scripts/generate-favicons.mjs"
   },

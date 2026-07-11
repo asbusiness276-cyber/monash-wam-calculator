@@ -1,34 +1,37 @@
-import { Award, ClipboardList, Target, TrendingUp } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import SectionHeader from './ui/SectionHeader';
-import FeatureCard from './ui/FeatureCard';
+import IllustrationCard from './ui/IllustrationCard';
+import { HOME_IMAGES } from '../../data/homeImages';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../../constants/site';
 
-const useSteps: Array<{ icon: LucideIcon; title: string; description: string }> = [
+const useSteps = [
   {
-    icon: ClipboardList,
+    image: HOME_IMAGES.steps.enterMarks,
+    imageAlt: 'Student reviewing unit marks and grades on a laptop dashboard',
     title: 'Gather your marks',
     description: 'Open WES or your unofficial academic record and note each unit mark, credit points, and year level.',
   },
   {
-    icon: Target,
+    image: HOME_IMAGES.steps.addSubjects,
+    imageAlt: 'Student adding subjects, marks, and credit points to the WAM calculator',
     title: 'Enter units below',
     description:
       'Add unit codes, marks (0–100), credit points, and year level. Year 1 units use Monash official 0.5 weight.',
   },
   {
-    icon: TrendingUp,
+    image: HOME_IMAGES.steps.instantWam,
+    imageAlt: 'Instant WAM calculation dashboard with live academic analytics',
     title: 'Read your WAM',
     description:
       'See official Monash WAM, planning WAM, HD/D/C/P grade band, and total credit points — updated instantly.',
   },
   {
-    icon: Award,
+    image: HOME_IMAGES.steps.viewResults,
+    imageAlt: 'Student celebrating WAM results with academic performance charts',
     title: "Plan what's next",
     description:
       'Use WAM target, projection, or WAM to GPA tools when planning scholarships, honours, or the next semester.',
   },
-];
+] as const;
 
 export default function HomeHowItWorks() {
   return (
@@ -40,15 +43,16 @@ export default function HomeHowItWorks() {
           description="From WES export to honours planning — the workflow Monash students use every results period."
         />
 
-        <ol className="card-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="home-steps-flow card-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {useSteps.map((step, index) => (
-            <li key={step.title}>
-              <FeatureCard
-                icon={step.icon}
+            <li key={step.title} className="home-steps-flow-item">
+              <IllustrationCard
+                image={step.image}
+                imageAlt={step.imageAlt}
                 title={step.title}
                 description={step.description}
                 step={index + 1}
-                tone="primary"
+                variant="step"
               />
             </li>
           ))}

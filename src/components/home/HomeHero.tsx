@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
 import ButtonLink from './ui/ButtonLink';
-import HomeHeroIllustration from './HomeHeroIllustration';
+import HomeImage from './ui/HomeImage';
+import { HOME_IMAGES } from '../../data/homeImages';
 import { CALCULATOR_COUNT } from '../../data/calculatorCatalog';
 import { articles } from '../../data/articles';
 
@@ -74,9 +75,15 @@ export default function HomeHero() {
             </ul>
           </div>
 
-          {/* Right — illustration placeholder */}
+          {/* Right — hero illustration */}
           <div className="home-hero-visual home-animate-in home-animate-delay-1">
-            <HomeHeroIllustration />
+            <HomeImage
+              image={HOME_IMAGES.hero}
+              alt="Monash student workspace with WAM calculator dashboard, academic charts, and Australian university setting"
+              priority
+              wrapperClassName="home-hero-image-wrap"
+              className="home-hero-image"
+            />
           </div>
         </div>
       </div>

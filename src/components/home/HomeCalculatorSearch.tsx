@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react';
 import { ArrowRight, Search as SearchIcon } from 'lucide-react';
 import { ALL_CALCULATOR_LINKS, CALCULATOR_CATEGORIES } from '../../data/calculatorCatalog';
+import { HOME_IMAGES } from '../../data/homeImages';
 import SearchField from '../SearchField';
 import CardIcon from './ui/CardIcon';
+import HomeImage from './ui/HomeImage';
 import PremiumCard from './ui/PremiumCard';
 
 function normalizeSearchText(value: string): string {
@@ -30,25 +32,34 @@ export default function HomeCalculatorSearch() {
   const trimmedQuery = query.trim();
 
   return (
-    <PremiumCard hover padding="lg" className="home-animate-in">
-      <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-        <div className="max-w-md text-left">
+    <PremiumCard hover padding="lg" className="home-animate-in home-search-card">
+      <div className="home-search-split">
+        <div className="home-search-form">
           <CardIcon icon={SearchIcon} className="mb-4" />
           <h2 className="card-title-lg">Search calculators</h2>
           <p className="card-body mt-2">
             Jump to WAM target, GPA conversion, honours, or exam tools by name or keyword.
           </p>
+
+          <div className="mt-6">
+            <SearchField
+              id="home-calculator-search"
+              label="Search calculators"
+              placeholder="e.g. WAM target, GPA, honours, failed unit…"
+              value={query}
+              onChange={setQuery}
+              resultCount={trimmedQuery ? results.length : undefined}
+              variant="premium"
+            />
+          </div>
         </div>
 
-        <div className="w-full md:max-w-xl md:flex-1">
-          <SearchField
-            id="home-calculator-search"
-            label="Search calculators"
-            placeholder="e.g. WAM target, GPA, honours, failed unit…"
-            value={query}
-            onChange={setQuery}
-            resultCount={trimmedQuery ? results.length : undefined}
-            variant="premium"
+        <div className="home-search-visual">
+          <HomeImage
+            image={HOME_IMAGES.searchWorkspace}
+            alt="Top-down view of a student desk with laptop, notebooks, calculator, and study supplies"
+            wrapperClassName="home-search-image-wrap"
+            className="home-search-image"
           />
         </div>
       </div>

@@ -2,6 +2,8 @@ import { ArrowRight, Calculator } from 'lucide-react';
 import { absoluteUrl } from '../constants/site';
 import { ALL_CALCULATOR_LINKS, type CalculatorLink } from '../data/calculatorCatalog';
 import LinkCard from './home/ui/LinkCard';
+import FeaturedCalculatorCard from './home/ui/FeaturedCalculatorCard';
+import { getFeaturedCalculatorImage } from '../data/homeImages';
 
 export type { CalculatorLink };
 export { ALL_CALCULATOR_LINKS as CALCULATOR_LINKS };
@@ -55,8 +57,19 @@ export default function RelatedCalculators({
         </div>
 
         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isHome ? 'card-grid' : 'gap-4'}`}>
-          {items.map(link =>
-            isHome ? (
+          {items.map(link => {
+            const featuredImage = isHome ? getFeaturedCalculatorImage(link.href) : undefined;
+
+            return isHome && featuredImage ? (
+              <FeaturedCalculatorCard
+                key={link.href}
+                href={absoluteUrl(link.href)}
+                title={link.title}
+                description={link.description}
+                image={featuredImage}
+                imageAlt={`${link.title} — Monash academic planning illustration`}
+              />
+            ) : isHome ? (
               <LinkCard
                 key={link.href}
                 href={absoluteUrl(link.href)}
@@ -78,8 +91,8 @@ export default function RelatedCalculators({
                   <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" aria-hidden />
                 </span>
               </a>
-            )
-          )}
+            );
+          })}
         </div>
 
         {showViewAll && (

@@ -260,21 +260,179 @@
     animation-delay: 160ms;
   }
 
+  .home-section-alt {
+    @apply border-y border-gray-200/80 bg-slate-50/70 py-14 md:py-20 dark:border-gray-800 dark:bg-gray-950/40;
+  }
+
+  .home-section {
+    @apply py-14 md:py-20;
+  }
+
+  /* Homepage image system */
+  .home-image-wrap {
+    @apply relative overflow-hidden;
+  }
+
+  .home-image {
+    @apply block h-full w-full object-contain;
+  }
+
+  .home-hero-image-wrap {
+    @apply rounded-[1.75rem] border border-gray-200/70 bg-gradient-to-br from-white via-slate-50/80 to-primary-50/20 p-1 shadow-premium-xl dark:border-gray-700/70 dark:from-gray-800 dark:via-gray-900 dark:to-primary-900/20;
+  }
+
+  .home-hero-image {
+    @apply rounded-[1.5rem] bg-white/90 dark:bg-gray-900/90;
+  }
+
+  .home-search-card {
+    @apply overflow-hidden;
+  }
+
+  .home-search-split {
+    @apply grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-10 xl:gap-12;
+  }
+
+  .home-search-form {
+    @apply min-w-0 text-left;
+  }
+
+  .home-search-visual {
+    @apply order-last lg:order-none;
+  }
+
+  .home-search-image-wrap {
+    @apply rounded-2xl border border-gray-200/70 bg-gradient-to-br from-slate-50 to-white p-1 shadow-premium dark:border-gray-700/70 dark:from-gray-900 dark:to-gray-800;
+  }
+
+  .home-search-image {
+    @apply rounded-[0.875rem];
+  }
+
+  .home-calc-showcase {
+    @apply grid grid-cols-1 items-start gap-8 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:gap-10 2xl:gap-12;
+  }
+
+  .home-calc-showcase-art {
+    @apply order-first xl:order-none;
+  }
+
+  .home-calc-showcase-image-wrap {
+    @apply sticky top-24 rounded-2xl border border-primary-100/80 bg-gradient-to-br from-primary-50/60 via-white to-slate-50 p-1.5 shadow-premium-lg dark:border-primary-900/50 dark:from-primary-900/30 dark:via-gray-900 dark:to-gray-900;
+  }
+
+  .home-calc-showcase-image {
+    @apply rounded-xl;
+  }
+
+  .home-calc-showcase-tool {
+    @apply min-w-0;
+  }
+
+  /* How it works — step cards */
+  .home-steps-flow {
+    @apply relative;
+  }
+
+  .home-step-card {
+    @apply relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-premium-sm transition-[transform,box-shadow,border-color] duration-300 ease-out dark:border-gray-700/80 dark:bg-gray-800/95;
+  }
+
+  .home-step-card:hover {
+    @apply -translate-y-1 scale-[1.01] border-primary-200/80 shadow-premium-lg dark:border-primary-800/60;
+  }
+
+  .home-step-index {
+    @apply absolute left-4 top-4 z-10 inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-primary-600 px-2 text-sm font-bold text-white shadow-premium-sm dark:bg-primary-500;
+  }
+
+  .home-illustration-card-media {
+    @apply aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-slate-50 to-primary-50/30 dark:from-gray-900 dark:to-primary-900/20;
+  }
+
+  .home-illustration-card-image {
+    @apply object-cover transition-transform duration-500 ease-out;
+  }
+
+  .home-step-card:hover .home-illustration-card-image,
+  .home-why-card:hover .home-illustration-card-image {
+    @apply scale-[1.03];
+  }
+
+  .home-illustration-card-body {
+    @apply flex flex-1 flex-col p-5 sm:p-6;
+  }
+
+  @media (min-width: 1024px) {
+    .home-steps-flow-item {
+      @apply relative;
+    }
+
+    .home-steps-flow-item:not(:last-child)::after {
+      content: '';
+      @apply pointer-events-none absolute top-[28%] -right-3 z-20 hidden h-px w-6 bg-gradient-to-r from-primary-300/80 to-primary-400/40 lg:block dark:from-primary-700/80 dark:to-primary-600/40;
+    }
+
+    .home-steps-flow-item:not(:last-child)::before {
+      content: '';
+      @apply pointer-events-none absolute top-[calc(28%-3px)] -right-1.5 z-20 hidden h-1.5 w-1.5 rotate-45 border-r border-t border-primary-400/70 lg:block dark:border-primary-500/70;
+    }
+  }
+
+  /* Why use — glassmorphism cards */
+  .home-why-card {
+    @apply relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/60 bg-white/55 shadow-premium backdrop-blur-md transition-[transform,box-shadow,border-color] duration-300 ease-out dark:border-gray-700/60 dark:bg-gray-800/55;
+  }
+
+  .home-why-card::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 bg-gradient-to-br from-primary-50/50 via-white/20 to-sky-50/40 dark:from-primary-900/30 dark:via-gray-900/20 dark:to-primary-900/20;
+  }
+
+  .home-why-card:hover {
+    @apply -translate-y-1 scale-[1.01] border-primary-200/70 shadow-premium-lg dark:border-primary-800/60;
+  }
+
+  .home-why-card .home-illustration-card-media {
+    @apply relative aspect-square;
+  }
+
+  .home-why-card .home-illustration-card-body {
+    @apply relative;
+  }
+
+  /* Featured calculator cards */
+  .home-featured-calc-card {
+    @apply overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-premium-sm transition-[transform,box-shadow,border-color] duration-300 ease-out dark:border-gray-700/80 dark:bg-gray-800/95;
+  }
+
+  .home-featured-calc-card:hover {
+    @apply -translate-y-1 scale-[1.01] border-primary-200/80 shadow-premium-lg dark:border-primary-800/60;
+  }
+
+  .home-featured-calc-media {
+    @apply aspect-[3/2] w-full overflow-hidden bg-gradient-to-br from-slate-50 to-primary-50/40 dark:from-gray-900 dark:to-primary-900/25;
+  }
+
+  .home-featured-calc-image {
+    @apply object-cover transition-transform duration-500 ease-out;
+  }
+
+  .home-featured-calc-card:hover .home-featured-calc-image {
+    @apply scale-[1.04];
+  }
+
+  .home-featured-calc-body {
+    @apply flex flex-1 flex-col p-5 sm:p-6;
+  }
+
   .home-calculator-zone {
-    @apply relative border-t border-gray-200/80 bg-gradient-to-b from-slate-50/80 via-white to-white dark:border-gray-800 dark:from-gray-950/80 dark:via-gray-900 dark:to-gray-900;
+    @apply relative border-t border-gray-200/80 bg-gradient-to-b from-slate-50/90 via-white to-white dark:border-gray-800 dark:from-gray-950/90 dark:via-gray-900 dark:to-gray-900;
   }
 
   .home-calculator-zone::before {
     content: '';
     @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200/60 to-transparent dark:via-primary-800/40;
-  }
-
-  .home-section {
-    @apply py-12 md:py-16;
-  }
-
-  .home-section-alt {
-    @apply border-y border-gray-200/80 bg-slate-50/70 py-12 md:py-16 dark:border-gray-800 dark:bg-gray-950/40;
   }
 
   /* WAM Calculator — UI only */
@@ -466,10 +624,16 @@
   .calc-btn-copy:hover,
   .card-interactive:hover,
   .card-link:hover,
-  .article-card:hover {
+  .article-card:hover,
+  .home-step-card:hover,
+  .home-why-card:hover,
+  .home-featured-calc-card:hover {
     transform: none;
   }
 
+  .home-step-card:hover .home-illustration-card-image,
+  .home-why-card:hover .home-illustration-card-image,
+  .home-featured-calc-card:hover .home-featured-calc-image,
   .article-card:hover .article-card-image {
     transform: none;
   }

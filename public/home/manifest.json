@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "width": 1024,
+    "height": 576,
+    "src": "/home/hero.webp"
+  },
+  "search-workspace": {
+    "width": 960,
+    "height": 639,
+    "src": "/home/search-workspace.webp"
+  },
+  "wam-calculator": {
+    "width": 960,
+    "height": 639,
+    "src": "/home/wam-calculator.webp"
+  },
+  "step-enter-marks": {
+    "width": 960,
+    "height": 540,
+    "src": "/home/step-enter-marks.webp"
+  },
+  "step-add-subjects": {
+    "width": 960,
+    "height": 540,
+    "src": "/home/step-add-subjects.webp"
+  },
+  "step-instant-wam": {
+    "width": 960,
+    "height": 540,
+    "src": "/home/step-instant-wam.webp"
+  },
+  "step-view-results": {
+    "width": 960,
+    "height": 540,
+    "src": "/home/step-view-results.webp"
+  },
+  "why-accurate": {
+    "width": 640,
+    "height": 640,
+    "src": "/home/why-accurate.webp"
+  },
+  "why-fast": {
+    "width": 640,
+    "height": 640,
+    "src": "/home/why-fast.webp"
+  },
+  "why-secure": {
+    "width": 640,
+    "height": 640,
+    "src": "/home/why-secure.webp"
+  },
+  "why-free": {
+    "width": 640,
+    "height": 426,
+    "src": "/home/why-free.webp"
+  },
+  "calc-wam-to-gpa": {
+    "width": 640,
+    "height": 426,
+    "src": "/home/calc-wam-to-gpa.webp"
+  },
+  "calc-gpa-to-wam": {
+    "width": 640,
+    "height": 426,
+    "src": "/home/calc-gpa-to-wam.webp"
+  },
+  "calc-target-wam": {
+    "width": 640,
+    "height": 426,
+    "src": "/home/calc-target-wam.webp"
+  },
+  "calc-semester-wam": {
+    "width": 640,
+    "height": 426,
+    "src": "/home/calc-semester-wam.webp"
+  },
+  "calc-honours": {
+    "width": 640,
+    "height": 426,
+    "src": "/home/calc-honours.webp"
+  },
+  "calc-grade-predictor": {
+    "width": 640,
+    "height": 468,
+    "src": "/home/calc-grade-predictor.webp"
+  }
+}
