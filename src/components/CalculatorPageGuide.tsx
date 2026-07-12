@@ -14,12 +14,65 @@ function GuideBlock({ section }: { section: GuideSection }) {
           {paragraph}
         </p>
       ))}
+      {section.steps && section.steps.length > 0 && (
+        <ol className="list-decimal list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
+          {section.steps.map(item => (
+            <li key={item.slice(0, 48)}>{item}</li>
+          ))}
+        </ol>
+      )}
       {section.bullets && section.bullets.length > 0 && (
         <ul className="list-disc list-inside space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
           {section.bullets.map(item => (
             <li key={item.slice(0, 48)}>{item}</li>
           ))}
         </ul>
+      )}
+      {section.examples && section.examples.length > 0 && (
+        <div className="space-y-5">
+          {section.examples.map(example => (
+            <div
+              key={example.title}
+              className="rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50/60 dark:bg-gray-900/30 p-4 space-y-3"
+            >
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{example.title}</h3>
+              {example.paragraphs.map(paragraph => (
+                <p key={paragraph.slice(0, 48)} className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                  {paragraph}
+                </p>
+              ))}
+              {example.table && (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left">
+                    <thead>
+                      <tr className="bg-white dark:bg-gray-800">
+                        {example.table.headers.map(header => (
+                          <th
+                            key={header}
+                            className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300"
+                          >
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 dark:divide-gray-700 text-gray-700 dark:text-gray-300">
+                      {example.table.rows.map(row => (
+                        <tr key={row.join('-')}>
+                          {row.map((cell, i) => (
+                            <td key={`${row[0]}-${i}`} className={`px-3 py-2 ${i === 0 ? 'font-medium' : ''}`}>
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       )}
       {section.table && (
         <div className="overflow-x-auto">
