@@ -16,20 +16,23 @@ export interface SectionEnhancement {
 const FEATURED_IMAGE_WIDTH = 1280;
 const FEATURED_IMAGE_HEIGHT = 720;
 
+function resolveInlineImageSrc(src: string | undefined, article: ArticleData): string | undefined {
+  if (!src || src === 'FEATURED_IMAGE' || src === article.featuredImage) {
+    return undefined;
+  }
+  return src;
+}
+
 function imageBlock(
-  src: string | undefined,
+  src: string,
   alt: string,
-  article: ArticleData,
   dimensions?: { width?: number; height?: number }
 ): ArticleContentBlock {
-  const resolvedSrc = src || article.featuredImage;
-  const isFeatured =
-    !src || src === article.featuredImage || src === 'FEATURED_IMAGE';
-  const width = dimensions?.width ?? (isFeatured ? FEATURED_IMAGE_WIDTH : undefined);
-  const height = dimensions?.height ?? (isFeatured ? FEATURED_IMAGE_HEIGHT : undefined);
+  const width = dimensions?.width ?? FEATURED_IMAGE_WIDTH;
+  const height = dimensions?.height ?? FEATURED_IMAGE_HEIGHT;
   return {
     type: 'image',
-    src: resolvedSrc,
+    src,
     alt,
     ...(width && height ? { width, height } : {}),
   };
@@ -52,9 +55,10 @@ function pushAfterParagraph(
   enhancement.images
     ?.filter(item => item.afterParagraph === paragraphIndex)
     .forEach(item => {
-      blocks.push(
-        imageBlock(item.src, item.alt, article, { width: item.width, height: item.height })
-      );
+      const src = resolveInlineImageSrc(item.src, article);
+      if (src) {
+        blocks.push(imageBlock(src, item.alt, { width: item.width, height: item.height }));
+      }
     });
 
   enhancement.tables
@@ -114,9 +118,10 @@ function enrichSection(
   enhancement?.images
     ?.filter(item => item.afterParagraph === undefined)
     .forEach(item => {
-      blocks.push(
-        imageBlock(item.src, item.alt, article, { width: item.width, height: item.height })
-      );
+      const src = resolveInlineImageSrc(item.src, article);
+      if (src) {
+        blocks.push(imageBlock(src, item.alt, { width: item.width, height: item.height }));
+      }
     });
 
   if (blocks.length === 0) {
@@ -131,7 +136,7 @@ function enrichSection(
 }
 
 export function enrichArticleContent(article: ArticleData): ArticleData {
-  const sectionEnhancements = getSectionEnhancements(article.slug, article.featuredImage);
+  const sectionEnhancements = getSectionEnhancements(article.slug);
 
   if (sectionEnhancements.length === 0) {
     return article;

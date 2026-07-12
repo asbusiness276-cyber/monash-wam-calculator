@@ -1,17 +1,5 @@
 import type { SectionEnhancement } from '../utils/enrichArticleContent';
 
-const IMG_WN = '/article-images/featured-monash-withdrawn-fail-wam.webp';
-const IMG_MILESTONES = '/article-images/featured-monash-wam-milestones.webp';
-const IMG_DISTINCTION = '/article-images/featured-monash-distinction-average.webp';
-const IMG_TARGET = '/article-images/featured-monash-wam-target.webp';
-const IMG_SEMESTER = '/article-images/featured-monash-semester-wam.webp';
-const IMG_PROJECTION = '/article-images/featured-monash-wam-projection.webp';
-const IMG_PCT_GPA = '/article-images/featured-percentage-to-gpa-guide.webp';
-const IMG_40_GPA = '/article-images/featured-4-0-gpa-guide.webp';
-const IMG_70_GPA = '/article-images/featured-7-0-gpa-guide.webp';
-const IMG_SEM_GPA = '/article-images/featured-semester-gpa-guide.webp';
-const IMG_CGPA = '/article-images/featured-gpa-to-cgpa-guide.webp';
-const IMG_ATAR = '/article-images/featured-atar-to-gpa-wam-guide.webp';
 
 export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
   'monash-withdrawn-fail-wam-guide': [
@@ -25,13 +13,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Faculty progression rules may flag WN alongside academic standing reviews.',
             'Always read the grade code on WES — do not assume N-grade maths.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_WN,
-          alt: 'Monash student reviewing withdrawn fail grade code on WES academic record',
           afterParagraph: 0,
         },
       ],
@@ -131,13 +112,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_WN,
-          alt: 'Academic advisor meeting with student about withdrawn fail recovery and WAM planning',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -166,13 +140,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Milestones differ from honours cutoffs and employer percentile lists.',
             'Use certified WAM from WES as the input for milestone checks.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_MILESTONES,
-          alt: 'Student checking WAM milestone bands on a Monash planning calculator dashboard',
           afterParagraph: 0,
         },
       ],
@@ -273,13 +240,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_MILESTONES,
-          alt: 'Milestone checklist beside Monash semester results and WAM tracker on a laptop',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -308,13 +268,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'It is a planning benchmark — always verify exact wording on the opportunity page.',
             'Sitting at 69.9 vs 70.1 matters for automated merit screens.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_DISTINCTION,
-          alt: 'Monash student verifying distinction average WAM threshold on academic transcript',
           afterParagraph: 0,
         },
       ],
@@ -414,13 +367,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_DISTINCTION,
-          alt: 'Distinction average planning worksheet with Monash unit marks and credit points',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -449,13 +395,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Separate secure targets (progression) from competitive targets (merit).',
             'Write the gap in points from current certified WAM.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_TARGET,
-          alt: 'Student setting a Monash WAM target using calculator inputs from WES transcript',
           afterParagraph: 0,
         },
       ],
@@ -555,13 +494,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_TARGET,
-          alt: 'WAM target calculator output showing required average on remaining Monash units',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -590,13 +522,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Calculated with same credit-weighting rules within that semester\'s units.',
             'WES may show semester summaries — verify against unit rows.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_SEMESTER,
-          alt: 'Monash semester WAM calculation shown on laptop next to unit results list',
           afterParagraph: 0,
         },
       ],
@@ -682,13 +607,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_SEMESTER,
-          alt: 'Semester results summary chart comparing term WAM against cumulative Monash WAM',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -717,13 +635,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Label scenarios: conservative, expected, stretch.',
             'Update when official results replace projections.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_PROJECTION,
-          alt: 'WAM projection spreadsheet with conservative and optimistic scenarios for Monash units',
           afterParagraph: 0,
         },
       ],
@@ -823,13 +734,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_PROJECTION,
-          alt: 'Multi-semester Monash WAM projection chart with certified and planned unit marks',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -858,13 +762,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Transcript GPA beats estimated conversion when available.',
             'Document the band table used when comments are allowed.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_PCT_GPA,
-          alt: 'Percentage to GPA conversion chart beside calculator on a student desk',
           afterParagraph: 0,
         },
       ],
@@ -950,13 +847,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_PCT_GPA,
-          alt: 'Student using percentage to GPA calculator with Monash grade band reference sheet',
-          afterParagraph: 0,
-        },
-      ],
     },
   ],
 
@@ -971,13 +861,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Official transcript CGPA overrides calculator output when printed.',
             'State estimation method in comments when allowed.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_40_GPA,
-          alt: '4.0 GPA calculator interface beside Monash transcript with letter grades',
           afterParagraph: 0,
         },
       ],
@@ -1049,13 +932,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_40_GPA,
-          alt: '4.0 GPA scale reference card next to laptop showing calculated cumulative GPA',
-          afterParagraph: 0,
-        },
-      ],
     },
   ],
 
@@ -1070,13 +946,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Use when forms explicitly say “GPA out of 7.”',
             'Not interchangeable with 4.0 entries on the same field.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_70_GPA,
-          alt: '7.0 GPA scale calculator with Australian university grade band legend',
           afterParagraph: 0,
         },
       ],
@@ -1148,13 +1017,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_70_GPA,
-          alt: 'Australian 7.0 GPA scale diagram beside Monash WAM percentage marks',
-          afterParagraph: 0,
-        },
-      ],
     },
   ],
 
@@ -1169,13 +1031,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Differs from semester WAM — GPA uses letter band points, WAM uses percentages.',
             'Useful for judging term improvement after a weak cumulative CGPA.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_SEM_GPA,
-          alt: 'Semester GPA calculator showing term grade points and credit-weighted average',
           afterParagraph: 0,
         },
       ],
@@ -1247,13 +1102,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_SEM_GPA,
-          alt: 'Student comparing semester GPA and cumulative CGPA on academic planning spreadsheet',
-          afterParagraph: 0,
-        },
-      ],
     },
   ],
 
@@ -1268,13 +1116,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Matches WES cumulative GPA when inputs are complete and certified.',
             'Use for scholarship renewal and postgraduate form planning.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_CGPA,
-          alt: 'GPA to CGPA calculator with multiple semester inputs and credit weighting',
           afterParagraph: 0,
         },
       ],
@@ -1346,13 +1187,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_CGPA,
-          alt: 'Cumulative CGPA trend chart built from semester GPA calculator outputs',
-          afterParagraph: 0,
-        },
-      ],
     },
   ],
 
@@ -1367,13 +1201,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Once enrolled, WAM and GPA come only from unit results.',
             'Stop referencing ATAR on applications after first-year university results exist.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_ATAR,
-          alt: 'ATAR certificate beside university WAM transcript illustrating different academic stages',
           afterParagraph: 0,
         },
       ],
@@ -1442,13 +1269,6 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             ['Graduate jobs', 'WAM + degree', 'ATAR'],
             ['Postgraduate', 'WAM/CGPA', 'ATAR'],
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_ATAR,
-          alt: 'University student replacing ATAR reference with Monash WAM on internship application',
           afterParagraph: 0,
         },
       ],

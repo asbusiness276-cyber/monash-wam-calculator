@@ -4,7 +4,6 @@ import { articleEnrichmentsPart3 } from './articleEnrichmentsPart3';
 
 /**
  * Per-section SEO enrichments keyed by article slug.
- * Image src `'FEATURED_IMAGE'` is replaced with the article featuredImage at runtime.
  */
 const enrichments: Record<string, SectionEnhancement[]> = {
   'monash-university-australia': [
@@ -18,13 +17,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Academic performance is tracked with a credit-weighted WAM, not a US-style GPA as the native metric.',
             'Confirm rankings, fees, and entry rules on Study at Monash each intake year — published figures move annually.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Students walking across Monash University grounds on a clear day near teaching buildings',
           afterParagraph: 0,
         },
       ],
@@ -81,13 +73,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'PhD and MPhil entry usually needs a supervisor match, research proposal, and prior research training evidence.',
             'Micro-credentials and professional short courses sit outside standard bachelor WAM calculations.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Monash campus pathways and modern academic buildings used for undergraduate and research programs',
           afterParagraph: 0,
         },
       ],
@@ -166,13 +151,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Student reviewing grade benchmarks and transcript data on a laptop at a study desk',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -228,13 +206,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Open laptop showing academic marks next to handwritten study notes for WAM planning',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -263,13 +234,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'If overseas forms need GPA, convert after WAM is confirmed so both numbers stay consistent.',
             'Write the gap in points (e.g. +3.2 WAM) so weekly effort has a measurable finish line.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Student studying with laptop and notes in a university library while planning semester targets',
           afterParagraph: 0,
         },
       ],
@@ -311,13 +275,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Practice timed papers and rubric alignment; process fixes often raise a final by a full grade band.',
             'Drop sunk-cost units mathematically below target and reallocate hours to recoverable high-credit subjects.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Laptop open to assessment schedule beside exam revision notes on a library desk',
           afterParagraph: 0,
         },
       ],
@@ -396,13 +353,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Honours student working with research materials and a laptop in a university study space',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -471,13 +421,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'University research desk with books, laptop, and printed academic guidelines for honours planning',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -534,13 +477,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Equity and humanitarian schemes may weigh circumstances alongside (or instead of) high merit WAM.',
             'Always verify the live scholarship page for your application year before planning around old cutoffs.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Student reviewing scholarship documents and academic results on a laptop at a desk',
           afterParagraph: 0,
         },
       ],
@@ -612,13 +548,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Scholarship offer letter beside a laptop showing weighted average mark calculations',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -675,13 +604,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'A failed 12-credit unit typically hurts more than a weak 6-credit elective.',
             'Confirm mark, credit points, and faculty rules before modelling recovery.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Student meeting an academic advisor with transcript documents open on a laptop',
           afterParagraph: 0,
         },
       ],
@@ -753,13 +675,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Semester planner and calculator on a desk used to model WAM recovery after a failed unit',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -819,13 +734,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'They correlate but are not interchangeable labels on applications.',
             'Lead with what the destination form requests; add the other metric when space allows.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Postgraduate applicant comparing WAM and GPA figures on application documents and a laptop',
           afterParagraph: 0,
         },
       ],
@@ -897,13 +805,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Printed grade conversion table beside a laptop used for postgraduate application planning',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -963,13 +864,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Students comparing transcripts from different universities while preparing grade conversion notes',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -1024,13 +918,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Grade conversion worksheet and calculator beside international university application forms',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -1062,13 +949,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Match each mark to the correct credit point value for that unit.',
             'Monash official WAM also applies year-level weighting (Year 1 often at 0.5) — check policy when reconciling to transcript WAM.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Notebook showing the weighted average formula beside a calculator and laptop grade list',
           afterParagraph: 0,
         },
       ],
@@ -1127,13 +1007,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Student checking unit marks and credit points on a laptop while calculating WAM',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -1162,13 +1035,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Forms may want transcript GPA, a destination-specific conversion, or either.',
             'Know which method is required before submitting a single number.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'Student comparing WAM percentage marks with GPA scale documents on a laptop',
           afterParagraph: 0,
         },
       ],
@@ -1241,13 +1107,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: 'FEATURED_IMAGE',
-          alt: 'WAM to GPA conversion chart next to a Monash-style grade summary on screen',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -1296,26 +1155,6 @@ const enrichments: Record<string, SectionEnhancement[]> = {
   ...articleEnrichmentsPart3,
 };
 
-function replaceFeaturedImagePlaceholders(
-  sections: SectionEnhancement[],
-  featuredImage: string
-): SectionEnhancement[] {
-  return sections.map(section => ({
-    ...section,
-    images: section.images?.map(image => ({
-      ...image,
-      src: image.src === 'FEATURED_IMAGE' || !image.src ? featuredImage : image.src,
-    })),
-  }));
-}
-
-export function getSectionEnhancements(
-  slug: string,
-  featuredImage: string
-): SectionEnhancement[] {
-  const sections = enrichments[slug];
-  if (!sections?.length) {
-    return [];
-  }
-  return replaceFeaturedImagePlaceholders(sections, featuredImage);
+export function getSectionEnhancements(slug: string): SectionEnhancement[] {
+  return enrichments[slug] ?? [];
 }

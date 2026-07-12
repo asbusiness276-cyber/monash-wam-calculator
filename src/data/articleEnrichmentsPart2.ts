@@ -1,15 +1,5 @@
 import type { SectionEnhancement } from '../utils/enrichArticleContent';
 
-const IMG_TRANSCRIPT = '/article-images/featured-how-to-find-wam-on-monash-transcript.webp';
-const IMG_CREDIT = '/article-images/featured-monash-credit-points-wam.webp';
-const IMG_FINAL = '/article-images/featured-monash-final-exam-mark-calculator.webp';
-const IMG_SUPP = '/article-images/featured-monash-supplementary-exam-wam.webp';
-const IMG_CGPA = '/article-images/featured-monash-cgpa-explained.webp';
-const IMG_EXCHANGE = '/article-images/featured-monash-exchange-grades-wam.webp';
-const IMG_DEANS = '/article-images/featured-monash-deans-honours-list-wam.webp';
-const IMG_REPEAT = '/article-images/featured-monash-repeat-unit-wam.webp';
-const IMG_JOBS = '/article-images/featured-monash-wam-internship-graduate-jobs.webp';
-const IMG_YEAR1 = '/article-images/featured-monash-year-1-wam-weighting.webp';
 
 export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
   'how-to-find-wam-on-monash-transcript': [
@@ -23,13 +13,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Student portal widgets may show GPA/WAM summaries — always cross-check against WES.',
             'Unit-level marks and credit points on WES are the inputs for hand-checking WAM maths.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_TRANSCRIPT,
-          alt: 'Student opening Monash WES academic record on a laptop to locate weighted average mark',
           afterParagraph: 0,
         },
       ],
@@ -115,13 +98,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_TRANSCRIPT,
-          alt: 'Printed Monash academic transcript beside a laptop showing unit marks and credit points',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -164,13 +140,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'A 12-credit core at 75 affects cumulative WAM roughly twice a 6-credit elective at 75.',
             'Always pair each mark with its credit value from WES before calculating.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_CREDIT,
-          alt: 'Notebook showing credit point weighting beside Monash unit marks on a laptop screen',
           afterParagraph: 0,
         },
       ],
@@ -256,13 +225,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_CREDIT,
-          alt: 'Semester planner highlighting high credit point units next to a WAM calculation spreadsheet',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -305,13 +267,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Coursework locked in early reduces remaining leverage — calculate before the final sits.',
             'Unit targets and cumulative WAM planning use different tools — keep both updated.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_FINAL,
-          alt: 'Student using a final exam grade calculator on a laptop during revision week at Monash',
           afterParagraph: 0,
         },
       ],
@@ -397,13 +352,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_FINAL,
-          alt: 'Exam revision notes and calculator showing required final mark to pass a Monash unit',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -460,13 +408,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Outcome may be recorded as a capped pass (e.g. 50 P) depending on policy.',
             'Eligibility and timing are faculty-specific — read the unit guide and WES notices.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_SUPP,
-          alt: 'Monash student reviewing supplementary exam notification and WAM planning notes on a laptop',
           afterParagraph: 0,
         },
       ],
@@ -566,13 +507,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_SUPP,
-          alt: 'WAM calculator spreadsheet updated after a Monash supplementary pass result',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -601,13 +535,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'CGPA differs from WAM — WAM uses raw percentage marks with credit weighting.',
             'Transcript CGPA is authoritative when printed; estimates are for planning only.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_CGPA,
-          alt: 'Monash student comparing CGPA and WAM figures on a WES academic record printout',
           afterParagraph: 0,
         },
       ],
@@ -707,13 +634,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_CGPA,
-          alt: 'Laptop screen showing semester GPA and cumulative CGPA charts for Monash coursework',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -756,13 +676,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Your Monash WAM reflects Monash-graded units — not host university percentages.',
             'Exchange still advances degree completion when credit is approved.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_EXCHANGE,
-          alt: 'Monash student with exchange university transcript and Monash WES login on a laptop',
           afterParagraph: 0,
         },
       ],
@@ -876,13 +789,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_EXCHANGE,
-          alt: 'World map and exchange paperwork next to Monash WAM planning calculator on a desk',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -911,13 +817,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Criteria vary by faculty — percentile, distinction average, or course awards use different rules.',
             'Certificates and events are typical rewards — not ongoing scholarship payments.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_DEANS,
-          alt: 'Monash graduate in academic gown at graduation ceremony holding diploma folder',
           afterParagraph: 0,
         },
       ],
@@ -1031,13 +930,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_DEANS,
-          alt: 'Graduation cap and Monash academic transcript showing distinction-level WAM',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -1066,13 +958,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Credit weight of the unit doubles the impact when both attempts are graded.',
             'Confirm faculty handbook wording before assuming grade replacement.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_REPEAT,
-          alt: 'Student reviewing Monash unit repeat policy and WAM impact notes on a laptop',
           afterParagraph: 0,
         },
       ],
@@ -1172,13 +1057,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_REPEAT,
-          alt: 'WAM calculator showing both unit attempts after a Monash repeat enrollment plan',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -1221,13 +1099,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Penultimate-year internships frequently screen on WAM for competitive streams.',
             'Always report transcript-backed WAM — round consistently with the application field.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_JOBS,
-          alt: 'Monash student preparing internship application with WAM and resume documents on a laptop',
           afterParagraph: 0,
         },
       ],
@@ -1341,13 +1212,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           afterParagraph: 0,
         },
       ],
-      images: [
-        {
-          src: IMG_JOBS,
-          alt: 'Graduate job application portal open beside Monash WAM calculator and cover letter draft',
-          afterParagraph: 0,
-        },
-      ],
     },
     {
       facts: [
@@ -1390,13 +1254,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Hand calculators that treat all years equally will overstate Year 1 impact.',
             'Progression still depends on passing Year 1 units regardless of WAM weight.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_YEAR1,
-          alt: 'First-year Monash student reviewing year-level WAM weighting rules on a laptop',
           afterParagraph: 0,
         },
       ],
@@ -1493,13 +1350,6 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Model future semesters with full weighting when estimating honours eligibility.',
             'Recalculate after each results release as Year 2 units dominate the denominator.',
           ],
-          afterParagraph: 0,
-        },
-      ],
-      images: [
-        {
-          src: IMG_YEAR1,
-          alt: 'WAM spreadsheet comparing year-level weighting against Monash WES official average',
           afterParagraph: 0,
         },
       ],
