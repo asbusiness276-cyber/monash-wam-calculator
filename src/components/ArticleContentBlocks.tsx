@@ -37,6 +37,8 @@ export default function ArticleContentBlocks({ blocks }: ArticleContentBlocksPro
               <img
                 src={block.src}
                 alt={block.alt}
+                width={block.width}
+                height={block.height}
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-video object-cover block"

@@ -1,4 +1,5 @@
 import { FaqItem } from '../components/Seo';
+import { enrichArticleContent } from '../utils/enrichArticleContent';
 import { bestEconomicsUniversitiesAustraliaArticle } from './bestEconomicsUniversitiesAustraliaArticle';
 import { bestPharmacyUniversitiesAustraliaArticle } from './bestPharmacyUniversitiesAustraliaArticle';
 import { bestUniversitiesAustraliaArticle } from './bestUniversitiesAustraliaArticle';
@@ -6,7 +7,7 @@ import { bestUniversitiesAustraliaArticle } from './bestUniversitiesAustraliaArt
 export type ArticleContentBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'quote'; text: string; attribution?: string }
-  | { type: 'image'; src: string; alt: string }
+  | { type: 'image'; src: string; alt: string; width?: number; height?: number }
   | { type: 'facts'; title?: string; items: string[] }
   | { type: 'table'; caption?: string; headers: string[]; rows: string[][] };
 
@@ -50,7 +51,7 @@ export interface ArticleData {
  * 6. Cross-link from 1–2 related articles in paragraph text
  * See .cursor/rules/article-publishing.mdc for full workflow.
  */
-export const articles: ArticleData[] = [
+const rawArticles: ArticleData[] = [
   {
     slug: 'monash-university-australia',
     keyword: 'monash university australia',
@@ -3030,6 +3031,8 @@ export const articles: ArticleData[] = [
   bestPharmacyUniversitiesAustraliaArticle,
   bestEconomicsUniversitiesAustraliaArticle,
 ];
+
+export const articles: ArticleData[] = rawArticles.map(enrichArticleContent);
 
 export function getArticleImageAlt(
   article: Pick<ArticleData, 'featuredImageAlt' | 'title' | 'keyword'>
