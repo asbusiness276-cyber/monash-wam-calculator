@@ -49,6 +49,7 @@ export default function GPAtoWAM() {
         description="Convert 4.0 or 7.0 GPA to approximate Monash WAM percentage ranges using official HD/D/C/P bands — for transfer and application planning."
         canonicalPath="/gpa-to-wam-calculator"
         ogImage="/article-images/featured-convert-wam.webp"
+        ogImageAlt="Student comparing GPA and WAM conversion scales on a laptop for Monash grade planning"
         faqItems={gpaToWamFaqs}
       />
 

@@ -44,6 +44,7 @@ export default function MonashScholarshipWam() {
         description="Plan Monash merit scholarship WAM targets: enter current WAM and credit points to see the average needed on remaining units for bands from 65 to 85 WAM."
         canonicalPath="/monash-scholarship-wam-calculator"
         ogImage="/article-images/featured-monash-scholarship-wam.webp"
+        ogImageAlt="Monash student reviewing scholarship merit WAM requirements on a laptop"
         faqItems={faqs}
       />
 

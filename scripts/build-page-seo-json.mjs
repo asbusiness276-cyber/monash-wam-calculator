@@ -12,12 +12,14 @@ const outPath = join(root, 'src/data/pageSeo.json');
 
 const seo = {};
 
-function add(path, title, description, ogImage) {
+function add(path, title, description, ogImage, ogImageAlt, noIndex) {
   if (!path || !title || !description) return;
   seo[path] = {
     title,
     description,
     ...(ogImage ? { ogImage } : {}),
+    ...(ogImageAlt ? { ogImageAlt } : {}),
+    ...(noIndex ? { noIndex: true } : {}),
   };
 }
 
@@ -28,6 +30,9 @@ const articlesSource = readFileSync(articlesPath, 'utf8');
 const authorName = authorSource.match(/name: '([^']+)'/)?.[1] ?? 'Saahil';
 const calculatorCount = (catalogSource.match(/href: '/g) ?? []).length;
 const articleCount = (articlesSource.match(/slug: '/g) ?? []).length;
+
+const HOME_OG_ALT =
+  'Monash university student using a laptop to calculate weighted average mark from unit marks and credit points';
 
 for (const file of readdirSync(pagesDir)) {
   if (!file.endsWith('.tsx')) continue;
@@ -60,7 +65,23 @@ for (const file of readdirSync(pagesDir)) {
   }
 
   const ogImage = content.match(/\n\s+ogImage="([^"]+)"/)?.[1];
-  add(canonical, title, description, ogImage);
+  const ogImageAlt = content.match(/\n\s+ogImageAlt="([^"]+)"/)?.[1];
+  const ogImageAltTemplate = content.match(/\n\s+ogImageAlt=\{([^}]+)\}/)?.[1];
+  const noIndex = /\n\s+noIndex\b/.test(content);
+const authorAvatarAlt = authorSource.match(/avatarAlt: '([^']+)'/)?.[1];
+
+  let resolvedOgImageAlt = ogImageAlt;
+  if (!resolvedOgImageAlt && ogImageAltTemplate === 'HOME_OG_ALT') {
+    resolvedOgImageAlt = HOME_OG_ALT;
+  }
+  if (!resolvedOgImageAlt && ogImageAltTemplate === 'ARTICLE_AUTHOR.avatarAlt') {
+    resolvedOgImageAlt = authorAvatarAlt;
+  }
+  if (!resolvedOgImageAlt && ogImageAltTemplate === 'featuredImageAlt') {
+    resolvedOgImageAlt = undefined;
+  }
+
+  add(canonical, title, description, ogImage, resolvedOgImageAlt, noIndex);
 }
 
 const articleBlocks = articlesSource.split(/\n  \{\n    slug: '/).slice(1);
@@ -71,7 +92,10 @@ for (const block of articleBlocks) {
     block.match(/\n    description:\n      '([^']+)'/)?.[1] ??
     block.match(/\n    description: '([^']+)'/)?.[1];
   const featuredImage = block.match(/\n    featuredImage: '([^']+)'/)?.[1];
-  add(`/articles/${slug}`, title ? `${title} | Monash WAM Calculator` : undefined, description, featuredImage);
+  const featuredImageAlt =
+    block.match(/\n    featuredImageAlt: '([^']+)'/)?.[1] ??
+    block.match(/\n    featuredImageAlt:\n      '([^']+)'/)?.[1];
+  add(`/articles/${slug}`, title ? `${title} | Monash WAM Calculator` : undefined, description, featuredImage, featuredImageAlt);
 }
 
 const bestArticleFiles = [
@@ -85,7 +109,8 @@ for (const file of bestArticleFiles) {
   const title = content.match(/title: '([^']+)'/)?.[1];
   const description = content.match(/description:\s*\n\s*'([^']+)'/)?.[1];
   const featuredImage = content.match(/featuredImage: '([^']+)'/)?.[1];
-  add(`/articles/${slug}`, `${title} | Monash WAM Calculator`, description, featuredImage);
+  const featuredImageAlt = content.match(/featuredImageAlt: '([^']+)'/)?.[1];
+  add(`/articles/${slug}`, `${title} | Monash WAM Calculator`, description, featuredImage, featuredImageAlt);
 }
 
 const categoriesSource = readFileSync(categoriesPath, 'utf8');

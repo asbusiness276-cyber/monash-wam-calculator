@@ -48,9 +48,12 @@ export default function WriteForUs() {
 
         <img
           src="/write-for-us-featured.jpeg"
-          alt="Write For Us Education"
+          alt="Education writer reviewing notes for a student-focused guest article pitch"
+          width={896}
+          height={504}
           className="w-full rounded-2xl border border-gray-200 dark:border-gray-700 mb-6"
           loading="lazy"
+          decoding="async"
         />
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-5 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">

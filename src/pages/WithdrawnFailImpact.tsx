@@ -44,6 +44,7 @@ export default function WithdrawnFailImpact() {
         description="Model Monash withdrawn fail (WN) impact: see how GPA 0.0 affects your average and compare WAM excluded vs worst-case zero-counted scenarios."
         canonicalPath="/withdrawn-fail-impact-calculator"
         ogImage="/article-images/featured-monash-withdrawn-fail-wam.webp"
+        ogImageAlt="Monash student checking withdrawn fail impact on cumulative WAM planning"
         faqItems={faqs}
       />
 

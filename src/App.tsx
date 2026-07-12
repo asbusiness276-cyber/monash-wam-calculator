@@ -153,8 +153,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-clip bg-gray-50 dark:bg-gray-900 transition-colors">
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
       <Navbar dark={dark} toggleDark={toggle} />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1" tabIndex={-1}>
         {getPage(path)}
       </main>
       <Footer />

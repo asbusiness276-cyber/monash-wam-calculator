@@ -1,4 +1,16 @@
 import { useEffect } from 'react';
+import {
+  breadcrumbCrumbsToJsonLd,
+  buildBreadcrumbCrumbs,
+  getWebPageSchemaType,
+  isCalculatorRoute,
+} from '../utils/seoBreadcrumbs';
+import {
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_ALT,
+  getOgImageDimensions,
+  resolveOgImageUrl,
+} from '../utils/ogImageMeta';
 
 export interface FaqItem {
   question: string;
@@ -34,7 +46,11 @@ interface SeoProps {
 }
 
 const BASE_URL = 'https://monashwamcalculator.com';
-const DEFAULT_OG_IMAGE = `${BASE_URL}/logo.png`;
+const ORGANIZATION_LOGO = `${BASE_URL}/logo.png`;
+const ROBOTS_INDEX =
+  'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+const ROBOTS_NOINDEX =
+  'noindex, nofollow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
 
 function upsertMeta(selector: string, attribute: 'name' | 'property', key: string, content: string) {
   let element = document.head.querySelector(selector) as HTMLMetaElement | null;
@@ -64,6 +80,10 @@ function removeJsonLd(id: string) {
   }
 }
 
+function stripTitleSuffix(title: string): string {
+  return title.replace(/\s*\|\s*Monash WAM Calculator.*$/i, '').trim();
+}
+
 export default function Seo({
   title,
   description,
@@ -71,12 +91,14 @@ export default function Seo({
   faqItems = [],
   noIndex = false,
   ogImage = DEFAULT_OG_IMAGE,
-  ogImageAlt = 'Monash WAM Calculator',
+  ogImageAlt = DEFAULT_OG_IMAGE_ALT,
   person,
   article,
 }: SeoProps) {
   useEffect(() => {
     const canonicalUrl = `${BASE_URL}${canonicalPath}`;
+    const ogImageUrl = resolveOgImageUrl(ogImage, BASE_URL);
+    const { width: ogWidth, height: ogHeight } = getOgImageDimensions(ogImage);
     document.title = title;
 
     upsertMeta('meta[name="description"]', 'name', 'description', description);
@@ -85,19 +107,17 @@ export default function Seo({
     upsertMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'Monash WAM Calculator');
     upsertMeta('meta[property="og:description"]', 'property', 'og:description', description);
     upsertMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
-    upsertMeta('meta[property="og:image"]', 'property', 'og:image', ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`);
+    upsertMeta('meta[property="og:locale"]', 'property', 'og:locale', 'en_AU');
+    upsertMeta('meta[property="og:image"]', 'property', 'og:image', ogImageUrl);
     upsertMeta('meta[property="og:image:alt"]', 'property', 'og:image:alt', ogImageAlt);
+    upsertMeta('meta[property="og:image:width"]', 'property', 'og:image:width', String(ogWidth));
+    upsertMeta('meta[property="og:image:height"]', 'property', 'og:image:height', String(ogHeight));
     upsertMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
     upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
     upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description);
-    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`);
+    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', ogImageUrl);
     upsertMeta('meta[name="twitter:url"]', 'name', 'twitter:url', canonicalUrl);
-    upsertMeta(
-      'meta[name="robots"]',
-      'name',
-      'robots',
-      noIndex ? 'noindex, nofollow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
-    );
+    upsertMeta('meta[name="robots"]', 'name', 'robots', noIndex ? ROBOTS_NOINDEX : ROBOTS_INDEX);
 
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
@@ -107,19 +127,10 @@ export default function Seo({
     }
     canonical.href = canonicalUrl;
 
+    const breadcrumbCrumbs = buildBreadcrumbCrumbs(canonicalPath, title);
+    upsertJsonLd('breadcrumb', breadcrumbCrumbsToJsonLd(breadcrumbCrumbs));
+
     if (canonicalPath === '/') {
-      upsertJsonLd('breadcrumb', {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Monash WAM Calculator',
-            item: BASE_URL,
-          },
-        ],
-      });
       upsertJsonLd('webapp', {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
@@ -152,7 +163,8 @@ export default function Seo({
         '@context': 'https://schema.org',
         '@type': 'HowTo',
         name: 'How to calculate WAM at Monash',
-        description: 'Use the free Monash WAM calculator to compute your Weighted Average Mark from unit marks and credit points.',
+        description:
+          'Use the free Monash WAM calculator to compute your Weighted Average Mark from unit marks and credit points.',
         step: [
           {
             '@type': 'HowToStep',
@@ -171,18 +183,40 @@ export default function Seo({
           },
         ],
       });
+    } else if (isCalculatorRoute(canonicalPath)) {
+      removeJsonLd('howto');
+      upsertJsonLd('webapp', {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: stripTitleSuffix(title),
+        description,
+        url: canonicalUrl,
+        applicationCategory: 'EducationalApplication',
+        operatingSystem: 'Any',
+        browserRequirements: 'Requires JavaScript',
+        isPartOf: {
+          '@type': 'WebSite',
+          name: 'Monash WAM Calculator',
+          url: BASE_URL,
+        },
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'AUD',
+        },
+      });
     } else {
       removeJsonLd('webapp');
       removeJsonLd('howto');
-      removeJsonLd('breadcrumb');
     }
 
     upsertJsonLd('webpage', {
       '@context': 'https://schema.org',
-      '@type': 'WebPage',
+      '@type': getWebPageSchemaType(canonicalPath),
       name: title,
       description,
       url: canonicalUrl,
+      inLanguage: 'en-AU',
       isPartOf: {
         '@type': 'WebSite',
         name: 'Monash WAM Calculator',
@@ -206,8 +240,8 @@ export default function Seo({
     } else {
       removeJsonLd('faq');
     }
+
     if (article) {
-      const articleImageUrl = ogImage.startsWith('http') ? ogImage : `${BASE_URL}${ogImage}`;
       upsertJsonLd('article', {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -215,7 +249,9 @@ export default function Seo({
         description,
         image: {
           '@type': 'ImageObject',
-          url: articleImageUrl,
+          url: ogImageUrl,
+          width: ogWidth,
+          height: ogHeight,
           caption: ogImageAlt,
           description: ogImageAlt,
         },
@@ -227,6 +263,11 @@ export default function Seo({
         publisher: {
           '@type': 'Organization',
           name: 'Monash WAM Calculator',
+          url: BASE_URL,
+          logo: {
+            '@type': 'ImageObject',
+            url: ORGANIZATION_LOGO,
+          },
         },
         datePublished: article.datePublished,
         dateModified: article.dateModified,

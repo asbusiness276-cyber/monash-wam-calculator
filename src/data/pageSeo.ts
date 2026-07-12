@@ -4,6 +4,8 @@ export interface PageSeoEntry {
   title: string;
   description: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  noIndex?: boolean;
 }
 
 export function getPageSeo(path: string): PageSeoEntry | undefined {
