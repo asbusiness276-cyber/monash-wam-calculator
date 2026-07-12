@@ -126,22 +126,45 @@ function outputFileForRoute(route) {
   return join(distDir, clean, 'index.html');
 }
 
+const DEFAULT_TITLE =
+  'Monash WAM Calculator | Free WAM Calculator Monash University (2026)';
+
 async function renderRoute(browser, route) {
   const page = await browser.newPage();
+  const expectedPath = route === '' ? '/' : route;
   try {
     await page.setViewport({ width: 1280, height: 900 });
-    await page.goto(`${ORIGIN}${route}`, { waitUntil: 'load', timeout: 60000 });
+    await page.goto(`${ORIGIN}${expectedPath}`, { waitUntil: 'networkidle0', timeout: 90000 });
 
-    // Wait until React has painted content into #root and Seo.tsx has set a title.
+    // Wait until React renders and Seo.tsx sets canonical + page-specific title.
     await page.waitForFunction(
-      () => {
+      (path, defaultTitle) => {
         const root = document.getElementById('root');
-        return !!root && root.childElementCount > 0 && document.title.trim().length > 0;
+        if (!root || root.childElementCount === 0) return false;
+
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) return false;
+
+        let canonicalPath = '';
+        try {
+          canonicalPath = new URL(canonical.href).pathname;
+        } catch {
+          return false;
+        }
+        if (canonicalPath !== path) return false;
+
+        const title = document.title.trim();
+        if (!title) return false;
+        if (path !== '/' && title === defaultTitle) return false;
+
+        const description = document.querySelector('meta[name="description"]')?.getAttribute('content')?.trim();
+        return !!description;
       },
-      { timeout: 20000 }
+      { timeout: 60000 },
+      expectedPath,
+      DEFAULT_TITLE
     );
-    // Small settle time for late effects (JSON-LD injection, canonical, etc.).
-    await new Promise((r) => setTimeout(r, 250));
+    await new Promise(r => setTimeout(r, 400));
 
     const html = await page.evaluate(() => '<!doctype html>\n' + document.documentElement.outerHTML);
 

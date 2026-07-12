@@ -5,6 +5,12 @@ export interface GuideTable {
   rows: string[][];
 }
 
+export interface GuideCallout {
+  variant: 'info' | 'warning' | 'tip';
+  title?: string;
+  text: string;
+}
+
 export interface GuideExample {
   title: string;
   paragraphs: string[];
@@ -18,169 +24,26 @@ export interface GuideSection {
   steps?: string[];
   examples?: GuideExample[];
   table?: GuideTable;
+  callouts?: GuideCallout[];
 }
 
 export interface CalculatorPageGuideData {
   sections: GuideSection[];
 }
 
+import { CALCULATOR_GUIDE_EXPANSIONS_PART1 } from './calculatorGuideExpansionsPart1';
+import { CALCULATOR_GUIDE_EXPANSIONS_PART2 } from './calculatorGuideExpansionsPart2';
+import { CALCULATOR_GUIDE_EXPANSIONS_PART3 } from './calculatorGuideExpansionsPart3';
+import { CALCULATOR_GUIDE_EXPANSIONS_PART4 } from './calculatorGuideExpansionsPart4';
+
+const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
+  ...CALCULATOR_GUIDE_EXPANSIONS_PART1,
+  ...CALCULATOR_GUIDE_EXPANSIONS_PART2,
+  ...CALCULATOR_GUIDE_EXPANSIONS_PART3,
+  ...CALCULATOR_GUIDE_EXPANSIONS_PART4,
+};
+
 export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
-  '/': {
-    sections: [
-      {
-        heading: 'How This Calculator Works',
-        paragraphs: [
-          'This Monash WAM calculator accepts every completed unit on your record — unit code, percentage mark (0–100), credit points, and year level. It returns two weighted averages: official Monash WAM (Year 1 at 0.5 weight, Year 2+ at 1.0) and planning WAM (credit-weighted only, no year-level adjustment).',
-          'Unit codes like FIT1045 auto-fill year level from the first digit when possible. You can override the year dropdown if your handbook treats a unit differently. The grade band (HD, D, C, P, N) is applied to your official WAM result, matching Monash percentage thresholds.',
-        ],
-        table: {
-          headers: ['Output', 'What it measures', 'Matches WES?'],
-          rows: [
-            ['Official Monash WAM', 'Mark × CP × year weight', 'Yes — same weighting rules'],
-            ['Planning WAM', 'Mark × CP only', 'No — quick what-if average'],
-            ['Grade band', 'HD / D / C / P / N from official WAM', 'Same band thresholds'],
-            ['Total credit points', 'Sum of entered CP', 'Check against your transcript total'],
-          ],
-        },
-      },
-      {
-        heading: 'Step-by-Step Calculation Guide',
-        paragraphs: [
-          'Follow this workflow each results period to verify WES or to model upcoming units before grades are final.',
-        ],
-        steps: [
-          'Open WES → Academic Record and list each completed unit with its final percentage mark and credit points (usually 6 or 12).',
-          'Enter units in the calculator. Confirm year level: digit 1 in the unit number typically means Year 1 (0.5 weight).',
-          'For each unit, multiply mark × credit points. For official WAM, also multiply by year weight (0.5 or 1.0).',
-          'Add all weighted mark values, then divide by the sum of (credit points × year weight) for official WAM.',
-          'For planning WAM, divide the sum of (mark × CP) by total CP — ignore year level.',
-          'Compare official WAM to WES. If they differ, check for withdrawn-fail units, repeats, or year-level overrides.',
-        ],
-      },
-      {
-        heading: '5 Real Student Examples',
-        paragraphs: [
-          'These scenarios use common Monash unit loads. Numbers are worked examples — always confirm your own WES figure after entering real marks.',
-        ],
-        examples: [
-          {
-            title: 'Example 1 — First-year science semester (all Year 1)',
-            paragraphs: [
-              'A first-year BSci student completed three 6-credit units. Because every unit is Year 1, official WAM and planning WAM are identical at 73.33 (Distinction band).',
-            ],
-            table: {
-              headers: ['Unit', 'Year', 'Mark', 'CP'],
-              rows: [
-                ['FIT1045', '1', '78', '6'],
-                ['MAT1830', '1', '72', '6'],
-                ['ENG1005', '1', '70', '6'],
-              ],
-            },
-          },
-          {
-            title: 'Example 2 — Weak Year 1, strong Year 2 (official WAM jumps)',
-            paragraphs: [
-              'Planning WAM is 76.75, but official Monash WAM is 79.43 because Year 1 half-weighting reduces the impact of the 58% mark while Year 2 units at 85% and 82% count fully.',
-            ],
-            table: {
-              headers: ['Unit', 'Year', 'Mark', 'CP', 'Planning weight', 'Official weight'],
-              rows: [
-                ['FIT1045', '1', '58', '6', '6', '3 (×0.5)'],
-                ['FIT2004', '2', '85', '6', '6', '6'],
-                ['FIT3179', '2', '82', '12', '12', '12'],
-              ],
-            },
-          },
-          {
-            title: 'Example 3 — One failed unit dragging WAM',
-            paragraphs: [
-              'A 45% fail on a 6-credit unit pulls both averages to 61.67 (Credit band). Recovery planning should focus on high-credit units where distinction marks move WAM faster.',
-            ],
-            table: {
-              headers: ['Unit', 'Year', 'Mark', 'CP'],
-              rows: [
-                ['ACC1100', '1', '45', '6'],
-                ['ETC1000', '1', '68', '6'],
-                ['BTC1110', '1', '72', '6'],
-              ],
-            },
-          },
-          {
-            title: 'Example 4 — Final-year pharmacy load (12-credit unit)',
-            paragraphs: [
-              'Official and planning WAM both equal 78.00 (Distinction band). The 12-credit unit at 82% contributes twice as much as each 6-credit unit — credit weighting dominates.',
-            ],
-            table: {
-              headers: ['Unit', 'Year', 'Mark', 'CP'],
-              rows: [
-                ['PHA3011', '3', '76', '6'],
-                ['PHA3022', '3', '88', '6'],
-                ['PHA3200', '3', '82', '12'],
-              ],
-            },
-          },
-          {
-            title: 'Example 5 — Simple average mistake vs credit weighting',
-            paragraphs: [
-              'Simple averaging gives 77.3%, but the correct planning WAM is 68.75 because the 12-credit unit at 77% pulls the weighted total down. Never simple-average percentages when credit points differ.',
-            ],
-            table: {
-              headers: ['Unit', 'Mark', 'CP', 'Mark × CP'],
-              rows: [
-                ['BIO2011', '74', '6', '444'],
-                ['CHM2922', '81', '6', '486'],
-                ['PSY2041', '77', '12', '924'],
-              ],
-            },
-          },
-        ],
-      },
-      {
-        heading: 'Common Mistakes',
-        bullets: [
-          'Averaging unit percentages without credit-point weighting — a 12-credit mark counts double a 6-credit mark.',
-          'Using planning WAM on scholarship forms that expect official cumulative WAM from WES.',
-          'Leaving year level at default when a unit is actually Year 2+ — official WAM will not match WES.',
-          'Including in-progress units before results are certified on your academic record.',
-          'Entering GPA or letter grades instead of the percentage mark shown on WES.',
-          'Forgetting that failed units (N) stay in WAM — excluding them inflates your calculated average.',
-        ],
-        paragraphs: [
-          'If official WAM still will not reconcile, check withdrawn-fail (WN) handling and repeat-unit rules on WES — both affect which marks count.',
-        ],
-      },
-      {
-        heading: 'Tips for Students',
-        bullets: [
-          'Screenshot or export WES after each results release and re-run the calculator the same day.',
-          'Sort units by credit points descending — verify high-load units first because they move WAM most.',
-          'Use planning WAM for quick semester reviews; use official WAM when comparing to honours, scholarship, or dean\'s list cutoffs.',
-          'Copy results with the built-in copy button when sharing with a mentor or writing a study plan.',
-          'Pair this tool with the WAM target calculator once you know remaining credit points for your degree.',
-        ],
-        paragraphs: [
-          'Year 1 marks matter less in official WAM maths — strong performance in Year 2 and Year 3 units has more leverage on your cumulative average.',
-        ],
-      },
-      {
-        heading: 'When to Use This Calculator',
-        paragraphs: [
-          'Use this page as your primary cumulative WAM checker when you have multiple units across different year levels. Other tools on this site solve narrower questions.',
-        ],
-        table: {
-          headers: ['Your question', 'Use this calculator?', 'Better alternative'],
-          rows: [
-            ['What is my cumulative WAM right now?', 'Yes', 'Match against WES after entry'],
-            ['One semester only, no year weighting focus', 'Possible', 'Semester WAM calculator'],
-            ['How much WAM do I need on remaining units?', 'No', 'WAM target calculator'],
-            ['Planning WAM vs official side-by-side only', 'Partial', 'Monash official WAM calculator'],
-            ['What final exam mark do I need in one unit?', 'No', 'Final grade calculator'],
-            ['Convert WAM to GPA for a form', 'No', 'WAM to GPA calculator'],
-          ],
-        },
-      },
-    ],
-  },
   '/monash-distinction-average-calculator': {
     sections: [
       {
@@ -1599,5 +1462,8 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
 };
 
 export function getCalculatorPageGuide(path: string): CalculatorPageGuideData | undefined {
-  return CALCULATOR_PAGE_GUIDES[path];
+  if (path === '/') {
+    return undefined;
+  }
+  return EXPANDED_GUIDES[path] ?? CALCULATOR_PAGE_GUIDES[path];
 }

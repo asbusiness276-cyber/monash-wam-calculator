@@ -9,7 +9,7 @@ import HomeHowItWorks from '../components/home/HomeHowItWorks';
 import HomeWhyUse from '../components/home/HomeWhyUse';
 import HomeTrustRow from '../components/home/HomeTrustRow';
 import HomeGpaPromo from '../components/home/HomeGpaPromo';
-import CalculatorPageGuide from '../components/CalculatorPageGuide';
+import HomeWamEducation from '../components/home/HomeWamEducation';
 import { HOME_FAQS } from '../data/homeFaqs';
 
 const HOME_OG_IMAGE = '/article-images/featured-calculate-wam.webp';
@@ -51,7 +51,7 @@ export default function Home() {
 
       <HomeTrustRow />
       <HomeGpaPromo />
-      <CalculatorPageGuide path="/" className="home-container max-w-4xl pb-2" />
+      <HomeWamEducation />
 
       <ArticlesSection featured variant="home" />
       <FAQSection items={HOME_FAQS} title="Monash WAM Calculator — FAQs" variant="home" />

@@ -40,9 +40,10 @@ export default function MonashScholarshipWam() {
   return (
     <>
       <Seo
-        title="Monash Scholarship WAM Calculator — Merit Tier Targets (2026)"
-        description="Free Monash scholarship WAM calculator: see the average needed on remaining units to reach merit bands from 65 to 85 WAM."
+        title="Monash Scholarship WAM Calculator — Required Average for Merit Bands (2026)"
+        description="Plan Monash merit scholarship WAM targets: enter current WAM and credit points to see the average needed on remaining units for bands from 65 to 85 WAM."
         canonicalPath="/monash-scholarship-wam-calculator"
+        ogImage="/article-images/featured-monash-scholarship-wam.webp"
         faqItems={faqs}
       />
 

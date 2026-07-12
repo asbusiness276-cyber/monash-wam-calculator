@@ -1,4 +1,5 @@
-import { BookOpen, Calculator, ShieldCheck } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { BookOpen, Calculator, ShieldCheck, Target, Users } from 'lucide-react';
 import AuthorAvatar from '../components/AuthorAvatar';
 import AuthorSocialLinks from '../components/AuthorSocialLinks';
 import Seo from '../components/Seo';
@@ -18,12 +19,11 @@ const aboutFaqs = [
   {
     question: 'Who should use Monash WAM Calculator?',
     answer:
-      'Monash University students and Australian undergraduates who need fast, accurate estimates for WAM, GPA, semester averages, exam targets, honours planning, and scholarship benchmarks.',
+      'Monash University coursework students who need WAM, GPA, semester averages, exam targets, honours cutoffs, scholarship planning bands, or fail-recovery modelling. The tools are built around Monash grading rules — Year 1 half-weighting, credit-point weighting, and official 4.0 GPA bands.',
   },
   {
     question: 'Who writes and maintains the site?',
-    answer:
-      `${ARTICLE_AUTHOR.name} produces editorial guides and calculator documentation. Content is written for clarity and checked against Monash grading references — not auto-generated filler.`,
+    answer: `${ARTICLE_AUTHOR.name} produces editorial guides and calculator documentation. Content is written for clarity, checked against Monash grading references, and updated when student questions or policy wording changes — not auto-generated filler.`,
   },
   {
     question: 'Is Monash WAM Calculator affiliated with Monash University?',
@@ -38,11 +38,21 @@ const aboutFaqs = [
   {
     question: 'How accurate are the calculators?',
     answer:
-      'With correct marks, credit points, and year levels, WAM and GPA results follow Monash published formulas. Calculator maths is tested with automated scripts. Special grade codes or policy exclusions may still differ from WES — use official records for formal decisions.',
+      'With correct marks, credit points, and year levels, WAM and GPA results follow Monash published formulas. Calculator maths is tested with automated scripts. Special grade codes, repeats, withdrawn fail (WN), or faculty-specific exclusions may still differ from WES — use official records for formal decisions.',
+  },
+  {
+    question: 'Do you store my marks when I use a calculator?',
+    answer:
+      'No. Calculations run in your browser. We do not ask you to create an account or upload a transcript to use the tools. See our privacy policy for analytics and cookie details.',
   },
   {
     question: 'How many tools and guides are available?',
     answer: `${CALCULATOR_COUNT} free calculators and ${ARTICLE_COUNT} long-form student guides, updated as Monash student questions evolve.`,
+  },
+  {
+    question: 'Can I suggest a new calculator or article?',
+    answer:
+      'Yes. Use the contact page and describe your use case — for example honours planning, a faculty-specific workflow, or a WES field students struggle to interpret. Clear requests help us prioritise useful additions.',
   },
 ];
 
@@ -56,12 +66,47 @@ const popularLinks = [
   { label: 'Student articles', href: '/articles' },
 ];
 
+const missionPoints = [
+  'Turn WES numbers into actionable semester plans — not anxiety without next steps.',
+  'Explain Monash-specific rules (Year 1 weighting, credit points, supp caps) in plain language.',
+  'Pair every major calculator with worked examples, mistakes to avoid, and links to related tools.',
+  'Stay honest about limits: planning estimates are not official faculty decisions.',
+];
+
+const audienceRows = [
+  ['First-year coursework students', 'Learning how WAM differs from high school averages', 'Semester WAM, Year 1 weighting guide'],
+  ['Mid-degree planners', 'Modelling targets for distinction average or honours entry', 'WAM target, distinction average, honours calculators'],
+  ['Scholarship applicants', 'Checking merit bands on remaining credit points', 'Scholarship WAM, WAM to GPA'],
+  ['Recovery after a fail', 'Comparing supp pass vs repeat impact on WAM', 'Failed unit, supp/repeat, withdrawn fail tools'],
+  ['Exchange & transfer students', 'Understanding SFR credit and GPA reporting', 'Exchange WAM, GPA conversion guides'],
+];
+
+function ContentCard({
+  title,
+  icon: Icon,
+  children,
+}: {
+  title: string;
+  icon: typeof BookOpen;
+  children: ReactNode;
+}) {
+  return (
+    <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-5 sm:p-6">
+      <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+        <Icon size={20} className="text-primary-600 dark:text-primary-400 shrink-0" />
+        {title}
+      </h2>
+      {children}
+    </div>
+  );
+}
+
 export default function AboutUs() {
   return (
     <>
       <Seo
         title="About Us | Monash WAM Calculator — Who We Are"
-        description={`Independent Monash WAM calculator site by ${ARTICLE_AUTHOR.name}: ${CALCULATOR_COUNT} free tools, ${ARTICLE_COUNT} student guides, Monash-specific formulas, and honest planning disclaimers.`}
+        description={`Independent Monash WAM calculator site by ${ARTICLE_AUTHOR.name}: ${CALCULATOR_COUNT} free tools, ${ARTICLE_COUNT} student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers.`}
         canonicalPath="/about-us"
         faqItems={aboutFaqs}
       />
@@ -72,7 +117,7 @@ export default function AboutUs() {
           Independent student resource · Not affiliated with Monash University · Updated July 2026
         </p>
 
-        <div className="space-y-8 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+        <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p className="text-base">
             MonashWAMCalculator.com helps Monash students calculate Weighted Average Mark (WAM), plan semester targets,
             and understand how grades affect honours, scholarships, and applications — with{' '}
@@ -109,11 +154,21 @@ export default function AboutUs() {
             ))}
           </div>
 
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 p-5 sm:p-6">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-              <BookOpen size={20} className="text-primary-600 dark:text-primary-400 shrink-0" />
-              Who We Are
-            </h2>
+          <ContentCard title="Our Mission" icon={Target}>
+            <p>
+              Monash publishes WAM on WES, but students still ask practical questions every results period: How much
+              did that 12-credit unit move my average? Can I still reach distinction average? What mark do I need on
+              remaining units for a scholarship band? This site exists to answer those questions with Monash-accurate
+              maths and step-by-step guides — not generic GPA blog posts written for US colleges.
+            </p>
+            <ul className="mt-4 list-disc list-inside space-y-1.5">
+              {missionPoints.map(point => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </ContentCard>
+
+          <ContentCard title="Who We Are" icon={BookOpen}>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
               <AuthorAvatar size="lg" priority />
               <div className="min-w-0">
@@ -121,30 +176,82 @@ export default function AboutUs() {
                   <a href={absoluteUrl(AUTHOR_PAGE_PATH)} className={INLINE_LINK_CLASS}>
                     {ARTICLE_AUTHOR.name}
                   </a>
+                  <span className="font-normal text-gray-500 dark:text-gray-400"> — {ARTICLE_AUTHOR.role}</span>
                 </p>
-                <p className="mt-2">{ARTICLE_AUTHOR.bio}</p>
+                <p className="mt-2">{ARTICLE_AUTHOR.longBio}</p>
                 <AuthorSocialLinks className="mt-3" />
               </div>
             </div>
             <p className="mt-4 text-gray-600 dark:text-gray-400">
-              We do not represent Monash University. For official academic decisions, use WES, your transcript, and
-              faculty handbooks.
+              We do not represent Monash University. For official academic decisions, use WES, your transcript, Monash
+              Connect, and faculty handbooks.
             </p>
-          </div>
+          </ContentCard>
 
-          <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-              <Calculator size={20} className="text-primary-600 dark:text-primary-400 shrink-0" />
-              What We Provide
-            </h2>
+          <ContentCard title="Who This Site Is For" icon={Users}>
+            <p className="mb-4">
+              Tools are designed for Monash coursework students first. Other Australian undergraduates may find GPA
+              conversion pages useful, but WAM weighting and grade bands follow Monash rules unless a page states
+              otherwise.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-gray-100 dark:border-gray-700">
+              <table className="w-full text-sm text-left">
+                <thead>
+                  <tr className="bg-gray-50 dark:bg-gray-900/60">
+                    <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300">Student situation</th>
+                    <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300">Typical question</th>
+                    <th className="px-3 py-2 font-semibold text-gray-600 dark:text-gray-300">Start here</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
+                  {audienceRows.map(row => (
+                    <tr key={row[0]}>
+                      <td className="px-3 py-2 font-medium text-gray-800 dark:text-gray-200">{row[0]}</td>
+                      <td className="px-3 py-2 text-gray-600 dark:text-gray-400">{row[1]}</td>
+                      <td className="px-3 py-2 text-gray-600 dark:text-gray-400">{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </ContentCard>
+
+          <ContentCard title="What We Provide" icon={Calculator}>
             <ul className="list-disc list-inside space-y-1.5">
               <li>Official-style Monash WAM with Year 1 (0.5) weighting plus planning WAM comparison</li>
               <li>Semester WAM, WAM target, WAM projection, and WAM milestones tools</li>
               <li>WAM ↔ GPA conversion, Monash GPA, CGPA, target GPA, and grade converters</li>
               <li>Final grade, unit mark, pass mark, and assessment target calculators</li>
               <li>Honours, scholarship, distinction average, dean&apos;s list, fail recovery, and exchange planners</li>
-              <li>Long-form guides on transcripts, credit points, supplementary exams, repeats, and withdrawn fail (WN)</li>
+              <li>
+                Long-form guides on transcripts, credit points, supplementary exams, repeats, and withdrawn fail (WN)
+              </li>
             </ul>
+            <p className="mt-4">
+              Browse the full directory on our{' '}
+              <a href={absoluteUrl('/calculators')} className={INLINE_LINK_CLASS}>
+                calculators hub
+              </a>{' '}
+              or read category guides on the{' '}
+              <a href={absoluteUrl('/articles')} className={INLINE_LINK_CLASS}>
+                articles page
+              </a>
+              .
+            </p>
+          </ContentCard>
+
+          <div className="rounded-2xl border border-primary-200 dark:border-primary-900/40 bg-primary-50/70 dark:bg-primary-950/20 p-5 sm:p-6">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">How We Build & Test Calculators</h2>
+            <p>
+              Each calculator implements Monash formulas from published grading guidance — credit-weighted WAM, Year 1
+              half-weight, 4.0 GPA band mapping, and assessment-weight algebra for final exam targets. We run automated
+              calculator tests in CI so regression bugs are caught before deploy.
+            </p>
+            <p className="mt-3">
+              Calculator pages include educational sections: what the tool does, step-by-step usage, worked examples,
+              common mistakes, and when to use a different tool. That structure helps you interpret results, not just
+              copy a number into a form.
+            </p>
           </div>
 
           <div>
@@ -163,23 +270,29 @@ export default function AboutUs() {
             </ul>
           </div>
 
-          <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-              <ShieldCheck size={20} className="text-primary-600 dark:text-primary-400 shrink-0" />
-              Editorial Standards
-            </h2>
+          <ContentCard title="Editorial Standards" icon={ShieldCheck}>
             <p>
               Every calculator page explains the Monash formula, when to use the tool, and how results relate to WES.
-              Articles include worked examples and links to related tools — not thin widget-only pages. We test calculator
-              maths with automated scripts and update copy when grading guidance or common student questions change.
+              Articles include worked examples, tables, and internal links to related tools — not thin widget-only
+              pages. We test calculator maths with automated scripts and update copy when grading guidance or common
+              student questions change.
             </p>
-            <p className="mt-2">
-              We do not guarantee outcomes, sell placement in guides, or publish misleading &quot;official&quot; claims.
-              When faculty rules vary by year, we say so and point to Monash sources.
+            <ul className="mt-4 list-disc list-inside space-y-1.5 text-gray-600 dark:text-gray-400">
+              <li>No paid placement in guides and no guarantee of scholarship or honours outcomes</li>
+              <li>Clear disclaimers when faculty rules vary by course or intake year</li>
+              <li>Guest content only through our write-for-us editorial review — no spam niches</li>
+              <li>Privacy-first calculator design — marks stay in your browser</li>
+            </ul>
+            <p className="mt-4">
+              Interested in contributing? Read{' '}
+              <a href={absoluteUrl('/write-for-us')} className={INLINE_LINK_CLASS}>
+                write for us
+              </a>{' '}
+              guidelines before pitching.
             </p>
-          </div>
+          </ContentCard>
 
-          <div>
+          <div className="rounded-2xl border border-amber-200 dark:border-amber-900/40 bg-amber-50/60 dark:bg-amber-950/20 p-5 sm:p-6">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Important Disclaimer</h2>
             <p>
               Calculator results are planning estimates only. Official WAM, GPA, grades, and progression rules appear on
@@ -187,10 +300,14 @@ export default function AboutUs() {
               Monash directly. See our{' '}
               <a href={absoluteUrl('/disclaimer')} className={INLINE_LINK_CLASS}>
                 disclaimer
-              </a>{' '}
-              and{' '}
+              </a>
+              ,{' '}
               <a href={absoluteUrl('/privacy-policy')} className={INLINE_LINK_CLASS}>
                 privacy policy
+              </a>
+              , and{' '}
+              <a href={absoluteUrl('/terms-and-conditions')} className={INLINE_LINK_CLASS}>
+                terms
               </a>
               .
             </p>

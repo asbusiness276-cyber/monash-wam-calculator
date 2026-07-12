@@ -28,6 +28,27 @@ function GuideBlock({ section }: { section: GuideSection }) {
           ))}
         </ul>
       )}
+      {section.callouts && section.callouts.length > 0 && (
+        <div className="space-y-3">
+          {section.callouts.map(callout => {
+            const styles =
+              callout.variant === 'warning'
+                ? 'border-amber-200 bg-amber-50/80 text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-100'
+                : callout.variant === 'tip'
+                  ? 'border-emerald-200 bg-emerald-50/80 text-emerald-950 dark:border-emerald-900/50 dark:bg-emerald-950/30 dark:text-emerald-100'
+                  : 'border-primary-200 bg-primary-50/70 text-primary-950 dark:border-primary-900/50 dark:bg-primary-950/30 dark:text-primary-100';
+            return (
+              <aside
+                key={`${callout.variant}-${callout.title ?? callout.text.slice(0, 32)}`}
+                className={`rounded-xl border px-4 py-3 text-sm leading-relaxed ${styles}`}
+              >
+                {callout.title && <p className="font-semibold mb-1">{callout.title}</p>}
+                <p>{callout.text}</p>
+              </aside>
+            );
+          })}
+        </div>
+      )}
       {section.examples && section.examples.length > 0 && (
         <div className="space-y-5">
           {section.examples.map(example => (
