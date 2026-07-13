@@ -38,7 +38,8 @@ export default function CookieConsent() {
           Cookies
         </h2>
         <p id="cookie-consent-description" className="mt-1.5 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-          We use cookies to run this site. Accept all also enables analytics and ads (Google).{' '}
+          We use cookies to run this site. <strong>Essential only</strong> enables basic Google Analytics (no ads).{' '}
+          <strong>Accept all</strong> also enables Google AdSense.{' '}
           <a href="/privacy-policy" className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
             Privacy Policy
           </a>

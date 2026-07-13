@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { getCookieConsent, trackPageView } from '../utils/cookieConsent';
 import {
   breadcrumbCrumbsToJsonLd,
   buildBreadcrumbCrumbs,
@@ -299,6 +300,10 @@ export default function Seo({
       });
     } else {
       removeJsonLd('person');
+    }
+
+    if (getCookieConsent()) {
+      trackPageView(canonicalPath, title);
     }
   }, [title, description, canonicalPath, faqItems, noIndex, ogImage, ogImageAlt, article, person]);
 

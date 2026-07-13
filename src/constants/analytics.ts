@@ -1,0 +1,2 @@
+export const GA_MEASUREMENT_ID = 'G-PE23MBW6JK';
+export const ADSENSE_CLIENT = 'ca-pub-6008816938247526';

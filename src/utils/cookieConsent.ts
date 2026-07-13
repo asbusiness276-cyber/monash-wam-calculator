@@ -1,10 +1,9 @@
+import { ADSENSE_CLIENT, GA_MEASUREMENT_ID } from '../constants/analytics';
+
 export type CookieConsentChoice = 'all' | 'essential';
 
 const STORAGE_KEY = 'mwc-cookie-consent';
 export const COOKIE_CONSENT_EVENT = 'mwc-open-cookie-settings';
-
-const GA_ID = 'G-PE23MBW6JK';
-const ADSENSE_CLIENT = 'ca-pub-6008816938247526';
 
 declare global {
   interface Window {
@@ -21,33 +20,37 @@ export function getCookieConsent(): CookieConsentChoice | null {
   return null;
 }
 
-export function setCookieConsent(choice: CookieConsentChoice): void {
-  localStorage.setItem(STORAGE_KEY, choice);
-  if (choice === 'all') {
-    loadAnalytics();
-    loadAdSense();
-  }
-}
-
-export function loadAnalytics(): void {
-  if (document.getElementById('gtag-script')) {
+function applyGtagConsent(choice: CookieConsentChoice): void {
+  if (typeof window.gtag !== 'function') {
     return;
   }
 
-  window.dataLayer = window.dataLayer ?? [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer?.push(args);
-  };
+  if (choice === 'all') {
+    window.gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted',
+    });
+    loadAdSense();
+  } else {
+    window.gtag('consent', 'update', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'granted',
+    });
+  }
 
-  const script = document.createElement('script');
-  script.id = 'gtag-script';
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  script.onload = () => {
-    window.gtag?.('js', new Date());
-    window.gtag?.('config', GA_ID);
-  };
-  document.head.appendChild(script);
+  window.gtag('event', 'page_view', {
+    page_path: `${window.location.pathname}${window.location.search}`,
+    page_title: document.title,
+  });
+}
+
+export function setCookieConsent(choice: CookieConsentChoice): void {
+  localStorage.setItem(STORAGE_KEY, choice);
+  applyGtagConsent(choice);
 }
 
 export function loadAdSense(): void {
@@ -70,8 +73,18 @@ export function openCookieSettings(): void {
 
 export function applyStoredCookieConsent(): void {
   const choice = getCookieConsent();
-  if (choice === 'all') {
-    loadAnalytics();
-    loadAdSense();
+  if (choice) {
+    applyGtagConsent(choice);
   }
+}
+
+export function trackPageView(pagePath: string, pageTitle: string): void {
+  if (typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    page_path: pagePath,
+    page_title: pageTitle,
+  });
 }
