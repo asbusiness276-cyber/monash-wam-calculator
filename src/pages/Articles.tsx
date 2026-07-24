@@ -1,5 +1,6 @@
 import Seo from '../components/Seo';
 import ArticleGridCard from '../components/ArticleGridCard';
+import AffiliateOffers from '../components/AffiliateOffers';
 import { ArticleSearchBar, useArticleSearch } from '../components/ArticleSearch';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
@@ -119,6 +120,8 @@ export default function Articles() {
           <a href={absoluteUrl('/calculators')} className={INLINE_LINK_CLASS}>calculators directory</a>
           {' '}for all {CALCULATOR_COUNT} tools grouped by WAM, GPA, exams, and merit planning.
         </p>
+
+        <AffiliateOffers />
       </section>
     </>
   );

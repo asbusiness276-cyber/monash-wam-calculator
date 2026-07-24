@@ -1,4 +1,4 @@
-import { ADSENSE_CLIENT, GA_MEASUREMENT_ID } from '../constants/analytics';
+import { ADSENSE_CLIENT, ADSENSE_ENABLED, GA_MEASUREMENT_ID } from '../constants/analytics';
 
 export type CookieConsentChoice = 'all' | 'essential';
 
@@ -32,7 +32,9 @@ function applyGtagConsent(choice: CookieConsentChoice): void {
       ad_personalization: 'granted',
       analytics_storage: 'granted',
     });
-    loadAdSense();
+    if (ADSENSE_ENABLED) {
+      loadAdSense();
+    }
   } else {
     window.gtag('consent', 'update', {
       ad_storage: 'denied',
@@ -54,7 +56,7 @@ export function setCookieConsent(choice: CookieConsentChoice): void {
 }
 
 export function loadAdSense(): void {
-  if (document.getElementById('adsense-script')) {
+  if (!ADSENSE_ENABLED || document.getElementById('adsense-script')) {
     return;
   }
 

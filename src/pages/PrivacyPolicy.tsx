@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
 
       <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Privacy Policy</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">Last updated: May 29, 2026</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">Last updated: July 24, 2026</p>
 
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
@@ -84,8 +84,8 @@ export default function PrivacyPolicy() {
             <p className="mt-2">
               When you first visit, a cookie consent banner lets you choose <strong>Essential only</strong> or{' '}
               <strong>Accept all</strong>. Essential-only mode enables basic Google Analytics to understand site usage
-              without loading personalized advertising. Accept all also enables Google AdSense and related advertising
-              cookies described in this policy.
+              without loading personalized advertising. Accept all enables advertising cookies when an ad partner (such
+              as Google AdSense) is active on the site.
             </p>
             <p className="mt-2">
               You can disable cookies in your browser settings, though some features may not function as intended. For
@@ -112,19 +112,24 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. Advertising (Google AdSense)</h2>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. Advertising &amp; Affiliates</h2>
             <p>
-              Monash WAM Calculator may display advertisements provided by Google AdSense or other advertising partners
-              to help fund free calculator tools and editorial content. Ad partners may collect information such as your
-              IP address, browser type, pages visited, and ad interactions to show relevant ads and report performance.
+              Monash WAM Calculator may display advertisements from partners such as Google AdSense when that account is
+              approved and enabled, and may include affiliate links to student-relevant tools (for example writing aids,
+              VPN, or cloud storage) via networks such as Commission Factory or Awin. Affiliate partners may track
+              referrals using cookies or similar technologies after you click a tracked link.
+            </p>
+            <p className="mt-2">
+              If you purchase or sign up through an affiliate link, we may earn a commission at no extra cost to you.
+              Affiliate recommendations are optional and never required to use our free calculators. This site is not
+              affiliated with Monash University.
             </p>
             <p className="mt-2">
               We do not sell your personal academic data to advertisers. Calculator inputs are processed locally in your
-              browser and are not transmitted to ad networks as part of normal calculator use. Advertising cookies are
-              separate from calculator functionality.
+              browser and are not transmitted to ad or affiliate networks as part of normal calculator use.
             </p>
             <p className="mt-2">
-              Non-personalized ads may still appear if you opt out of personalized advertising.
+              Non-personalized ads may still appear if you opt out of personalized advertising when ads are enabled.
             </p>
           </div>
 
