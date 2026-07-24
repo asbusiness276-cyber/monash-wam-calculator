@@ -1,6 +1,10 @@
 import { ArrowRight, Calculator } from 'lucide-react';
 import { absoluteUrl } from '../constants/site';
-import { ALL_CALCULATOR_LINKS, type CalculatorLink } from '../data/calculatorCatalog';
+import {
+  ALL_CALCULATOR_LINKS,
+  getRelatedCalculatorHrefs,
+  type CalculatorLink,
+} from '../data/calculatorCatalog';
 import LinkCard from './home/ui/LinkCard';
 import FeaturedCalculatorCard from './home/ui/FeaturedCalculatorCard';
 import { getFeaturedCalculatorImage } from '../data/homeImages';
@@ -11,12 +15,14 @@ export { ALL_CALCULATOR_LINKS as CALCULATOR_LINKS };
 interface RelatedCalculatorsProps {
   title?: string;
   description?: string;
-  /** Subset of calculator hrefs; defaults to first six tools. */
+  /** Subset of calculator hrefs; defaults to category-aware related tools. */
   hrefs?: string[];
   maxItems?: number;
   className?: string;
   showViewAll?: boolean;
   variant?: 'default' | 'home';
+  /** Current page path — used when hrefs omitted. Defaults to location.pathname. */
+  currentPath?: string;
 }
 
 export default function RelatedCalculators({
@@ -27,10 +33,18 @@ export default function RelatedCalculators({
   className = '',
   showViewAll = true,
   variant = 'default',
+  currentPath,
 }: RelatedCalculatorsProps) {
   const isHome = variant === 'home';
-  const pool = ALL_CALCULATOR_LINKS;
-  const items = (hrefs ? pool.filter(link => hrefs.includes(link.href)) : pool).slice(0, maxItems);
+  const path = currentPath ?? (typeof window !== 'undefined' ? window.location.pathname : '/');
+  const resolvedHrefs = (hrefs ?? getRelatedCalculatorHrefs(path, maxItems)).filter(
+    href => href !== path
+  );
+  const byHref = new Map(ALL_CALCULATOR_LINKS.map(link => [link.href, link]));
+  const items = resolvedHrefs
+    .map(href => byHref.get(href))
+    .filter((link): link is CalculatorLink => Boolean(link))
+    .slice(0, maxItems);
 
   if (items.length === 0) return null;
 
@@ -48,10 +62,22 @@ export default function RelatedCalculators({
             <Calculator size={14} aria-hidden />
             Planning tools
           </div>
-          <h2 className={isHome ? 'home-section-title text-gray-900 dark:text-white' : 'text-2xl font-bold text-gray-900 dark:text-white mb-1.5'}>
+          <h2
+            className={
+              isHome
+                ? 'home-section-title text-gray-900 dark:text-white'
+                : 'text-2xl font-bold text-gray-900 dark:text-white mb-1.5'
+            }
+          >
             {title}
           </h2>
-          <p className={isHome ? 'mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 text-pretty' : 'text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto'}>
+          <p
+            className={
+              isHome
+                ? 'mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400 text-pretty'
+                : 'text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto'
+            }
+          >
             {description}
           </p>
         </div>
@@ -85,10 +111,16 @@ export default function RelatedCalculators({
                 <p className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   {link.title}
                 </p>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">{link.description}</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
+                  {link.description}
+                </p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400">
                   Open tool
-                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" aria-hidden />
+                  <ArrowRight
+                    size={14}
+                    className="group-hover:translate-x-0.5 transition-transform"
+                    aria-hidden
+                  />
                 </span>
               </a>
             );
@@ -101,7 +133,7 @@ export default function RelatedCalculators({
               href={absoluteUrl('/calculators')}
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
             >
-              Browse all {pool.length} Monash calculators
+              Browse all {ALL_CALCULATOR_LINKS.length} Monash calculators
               <ArrowRight size={14} aria-hidden />
             </a>
           </p>

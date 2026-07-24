@@ -238,7 +238,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
 
             <ArticleAuthorBio />
 
-            <ArticleRelatedTools />
+            <ArticleRelatedTools slug={slug} />
 
             <ArticleEndNavigation
               prevArticle={neighbors.prev}

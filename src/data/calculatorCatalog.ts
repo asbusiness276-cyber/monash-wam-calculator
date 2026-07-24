@@ -288,3 +288,25 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
 export const ALL_CALCULATOR_LINKS: CalculatorLink[] = CALCULATOR_CATEGORIES.flatMap(c => c.links);
 
 export const CALCULATOR_COUNT = ALL_CALCULATOR_LINKS.length;
+
+/** Category-first related tools for internal linking (excludes current path). */
+export function getRelatedCalculatorHrefs(currentPath: string, maxItems = 6): string[] {
+  const path = currentPath === '' ? '/' : currentPath;
+  const category = CALCULATOR_CATEGORIES.find(c => c.links.some(link => link.href === path));
+  const related: string[] = [];
+
+  if (category) {
+    for (const link of category.links) {
+      if (link.href !== path) related.push(link.href);
+      if (related.length >= maxItems) return related;
+    }
+  }
+
+  for (const link of ALL_CALCULATOR_LINKS) {
+    if (link.href === path || related.includes(link.href)) continue;
+    related.push(link.href);
+    if (related.length >= maxItems) break;
+  }
+
+  return related;
+}

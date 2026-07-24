@@ -40,10 +40,10 @@ export default function Home() {
         description="Popular free tools for WAM, GPA conversion, exam targets, and merit planning."
         hrefs={[
           '/wam-to-gpa-calculator',
+          '/gpa-to-wam-calculator',
           '/wam-target-calculator',
           '/final-grade-calculator',
-          '/monash-distinction-average-calculator',
-          '/semester-wam-calculator',
+          '/monash-gpa-calculator',
           '/monash-honours-calculator',
         ]}
         maxItems={6}

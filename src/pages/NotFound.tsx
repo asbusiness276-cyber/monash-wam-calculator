@@ -29,12 +29,17 @@ const notFoundFaqs = [
 ];
 
 export default function NotFound() {
+  const requestPath =
+    typeof window !== 'undefined' && window.location.pathname && window.location.pathname !== '/404'
+      ? window.location.pathname
+      : '/';
+
   return (
     <>
       <Seo
         title="Page Not Found | Monash WAM Calculator"
         description="The requested page could not be found. Explore Monash WAM Calculator tools including WAM, GPA conversion, and final grade calculators."
-        canonicalPath="/404"
+        canonicalPath={requestPath}
         faqItems={notFoundFaqs}
         noIndex
       />
