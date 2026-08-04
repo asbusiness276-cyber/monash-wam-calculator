@@ -1,9 +1,11 @@
 {
+  "buildCommand": "npm run build:no-prerender",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/embed/:path*",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
