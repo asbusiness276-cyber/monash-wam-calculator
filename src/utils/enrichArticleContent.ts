@@ -75,7 +75,7 @@ function pushAfterParagraph(
 
 function enrichSection(
   section: ArticleSection,
-  sectionIndex: number,
+  _sectionIndex: number,
   article: ArticleData,
   enhancement: SectionEnhancement | undefined
 ): ArticleSection {

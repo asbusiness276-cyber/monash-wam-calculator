@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import PageLoader from './components/PageLoader';
+import TopSchoolsPromoBanner from './components/TopSchoolsPromoBanner';
 import Home from './pages/Home';
 
 const WAMtoGPA = lazy(() => import('./pages/WAMtoGPA'));
@@ -161,6 +162,7 @@ export default function App() {
         {getPage(path)}
       </main>
       <Footer />
+      <TopSchoolsPromoBanner variant="floating" />
       <CookieConsent />
     </div>
   );

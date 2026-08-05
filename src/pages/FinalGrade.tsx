@@ -66,9 +66,6 @@ export default function FinalGrade() {
 
   const status = getStatus(needed);
 
-  const allFieldsFilled =
-    currentMark !== '' && currentWeight !== '' && targetMark !== '' && examWeight !== '';
-
   return (
     <>
       <Seo

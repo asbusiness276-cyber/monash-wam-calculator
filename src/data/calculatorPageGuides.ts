@@ -1,5 +1,3 @@
-import { INLINE_LINK_CLASS } from '../constants/site';
-
 export interface GuideTable {
   headers: string[];
   rows: string[][];

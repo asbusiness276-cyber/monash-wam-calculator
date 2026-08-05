@@ -1179,8 +1179,6 @@ export interface DeansHonoursStanding {
 export function getDeansHonoursStanding(wam: number): DeansHonoursStanding | null {
   if (Number.isNaN(wam)) return null;
 
-  const distinctionAverage = wam >= MONASH_DISTINCTION_WAM_THRESHOLD;
-
   if (wam < MONASH_DISTINCTION_WAM_THRESHOLD) {
     return {
       tier: 'below_distinction',
