@@ -235,8 +235,6 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
               })}
             </div>
 
-            <TopSchoolsPromoBanner variant="inline" className="my-8" />
-
             <ArticleFaqs items={article.faqs} />
 
             <ArticleAuthorBio />
