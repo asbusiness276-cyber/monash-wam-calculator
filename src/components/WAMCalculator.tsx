@@ -8,7 +8,6 @@ import {
   getMonashGradeFromMark,
   inferMonashYearLevelFromUnitCode,
 } from '../utils/monashGrades';
-import TopSchoolsPromoBanner from './TopSchoolsPromoBanner';
 
 interface Subject {
   id: number;
@@ -491,7 +490,6 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 )}
               </div>
             </div>
-            <TopSchoolsPromoBanner variant="sidebar" className="mt-5" />
           </aside>
         </div>
 

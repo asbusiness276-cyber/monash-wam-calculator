@@ -7,7 +7,6 @@ import ArticleEndNavigation from '../components/ArticleEndNavigation';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import ArticleTableOfContents, { ArticleMobileBackToTopButton } from '../components/ArticleTableOfContents';
-import TopSchoolsPromoBanner from '../components/TopSchoolsPromoBanner';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { articles, getArticleBySlug, getArticleImageAlt } from '../data/articles';
@@ -258,7 +257,6 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
                   categoryPath={categoryPath}
                   relatedLinks={sidebarRelatedLinks}
                 />
-                <TopSchoolsPromoBanner variant="sidebar" className="mt-6" />
               </div>
             </div>
           </div>
