@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
 import SiteLogo from './SiteLogo';
-import TopSchoolsPromoBanner from './TopSchoolsPromoBanner';
 import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_CATEGORIES, type CalculatorCategory } from '../data/calculatorCatalog';
 
@@ -180,7 +179,6 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
         </ul>
 
         <div className="flex items-center gap-3">
-          <TopSchoolsPromoBanner className="hidden sm:inline-flex" />
           <button
             onClick={toggleDark}
             aria-label="Toggle dark mode"
