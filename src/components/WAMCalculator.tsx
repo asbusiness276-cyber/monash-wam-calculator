@@ -11,6 +11,7 @@ import {
 import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
 import ContextualAmazonAffiliateCard from './ContextualAmazonAffiliateCard';
 import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface Subject {
   id: number;
@@ -114,6 +115,12 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
   }, [subjects]);
 
   const result = calculateWAM();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(result?.officialWam);
+  };
 
   const addSubject = () => {
     setSubjects(prev => [
@@ -391,14 +398,22 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 </table>
               </div>
 
-              <div className="calc-toolbar">
+              <div className="calc-toolbar flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={handleCheckResult}
+                  className="flex-1 py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                >
+                  <Calculator size={18} />
+                  <span>Check Result & Calculate WAM →</span>
+                </button>
                 <button type="button" onClick={addSubject} className="calc-btn-primary">
                   <Plus size={16} aria-hidden />
                   Add Subject
                 </button>
                 <button type="button" onClick={reset} className="calc-btn-secondary">
                   <RotateCcw size={16} aria-hidden />
-                  Reset Calculator
+                  Reset
                 </button>
               </div>
             </div>
@@ -434,7 +449,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                   <TrendingUp size={17} aria-hidden />
                   Your WAM Results
                 </div>
-                {result ? (
+                {isSubmitted && result ? (
                   <>
                     <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary-200">
                       Official Monash WAM

@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus, Trash2, Calculator } from 'lucide-react';
 import { calculateCreditWeightedWam, calculateSimpleMarkAverage, getMonashGradeFromMark } from '../utils/monashGrades';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface GradeRow {
   id: number;
@@ -49,6 +50,13 @@ export default function GradeAverageToolCore() {
 
   const removeRow = (id: number) => {
     setRows(prev => (prev.length <= 1 ? prev : prev.filter(row => row.id !== id)));
+  };
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(weightedAverage ?? simpleAverage ?? undefined);
   };
 
   return (
@@ -108,17 +116,27 @@ export default function GradeAverageToolCore() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={addRow}
-          className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          <Plus size={16} />
-          Add Mark
-        </button>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={handleCheckResult}
+            className="flex-1 py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          >
+            <Calculator size={18} />
+            <span>Check Result & Calculate Average →</span>
+          </button>
+          <button
+            type="button"
+            onClick={addRow}
+            className="inline-flex items-center gap-2 px-4 py-3.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium rounded-xl transition-colors"
+          >
+            <Plus size={16} />
+            Add Mark
+          </button>
+        </div>
       </div>
 
-      {(simpleAverage !== null || weightedAverage !== null) && (
+      {isSubmitted && (simpleAverage !== null || weightedAverage !== null) && (
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-teal-200 dark:border-teal-900/50 p-6 shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {simpleAverage !== null && (

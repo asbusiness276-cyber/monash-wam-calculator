@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Calculator } from 'lucide-react';
 import { convertWamToGpaBands, monashGradeBands } from '../utils/monashGrades';
 import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
 import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 type WamToGpaToolCoreProps = {
   initialWam?: string;
@@ -20,9 +22,16 @@ export default function WamToGpaToolCore({
   screenshotId = 'wam-to-gpa',
 }: WamToGpaToolCoreProps) {
   const [wam, setWam] = useState(initialWam);
-  const result = wam !== '' ? convertWamToGpaBands(parseFloat(wam)) : null;
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const parsedWamVal = parseFloat(wam);
+  const result = wam !== '' && !isNaN(parsedWamVal) ? convertWamToGpaBands(parsedWamVal) : null;
   const showBoth = !emphasizeGpa4 && !emphasizeGpa7;
   const gpa4Label = primaryGpaLabel ?? 'GPA (4.0 Scale)';
+
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(isNaN(parsedWamVal) ? undefined : parsedWamVal);
+  };
 
   return (
     <div data-article-tool-screenshot={screenshotId} className="space-y-8">
@@ -37,10 +46,19 @@ export default function WamToGpaToolCore({
           placeholder="e.g. 76"
           value={wam}
           onChange={event => setWam(event.target.value)}
-          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl font-bold mb-6"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl font-bold mb-4"
         />
 
-        {result && (
+        <button
+          type="button"
+          onClick={handleCheckResult}
+          className="mb-6 w-full py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+        >
+          <Calculator size={18} />
+          <span>Check Result & Calculate GPA →</span>
+        </button>
+
+        {isSubmitted && result && (
           <div className="space-y-4">
             <div
               className={`grid gap-4 ${
