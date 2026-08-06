@@ -9,6 +9,7 @@ import {
   inferMonashYearLevelFromUnitCode,
 } from '../utils/monashGrades';
 import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
+import ContextualAmazonAffiliateCard from './ContextualAmazonAffiliateCard';
 
 interface Subject {
   id: number;
@@ -421,6 +422,8 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 ))}
               </div>
             </div>
+
+            <ContextualAmazonAffiliateCard variant="inline" className="my-6" />
           </div>
 
           <aside className="calc-result-aside">

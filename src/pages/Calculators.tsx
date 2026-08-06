@@ -8,6 +8,7 @@ import {
   CALCULATOR_COUNT,
 } from '../data/calculatorCatalog';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+import ContextualAmazonAffiliateCard from '../components/ContextualAmazonAffiliateCard';
 
 const [calcHome, calcArticles] = PAGE_KEYWORD_LINKS['/calculators'];
 
@@ -148,6 +149,8 @@ export default function Calculators() {
             ))}
           </ul>
         </div>
+
+        <ContextualAmazonAffiliateCard path="/calculators" variant="inline" />
       </section>
 
       <PageFaq items={faqs} />
