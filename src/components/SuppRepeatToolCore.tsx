@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Calculator } from 'lucide-react';
 import {
   calculateBreakevenRepeatMark,
   calculateWamAfterRepeatAttempt,
@@ -6,6 +7,8 @@ import {
   getMonashGradeFromMark,
   monashSupplementaryPassMark,
 } from '../utils/monashGrades';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 function formatDelta(delta: number | null) {
   if (delta === null || delta === 0) return 'No change';
@@ -24,6 +27,7 @@ export default function SuppRepeatToolCore() {
   const [failMark, setFailMark] = useState('');
   const [unitCredits, setUnitCredits] = useState('');
   const [repeatMark, setRepeatMark] = useState('70');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const wamNum = currentWam === '' ? null : parseFloat(currentWam);
   const creditsNum = totalCredits === '' ? null : parseFloat(totalCredits);
@@ -71,6 +75,11 @@ export default function SuppRepeatToolCore() {
   const repeatGrade =
     repeatNum !== null && !Number.isNaN(repeatNum) ? getMonashGradeFromMark(repeatNum) : null;
 
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(suppPassWam ?? repeatWam ?? wamNum ?? undefined);
+  };
+
   return (
     <div data-article-tool-screenshot="supp-repeat-wam" className="space-y-6">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
@@ -78,7 +87,7 @@ export default function SuppRepeatToolCore() {
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
           Enter your current WAM with the fail included, plus the failed unit details from WES.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
           <div>
             <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
               Current WAM (%) — fail included
@@ -153,6 +162,15 @@ export default function SuppRepeatToolCore() {
             />
           </div>
         </div>
+
+        <button
+          type="button"
+          onClick={handleCheckResult}
+          className="w-full py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+        >
+          <Calculator size={18} />
+          <span>Check Result & Compare WAM Impact →</span>
+        </button>
       </div>
 
       {hasInputs && (
@@ -230,6 +248,7 @@ export default function SuppRepeatToolCore() {
           </p>
         </div>
       )}
+      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && hasInputs)} />
     </div>
   );
 }

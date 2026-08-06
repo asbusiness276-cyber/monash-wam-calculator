@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -60,9 +61,9 @@ export default function WamMilestones() {
         </p>
       </section>
 
-      <section className="max-w-3xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/wam-milestones-calculator">
         <WamMilestonesToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/wam-milestones-calculator" />
       <RelatedCalculators
         hrefs={[

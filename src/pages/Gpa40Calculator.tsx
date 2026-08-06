@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -57,9 +58,9 @@ export default function Gpa40Calculator() {
           <a href={absoluteUrl(g40Monash.path)} className={HERO_INLINE_LINK_CLASS}>{g40Monash.keyword}</a>.
         </p>
       </section>
-      <section className="max-w-2xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/4-0-gpa-calculator">
         <MonashGpaToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/4-0-gpa-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

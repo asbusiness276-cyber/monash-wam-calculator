@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus, Trash2, Calculator } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
 import { calculateSemesterWamSummary, getMonashGradeFromMark } from '../utils/monashGrades';
 import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface SemesterUnit {
   id: number;
@@ -22,6 +24,7 @@ const defaultUnits: SemesterUnit[] = [
 
 export default function SemesterWamToolCore() {
   const [units, setUnits] = useState<SemesterUnit[]>(defaultUnits);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const parsedUnits = units
     .filter(row => row.mark !== '' && row.credits !== '')
@@ -46,6 +49,11 @@ export default function SemesterWamToolCore() {
 
   const removeUnit = (id: number) => {
     setUnits(prev => (prev.length <= 1 ? prev : prev.filter(row => row.id !== id)));
+  };
+
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(summary?.weightedWam);
   };
 
   return (
@@ -113,17 +121,27 @@ export default function SemesterWamToolCore() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={addUnit}
-          className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          <Plus size={16} />
-          Add Unit
-        </button>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={handleCheckResult}
+            className="flex-1 py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          >
+            <Calculator size={18} />
+            <span>Check Result & Calculate WAM →</span>
+          </button>
+          <button
+            type="button"
+            onClick={addUnit}
+            className="inline-flex items-center gap-2 px-4 py-3.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium rounded-xl transition-colors"
+          >
+            <Plus size={16} />
+            Add Unit
+          </button>
+        </div>
       </div>
 
-      {summary && (
+      {isSubmitted && summary && (
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-teal-200 dark:border-teal-900/50 p-6 shadow-sm">
           <div className="text-xs font-semibold uppercase tracking-wide text-teal-600 dark:text-teal-400 mb-1">
             Semester weighted average
@@ -155,6 +173,7 @@ export default function SemesterWamToolCore() {
           <AmazonCalculatorResultWidget />
         </div>
       )}
+      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && summary)} />
     </div>
   );
 }

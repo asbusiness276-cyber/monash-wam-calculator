@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -64,7 +65,7 @@ export default function MonashTargetGpa() {
         </p>
       </section>
 
-      <section className="max-w-2xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/monash-target-gpa-calculator">
         <MonashTargetGpaToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
@@ -76,7 +77,7 @@ export default function MonashTargetGpa() {
             Example: GPA 2.750 on 96 cp, 24 cp planned, target 3.000 → need (3.0×120 − 2.75×96) ÷ 24 = 3.500 next term.
           </p>
         </div>
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/monash-target-gpa-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

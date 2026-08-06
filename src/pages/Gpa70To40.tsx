@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -60,9 +61,9 @@ export default function Gpa70To40() {
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/7-0-to-4-0-gpa-calculator">
         <GpaScaleConverterToolCore direction="7-to-4" screenshotId="7-0-to-4-0-gpa" />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/7-0-to-4-0-gpa-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

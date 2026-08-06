@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus, Trash2, Calculator } from 'lucide-react';
 import { calculateWeightedUnitMark, getMonashGradeFromMark } from '../utils/monashGrades';
+import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface AssessmentRow {
   id: number;
@@ -19,6 +22,7 @@ const defaultRows: AssessmentRow[] = [
 
 export default function UnitMarkToolCore() {
   const [rows, setRows] = useState<AssessmentRow[]>(defaultRows);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const parsed = rows
     .filter(row => row.mark !== '' && row.weight !== '')
@@ -58,6 +62,11 @@ export default function UnitMarkToolCore() {
     setRows(prev => (prev.length <= 1 ? prev : prev.filter(row => row.id !== id)));
   };
 
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(unitMark ?? undefined);
+  };
+
   return (
     <div data-article-tool-screenshot="unit-mark" className="space-y-6">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
@@ -67,7 +76,7 @@ export default function UnitMarkToolCore() {
           mark.
         </p>
 
-        <div className="space-y-3">
+        <div className="space-y-3 mb-6">
           {rows.map(row => (
             <div
               key={row.id}
@@ -122,14 +131,24 @@ export default function UnitMarkToolCore() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={addRow}
-          className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          <Plus size={16} />
-          Add Assessment
-        </button>
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={handleCheckResult}
+            className="flex-1 py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          >
+            <Calculator size={18} />
+            <span>Check Result & Calculate Mark →</span>
+          </button>
+          <button
+            type="button"
+            onClick={addRow}
+            className="inline-flex items-center gap-2 px-4 py-3.5 bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-medium rounded-xl transition-colors"
+          >
+            <Plus size={16} />
+            Add Assessment
+          </button>
+        </div>
 
         {weightStatus && (
           <p
@@ -142,7 +161,7 @@ export default function UnitMarkToolCore() {
         )}
       </div>
 
-      {unitMark !== null && gradeBand && (
+      {isSubmitted && unitMark !== null && gradeBand && (
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-cyan-200 dark:border-cyan-900/50 p-6 shadow-sm">
           <div className="text-xs font-semibold uppercase tracking-wide text-cyan-600 dark:text-cyan-400 mb-1">
             Overall unit mark
@@ -155,8 +174,10 @@ export default function UnitMarkToolCore() {
             Need only final-exam maths? Use the final grade calculator. For cumulative WAM across units, use the Monash
             WAM calculator.
           </p>
+          <AmazonCalculatorResultWidget />
         </div>
       )}
+      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && unitMark !== null)} />
     </div>
   );
 }

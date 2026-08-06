@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -59,9 +60,9 @@ export default function SemesterGpa() {
           <a href={absoluteUrl(sgWam.path)} className={HERO_INLINE_LINK_CLASS}>{sgWam.keyword}</a>.
         </p>
       </section>
-      <section className="max-w-2xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/semester-gpa-calculator">
         <MonashGpaToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/semester-gpa-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

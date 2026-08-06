@@ -3,6 +3,7 @@ import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import SuppRepeatToolCore from '../components/SuppRepeatToolCore';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 import { monashSupplementaryPassMark } from '../utils/monashGrades';
@@ -66,7 +67,7 @@ export default function SuppRepeatWam() {
         </p>
       </section>
 
-      <section className="max-w-2xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/supp-repeat-wam-calculator">
         <SuppRepeatToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
@@ -88,7 +89,7 @@ export default function SuppRepeatWam() {
             </p>
           </div>
         </div>
-      </section>
+      </CalculatorSectionWithInlineAds>
 
       <CalculatorPageGuide path="/supp-repeat-wam-calculator" />
       <RelatedCalculators

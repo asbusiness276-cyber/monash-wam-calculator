@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -61,9 +62,9 @@ export default function WithdrawnFailImpact() {
         </p>
       </section>
 
-      <section className="max-w-3xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/withdrawn-fail-impact-calculator">
         <WithdrawnFailImpactToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/withdrawn-fail-impact-calculator" />
       <RelatedCalculators
         hrefs={[

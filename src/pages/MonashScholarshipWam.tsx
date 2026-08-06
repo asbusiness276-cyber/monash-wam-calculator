@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -62,9 +63,9 @@ export default function MonashScholarshipWam() {
         </p>
       </section>
 
-      <section className="max-w-3xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/monash-scholarship-wam-calculator">
         <MonashScholarshipWamToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/monash-scholarship-wam-calculator" />
       <RelatedCalculators
         hrefs={['/monash-distinction-average-calculator', '/wam-target-calculator', '/monash-deans-honours-calculator', '/']}

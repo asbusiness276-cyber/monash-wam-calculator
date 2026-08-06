@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -61,7 +62,7 @@ export default function MarkToGrade() {
         </p>
       </section>
 
-      <section className="max-w-2xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/mark-to-grade-calculator">
         <MarkToGradeToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
@@ -136,7 +137,7 @@ export default function MarkToGrade() {
             when you still have assessments pending.
           </p>
         </div>
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/mark-to-grade-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={markToGradeFaqs} />

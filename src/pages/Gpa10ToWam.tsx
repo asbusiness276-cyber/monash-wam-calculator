@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -58,9 +59,9 @@ export default function Gpa10ToWam() {
           <a href={absoluteUrl(g10Cgpa.path)} className={HERO_INLINE_LINK_CLASS}>{g10Cgpa.keyword}</a>.
         </p>
       </section>
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/10-point-gpa-to-wam-calculator">
         <Gpa10ToWamToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/10-point-gpa-to-wam-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

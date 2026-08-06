@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -58,9 +59,9 @@ export default function AtarConverter() {
           <a href={absoluteUrl(atarGpa.path)} className={HERO_INLINE_LINK_CLASS}>{atarGpa.keyword}</a>.
         </p>
       </section>
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/atar-to-gpa-wam-calculator">
         <AtarConverterToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/atar-to-gpa-wam-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

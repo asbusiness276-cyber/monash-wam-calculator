@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -60,9 +61,9 @@ export default function Gpa40ToWam() {
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/4-0-gpa-to-wam-calculator">
         <GpaToWamToolCore fixedScale={4} screenshotId="4-0-gpa-to-wam" />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/4-0-gpa-to-wam-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

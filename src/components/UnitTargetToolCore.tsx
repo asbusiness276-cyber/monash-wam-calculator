@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus, Trash2, Calculator } from 'lucide-react';
 import {
   calculateRequiredRemainingAssessmentMark,
   getMonashGradeFromMark,
 } from '../utils/monashGrades';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface AssessmentRow {
   id: number;
@@ -37,6 +39,7 @@ function getStatus(needed: number | null) {
 export default function UnitTargetToolCore() {
   const [rows, setRows] = useState<AssessmentRow[]>(defaultRows);
   const [targetMark, setTargetMark] = useState('75');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const parsed = rows
     .filter(row => row.weight !== '')
@@ -71,6 +74,11 @@ export default function UnitTargetToolCore() {
 
   const removeRow = (id: number) => {
     setRows(prev => (prev.length <= 1 ? prev : prev.filter(row => row.id !== id)));
+  };
+
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(needed ?? targetNum ?? undefined);
   };
 
   return (
@@ -138,14 +146,24 @@ export default function UnitTargetToolCore() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={addRow}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          <Plus size={16} />
-          Add Assessment
-        </button>
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={handleCheckResult}
+            className="flex-1 py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          >
+            <Calculator size={18} />
+            <span>Check Result & Calculate Mark →</span>
+          </button>
+          <button
+            type="button"
+            onClick={addRow}
+            className="inline-flex items-center gap-2 px-4 py-3.5 bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium rounded-xl transition-colors"
+          >
+            <Plus size={16} />
+            Add Assessment
+          </button>
+        </div>
 
         <div>
           <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
@@ -180,7 +198,7 @@ export default function UnitTargetToolCore() {
         )}
       </div>
 
-      {needed !== null && status && (
+      {isSubmitted && needed !== null && status && (
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-sky-200 dark:border-sky-900/50 p-6 shadow-sm text-center">
           {needed >= 0 && needed <= 100 && (
             <div className="text-5xl font-bold text-sky-600 dark:text-sky-400 mb-2">{needed.toFixed(2)}%</div>
@@ -192,6 +210,7 @@ export default function UnitTargetToolCore() {
           </p>
         </div>
       )}
+      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && needed !== null)} />
     </div>
   );
 }

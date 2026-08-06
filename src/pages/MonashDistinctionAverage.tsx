@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -60,9 +61,9 @@ export default function MonashDistinctionAverage() {
         </p>
       </section>
 
-      <section className="max-w-2xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/monash-distinction-average-calculator">
         <MonashDistinctionAverageToolCore />
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/monash-distinction-average-calculator" />
       <RelatedCalculators
         hrefs={['/monash-scholarship-wam-calculator', '/monash-deans-honours-calculator', '/wam-target-calculator', '/monash-gpa-calculator', '/']}

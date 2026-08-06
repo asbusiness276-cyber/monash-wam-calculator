@@ -1,4 +1,5 @@
 import Seo from '../components/Seo';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
@@ -64,7 +65,7 @@ export default function MonashCgpa() {
         </p>
       </section>
 
-      <section className="max-w-3xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/monash-cgpa-calculator">
         <MonashCgpaToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-3">
@@ -74,7 +75,7 @@ export default function MonashCgpa() {
             Enter prior figures from WES at the start of the semester, then add planned or actual grades for current units.
           </p>
         </div>
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/monash-cgpa-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />
