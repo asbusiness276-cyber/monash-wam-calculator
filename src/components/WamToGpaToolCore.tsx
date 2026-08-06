@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { convertWamToGpaBands, monashGradeBands } from '../utils/monashGrades';
 import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 
 type WamToGpaToolCoreProps = {
   initialWam?: string;
@@ -125,6 +126,7 @@ export default function WamToGpaToolCore({
           </tbody>
         </table>
       </div>
+      <AmazonResultPopUpModal hasResult={Boolean(result)} />
     </div>
   );
 }

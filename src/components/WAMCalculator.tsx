@@ -10,6 +10,7 @@ import {
 } from '../utils/monashGrades';
 import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
 import ContextualAmazonAffiliateCard from './ContextualAmazonAffiliateCard';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 
 interface Subject {
   id: number;
@@ -496,6 +497,8 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
             </div>
             <AmazonCalculatorResultWidget />
           </aside>
+
+          <AmazonResultPopUpModal hasResult={Boolean(result)} />
         </div>
 
         <a href="/wam-to-gpa-calculator" className="calc-gpa-promo-banner group">
