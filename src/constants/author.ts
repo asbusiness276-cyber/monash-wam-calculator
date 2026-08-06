@@ -17,7 +17,7 @@ export const ARTICLE_AUTHOR = {
   ],
   linkedin: 'https://www.linkedin.com/in/sahildigitalmarketing',
   instagram: 'https://www.instagram.com/realsaahilmusic',
-  email: 'monashwamcalculator@gmail.com',
+  email: 'asbusiness276@gmail.com',
 } as const;
 
 export const AUTHOR_PAGE_PATH = '/about-author';
