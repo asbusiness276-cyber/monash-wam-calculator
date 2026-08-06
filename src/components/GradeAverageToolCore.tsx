@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
 import { calculateCreditWeightedWam, calculateSimpleMarkAverage, getMonashGradeFromMark } from '../utils/monashGrades';
 import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 
 interface GradeRow {
   id: number;
@@ -165,6 +166,7 @@ export default function GradeAverageToolCore() {
           )}
         </div>
       )}
+      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && (simpleAverage !== null || weightedAverage !== null))} />
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { Calculator } from 'lucide-react';
 import { getGpaConversionSteps, mapGpaToMonashBand } from '../utils/monashGrades';
 import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 type GpaToWamToolCoreProps = {
   /** Lock to one GPA scale (hides scale toggle). */
@@ -25,11 +28,17 @@ export default function GpaToWamToolCore({
     : scaleOptions;
   const [scaleIdx, setScaleIdx] = useState(0);
   const [gpa, setGpa] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const scale = scales[scaleIdx] ?? scales[0];
   const gpaNum = parseFloat(gpa);
   const result = gpa !== '' && !Number.isNaN(gpaNum) ? mapGpaToMonashBand(gpaNum, scale.max) : null;
   const steps = getGpaConversionSteps(scale.max);
+
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(result ? (result.wamMin + result.wamMax) / 2 : undefined);
+  };
 
   return (
     <div data-article-tool-screenshot={screenshotId} className="space-y-8">
@@ -64,10 +73,19 @@ export default function GpaToWamToolCore({
           placeholder={`e.g. ${scale.max === 4 ? '3.5' : '5.5'}`}
           value={gpa}
           onChange={event => setGpa(event.target.value)}
-          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500 text-xl font-bold mb-6"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500 text-xl font-bold mb-4"
         />
 
-        {result && (
+        <button
+          type="button"
+          onClick={handleCheckResult}
+          className="mb-6 w-full py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+        >
+          <Calculator size={18} />
+          <span>Check Result & Calculate WAM →</span>
+        </button>
+
+        {isSubmitted && result && (
           <div className="space-y-4">
             <div className="bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-xl p-5 text-center">
               <div className="text-xs text-teal-600 dark:text-teal-400 font-semibold uppercase mb-1">
@@ -115,6 +133,7 @@ export default function GpaToWamToolCore({
           </tbody>
         </table>
       </div>
+      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && result)} />
     </div>
   );
 }

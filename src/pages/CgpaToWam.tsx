@@ -3,6 +3,7 @@ import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import GpaToWamToolCore from '../components/GpaToWamToolCore';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
@@ -61,9 +62,10 @@ export default function CgpaToWam() {
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/cgpa-to-wam-calculator">
         <GpaToWamToolCore fixedScale={4} inputLabel="CGPA" screenshotId="cgpa-to-wam" />
-      </section>
+      </CalculatorSectionWithInlineAds>
+
       <CalculatorPageGuide path="/cgpa-to-wam-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={faqs} />

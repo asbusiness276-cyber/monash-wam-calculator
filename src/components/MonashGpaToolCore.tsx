@@ -1,24 +1,43 @@
 import { useState } from 'react';
+import { Calculator } from 'lucide-react';
 import GpaUnitRows, { createDefaultGpaUnits, parseGpaUnitRows } from './GpaUnitRows';
 import {
   calculateMonashOfficialGpa,
   isMonashDistinctionAverage,
   monashOfficialGpaGradeOptions,
 } from '../utils/monashGrades';
+import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
+import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 export default function MonashGpaToolCore() {
   const [units, setUnits] = useState(createDefaultGpaUnits());
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const parsed = parseGpaUnitRows(units);
   const result = parsed.length > 0 ? calculateMonashOfficialGpa(parsed) : null;
   const distinction = result ? isMonashDistinctionAverage(null, result.gpa) : false;
+
+  const handleCheckResult = () => {
+    setIsSubmitted(true);
+    triggerSmartAmazonRedirect(result?.gpa ? result.gpa * 22 : undefined);
+  };
 
   return (
     <div data-article-tool-screenshot="monash-gpa" className="space-y-6">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <GpaUnitRows units={units} onChange={setUnits} />
 
-        {result && (
+        <button
+          type="button"
+          onClick={handleCheckResult}
+          className="mt-6 w-full py-3.5 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 shadow-xl shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+        >
+          <Calculator size={18} />
+          <span>Check Result & Calculate Monash GPA →</span>
+        </button>
+
+        {isSubmitted && result && (
           <div className="mt-8 space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 text-center">
@@ -54,6 +73,7 @@ export default function MonashGpaToolCore() {
                 </span>
               )}
             </p>
+            <AmazonCalculatorResultWidget />
           </div>
         )}
       </div>
@@ -81,6 +101,7 @@ export default function MonashGpaToolCore() {
           </tbody>
         </table>
       </div>
+      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && result)} />
     </div>
   );
 }
