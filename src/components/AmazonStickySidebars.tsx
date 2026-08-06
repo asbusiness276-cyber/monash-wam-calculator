@@ -14,8 +14,8 @@ export default function AmazonStickySidebars({
   const isExcluded = EXCLUDED_AFFILIATE_PATHS.some(excluded => path === excluded || path.startsWith(excluded));
   if (isExcluded) return null;
 
-  const leftProduct = AMAZON_STUDENT_PRODUCTS[0]; // Casio Calculator
-  const rightProduct = AMAZON_STUDENT_PRODUCTS[1]; // MacBook Air
+  const leftProduct = AMAZON_STUDENT_PRODUCTS[2]; // iPad Air M2
+  const rightProduct = AMAZON_STUDENT_PRODUCTS[3]; // Sony Headphones
 
   const handleClick = (productTitle: string, url: string) => {
     if (typeof window.gtag === 'function') {
@@ -36,7 +36,7 @@ export default function AmazonStickySidebars({
           <div className="flex items-center justify-between gap-1 mb-2.5">
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">
               <Award className="w-3 h-3 text-amber-500" />
-              Exam Approved
+              {leftProduct.categoryLabel}
             </span>
             <span className="text-[9px] font-extrabold text-slate-400">Amazon AU</span>
           </div>
@@ -61,7 +61,7 @@ export default function AmazonStickySidebars({
           </div>
 
           <p className="mt-1.5 text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-tight">
-            Official Monash & Uni exam approved calculator.
+            {leftProduct.tagline}
           </p>
 
           <a
@@ -88,7 +88,7 @@ export default function AmazonStickySidebars({
           <div className="flex items-center justify-between gap-1 mb-2.5">
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30">
               <Zap className="w-3 h-3 text-blue-500" />
-              #1 Student Laptop
+              {rightProduct.categoryLabel}
             </span>
             <span className="text-[9px] font-extrabold text-slate-400">Amazon AU</span>
           </div>
@@ -113,7 +113,7 @@ export default function AmazonStickySidebars({
           </div>
 
           <p className="mt-1.5 text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-tight">
-            18-hour battery life for all-day campus lectures.
+            {rightProduct.tagline}
           </p>
 
           <a

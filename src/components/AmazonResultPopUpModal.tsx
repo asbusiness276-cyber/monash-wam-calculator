@@ -35,7 +35,7 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
 
   if (!isOpen) return null;
 
-  const product = AMAZON_STUDENT_PRODUCTS[0]; // Casio Calculator
+  const product = AMAZON_STUDENT_PRODUCTS[4]; // Anker Power Bank (Unique Product)
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;

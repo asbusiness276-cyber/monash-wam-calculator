@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Star, CheckCircle2, ShieldCheck, ExternalLink, Award, Truck, ShoppingBag } from 'lucide-react';
+import { Star, CheckCircle2, ShieldCheck, ExternalLink, Award, Truck } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID, type AmazonProduct } from '../data/amazonProducts';
+import ProductImageDisplay from './ProductImageDisplay';
 
 export const EXCLUDED_AFFILIATE_PATHS = [
   '/about-us',
@@ -23,30 +23,21 @@ export default function ContextualAmazonAffiliateCard({
   variant = 'inline',
   className = '',
 }: ContextualAmazonAffiliateCardProps) {
-  const [failCount, setFailCount] = useState(0);
-
   const isExcluded = EXCLUDED_AFFILIATE_PATHS.some(excluded => path === excluded || path.startsWith(excluded));
   if (isExcluded) return null;
 
-  let selectedProductId = 'casio-fx82au'; // Default for calculators
+  let selectedProductId = 'laptop-stand-ergonomic'; // Unique Product #6 for inline banner
 
   if (path.includes('/articles/best-') || path.includes('university') || path.includes('ranking')) {
     selectedProductId = 'macbook-air-m2';
   } else if (path.includes('/articles/') || path.includes('guide') || path.includes('transcript')) {
     selectedProductId = 'sony-wh1000xm5';
   } else if (path.includes('gpa') || path.includes('grade') || path.includes('atar')) {
-    selectedProductId = 'casio-fx82au';
+    selectedProductId = 'laptop-stand-ergonomic';
   }
 
   const product: AmazonProduct =
-    AMAZON_STUDENT_PRODUCTS.find(p => p.id === selectedProductId) || AMAZON_STUDENT_PRODUCTS[0];
-
-  const currentSrc =
-    failCount === 0
-      ? product.imageUrl
-      : failCount === 1
-      ? product.fallbackImageUrl
-      : null;
+    AMAZON_STUDENT_PRODUCTS.find(p => p.id === selectedProductId) || AMAZON_STUDENT_PRODUCTS[5];
 
   const handleClick = () => {
     if (typeof window.gtag === 'function') {
@@ -76,22 +67,12 @@ export default function ContextualAmazonAffiliateCard({
 
         {/* Image Container */}
         <div className="relative my-3 h-40 w-full rounded-xl bg-white p-3 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-inner overflow-hidden">
-          {currentSrc ? (
-            <img
-              src={currentSrc}
-              alt={product.title}
-              referrerPolicy="no-referrer"
-              crossOrigin="anonymous"
-              onError={() => setFailCount(prev => prev + 1)}
-              className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-          ) : (
-            <div className="flex flex-col items-center justify-center text-slate-800 p-2 text-center">
-              <ShoppingBag className="w-8 h-8 text-amber-500 mb-1" />
-              <span className="text-xs font-black">{product.title}</span>
-            </div>
-          )}
+          <ProductImageDisplay
+            productId={product.id}
+            title={product.title}
+            imageUrl={product.imageUrl}
+            fallbackImageUrl={product.fallbackImageUrl}
+          />
         </div>
 
         <h4 className="text-sm font-black text-slate-900 dark:text-white leading-snug group-hover:text-amber-500 transition-colors">
@@ -141,22 +122,12 @@ export default function ContextualAmazonAffiliateCard({
             <span className="absolute top-2.5 left-2.5 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-black uppercase bg-slate-950 text-amber-400 shadow-sm">
               {product.badge}
             </span>
-            {currentSrc ? (
-              <img
-                src={currentSrc}
-                alt={product.title}
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-                onError={() => setFailCount(prev => prev + 1)}
-                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-            ) : (
-              <div className="flex flex-col items-center justify-center text-slate-800 p-2 text-center">
-                <ShoppingBag className="w-10 h-10 text-amber-500 mb-1" />
-                <span className="text-xs font-black">{product.title}</span>
-              </div>
-            )}
+            <ProductImageDisplay
+              productId={product.id}
+              title={product.title}
+              imageUrl={product.imageUrl}
+              fallbackImageUrl={product.fallbackImageUrl}
+            />
           </div>
 
           {/* Rating Badge */}
