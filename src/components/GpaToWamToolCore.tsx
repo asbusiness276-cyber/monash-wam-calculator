@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { getGpaConversionSteps, mapGpaToMonashBand } from '../utils/monashGrades';
+import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
 
 type GpaToWamToolCoreProps = {
   /** Lock to one GPA scale (hides scale toggle). */
@@ -82,6 +83,7 @@ export default function GpaToWamToolCore({
             <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
               Grade bands span a percentage range — this is an approximate Monash WAM equivalent.
             </p>
+            <AmazonCalculatorResultWidget />
           </div>
         )}
       </div>

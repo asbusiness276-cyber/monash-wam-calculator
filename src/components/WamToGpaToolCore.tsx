@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { convertWamToGpaBands, monashGradeBands } from '../utils/monashGrades';
+import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
 
 type WamToGpaToolCoreProps = {
   initialWam?: string;
@@ -92,6 +93,7 @@ export default function WamToGpaToolCore({
                 {result.grade} - {result.label}
               </span>
             </div>
+            <AmazonCalculatorResultWidget />
           </div>
         )}
       </div>

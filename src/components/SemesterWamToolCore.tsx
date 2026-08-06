@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Plus, Trash2 } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
 import { calculateSemesterWamSummary, getMonashGradeFromMark } from '../utils/monashGrades';
+import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
 
 interface SemesterUnit {
   id: number;
@@ -151,6 +152,7 @@ export default function SemesterWamToolCore() {
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
             For cumulative degree WAM including all past semesters, use the Monash WAM calculator on the homepage.
           </p>
+          <AmazonCalculatorResultWidget />
         </div>
       )}
     </div>
