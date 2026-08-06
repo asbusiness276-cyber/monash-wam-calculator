@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { ExternalLink, Star, Award, ShieldCheck, Zap } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID } from '../data/amazonProducts';
 import { EXCLUDED_AFFILIATE_PATHS } from './ContextualAmazonAffiliateCard';
+import ProductImageDisplay from './ProductImageDisplay';
 
 interface AmazonStickySidebarsProps {
   path?: string;
@@ -10,29 +10,12 @@ interface AmazonStickySidebarsProps {
 export default function AmazonStickySidebars({
   path = typeof window !== 'undefined' ? window.location.pathname : '/',
 }: AmazonStickySidebarsProps) {
-  const [leftFailCount, setLeftFailCount] = useState(0);
-  const [rightFailCount, setRightFailCount] = useState(0);
-
   // Check if current page is legal/info page
   const isExcluded = EXCLUDED_AFFILIATE_PATHS.some(excluded => path === excluded || path.startsWith(excluded));
   if (isExcluded) return null;
 
   const leftProduct = AMAZON_STUDENT_PRODUCTS[0]; // Casio Calculator
   const rightProduct = AMAZON_STUDENT_PRODUCTS[1]; // MacBook Air
-
-  const leftSrc =
-    leftFailCount === 0
-      ? leftProduct.imageUrl
-      : leftFailCount === 1
-      ? leftProduct.fallbackImageUrl
-      : null;
-
-  const rightSrc =
-    rightFailCount === 0
-      ? rightProduct.imageUrl
-      : rightFailCount === 1
-      ? rightProduct.fallbackImageUrl
-      : null;
 
   const handleClick = (productTitle: string, url: string) => {
     if (typeof window.gtag === 'function') {
@@ -59,21 +42,12 @@ export default function AmazonStickySidebars({
           </div>
 
           <div className="my-2 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-inner overflow-hidden">
-            {leftSrc ? (
-              <img
-                src={leftSrc}
-                alt={leftProduct.title}
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-                onError={() => setLeftFailCount(prev => prev + 1)}
-                className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-            ) : (
-              <div className="text-center text-xs font-black text-slate-800 p-2">
-                {leftProduct.title}
-              </div>
-            )}
+            <ProductImageDisplay
+              productId={leftProduct.id}
+              title={leftProduct.title}
+              imageUrl={leftProduct.imageUrl}
+              fallbackImageUrl={leftProduct.fallbackImageUrl}
+            />
           </div>
 
           <h4 className="text-xs font-black text-slate-900 dark:text-white leading-snug group-hover:text-amber-500 transition-colors">
@@ -120,21 +94,12 @@ export default function AmazonStickySidebars({
           </div>
 
           <div className="my-2 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-inner overflow-hidden">
-            {rightSrc ? (
-              <img
-                src={rightSrc}
-                alt={rightProduct.title}
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-                onError={() => setRightFailCount(prev => prev + 1)}
-                className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-            ) : (
-              <div className="text-center text-xs font-black text-slate-800 p-2">
-                {rightProduct.title}
-              </div>
-            )}
+            <ProductImageDisplay
+              productId={rightProduct.id}
+              title={rightProduct.title}
+              imageUrl={rightProduct.imageUrl}
+              fallbackImageUrl={rightProduct.fallbackImageUrl}
+            />
           </div>
 
           <h4 className="text-xs font-black text-slate-900 dark:text-white leading-snug group-hover:text-blue-500 transition-colors">

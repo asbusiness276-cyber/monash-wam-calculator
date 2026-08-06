@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Flame, Star, ExternalLink, ShieldCheck, Clock, CheckCircle2 } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID } from '../data/amazonProducts';
+import ProductImageDisplay from './ProductImageDisplay';
 
 interface AmazonResultPopUpModalProps {
   hasResult: boolean;
@@ -10,7 +11,6 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
   const [isOpen, setIsOpen] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
   const [timeLeft, setTimeLeft] = useState(299); // 4 mins 59 secs
-  const [imageFailCount, setImageFailCount] = useState(0);
 
   // Trigger 2 seconds after result appears
   useEffect(() => {
@@ -40,13 +40,6 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
   const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-
-  const currentSrc =
-    imageFailCount === 0
-      ? product.imageUrl
-      : imageFailCount === 1
-      ? product.fallbackImageUrl
-      : null;
 
   const handleClick = () => {
     if (typeof window.gtag === 'function') {
@@ -90,21 +83,12 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
             <span className="absolute top-2 left-2 z-10 text-[9px] font-black uppercase tracking-wider bg-slate-950 text-amber-400 px-2 py-0.5 rounded">
               Exam Approved
             </span>
-            {currentSrc ? (
-              <img
-                src={currentSrc}
-                alt={product.title}
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-                onError={() => setImageFailCount(prev => prev + 1)}
-                className="max-h-full max-w-full object-contain"
-                loading="lazy"
-              />
-            ) : (
-              <div className="text-center font-black text-slate-800 text-xs p-2">
-                {product.title}
-              </div>
-            )}
+            <ProductImageDisplay
+              productId={product.id}
+              title={product.title}
+              imageUrl={product.imageUrl}
+              fallbackImageUrl={product.fallbackImageUrl}
+            />
           </div>
 
           {/* Right Product Details */}

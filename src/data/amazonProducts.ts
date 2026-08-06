@@ -31,8 +31,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.9,
     reviewsCount: 3840,
     amazonUrl: `https://www.amazon.com.au/s?k=Casio+FX-82AU+PLUS+II+Scientific+Calculator&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Casio_fx-82MS_2nd_edition.png',
-    fallbackImageUrl: 'https://m.media-amazon.com/images/I/71u9sJm0hGL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://images.unsplash.com/photo-1611125832047-1d7ad1e8e48a?w=600&auto=format&fit=crop&q=80',
     keyBenefits: [
       'Allowed in Monash invigilated exams',
       'Dual-line natural textbook display',

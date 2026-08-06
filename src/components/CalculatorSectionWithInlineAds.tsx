@@ -1,6 +1,7 @@
-import { useState, type ReactNode } from 'react';
-import { ExternalLink, Star, Award, ShieldCheck, Zap, ShoppingBag, Sparkles, CheckCircle2 } from 'lucide-react';
+import { type ReactNode } from 'react';
+import { ExternalLink, Star, Award, ShieldCheck, Zap, Sparkles, CheckCircle2 } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID } from '../data/amazonProducts';
+import ProductImageDisplay from './ProductImageDisplay';
 
 interface CalculatorSectionWithInlineAdsProps {
   children: ReactNode;
@@ -11,25 +12,8 @@ export default function CalculatorSectionWithInlineAds({
   children,
   path = typeof window !== 'undefined' ? window.location.pathname : '/',
 }: CalculatorSectionWithInlineAdsProps) {
-  const [casioFailCount, setCasioFailCount] = useState(0);
-  const [techFailCount, setTechFailCount] = useState(0);
-
   const casioProduct = AMAZON_STUDENT_PRODUCTS[0]; // Casio Calculator
   const techProduct = AMAZON_STUDENT_PRODUCTS[1]; // MacBook Air
-
-  const casioSrc =
-    casioFailCount === 0
-      ? casioProduct.imageUrl
-      : casioFailCount === 1
-      ? casioProduct.fallbackImageUrl
-      : null;
-
-  const techSrc =
-    techFailCount === 0
-      ? techProduct.imageUrl
-      : techFailCount === 1
-      ? techProduct.fallbackImageUrl
-      : null;
 
   const handleClick = (productTitle: string, url: string) => {
     if (typeof window.gtag === 'function') {
@@ -92,19 +76,12 @@ export default function CalculatorSectionWithInlineAds({
               <div className="grid grid-cols-12 gap-3 items-center">
                 {/* Photo */}
                 <div className="col-span-4 h-28 rounded-xl bg-white p-2 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
-                  {casioSrc ? (
-                    <img
-                      src={casioSrc}
-                      alt={casioProduct.title}
-                      referrerPolicy="no-referrer"
-                      crossOrigin="anonymous"
-                      onError={() => setCasioFailCount(prev => prev + 1)}
-                      className="max-h-full max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <ShoppingBag className="w-6 h-6 text-amber-500" />
-                  )}
+                  <ProductImageDisplay
+                    productId={casioProduct.id}
+                    title={casioProduct.title}
+                    imageUrl={casioProduct.imageUrl}
+                    fallbackImageUrl={casioProduct.fallbackImageUrl}
+                  />
                 </div>
 
                 {/* Details */}
@@ -153,19 +130,12 @@ export default function CalculatorSectionWithInlineAds({
               <div className="grid grid-cols-12 gap-3 items-center">
                 {/* Photo */}
                 <div className="col-span-4 h-28 rounded-xl bg-white p-2 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
-                  {techSrc ? (
-                    <img
-                      src={techSrc}
-                      alt={techProduct.title}
-                      referrerPolicy="no-referrer"
-                      crossOrigin="anonymous"
-                      onError={() => setTechFailCount(prev => prev + 1)}
-                      className="max-h-full max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <ShoppingBag className="w-6 h-6 text-blue-500" />
-                  )}
+                  <ProductImageDisplay
+                    productId={techProduct.id}
+                    title={techProduct.title}
+                    imageUrl={techProduct.imageUrl}
+                    fallbackImageUrl={techProduct.fallbackImageUrl}
+                  />
                 </div>
 
                 {/* Details */}
