@@ -24,7 +24,7 @@ export default function ContextualAmazonAffiliateCard({
   variant = 'inline',
   className = '',
 }: ContextualAmazonAffiliateCardProps) {
-  const [imageError, setImageError] = useState(false);
+  const [failCount, setFailCount] = useState(0);
 
   // Check if current page is in excluded legal/info list
   const isExcluded = EXCLUDED_AFFILIATE_PATHS.some(excluded => path === excluded || path.startsWith(excluded));
@@ -43,6 +43,13 @@ export default function ContextualAmazonAffiliateCard({
 
   const product: AmazonProduct =
     AMAZON_STUDENT_PRODUCTS.find(p => p.id === selectedProductId) || AMAZON_STUDENT_PRODUCTS[0];
+
+  const currentSrc =
+    failCount === 0
+      ? product.imageUrl
+      : failCount === 1
+      ? product.fallbackImageUrl
+      : null;
 
   const handleClick = () => {
     if (typeof window.gtag === 'function') {
@@ -73,17 +80,22 @@ export default function ContextualAmazonAffiliateCard({
             <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Amazon AU</span>
           </div>
 
-          <div className="my-2.5 h-36 w-full rounded-xl bg-white/95 p-2 flex items-center justify-center shadow-inner overflow-hidden">
-            {!imageError && product.imageUrl ? (
+          <div className="my-2.5 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center shadow-inner overflow-hidden">
+            {currentSrc ? (
               <img
-                src={product.imageUrl}
+                src={currentSrc}
                 alt={product.title}
-                onError={() => setImageError(true)}
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
+                onError={() => setFailCount(prev => prev + 1)}
                 className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             ) : (
-              <ShoppingBag className="w-8 h-8 text-slate-400" />
+              <div className="flex flex-col items-center justify-center text-slate-800 p-2 text-center">
+                <ShoppingBag className="w-6 h-6 text-amber-500 mb-1" />
+                <span className="text-xs font-black">{product.title}</span>
+              </div>
             )}
           </div>
 
@@ -129,20 +141,25 @@ export default function ContextualAmazonAffiliateCard({
 
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left Image Section */}
-        <div className="shrink-0 w-full md:w-56 h-44 rounded-2xl bg-white/95 p-4 flex items-center justify-center shadow-lg overflow-hidden relative">
+        <div className="shrink-0 w-full md:w-56 h-44 rounded-2xl bg-white p-4 flex items-center justify-center shadow-lg overflow-hidden relative">
           <span className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-black uppercase bg-slate-950 text-amber-400">
             {product.badge}
           </span>
-          {!imageError && product.imageUrl ? (
+          {currentSrc ? (
             <img
-              src={product.imageUrl}
+              src={currentSrc}
               alt={product.title}
-              onError={() => setImageError(true)}
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
+              onError={() => setFailCount(prev => prev + 1)}
               className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
           ) : (
-            <ShoppingBag className="w-12 h-12 text-slate-400" />
+            <div className="flex flex-col items-center justify-center text-slate-800 p-2 text-center">
+              <ShoppingBag className="w-8 h-8 text-amber-500 mb-1" />
+              <span className="text-xs font-black">{product.title}</span>
+            </div>
           )}
         </div>
 

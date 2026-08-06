@@ -30,7 +30,7 @@ export default function AmazonStudentDeals({
   limit,
 }: AmazonStudentDealsProps) {
   const [activeCategory, setActiveCategory] = useState<string>(defaultCategory);
-  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const [imageFailures, setImageFailures] = useState<Record<string, number>>({});
 
   const categories = [
     { id: 'all', label: 'All Essentials' },
@@ -59,19 +59,19 @@ export default function AmazonStudentDeals({
   const renderIcon = (iconName: AmazonProduct['iconName']) => {
     switch (iconName) {
       case 'calculator':
-        return <Calculator className="w-5 h-5 text-amber-500" />;
+        return <Calculator className="w-6 h-6 text-amber-500" />;
       case 'laptop':
-        return <Laptop className="w-5 h-5 text-blue-500" />;
+        return <Laptop className="w-6 h-6 text-blue-500" />;
       case 'tablet':
-        return <Tablet className="w-5 h-5 text-indigo-500" />;
+        return <Tablet className="w-6 h-6 text-indigo-500" />;
       case 'headphones':
-        return <Headphones className="w-5 h-5 text-purple-500" />;
+        return <Headphones className="w-6 h-6 text-purple-500" />;
       case 'battery':
-        return <BatteryCharging className="w-5 h-5 text-emerald-500" />;
+        return <BatteryCharging className="w-6 h-6 text-emerald-500" />;
       case 'stand':
-        return <Monitor className="w-5 h-5 text-sky-500" />;
+        return <Monitor className="w-6 h-6 text-sky-500" />;
       default:
-        return <ShoppingBag className="w-5 h-5 text-amber-500" />;
+        return <ShoppingBag className="w-6 h-6 text-amber-500" />;
     }
   };
 
@@ -118,83 +118,95 @@ export default function AmazonStudentDeals({
 
           {/* Products Grid */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProducts.map(product => (
-              <div
-                key={product.id}
-                className="group flex flex-col justify-between rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-400/50 p-5 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/10 hover:-translate-y-1"
-              >
-                <div>
-                  {/* Card Top: Badge & Rating */}
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-black uppercase tracking-wide bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                      {product.badge}
-                    </span>
-                    <div className="flex items-center gap-1 text-xs text-amber-400 font-bold">
-                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                      <span>{product.rating}</span>
-                      <span className="text-slate-500 font-normal text-[11px]">({product.reviewsCount})</span>
-                    </div>
-                  </div>
+            {filteredProducts.map(product => {
+              const failCount = imageFailures[product.id] || 0;
+              const currentSrc =
+                failCount === 0
+                  ? product.imageUrl
+                  : failCount === 1
+                  ? product.fallbackImageUrl
+                  : null;
 
-                  {/* Product Image Container */}
-                  <div className="relative mb-4 h-40 w-full overflow-hidden rounded-xl bg-white/95 p-3 flex items-center justify-center shadow-inner group-hover:bg-white transition-colors">
-                    {!failedImages[product.id] && product.imageUrl ? (
-                      <img
-                        src={product.imageUrl}
-                        alt={product.title}
-                        onError={() => setFailedImages(prev => ({ ...prev, [product.id]: true }))}
-                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center justify-center text-slate-400">
-                        {renderIcon(product.iconName)}
-                        <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
-                          {product.categoryLabel}
-                        </span>
+              return (
+                <div
+                  key={product.id}
+                  className="group flex flex-col justify-between rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-400/50 p-5 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/10 hover:-translate-y-1"
+                >
+                  <div>
+                    {/* Card Top: Badge & Rating */}
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-black uppercase tracking-wide bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                        {product.badge}
+                      </span>
+                      <div className="flex items-center gap-1 text-xs text-amber-400 font-bold">
+                        <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                        <span>{product.rating}</span>
+                        <span className="text-slate-500 font-normal text-[11px]">({product.reviewsCount})</span>
                       </div>
-                    )}
+                    </div>
+
+                    {/* Product Image Container */}
+                    <div className="relative mb-4 h-44 w-full overflow-hidden rounded-xl bg-white p-3 flex items-center justify-center shadow-md">
+                      {currentSrc ? (
+                        <img
+                          src={currentSrc}
+                          alt={product.title}
+                          referrerPolicy="no-referrer"
+                          crossOrigin="anonymous"
+                          onError={() => setImageFailures(prev => ({ ...prev, [product.id]: failCount + 1 }))}
+                          className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="flex flex-col items-center justify-center text-slate-700 p-2 text-center">
+                          {renderIcon(product.iconName)}
+                          <span className="mt-2 text-xs font-black text-slate-800">
+                            {product.title}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Title */}
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                      {product.categoryLabel}
+                    </span>
+                    <h3 className="text-sm font-black text-white leading-snug group-hover:text-amber-300 transition-colors">
+                      {product.title}
+                    </h3>
+
+                    {/* Tagline */}
+                    <p className="mt-2 text-xs text-slate-300 font-medium leading-snug">
+                      {product.tagline}
+                    </p>
+
+                    {/* Key Benefits */}
+                    <ul className="mt-3.5 space-y-1.5 border-t border-slate-800/80 pt-3">
+                      {product.keyBenefits.map((benefit, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-[11px] text-slate-300 font-medium">
+                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          <span className="truncate">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  {/* Title */}
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    {product.categoryLabel}
-                  </span>
-                  <h3 className="text-sm font-black text-white leading-snug group-hover:text-amber-300 transition-colors">
-                    {product.title}
-                  </h3>
-
-                  {/* Tagline & Description */}
-                  <p className="mt-2 text-xs text-slate-300 font-medium leading-snug">
-                    {product.tagline}
-                  </p>
-
-                  {/* Key Benefits */}
-                  <ul className="mt-3.5 space-y-1.5 border-t border-slate-800/80 pt-3">
-                    {product.keyBenefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-[11px] text-slate-300 font-medium">
-                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                        <span className="truncate">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* High-Converting CTA Button */}
+                  <div className="mt-5 pt-3 border-t border-slate-800">
+                    <a
+                      href={product.amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => handleProductClick(product)}
+                      className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl font-black text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/20 hover:shadow-amber-500/40 active:scale-[0.98]"
+                    >
+                      <span>{product.ctaText}</span>
+                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                    </a>
+                  </div>
                 </div>
-
-                {/* High-Converting CTA Button */}
-                <div className="mt-5 pt-3 border-t border-slate-800">
-                  <a
-                    href={product.amazonUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => handleProductClick(product)}
-                    className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl font-black text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/20 hover:shadow-amber-500/40 active:scale-[0.98]"
-                  >
-                    <span>{product.ctaText}</span>
-                    <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                  </a>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Amazon Associates Legal Disclaimer */}

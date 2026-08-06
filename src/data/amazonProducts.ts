@@ -10,6 +10,7 @@ export interface AmazonProduct {
   reviewsCount: number;
   amazonUrl: string;
   imageUrl: string;
+  fallbackImageUrl: string;
   keyBenefits: string[];
   ctaText: string;
   iconName: 'calculator' | 'laptop' | 'tablet' | 'headphones' | 'battery' | 'stand';
@@ -30,7 +31,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.9,
     reviewsCount: 3840,
     amazonUrl: `https://www.amazon.com.au/s?k=Casio+FX-82AU+PLUS+II+Scientific+Calculator&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://m.media-amazon.com/images/I/71u9sJm0hGL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://m.media-amazon.com/images/I/71u9sJm0hGL._AC_SL1500_.jpg',
     keyBenefits: [
       'Approved for Monash invigilated exams',
       'Dual-line natural textbook display',
@@ -51,7 +53,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.8,
     reviewsCount: 5210,
     amazonUrl: `https://www.amazon.com.au/s?k=Apple+MacBook+Air+M2&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://m.media-amazon.com/images/I/71jG+e7roXL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://m.media-amazon.com/images/I/71jG+e7roXL._AC_SL1500_.jpg',
     keyBenefits: [
       '18-hour all-day battery life',
       'Super lightweight for campus backpacks',
@@ -72,7 +75,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.8,
     reviewsCount: 2950,
     amazonUrl: `https://www.amazon.com.au/s?k=Apple+iPad+Air&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://m.media-amazon.com/images/I/61k0d0u-6yL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://m.media-amazon.com/images/I/61k0d0u-6yL._AC_SL1500_.jpg',
     keyBenefits: [
       'Perfect digital notepad for lectures',
       'Ultra-sharp Liquid Retina display',
@@ -93,7 +97,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.7,
     reviewsCount: 8420,
     amazonUrl: `https://www.amazon.com.au/s?k=Sony+WH-1000XM5+Headphones&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://m.media-amazon.com/images/I/51SKmu2G9FL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://m.media-amazon.com/images/I/51SKmu2G9FL._AC_SL1500_.jpg',
     keyBenefits: [
       'Industry-leading active noise cancellation',
       '30-hour battery life with quick charge',
@@ -114,7 +119,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.6,
     reviewsCount: 4180,
     amazonUrl: `https://www.amazon.com.au/s?k=Anker+Magnetic+Power+Bank+10000mAh&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://m.media-amazon.com/images/I/61s8A14nZmL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1609592424074-122e23075c35?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://m.media-amazon.com/images/I/61s8A14nZmL._AC_SL1500_.jpg',
     keyBenefits: [
       '10,000mAh capacity (charges iPhone 2+ times)',
       'Compact magnetic snap-on design',
@@ -135,7 +141,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.8,
     reviewsCount: 6310,
     amazonUrl: `https://www.amazon.com.au/s?k=Ergonomic+Laptop+Stand+Aluminium&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://m.media-amazon.com/images/I/71Zf9uUp+GL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://m.media-amazon.com/images/I/71Zf9uUp+GL._AC_SL1500_.jpg',
     keyBenefits: [
       'Adjustable height for ideal posture',
       'Fits all 10"-17" laptops (MacBook, Dell, HP)',

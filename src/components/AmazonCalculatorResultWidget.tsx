@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Star, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
+import { ExternalLink, Star, CheckCircle2, ShieldCheck, Award, Calculator } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID, type AmazonProduct } from '../data/amazonProducts';
 
 interface AmazonCalculatorResultWidgetProps {
@@ -11,10 +11,17 @@ export default function AmazonCalculatorResultWidget({
   productId = 'casio-fx82au',
   className = '',
 }: AmazonCalculatorResultWidgetProps) {
-  const [imageError, setImageError] = useState(false);
+  const [failCount, setFailCount] = useState(0);
 
   const product: AmazonProduct =
     AMAZON_STUDENT_PRODUCTS.find(p => p.id === productId) || AMAZON_STUDENT_PRODUCTS[0];
+
+  const currentSrc =
+    failCount === 0
+      ? product.imageUrl
+      : failCount === 1
+      ? product.fallbackImageUrl
+      : null;
 
   const handleClick = () => {
     if (typeof window.gtag === 'function') {
@@ -45,18 +52,21 @@ export default function AmazonCalculatorResultWidget({
         </div>
 
         {/* Product Image */}
-        <div className="my-2.5 h-32 w-full rounded-xl bg-white/95 p-2 flex items-center justify-center shadow-inner overflow-hidden">
-          {!imageError && product.imageUrl ? (
+        <div className="my-2.5 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center shadow-inner overflow-hidden">
+          {currentSrc ? (
             <img
-              src={product.imageUrl}
+              src={currentSrc}
               alt={product.title}
-              onError={() => setImageError(true)}
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
+              onError={() => setFailCount(prev => prev + 1)}
               className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
               loading="lazy"
             />
           ) : (
-            <div className="text-center text-slate-500 font-bold text-xs">
-              {product.title}
+            <div className="text-center text-slate-800 font-black text-xs flex flex-col items-center gap-1 p-2">
+              <Calculator className="w-6 h-6 text-amber-500" />
+              <span>{product.title}</span>
             </div>
           )}
         </div>
