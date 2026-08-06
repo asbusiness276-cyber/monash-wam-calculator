@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Star, CheckCircle2, ShieldCheck, ExternalLink, Award, Sparkles, ShoppingBag } from 'lucide-react';
+import { Star, CheckCircle2, ShieldCheck, ExternalLink, Award, Truck, ShoppingBag } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID, type AmazonProduct } from '../data/amazonProducts';
 
-// Excluded Pages (Legal & Info pages where ads must NOT render)
 export const EXCLUDED_AFFILIATE_PATHS = [
   '/about-us',
   '/about-author',
@@ -26,11 +25,9 @@ export default function ContextualAmazonAffiliateCard({
 }: ContextualAmazonAffiliateCardProps) {
   const [failCount, setFailCount] = useState(0);
 
-  // Check if current page is in excluded legal/info list
   const isExcluded = EXCLUDED_AFFILIATE_PATHS.some(excluded => path === excluded || path.startsWith(excluded));
   if (isExcluded) return null;
 
-  // Determine most relevant product based on URL context
   let selectedProductId = 'casio-fx82au'; // Default for calculators
 
   if (path.includes('/articles/best-') || path.includes('university') || path.includes('ranking')) {
@@ -67,84 +64,18 @@ export default function ContextualAmazonAffiliateCard({
   if (variant === 'sidebar') {
     return (
       <aside
-        className={`overflow-hidden rounded-2xl bg-gradient-to-b from-slate-900 via-slate-950 to-indigo-950 border border-amber-400/40 p-4 text-white shadow-xl relative group transition-all duration-300 hover:border-amber-400/70 ${className}`}
+        className={`overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 text-slate-900 dark:text-white shadow-xl relative group transition-all duration-300 hover:border-amber-400 ${className}`}
       >
-        <div className="absolute top-0 right-0 w-28 h-28 bg-amber-500/15 rounded-full blur-xl pointer-events-none" />
-
-        <div className="relative z-10">
-          <div className="flex items-center justify-between gap-1.5 mb-2">
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/40">
-              <Award className="w-3 h-3 text-amber-400" />
-              {product.badge}
-            </span>
-            <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Amazon AU</span>
-          </div>
-
-          <div className="my-2.5 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center shadow-inner overflow-hidden">
-            {currentSrc ? (
-              <img
-                src={currentSrc}
-                alt={product.title}
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-                onError={() => setFailCount(prev => prev + 1)}
-                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-            ) : (
-              <div className="flex flex-col items-center justify-center text-slate-800 p-2 text-center">
-                <ShoppingBag className="w-6 h-6 text-amber-500 mb-1" />
-                <span className="text-xs font-black">{product.title}</span>
-              </div>
-            )}
-          </div>
-
-          <h4 className="text-xs font-black text-white leading-snug group-hover:text-amber-300 transition-colors">
-            {product.title}
-          </h4>
-
-          <div className="mt-1 flex items-center justify-between text-[11px]">
-            <div className="flex items-center gap-1 text-amber-400 font-bold">
-              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-              <span>{product.rating}</span>
-              <span className="text-slate-400 font-normal">({product.reviewsCount})</span>
-            </div>
-          </div>
-
-          <p className="mt-1.5 text-[11px] text-slate-300 font-medium leading-snug">
-            {product.tagline}
-          </p>
-
-          <a
-            href={product.amazonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={handleClick}
-            className="mt-3.5 flex items-center justify-center gap-1.5 w-full py-2.5 px-3 rounded-xl font-extrabold text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/25 hover:shadow-amber-500/40 active:scale-[0.98]"
-          >
-            <span>{product.ctaText}</span>
-            <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-          </a>
-        </div>
-      </aside>
-    );
-  }
-
-  // 2. INLINE IRRESISTIBLE WIDE BANNER CARD (Main Content & Below Calculators)
-  return (
-    <div
-      className={`my-8 overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 border border-amber-400/40 p-6 md:p-8 shadow-2xl text-white relative group transition-all duration-300 hover:border-amber-400/60 ${className}`}
-    >
-      {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left Image Section */}
-        <div className="shrink-0 w-full md:w-56 h-44 rounded-2xl bg-white p-4 flex items-center justify-center shadow-lg overflow-hidden relative">
-          <span className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-black uppercase bg-slate-950 text-amber-400">
+        <div className="flex items-center justify-between gap-1.5 mb-3">
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+            <Award className="w-3 h-3 text-amber-500" />
             {product.badge}
           </span>
+          <span className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Amazon AU</span>
+        </div>
+
+        {/* Image Container */}
+        <div className="relative my-3 h-40 w-full rounded-xl bg-white p-3 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-inner overflow-hidden">
           {currentSrc ? (
             <img
               src={currentSrc}
@@ -163,54 +94,129 @@ export default function ContextualAmazonAffiliateCard({
           )}
         </div>
 
-        {/* Middle Info Section */}
-        <div className="flex-1">
-          <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/40">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              Verified Amazon AU Deal
-            </span>
-            <div className="flex items-center gap-1 text-xs text-amber-400 font-bold">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-              <span>{product.rating} Rating</span>
-              <span className="text-slate-400">({product.reviewsCount} verified reviews)</span>
-            </div>
-          </div>
+        <h4 className="text-sm font-black text-slate-900 dark:text-white leading-snug group-hover:text-amber-500 transition-colors">
+          {product.title}
+        </h4>
 
-          <h3 className="text-lg md:text-xl font-black text-white leading-snug group-hover:text-amber-300 transition-colors">
-            {product.title}
-          </h3>
-
-          <p className="mt-2 text-xs md:text-sm text-slate-300 font-medium leading-relaxed">
-            {product.tagline} — {product.description}
-          </p>
-
-          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs text-slate-300 font-semibold">
-            {product.keyBenefits.map((benefit, idx) => (
-              <span key={idx} className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                {benefit}
-              </span>
-            ))}
+        <div className="mt-2 flex items-center justify-between text-xs">
+          <div className="flex items-center gap-1 text-amber-500 font-bold">
+            <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+            <span>{product.rating}</span>
+            <span className="text-slate-400 font-normal">({product.reviewsCount} reviews)</span>
           </div>
         </div>
 
-        {/* Right CTA Button */}
-        <div className="shrink-0 w-full md:w-auto">
+        <p className="mt-2 text-xs text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+          {product.tagline}
+        </p>
+
+        <a
+          href={product.amazonUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleClick}
+          className="mt-4 flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl font-black text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/20 hover:shadow-amber-500/40 active:scale-[0.98]"
+        >
+          <span>{product.ctaText}</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+
+        <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[10px] text-slate-500 font-bold">
+          <ShieldCheck className="w-3 h-3 text-emerald-500" />
+          <span>Amazon Verified Associate (Store ID: visitbest-22)</span>
+        </div>
+      </aside>
+    );
+  }
+
+  // 2. INLINE E-COMMERCE BANNER CARD (Main Content & Below Calculators)
+  return (
+    <div
+      className={`my-8 overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 md:p-8 shadow-2xl text-slate-900 dark:text-white relative group transition-all duration-300 hover:border-amber-400/80 ${className}`}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        {/* Left Column: Product Image Container */}
+        <div className="md:col-span-4 lg:col-span-4 flex flex-col items-center">
+          <div className="relative w-full h-48 rounded-2xl bg-white p-4 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-md group-hover:shadow-lg transition-all overflow-hidden">
+            <span className="absolute top-2.5 left-2.5 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-black uppercase bg-slate-950 text-amber-400 shadow-sm">
+              {product.badge}
+            </span>
+            {currentSrc ? (
+              <img
+                src={currentSrc}
+                alt={product.title}
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
+                onError={() => setFailCount(prev => prev + 1)}
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ) : (
+              <div className="flex flex-col items-center justify-center text-slate-800 p-2 text-center">
+                <ShoppingBag className="w-10 h-10 text-amber-500 mb-1" />
+                <span className="text-xs font-black">{product.title}</span>
+              </div>
+            )}
+          </div>
+
+          {/* Rating Badge */}
+          <div className="mt-2.5 flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-300">
+            <div className="flex items-center text-amber-500">
+              <Star className="w-4 h-4 fill-amber-500" />
+            </div>
+            <span>{product.rating} / 5.0</span>
+            <span className="text-slate-400 font-normal">({product.reviewsCount.toLocaleString()} verified reviews)</span>
+          </div>
+        </div>
+
+        {/* Middle Column: Details & Benefits */}
+        <div className="md:col-span-5 lg:col-span-5 flex flex-col justify-center">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 w-fit mb-2.5">
+            <Award className="w-3.5 h-3.5 text-amber-500" />
+            <span>Monash Student Recommended</span>
+          </div>
+
+          <h3 className="text-xl font-black text-slate-900 dark:text-white leading-snug group-hover:text-amber-500 transition-colors">
+            {product.title}
+          </h3>
+
+          <p className="mt-2 text-xs md:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+            {product.description}
+          </p>
+
+          <ul className="mt-3.5 space-y-1.5">
+            {product.keyBenefits.map((benefit, idx) => (
+              <li key={idx} className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300 font-semibold">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right Column: CTA Button & Trust Badges */}
+        <div className="md:col-span-3 lg:col-span-3 flex flex-col items-center md:items-end justify-center pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
           <a
             href={product.amazonUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClick}
-            className="group/btn flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+            className="group/btn flex items-center justify-center gap-2.5 w-full py-4 px-5 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-[1.03] active:scale-[0.98] cursor-pointer text-center"
           >
             <span>{product.ctaText}</span>
-            <ExternalLink className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+            <ExternalLink className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 shrink-0" />
           </a>
-          <p className="mt-2 text-[10px] text-slate-400 text-center flex items-center justify-center gap-1">
-            <ShieldCheck className="w-3 h-3 text-emerald-400" />
-            <span>Store ID: visitbest-22</span>
-          </p>
+
+          <div className="mt-3 space-y-1 text-center md:text-right">
+            <div className="flex items-center justify-center md:justify-end gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+              <Truck className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+              <span>Prime Free Fast Delivery</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-end gap-1 text-[11px] text-slate-400 font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+              <span>Amazon Associate (Tag: visitbest-22)</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
