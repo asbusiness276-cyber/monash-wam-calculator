@@ -97,8 +97,8 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.7,
     reviewsCount: 8420,
     amazonUrl: `https://www.amazon.com.au/s?k=Sony+WH-1000XM5+Headphones&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Sony_WH-1000XM5_Headphones.png/640px-Sony_WH-1000XM5_Headphones.png',
-    fallbackImageUrl: 'https://m.media-amazon.com/images/I/51SKmu2G9FL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80',
     keyBenefits: [
       'Industry-leading active noise cancellation',
       '30-hour battery life with quick charge',
@@ -120,7 +120,7 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     reviewsCount: 4180,
     amazonUrl: `https://www.amazon.com.au/s?k=Anker+Magnetic+Power+Bank+10000mAh&tag=${AMAZON_STORE_ID}`,
     imageUrl: 'https://images.unsplash.com/photo-1609592424074-122e23075c35?w=600&auto=format&fit=crop&q=80',
-    fallbackImageUrl: 'https://m.media-amazon.com/images/I/61s8A14nZmL._AC_SL1500_.jpg',
+    fallbackImageUrl: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80',
     keyBenefits: [
       '10,000mAh capacity (charges iPhone 2+ times)',
       'Compact magnetic snap-on design',
