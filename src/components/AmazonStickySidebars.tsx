@@ -42,7 +42,7 @@ export default function AmazonStickySidebars({
             <span className="text-[9px] font-extrabold text-slate-400">Amazon AU</span>
           </div>
 
-          <div className="my-2 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-inner overflow-hidden">
+          <div className="my-2.5 h-44 w-full rounded-xl bg-white p-1.5 flex items-center justify-center border border-slate-200 dark:border-slate-800 shadow-inner overflow-hidden">
             <ProductImageDisplay
               productId={leftProduct.id}
               title={leftProduct.title}
@@ -90,7 +90,7 @@ export default function AmazonStickySidebars({
             <span className="text-[9px] font-extrabold text-slate-400">Amazon AU</span>
           </div>
 
-          <div className="my-2 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center border border-slate-100 dark:border-slate-800 shadow-inner overflow-hidden">
+          <div className="my-2.5 h-44 w-full rounded-xl bg-white p-1.5 flex items-center justify-center border border-slate-200 dark:border-slate-800 shadow-inner overflow-hidden">
             <ProductImageDisplay
               productId={rightProduct.id}
               title={rightProduct.title}

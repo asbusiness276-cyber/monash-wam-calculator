@@ -22,8 +22,12 @@ export function triggerSmartAmazonRedirect(averageMark?: number) {
 
   const targetUrl = `https://www.amazon.com.au/s?k=${amazonSearchQuery}&tag=${AMAZON_STORE_ID}`;
 
-  // Safely open in a new browser tab
+  // Safely open in a new browser tab while maintaining focus on our site
   if (typeof window !== 'undefined') {
-    window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    const amazonTab = window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    // Ensure browser focus stays on our website tab
+    if (amazonTab) {
+      window.focus();
+    }
   }
 }
