@@ -1,18 +1,7 @@
 import { useState } from 'react';
-import {
-  Calculator,
-  Laptop,
-  Tablet,
-  Headphones,
-  BatteryCharging,
-  Monitor,
-  Star,
-  Check,
-  ExternalLink,
-  ShoppingBag,
-  ShieldCheck,
-} from 'lucide-react';
+import { Star, Check, ExternalLink, ShoppingBag, ShieldCheck } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, type AmazonProduct } from '../data/amazonProducts';
+import ProductImageDisplay from './ProductImageDisplay';
 
 interface AmazonStudentDealsProps {
   title?: string;
@@ -30,7 +19,6 @@ export default function AmazonStudentDeals({
   limit,
 }: AmazonStudentDealsProps) {
   const [activeCategory, setActiveCategory] = useState<string>(defaultCategory);
-  const [imageFailures, setImageFailures] = useState<Record<string, number>>({});
 
   const categories = [
     { id: 'all', label: 'All Essentials' },
@@ -53,25 +41,6 @@ export default function AmazonStudentDeals({
         destination: product.amazonUrl,
         store_id: 'visitbest-22',
       });
-    }
-  };
-
-  const renderIcon = (iconName: AmazonProduct['iconName']) => {
-    switch (iconName) {
-      case 'calculator':
-        return <Calculator className="w-6 h-6 text-amber-500" />;
-      case 'laptop':
-        return <Laptop className="w-6 h-6 text-blue-500" />;
-      case 'tablet':
-        return <Tablet className="w-6 h-6 text-indigo-500" />;
-      case 'headphones':
-        return <Headphones className="w-6 h-6 text-purple-500" />;
-      case 'battery':
-        return <BatteryCharging className="w-6 h-6 text-emerald-500" />;
-      case 'stand':
-        return <Monitor className="w-6 h-6 text-sky-500" />;
-      default:
-        return <ShoppingBag className="w-6 h-6 text-amber-500" />;
     }
   };
 
@@ -119,14 +88,6 @@ export default function AmazonStudentDeals({
           {/* Products Grid */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProducts.map(product => {
-              const failCount = imageFailures[product.id] || 0;
-              const currentSrc =
-                failCount === 0
-                  ? product.imageUrl
-                  : failCount === 1
-                  ? product.fallbackImageUrl
-                  : null;
-
               return (
                 <div
                   key={product.id}
@@ -147,24 +108,12 @@ export default function AmazonStudentDeals({
 
                     {/* Product Image Container */}
                     <div className="relative mb-4 h-44 w-full overflow-hidden rounded-xl bg-white p-3 flex items-center justify-center shadow-md">
-                      {currentSrc ? (
-                        <img
-                          src={currentSrc}
-                          alt={product.title}
-                          referrerPolicy="no-referrer"
-                          crossOrigin="anonymous"
-                          onError={() => setImageFailures(prev => ({ ...prev, [product.id]: failCount + 1 }))}
-                          className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="flex flex-col items-center justify-center text-slate-700 p-2 text-center">
-                          {renderIcon(product.iconName)}
-                          <span className="mt-2 text-xs font-black text-slate-800">
-                            {product.title}
-                          </span>
-                        </div>
-                      )}
+                      <ProductImageDisplay
+                        productId={product.id}
+                        title={product.title}
+                        imageUrl={product.imageUrl}
+                        fallbackImageUrl={product.fallbackImageUrl}
+                      />
                     </div>
 
                     {/* Title */}
