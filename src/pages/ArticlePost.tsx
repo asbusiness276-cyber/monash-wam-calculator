@@ -8,6 +8,7 @@ import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import ArticleTableOfContents, { ArticleMobileBackToTopButton } from '../components/ArticleTableOfContents';
 import AmazonStudentDeals from '../components/AmazonStudentDeals';
+import ContextualAmazonAffiliateCard from '../components/ContextualAmazonAffiliateCard';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { articles, getArticleBySlug, getArticleImageAlt } from '../data/articles';
@@ -235,6 +236,8 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
               })}
             </div>
 
+            <ContextualAmazonAffiliateCard path={`/articles/${slug}`} variant="inline" />
+
             <AmazonStudentDeals title="Monash Student Gear & Exam Approved Calculators" limit={3} />
 
             <ArticleFaqs items={article.faqs} />
@@ -260,6 +263,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
                   categoryPath={categoryPath}
                   relatedLinks={sidebarRelatedLinks}
                 />
+                <ContextualAmazonAffiliateCard path={`/articles/${slug}`} variant="sidebar" className="mt-6" />
               </div>
             </div>
           </div>
