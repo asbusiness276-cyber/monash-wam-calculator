@@ -30,6 +30,7 @@ export default function AmazonStudentDeals({
   limit,
 }: AmazonStudentDealsProps) {
   const [activeCategory, setActiveCategory] = useState<string>(defaultCategory);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   const categories = [
     { id: 'all', label: 'All Essentials' },
@@ -135,31 +136,41 @@ export default function AmazonStudentDeals({
                     </div>
                   </div>
 
-                  {/* Icon & Title */}
-                  <div className="flex items-start gap-3">
-                    <div className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/80 shrink-0">
-                      {renderIcon(product.iconName)}
-                    </div>
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                        {product.categoryLabel}
-                      </span>
-                      <h3 className="text-sm font-black text-white leading-snug group-hover:text-amber-300 transition-colors">
-                        {product.title}
-                      </h3>
-                    </div>
+                  {/* Product Image Container */}
+                  <div className="relative mb-4 h-40 w-full overflow-hidden rounded-xl bg-white/95 p-3 flex items-center justify-center shadow-inner group-hover:bg-white transition-colors">
+                    {!failedImages[product.id] && product.imageUrl ? (
+                      <img
+                        src={product.imageUrl}
+                        alt={product.title}
+                        onError={() => setFailedImages(prev => ({ ...prev, [product.id]: true }))}
+                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center justify-center text-slate-400">
+                        {renderIcon(product.iconName)}
+                        <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                          {product.categoryLabel}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
+                  {/* Title */}
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    {product.categoryLabel}
+                  </span>
+                  <h3 className="text-sm font-black text-white leading-snug group-hover:text-amber-300 transition-colors">
+                    {product.title}
+                  </h3>
+
                   {/* Tagline & Description */}
-                  <p className="mt-3 text-xs text-slate-300 font-medium leading-snug">
+                  <p className="mt-2 text-xs text-slate-300 font-medium leading-snug">
                     {product.tagline}
-                  </p>
-                  <p className="mt-1.5 text-[11px] text-slate-400 leading-relaxed line-clamp-2">
-                    {product.description}
                   </p>
 
                   {/* Key Benefits */}
-                  <ul className="mt-4 space-y-1.5 border-t border-slate-800/80 pt-3">
+                  <ul className="mt-3.5 space-y-1.5 border-t border-slate-800/80 pt-3">
                     {product.keyBenefits.map((benefit, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-[11px] text-slate-300 font-medium">
                         <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -186,7 +197,7 @@ export default function AmazonStudentDeals({
             ))}
           </div>
 
-          {/* Amazon Associates Compliance Legal Disclaimer */}
+          {/* Amazon Associates Legal Disclaimer */}
           <div className="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-between gap-4 flex-col sm:flex-row text-center sm:text-left">
             <div className="flex items-center gap-2 text-xs text-slate-400 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
