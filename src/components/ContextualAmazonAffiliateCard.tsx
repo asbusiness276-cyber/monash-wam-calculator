@@ -1,6 +1,7 @@
-import { Star, CheckCircle2, ShieldCheck, ExternalLink, Award, Truck } from 'lucide-react';
+import { Star, CheckCircle2, ShieldCheck, Award, Truck } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID, type AmazonProduct } from '../data/amazonProducts';
 import ProductImageDisplay from './ProductImageDisplay';
+import AmazonCtaButton from './AmazonCtaButton';
 
 export const EXCLUDED_AFFILIATE_PATHS = [
   '/about-us',
@@ -91,16 +92,12 @@ export default function ContextualAmazonAffiliateCard({
           {product.tagline}
         </p>
 
-        <a
+        <AmazonCtaButton
           href={product.amazonUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          defaultText="Grab This Offer on Amazon AU"
           onClick={handleClick}
-          className="mt-4 flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl font-black text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/20 hover:shadow-amber-500/40 active:scale-[0.98]"
-        >
-          <span>{product.ctaText}</span>
-          <ExternalLink className="w-3.5 h-3.5" />
-        </a>
+          className="mt-4"
+        />
 
         <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[10px] text-slate-500 font-bold">
           <ShieldCheck className="w-3 h-3 text-emerald-500" />
@@ -167,16 +164,12 @@ export default function ContextualAmazonAffiliateCard({
 
         {/* Right Column: CTA Button & Trust Badges */}
         <div className="md:col-span-3 lg:col-span-3 flex flex-col items-center md:items-end justify-center pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
-          <a
+          <AmazonCtaButton
             href={product.amazonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            defaultText="Grab This Offer on Amazon AU"
             onClick={handleClick}
-            className="group/btn flex items-center justify-center gap-2.5 w-full py-4 px-5 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-[1.03] active:scale-[0.98] cursor-pointer text-center"
-          >
-            <span>{product.ctaText}</span>
-            <ExternalLink className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 shrink-0" />
-          </a>
+            className="w-full py-4 text-sm"
+          />
 
           <div className="mt-3 space-y-1 text-center md:text-right">
             <div className="flex items-center justify-center md:justify-end gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">

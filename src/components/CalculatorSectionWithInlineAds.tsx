@@ -1,7 +1,8 @@
 import { type ReactNode } from 'react';
-import { ExternalLink, Star, Award, ShieldCheck, Zap, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Star, Award, ShieldCheck, Zap, Sparkles, CheckCircle2 } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID } from '../data/amazonProducts';
 import ProductImageDisplay from './ProductImageDisplay';
+import AmazonCtaButton from './AmazonCtaButton';
 
 interface CalculatorSectionWithInlineAdsProps {
   children: ReactNode;
@@ -101,16 +102,12 @@ export default function CalculatorSectionWithInlineAds({
                 </div>
               </div>
 
-              <a
+              <AmazonCtaButton
                 href={casioProduct.amazonUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                defaultText="Grab This Offer on Amazon AU"
                 onClick={() => handleClick(casioProduct.title, casioProduct.amazonUrl)}
-                className="mt-3 flex items-center justify-center gap-1.5 w-full py-2.5 px-3 rounded-xl font-black text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/20 active:scale-[0.98]"
-              >
-                <span>Buy Exam Calculator on Amazon AU →</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+                className="mt-3 py-2.5"
+              />
             </div>
 
             {/* Product 2: Apple MacBook Air M2 */}
@@ -155,16 +152,12 @@ export default function CalculatorSectionWithInlineAds({
                 </div>
               </div>
 
-              <a
+              <AmazonCtaButton
                 href={techProduct.amazonUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                defaultText="Grab This Offer on Amazon AU"
                 onClick={() => handleClick(techProduct.title, techProduct.amazonUrl)}
-                className="mt-3 flex items-center justify-center gap-1.5 w-full py-2.5 px-3 rounded-xl font-black text-xs text-slate-950 bg-gradient-to-r from-blue-400 via-sky-300 to-blue-400 hover:from-blue-300 hover:to-sky-200 transition-all duration-300 shadow-md shadow-blue-500/20 active:scale-[0.98]"
-              >
-                <span>Check Student Deal on Amazon AU →</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+                className="mt-3 py-2.5"
+              />
             </div>
 
             {/* Footer Trust Tag */}

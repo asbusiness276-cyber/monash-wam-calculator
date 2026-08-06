@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Star, Check, ExternalLink, ShoppingBag, ShieldCheck } from 'lucide-react';
+import { Star, Check, ShoppingBag, ShieldCheck } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, type AmazonProduct } from '../data/amazonProducts';
 import ProductImageDisplay from './ProductImageDisplay';
+import AmazonCtaButton from './AmazonCtaButton';
 
 interface AmazonStudentDealsProps {
   title?: string;
@@ -142,16 +143,12 @@ export default function AmazonStudentDeals({
 
                   {/* High-Converting CTA Button */}
                   <div className="mt-5 pt-3 border-t border-slate-800">
-                    <a
+                    <AmazonCtaButton
                       href={product.amazonUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      defaultText="Grab This Offer on Amazon AU"
                       onClick={() => handleProductClick(product)}
-                      className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl font-black text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/20 hover:shadow-amber-500/40 active:scale-[0.98]"
-                    >
-                      <span>{product.ctaText}</span>
-                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                    </a>
+                      className="py-3 text-xs"
+                    />
                   </div>
                 </div>
               );

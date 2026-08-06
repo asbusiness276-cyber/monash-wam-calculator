@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { X, Flame, Star, ExternalLink, ShieldCheck, Clock, CheckCircle2 } from 'lucide-react';
+import { X, Flame, Clock, Star, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID } from '../data/amazonProducts';
 import ProductImageDisplay from './ProductImageDisplay';
+import AmazonCtaButton from './AmazonCtaButton';
 
 interface AmazonResultPopUpModalProps {
   hasResult: boolean;
@@ -122,16 +123,12 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
 
         {/* High-CTR CTA Button */}
         <div className="mt-6 pt-4 border-t border-slate-800">
-          <a
+          <AmazonCtaButton
             href={product.amazonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            defaultText="Grab This Offer on Amazon AU"
             onClick={handleClick}
-            className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl font-black text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-xl shadow-amber-500/25 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <span>🔥 Claim Monash Deal on Amazon AU →</span>
-            <ExternalLink className="w-4 h-4 shrink-0" />
-          </a>
+            className="py-4 text-sm"
+          />
 
           <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400 font-medium px-1">
             <span className="flex items-center gap-1">

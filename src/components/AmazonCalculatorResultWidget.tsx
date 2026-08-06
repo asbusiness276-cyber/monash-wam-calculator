@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { ExternalLink, Star, CheckCircle2, ShieldCheck, Award, Calculator } from 'lucide-react';
+import { Star, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID, type AmazonProduct } from '../data/amazonProducts';
+import ProductImageDisplay from './ProductImageDisplay';
+import AmazonCtaButton from './AmazonCtaButton';
 
 interface AmazonCalculatorResultWidgetProps {
   productId?: string;
@@ -11,17 +12,8 @@ export default function AmazonCalculatorResultWidget({
   productId = 'casio-fx82au',
   className = '',
 }: AmazonCalculatorResultWidgetProps) {
-  const [failCount, setFailCount] = useState(0);
-
   const product: AmazonProduct =
     AMAZON_STUDENT_PRODUCTS.find(p => p.id === productId) || AMAZON_STUDENT_PRODUCTS[0];
-
-  const currentSrc =
-    failCount === 0
-      ? product.imageUrl
-      : failCount === 1
-      ? product.fallbackImageUrl
-      : null;
 
   const handleClick = () => {
     if (typeof window.gtag === 'function') {
@@ -53,22 +45,12 @@ export default function AmazonCalculatorResultWidget({
 
         {/* Product Image */}
         <div className="my-2.5 h-36 w-full rounded-xl bg-white p-2 flex items-center justify-center shadow-inner overflow-hidden">
-          {currentSrc ? (
-            <img
-              src={currentSrc}
-              alt={product.title}
-              referrerPolicy="no-referrer"
-              crossOrigin="anonymous"
-              onError={() => setFailCount(prev => prev + 1)}
-              className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
-              loading="lazy"
-            />
-          ) : (
-            <div className="text-center text-slate-800 font-black text-xs flex flex-col items-center gap-1 p-2">
-              <Calculator className="w-6 h-6 text-amber-500" />
-              <span>{product.title}</span>
-            </div>
-          )}
+          <ProductImageDisplay
+            productId={product.id}
+            title={product.title}
+            imageUrl={product.imageUrl}
+            fallbackImageUrl={product.fallbackImageUrl}
+          />
         </div>
 
         {/* Product Title */}
@@ -98,16 +80,12 @@ export default function AmazonCalculatorResultWidget({
         </ul>
 
         {/* High-CTR CTA Button */}
-        <a
+        <AmazonCtaButton
           href={product.amazonUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          defaultText="Grab This Offer on Amazon AU"
           onClick={handleClick}
-          className="mt-3.5 group flex items-center justify-center gap-1.5 w-full py-2.5 px-3 rounded-xl font-extrabold text-xs text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 transition-all duration-300 shadow-md shadow-amber-500/25 hover:shadow-amber-500/40 active:scale-[0.98]"
-        >
-          <span>Buy on Amazon AU</span>
-          <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-        </a>
+          className="mt-3.5 py-2.5 text-xs"
+        />
 
         {/* Store ID Tag */}
         <p className="mt-2 text-[9px] text-slate-400 text-center flex items-center justify-center gap-1">
