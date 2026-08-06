@@ -4,6 +4,7 @@ import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 import { calculateRequiredFinalExamMark } from '../utils/monashGrades';
 
@@ -83,6 +84,7 @@ export default function FinalGrade() {
       </section>
 
       <section className="max-w-xl mx-auto px-4 py-8">
+        <CalculatorSectionWithInlineAds path="/final-grade-calculator">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
           <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-6">Enter Your Details</h2>
 
@@ -110,21 +112,24 @@ export default function FinalGrade() {
                   type="number"
                   min="0"
                   max="100"
-                  placeholder="e.g. 60"
+                  placeholder="e.g. 50"
                   value={currentWeight}
                   onChange={e => setCurrentWeight(e.target.value)}
                   className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm"
                 />
               </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                  Target Overall Mark (%)
+                  Target Mark (%)
                 </label>
                 <input
                   type="number"
                   min="0"
                   max="100"
-                  placeholder="e.g. 70"
+                  placeholder="e.g. 80 (HD)"
                   value={targetMark}
                   onChange={e => setTargetMark(e.target.value)}
                   className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm"
@@ -132,13 +137,13 @@ export default function FinalGrade() {
               </div>
               <div>
                 <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                  Final Exam Weight (%)
+                  Exam Weight (%)
                 </label>
                 <input
                   type="number"
                   min="0"
                   max="100"
-                  placeholder="e.g. 40"
+                  placeholder="e.g. 50"
                   value={examWeight}
                   onChange={e => setExamWeight(e.target.value)}
                   className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm"
@@ -197,6 +202,7 @@ export default function FinalGrade() {
             <li>If the required score is above 100, discuss alternatives with your unit coordinator.</li>
           </ul>
         </div>
+      </CalculatorSectionWithInlineAds>
       </section>
 
       <CalculatorPageGuide path="/final-grade-calculator" />

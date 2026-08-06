@@ -3,6 +3,7 @@ import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import GradeAverageToolCore from '../components/GradeAverageToolCore';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
@@ -65,7 +66,7 @@ export default function GradeAverage() {
         </p>
       </section>
 
-      <section className="max-w-2xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/grade-average-calculator">
         <GradeAverageToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
@@ -78,7 +79,7 @@ export default function GradeAverage() {
             <strong className="text-gray-800 dark:text-gray-200">76.67%</strong>.
           </p>
         </div>
-      </section>
+      </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/grade-average-calculator" />
       <RelatedCalculators maxItems={6} />
       <PageFaq items={gradeAverageFaqs} />

@@ -3,6 +3,7 @@ import CalculatorPageGuide from '../components/CalculatorPageGuide';
 import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import WamToGpaToolCore from '../components/WamToGpaToolCore';
+import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import { absoluteUrl, HERO_INLINE_LINK_CLASS } from '../constants/site';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
 
@@ -69,7 +70,7 @@ export default function WAMtoGPA() {
         </p>
       </section>
 
-      <section className="max-w-xl mx-auto px-4 py-8">
+      <CalculatorSectionWithInlineAds path="/wam-to-gpa-calculator">
         <WamToGpaToolCore />
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
@@ -132,7 +133,7 @@ export default function WAMtoGPA() {
             estimated 4.0 and 7.0 GPA values for your application.
           </p>
         </div>
-      </section>
+      </CalculatorSectionWithInlineAds>
 
       <CalculatorPageGuide path="/wam-to-gpa-calculator" />
       <RelatedCalculators
