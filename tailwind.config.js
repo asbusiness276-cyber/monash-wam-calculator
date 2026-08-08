@@ -29,10 +29,15 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(8px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        pulseScale: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.02)' },
+        },
       },
       animation: {
         slideUp: 'slideUp 220ms ease-out both',
         fadeIn: 'fadeIn 400ms ease-out both',
+        pulseScale: 'pulseScale 2s ease-in-out infinite',
       },
       boxShadow: {
         'premium-sm': '0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06)',

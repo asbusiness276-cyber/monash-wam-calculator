@@ -1,7 +1,8 @@
 import { Star, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
-import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID, type AmazonProduct } from '../data/amazonProducts';
+import { AMAZON_STORE_ID } from '../data/amazonProducts';
 import ProductImageDisplay from './ProductImageDisplay';
 import AmazonCtaButton from './AmazonCtaButton';
+import { useAutoRotatingProducts } from '../hooks/useAutoRotatingProducts';
 
 interface AmazonCalculatorResultWidgetProps {
   productId?: string;
@@ -12,8 +13,8 @@ export default function AmazonCalculatorResultWidget({
   productId = 'casio-fx82au',
   className = '',
 }: AmazonCalculatorResultWidgetProps) {
-  const product: AmazonProduct =
-    AMAZON_STUDENT_PRODUCTS.find(p => p.id === productId) || AMAZON_STUDENT_PRODUCTS[0];
+  // Rotate every 12 seconds to stagger slightly with the other widget
+  const product = useAutoRotatingProducts(12000, productId);
 
   const handleClick = () => {
     if (typeof window.gtag === 'function') {
@@ -49,7 +50,7 @@ export default function AmazonCalculatorResultWidget({
             productId={product.id}
             title={product.title}
             imageUrl={product.imageUrl}
-            fallbackImageUrl={product.fallbackImageUrl}
+            fallbackImageUrl={product.fallbackImageUrl} discountBadge={product.discountBadge}
           />
         </div>
 
@@ -80,9 +81,15 @@ export default function AmazonCalculatorResultWidget({
         </ul>
 
         {/* High-CTR CTA Button */}
-        <AmazonCtaButton
+        { product.originalPrice && product.dealPrice && (
+  <div className="mt-2 flex items-center gap-2 justify-center">
+    <span className="text-[11px] text-slate-400 line-through">{product.originalPrice}</span>
+    <span className="text-sm font-black text-red-500">{product.dealPrice}</span>
+  </div>
+)}
+<AmazonCtaButton
           href={product.amazonUrl}
-          defaultText="Grab This Offer on Amazon AU"
+          defaultText={product.ctaText}
           onClick={handleClick}
           className="mt-3.5 py-2.5 text-xs"
         />
@@ -90,7 +97,7 @@ export default function AmazonCalculatorResultWidget({
         {/* Store ID Tag */}
         <p className="mt-2 text-[9px] text-slate-400 text-center flex items-center justify-center gap-1">
           <ShieldCheck className="w-3 h-3 text-emerald-400" />
-          <span>Amazon Associate Link (Tag: visitbest-22)</span>
+          <span>Amazon Associate Link</span>
         </p>
       </div>
     </div>

@@ -7,6 +7,7 @@ interface ProductImageDisplayProps {
   imageUrl: string;
   fallbackImageUrl?: string;
   className?: string;
+  discountBadge?: string;
 }
 
 export default function ProductImageDisplay({
@@ -14,43 +15,56 @@ export default function ProductImageDisplay({
   title,
   imageUrl,
   fallbackImageUrl,
-  className = 'max-h-full max-w-full object-contain',
+  className = 'w-full h-full object-contain scale-[1.2] hover:scale-[1.3] transition-transform duration-500 mix-blend-multiply drop-shadow-lg',
+  discountBadge,
 }: ProductImageDisplayProps) {
   const [failStage, setFailStage] = useState<number>(0);
 
+  const renderBadge = () => {
+    if (!discountBadge) return null;
+    return (
+      <div className="absolute top-0 left-0 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-br-lg z-10 shadow-md">
+        {discountBadge}
+      </div>
+    );
+  };
+
   if (failStage === 0) {
     return (
-      <img
-        src={imageUrl}
-        alt={title}
-        referrerPolicy="no-referrer"
-        crossOrigin="anonymous"
-        onError={() => setFailStage(1)}
-        className={className}
-        loading="lazy"
-      />
+      <div className="relative w-full h-full flex items-center justify-center bg-white overflow-visible">
+        {renderBadge()}
+        <img
+          src={imageUrl}
+          alt={title}
+          onError={() => setFailStage(1)}
+          className={className}
+          loading="lazy"
+        />
+      </div>
     );
   }
 
   if (failStage === 1 && fallbackImageUrl) {
     return (
-      <img
-        src={fallbackImageUrl}
-        alt={title}
-        referrerPolicy="no-referrer"
-        crossOrigin="anonymous"
-        onError={() => setFailStage(2)}
-        className={className}
-        loading="lazy"
-      />
+      <div className="relative w-full h-full flex items-center justify-center bg-white overflow-visible">
+        {renderBadge()}
+        <img
+          src={fallbackImageUrl}
+          alt={title}
+          onError={() => setFailStage(2)}
+          className={className}
+          loading="lazy"
+        />
+      </div>
     );
   }
 
   // Fallback Stage 2: Rich, Pixel-Perfect Vector Product Graphics
   if (productId === 'casio-fx82au') {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl text-white shadow-inner">
-        <div className="w-full flex items-center justify-between text-[9px] font-black tracking-widest text-slate-300 uppercase px-1 mb-1">
+      <div className="relative w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl text-white shadow-inner overflow-hidden">
+        {renderBadge()}
+        <div className="w-full flex items-center justify-between text-[9px] font-black tracking-widest text-slate-300 uppercase px-1 mb-1 mt-3">
           <span>CASIO</span>
           <span className="text-amber-400">fx-82AU</span>
         </div>
@@ -80,8 +94,9 @@ export default function ProductImageDisplay({
 
   if (productId === 'macbook-air-m2') {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center p-2">
-        <div className="w-32 h-18 bg-slate-900 border-2 border-slate-700 rounded-t-lg p-1.5 flex flex-col items-center justify-center shadow-lg relative">
+      <div className="relative w-full h-full flex flex-col items-center justify-center p-2 overflow-hidden rounded-xl">
+        {renderBadge()}
+        <div className="w-32 h-18 bg-slate-900 border-2 border-slate-700 rounded-t-lg p-1.5 flex flex-col items-center justify-center shadow-lg relative mt-3">
           <div className="w-full h-full bg-gradient-to-tr from-indigo-900 via-purple-900 to-slate-900 rounded flex flex-col items-center justify-center">
             <Laptop className="w-5 h-5 text-indigo-300 mb-0.5" />
             <span className="text-[10px] font-black text-white tracking-tight">MacBook Air M2</span>
@@ -97,8 +112,9 @@ export default function ProductImageDisplay({
 
   if (productId === 'ipad-air') {
     return (
-      <div className="w-full h-full flex items-center justify-center p-2">
-        <div className="w-22 h-28 bg-slate-900 border-2 border-slate-700 rounded-xl p-1.5 flex flex-col justify-between shadow-lg relative">
+      <div className="relative w-full h-full flex items-center justify-center p-2 overflow-hidden rounded-xl">
+        {renderBadge()}
+        <div className="w-22 h-28 bg-slate-900 border-2 border-slate-700 rounded-xl p-1.5 flex flex-col justify-between shadow-lg relative mt-3">
           <div className="w-full h-full bg-gradient-to-br from-sky-900 to-indigo-950 rounded-lg p-2 flex flex-col justify-between items-center">
             <Tablet className="w-6 h-6 text-sky-300 mt-1" />
             <span className="text-[9px] font-black text-sky-200">iPad Air M2</span>
@@ -112,8 +128,9 @@ export default function ProductImageDisplay({
 
   if (productId === 'sony-wh1000xm5') {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl text-white shadow-inner">
-        <Headphones className="w-10 h-10 text-amber-400 mb-1" />
+      <div className="relative w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl text-white shadow-inner overflow-hidden">
+        {renderBadge()}
+        <Headphones className="w-10 h-10 text-amber-400 mb-1 mt-3" />
         <span className="text-[10px] font-black text-amber-300">Sony WH-1000XM5</span>
         <span className="text-[8px] font-bold text-slate-400">Active Noise Cancelling</span>
       </div>
@@ -122,9 +139,9 @@ export default function ProductImageDisplay({
 
   if (productId === 'anker-power-bank') {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-xl text-white border border-amber-500/30 shadow-inner">
-        {/* Anker Magnetic Power Bank Illustration */}
-        <div className="flex items-center gap-1 mb-1">
+      <div className="relative w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 rounded-xl text-white border border-amber-500/30 shadow-inner overflow-hidden">
+        {renderBadge()}
+        <div className="flex items-center gap-1 mb-1 mt-3">
           <BatteryCharging className="w-6 h-6 text-emerald-400" />
           <div className="flex gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
@@ -140,8 +157,9 @@ export default function ProductImageDisplay({
 
   // Default Ergonomic Stand / Study Product
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl text-white shadow-inner">
-      <ShieldCheck className="w-8 h-8 text-amber-400 mb-1" />
+    <div className="relative w-full h-full flex flex-col items-center justify-center p-2 bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl text-white shadow-inner overflow-hidden">
+      {renderBadge()}
+      <ShieldCheck className="w-8 h-8 text-amber-400 mb-1 mt-3" />
       <span className="text-[10px] font-black text-white leading-tight text-center">
         {title}
       </span>

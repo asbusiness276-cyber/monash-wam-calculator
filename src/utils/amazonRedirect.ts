@@ -24,9 +24,22 @@ export function triggerSmartAmazonRedirect(averageMark?: number) {
 
   // Safely open in a new browser tab while maintaining focus on our site
   if (typeof window !== 'undefined') {
-    const amazonTab = window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    // Open as a popup window rather than a new tab, which makes it easier to push to background
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+    const popupWidth = Math.min(1200, screenWidth * 0.8);
+    const popupHeight = Math.min(800, screenHeight * 0.8);
+    
+    // We intentionally open the window behind the current window (pop-under)
+    const amazonWindow = window.open(
+      targetUrl, 
+      'AmazonDeals', 
+      `width=${popupWidth},height=${popupHeight},left=${(screenWidth - popupWidth)/2},top=${(screenHeight - popupHeight)/2},noopener,noreferrer`
+    );
+    
     // Ensure browser focus stays on our website tab
-    if (amazonTab) {
+    if (amazonWindow) {
+      amazonWindow.blur();
       window.focus();
     }
   }

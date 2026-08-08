@@ -58,7 +58,7 @@ export default function AmazonStudentDeals({
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest bg-amber-500/15 text-amber-400 border border-amber-500/30 mb-3">
                 <ShoppingBag className="w-3.5 h-3.5" />
-                <span>Amazon Australia Verified Deals</span>
+                <span>Amazon Verified Deals</span>
               </div>
               <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">
                 {title}
@@ -113,7 +113,7 @@ export default function AmazonStudentDeals({
                         productId={product.id}
                         title={product.title}
                         imageUrl={product.imageUrl}
-                        fallbackImageUrl={product.fallbackImageUrl}
+                        fallbackImageUrl={product.fallbackImageUrl} discountBadge={product.discountBadge}
                       />
                     </div>
 
@@ -145,10 +145,16 @@ export default function AmazonStudentDeals({
                   <div className="mt-5 pt-3 border-t border-slate-800">
                     <AmazonCtaButton
                       href={product.amazonUrl}
-                      defaultText="Grab This Offer on Amazon AU"
+                      defaultText={product.ctaText}
                       onClick={() => handleProductClick(product)}
                       className="py-3 text-xs"
                     />
+                    {product.originalPrice && product.dealPrice && (
+                      <div className="mt-2 flex items-center justify-center gap-2 mb-1">
+                        <span className="text-[11px] text-slate-400 line-through">{product.originalPrice}</span>
+                        <span className="text-sm font-black text-red-500">{product.dealPrice}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
@@ -160,7 +166,7 @@ export default function AmazonStudentDeals({
             <div className="flex items-center gap-2 text-xs text-slate-400 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>
-                As an Amazon Associate, MonashWAMCalculator earns from qualifying purchases made via links on this site (Store ID: <strong className="text-slate-300">visitbest-22</strong>).
+                As an Amazon Associate, MonashWAMCalculator earns from qualifying purchases made via links on this site.
               </span>
             </div>
             <a
@@ -169,7 +175,7 @@ export default function AmazonStudentDeals({
               rel="noopener noreferrer"
               className="text-xs font-bold text-amber-400 hover:underline shrink-0"
             >
-              Browse All Student Deals on Amazon AU →
+              Browse All Student Deals on Amazon →
             </a>
           </div>
         </div>

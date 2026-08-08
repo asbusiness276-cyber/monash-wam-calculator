@@ -88,7 +88,7 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
               productId={product.id}
               title={product.title}
               imageUrl={product.imageUrl}
-              fallbackImageUrl={product.fallbackImageUrl}
+              fallbackImageUrl={product.fallbackImageUrl} discountBadge={product.discountBadge}
             />
           </div>
 
@@ -123,9 +123,15 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
 
         {/* High-CTR CTA Button */}
         <div className="mt-6 pt-4 border-t border-slate-800">
-          <AmazonCtaButton
+          { product.originalPrice && product.dealPrice && (
+  <div className="mt-2 flex items-center gap-2 justify-center">
+    <span className="text-[11px] text-slate-400 line-through">{product.originalPrice}</span>
+    <span className="text-sm font-black text-red-500">{product.dealPrice}</span>
+  </div>
+)}
+<AmazonCtaButton
             href={product.amazonUrl}
-            defaultText="Grab This Offer on Amazon AU"
+            defaultText={product.ctaText}
             onClick={handleClick}
             className="py-4 text-sm"
           />
@@ -133,7 +139,7 @@ export default function AmazonResultPopUpModal({ hasResult }: AmazonResultPopUpM
           <div className="mt-3 flex items-center justify-between text-[11px] text-slate-400 font-medium px-1">
             <span className="flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              Verified Amazon Associate (visitbest-22)
+              Verified Amazon Associate
             </span>
             <button onClick={() => setIsOpen(false)} className="underline hover:text-white">
               No thanks, close window

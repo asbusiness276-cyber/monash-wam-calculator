@@ -1,7 +1,8 @@
 import { Star, CheckCircle2, ShieldCheck, Award, Truck } from 'lucide-react';
-import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID, type AmazonProduct } from '../data/amazonProducts';
+import { AMAZON_STORE_ID } from '../data/amazonProducts';
 import ProductImageDisplay from './ProductImageDisplay';
 import AmazonCtaButton from './AmazonCtaButton';
+import { useAutoRotatingProducts } from '../hooks/useAutoRotatingProducts';
 
 export const EXCLUDED_AFFILIATE_PATHS = [
   '/about-us',
@@ -25,20 +26,19 @@ export default function ContextualAmazonAffiliateCard({
   className = '',
 }: ContextualAmazonAffiliateCardProps) {
   const isExcluded = EXCLUDED_AFFILIATE_PATHS.some(excluded => path === excluded || path.startsWith(excluded));
-  if (isExcluded) return null;
-
-  let selectedProductId = 'laptop-stand-ergonomic'; // Unique Product #6 for inline banner
-
+  
+  let initialProductId = 'laptop-stand-ergonomic';
   if (path.includes('/articles/best-') || path.includes('university') || path.includes('ranking')) {
-    selectedProductId = 'macbook-air-m2';
+    initialProductId = 'macbook-air-m2';
   } else if (path.includes('/articles/') || path.includes('guide') || path.includes('transcript')) {
-    selectedProductId = 'sony-wh1000xm5';
+    initialProductId = 'sony-wh1000xm5';
   } else if (path.includes('gpa') || path.includes('grade') || path.includes('atar')) {
-    selectedProductId = 'laptop-stand-ergonomic';
+    initialProductId = 'laptop-stand-ergonomic';
   }
 
-  const product: AmazonProduct =
-    AMAZON_STUDENT_PRODUCTS.find(p => p.id === selectedProductId) || AMAZON_STUDENT_PRODUCTS[5];
+  const product = useAutoRotatingProducts(15000, initialProductId);
+
+  if (isExcluded) return null;
 
   const handleClick = () => {
     if (typeof window.gtag === 'function') {
@@ -63,7 +63,7 @@ export default function ContextualAmazonAffiliateCard({
             <Award className="w-3 h-3 text-amber-500" />
             {product.badge}
           </span>
-          <span className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Amazon AU</span>
+          <span className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Amazon</span>
         </div>
 
         {/* Image Container */}
@@ -72,7 +72,7 @@ export default function ContextualAmazonAffiliateCard({
             productId={product.id}
             title={product.title}
             imageUrl={product.imageUrl}
-            fallbackImageUrl={product.fallbackImageUrl}
+            fallbackImageUrl={product.fallbackImageUrl} discountBadge={product.discountBadge}
           />
         </div>
 
@@ -92,16 +92,22 @@ export default function ContextualAmazonAffiliateCard({
           {product.tagline}
         </p>
 
-        <AmazonCtaButton
+        { product.originalPrice && product.dealPrice && (
+  <div className="mt-2 flex items-center gap-2 justify-center">
+    <span className="text-[11px] text-slate-400 line-through">{product.originalPrice}</span>
+    <span className="text-sm font-black text-red-500">{product.dealPrice}</span>
+  </div>
+)}
+<AmazonCtaButton
           href={product.amazonUrl}
-          defaultText="Grab This Offer on Amazon AU"
+          defaultText={product.ctaText}
           onClick={handleClick}
           className="mt-4"
         />
 
         <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[10px] text-slate-500 font-bold">
           <ShieldCheck className="w-3 h-3 text-emerald-500" />
-          <span>Amazon Verified Associate (Store ID: visitbest-22)</span>
+          <span>Amazon Verified Associate</span>
         </div>
       </aside>
     );
@@ -123,7 +129,7 @@ export default function ContextualAmazonAffiliateCard({
               productId={product.id}
               title={product.title}
               imageUrl={product.imageUrl}
-              fallbackImageUrl={product.fallbackImageUrl}
+              fallbackImageUrl={product.fallbackImageUrl} discountBadge={product.discountBadge}
             />
           </div>
 
@@ -164,9 +170,15 @@ export default function ContextualAmazonAffiliateCard({
 
         {/* Right Column: CTA Button & Trust Badges */}
         <div className="md:col-span-3 lg:col-span-3 flex flex-col items-center md:items-end justify-center pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
-          <AmazonCtaButton
+          { product.originalPrice && product.dealPrice && (
+  <div className="mt-2 flex items-center gap-2 justify-center">
+    <span className="text-[11px] text-slate-400 line-through">{product.originalPrice}</span>
+    <span className="text-sm font-black text-red-500">{product.dealPrice}</span>
+  </div>
+)}
+<AmazonCtaButton
             href={product.amazonUrl}
-            defaultText="Grab This Offer on Amazon AU"
+            defaultText={product.ctaText}
             onClick={handleClick}
             className="w-full py-4 text-sm"
           />
@@ -178,7 +190,7 @@ export default function ContextualAmazonAffiliateCard({
             </div>
             <div className="flex items-center justify-center md:justify-end gap-1 text-[11px] text-slate-400 font-semibold">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-              <span>Amazon Associate (Tag: visitbest-22)</span>
+              <span>Amazon Associate</span>
             </div>
           </div>
         </div>

@@ -14,6 +14,9 @@ export interface AmazonProduct {
   keyBenefits: string[];
   ctaText: string;
   iconName: 'calculator' | 'laptop' | 'tablet' | 'headphones' | 'battery' | 'stand';
+  discountBadge?: string;
+  originalPrice?: string;
+  dealPrice?: string;
 }
 
 export const AMAZON_STORE_ID = 'visitbest-22';
@@ -38,8 +41,11 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
       'Dual-line natural textbook display',
       'High-speed calculation engine',
     ],
-    ctaText: 'Check Price on Amazon AU →',
+    ctaText: 'Check Student Price →',
     iconName: 'calculator',
+    discountBadge: 'Save 15%',
+    originalPrice: '$45.00',
+    dealPrice: '$38.25',
   },
   {
     id: 'macbook-air-m2',
@@ -53,15 +59,18 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.8,
     reviewsCount: 5210,
     amazonUrl: `https://www.amazon.com.au/s?k=Apple+MacBook+Air+M2&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/MacBook_Air_M2_2022_Space_Gray.png/640px-MacBook_Air_M2_2022_Space_Gray.png',
-    fallbackImageUrl: 'https://m.media-amazon.com/images/I/71jG+e7roXL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://images.unsplash.com/photo-1611125832047-1d7ad1e8e48a?w=600&auto=format&fit=crop&q=80',
     keyBenefits: [
       '18-hour all-day campus battery life',
       'Super lightweight for backpacks',
       'Seamless multi-tasking for uni software',
     ],
-    ctaText: 'View Amazon AU Deal →',
+    ctaText: 'Claim Back-to-Uni Deal →',
     iconName: 'laptop',
+    discountBadge: 'Save $150',
+    originalPrice: '$1,599',
+    dealPrice: '$1,449',
   },
   {
     id: 'ipad-air',
@@ -75,15 +84,18 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     rating: 4.8,
     reviewsCount: 2950,
     amazonUrl: `https://www.amazon.com.au/s?k=Apple+iPad+Air&tag=${AMAZON_STORE_ID}`,
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/IPad_Air_5.png/640px-IPad_Air_5.png',
-    fallbackImageUrl: 'https://m.media-amazon.com/images/I/61k0d0u-6yL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
+    fallbackImageUrl: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80',
     keyBenefits: [
       'Perfect digital notepad for lectures',
       'Ultra-sharp Liquid Retina display',
       'Apple Pencil Pro & Magic Keyboard support',
     ],
-    ctaText: 'Check Price on Amazon AU →',
+    ctaText: 'View Today\'s Discount →',
     iconName: 'tablet',
+    discountBadge: 'Top Rated',
+    originalPrice: '$999',
+    dealPrice: '$899',
   },
   {
     id: 'sony-wh1000xm5',
@@ -104,8 +116,11 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
       '30-hour battery life with quick charge',
       'Lightweight ergonomic fit for long study sessions',
     ],
-    ctaText: 'Shop Headphones on Amazon AU →',
+    ctaText: 'Shop Headphones Deal →',
     iconName: 'headphones',
+    discountBadge: 'Save $100',
+    originalPrice: '$549',
+    dealPrice: '$449',
   },
   {
     id: 'anker-power-bank',
@@ -128,6 +143,9 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     ],
     ctaText: 'Get Campus Power Bank →',
     iconName: 'battery',
+    discountBadge: '20% OFF',
+    originalPrice: '$69.99',
+    dealPrice: '$55.99',
   },
   {
     id: 'laptop-stand-ergonomic',
@@ -142,13 +160,16 @@ export const AMAZON_STUDENT_PRODUCTS: AmazonProduct[] = [
     reviewsCount: 6310,
     amazonUrl: `https://www.amazon.com.au/s?k=Ergonomic+Laptop+Stand+Aluminium&tag=${AMAZON_STORE_ID}`,
     imageUrl: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&auto=format&fit=crop&q=80',
-    fallbackImageUrl: 'https://m.media-amazon.com/images/I/71Zf9uUp+GL._AC_SL1500_.jpg',
+    fallbackImageUrl: 'https://images.unsplash.com/photo-1611125832047-1d7ad1e8e48a?w=600&auto=format&fit=crop&q=80',
     keyBenefits: [
       'Adjustable height for ideal posture',
       'Fits all 10"-17" laptops (MacBook, Dell, HP)',
       'Foldable and portable for desk & library',
     ],
-    ctaText: 'Buy Laptop Stand on Amazon AU →',
+    ctaText: 'Claim Study Setup Deal →',
     iconName: 'stand',
+    discountBadge: 'Lightning Deal',
+    originalPrice: '$39.99',
+    dealPrice: '$29.99',
   },
 ];
