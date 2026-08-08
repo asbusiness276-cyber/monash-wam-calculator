@@ -178,7 +178,16 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href="https://topschoolsrankings.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center justify-center px-3 py-1.5 text-[10px] font-extrabold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-full shadow-sm hover:shadow transition-all duration-200 uppercase tracking-widest border border-blue-400/30"
+            title="Discover Top Schools Rankings"
+          >
+            Top Schools
+          </a>
           <button
             onClick={toggleDark}
             aria-label="Toggle dark mode"
@@ -277,6 +286,16 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
                 {link.label}
               </a>
             ))}
+          </div>
+          <div className="pt-3 pb-1 mt-2 border-t border-gray-200 dark:border-gray-700">
+             <a
+              href="https://topschoolsrankings.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full block text-center py-2.5 text-xs font-black text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md uppercase tracking-widest border border-blue-400/30"
+             >
+               Explore Top Schools Rankings
+             </a>
           </div>
         </div>
       )}
