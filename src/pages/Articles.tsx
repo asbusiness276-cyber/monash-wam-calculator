@@ -6,6 +6,7 @@ import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCateg
 import { CALCULATOR_COUNT } from '../data/calculatorCatalog';
 import { articles } from '../data/articles';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
+import DonationBanner from '../components/DonationBanner';
 
 const [articlesHome, articlesHowTo] = PAGE_KEYWORD_LINKS['/articles'];
 
@@ -119,10 +120,11 @@ export default function Articles() {
           <a href={absoluteUrl('/calculators')} className={INLINE_LINK_CLASS}>calculators directory</a>
           {' '}for all {CALCULATOR_COUNT} tools grouped by WAM, GPA, exams, and merit planning.
         </p>
-
         
+        <div className="mt-12">
+          <DonationBanner />
+        </div>
 
-        
       </section>
     </>
   );

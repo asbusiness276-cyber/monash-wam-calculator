@@ -10,6 +10,7 @@ import HomeWhyUse from '../components/home/HomeWhyUse';
 import HomeTrustRow from '../components/home/HomeTrustRow';
 import HomeGpaPromo from '../components/home/HomeGpaPromo';
 import HomeWamEducation from '../components/home/HomeWamEducation';
+import DonationBanner from '../components/DonationBanner';
 import { HOME_FAQS } from '../data/homeFaqs';
 
 const HOME_OG_IMAGE = '/article-images/featured-calculate-wam.webp';
@@ -31,6 +32,10 @@ export default function Home() {
       <HomeHero />
       <HomeTrustStrip />
       <HomeCalculatorArea />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <DonationBanner />
+      </div>
 
       <HomeHowItWorks />
       <HomeWhyUse />
