@@ -1,13 +1,11 @@
 import Seo from '../components/Seo';
 import ArticleGridCard from '../components/ArticleGridCard';
-import AffiliateOffers from '../components/AffiliateOffers';
 import { ArticleSearchBar, useArticleSearch } from '../components/ArticleSearch';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCategories';
 import { CALCULATOR_COUNT } from '../data/calculatorCatalog';
 import { articles } from '../data/articles';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
-import ContextualAmazonAffiliateCard from '../components/ContextualAmazonAffiliateCard';
 
 const [articlesHome, articlesHowTo] = PAGE_KEYWORD_LINKS['/articles'];
 
@@ -122,9 +120,9 @@ export default function Articles() {
           {' '}for all {CALCULATOR_COUNT} tools grouped by WAM, GPA, exams, and merit planning.
         </p>
 
-        <ContextualAmazonAffiliateCard path="/articles" variant="inline" className="my-8" />
+        
 
-        <AffiliateOffers />
+        
       </section>
     </>
   );

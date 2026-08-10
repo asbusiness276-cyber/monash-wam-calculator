@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import { getGpaConversionSteps, mapGpaToMonashBand } from '../utils/monashGrades';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 type GpaToWamToolCoreProps = {
   /** Lock to one GPA scale (hides scale toggle). */
@@ -35,8 +34,7 @@ export default function GpaToWamToolCore({
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(result ? (result.wamMin + result.wamMax) / 2 : undefined);
-  };
+      };
 
   return (
     <div data-article-tool-screenshot={screenshotId} className="space-y-8">

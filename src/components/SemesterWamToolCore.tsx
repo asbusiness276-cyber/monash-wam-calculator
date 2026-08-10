@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
 import { calculateSemesterWamSummary, getMonashGradeFromMark } from '../utils/monashGrades';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface SemesterUnit {
   id: number;
@@ -51,8 +50,7 @@ export default function SemesterWamToolCore() {
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(summary?.weightedWam);
-  };
+      };
 
   return (
     <div data-article-tool-screenshot="semester-wam" className="space-y-6">

@@ -1,5 +1,4 @@
 import { getCalculatorPageGuide, type GuideSection } from '../data/calculatorPageGuides';
-import ContextualAmazonAffiliateCard from './ContextualAmazonAffiliateCard';
 
 interface CalculatorPageGuideProps {
   path: string;
@@ -137,7 +136,7 @@ export default function CalculatorPageGuide({ path, className = '' }: Calculator
 
   return (
     <section className={`max-w-3xl mx-auto px-4 py-6 space-y-5 ${className}`} aria-label="Calculator guide">
-      <ContextualAmazonAffiliateCard path={path} variant="inline" className="my-6" />
+      
       {guide.sections.map(section => (
         <GuideBlock key={section.heading} section={section} />
       ))}

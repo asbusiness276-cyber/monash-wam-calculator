@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
 import { calculateWeightedUnitMark, getMonashGradeFromMark } from '../utils/monashGrades';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface AssessmentRow {
   id: number;
@@ -62,8 +61,7 @@ export default function UnitMarkToolCore() {
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(unitMark ?? undefined);
-  };
+      };
 
   return (
     <div data-article-tool-screenshot="unit-mark" className="space-y-6">

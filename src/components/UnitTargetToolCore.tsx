@@ -4,7 +4,6 @@ import {
   calculateRequiredRemainingAssessmentMark,
   getMonashGradeFromMark,
 } from '../utils/monashGrades';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface AssessmentRow {
   id: number;
@@ -77,8 +76,7 @@ export default function UnitTargetToolCore() {
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(needed ?? targetNum ?? undefined);
-  };
+      };
 
   return (
     <div data-article-tool-screenshot="unit-target" className="space-y-6">

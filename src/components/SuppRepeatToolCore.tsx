@@ -7,7 +7,6 @@ import {
   getMonashGradeFromMark,
   monashSupplementaryPassMark,
 } from '../utils/monashGrades';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 function formatDelta(delta: number | null) {
   if (delta === null || delta === 0) return 'No change';
@@ -76,8 +75,7 @@ export default function SuppRepeatToolCore() {
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(suppPassWam ?? repeatWam ?? wamNum ?? undefined);
-  };
+      };
 
   return (
     <div data-article-tool-screenshot="supp-repeat-wam" className="space-y-6">

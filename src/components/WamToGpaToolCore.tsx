@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import { convertWamToGpaBands, monashGradeBands } from '../utils/monashGrades';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 type WamToGpaToolCoreProps = {
   initialWam?: string;
@@ -28,8 +27,7 @@ export default function WamToGpaToolCore({
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(isNaN(parsedWamVal) ? undefined : parsedWamVal);
-  };
+      };
 
   return (
     <div data-article-tool-screenshot={screenshotId} className="space-y-8">

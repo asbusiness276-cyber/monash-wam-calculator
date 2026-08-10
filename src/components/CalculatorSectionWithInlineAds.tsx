@@ -1,5 +1,4 @@
 import { type ReactNode } from 'react';
-import GrammarlyAffiliateBanner from './GrammarlyAffiliateBanner';
 
 interface CalculatorSectionWithInlineAdsProps {
   children: ReactNode;
@@ -14,7 +13,7 @@ export default function CalculatorSectionWithInlineAds({
       <div className="w-full">
         {children}
         
-        <GrammarlyAffiliateBanner className="mt-8" />
+        
       </div>
     </section>
   );

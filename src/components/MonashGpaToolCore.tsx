@@ -6,7 +6,6 @@ import {
   isMonashDistinctionAverage,
   monashOfficialGpaGradeOptions,
 } from '../utils/monashGrades';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 export default function MonashGpaToolCore() {
   const [units, setUnits] = useState(createDefaultGpaUnits());
@@ -18,8 +17,7 @@ export default function MonashGpaToolCore() {
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(result?.gpa ? result.gpa * 22 : undefined);
-  };
+      };
 
   return (
     <div data-article-tool-screenshot="monash-gpa" className="space-y-6">
