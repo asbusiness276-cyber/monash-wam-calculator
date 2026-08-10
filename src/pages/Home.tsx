@@ -31,14 +31,10 @@ export default function Home() {
       <HomeHero />
       <HomeTrustStrip />
       <HomeCalculatorArea />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-      </div>
+
       <HomeHowItWorks />
       <HomeWhyUse />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-      </div>
+
 
       <RelatedCalculators
         variant="home"
