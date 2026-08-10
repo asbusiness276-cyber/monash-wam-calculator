@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
 import { calculateWeightedUnitMark, getMonashGradeFromMark } from '../utils/monashGrades';
-import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface AssessmentRow {
@@ -174,10 +172,10 @@ export default function UnitMarkToolCore() {
             Need only final-exam maths? Use the final grade calculator. For cumulative WAM across units, use the Monash
             WAM calculator.
           </p>
-          <AmazonCalculatorResultWidget />
+          
         </div>
       )}
-      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && unitMark !== null)} />
+      
     </div>
   );
 }

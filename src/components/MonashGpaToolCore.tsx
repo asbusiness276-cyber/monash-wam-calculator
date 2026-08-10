@@ -6,8 +6,6 @@ import {
   isMonashDistinctionAverage,
   monashOfficialGpaGradeOptions,
 } from '../utils/monashGrades';
-import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 export default function MonashGpaToolCore() {
@@ -73,7 +71,7 @@ export default function MonashGpaToolCore() {
                 </span>
               )}
             </p>
-            <AmazonCalculatorResultWidget />
+            
           </div>
         )}
       </div>
@@ -101,7 +99,7 @@ export default function MonashGpaToolCore() {
           </tbody>
         </table>
       </div>
-      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && result)} />
+      
     </div>
   );
 }

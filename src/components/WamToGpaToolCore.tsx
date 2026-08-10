@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import { convertWamToGpaBands, monashGradeBands } from '../utils/monashGrades';
-import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 type WamToGpaToolCoreProps = {
@@ -112,7 +110,7 @@ export default function WamToGpaToolCore({
                 {result.grade} - {result.label}
               </span>
             </div>
-            <AmazonCalculatorResultWidget />
+            
           </div>
         )}
       </div>
@@ -144,7 +142,7 @@ export default function WamToGpaToolCore({
           </tbody>
         </table>
       </div>
-      <AmazonResultPopUpModal hasResult={Boolean(result)} />
+      
     </div>
   );
 }

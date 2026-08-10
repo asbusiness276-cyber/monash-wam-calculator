@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import { getGpaConversionSteps, mapGpaToMonashBand } from '../utils/monashGrades';
-import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 type GpaToWamToolCoreProps = {
@@ -101,7 +99,7 @@ export default function GpaToWamToolCore({
             <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
               Grade bands span a percentage range — this is an approximate Monash WAM equivalent.
             </p>
-            <AmazonCalculatorResultWidget />
+            
           </div>
         )}
       </div>
@@ -133,7 +131,7 @@ export default function GpaToWamToolCore({
           </tbody>
         </table>
       </div>
-      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && result)} />
+      
     </div>
   );
 }

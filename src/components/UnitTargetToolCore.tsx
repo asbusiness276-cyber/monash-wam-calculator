@@ -4,7 +4,6 @@ import {
   calculateRequiredRemainingAssessmentMark,
   getMonashGradeFromMark,
 } from '../utils/monashGrades';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface AssessmentRow {
@@ -210,7 +209,7 @@ export default function UnitTargetToolCore() {
           </p>
         </div>
       )}
-      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && needed !== null)} />
+      
     </div>
   );
 }

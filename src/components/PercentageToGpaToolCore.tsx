@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { getMonashGradeFromMark, monashGradeBands, percentageFromMarks } from '../utils/monashGrades';
-import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
 
 type PercentageToGpaToolCoreProps = {
   emphasizeGpa7?: boolean;
@@ -105,7 +104,7 @@ export default function PercentageToGpaToolCore({ emphasizeGpa7 = false }: Perce
               {effectiveMark.toFixed(1)}% maps to Monash {result.grade} ({result.gpa4.toFixed(1)} on 4.0,{' '}
               {result.gpa7.toFixed(1)} on 7.0).
             </p>
-            <AmazonCalculatorResultWidget />
+            
           </div>
         )}
       </div>

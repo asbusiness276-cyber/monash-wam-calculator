@@ -7,7 +7,6 @@ import {
   getMonashGradeFromMark,
   monashSupplementaryPassMark,
 } from '../utils/monashGrades';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 function formatDelta(delta: number | null) {
@@ -248,7 +247,7 @@ export default function SuppRepeatToolCore() {
           </p>
         </div>
       )}
-      <AmazonResultPopUpModal hasResult={Boolean(isSubmitted && hasInputs)} />
+      
     </div>
   );
 }

@@ -8,10 +8,6 @@ import {
   getMonashGradeFromMark,
   inferMonashYearLevelFromUnitCode,
 } from '../utils/monashGrades';
-import AmazonCalculatorResultWidget from './AmazonCalculatorResultWidget';
-import ContextualAmazonAffiliateCard from './ContextualAmazonAffiliateCard';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
-import { triggerSmartAmazonRedirect } from '../utils/amazonRedirect';
 
 interface Subject {
   id: number;
@@ -119,7 +115,6 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
 
   const handleCheckResult = () => {
     setIsSubmitted(true);
-    triggerSmartAmazonRedirect(result?.officialWam);
   };
 
   const addSubject = () => {
@@ -439,7 +434,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
               </div>
             </div>
 
-            <ContextualAmazonAffiliateCard variant="inline" className="my-6" />
+
           </div>
 
           <aside className="calc-result-aside">
@@ -510,10 +505,8 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 )}
               </div>
             </div>
-            <AmazonCalculatorResultWidget />
           </aside>
 
-          <AmazonResultPopUpModal hasResult={Boolean(result)} />
         </div>
 
         <a href="/wam-to-gpa-calculator" className="calc-gpa-promo-banner group">
