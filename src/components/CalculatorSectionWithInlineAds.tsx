@@ -3,6 +3,7 @@ import { Star, Award, ShieldCheck, Zap, Sparkles, CheckCircle2 } from 'lucide-re
 import { AMAZON_STUDENT_PRODUCTS, AMAZON_STORE_ID } from '../data/amazonProducts';
 import ProductImageDisplay from './ProductImageDisplay';
 import AmazonCtaButton from './AmazonCtaButton';
+import GrammarlyAffiliateBanner from './GrammarlyAffiliateBanner';
 
 interface CalculatorSectionWithInlineAdsProps {
   children: ReactNode;
@@ -36,6 +37,8 @@ export default function CalculatorSectionWithInlineAds({
         {/* LEFT COLUMN: Calculator Form & Result Area */}
         <div className="lg:col-span-7 w-full">
           {children}
+          
+          <GrammarlyAffiliateBanner className="mt-8" />
         </div>
 
         {/* RIGHT COLUMN: Recommended Study Items (Tight Flowing Container with Zero White Space) */}
