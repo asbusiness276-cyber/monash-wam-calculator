@@ -1,6 +1,5 @@
 import { type ReactNode } from 'react';
 import DonationBanner from './DonationBanner';
-import StudentOffersBanner from './StudentOffersBanner';
 
 interface CalculatorSectionWithInlineAdsProps {
   children: ReactNode;
@@ -14,7 +13,6 @@ export default function CalculatorSectionWithInlineAds({
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="w-full">
         {children}
-        <StudentOffersBanner />
         <DonationBanner />
       </div>
     </section>
