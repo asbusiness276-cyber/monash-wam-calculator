@@ -3,6 +3,8 @@ import { enrichArticleContent } from '../utils/enrichArticleContent';
 import { bestEconomicsUniversitiesAustraliaArticle } from './bestEconomicsUniversitiesAustraliaArticle';
 import { bestPharmacyUniversitiesAustraliaArticle } from './bestPharmacyUniversitiesAustraliaArticle';
 import { bestUniversitiesAustraliaArticle } from './bestUniversitiesAustraliaArticle';
+import { monashAtarRequirementsArticle } from './monashAtarRequirementsArticle';
+import { bestComputerScienceUniversitiesAustraliaArticle } from './bestComputerScienceUniversitiesAustraliaArticle';
 
 export type ArticleContentBlock =
   | { type: 'paragraph'; text: string }
@@ -3030,6 +3032,8 @@ const rawArticles: ArticleData[] = [
   bestUniversitiesAustraliaArticle,
   bestPharmacyUniversitiesAustraliaArticle,
   bestEconomicsUniversitiesAustraliaArticle,
+  monashAtarRequirementsArticle,
+  bestComputerScienceUniversitiesAustraliaArticle,
 ];
 
 export const articles: ArticleData[] = rawArticles.map(enrichArticleContent);

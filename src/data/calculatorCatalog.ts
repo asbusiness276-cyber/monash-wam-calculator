@@ -150,6 +150,11 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         description: 'Indicative ATAR ↔ WAM ↔ GPA planning bands.',
       },
       {
+        href: '/monash-atar-course-checker',
+        title: 'Monash ATAR Course Checker',
+        description: 'Check which Monash degrees you can get into with your ATAR.',
+      },
+      {
         href: '/high-school-gpa-calculator',
         title: 'High School GPA Calculator',
         description: 'Weighted and unweighted US-style school GPA.',
@@ -279,6 +284,38 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/monash-exchange-wam-calculator',
         title: 'Exchange WAM Calculator',
         description: 'SFR study abroad — WAM unchanged, credit progress.',
+      },
+    ],
+  },
+  {
+    id: 'student-life',
+    title: 'Student Life & Costs',
+    description: 'Tools for HECS debt, study load, visas, and university admin.',
+    links: [
+      {
+        href: '/hecs-debt-calculator',
+        title: 'HECS-HELP Debt Calculator',
+        description: 'Estimate your total degree cost and projected indexation.',
+      },
+      {
+        href: '/late-penalty-calculator',
+        title: 'Late Penalty Calculator',
+        description: 'Calculate marks lost due to late assignment submissions.',
+      },
+      {
+        href: '/academic-standing-calculator',
+        title: 'Academic Standing Calculator',
+        description: 'Check if you are at risk of academic exclusion or warning.',
+      },
+      {
+        href: '/course-transfer-wam-checker',
+        title: 'Course Transfer WAM Checker',
+        description: 'Check if your WAM meets the cut-off for an internal transfer.',
+      },
+      {
+        href: '/visa-load-calculator',
+        title: 'Student Visa Load Calculator',
+        description: 'Calculate study load required to finish within CoE duration.',
       },
     ],
   },

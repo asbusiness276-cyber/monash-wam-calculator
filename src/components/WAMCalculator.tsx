@@ -8,6 +8,7 @@ import {
   getMonashGradeFromMark,
   inferMonashYearLevelFromUnitCode,
 } from '../utils/monashGrades';
+import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 
 interface Subject {
   id: number;
@@ -522,6 +523,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
         </a>
         </div>
       </section>
+      <AmazonResultPopUpModal hasResult={!!result} />
     </>
   );
 }

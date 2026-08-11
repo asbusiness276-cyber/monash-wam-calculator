@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import PageLoader from './components/PageLoader';
 import Home from './pages/Home';
-
+import AmazonStickySidebars from './components/AmazonStickySidebars';
 const WAMtoGPA = lazy(() => import('./pages/WAMtoGPA'));
 const GPAtoWAM = lazy(() => import('./pages/GPAtoWAM'));
 const FinalGrade = lazy(() => import('./pages/FinalGrade'));
@@ -64,8 +64,14 @@ const CgpaToGpa = lazy(() => import('./pages/CgpaToGpa'));
 const Gpa40Calculator = lazy(() => import('./pages/Gpa40Calculator'));
 const GpaCalculator = lazy(() => import('./pages/GpaCalculator'));
 const AtarConverter = lazy(() => import('./pages/AtarConverter'));
+const AtarCourseChecker = lazy(() => import('./pages/AtarCourseChecker'));
 const HighSchoolGpa = lazy(() => import('./pages/HighSchoolGpa'));
 const Gpa10ToWam = lazy(() => import('./pages/Gpa10ToWam'));
+const HecsHelpDebtCalculator = lazy(() => import('./pages/HecsHelpDebtCalculator'));
+const LatePenaltyCalculator = lazy(() => import('./pages/LatePenaltyCalculator'));
+const AcademicStandingCalculator = lazy(() => import('./pages/AcademicStandingCalculator'));
+const CourseTransferWamChecker = lazy(() => import('./pages/CourseTransferWamChecker'));
+const VisaLoadCalculator = lazy(() => import('./pages/VisaLoadCalculator'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -118,8 +124,14 @@ function getPage(path: string) {
   if (path === '/4-0-gpa-calculator') return withSuspense(<Gpa40Calculator />);
   if (path === '/gpa-calculator') return withSuspense(<GpaCalculator />);
   if (path === '/atar-to-gpa-wam-calculator') return withSuspense(<AtarConverter />);
+  if (path === '/monash-atar-course-checker') return withSuspense(<AtarCourseChecker />);
   if (path === '/high-school-gpa-calculator') return withSuspense(<HighSchoolGpa />);
   if (path === '/10-point-gpa-to-wam-calculator') return withSuspense(<Gpa10ToWam />);
+  if (path === '/hecs-debt-calculator') return withSuspense(<HecsHelpDebtCalculator />);
+  if (path === '/late-penalty-calculator') return withSuspense(<LatePenaltyCalculator />);
+  if (path === '/academic-standing-calculator') return withSuspense(<AcademicStandingCalculator />);
+  if (path === '/course-transfer-wam-checker') return withSuspense(<CourseTransferWamChecker />);
+  if (path === '/visa-load-calculator') return withSuspense(<VisaLoadCalculator />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');
@@ -157,6 +169,7 @@ export default function App() {
         Skip to main content
       </a>
       <Navbar dark={dark} toggleDark={toggle} />
+      <AmazonStickySidebars />
       <main id="main-content" className="flex-1" tabIndex={-1}>
         {getPage(path)}
       </main>

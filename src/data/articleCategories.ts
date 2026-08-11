@@ -96,6 +96,8 @@ const SLUG_TO_CATEGORY: Record<string, string> = {
   'best-pharmacy-universities-in-australia': 'pathways',
   'best-universities-for-economics-in-australia': 'pathways',
   'monash-exchange-grades-wam-guide': 'pathways',
+  'monash-atar-requirements': 'pathways',
+  'best-universities-for-computer-science-in-australia': 'pathways',
 };
 
 export function getArticleCategoryId(slug: string): string {
