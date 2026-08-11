@@ -18,9 +18,10 @@ const infoLinks = [
 const categoryNavLabels: Record<string, string> = {
   wam: 'WAM',
   gpa: 'GPA',
-  grade: 'Grades',
+  averages: 'Averages',
   units: 'Units',
   merit: 'Merit',
+  'student-life': 'Life & Cost',
 };
 
 function getCategoryNavLabel(category: CalculatorCategory): string {
@@ -43,56 +44,58 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
         </a>
 
         {/* Desktop nav — one hover dropdown per calculator group */}
-        <ul className="hidden lg:flex items-center gap-3 xl:gap-4">
-          {CALCULATOR_CATEGORIES.map(category => {
-            const isOpen = openCategoryId === category.id;
-            return (
-              <li
-                key={category.id}
-                className="relative"
-                onMouseEnter={() => setOpenCategoryId(category.id)}
-                onMouseLeave={() => setOpenCategoryId(null)}
-              >
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  aria-haspopup="true"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors whitespace-nowrap"
-                >
-                  {getCategoryNavLabel(category)}
-                  <ChevronDown size={14} className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {isOpen && (
-                  <div className="absolute left-0 top-full pt-2 z-50">
-                    <div className="w-72 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-lg py-2">
-                      <p className="px-3 pb-1 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                        {category.title}
-                      </p>
-                      <ul className="max-h-[min(70vh,22rem)] overflow-y-auto">
-                        {category.links.map(link => (
-                          <li key={link.href}>
-                            <a
-                              href={link.href}
-                              className="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800"
-                            >
-                              {link.title}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
-              </li>
-            );
-          })}
-          <li>
-            <a
-              href="/calculators"
-              className="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline whitespace-nowrap"
+        <ul className="hidden lg:flex items-center gap-4 xl:gap-5">
+          <li
+            className="relative"
+            onMouseEnter={() => setOpenCategoryId('calculators-menu')}
+            onMouseLeave={() => setOpenCategoryId(null)}
+          >
+            <button
+              type="button"
+              aria-expanded={openCategoryId === 'calculators-menu'}
+              aria-haspopup="true"
+              className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors whitespace-nowrap"
             >
-              All tools
-            </a>
+              Calculators
+              <ChevronDown size={14} className={`transition-transform ${openCategoryId === 'calculators-menu' ? 'rotate-180' : ''}`} />
+            </button>
+            {openCategoryId === 'calculators-menu' && (
+              <div className="absolute left-0 top-full pt-2 z-50">
+                <div className="w-[650px] rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl p-5 grid grid-cols-2 gap-x-8 gap-y-6">
+                  {CALCULATOR_CATEGORIES.map(category => (
+                     <div key={category.id}>
+                       <p className="pb-1.5 text-xs font-bold uppercase tracking-wide text-primary-600 dark:text-primary-400 border-b border-gray-100 dark:border-gray-800 mb-2">
+                         {category.title}
+                       </p>
+                       <ul className="space-y-1.5">
+                         {category.links.slice(0, 4).map(link => (
+                           <li key={link.href}>
+                             <a
+                               href={link.href}
+                               className="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                             >
+                               {link.title}
+                             </a>
+                           </li>
+                         ))}
+                         {category.links.length > 4 && (
+                           <li>
+                             <a href="/calculators" className="block text-xs text-gray-500 hover:text-primary-600 font-medium italic mt-1">
+                               + {category.links.length - 4} more tools...
+                             </a>
+                           </li>
+                         )}
+                       </ul>
+                     </div>
+                  ))}
+                  <div className="col-span-2 mt-2 pt-4 border-t border-gray-100 dark:border-gray-800 text-center">
+                    <a href="/calculators" className="inline-flex items-center gap-1.5 text-sm font-bold text-primary-600 hover:text-primary-700 hover:underline">
+                      View All Tools Hub &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
           </li>
           <li
             className="relative"
