@@ -8,7 +8,6 @@ import {
   getUniGradeFromMark,
   inferUniYearLevelFromUnitCode,
 } from '../utils/uniGrades';
-import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 
 interface Subject {
   id: number;
@@ -526,7 +525,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
         </a>
         </div>
       </section>
-      <AmazonResultPopUpModal hasResult={!!result} />
+
     </>
   );
 }

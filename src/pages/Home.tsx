@@ -1,6 +1,5 @@
 import FAQSection from '../components/FAQSection';
 import Seo from '../components/Seo';
-import RelatedCalculators from '../components/RelatedCalculators';
 import ArticlesSection from '../components/ArticlesSection';
 import HomeHero from '../components/home/HomeHero';
 import HomeTrustStrip from '../components/home/HomeTrustStrip';
@@ -8,7 +7,7 @@ import HomeCalculatorArea from '../components/home/HomeCalculatorArea';
 import HomeHowItWorks from '../components/home/HomeHowItWorks';
 import HomeWhyUse from '../components/home/HomeWhyUse';
 import HomeTrustRow from '../components/home/HomeTrustRow';
-import DonationBanner from '../components/DonationBanner';
+import HomeCategoryDirectory from '../components/home/HomeCategoryDirectory';
 import { HOME_FAQS } from '../data/homeFaqs';
 
 const HOME_OG_IMAGE = '/article-images/featured-calculate-wam.webp';
@@ -30,30 +29,12 @@ export default function Home() {
       <HomeHero />
       <HomeTrustStrip />
       <HomeCalculatorArea />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-        <DonationBanner />
-      </div>
+      
+      {/* Massive Directory Hub */}
+      <HomeCategoryDirectory />
 
       <HomeHowItWorks />
       <HomeWhyUse />
-
-
-      <RelatedCalculators
-        variant="home"
-        title="Featured Calculators"
-        description="Popular free tools for WAM, GPA conversion, exam targets, and merit planning."
-        hrefs={[
-          '/wam-calculator',
-          '/age-calculator',
-          '/salary-calculator',
-          '/bmi-calculator',
-          '/password-generator',
-          '/loan-calculator',
-          '/percentage-calculator',
-        ]}
-        maxItems={6}
-      />
 
       <HomeTrustRow />
             

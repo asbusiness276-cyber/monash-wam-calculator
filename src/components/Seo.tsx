@@ -46,7 +46,7 @@ interface SeoProps {
   };
 }
 
-const BASE_URL = 'https://uniwamcalculator.com';
+const BASE_URL = 'https://mycalculatorhub.pro';
 const ORGANIZATION_LOGO = `${BASE_URL}/logo.png`;
 const ROBOTS_INDEX =
   'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';

@@ -37,7 +37,7 @@ export default function HomeHero() {
             </h1>
 
             <p className="home-hero-lead">
-              UniWAMCalculator.com turns official grading rules into free tools — credit-weighted WAM, Year 1
+              MyCalculatorHub.pro turns official grading rules into free tools — credit-weighted WAM, Year 1
               half-weighting, GPA conversion, and semester planning. No spreadsheets. No signup.
             </p>
 

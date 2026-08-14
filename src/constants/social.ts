@@ -1,7 +1,7 @@
-/** Official UniWAMCalculator.com social profiles */
+/** Official MyCalculatorHub.pro social profiles */
 export const SITE_SOCIAL = {
-  facebook: 'https://www.facebook.com/uniwamcalculator/',
-  instagram: 'https://www.instagram.com/uniwamcalculator/',
+  facebook: 'https://www.facebook.com/mycalculatorhub/',
+  instagram: 'https://www.instagram.com/mycalculatorhub/',
   youtube: 'https://www.youtube.com/@UniWamCalculator',
 } as const;
 

@@ -115,18 +115,18 @@ export default function PrivacyPolicy() {
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. Advertising &amp; Affiliates</h2>
             <p>
               My Calculator Hub may display advertisements from partners such as Google AdSense when that account is
-              approved and enabled, and may include affiliate links to student-relevant tools (for example writing aids,
-              VPN, or cloud storage) via networks such as Commission Factory or Awin. Affiliate partners may track
+              approved and enabled to student-relevant tools (for example writing aids,
+              VPN, or cloud storage) via networks such as Commission Factory or Awin. Analytics partners may track
               referrals using cookies or similar technologies after you click a tracked link.
             </p>
             <p className="mt-2">
-              If you purchase or sign up through an affiliate link, we may earn a commission at no extra cost to you.
-              Affiliate recommendations are optional and never required to use our free calculators. This site is not
+              
+               This site is not
               affiliated with the university.
             </p>
             <p className="mt-2">
               We do not sell your personal academic data to advertisers. Calculator inputs are processed locally in your
-              browser and are not transmitted to ad or affiliate networks as part of normal calculator use.
+              browser and are not transmitted to ad networks as part of normal calculator use.
             </p>
             <p className="mt-2">
               Non-personalized ads may still appear if you opt out of personalized advertising when ads are enabled.

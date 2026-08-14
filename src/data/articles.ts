@@ -2047,7 +2047,7 @@ const rawArticles: ArticleData[] = [
         paragraphs: [
           'Assuming WN is “just a withdrawal” with no GPA impact — it carries 0.0 on the 4.0 scale. Expecting WAM to fall the same way as GPA when WN may be WAM-excluded. Comparing WN to a friend\'s N fail without checking credit points and cumulative totals.',
           'Using generic Australian WAM calculators that ignore Uni grade values and exclusion lists. Applying for scholarships with GPA only while the transcript shows WN — panels may review the full record.',
-          'Independent tools on UniWAMCalculator.com are not official Uni systems. Verify all outcomes against WES and published Uni assessment policy.',
+          'Independent tools on MyCalculatorHub.pro are not official Uni systems. Verify all outcomes against WES and published Uni assessment policy.',
         ],
       },
     ],
@@ -2354,7 +2354,7 @@ const rawArticles: ArticleData[] = [
         paragraphs: [
           'Using simple mean of marks instead of WES cumulative WAM. Forgetting fails in completed credit. Setting remaining credit to zero or only one semester when two years remain.',
           'Treating a negative required average as “no work needed” — borderline targets still need protection on 12 cp units. Comparing required average to friends without matching completed and remaining credit.',
-          'Independent tools on UniWAMCalculator.com support planning only. Faculty progression and award decisions use certified Uni results.',
+          'Independent tools on MyCalculatorHub.pro support planning only. Faculty progression and award decisions use certified Uni results.',
         ],
       },
     ],
@@ -2550,7 +2550,7 @@ const rawArticles: ArticleData[] = [
         paragraphs: [
           'Using hoped-for HD marks on every row when coursework already shows credit-level performance — projections should be evidence-based. Forgetting that 12-credit units move WAM more than 6-credit electives at the same percentage.',
           'Mixing semester WAM with cumulative WAM as the starting point. Counting the same unit in both completed cp and upcoming rows. Ignoring year-level weighting when comparing projection output to WES headline WAM.',
-          'Treating projection as certified — employers and faculties use transcript WAM only. Tools on UniWAMCalculator.com support student planning; verify official numbers on WES before formal submissions.',
+          'Treating projection as certified — employers and faculties use transcript WAM only. Tools on MyCalculatorHub.pro support student planning; verify official numbers on WES before formal submissions.',
         ],
       },
     ],

@@ -144,7 +144,7 @@ export default function Footer() {
 
         <div className="footer-copyright mt-10 border-t border-gray-800/80 pt-6 text-center">
           <p className="text-[11px] text-gray-500 max-w-2xl mx-auto mb-2 leading-relaxed">
-            As an Amazon Associate, MyCalculatorHub earns from qualifying purchases made through links on this site.
+            
           </p>
           <p className="text-xs text-gray-500">&copy; 2026 MyCalculatorHub.pro. All rights reserved.</p>
         </div>

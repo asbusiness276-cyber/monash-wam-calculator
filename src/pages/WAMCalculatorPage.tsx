@@ -2,7 +2,6 @@ import Seo from '../components/Seo';
 import RelatedCalculators from '../components/RelatedCalculators';
 import FAQSection from '../components/FAQSection';
 import WAMCalculator from '../components/WAMCalculator';
-import DonationBanner from '../components/DonationBanner';
 
 const faqs = [
   {
@@ -43,9 +42,7 @@ export default function WAMCalculatorPage() {
           <WAMCalculator shellVariant="page" />
         </div>
 
-        <div className="max-w-4xl mx-auto mb-12">
-          <DonationBanner />
-        </div>
+
 
         <div className="max-w-4xl mx-auto">
           <FAQSection items={faqs} title="Frequently Asked Questions" />

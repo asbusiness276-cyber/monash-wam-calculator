@@ -1,6 +1,6 @@
 const DEFAULT_OG_IMAGE_PATH = '/article-images/featured-calculate-wam.webp';
 
-export const DEFAULT_OG_IMAGE = `https://uniwamcalculator.com${DEFAULT_OG_IMAGE_PATH}`;
+export const DEFAULT_OG_IMAGE = `https://mycalculatorhub.pro${DEFAULT_OG_IMAGE_PATH}`;
 export const DEFAULT_OG_IMAGE_ALT =
   'the university student using a laptop to calculate weighted average mark from unit marks and credit points';
 

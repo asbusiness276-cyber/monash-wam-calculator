@@ -7,8 +7,6 @@ import ArticleEndNavigation from '../components/ArticleEndNavigation';
 import ArticleFeaturedImage from '../components/ArticleFeaturedImage';
 import ArticleRelatedTools from '../components/ArticleRelatedTools';
 import ArticleTableOfContents, { ArticleMobileBackToTopButton } from '../components/ArticleTableOfContents';
-import AmazonStudentDeals from '../components/AmazonStudentDeals';
-import DonationBanner from '../components/DonationBanner';
 import { ARTICLE_AUTHOR } from '../constants/author';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import { articles, getArticleBySlug, getArticleImageAlt } from '../data/articles';
@@ -243,7 +241,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
             <ArticleFaqs items={article.faqs} />
 
             <div className="mt-10 mb-6">
-              <DonationBanner />
+
             </div>
 
             <ArticleAuthorBio />
@@ -273,7 +271,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           </div>
         </div>
         <div className="mt-8">
-          <AmazonStudentDeals />
+
         </div>
       </article>
       <ArticleMobileBackToTopButton />

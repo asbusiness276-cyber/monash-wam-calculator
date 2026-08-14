@@ -215,7 +215,7 @@ export default function ContactUs() {
           </ContactCard>
 
           <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Follow UniWAMCalculator</h2>
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Follow My Calculator Hub</h2>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
               Updates, guides, and calculator tips on our official channels.
             </p>

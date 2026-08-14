@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import PageLoader from './components/PageLoader';
 import Home from './pages/Home';
-import AmazonStickySidebars from './components/AmazonStickySidebars';
 import WAMCalculatorPage from './pages/WAMCalculatorPage';
 const WAMtoGPA = lazy(() => import('./pages/WAMtoGPA'));
 const GPAtoWAM = lazy(() => import('./pages/GPAtoWAM'));
@@ -239,7 +238,7 @@ export default function App() {
         Skip to main content
       </a>
       <Navbar dark={dark} toggleDark={toggle} />
-      <AmazonStickySidebars />
+      
       <main id="main-content" className="flex-1" tabIndex={-1}>
         {getPage(path)}
       </main>

@@ -102,7 +102,7 @@ export default function WriteForUs() {
             <ul className="list-disc list-inside space-y-1 mt-2">
               <li>One contextual author bio link may be included when an article is accepted.</li>
               <li>In-article links should support the reader — official university pages, cited sources, or our calculators.</li>
-              <li>Commercial, affiliate, or SEO-only linking is not accepted.</li>
+              <li>Commercial or SEO-only linking is not accepted.</li>
             </ul>
             <p className="mt-2">
               If link placement appears manipulative or unrelated to student learning, the article will be rejected or

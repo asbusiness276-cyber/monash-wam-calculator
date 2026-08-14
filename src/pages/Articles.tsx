@@ -6,7 +6,6 @@ import { ARTICLE_CATEGORIES, getArticleCategoryPath } from '../data/articleCateg
 import { CALCULATOR_COUNT } from '../data/calculatorCatalog';
 import { articles } from '../data/articles';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
-import DonationBanner from '../components/DonationBanner';
 
 const [articlesHome, articlesHowTo] = PAGE_KEYWORD_LINKS['/articles'];
 
@@ -37,7 +36,7 @@ export default function Articles() {
           <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-8 shadow-sm">
             <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">What You Will Find Here</h2>
             <p>
-              UniWAMCalculator.com publishes {articles.length} long-form guides written for students who need
+              MyCalculatorHub.pro publishes {articles.length} long-form guides written for students who need
               more than a one-line FAQ. Each article explains Uni grading concepts in plain language — credit
               points, year-level weighting, distinction average, supplementary exams, exchange grades — and links to
               the free calculator that matches the topic. Guides typically run 800–1,600 words with worked examples,
@@ -122,7 +121,7 @@ export default function Articles() {
         </p>
         
         <div className="mt-12">
-          <DonationBanner />
+
         </div>
 
       </section>
