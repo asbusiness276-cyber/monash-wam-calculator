@@ -15,7 +15,7 @@ export default function StudyBreakToolCore() {
     if (strategy === 'desktime') { studyLen = 52; breakLen = 17; }
     if (strategy === 'ultradian') { studyLen = 90; breakLen = 20; }
 
-    // const totalMins = totalHours * 60;
+    const totalMins = totalHours * 60;
     const cycleLen = studyLen + breakLen;
     const cycles = Math.floor(totalMins / cycleLen);
     const remainder = totalMins % cycleLen;
@@ -91,10 +91,10 @@ export default function StudyBreakToolCore() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {Array.from({ length: cycles }).map((_, i) => (
-                  <React.Fragment key={i}>
+                {Array.from({ length: cycles }).map((_, idx) => (
+                  <React.Fragment key={idx}>
                     <tr>
-                      <td className="px-4 py-2 text-slate-500 font-medium">#{i + 1}</td>
+                      <td className="px-4 py-2 text-slate-500 font-medium">#{idx + 1}</td>
                       <td className="px-4 py-2 font-bold text-indigo-700">Deep Work</td>
                       <td className="px-4 py-2 text-right text-slate-700 font-medium">{studyLen} min</td>
                     </tr>

@@ -134,8 +134,10 @@ async function renderRoute(browser, route) {
   const expectedPath = route === '' ? '/' : route;
   try {
     await page.setViewport({ width: 1280, height: 900 });
-    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    page.on('pageerror', error => console.log('PAGE ERROR:', error.message));
+    page.on('console', msg => {
+      if (msg.type() === 'error') console.log(`[${route}] PAGE LOG ERROR:`, msg.text());
+    });
+    page.on('pageerror', error => console.log(`[${route}] PAGE ERROR:`, error.message));
     await page.goto(`${ORIGIN}${expectedPath}`, { waitUntil: 'networkidle0', timeout: 90000 });
 
     // Wait until React renders and Seo.tsx sets canonical + page-specific title.

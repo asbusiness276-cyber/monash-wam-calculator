@@ -6,42 +6,41 @@ export default function BinaryTextConverterToolCore() {
   const [error, setError] = useState<string>('');
 
   const processConversion = (val: string, currentMode: 'text2bin' | 'bin2text') => {
-    setError('');
-    if (!val) return '';
+    if (!val) return { result: '', err: '' };
     
     try {
       if (currentMode === 'text2bin') {
         // Text to Binary
-        return val.split('').map(char => {
-          return char.charCodeAt(0).toString(2).padStart(8, '0');
-        }).join(' ');
+        return {
+          result: val.split('').map(char => {
+            return char.charCodeAt(0).toString(2).padStart(8, '0');
+          }).join(' '),
+          err: ''
+        };
       } else {
         // Binary to Text
         // Remove spaces and split into 8-bit chunks if user didn't use spaces
         let binStr = val.replace(/\s/g, '');
         if (binStr.length % 8 !== 0) {
-          setError('Binary input length must be a multiple of 8 bits.');
-          return '';
+          return { result: '', err: 'Binary input length must be a multiple of 8 bits.' };
         }
         if (/[^01]/.test(binStr)) {
-          setError('Binary input can only contain 0s and 1s.');
-          return '';
+          return { result: '', err: 'Binary input can only contain 0s and 1s.' };
         }
         
-        let output = '';
+        let out = '';
         for (let i = 0; i < binStr.length; i += 8) {
           const byte = binStr.slice(i, i + 8);
-          output += String.fromCharCode(parseInt(byte, 2));
+          out += String.fromCharCode(parseInt(byte, 2));
         }
-        return output;
+        return { result: out, err: '' };
       }
     } catch (e) {
-      setError('Invalid input.');
-      return '';
+      return { result: '', err: 'Invalid input.' };
     }
   };
 
-  const output = processConversion(input, mode);
+  const { result: output, err: currentError } = processConversion(input, mode);
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
@@ -78,7 +77,7 @@ export default function BinaryTextConverterToolCore() {
             placeholder={mode === 'text2bin' ? "Type your message here..." : "01001000 01101001..."}
             className="w-full h-32 rounded-lg border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 font-mono text-sm"
           />
-          {error && <p className="text-rose-600 text-sm mt-1 font-medium">{error}</p>}
+          {currentError && <p className="text-rose-600 text-sm mt-1 font-medium">{currentError}</p>}
         </div>
 
         <div>
