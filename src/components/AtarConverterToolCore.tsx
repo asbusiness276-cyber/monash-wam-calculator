@@ -3,7 +3,7 @@ import {
   atarPlanningBands,
   convertAtarToPlanningBands,
   convertWamToAtarRange,
-} from '../utils/monashGrades';
+} from '../utils/uniGrades';
 
 type Mode = 'atar-to-wam' | 'wam-to-atar';
 

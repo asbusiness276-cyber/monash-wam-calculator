@@ -14,17 +14,17 @@ const [calcHome, calcArticles] = PAGE_KEYWORD_LINKS['/calculators'];
 const faqs = [
   {
     question: 'How many free calculators does this site offer?',
-    answer: `We publish ${CALCULATOR_COUNT} free Monash-focused calculators covering WAM, GPA, exam targets, scholarships, honours, failed units, and exchange planning — all without signup.`,
+    answer: `We publish ${CALCULATOR_COUNT} free Uni-focused calculators covering WAM, GPA, exam targets, scholarships, honours, failed units, and exchange planning — all without signup.`,
   },
   {
     question: 'Which calculator should I use first?',
     answer:
-      'Start with the Monash WAM calculator for your cumulative weighted average. Add WAM target or projection tools when planning future semesters, or GPA calculators when applications ask for grade points.',
+      'Start with the WAM calculator for your cumulative weighted average. Add WAM target or projection tools when planning future semesters, or GPA calculators when applications ask for grade points.',
   },
   {
-    question: 'Are these official Monash University tools?',
+    question: 'Are these official the university tools?',
     answer:
-      'No. This is an independent student resource using Monash published formulas for planning. Always verify results on WES and your official transcript.',
+      'No. This is an independent student resource using Uni published formulas for planning. Always verify results on WES and your official transcript.',
   },
   {
     question: 'Do calculators work on mobile?',
@@ -42,8 +42,8 @@ export default function Calculators() {
   return (
     <>
       <Seo
-        title={`All Monash Calculators — ${CALCULATOR_COUNT} Free WAM & GPA Tools (2026)`}
-        description={`Browse ${CALCULATOR_COUNT} free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more.`}
+        title={`All Uni Calculators — ${CALCULATOR_COUNT} Free WAM & GPA Tools (2026)`}
+        description={`Browse ${CALCULATOR_COUNT} free Uni calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more.`}
         canonicalPath="/calculators"
         faqItems={faqs}
       />
@@ -53,9 +53,9 @@ export default function Calculators() {
           <Calculator size={14} aria-hidden />
           {CALCULATOR_COUNT} free tools
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-3">All Monash Calculators</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-3">All Uni Calculators</h1>
         <p className="text-primary-100 max-w-2xl mx-auto leading-relaxed">
-          Every WAM, GPA, exam, and merit planning tool in one place — built for Monash University students with
+          Every WAM, GPA, exam, and merit planning tool in one place — built for the university students with
           formulas, guides, and FAQs on each page.
         </p>
       </section>
@@ -63,9 +63,9 @@ export default function Calculators() {
       <section className="max-w-6xl mx-auto px-4 py-10 space-y-10">
         <div className="max-w-3xl space-y-5">
           <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 md:p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Built for Monash Coursework Maths</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Built for Uni Coursework Maths</h2>
             <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              Every tool on this page uses Monash-published grading bands and credit-weighted formulas — WAM with
+              Every tool on this page uses Uni-published grading bands and credit-weighted formulas — WAM with
               Year 1 half-weighting where applicable, official 4.0 grade points for GPA and CGPA, and standard HD/D/C/P
               cut-offs for conversions. Calculators update live in your browser; nothing is stored on a server and no
               account is required. Each page includes a full written guide with formulas, worked examples, and FAQs —
@@ -80,7 +80,7 @@ export default function Calculators() {
           <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-6 md:p-8">
             <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Pick Your Starting Point</h2>
             <ul className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside">
-              <li><strong className="text-gray-800 dark:text-gray-200">New to Monash?</strong> Start with the homepage WAM calculator, then semester WAM for one teaching period.</li>
+              <li><strong className="text-gray-800 dark:text-gray-200">New to Uni?</strong> Start with the homepage WAM calculator, then semester WAM for one teaching period.</li>
               <li><strong className="text-gray-800 dark:text-gray-200">Chasing a target?</strong> Use WAM target, projection, or unit target tools before exams.</li>
               <li><strong className="text-gray-800 dark:text-gray-200">Forms ask for GPA?</strong> Open WAM to GPA, percentage to GPA, or CGPA calculators in the GPA category.</li>
               <li><strong className="text-gray-800 dark:text-gray-200">Recovery semester?</strong> Model failed units, supps, repeats, and withdrawn fail impact.</li>
@@ -92,7 +92,7 @@ export default function Calculators() {
         <div className="max-w-3xl bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 md:p-8 shadow-sm">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">How to Choose a Calculator</h2>
           <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 mb-4">
-            Monash students track academic performance in several ways. <strong className="text-gray-800 dark:text-gray-200">WAM</strong>{' '}
+            Uni students track academic performance in several ways. <strong className="text-gray-800 dark:text-gray-200">WAM</strong>{' '}
             (Weighted Average Mark) uses percentage marks weighted by credit points — it is the primary metric on
             Australian transcripts. <strong className="text-gray-800 dark:text-gray-200">GPA</strong> converts letter grades to
             points on a 4.0 scale. Use the{' '}

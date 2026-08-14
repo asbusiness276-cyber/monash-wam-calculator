@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { calculateRequiredFinalExamMark, MONASH_PASS_MARK } from '../utils/monashGrades';
+import { calculateRequiredFinalExamMark, UNI_PASS_MARK } from '../utils/uniGrades';
 
 export default function PassMarkToolCore() {
   const [currentMark, setCurrentMark] = useState('');
@@ -11,7 +11,7 @@ export default function PassMarkToolCore() {
     const cw = parseFloat(currentWeight) / 100;
     const ew = parseFloat(examWeight) / 100;
     if (Number.isNaN(cm) || Number.isNaN(cw) || Number.isNaN(ew)) return null;
-    return calculateRequiredFinalExamMark(cm, cw, ew, MONASH_PASS_MARK);
+    return calculateRequiredFinalExamMark(cm, cw, ew, UNI_PASS_MARK);
   })();
 
   const getStatus = (n: number | null) => {
@@ -110,7 +110,7 @@ export default function PassMarkToolCore() {
         )}
 
         <p className="mt-4 text-xs text-gray-500 dark:text-gray-400 font-mono bg-gray-50 dark:bg-gray-900/40 p-3 rounded-lg">
-          Formula: ({MONASH_PASS_MARK} − coursework × coursework weight) ÷ exam weight
+          Formula: ({UNI_PASS_MARK} − coursework × coursework weight) ÷ exam weight
         </p>
       </div>
     </div>

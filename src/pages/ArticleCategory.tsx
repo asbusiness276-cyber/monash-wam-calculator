@@ -25,8 +25,8 @@ export default function ArticleCategory({ categoryId }: ArticleCategoryProps) {
   return (
     <>
       <Seo
-        title={`${category.title} Articles | Monash WAM Calculator`}
-        description={`${category.description} Browse ${category.title.toLowerCase()} guides for Monash students.`}
+        title={`${category.title} Articles | WAM Calculator`}
+        description={`${category.description} Browse ${category.title.toLowerCase()} guides for Uni students.`}
         canonicalPath={getArticleCategoryPath(category.id)}
       />
       <section className="max-w-6xl mx-auto px-4 py-10 md:py-12">

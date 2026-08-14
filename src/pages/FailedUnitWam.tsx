@@ -41,8 +41,8 @@ export default function FailedUnitWam() {
   return (
     <>
       <Seo
-        title="Failed Unit WAM Impact Calculator — Monash (2026)"
-        description="Free failed unit WAM calculator for Monash: see how a fail, supplementary pass, or recovery marks change your weighted average."
+        title="Failed Unit WAM Impact Calculator — Uni (2026)"
+        description="Free failed unit WAM calculator for Uni: see how a fail, supplementary pass, or recovery marks change your weighted average."
         canonicalPath="/failed-unit-wam-calculator"
         faqItems={faqs}
       />
@@ -50,7 +50,7 @@ export default function FailedUnitWam() {
       <section className="bg-gradient-to-br from-red-700 to-red-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">Failed Unit WAM Impact Calculator</h1>
         <p className="text-red-100 max-w-xl mx-auto">
-          See how a failed unit affects your Monash WAM — and what changes if you pass via supp or recover the mark.
+          See how a failed unit affects your WAM — and what changes if you pass via supp or recover the mark.
         </p>
         <p className="text-red-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Compare pathways with the{' '}

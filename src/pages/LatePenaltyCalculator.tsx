@@ -13,8 +13,8 @@ const [gpaWam] = PAGE_KEYWORD_LINKS['/late-penalty-calculator'] || [
 
 const faqs = [
   {
-    question: 'How much do you get penalised for a late assignment at Monash?',
-    answer: 'At Monash University, the standard late penalty is 5% of the total maximum mark for the assignment per day it is late.',
+    question: 'How much do you get penalised for a late assignment at Uni?',
+    answer: 'At the university, the standard late penalty is 5% of the total maximum mark for the assignment per day it is late.',
   },
   {
     question: 'Is the penalty deducted from my score or the total score?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: 'What happens if I submit my assignment more than 7 days late?',
-    answer: 'According to Monash policy, assignments submitted more than 7 days after the due date (without an approved extension) will generally receive a mark of zero.',
+    answer: 'According to Uni policy, assignments submitted more than 7 days after the due date (without an approved extension) will generally receive a mark of zero.',
   },
   {
     question: 'Are weekends and public holidays included in the late days?',

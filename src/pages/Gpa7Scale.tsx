@@ -13,15 +13,15 @@ const gpa7ScaleFaqs = [
   {
     question: 'What is a 7.0 GPA scale?',
     answer:
-      'Australian universities often use a 7-point scale: HD = 7, D = 6, CR = 5, P = 4, Fail = 0. Monash maps percentage bands to these values.',
+      'Australian universities often use a 7-point scale: HD = 7, D = 6, CR = 5, P = 4, Fail = 0. Uni maps percentage bands to these values.',
   },
   {
     question: 'What percentage is a 7.0 GPA?',
     answer:
-      '7.0 on the Australian scale corresponds to High Distinction — typically 80% and above at Monash.',
+      '7.0 on the Australian scale corresponds to High Distinction — typically 80% and above at Uni.',
   },
   {
-    question: 'Is 6.0 GPA good at Monash?',
+    question: 'Is 6.0 GPA good at Uni?',
     answer:
       '6.0 maps to Distinction (70–79% WAM band) — a strong result for honours and scholarship planning.',
   },
@@ -36,9 +36,9 @@ const gpa7ScaleFaqs = [
       'For overall WAM conversion, use the WAM to GPA calculator. This tool converts a single percentage mark to 7.0 GPA.',
   },
   {
-    question: 'Does Monash officially report 7.0 GPA?',
+    question: 'Does Uni officially report 7.0 GPA?',
     answer:
-      'Many Monash transcripts emphasise 4.0 GPA and WAM. The 7.0 scale is still widely used in Australian comparisons.',
+      'Many Uni transcripts emphasise 4.0 GPA and WAM. The 7.0 scale is still widely used in Australian comparisons.',
   },
 ];
 
@@ -46,8 +46,8 @@ export default function Gpa7Scale() {
   return (
     <>
       <Seo
-        title="7.0 Scale GPA Calculator - Australian Monash Grades (2026)"
-        description="Free Australian 7.0 GPA calculator: convert Monash percentage marks to the 7-point HD/D/CR/P scale instantly."
+        title="7.0 Scale GPA Calculator - Australian Uni Grades (2026)"
+        description="Free Australian 7.0 GPA calculator: convert Uni percentage marks to the 7-point HD/D/CR/P scale instantly."
         canonicalPath="/7-0-scale-gpa-calculator"
         faqItems={gpa7ScaleFaqs}
       />
@@ -55,7 +55,7 @@ export default function Gpa7Scale() {
       <section className="bg-gradient-to-br from-amber-600 to-amber-800 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">7.0 Scale GPA Calculator</h1>
         <p className="text-amber-100 max-w-xl mx-auto">
-          Convert your Monash percentage mark to the Australian 7-point GPA scale — HD (7), D (6), CR (5), P (4).
+          Convert your Uni percentage mark to the Australian 7-point GPA scale — HD (7), D (6), CR (5), P (4).
         </p>
         <p className="text-amber-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Overall WAM conversion? Use{' '}

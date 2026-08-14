@@ -18,7 +18,7 @@ export default function HomeGpaPromo() {
         >
           <div className="min-w-0 text-left">
             <p className="home-eyebrow text-emerald-700 dark:text-emerald-400">Popular tool</p>
-            <p className="card-title-lg mt-2">WAM to GPA Calculator — free Monash converter</p>
+            <p className="card-title-lg mt-2">WAM to GPA Calculator — free Uni converter</p>
             <p className="card-body mt-2">
               Convert your WAM to 4.0 and 7.0 GPA scales — ideal for scholarships and overseas applications.
             </p>

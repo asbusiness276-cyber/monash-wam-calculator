@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { convertGpaBetweenScales, getGpaConversionSteps } from '../utils/monashGrades';
+import { convertGpaBetweenScales, getGpaConversionSteps } from '../utils/uniGrades';
 
 type GpaScaleConverterToolCoreProps = {
   /** Convert from 4.0 to 7.0 or the reverse. */
@@ -53,7 +53,7 @@ export default function GpaScaleConverterToolCore({
 
       <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
         <h2 className="text-base font-bold text-gray-800 dark:text-white px-5 py-4 border-b border-gray-200 dark:border-gray-700">
-          {fromScale}.0 to {toScale}.0 GPA (Monash Bands)
+          {fromScale}.0 to {toScale}.0 GPA (Uni Bands)
         </h2>
         <table className="w-full text-sm">
           <thead>

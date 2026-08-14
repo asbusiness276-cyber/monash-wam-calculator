@@ -18,12 +18,12 @@ const contactFaqs = [
   {
     question: 'Can I request a new calculator feature?',
     answer:
-      'Yes. Share your use case, who would use it (e.g. pharmacy coursework, double degree), and the Monash rule you are trying to model. Clear feature requests help us prioritise student value.',
+      'Yes. Share your use case, who would use it (e.g. pharmacy coursework, double degree), and the Uni rule you are trying to model. Clear feature requests help us prioritise student value.',
   },
   {
     question: 'Do you provide official academic advice?',
     answer:
-      'No. This site provides informational tools only. For enrolment, progression, supp eligibility, or grade disputes, contact Monash Connect or your faculty student services team.',
+      'No. This site provides informational tools only. For enrolment, progression, supp eligibility, or grade disputes, contact Uni Connect or your faculty student services team.',
   },
   {
     question: 'How long does it take to get a response?',
@@ -33,7 +33,7 @@ const contactFaqs = [
   {
     question: 'Can I ask you to verify my WAM against WES?',
     answer:
-      'We can help you understand the maths if your inputs match WES but results differ — often year level, credit points, or excluded units are the cause. We cannot access your student record or speak to Monash on your behalf.',
+      'We can help you understand the maths if your inputs match WES but results differ — often year level, credit points, or excluded units are the cause. We cannot access your student record or speak to Uni on your behalf.',
   },
   {
     question: 'Do you accept guest posts or partnerships?',
@@ -44,9 +44,9 @@ const contactFaqs = [
 
 const helpRows = [
   ['Calculator bug or wrong formula', 'Yes — include inputs and expected output', '1–5 business days (typical)'],
-  ['Feature idea for a new tool', 'Yes — describe Monash workflow', 'Reviewed in maintenance cycles'],
+  ['Feature idea for a new tool', 'Yes — describe Uni workflow', 'Reviewed in maintenance cycles'],
   ['Article correction or typo', 'Yes — link the section', 'Usually quick'],
-  ['Official enrolment / grade appeal', 'No — use Monash Connect', 'N/A'],
+  ['Official enrolment / grade appeal', 'No — use Uni Connect', 'N/A'],
   ['Scholarship eligibility decision', 'No — faculty or scholarship office', 'N/A'],
   ['Privacy or data request', 'Yes — see privacy policy first', 'Case by case'],
 ];
@@ -98,8 +98,8 @@ export default function ContactUs() {
   return (
     <>
       <Seo
-        title="Contact Us | Monash WAM Calculator"
-        description="Contact Monash WAM Calculator for bug reports, feature requests, article corrections, and privacy questions. Email templates and response expectations for Monash WAM & GPA tools."
+        title="Contact Us | WAM Calculator"
+        description="Contact WAM Calculator for bug reports, feature requests, article corrections, and privacy questions. Email templates and response expectations for WAM & GPA tools."
         canonicalPath="/contact-us"
         faqItems={contactFaqs}
       />
@@ -107,11 +107,11 @@ export default function ContactUs() {
       <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">Contact Us</h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-          Independent student resource · Not Monash University · We reply by email
+          Independent student resource · Not the university · We reply by email
         </p>
         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
           Have feedback, found an issue, or want to suggest a calculator? Email us directly — constructive input helps
-          keep these tools accurate for Monash students.           Read{' '}
+          keep these tools accurate for Uni students.           Read{' '}
           <a href={absoluteUrl('/about-us')} className={INLINE_LINK_CLASS}>
             about us
           </a>{' '}
@@ -132,14 +132,14 @@ export default function ContactUs() {
               The fastest way to reach us. Use a clear subject line so your message lands in the right queue.
             </p>
             <a
-              href={`mailto:${ARTICLE_AUTHOR.email}?subject=${encodeURIComponent('Monash WAM Calculator — Website enquiry')}`}
+              href={`mailto:${ARTICLE_AUTHOR.email}?subject=${encodeURIComponent('WAM Calculator — Website enquiry')}`}
               className={SOCIAL_LINK_BUTTON_CLASS}
             >
               <Mail size={16} className="shrink-0" aria-hidden />
               Email {ARTICLE_AUTHOR.name}
             </a>
             <p className="mt-4 text-xs text-gray-500 dark:text-gray-500">
-              We do not offer phone support or live chat. For urgent academic matters, contact Monash Connect directly.
+              We do not offer phone support or live chat. For urgent academic matters, contact Uni Connect directly.
             </p>
           </ContactCard>
 
@@ -195,7 +195,7 @@ export default function ContactUs() {
               If our calculator differs from WES, check these common causes before reporting a bug:
             </p>
             <ul className="mt-3 list-disc list-inside space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
-              <li>Year level set wrong (Year 1 uses 0.5 weight in official Monash WAM)</li>
+              <li>Year level set wrong (Year 1 uses 0.5 weight in official WAM)</li>
               <li>Credit points do not match your transcript (6 vs 12 cp units)</li>
               <li>In-progress units included before results are final</li>
               <li>Repeat attempts, WN, or faculty exclusions not modelled in a simple WAM calculator</li>
@@ -203,7 +203,7 @@ export default function ContactUs() {
             </ul>
             <p className="mt-4 text-sm">
               Guides:{' '}
-              <a href={absoluteUrl('/articles/how-to-find-wam-on-monash-transcript')} className={INLINE_LINK_CLASS}>
+              <a href={absoluteUrl('/articles/how-to-find-wam-on-uni-transcript')} className={INLINE_LINK_CLASS}>
                 find WAM on transcript
               </a>
               ,{' '}
@@ -215,7 +215,7 @@ export default function ContactUs() {
           </ContactCard>
 
           <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Follow MonashWAMCalculator</h2>
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Follow UniWAMCalculator</h2>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
               Updates, guides, and calculator tips on our official channels.
             </p>
@@ -223,10 +223,10 @@ export default function ContactUs() {
           </div>
 
           <div className="rounded-2xl border border-amber-200 dark:border-amber-900/40 bg-amber-50/60 dark:bg-amber-950/20 p-5 sm:p-6">
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Official Monash Support</h2>
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Official Uni Support</h2>
             <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
               We are an independent student resource and cannot change grades, enrolment, or faculty decisions. For
-              official academic support, use Monash Connect, your unit coordinator, or faculty student services. See our{' '}
+              official academic support, use Uni Connect, your unit coordinator, or faculty student services. See our{' '}
               <a href={absoluteUrl('/disclaimer')} className={INLINE_LINK_CLASS}>
                 disclaimer
               </a>{' '}

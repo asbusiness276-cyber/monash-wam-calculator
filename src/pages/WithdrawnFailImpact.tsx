@@ -11,12 +11,12 @@ const [wnConverter, wnFailGuide] = PAGE_KEYWORD_LINKS['/withdrawn-fail-impact-ca
 
 const faqs = [
   {
-    question: 'What is WN at Monash?',
+    question: 'What is WN at Uni?',
     answer:
-      'WN generally means withdrawn fail. On the Monash 4.0 GPA scale, WN has GPA value 0.0, which is lower than a standard fail (N = 0.3).',
+      'WN generally means withdrawn fail. On the Uni 4.0 GPA scale, WN has GPA value 0.0, which is lower than a standard fail (N = 0.3).',
   },
   {
-    question: 'Does WN affect Monash GPA?',
+    question: 'Does WN affect Uni GPA?',
     answer:
       'Yes. If WN appears as a GPA-counted unit on your record, it contributes 0.0 grade points for that unit credit value.',
   },
@@ -41,18 +41,18 @@ export default function WithdrawnFailImpact() {
   return (
     <>
       <Seo
-        title="Monash Withdrawn Fail (WN) Calculator — GPA 0.0 & WAM Impact (2026)"
-        description="Model Monash withdrawn fail (WN) impact: see how GPA 0.0 affects your average and compare WAM excluded vs worst-case zero-counted scenarios."
+        title="Uni Withdrawn Fail (WN) Calculator — GPA 0.0 & WAM Impact (2026)"
+        description="Model Uni withdrawn fail (WN) impact: see how GPA 0.0 affects your average and compare WAM excluded vs worst-case zero-counted scenarios."
         canonicalPath="/withdrawn-fail-impact-calculator"
-        ogImage="/article-images/featured-monash-withdrawn-fail-wam.webp"
-        ogImageAlt="Monash student checking withdrawn fail impact on cumulative WAM planning"
+        ogImage="/article-images/featured-uni-withdrawn-fail-wam.webp"
+        ogImageAlt="Uni student checking withdrawn fail impact on cumulative WAM planning"
         faqItems={faqs}
       />
 
       <section className="bg-gradient-to-br from-red-700 to-red-950 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">Withdrawn Fail Impact Calculator</h1>
         <p className="text-red-100 max-w-xl mx-auto">
-          Model how WN affects Monash GPA, and compare possible WAM treatment without assuming one policy outcome.
+          Model how WN affects Uni GPA, and compare possible WAM treatment without assuming one policy outcome.
         </p>
         <p className="text-red-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Convert special grades with the{' '}
@@ -70,8 +70,8 @@ export default function WithdrawnFailImpact() {
         hrefs={[
           '/failed-unit-wam-calculator',
           '/supp-repeat-wam-calculator',
-          '/monash-grade-converter',
-          '/monash-cgpa-calculator',
+          '/uni-grade-converter',
+          '/uni-cgpa-calculator',
         ]}
       />
       <PageFaq items={faqs} />

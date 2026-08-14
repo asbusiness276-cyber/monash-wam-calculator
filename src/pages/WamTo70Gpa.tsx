@@ -13,20 +13,20 @@ const faqs = [
   {
     question: 'How do I convert WAM to 7.0 GPA?',
     answer:
-      'Enter your Monash WAM. Australian universities map HD = 7, D = 6, CR = 5, P = 4, Fail = 0 on the 7-point scale.',
+      'Enter your WAM. Australian universities map HD = 7, D = 6, CR = 5, P = 4, Fail = 0 on the 7-point scale.',
   },
   {
     question: 'What WAM is a 7.0 GPA?',
-    answer: '7.0 corresponds to High Distinction — WAM 80% and above at Monash.',
+    answer: '7.0 corresponds to High Distinction — WAM 80% and above at Uni.',
   },
   {
     question: 'Is 7.0 GPA the same as 4.0?',
     answer: 'Same grade band, different numeric scale. HD = 4.0 = 7.0. Use whichever scale your application requests.',
   },
   {
-    question: 'Does Monash report 7.0 GPA officially?',
+    question: 'Does Uni report 7.0 GPA officially?',
     answer:
-      'Many Monash records emphasise WAM and 4.0 GPA. The 7.0 scale is still common for Australian HDR and comparison tables.',
+      'Many Uni records emphasise WAM and 4.0 GPA. The 7.0 scale is still common for Australian HDR and comparison tables.',
   },
   {
     question: 'Single mark vs overall WAM?',
@@ -43,8 +43,8 @@ export default function WamTo70Gpa() {
   return (
     <>
       <Seo
-        title="WAM to 7.0 GPA Calculator - Australian Monash Scale (2026)"
-        description="Free WAM to 7.0 GPA calculator for Monash students. Map your weighted average mark to the Australian 7-point HD/D/CR/P scale."
+        title="WAM to 7.0 GPA Calculator - Australian Uni Scale (2026)"
+        description="Free WAM to 7.0 GPA calculator for Uni students. Map your weighted average mark to the Australian 7-point HD/D/CR/P scale."
         canonicalPath="/wam-to-7-0-gpa-calculator"
         faqItems={faqs}
       />
@@ -52,7 +52,7 @@ export default function WamTo70Gpa() {
       <section className="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">WAM to 7.0 GPA Calculator</h1>
         <p className="text-teal-100 max-w-xl mx-auto">
-          Convert your Monash WAM to the Australian 7-point GPA scale — HD (7), D (6), CR (5), P (4).
+          Convert your WAM to the Australian 7-point GPA scale — HD (7), D (6), CR (5), P (4).
         </p>
         <p className="text-teal-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Both scales together? See{' '}

@@ -5,9 +5,9 @@ import { articles, getArticleBySlug } from '../data/articles';
 
 const FEATURED_SLUGS = [
   'how-to-calculate-wam',
-  'monash-distinction-average-guide',
-  'monash-wam-to-gpa-conversion',
-  'how-to-improve-wam-at-monash',
+  'uni-distinction-average-guide',
+  'uni-wam-to-gpa-conversion',
+  'how-to-improve-wam-at-uni',
 ] as const;
 
 interface ArticlesSectionProps {
@@ -21,7 +21,7 @@ export default function ArticlesSection({ featured = false, maxItems = 3, varian
   const isHome = variant === 'home' || featured;
   const displayed = featured
     ? FEATURED_SLUGS.map(slug => getArticleBySlug(slug)).filter(
-        (article): article is NonNullable<typeof article> => article != null
+        (article: any): article is NonNullable<typeof article> => article != null
       )
     : articles.slice(0, maxItems);
 
@@ -76,7 +76,7 @@ export default function ArticlesSection({ featured = false, maxItems = 3, varian
                 }
               >
                 {featured
-                  ? 'Step-by-step guides on WAM maths, distinction average, GPA conversion, and improvement strategy — written for Monash coursework.'
+                  ? 'Step-by-step guides on WAM maths, distinction average, GPA conversion, and improvement strategy — written for Uni coursework.'
                   : 'Helpful guides for WAM strategy, conversion, and planning.'}
               </p>
             </div>

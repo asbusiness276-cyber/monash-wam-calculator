@@ -3,7 +3,7 @@ import { getArticleCategoryId } from './articleCategories';
 const DEFAULT_RELATED = [
   '/',
   '/wam-to-gpa-calculator',
-  '/monash-gpa-calculator',
+  '/uni-gpa-calculator',
   '/wam-target-calculator',
   '/final-grade-calculator',
   '/supp-repeat-wam-calculator',
@@ -13,7 +13,7 @@ const CATEGORY_RELATED: Record<string, string[]> = {
   'wam-fundamentals': [
     '/',
     '/semester-wam-calculator',
-    '/monash-official-wam-calculator',
+    '/uni-official-wam-calculator',
     '/wam-milestones-calculator',
     '/degree-progress-calculator',
     '/wam-to-gpa-calculator',
@@ -29,16 +29,16 @@ const CATEGORY_RELATED: Record<string, string[]> = {
   'gpa-conversion': [
     '/wam-to-gpa-calculator',
     '/gpa-to-wam-calculator',
-    '/monash-gpa-calculator',
-    '/monash-cgpa-calculator',
+    '/uni-gpa-calculator',
+    '/uni-cgpa-calculator',
     '/percentage-to-gpa-calculator',
     '/atar-to-gpa-wam-calculator',
   ],
   'merit-awards': [
-    '/monash-honours-calculator',
-    '/monash-scholarship-wam-calculator',
-    '/monash-distinction-average-calculator',
-    '/monash-deans-honours-calculator',
+    '/uni-honours-calculator',
+    '/uni-scholarship-wam-calculator',
+    '/uni-distinction-average-calculator',
+    '/uni-deans-honours-calculator',
     '/wam-milestones-calculator',
     '/wam-to-gpa-calculator',
   ],
@@ -52,7 +52,7 @@ const CATEGORY_RELATED: Record<string, string[]> = {
   ],
   pathways: [
     '/',
-    '/monash-exchange-wam-calculator',
+    '/uni-exchange-wam-calculator',
     '/wam-to-gpa-calculator',
     '/atar-to-gpa-wam-calculator',
     '/high-school-gpa-calculator',
@@ -62,12 +62,12 @@ const CATEGORY_RELATED: Record<string, string[]> = {
 
 /** Per-slug overrides when an article should point at a more specific tool set. */
 const SLUG_RELATED: Record<string, string[]> = {
-  'monash-wam-to-gpa-conversion': [
+  'uni-wam-to-gpa-conversion': [
     '/wam-to-gpa-calculator',
     '/wam-to-4-0-gpa-calculator',
     '/wam-to-7-0-gpa-calculator',
     '/gpa-to-wam-calculator',
-    '/monash-gpa-calculator',
+    '/uni-gpa-calculator',
     '/',
   ],
   'atar-to-gpa-wam-conversion-guide': [
@@ -78,23 +78,23 @@ const SLUG_RELATED: Record<string, string[]> = {
     '/',
     '/percentage-to-gpa-calculator',
   ],
-  'monash-scholarship-wam-requirements': [
-    '/monash-scholarship-wam-calculator',
-    '/monash-distinction-average-calculator',
+  'uni-scholarship-wam-requirements': [
+    '/uni-scholarship-wam-calculator',
+    '/uni-distinction-average-calculator',
     '/wam-target-calculator',
     '/wam-to-gpa-calculator',
     '/',
-    '/monash-gpa-calculator',
+    '/uni-gpa-calculator',
   ],
-  'monash-honours-wam-requirements': [
-    '/monash-honours-calculator',
-    '/monash-distinction-average-calculator',
+  'uni-honours-wam-requirements': [
+    '/uni-honours-calculator',
+    '/uni-distinction-average-calculator',
     '/wam-target-calculator',
     '/',
     '/wam-milestones-calculator',
-    '/monash-deans-honours-calculator',
+    '/uni-deans-honours-calculator',
   ],
-  'failed-unit-wam-impact-monash': [
+  'failed-unit-wam-impact-uni': [
     '/failed-unit-wam-calculator',
     '/supp-repeat-wam-calculator',
     '/withdrawn-fail-impact-calculator',
@@ -102,7 +102,7 @@ const SLUG_RELATED: Record<string, string[]> = {
     '/wam-projection-calculator',
     '/',
   ],
-  'monash-final-exam-mark-calculator-guide': [
+  'uni-final-exam-mark-calculator-guide': [
     '/final-grade-calculator',
     '/pass-mark-calculator',
     '/unit-mark-calculator',

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
-import { calculateSemesterWamSummary, getMonashGradeFromMark } from '../utils/monashGrades';
+import { calculateSemesterWamSummary, getUniGradeFromMark } from '../utils/uniGrades';
 
 interface SemesterUnit {
   id: number;
@@ -32,7 +32,7 @@ export default function SemesterWamToolCore() {
     .filter(row => !Number.isNaN(row.mark) && !Number.isNaN(row.credits) && row.credits > 0);
 
   const summary = parsedUnits.length > 0 ? calculateSemesterWamSummary(parsedUnits) : null;
-  const gradeBand = summary ? getMonashGradeFromMark(summary.weightedWam) : null;
+  const gradeBand = summary ? getUniGradeFromMark(summary.weightedWam) : null;
 
   const updateUnit = (id: number, field: keyof SemesterUnit, value: string) => {
     setUnits(prev =>
@@ -164,7 +164,7 @@ export default function SemesterWamToolCore() {
             </p>
           )}
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 leading-relaxed">
-            For cumulative degree WAM including all past semesters, use the Monash WAM calculator on the homepage.
+            For cumulative degree WAM including all past semesters, use the WAM calculator on the homepage.
           </p>
           
         </div>

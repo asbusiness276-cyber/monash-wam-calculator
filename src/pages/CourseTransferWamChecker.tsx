@@ -13,7 +13,7 @@ const [gpaWam] = PAGE_KEYWORD_LINKS['/course-transfer-wam-checker'] || [
 
 const faqs = [
   {
-    question: 'What WAM do I need to transfer internally at Monash?',
+    question: 'What WAM do I need to transfer internally at Uni?',
     answer: 'It depends entirely on the course. Arts or Science typically require around a 60 WAM, while highly competitive courses like Law (Honours) or Physiotherapy usually require a 75+ WAM.',
   },
   {
@@ -35,7 +35,7 @@ export default function CourseTransferWamChecker() {
     <>
       <Seo
         title="Course Transfer WAM Checker - Internal Transfer Requirements"
-        description="Check if your Monash WAM meets the minimum cut-off requirements for an internal course transfer to Law, Medicine, Engineering, and more."
+        description="Check if your WAM meets the minimum cut-off requirements for an internal course transfer to Law, Medicine, Engineering, and more."
         canonicalPath="/course-transfer-wam-checker"
         faqItems={faqs}
       />

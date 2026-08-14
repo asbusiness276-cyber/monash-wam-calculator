@@ -1,10 +1,10 @@
 {
   "/about-us": {
-    "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 100 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "title": "About Us | My Calculator Hub — Who We Are",
+    "description": "Independent WAM calculator site by Saahil: 89 free tools, 0 student guides, Uni-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
-    "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
+    "title": "Academic Standing & Risk Calculator - Uni Progress Rules",
     "description": "Check if you are at risk of academic exclusion or warning. Calculate your pass rate and academic standing based on failed units."
   },
   "/age-calculator": {
@@ -16,25 +16,21 @@
     "description": "Instantly sort lists, references, and bibliographies alphabetically (A-Z or Z-A). Free online list sorter tool."
   },
   "/articles": {
-    "title": "Student Articles | Monash WAM Calculator",
-    "description": "Browse Monash student guides by category: WAM fundamentals, GPA conversion, honours, scholarships, exam recovery, and planning targets."
+    "title": "Student Articles | WAM Calculator",
+    "description": "Browse Uni student guides by category: WAM fundamentals, GPA conversion, honours, scholarships, exam recovery, and planning targets."
   },
   "/atar-to-gpa-wam-calculator": {
     "title": "ATAR to GPA & WAM Calculator - Australia Planning (2026)",
     "description": "Free ATAR to GPA and WAM converter for Australian students. Indicative ATAR ↔ WAM ↔ 4.0 GPA bands for university planning."
-  },
-  "/monash-atar-course-checker": {
-    "title": "Monash ATAR Course Eligibility Checker (2025)",
-    "description": "Enter your ATAR to instantly see which Monash University degrees you can get into. Checks guaranteed ATARs and SEAS (Monash Guarantee) requirements."
   },
   "/attendance-calculator": {
     "title": "Attendance Calculator | Track Your Classes",
     "description": "Calculate how many classes you can skip while maintaining your target university attendance percentage (e.g., 75% or 80%)."
   },
   "/about-author": {
-    "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 100 free tools and 32 student guides on WAM, GPA, and Australian university life.",
-    "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
+    "title": "About Saahil | Author — My Calculator Hub",
+    "description": "Meet Saahil, founder and editor of My Calculator Hub — 89 free tools and 0 student guides on WAM, GPA, and Australian university life.",
+    "ogImageAlt": "Saahil, creator of WAM Calculator"
   },
   "/binary-to-text-converter": {
     "title": "Binary to Text Converter | Binary Translator",
@@ -45,16 +41,16 @@
     "description": "Calculate the half-life of your coffee or energy drink. Find out when you will crash and when it is safe to go to sleep."
   },
   "/calculators": {
-    "title": "All Monash Calculators — 100 Free WAM & GPA Tools (2026)",
-    "description": "Browse 100 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Uni Calculators — 89 Free WAM & GPA Tools (2026)",
+    "description": "Browse 89 free Uni calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
-    "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
-    "description": "Free CGPA to GPA calculator: convert 10-point CGPA to 4.0 GPA or confirm Monash cumulative GPA equals CGPA."
+    "title": "CGPA to GPA Calculator - 10-Point & Uni 4.0 (2026)",
+    "description": "Free CGPA to GPA calculator: convert 10-point CGPA to 4.0 GPA or confirm Uni cumulative GPA equals CGPA."
   },
   "/cgpa-to-wam-calculator": {
-    "title": "CGPA to WAM Calculator - Monash 4.0 Scale (2026)",
-    "description": "Free CGPA to WAM calculator for Monash students. Convert cumulative 4.0 GPA to approximate weighted average mark ranges."
+    "title": "CGPA to WAM Calculator - Uni 4.0 Scale (2026)",
+    "description": "Free CGPA to WAM calculator for Uni students. Convert cumulative 4.0 GPA to approximate weighted average mark ranges."
   },
   "/daily-coffee-cost-calculator": {
     "title": "Daily Coffee Cost Calculator | Budget Reality Check",
@@ -65,100 +61,82 @@
     "description": "Compare the true cost of living close to campus vs living further away, factoring in rent, public transport, and the hidden cost of commute time."
   },
   "/contact-us": {
-    "title": "Contact Us | Monash WAM Calculator",
-    "description": "Contact Monash WAM Calculator for bug reports, feature requests, article corrections, and privacy questions. Email templates and response expectations for Monash WAM & GPA tools."
+    "title": "Contact Us | WAM Calculator",
+    "description": "Contact WAM Calculator for bug reports, feature requests, article corrections, and privacy questions. Email templates and response expectations for WAM & GPA tools."
   },
   "/course-transfer-wam-checker": {
     "title": "Course Transfer WAM Checker - Internal Transfer Requirements",
-    "description": "Check if your Monash WAM meets the minimum cut-off requirements for an internal course transfer to Law, Medicine, Engineering, and more."
+    "description": "Check if your WAM meets the minimum cut-off requirements for an internal course transfer to Law, Medicine, Engineering, and more."
   },
   "/days-between-dates-calculator": {
     "title": "Days Between Dates Calculator | Time Duration Counter",
     "description": "Calculate the exact number of days, weeks, and months between any two dates. Perfect for assignment deadlines and exam countdowns."
   },
   "/degree-progress-calculator": {
-    "title": "Degree Progress Calculator — Monash Credit Points Tracker (2026)",
-    "description": "Free Monash degree progress calculator: track completed credit points, percent complete, and estimated semesters remaining toward your degree."
+    "title": "Degree Progress Calculator — Uni Credit Points Tracker (2026)",
+    "description": "Free Uni degree progress calculator: track completed credit points, percent complete, and estimated semesters remaining toward your degree."
   },
   "/detailed-text-analyzer": {
     "title": "Detailed Text Analyzer & Speech Time Calculator",
     "description": "Count words, characters, sentences, and paragraphs. Accurately calculate presentation speaking time based on standard words-per-minute."
   },
   "/disclaimer": {
-    "title": "Disclaimer | Monash WAM Calculator",
-    "description": "Read the Monash WAM Calculator disclaimer regarding academic accuracy and non-affiliation with Monash University."
-  },
-  "/embed/monash-wam": {
-    "title": "Monash WAM Calculator (embed)",
-    "description": "Embedded Monash WAM calculator preview.",
-    "noIndex": true
-  },
-  "/embed/wam-to-gpa": {
-    "title": "WAM to GPA Calculator (embed)",
-    "description": "Embedded WAM to GPA calculator preview.",
-    "noIndex": true
+    "title": "Disclaimer | My Calculator Hub",
+    "description": "Read the My Calculator Hub disclaimer regarding academic accuracy and non-affiliation with the university."
   },
   "/essay-word-count-allocator": {
     "title": "Essay Word Count Allocator | Structure Your Writing",
     "description": "Plan your academic essay structure. Calculate the exact word count needed for your introduction, body paragraphs, and conclusion."
   },
   "/failed-unit-wam-calculator": {
-    "title": "Failed Unit WAM Impact Calculator — Monash (2026)",
-    "description": "Free failed unit WAM calculator for Monash: see how a fail, supplementary pass, or recovery marks change your weighted average."
+    "title": "Failed Unit WAM Impact Calculator — Uni (2026)",
+    "description": "Free failed unit WAM calculator for Uni: see how a fail, supplementary pass, or recovery marks change your weighted average."
   },
   "/final-grade-calculator": {
-    "title": "Monash Final Grade Calculator - Free Exam Mark Planner (2026)",
-    "description": "Free final grade calculator for Monash students. Find the exam mark you need to hit your target grade - Monash grade calculator for unit & WAM planning."
+    "title": "Uni Final Grade Calculator - Free Exam Mark Planner (2026)",
+    "description": "Free final grade calculator for Uni students. Find the exam mark you need to hit your target grade - Uni grade calculator for unit & WAM planning."
   },
   "/10-point-gpa-to-wam-calculator": {
-    "title": "10-Point GPA to WAM Calculator - Monash Converter (2026)",
-    "description": "Free 10-point GPA to WAM calculator. Convert CGPA/GPA on a 10.0 scale to Monash WAM grade bands for planning."
-  },
-  "/4-0-gpa-calculator": {
-    "title": "4.0 GPA Calculator - Free Monash Scale (2026)",
-    "description": "Free 4.0 GPA calculator: compute GPA out of 4.0 from unit grades and credit points using Monash official grade values."
+    "title": "10-Point GPA to WAM Calculator - Uni Converter (2026)",
+    "description": "Free 10-point GPA to WAM calculator. Convert CGPA/GPA on a 10.0 scale to WAM grade bands for planning."
   },
   "/4-0-to-7-0-gpa-calculator": {
-    "title": "4.0 to 7.0 GPA Calculator - Australian Monash Converter (2026)",
-    "description": "Free 4.0 to 7.0 GPA calculator using Monash grade bands. Convert US-style GPA to the Australian 7-point scale."
+    "title": "4.0 to 7.0 GPA Calculator - Australian Uni Converter (2026)",
+    "description": "Free 4.0 to 7.0 GPA calculator using Uni grade bands. Convert US-style GPA to the Australian 7-point scale."
   },
   "/4-0-gpa-to-wam-calculator": {
-    "title": "4.0 GPA to WAM Calculator - Monash Converter (2026)",
-    "description": "Free 4.0 GPA to WAM calculator for Monash planning. Convert US-style GPA to approximate Monash weighted average mark ranges."
+    "title": "4.0 GPA to WAM Calculator - Uni Converter (2026)",
+    "description": "Free 4.0 GPA to WAM calculator for Uni planning. Convert US-style GPA to approximate Uni weighted average mark ranges."
   },
   "/7-0-to-4-0-gpa-calculator": {
-    "title": "7.0 to 4.0 GPA Calculator - Monash Converter (2026)",
-    "description": "Free 7.0 to 4.0 GPA calculator for Monash and Australian students. Convert 7-point GPA to the US-style 4.0 scale."
+    "title": "7.0 to 4.0 GPA Calculator - Uni Converter (2026)",
+    "description": "Free 7.0 to 4.0 GPA calculator for Uni and Australian students. Convert 7-point GPA to the US-style 4.0 scale."
   },
   "/7-0-gpa-to-wam-calculator": {
-    "title": "7.0 GPA to WAM Calculator - Australian Monash Scale (2026)",
-    "description": "Free 7.0 GPA to WAM calculator. Convert Australian 7-point GPA to approximate Monash weighted average mark ranges."
+    "title": "7.0 GPA to WAM Calculator - Australian Uni Scale (2026)",
+    "description": "Free 7.0 GPA to WAM calculator. Convert Australian 7-point GPA to approximate Uni weighted average mark ranges."
   },
   "/7-0-scale-gpa-calculator": {
-    "title": "7.0 Scale GPA Calculator - Australian Monash Grades (2026)",
-    "description": "Free Australian 7.0 GPA calculator: convert Monash percentage marks to the 7-point HD/D/CR/P scale instantly."
-  },
-  "/gpa-calculator": {
-    "title": "GPA Calculator Australia - Free 4.0 Scale (2026)",
-    "description": "Free GPA calculator for Australian university students. Compute 4.0 GPA from grades and credit points — Monash official formula."
+    "title": "7.0 Scale GPA Calculator - Australian Uni Grades (2026)",
+    "description": "Free Australian 7.0 GPA calculator: convert Uni percentage marks to the 7-point HD/D/CR/P scale instantly."
   },
   "/gpa-to-cgpa-calculator": {
-    "title": "GPA to CGPA Calculator - Monash 4.0 Scale (2026)",
-    "description": "Free GPA to CGPA calculator: add semester GPA to prior cumulative GPA using Monash credit-weighted 4.0 scale maths."
+    "title": "GPA to CGPA Calculator - Uni 4.0 Scale (2026)",
+    "description": "Free GPA to CGPA calculator: add semester GPA to prior cumulative GPA using Uni credit-weighted 4.0 scale maths."
   },
   "/gpa-to-percentage-calculator": {
-    "title": "GPA to Percentage Calculator - Monash 4.0 & 7.0 (2026)",
-    "description": "Free GPA to percentage calculator for Monash students. Convert 4.0 or 7.0 GPA to approximate percentage and WAM bands."
+    "title": "GPA to Percentage Calculator - Uni 4.0 & 7.0 (2026)",
+    "description": "Free GPA to percentage calculator for Uni students. Convert 4.0 or 7.0 GPA to approximate percentage and WAM bands."
   },
   "/gpa-to-wam-calculator": {
-    "title": "GPA to WAM Calculator — Monash Percentage Range Estimator (2026)",
-    "description": "Convert 4.0 or 7.0 GPA to approximate Monash WAM percentage ranges using official HD/D/C/P bands — for transfer and application planning.",
+    "title": "GPA to WAM Calculator — Uni Percentage Range Estimator (2026)",
+    "description": "Convert 4.0 or 7.0 GPA to approximate WAM percentage ranges using official HD/D/C/P bands — for transfer and application planning.",
     "ogImage": "/article-images/featured-convert-wam.webp",
-    "ogImageAlt": "Student comparing GPA and WAM conversion scales on a laptop for Monash grade planning"
+    "ogImageAlt": "Student comparing GPA and WAM conversion scales on a laptop for Uni grade planning"
   },
   "/grade-average-calculator": {
-    "title": "Grade Average Calculator - Simple & Weighted Mean (Monash 2026)",
-    "description": "Free grade average calculator: find the simple mean of your marks or a credit-weighted average with Monash credit points."
+    "title": "Grade Average Calculator - Simple & Weighted Mean (Uni 2026)",
+    "description": "Free grade average calculator: find the simple mean of your marks or a credit-weighted average with Uni credit points."
   },
   "/hecs-debt-calculator": {
     "title": "HECS-HELP Debt Calculator Australia - Estimate Total Debt",
@@ -181,8 +159,8 @@
     "description": "Free high school GPA calculator: compute weighted or unweighted GPA from course grades and credits for US-style transcripts."
   },
   "/": {
-    "title": "Monash WAM Calculator | Free WAM Calculator Monash University (2026)",
-    "description": "Free Monash WAM calculator with official Year 1 (0.5) weighting. Enter marks & credit points — instant weighted average, HD/D bands & WAM to GPA. No signup.",
+    "title": "My Calculator Hub | 100+ Free Online Calculators",
+    "description": "My Calculator Hub is your go-to destination for everyday calculators. From finance and health to math and utilities, we have over 100+ free online calculators.",
     "ogImageAlt": "Monash university student using a laptop to calculate weighted average mark from unit marks and credit points"
   },
   "/late-penalty-calculator": {
@@ -194,58 +172,16 @@
     "description": "Calculate exactly how long it takes to watch a lecture or YouTube video at 1.25x, 1.5x, or 2x speed. See how much time you save."
   },
   "/mark-to-grade-calculator": {
-    "title": "Monash Mark to Grade Calculator - HD, D, C, P Converter (2026)",
-    "description": "Free Monash mark to grade calculator: convert any percentage to HD, D, C, P or N instantly. Monash grading scale with GPA bands."
-  },
-  "/monash-cgpa-calculator": {
-    "title": "Monash CGPA Calculator — Cumulative GPA (2026)",
-    "description": "Free Monash cumulative GPA calculator: combine prior GPA with current semester units to compute updated CGPA on the official 4.0 scale."
-  },
-  "/monash-deans-honours-calculator": {
-    "title": "Monash Dean's Honours List Calculator — WAM Planning Bands (2026)",
-    "description": "Free Monash dean's honours list calculator: check distinction average status and faculty excellence planning bands from WAM 70 to 85+."
-  },
-  "/monash-distinction-average-calculator": {
-    "title": "Monash Distinction Average Calculator — WAM 70 / GPA 3.0 (2026)",
-    "description": "Free Monash distinction average calculator: check if your WAM or GPA meets the 70 / 3.0 distinction threshold and see how many points you need."
-  },
-  "/monash-exchange-wam-calculator": {
-    "title": "Monash Exchange WAM Calculator — SFR & Study Abroad (2026)",
-    "description": "Free Monash exchange WAM calculator: see that SFR study abroad credit does not change WAM and check degree credit progress."
-  },
-  "/monash-gpa-calculator": {
-    "title": "Monash GPA Calculator — Free 4.0 Scale (2026)",
-    "description": "Free Monash University GPA calculator: enter unit grades or marks and credit points to compute your official-style 4.0 GPA instantly."
-  },
-  "/monash-grade-converter": {
-    "title": "Monash Grade Converter — Mark, Letter & GPA (2026)",
-    "description": "Free Monash grade converter: convert between percentage marks, HD/D/C/P letter grades, and official 4.0 GPA values instantly."
-  },
-  "/monash-honours-calculator": {
-    "title": "Monash Honours Calculator — H1, H2A, H2B Classification (2026)",
-    "description": "Free Monash honours classification calculator: enter your WAM to see H1, H2A, H2B or pass band using official Monash thresholds (H2A from 70)."
-  },
-  "/monash-official-wam-calculator": {
-    "title": "Monash Official WAM Calculator — Year 1 Half Weight (2026)",
-    "description": "Compare planning WAM vs official Monash WAM with Year 1 half-weighting. Free calculator shows how year-level rules change your weighted average."
-  },
-  "/monash-scholarship-wam-calculator": {
-    "title": "Monash Scholarship WAM Calculator — Required Average for Merit Bands (2026)",
-    "description": "Plan Monash merit scholarship WAM targets: enter current WAM and credit points to see the average needed on remaining units for bands from 65 to 85 WAM.",
-    "ogImage": "/article-images/featured-monash-scholarship-wam.webp",
-    "ogImageAlt": "Monash student reviewing scholarship merit WAM requirements on a laptop"
-  },
-  "/monash-target-gpa-calculator": {
-    "title": "Monash Target GPA Calculator — Desired GPA Planner (2026)",
-    "description": "Free Monash target GPA calculator: see what semester GPA you need on planned credits to reach your desired cumulative GPA."
+    "title": "Uni Mark to Grade Calculator - HD, D, C, P Converter (2026)",
+    "description": "Free Uni mark to grade calculator: convert any percentage to HD, D, C, P or N instantly. Uni grading scale with GPA bands."
   },
   "/number-to-words-converter": {
     "title": "Number to Words Converter | Write Numbers in English",
     "description": "Instantly convert any number into its written English word equivalent. Perfect for essays, cheques, and formal writing."
   },
   "/pass-mark-calculator": {
-    "title": "Pass Mark Calculator — Exam Score Needed to Pass (Monash 2026)",
-    "description": "Free pass mark calculator for Monash students: find the minimum final exam percentage needed to reach 50% overall and pass your unit."
+    "title": "Pass Mark Calculator — Exam Score Needed to Pass (Uni 2026)",
+    "description": "Free pass mark calculator for Uni students: find the minimum final exam percentage needed to reach 50% overall and pass your unit."
   },
   "/peer-review-mark-calculator": {
     "title": "Group Assignment Peer Mark Calculator | SPARKPLUS Evaluator",
@@ -256,16 +192,16 @@
     "description": "Easily solve percentage problems. Calculate percentage increase, decrease, or find out what percent one number is of another."
   },
   "/percentage-to-gpa-calculator": {
-    "title": "Percentage to GPA Calculator - Monash 4.0 & 7.0 Scale (2026)",
-    "description": "Free percentage to GPA calculator for Monash students: convert any mark to 4.0 and 7.0 GPA using official Monash grade bands."
+    "title": "Percentage to GPA Calculator - Uni 4.0 & 7.0 Scale (2026)",
+    "description": "Free percentage to GPA calculator for Uni students: convert any mark to 4.0 and 7.0 GPA using official Uni grade bands."
   },
   "/pomodoro-study-timer": {
     "title": "Pomodoro Study Timer | 25-Minute Focus Tool",
     "description": "Boost your productivity with our free Pomodoro study timer. Use the 25/5 minute technique to maintain focus and avoid university burnout."
   },
   "/privacy-policy": {
-    "title": "Privacy Policy | Monash WAM Calculator",
-    "description": "Read how Monash WAM Calculator collects, uses, and protects your data while using our WAM and GPA conversion tools."
+    "title": "Privacy Policy | My Calculator Hub",
+    "description": "Read how My Calculator Hub collects, uses, and protects your data while using our WAM and GPA conversion tools."
   },
   "/random-number-generator": {
     "title": "Random Number Generator | Free Number Picker",
@@ -275,13 +211,9 @@
     "title": "Reading Time Calculator | Words Per Minute Estimator",
     "description": "Estimate how long it will take to read a book, essay, or textbook chapter based on word count and reading speed."
   },
-  "/semester-gpa-calculator": {
-    "title": "Semester GPA Calculator - Monash 4.0 Scale (2026)",
-    "description": "Free semester GPA calculator for Monash students. Compute SGPA from one semester's unit grades and credit points on the official 4.0 scale."
-  },
   "/semester-wam-calculator": {
-    "title": "Semester WAM Calculator - Monash Semester Average (2026)",
-    "description": "Free semester WAM calculator for Monash students: enter this semester's unit marks and credit points to get your weighted semester average instantly."
+    "title": "Semester WAM Calculator - Uni Semester Average (2026)",
+    "description": "Free semester WAM calculator for Uni students: enter this semester's unit marks and credit points to get your weighted semester average instantly."
   },
   "/sharehouse-rent-splitter": {
     "title": "Sharehouse Rent Splitter | Fair Room Calculator",
@@ -312,12 +244,12 @@
     "description": "Calculate your recommended weekly study hours based on your university credit points. Plan your schedule and balance your study load effectively."
   },
   "/supp-repeat-wam-calculator": {
-    "title": "Supplementary vs Repeat WAM Calculator - Monash Fail Recovery (2026)",
-    "description": "Compare Monash supplementary pass (50% cap) vs repeating a failed unit. Free calculator shows WAM impact for fail recovery planning."
+    "title": "Supplementary vs Repeat WAM Calculator - Uni Fail Recovery (2026)",
+    "description": "Compare Uni supplementary pass (50% cap) vs repeating a failed unit. Free calculator shows WAM impact for fail recovery planning."
   },
   "/terms-and-conditions": {
-    "title": "Terms and Conditions | Monash WAM Calculator",
-    "description": "Review the terms for using Monash WAM Calculator, including acceptable use, intellectual property, and limitation of liability."
+    "title": "Terms and Conditions | My Calculator Hub",
+    "description": "Review the terms for using My Calculator Hub, including acceptable use, intellectual property, and limitation of liability."
   },
   "/textbook-reading-time-calculator": {
     "title": "Textbook Reading Time Calculator | Study Planner",
@@ -332,61 +264,61 @@
     "description": "Find out exactly how long it takes to type out an essay or assignment based on your Words Per Minute (WPM) speed."
   },
   "/unit-mark-calculator": {
-    "title": "Unit Mark Calculator - Weighted Assessments (Monash 2026)",
-    "description": "Free Monash unit mark calculator: combine assignment, test, and exam marks with weights to get your overall unit percentage and grade band."
+    "title": "Unit Mark Calculator - Weighted Assessments (Uni 2026)",
+    "description": "Free Uni unit mark calculator: combine assignment, test, and exam marks with weights to get your overall unit percentage and grade band."
   },
   "/unit-target-calculator": {
-    "title": "Unit Target Mark Calculator - What Do You Need? (Monash 2026)",
-    "description": "Free Monash unit target calculator: enter completed assessment marks and weights to see what you need on remaining tasks to reach your target unit mark."
+    "title": "Unit Target Mark Calculator - What Do You Need? (Uni 2026)",
+    "description": "Free Uni unit target calculator: enter completed assessment marks and weights to see what you need on remaining tasks to reach your target unit mark."
   },
   "/visa-load-calculator": {
     "title": "International Student Visa Load Calculator - Australia Condition 8202",
     "description": "Calculate how many credit points you need per semester to finish on time and comply with Australian student visa condition 8202."
   },
   "/wam-milestones-calculator": {
-    "title": "WAM Milestones Calculator — Monash Standing Checker (2026)",
-    "description": "Check Monash WAM milestones for pass, exchange, distinction average, HD territory, and merit planning. Estimate remaining average needed for each band."
+    "title": "WAM Milestones Calculator — Uni Standing Checker (2026)",
+    "description": "Check WAM milestones for pass, exchange, distinction average, HD territory, and merit planning. Estimate remaining average needed for each band."
   },
   "/wam-projection-calculator": {
-    "title": "WAM Projection Calculator - What If Your Marks? (Monash 2026)",
-    "description": "Free Monash WAM projection calculator: enter current WAM and upcoming unit marks to see your projected cumulative WAM after those results."
+    "title": "WAM Projection Calculator - What If Your Marks? (Uni 2026)",
+    "description": "Free WAM projection calculator: enter current WAM and upcoming unit marks to see your projected cumulative WAM after those results."
   },
   "/wam-target-calculator": {
-    "title": "WAM Target Calculator - What Average Do You Need? (Monash 2026)",
-    "description": "Free WAM target calculator for Monash students: enter current WAM and credit points to see what average you need on remaining units to hit your goal."
+    "title": "WAM Target Calculator - What Average Do You Need? (Uni 2026)",
+    "description": "Free WAM target calculator for Uni students: enter current WAM and credit points to see what average you need on remaining units to hit your goal."
   },
   "/wam-to-4-0-gpa-calculator": {
-    "title": "WAM to 4.0 GPA Calculator - Monash Converter (2026)",
-    "description": "Free WAM to 4.0 GPA calculator for Monash students. Convert your weighted average mark to the US-style 4.0 GPA scale instantly."
+    "title": "WAM to 4.0 GPA Calculator - Uni Converter (2026)",
+    "description": "Free WAM to 4.0 GPA calculator for Uni students. Convert your weighted average mark to the US-style 4.0 GPA scale instantly."
   },
   "/wam-to-7-0-gpa-calculator": {
-    "title": "WAM to 7.0 GPA Calculator - Australian Monash Scale (2026)",
-    "description": "Free WAM to 7.0 GPA calculator for Monash students. Map your weighted average mark to the Australian 7-point HD/D/CR/P scale."
+    "title": "WAM to 7.0 GPA Calculator - Australian Uni Scale (2026)",
+    "description": "Free WAM to 7.0 GPA calculator for Uni students. Map your weighted average mark to the Australian 7-point HD/D/CR/P scale."
   },
   "/wam-to-cgpa-calculator": {
-    "title": "WAM to CGPA Calculator - Monash 4.0 Scale (2026)",
-    "description": "Free WAM to CGPA calculator for Monash students. Estimate your cumulative GPA band from overall WAM on the official 4.0 scale."
+    "title": "WAM to CGPA Calculator - Uni 4.0 Scale (2026)",
+    "description": "Free WAM to CGPA calculator for Uni students. Estimate your cumulative GPA band from overall WAM on the official 4.0 scale."
   },
   "/wam-to-gpa-calculator": {
-    "title": "WAM to GPA Calculator - Free Monash WAM to GPA Converter (2026)",
-    "description": "WAM to GPA conversion in one click. Free WAM to GPA calculator for Monash - convert to 4.0 & 7.0 GPA for scholarships, postgrad & overseas apps. No signup."
+    "title": "WAM to GPA Calculator - Free WAM to GPA Converter (2026)",
+    "description": "WAM to GPA conversion in one click. Free WAM to GPA calculator for Uni - convert to 4.0 & 7.0 GPA for scholarships, postgrad & overseas apps. No signup."
   },
   "/weighted-average-calculator": {
-    "title": "Weighted Average Calculator - Monash Credit-Weighted Marks (2026)",
-    "description": "Free weighted average calculator for Monash students: enter unit marks and credit points to get a credit-weighted percentage average instantly."
+    "title": "Weighted Average Calculator - Uni Credit-Weighted Marks (2026)",
+    "description": "Free weighted average calculator for Uni students: enter unit marks and credit points to get a credit-weighted percentage average instantly."
   },
   "/withdrawn-fail-impact-calculator": {
-    "title": "Monash Withdrawn Fail (WN) Calculator — GPA 0.0 & WAM Impact (2026)",
-    "description": "Model Monash withdrawn fail (WN) impact: see how GPA 0.0 affects your average and compare WAM excluded vs worst-case zero-counted scenarios.",
-    "ogImage": "/article-images/featured-monash-withdrawn-fail-wam.webp",
-    "ogImageAlt": "Monash student checking withdrawn fail impact on cumulative WAM planning"
+    "title": "Uni Withdrawn Fail (WN) Calculator — GPA 0.0 & WAM Impact (2026)",
+    "description": "Model Uni withdrawn fail (WN) impact: see how GPA 0.0 affects your average and compare WAM excluded vs worst-case zero-counted scenarios.",
+    "ogImage": "/article-images/featured-uni-withdrawn-fail-wam.webp",
+    "ogImageAlt": "Uni student checking withdrawn fail impact on cumulative WAM planning"
   },
   "/words-to-pages-converter": {
     "title": "Words to Pages Converter | Word Count Calculator",
     "description": "Convert your word count to physical pages instantly. Works for single and double spacing, Times New Roman, and Arial fonts."
   },
   "/write-for-us": {
-    "title": "Write For Us | Monash WAM Calculator",
+    "title": "Write For Us | WAM Calculator",
     "description": "Contribute education-focused guest content. Read our editorial quality standards, accepted topics, and contributor guidelines."
   },
   "/youth-allowance-estimator": {
@@ -395,17 +327,17 @@
   },
   "/articles/best-universities-in-australia": {
     "title": "Best Universities in Australia: Top 10 Ranked Guide (2026) | Monash WAM Calculator",
-    "description": "Best universities in Australia ranked guide: Monash, Melbourne, UNSW, Sydney, ANU, UQ, UWA, Adelaide, UTS, and Macquarie — rankings, fees, campuses, scholarships, and official links.",
+    "description": "Best universities in Australia ranked guide: Uni, Melbourne, UNSW, Sydney, ANU, UQ, UWA, Adelaide, UTS, and Macquarie — rankings, fees, campuses, scholarships, and official links.",
     "ogImage": "/article-images/featured-best-universities-in-australia.webp"
   },
   "/articles/best-pharmacy-universities-in-australia": {
     "title": "Best Pharmacy Universities in Australia: Top 10 Ranked Guide (2026) | Monash WAM Calculator",
-    "description": "Best pharmacy universities in Australia: Monash, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT — rankings, fees, placements, scholarships, and official links.",
+    "description": "Best pharmacy universities in Australia: Uni, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT — rankings, fees, placements, scholarships, and official links.",
     "ogImage": "/article-images/featured-best-pharmacy-universities-in-australia.webp"
   },
   "/articles/best-universities-for-economics-in-australia": {
     "title": "Best Universities for Economics in Australia: Top 10 Ranked Guide (2026) | Monash WAM Calculator",
-    "description": "Best universities for economics in Australia: ANU, Melbourne, Sydney, UNSW, Monash, UQ, UWA, Adelaide, Macquarie, and UTS — rankings, fees, econometrics strength, and career pathways.",
+    "description": "Best universities for economics in Australia: ANU, Melbourne, Sydney, UNSW, Uni, UQ, UWA, Adelaide, Macquarie, and UTS — rankings, fees, econometrics strength, and career pathways.",
     "ogImage": "/article-images/featured-best-universities-for-economics-in-australia.webp"
   },
   "/articles/category/wam-fundamentals": {
@@ -430,6 +362,6 @@
   },
   "/articles/category/pathways": {
     "title": "University Life & Pathways Articles | Monash WAM Calculator",
-    "description": "Monash orientation, exchange grades, and degree pathway context."
+    "description": "Uni orientation, exchange grades, and degree pathway context."
   }
 }

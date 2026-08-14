@@ -1,7 +1,6 @@
 import Seo from '../components/Seo';
 import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import CalculatorPageGuide from '../components/CalculatorPageGuide';
-import PageFaq from '../components/PageFaq';
 import RelatedCalculators from '../components/RelatedCalculators';
 import PasswordGeneratorToolCore from '../components/PasswordGeneratorToolCore';
 

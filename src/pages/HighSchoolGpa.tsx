@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: 'University GPA?',
-    answer: 'Use the GPA calculator or Monash GPA calculator for uni unit grades on the 4.0 scale.',
+    answer: 'Use the GPA calculator or Uni GPA calculator for uni unit grades on the 4.0 scale.',
   },
   {
     question: 'Convert to WAM?',

@@ -6,7 +6,7 @@ import RelatedCalculators from '../components/RelatedCalculators';
 import { absoluteUrl, INLINE_LINK_CLASS } from '../constants/site';
 import CalculatorSectionWithInlineAds from '../components/CalculatorSectionWithInlineAds';
 import { PAGE_KEYWORD_LINKS } from '../data/pageKeywordLinks';
-import { calculateRequiredFinalExamMark } from '../utils/monashGrades';
+import { calculateRequiredFinalExamMark } from '../utils/uniGrades';
 
 const [finalHome, finalWtg] = PAGE_KEYWORD_LINKS['/final-grade-calculator'];
 
@@ -70,16 +70,16 @@ export default function FinalGrade() {
   return (
     <>
       <Seo
-        title="Monash Final Grade Calculator - Free Exam Mark Planner (2026)"
-        description="Free final grade calculator for Monash students. Find the exam mark you need to hit your target grade - Monash grade calculator for unit & WAM planning."
+        title="Uni Final Grade Calculator - Free Exam Mark Planner (2026)"
+        description="Free final grade calculator for Uni students. Find the exam mark you need to hit your target grade - Uni grade calculator for unit & WAM planning."
         canonicalPath="/final-grade-calculator"
         faqItems={finalGradeFaqs}
       />
 
       <section className="bg-gradient-to-br from-sky-700 to-sky-900 text-white py-12 text-center px-4">
-        <h1 className="text-4xl font-bold mb-3">Monash Final Grade Calculator</h1>
+        <h1 className="text-4xl font-bold mb-3">Uni Final Grade Calculator</h1>
         <p className="text-sky-100 max-w-xl mx-auto">
-          Free grade calculator for Monash students — find exactly what final exam mark you need for your target grade.
+          Free grade calculator for Uni students — find exactly what final exam mark you need for your target grade.
         </p>
       </section>
 
@@ -168,7 +168,7 @@ export default function FinalGrade() {
 
         <div className="mt-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
           <h3 className="text-sm font-bold text-gray-800 dark:text-white px-5 py-4 border-b border-gray-200 dark:border-gray-700">
-            Common Target Grades at Monash
+            Common Target Grades at Uni
           </h3>
           <table className="w-full text-sm">
             <tbody className="divide-y divide-gray-100 dark:divide-gray-700">

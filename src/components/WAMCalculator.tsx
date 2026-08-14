@@ -4,10 +4,10 @@ import UnitAutocompleteInput from './UnitAutocompleteInput';
 import { matchSubjectByUnit, matchUnitBySubject } from '../utils/unitSubjectSuggestions';
 import {
   calculateCreditWeightedWam,
-  calculateMonashOfficialWam,
-  getMonashGradeFromMark,
-  inferMonashYearLevelFromUnitCode,
-} from '../utils/monashGrades';
+  calculateUniOfficialWam,
+  getUniGradeFromMark,
+  inferUniYearLevelFromUnitCode,
+} from '../utils/uniGrades';
 import AmazonResultPopUpModal from './AmazonResultPopUpModal';
 
 interface Subject {
@@ -33,7 +33,7 @@ interface WAMResult {
 const yearLevelOptions = ['1', '2', '3', '4'] as const;
 
 function defaultYearLevelForUnit(unitCode: string): string {
-  return String(inferMonashYearLevelFromUnitCode(unitCode) ?? 1);
+  return String(inferUniYearLevelFromUnitCode(unitCode) ?? 1);
 }
 
 let nextId = 4;
@@ -92,12 +92,12 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
     if (parsedUnits.length === 0) return null;
 
     const planningWam = calculateCreditWeightedWam(parsedUnits);
-    const officialWam = calculateMonashOfficialWam(parsedUnits);
+    const officialWam = calculateUniOfficialWam(parsedUnits);
     if (planningWam === null || officialWam === null) return null;
 
     const totalCredits = parsedUnits.reduce((sum, unit) => sum + unit.credits, 0);
     const avgMark = parsedUnits.reduce((sum, unit) => sum + unit.mark, 0) / parsedUnits.length;
-    const gradeBand = getMonashGradeFromMark(officialWam);
+    const gradeBand = getUniGradeFromMark(officialWam);
 
     return {
       officialWam,
@@ -139,7 +139,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
         if (field === 'unit') {
           const matchedSubject = matchSubjectByUnit(normalizedValue);
           if (matchedSubject) next.subject = matchedSubject;
-          const inferredYear = inferMonashYearLevelFromUnitCode(normalizedValue);
+          const inferredYear = inferUniYearLevelFromUnitCode(normalizedValue);
           if (inferredYear !== null) next.yearLevel = String(inferredYear);
         }
 
@@ -162,7 +162,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
 
   const copyResult = async () => {
     if (!result) return;
-    const text = `Official Monash WAM: ${result.officialWam.toFixed(2)} | Planning WAM: ${result.planningWam.toFixed(2)} | Grade: ${result.grade} (${result.gradeLabel}) | Credits: ${result.totalCredits} | Subjects: ${result.totalSubjects}`;
+    const text = `Official WAM: ${result.officialWam.toFixed(2)} | Planning WAM: ${result.planningWam.toFixed(2)} | Grade: ${result.grade} (${result.gradeLabel}) | Credits: ${result.totalCredits} | Subjects: ${result.totalSubjects}`;
     await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -203,7 +203,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
             }
           >
             Enter marks, credit points, and year level for each unit. We calculate{' '}
-            <strong className="text-gray-700 dark:text-gray-300">official Monash WAM</strong> (first-year 0.5 weighting)
+            <strong className="text-gray-700 dark:text-gray-300">official WAM</strong> (first-year 0.5 weighting)
             plus a simple planning WAM for comparison.
           </p>
         </div>
@@ -214,7 +214,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
               ? 'grid grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_21rem] xl:gap-10'
               : 'grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_19.5rem] lg:gap-8 xl:grid-cols-[minmax(0,1fr)_21rem] xl:gap-10'
           }
-          data-article-tool-screenshot="monash-wam"
+          data-article-tool-screenshot="uni-wam"
         >
           <div className="min-w-0 space-y-5">
             <div className={shellClass}>
@@ -416,9 +416,9 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
 
             <div className="calc-grade-panel">
               <h3 className="text-sm font-semibold tracking-tight text-gray-800 dark:text-gray-200">
-                Monash Grade Reference
+                Uni Grade Reference
               </h3>
-              <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">Mark ranges and grade bands at Monash</p>
+              <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">Mark ranges and grade bands at Uni</p>
               <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
                 {[
                   { range: '80–100', grade: 'HD', color: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300' },
@@ -448,7 +448,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 {isSubmitted && result ? (
                   <>
                     <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary-200">
-                      Official Monash WAM
+                      Official WAM
                     </p>
                     <p className="mt-1 text-5xl font-bold tracking-tight text-white">{result.officialWam.toFixed(2)}</p>
                     <p className="mt-2 text-sm font-semibold text-white/95">
@@ -463,7 +463,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                 ) : (
                   <>
                     <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary-200">
-                      Official Monash WAM
+                      Official WAM
                     </p>
                     <p className="mt-1 text-4xl font-bold tracking-tight text-primary-200/80">—</p>
                     <p className="mt-2 text-sm text-primary-100/80">Waiting for valid unit marks</p>
@@ -483,7 +483,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
                       <ResultRow label="Average Mark" value={`${result.avgMark.toFixed(2)}%`} />
                     </div>
                     <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400">
-                      Official WAM uses Monash year-level weighting (Year 1 = 0.5, Year 2+ = 1.0). Planning WAM is
+                      Official WAM uses Uni year-level weighting (Year 1 = 0.5, Year 2+ = 1.0). Planning WAM is
                       simple credit-weighted maths. Verify special grades and exclusions on WES.
                     </p>
                     <button type="button" onClick={copyResult} className="calc-btn-copy">
@@ -514,7 +514,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
           <div className="min-w-0">
             <p className="text-sm font-semibold text-blue-800 dark:text-blue-200">Need to convert WAM to GPA?</p>
             <p className="mt-1 text-xs leading-relaxed text-blue-700/90 dark:text-blue-300/90">
-              Free Monash converter for 4.0 and 7.0 GPA scales.
+              Free Uni converter for 4.0 and 7.0 GPA scales.
             </p>
           </div>
           <span className="calc-gpa-promo-link">

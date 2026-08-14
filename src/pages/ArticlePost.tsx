@@ -21,26 +21,26 @@ interface ArticlePostProps {
 
 const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'how to calculate wam', href: '/articles/how-to-calculate-wam' },
-  { keyword: 'monash year 1 wam weighting', href: '/articles/monash-year-1-wam-weighting-guide' },
-  { keyword: 'monash withdrawn fail wam', href: '/articles/monash-withdrawn-fail-wam-guide' },
-  { keyword: 'monash wam milestones', href: '/articles/monash-wam-milestones-guide' },
-  { keyword: 'monash distinction average', href: '/articles/monash-distinction-average-guide' },
-  { keyword: 'monash wam target', href: '/articles/monash-wam-target-guide' },
-  { keyword: 'monash semester wam', href: '/articles/monash-semester-wam-guide' },
-  { keyword: 'monash wam projection', href: '/articles/monash-wam-projection-guide' },
+  { keyword: 'uni year 1 wam weighting', href: '/articles/uni-year-1-wam-weighting-guide' },
+  { keyword: 'uni withdrawn fail wam', href: '/articles/uni-withdrawn-fail-wam-guide' },
+  { keyword: 'WAM milestones', href: '/articles/uni-wam-milestones-guide' },
+  { keyword: 'uni distinction average', href: '/articles/uni-distinction-average-guide' },
+  { keyword: 'WAM target', href: '/articles/uni-wam-target-guide' },
+  { keyword: 'uni semester wam', href: '/articles/uni-semester-wam-guide' },
+  { keyword: 'WAM projection', href: '/articles/uni-wam-projection-guide' },
   { keyword: 'what is a good wam', href: '/articles/what-is-a-good-wam' },
-  { keyword: 'how to improve wam at monash', href: '/articles/how-to-improve-wam-at-monash' },
-  { keyword: 'monash honours wam requirements', href: '/articles/monash-honours-wam-requirements' },
-  { keyword: 'monash scholarship wam requirements', href: '/articles/monash-scholarship-wam-requirements' },
-  { keyword: 'failed unit wam monash', href: '/articles/failed-unit-wam-impact-monash' },
-  { keyword: 'monash supplementary exam wam', href: '/articles/monash-supplementary-exam-wam-guide' },
-  { keyword: 'monash cgpa calculator', href: '/articles/monash-cgpa-explained-guide' },
-  { keyword: 'monash exchange grades wam', href: '/articles/monash-exchange-grades-wam-guide' },
-  { keyword: "monash dean's honours list", href: '/articles/monash-deans-honours-list-wam-guide' },
-  { keyword: 'monash repeat unit wam', href: '/articles/monash-repeat-unit-wam-guide' },
-  { keyword: 'monash wam internship', href: '/articles/monash-wam-internship-graduate-jobs-guide' },
-  { keyword: 'monash wam vs gpa postgraduate', href: '/articles/monash-wam-vs-gpa-postgraduate' },
-  { keyword: 'wam to gpa', href: '/articles/monash-wam-to-gpa-conversion' },
+  { keyword: 'how to improve wam at uni', href: '/articles/how-to-improve-wam-at-uni' },
+  { keyword: 'uni honours wam requirements', href: '/articles/uni-honours-wam-requirements' },
+  { keyword: 'uni scholarship wam requirements', href: '/articles/uni-scholarship-wam-requirements' },
+  { keyword: 'failed unit wam uni', href: '/articles/failed-unit-wam-impact-uni' },
+  { keyword: 'uni supplementary exam wam', href: '/articles/uni-supplementary-exam-wam-guide' },
+  { keyword: 'uni cgpa calculator', href: '/articles/uni-cgpa-explained-guide' },
+  { keyword: 'uni exchange grades wam', href: '/articles/uni-exchange-grades-wam-guide' },
+  { keyword: "uni dean's honours list", href: '/articles/uni-deans-honours-list-wam-guide' },
+  { keyword: 'uni repeat unit wam', href: '/articles/uni-repeat-unit-wam-guide' },
+  { keyword: 'WAM internship', href: '/articles/uni-wam-internship-graduate-jobs-guide' },
+  { keyword: 'WAM vs gpa postgraduate', href: '/articles/uni-wam-vs-gpa-postgraduate' },
+  { keyword: 'wam to gpa', href: '/articles/uni-wam-to-gpa-conversion' },
   { keyword: 'WAM to GPA calculator', href: '/wam-to-gpa-calculator' },
   { keyword: 'percentage to gpa calculator', href: '/articles/percentage-to-gpa-calculator-guide' },
   { keyword: '4.0 gpa calculator', href: '/articles/4-0-gpa-calculator-guide' },
@@ -48,17 +48,17 @@ const keywordInternalLinks: Array<{ keyword: string; href: string }> = [
   { keyword: 'semester gpa calculator', href: '/articles/semester-gpa-calculator-guide' },
   { keyword: 'gpa to cgpa calculator', href: '/articles/gpa-to-cgpa-calculator-guide' },
   { keyword: 'atar to gpa calculator', href: '/articles/atar-to-gpa-wam-conversion-guide' },
-  { keyword: 'grade calculator monash', href: '/articles/monash-final-exam-mark-calculator-guide' },
+  { keyword: 'grade calculator uni', href: '/articles/uni-final-exam-mark-calculator-guide' },
   { keyword: 'final grade calculator', href: '/final-grade-calculator' },
-  { keyword: 'monash credit points wam', href: '/articles/monash-credit-points-wam-explained' },
-  { keyword: 'monash wam transcript', href: '/articles/how-to-find-wam-on-monash-transcript' },
-  { keyword: 'wam calculator monash', href: '/' },
-  { keyword: 'Monash WAM calculator', href: '/' },
+  { keyword: 'uni credit points wam', href: '/articles/uni-credit-points-wam-explained' },
+  { keyword: 'WAM transcript', href: '/articles/how-to-find-wam-on-uni-transcript' },
+  { keyword: 'wam calculator uni', href: '/' },
+  { keyword: 'WAM calculator', href: '/' },
   { keyword: 'how to convert wam from one university to another', href: '/articles/how-to-convert-wam-from-one-university-to-another' },
   { keyword: 'best universities in australia', href: '/articles/best-universities-in-australia' },
   { keyword: 'best pharmacy universities in australia', href: '/articles/best-pharmacy-universities-in-australia' },
   { keyword: 'best universities for economics in australia', href: '/articles/best-universities-for-economics-in-australia' },
-  { keyword: 'monash university australia', href: '/articles/monash-university-australia' },
+  { keyword: 'the university australia', href: '/articles/uni-university-australia' },
 ];
 
 function renderKeywordLinkedParagraph(
@@ -137,7 +137,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
 
   const linkedCountRef = { value: 0 };
   const category = getArticleCategory(article.slug);
-  const featuredImageAlt = getArticleImageAlt(article);
+  const featuredImageAlt = getArticleImageAlt(article.slug);
   const categoryPath = getArticleCategoryPath(category.id);
   const neighbors = useMemo(() => getCategoryArticleNeighbors(slug, articles), [slug]);
   const sidebarRelatedLinks = useMemo(
@@ -152,7 +152,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
   return (
     <>
       <Seo
-        title={`${article.title} | Monash WAM Calculator`}
+        title={`${article.title} | WAM Calculator`}
         description={article.description}
         canonicalPath={`/articles/${article.slug}`}
         ogImage={article.featuredImage}
@@ -163,7 +163,7 @@ export default function ArticlePost({ slug }: ArticlePostProps) {
           datePublished: article.publishedAt,
           dateModified: article.updatedAt,
           author: ARTICLE_AUTHOR.name,
-          keywords: [article.keyword, 'Monash WAM calculator', 'WAM', 'GPA conversion'],
+          keywords: [article.keyword, 'WAM calculator', 'WAM', 'GPA conversion'],
         }}
       />
       <article className="max-w-7xl mx-auto px-4 pt-6 md:pt-8 pb-8 md:pb-10">

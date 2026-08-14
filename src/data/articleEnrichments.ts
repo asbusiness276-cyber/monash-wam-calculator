@@ -6,16 +6,16 @@ import { articleEnrichmentsPart3 } from './articleEnrichmentsPart3';
  * Per-section SEO enrichments keyed by article slug.
  */
 const enrichments: Record<string, SectionEnhancement[]> = {
-  'monash-university-australia': [
+  'uni-university-australia': [
     {
       facts: [
         {
           title: 'Quick orientation facts',
           items: [
-            'Monash is a Group of Eight (Go8) research university with primary Australian campuses in Victoria.',
+            'Uni is a Group of Eight (Go8) research university with primary Australian campuses in Victoria.',
             'Clayton is the largest teaching and research campus; Caulfield, Peninsula, and Parkville host major course clusters.',
             'Academic performance is tracked with a credit-weighted WAM, not a US-style GPA as the native metric.',
-            'Confirm rankings, fees, and entry rules on Study at Monash each intake year — published figures move annually.',
+            'Confirm rankings, fees, and entry rules on Study at Uni each intake year — published figures move annually.',
           ],
           afterParagraph: 0,
         },
@@ -30,7 +30,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Caulfield (Dandenong Rd, VIC 3145) — business, design, IT, and many postgraduate coursework offerings.',
             'Peninsula — education, health, and nursing pathways with a smaller campus footprint.',
             'Parkville — pharmacy and pharmaceutical sciences beside Melbourne’s biomedical precinct.',
-            'Monash Malaysia and Monash Indonesia use separate admissions, fees, and academic calendars.',
+            'Uni Malaysia and Uni Indonesia use separate admissions, fees, and academic calendars.',
           ],
           afterParagraph: 0,
         },
@@ -54,7 +54,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'How to use rankings wisely',
           items: [
-            'QS World University Rankings 2025 places Monash 37th globally — useful for international comparisons.',
+            'QS World University Rankings 2025 places Uni 37th globally — useful for international comparisons.',
             'Subject rankings often matter more than overall rank for pharmacy, education, nursing, and engineering.',
             'Go8 membership signals research intensity to many employers and graduate schools.',
             'Compare course accreditation and placement hours against Melbourne, RMIT, or Deakin before deciding on rank alone.',
@@ -69,7 +69,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           title: 'Course and research pathway notes',
           items: [
             'Undergraduate handbooks change yearly — download the handbook for your commencement year, not a cached PDF.',
-            'Monash Online and blended options exist, but placements and invigilated exams can still require attendance.',
+            'Uni Online and blended options exist, but placements and invigilated exams can still require attendance.',
             'PhD and MPhil entry usually needs a supervisor match, research proposal, and prior research training evidence.',
             'Micro-credentials and professional short courses sit outside standard bachelor WAM calculations.',
           ],
@@ -84,7 +84,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           items: [
             'Domestic CSP students pay government-set contribution amounts; international students pay full published tuition.',
             'International undergraduate tuition commonly sits in roughly AUD $40k–$50k per year depending on faculty and load.',
-            'Many domestic undergraduates apply via VTAC; postgraduates and internationals often use Monash direct portals.',
+            'Many domestic undergraduates apply via VTAC; postgraduates and internationals often use Uni direct portals.',
             'Scholarship deadlines frequently close before offer rounds — gather transcripts and references early.',
           ],
           afterParagraph: 0,
@@ -96,9 +96,9 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           headers: ['Applicant type', 'Common channel', 'Documents to prepare'],
           rows: [
             ['Domestic undergraduate', 'VTAC (many courses)', 'Year 12 results, preferences, ID'],
-            ['International undergraduate', 'Monash international portal', 'Transcripts, English proof, passport'],
-            ['Postgraduate coursework', 'Direct Monash application', 'Degree transcript, CV, English proof'],
-            ['Graduate research', 'Monash Graduate Research', 'Proposal, supervisor support, CV'],
+            ['International undergraduate', 'Uni international portal', 'Transcripts, English proof, passport'],
+            ['Postgraduate coursework', 'Direct Uni application', 'Degree transcript, CV, English proof'],
+            ['Graduate research', 'Uni Graduate Research', 'Proposal, supervisor support, CV'],
           ],
           afterParagraph: 0,
         },
@@ -112,7 +112,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Career Connect, counselling, disability support, and libraries operate across major campuses with different hours.',
             'International student visa work limits are set by Home Affairs — campus jobs still count toward hour caps.',
             'Clayton hosts an Australia Post LPO useful for parcels when relocating interstate or overseas.',
-            'Save official Monash security and emergency contacts during orientation; follow current campus safety guidance.',
+            'Save official Uni security and emergency contacts during orientation; follow current campus safety guidance.',
           ],
           afterParagraph: 0,
         },
@@ -121,12 +121,12 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     {
       facts: [
         {
-          title: 'WAM planning while studying at Monash',
+          title: 'WAM planning while studying at Uni',
           items: [
             'WAM = Σ(mark × credit points) ÷ Σ(credit points) — high-credit units move your average more.',
             'Track WAM for honours eligibility, scholarship renewals, and many postgraduate entry screens.',
             'Recalculate after each major results release rather than once at year end.',
-            'Use Monash WAM and WAM-to-GPA tools on this site for planning; submit transcript figures on formal forms.',
+            'Use WAM and WAM-to-GPA tools on this site for planning; submit transcript figures on formal forms.',
           ],
           afterParagraph: 0,
         },
@@ -155,7 +155,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     {
       facts: [
         {
-          title: 'Monash-style grade band reading',
+          title: 'Uni-style grade band reading',
           items: [
             '50–59 Pass (P) — progression possible, limited for selective opportunities.',
             '60–69 Credit (C) — solid baseline for many continuing pathways.',
@@ -168,7 +168,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
       ],
       tables: [
         {
-          caption: 'Planning bands students use at Monash',
+          caption: 'Planning bands students use at Uni',
           headers: ['WAM range', 'Grade band', 'Typical planning use'],
           rows: [
             ['50–59', 'Pass', 'Course progression; rebuild plan'],
@@ -198,7 +198,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           caption: 'Effort placement by impact',
           headers: ['Focus area', 'Why it moves WAM', 'Tool to use'],
           rows: [
-            ['High-credit units', 'Larger weight in the denominator', 'Monash WAM calculator'],
+            ['High-credit units', 'Larger weight in the denominator', 'WAM calculator'],
             ['High-weight finals', 'Largest remaining assessment share', 'Final grade calculator'],
             ['Post-mark reviews', 'Stops repeating the same errors', 'Unit feedback + rubric'],
             ['Monthly recalculation', 'Shows if trajectory hits your band', 'WAM + target planner'],
@@ -212,7 +212,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'Tool stack for benchmark decisions',
           items: [
-            'Monash WAM calculator — confirm current standing from official marks only.',
+            'WAM calculator — confirm current standing from official marks only.',
             'Final grade calculator — reverse-engineer exam marks for unit targets.',
             'WAM to GPA calculator — only when an external form needs 4.0 or 7.0 format.',
             'Milestones checker — see which planning bands (pass, distinction, HD) you already clear.',
@@ -223,14 +223,14 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'how-to-improve-wam-at-monash': [
+  'how-to-improve-wam-at-uni': [
     {
       facts: [
         {
           title: 'Define “better” before studying harder',
           items: [
             'Pick one semester target and one year stretch target tied to a real goal (honours, scholarship, internship).',
-            'Baseline only with WES/transcript marks in the Monash WAM calculator — keep projections labelled separately.',
+            'Baseline only with WES/transcript marks in the WAM calculator — keep projections labelled separately.',
             'If overseas forms need GPA, convert after WAM is confirmed so both numbers stay consistent.',
             'Write the gap in points (e.g. +3.2 WAM) so weekly effort has a measurable finish line.',
           ],
@@ -312,7 +312,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           title: 'Mistakes that stall improvement',
           items: [
             'Treating every mark as equal when credit points differ.',
-            'Excluding fails from personal WAM maths when Monash includes them.',
+            'Excluding fails from personal WAM maths when Uni includes them.',
             'Benchmarking against unrelated degrees on social media instead of your faculty goals.',
             'Burning out before high-credit finals — sleep and spaced practice protect weighted outcomes.',
           ],
@@ -339,13 +339,13 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-honours-wam-requirements': [
+  'uni-honours-wam-requirements': [
     {
       facts: [
         {
           title: 'Honours reality check',
           items: [
-            'Honours at Monash is faculty-specific — there is no single university-wide WAM cutoff.',
+            'Honours at Uni is faculty-specific — there is no single university-wide WAM cutoff.',
             'Entry usually mixes WAM with completed credits, prerequisites, and sometimes interviews or portfolios.',
             'Integrated honours pathways in some degrees differ from a standalone fourth year.',
             'Treat web benchmarks as planning only; confirm the faculty guide for your application year.',
@@ -362,7 +362,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Some faculties publish a numeric floor; others say “competitive entry” without a fixed cutoff.',
             'Later-year units or discipline cores may be weighted more heavily in merit ranking.',
             'Double degrees can add extra prerequisite or major-specific hurdles.',
-            'If a partner form asks for GPA, keep Monash WAM as the primary domestic honours figure.',
+            'If a partner form asks for GPA, keep WAM as the primary domestic honours figure.',
           ],
           afterParagraph: 0,
         },
@@ -415,7 +415,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           items: [
             'Scholarship merit floors and honours cutoffs are published on different pages and can diverge.',
             'Coursework masters minima may be lower or higher than research honours expectations.',
-            'Overseas applications may need GPA conversion — disclose method and keep Monash WAM visible.',
+            'Overseas applications may need GPA conversion — disclose method and keep WAM visible.',
             'Clarify whether you want research training or employability signalling before chasing a WAM target.',
           ],
           afterParagraph: 0,
@@ -455,7 +455,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'Site tools for honours planning',
           items: [
-            'Monash WAM calculator — current standing from official marks.',
+            'WAM calculator — current standing from official marks.',
             'Final grade calculator — exam targets on remaining high-weight assessments.',
             '“What is a good WAM” — language for layered targets.',
             'WAM to GPA calculator — only when an external form requires conversion.',
@@ -466,7 +466,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-scholarship-wam-requirements': [
+  'uni-scholarship-wam-requirements': [
     {
       facts: [
         {
@@ -530,7 +530,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Many awards require satisfactory progress each year, sometimes without restating the original entry WAM.',
             'Recalculate after major results so progress reports are not a surprise.',
             'Protect high-credit units first when renewal is at risk.',
-            'If external panels ask for GPA, convert carefully while keeping Monash WAM primary on record.',
+            'If external panels ask for GPA, convert carefully while keeping WAM primary on record.',
           ],
           afterParagraph: 0,
         },
@@ -555,7 +555,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           title: 'Application plan steps',
           items: [
             'Shortlist awards with deadlines, WAM/ATAR language, and document lists in one calendar.',
-            'Confirm WAM with the Monash WAM calculator before writing personal statements.',
+            'Confirm WAM with the WAM calculator before writing personal statements.',
             'Gather leadership/community evidence early — academic floors alone rarely win competitive rounds.',
             'Ignore outdated forum cutoffs; quotas and published minima change with funding cycles.',
           ],
@@ -584,7 +584,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           items: [
             'WAM calculator → good-WAM benchmarks → improve-WAM guide if lifting → this scholarship map → final grade targets.',
             'Use WAM to GPA conversion only when an external form requires it.',
-            'Submit verified transcript figures — site tools do not decide Monash outcomes.',
+            'Submit verified transcript figures — site tools do not decide Uni outcomes.',
             'Re-read each scholarship page the week you submit in case criteria updated.',
           ],
           afterParagraph: 0,
@@ -593,13 +593,13 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'failed-unit-wam-impact-monash': [
+  'failed-unit-wam-impact-uni': [
     {
       facts: [
         {
           title: 'Fail definition and WAM inclusion',
           items: [
-            'Final marks below 50 generally sit in the N fail band (0–49) at Monash.',
+            'Final marks below 50 generally sit in the N fail band (0–49) at Uni.',
             'Standard WAM usually includes attempted units with recorded marks unless your course policy says otherwise.',
             'A failed 12-credit unit typically hurts more than a weak 6-credit elective.',
             'Confirm mark, credit points, and faculty rules before modelling recovery.',
@@ -684,7 +684,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'Early in the degree, strong semesters can move WAM faster (smaller denominator).',
             'Late in the degree, one fail still matters, but large prior credit volume slows visible lifts.',
             'Monthly conservative/target/stretch scenarios beat guessing from a single hoped-for exam.',
-            'For international reporting, keep Monash WAM primary and treat GPA conversion as secondary.',
+            'For international reporting, keep WAM primary and treat GPA conversion as secondary.',
           ],
           afterParagraph: 0,
         },
@@ -709,7 +709,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'Tools after a fail',
           items: [
-            'Monash WAM calculator with the fail included.',
+            'WAM calculator with the fail included.',
             'How-to-calculate-WAM guide for formula checks.',
             'Improve-WAM and final grade tools for the next teaching period.',
             'Honours/scholarship guides if competitive applications are affected.',
@@ -723,13 +723,13 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-wam-vs-gpa-postgraduate': [
+  'uni-wam-vs-gpa-postgraduate': [
     {
       facts: [
         {
           title: 'WAM vs GPA in one glance',
           items: [
-            'Monash WAM is a credit-weighted percentage-style average from unit marks.',
+            'WAM is a credit-weighted percentage-style average from unit marks.',
             'GPA compresses results into grade-point bands on 4.0 or 7.0 scales.',
             'They correlate but are not interchangeable labels on applications.',
             'Lead with what the destination form requests; add the other metric when space allows.',
@@ -745,7 +745,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           items: [
             'Many Australian coursework masters use WAM or “credit average” language.',
             'Calculate from official marks and credit points — not memory.',
-            'Note that Monash WAM is credit-weighted if the form allows commentary.',
+            'Note that WAM is credit-weighted if the form allows commentary.',
             'Borderline WAM is better fixed with remaining units than with optimistic conversion.',
           ],
           afterParagraph: 0,
@@ -759,7 +759,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           items: [
             'US-style and many international portals expect 4.0 (sometimes 7.0) GPA.',
             'Use transcript GPA if printed; otherwise estimate with a documented band table.',
-            'Example note: “Monash WAM 78.4; estimated 4.0-scale GPA 3.4 per attached method.”',
+            'Example note: “WAM 78.4; estimated 4.0-scale GPA 3.4 per attached method.”',
             'Follow any destination-published conversion table over third-party defaults.',
           ],
           afterParagraph: 0,
@@ -770,7 +770,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           caption: 'What to put on common postgraduate form fields',
           headers: ['Form asks for', 'Primary value', 'Optional support'],
           rows: [
-            ['WAM / credit average', 'Monash transcript WAM', 'Short note on credit weighting'],
+            ['WAM / credit average', 'Uni transcript WAM', 'Short note on credit weighting'],
             ['GPA 4.0', 'Transcript GPA if listed', 'WAM + method if estimating'],
             ['GPA 7.0', 'Converted 7.0 estimate', 'Cite table / calculator method'],
             ['Both / free text', 'WAM + GPA together', 'One-line methodology sentence'],
@@ -839,7 +839,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'Tools for postgraduate reporting',
           items: [
-            'Monash WAM calculator → good-WAM benchmarks → WAM to GPA (if needed).',
+            'WAM calculator → good-WAM benchmarks → WAM to GPA (if needed).',
             'Cross-institution conversion guide when transferring between universities.',
             'Revisit minima each intake — competitive averages drift.',
             'Lead with what the form asks; support with what the transcript proves.',
@@ -883,7 +883,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
           caption: 'Conversion path by destination request',
           headers: ['Destination asks for', 'Report first', 'Then add'],
           rows: [
-            ['Percentage / WAM', 'Source Monash WAM', 'Optional band context'],
+            ['Percentage / WAM', 'Source WAM', 'Optional band context'],
             ['GPA 4.0', 'Source WAM', '4.0 estimate + method note'],
             ['GPA 7.0', 'Source WAM', '7.0 estimate + method note'],
             ['Course-level evaluation', 'Unit marks & credits', 'Evaluator’s template only'],
@@ -897,7 +897,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'Safe reporting with site tools',
           items: [
-            'Confirm performance in the Monash WAM calculator before converting.',
+            'Confirm performance in the WAM calculator before converting.',
             'Use the WAM to GPA calculator for 4.0/7.0 planning estimates.',
             'Keep one marks source of truth across resume, forms, and statements.',
             'Update every document when official results change — mixed versions create review friction.',
@@ -907,8 +907,8 @@ const enrichments: Record<string, SectionEnhancement[]> = {
       ],
       tables: [
         {
-          caption: 'Illustrative Monash WAM → common GPA bands',
-          headers: ['Monash WAM', 'Grade band', '4.0 estimate', '7.0 estimate'],
+          caption: 'Illustrative WAM → common GPA bands',
+          headers: ['WAM', 'Grade band', '4.0 estimate', '7.0 estimate'],
           rows: [
             ['82', 'HD', '4.0', '7.0'],
             ['74', 'D', '3.0', '6.0'],
@@ -947,7 +947,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
             'WAM = Σ(mark × credit points) ÷ Σ(credit points).',
             'Pull marks from WES/transcript — do not mix remembered percentages.',
             'Match each mark to the correct credit point value for that unit.',
-            'Monash official WAM also applies year-level weighting (Year 1 often at 0.5) — check policy when reconciling to transcript WAM.',
+            'Uni official WAM also applies year-level weighting (Year 1 often at 0.5) — check policy when reconciling to transcript WAM.',
           ],
           afterParagraph: 0,
         },
@@ -1013,7 +1013,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'Planning tools after you calculate',
           items: [
-            'Monash WAM calculator — ongoing tracker for confirmed marks.',
+            'WAM calculator — ongoing tracker for confirmed marks.',
             'Final grade calculator — exam marks needed for unit targets.',
             'WAM to GPA calculator — external application formats.',
             'Pair calculation with “what is a good WAM” so the number drives a decision.',
@@ -1024,14 +1024,14 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-wam-to-gpa-conversion': [
+  'uni-wam-to-gpa-conversion': [
     {
       facts: [
         {
           title: 'Why students convert WAM to GPA',
           items: [
-            'Monash transcripts emphasise WAM; many portals still ask for GPA.',
-            'Monash also computes an official 4.0 GPA from letter grades — separate from WAM.',
+            'Uni transcripts emphasise WAM; many portals still ask for GPA.',
+            'Uni also computes an official 4.0 GPA from letter grades — separate from WAM.',
             'Forms may want transcript GPA, a destination-specific conversion, or either.',
             'Know which method is required before submitting a single number.',
           ],
@@ -1042,9 +1042,9 @@ const enrichments: Record<string, SectionEnhancement[]> = {
     {
       facts: [
         {
-          title: 'Monash grade bands that drive GPA mapping',
+          title: 'Uni grade bands that drive GPA mapping',
           items: [
-            'HD 80–100 → typically 4.0 on Monash 4.0 GPA scale.',
+            'HD 80–100 → typically 4.0 on Uni 4.0 GPA scale.',
             'D 70–79 → 3.0; C 60–69 → 2.0; P 50–59 → 1.0.',
             'Fail and special grades use lower fixed GPA values on the official scale.',
             'Two distinction WAMs (e.g. 76 vs 79) can share the same GPA band despite different WAM.',
@@ -1054,7 +1054,7 @@ const enrichments: Record<string, SectionEnhancement[]> = {
       ],
       tables: [
         {
-          caption: 'Monash coursework bands and typical GPA points',
+          caption: 'Uni coursework bands and typical GPA points',
           headers: ['Mark range', 'Grade', 'GPA 4.0 (typical)', 'GPA 7.0 (planning)'],
           rows: [
             ['80–100', 'HD', '4.0', '7.0'],
@@ -1086,10 +1086,10 @@ const enrichments: Record<string, SectionEnhancement[]> = {
         {
           title: 'Band-based planning conversion',
           items: [
-            'Map overall WAM to its Monash grade band, then read 4.0 / 7.0 points for estimates.',
+            'Map overall WAM to its Uni grade band, then read 4.0 / 7.0 points for estimates.',
             'Borderline WAMs (69.5, 79.8) should include exact WAM plus the band estimate.',
             'Unit-by-unit official GPA can diverge from a whole-of-WAM shortcut.',
-            'Linear WAM÷100×4 estimates may disagree with Monash band mapping — follow destination rules.',
+            'Linear WAM÷100×4 estimates may disagree with Uni band mapping — follow destination rules.',
           ],
           afterParagraph: 0,
         },

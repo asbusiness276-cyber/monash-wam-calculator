@@ -11,7 +11,7 @@ const [pmFinal, pmUnit] = PAGE_KEYWORD_LINKS['/pass-mark-calculator'];
 
 const faqs = [
   {
-    question: 'What mark do I need to pass a Monash unit?',
+    question: 'What mark do I need to pass a Uni unit?',
     answer:
       'Most standard units require 50% overall for a Pass (P). This calculator finds the minimum final exam mark needed when coursework is already complete.',
   },
@@ -41,8 +41,8 @@ export default function PassMark() {
   return (
     <>
       <Seo
-        title="Pass Mark Calculator — Exam Score Needed to Pass (Monash 2026)"
-        description="Free pass mark calculator for Monash students: find the minimum final exam percentage needed to reach 50% overall and pass your unit."
+        title="Pass Mark Calculator — Exam Score Needed to Pass (Uni 2026)"
+        description="Free pass mark calculator for Uni students: find the minimum final exam percentage needed to reach 50% overall and pass your unit."
         canonicalPath="/pass-mark-calculator"
         faqItems={faqs}
       />

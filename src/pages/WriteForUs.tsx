@@ -32,7 +32,7 @@ export default function WriteForUs() {
   return (
     <>
       <Seo
-        title="Write For Us | Monash WAM Calculator"
+        title="Write For Us | WAM Calculator"
         description="Contribute education-focused guest content. Read our editorial quality standards, accepted topics, and contributor guidelines."
         canonicalPath="/write-for-us"
         faqItems={writeForUsFaqs}

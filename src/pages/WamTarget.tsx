@@ -26,9 +26,9 @@ const wamTargetFaqs = [
       'Your target WAM is not achievable with the remaining credit load unless performance improves beyond 100% — adjust the goal or timeline.',
   },
   {
-    question: 'Is this official Monash maths?',
+    question: 'Is this official Uni maths?',
     answer:
-      'It uses standard credit-weighted WAM logic for planning. Official WAM also applies Monash year-level weighting — confirm on your transcript.',
+      'It uses standard credit-weighted WAM logic for planning. Official WAM also applies Uni year-level weighting — confirm on your transcript.',
   },
   {
     question: 'Can I target honours or scholarship WAM?',
@@ -38,7 +38,7 @@ const wamTargetFaqs = [
   {
     question: 'Should I combine this with other tools?',
     answer:
-      'Use Monash WAM calculator to verify current WAM, this tool for targets, and final grade calculator for per-unit exam marks.',
+      'Use WAM calculator to verify current WAM, this tool for targets, and final grade calculator for per-unit exam marks.',
   },
 ];
 
@@ -46,8 +46,8 @@ export default function WamTarget() {
   return (
     <>
       <Seo
-        title="WAM Target Calculator - What Average Do You Need? (Monash 2026)"
-        description="Free WAM target calculator for Monash students: enter current WAM and credit points to see what average you need on remaining units to hit your goal."
+        title="WAM Target Calculator - What Average Do You Need? (Uni 2026)"
+        description="Free WAM target calculator for Uni students: enter current WAM and credit points to see what average you need on remaining units to hit your goal."
         canonicalPath="/wam-target-calculator"
         faqItems={wamTargetFaqs}
       />
@@ -55,7 +55,7 @@ export default function WamTarget() {
       <section className="bg-gradient-to-br from-indigo-700 to-indigo-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">WAM Target Calculator</h1>
         <p className="text-indigo-100 max-w-xl mx-auto">
-          Find the average mark you need on remaining units to reach your target Monash WAM — honours, scholarship, or personal goals.
+          Find the average mark you need on remaining units to reach your target WAM — honours, scholarship, or personal goals.
         </p>
         <p className="text-indigo-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Confirm current WAM with the{' '}
@@ -83,10 +83,10 @@ export default function WamTarget() {
         </div>
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Common Target Bands at Monash</h2>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Common Target Bands at Uni</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Students use this calculator for honours cut-offs, scholarship benchmarks, and personal goals. Requirements
-            vary by faculty and year — always confirm with Monash — but these bands are a practical starting point for
+            vary by faculty and year — always confirm with Uni — but these bands are a practical starting point for
             planning.
           </p>
           <div className="overflow-x-auto">
@@ -120,10 +120,10 @@ export default function WamTarget() {
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Verify your current WAM with the{' '}
             <a href={absoluteUrl(wtHome.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
-              Monash WAM calculator
+              WAM calculator
             </a>
             . For deeper context read{' '}
-            <a href="/articles/monash-honours-wam-requirements" className="text-primary-600 dark:text-primary-400 hover:underline">
+            <a href="/articles/uni-honours-wam-requirements" className="text-primary-600 dark:text-primary-400 hover:underline">
               honours WAM requirements
             </a>
             ,{' '}

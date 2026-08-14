@@ -39,7 +39,7 @@ export default function SiteSocialLinks({ variant = 'buttons', className = '' }:
             target="_blank"
             rel="noopener noreferrer"
             className="footer-social-icon"
-            aria-label={`Monash WAM Calculator on ${label}`}
+            aria-label={`WAM Calculator on ${label}`}
           >
             <Icon className="h-5 w-5" />
           </a>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getMonashGradeFromMark, monashGradeBands } from '../utils/monashGrades';
+import { getUniGradeFromMark, uniGradeBands } from '../utils/uniGrades';
 
 interface MarkToGradeToolCoreProps {
   initialMark?: string;
@@ -8,7 +8,7 @@ interface MarkToGradeToolCoreProps {
 export default function MarkToGradeToolCore({ initialMark = '' }: MarkToGradeToolCoreProps) {
   const [mark, setMark] = useState(initialMark);
   const parsed = mark === '' ? null : parseFloat(mark);
-  const result = parsed !== null ? getMonashGradeFromMark(parsed) : null;
+  const result = parsed !== null ? getUniGradeFromMark(parsed) : null;
 
   return (
     <div data-article-tool-screenshot="mark-to-grade" className="space-y-8">
@@ -31,7 +31,7 @@ export default function MarkToGradeToolCore({ initialMark = '' }: MarkToGradeToo
           <div className="space-y-4">
             <div className="bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800 rounded-xl p-6 text-center">
               <div className="text-xs text-violet-600 dark:text-violet-400 font-semibold uppercase mb-1">
-                Monash Grade
+                Uni Grade
               </div>
               <div className={`text-5xl font-bold ${result.color}`}>{result.grade}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400 mt-2">{result.label}</div>
@@ -47,7 +47,7 @@ export default function MarkToGradeToolCore({ initialMark = '' }: MarkToGradeToo
               </div>
             </div>
             <p className="text-sm text-center text-gray-600 dark:text-gray-400">
-              Mark {parsed.toFixed(1)}% sits in the {result.min}–{result.max}% band for standard Monash coursework grades.
+              Mark {parsed.toFixed(1)}% sits in the {result.min}–{result.max}% band for standard Uni coursework grades.
             </p>
           </div>
         )}
@@ -55,7 +55,7 @@ export default function MarkToGradeToolCore({ initialMark = '' }: MarkToGradeToo
 
       <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
         <h2 className="text-base font-bold text-gray-800 dark:text-white px-5 py-4 border-b border-gray-200 dark:border-gray-700">
-          Monash Mark to Grade Table
+          Uni Mark to Grade Table
         </h2>
         <table className="w-full text-sm">
           <thead>
@@ -66,7 +66,7 @@ export default function MarkToGradeToolCore({ initialMark = '' }: MarkToGradeToo
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-            {monashGradeBands.map(row => (
+            {uniGradeBands.map(row => (
               <tr key={row.grade} className="hover:bg-gray-50 dark:hover:bg-gray-750">
                 <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
                   {row.min}–{row.max}%

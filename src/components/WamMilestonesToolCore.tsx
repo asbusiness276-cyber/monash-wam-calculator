@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { calculateWamMilestones } from '../utils/monashGrades';
+import { calculateWamMilestones } from '../utils/uniGrades';
 
 function statusClasses(status: 'met' | 'next' | 'future') {
   if (status === 'met') return 'border-emerald-200 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-900/20';
@@ -29,7 +29,7 @@ export default function WamMilestonesToolCore() {
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">WAM Milestones</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-          Check common Monash planning bands: pass/progression, exchange floor, distinction average, HD territory, and
+          Check common Uni planning bands: pass/progression, exchange floor, distinction average, HD territory, and
           top merit stretch. Add remaining credit points to estimate the average needed.
         </p>
 

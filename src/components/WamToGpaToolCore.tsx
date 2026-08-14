@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Calculator } from 'lucide-react';
-import { convertWamToGpaBands, monashGradeBands } from '../utils/monashGrades';
+import { convertWamToGpaBands, uniGradeBands } from '../utils/uniGrades';
 
 type WamToGpaToolCoreProps = {
   initialWam?: string;
@@ -33,7 +33,7 @@ export default function WamToGpaToolCore({
     <div data-article-tool-screenshot={screenshotId} className="space-y-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-          Enter Your Monash WAM
+          Enter Your WAM
         </label>
         <input
           type="number"
@@ -127,7 +127,7 @@ export default function WamToGpaToolCore({
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-            {monashGradeBands.map(row => (
+            {uniGradeBands.map(row => (
               <tr key={row.grade} className="hover:bg-gray-50 dark:hover:bg-gray-750">
                 <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
                   {row.min}-{row.max}

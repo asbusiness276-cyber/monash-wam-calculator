@@ -32,8 +32,8 @@ export default function TermsAndConditions() {
   return (
     <>
       <Seo
-        title="Terms and Conditions | Monash WAM Calculator"
-        description="Review the terms for using Monash WAM Calculator, including acceptable use, intellectual property, and limitation of liability."
+        title="Terms and Conditions | My Calculator Hub"
+        description="Review the terms for using My Calculator Hub, including acceptable use, intellectual property, and limitation of liability."
         canonicalPath="/terms-and-conditions"
         faqItems={termsFaqs}
       />
@@ -44,7 +44,7 @@ export default function TermsAndConditions() {
 
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
-            By using Monash WAM Calculator, you agree to these terms. If you do not agree, please discontinue use of
+            By using My Calculator Hub, you agree to these terms. If you do not agree, please discontinue use of
             the website. For how we handle data, read our{' '}
             <a href={absoluteUrl(termsPrivacy.path)} className={INLINE_LINK_CLASS}>{termsPrivacy.keyword}</a>
             , and for enquiries you can use{' '}

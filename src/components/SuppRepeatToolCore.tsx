@@ -4,9 +4,9 @@ import {
   calculateBreakevenRepeatMark,
   calculateWamAfterRepeatAttempt,
   calculateWamAfterReplacingUnitMark,
-  getMonashGradeFromMark,
-  monashSupplementaryPassMark,
-} from '../utils/monashGrades';
+  getUniGradeFromMark,
+  uniSupplementaryPassMark,
+} from '../utils/uniGrades';
 
 function formatDelta(delta: number | null) {
   if (delta === null || delta === 0) return 'No change';
@@ -25,7 +25,7 @@ export default function SuppRepeatToolCore() {
   const [failMark, setFailMark] = useState('');
   const [unitCredits, setUnitCredits] = useState('');
   const [repeatMark, setRepeatMark] = useState('70');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  
 
   const wamNum = currentWam === '' ? null : parseFloat(currentWam);
   const creditsNum = totalCredits === '' ? null : parseFloat(totalCredits);
@@ -50,7 +50,7 @@ export default function SuppRepeatToolCore() {
           creditsNum,
           unitCpNum,
           failNum,
-          monashSupplementaryPassMark
+          uniSupplementaryPassMark
         )
       : null;
 
@@ -71,10 +71,10 @@ export default function SuppRepeatToolCore() {
     repeatWam !== null && suppPassWam !== null ? repeatWam > suppPassWam : null;
 
   const repeatGrade =
-    repeatNum !== null && !Number.isNaN(repeatNum) ? getMonashGradeFromMark(repeatNum) : null;
+    repeatNum !== null && !Number.isNaN(repeatNum) ? getUniGradeFromMark(repeatNum) : null;
 
   const handleCheckResult = () => {
-    setIsSubmitted(true);
+    
       };
 
   return (
@@ -178,7 +178,7 @@ export default function SuppRepeatToolCore() {
                 Supplementary pass
               </div>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                Monash caps a passed supplementary at {monashSupplementaryPassMark}% (P). Failing supp keeps your
+                Uni caps a passed supplementary at {uniSupplementaryPassMark}% (P). Failing supp keeps your
                 original fail mark.
               </p>
               <div className="text-4xl font-bold text-gray-900 dark:text-white">
@@ -194,7 +194,7 @@ export default function SuppRepeatToolCore() {
                 Repeat unit
               </div>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                Monash WAM includes failed and repeated attempts — both count in the average.
+                WAM includes failed and repeated attempts — both count in the average.
               </p>
               <div className="text-4xl font-bold text-gray-900 dark:text-white">
                 {repeatWam !== null ? repeatWam.toFixed(2) : '—'}
@@ -213,10 +213,10 @@ export default function SuppRepeatToolCore() {
               <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                 {breakeven > 100 ? (
                   <>
-                    A supplementary pass ({monashSupplementaryPassMark}%) improves WAM more than any realistic repeat
+                    A supplementary pass ({uniSupplementaryPassMark}%) improves WAM more than any realistic repeat
                     mark in this scenario.
                   </>
-                ) : breakeven <= monashSupplementaryPassMark ? (
+                ) : breakeven <= uniSupplementaryPassMark ? (
                   <>
                     Repeat beats supplementary pass if you score above{' '}
                     <strong>{breakeven.toFixed(2)}%</strong> on the repeated unit.
@@ -224,7 +224,7 @@ export default function SuppRepeatToolCore() {
                 ) : (
                   <>
                     You need roughly <strong>{breakeven.toFixed(2)}%</strong> on a repeat to beat passing supplementary
-                    at {monashSupplementaryPassMark}%.
+                    at {uniSupplementaryPassMark}%.
                   </>
                 )}
                 {repeatWam !== null && suppPassWam !== null && repeatNum !== null && !Number.isNaN(repeatNum) && (
@@ -240,8 +240,8 @@ export default function SuppRepeatToolCore() {
           )}
 
           <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            Planning tool only. Monash official WAM also uses year-level weighting and faculty rules for repeats.
-            Confirm outcomes on WES and Monash supplementary assessment pages before changing enrolment.
+            Planning tool only. Uni official WAM also uses year-level weighting and faculty rules for repeats.
+            Confirm outcomes on WES and Uni supplementary assessment pages before changing enrolment.
           </p>
         </div>
       )}

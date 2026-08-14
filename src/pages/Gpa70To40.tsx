@@ -13,20 +13,20 @@ const faqs = [
   {
     question: 'How do I convert 7.0 GPA to 4.0?',
     answer:
-      'Australian 7-point GPA maps to Monash 4.0 bands: 7 = 4.0, 6 = 3.0, 5 = 2.0, 4 = 1.0, 0 = 0.0 for planning.',
+      'Australian 7-point GPA maps to Uni 4.0 bands: 7 = 4.0, 6 = 3.0, 5 = 2.0, 4 = 1.0, 0 = 0.0 for planning.',
   },
   {
     question: 'What is 6.0 GPA on 4.0 scale?',
-    answer: '6.0 on 7.0 is Distinction — equivalent to 3.0 on the Monash 4.0 scale.',
+    answer: '6.0 on 7.0 is Distinction — equivalent to 3.0 on the Uni 4.0 scale.',
   },
   {
     question: 'US applications?',
     answer:
-      'Many US forms request 4.0 GPA. Convert from 7.0 using this tool, then verify with official Monash records.',
+      'Many US forms request 4.0 GPA. Convert from 7.0 using this tool, then verify with official Uni records.',
   },
   {
     question: 'Exact or approximate?',
-    answer: 'Conversion follows Monash grade bands. Mid-band values map to the nearest band.',
+    answer: 'Conversion follows Uni grade bands. Mid-band values map to the nearest band.',
   },
   {
     question: 'Opposite direction?',
@@ -42,8 +42,8 @@ export default function Gpa70To40() {
   return (
     <>
       <Seo
-        title="7.0 to 4.0 GPA Calculator - Monash Converter (2026)"
-        description="Free 7.0 to 4.0 GPA calculator for Monash and Australian students. Convert 7-point GPA to the US-style 4.0 scale."
+        title="7.0 to 4.0 GPA Calculator - Uni Converter (2026)"
+        description="Free 7.0 to 4.0 GPA calculator for Uni and Australian students. Convert 7-point GPA to the US-style 4.0 scale."
         canonicalPath="/7-0-to-4-0-gpa-calculator"
         faqItems={faqs}
       />
@@ -51,7 +51,7 @@ export default function Gpa70To40() {
       <section className="bg-gradient-to-br from-orange-700 to-orange-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">7.0 to 4.0 GPA Calculator</h1>
         <p className="text-orange-100 max-w-xl mx-auto">
-          Convert Australian 7-point GPA to the 4.0 scale — the format used on Monash transcripts and many international forms.
+          Convert Australian 7-point GPA to the 4.0 scale — the format used on Uni transcripts and many international forms.
         </p>
         <p className="text-orange-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           WAM conversion:{' '}

@@ -9,7 +9,7 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
   keyword: 'best universities for economics in australia',
   title: 'Best Universities for Economics in Australia: Top 10 Ranked Guide (2026)',
   description:
-    'Best universities for economics in Australia: ANU, Melbourne, Sydney, UNSW, Monash, UQ, UWA, Adelaide, Macquarie, and UTS — rankings, fees, econometrics strength, and career pathways.',
+    'Best universities for economics in Australia: ANU, Melbourne, Sydney, UNSW, Uni, UQ, UWA, Adelaide, Macquarie, and UTS — rankings, fees, econometrics strength, and career pathways.',
   featuredImage: '/article-images/featured-best-universities-for-economics-in-australia.webp',
   featuredImageAlt:
     'Economics textbooks, growth chart, and Australian university skyline — best universities for economics in Australia guide for students',
@@ -21,7 +21,7 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
       paragraphs: [
         'Students searching best universities for economics in australia usually compare three things: faculty research strength in microeconomics, macroeconomics, and econometrics; whether the degree opens doors to Reserve Bank, Treasury, consulting, or data roles; and whether the city supports internships while you study. This 2026 guide ranks ten Australian universities using economics-focused reputation, tuition bands, and graduate-relevant facts.',
         'Economics is not the same as commerce or finance — though many business schools teach all three. A strong economics degree trains you in modelling, policy evaluation, causal inference, and quantitative reasoning. That matters if you want honours, a PhD, or graduate roles in public policy and analytics rather than sales-led finance tracks alone.',
-        'Use the profiles below to shortlist schools, then confirm prerequisite mathematics, ATAR or equivalent cut-offs, and major structures on each faculty website. If you are already at Monash, read our monash university australia guide and best universities in australia overview while comparing economics pathways nationally.',
+        'Use the profiles below to shortlist schools, then confirm prerequisite mathematics, ATAR or equivalent cut-offs, and major structures on each faculty website. If you are already at Uni, read our the university australia guide and best universities in australia overview while comparing economics pathways nationally.',
       ],
     },
     economicsProfile({
@@ -130,7 +130,7 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
         },
         {
           type: 'paragraph',
-          text: 'Compare Melbourne with Monash if cost matters: both are strong in Victoria, but Monash may offer more flexible undergraduate economics structures while Melbourne leads on prestige-sensitive honours and PhD screens.',
+          text: 'Compare Melbourne with Uni if cost matters: both are strong in Victoria, but Uni may offer more flexible undergraduate economics structures while Melbourne leads on prestige-sensitive honours and PhD screens.',
         },
       ],
     }),
@@ -245,22 +245,22 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
       ],
     }),
     economicsProfile({
-      heading: '5. Monash University',
-      headingLink: 'https://www.monash.edu',
+      heading: '5. the university',
+      headingLink: 'https://www.uni.edu',
       blocks: [
         {
           type: 'image',
           src: 'https://manoa.hawaii.edu/mix/wp-content/uploads/2017/11/1SM_3974cm-2000x1000.jpg',
-          alt: 'Monash University campus — best universities for economics in Australia',
+          alt: 'the university campus — best universities for economics in Australia',
         },
         {
           type: 'quote',
-          text: 'Monash economics balances research depth with practical policy work — a strong choice for students who want scale and choice across Melbourne campuses.',
-          attribution: 'Monash University economics',
+          text: 'Uni economics balances research depth with practical policy work — a strong choice for students who want scale and choice across Melbourne campuses.',
+          attribution: 'the university economics',
         },
         {
           type: 'facts',
-          title: 'Interesting facts about Monash economics',
+          title: 'Interesting facts about Uni economics',
           items: [
             'Department of Economics with applied policy and development research.',
             'Group of Eight research intensity with large undergraduate intake.',
@@ -270,7 +270,7 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
         },
         {
           type: 'table',
-          caption: 'Monash University — economics key details',
+          caption: 'the university — economics key details',
           headers: ['Detail', 'Information'],
           rows: [
             ['Economics rank (this guide)', '#5'],
@@ -286,16 +286,16 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
             ['Main address', 'Wellington Rd, Clayton VIC 3800'],
             ['Phone', '+61 3 9902 6000'],
             ['Other campuses', 'Caulfield, Peninsula, Parkville'],
-            ['Official website', 'https://www.monash.edu'],
+            ['Official website', 'https://www.uni.edu'],
           ],
         },
         {
           type: 'paragraph',
-          text: 'Monash University is a top-five economics pick for students who want breadth — large faculty, diverse electives, and strong development economics research. Caulfield attracts business and economics students who prefer a city-fringe campus; Clayton remains the research hub. If you are already enrolled, track WAM carefully because honours and scholarship screens are credit-weighted.',
+          text: 'the university is a top-five economics pick for students who want breadth — large faculty, diverse electives, and strong development economics research. Caulfield attracts business and economics students who prefer a city-fringe campus; Clayton remains the research hub. If you are already enrolled, track WAM carefully because honours and scholarship screens are credit-weighted.',
         },
         {
           type: 'paragraph',
-          text: 'Monash competes directly with Melbourne on prestige but often offers more accessible undergraduate pathways and clearer major maps. Compare course handbooks side by side if you are torn between the two Victorian Go8 options.',
+          text: 'Uni competes directly with Melbourne on prestige but often offers more accessible undergraduate pathways and clearer major maps. Compare course handbooks side by side if you are torn between the two Victorian Go8 options.',
         },
       ],
     }),
@@ -578,7 +578,7 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
       heading: 'Economics Career Pathways After Your Degree',
       paragraphs: [
         'Choosing among the best universities for economics in australia is only step one. Your major electives, mathematics depth, honours decision, and internship record matter more than any single rank for most careers. Policy students should prioritise econometrics and macro; industry students should add data science and finance electives deliberately.',
-        'If you are comparing offers across cities, read our best universities in australia and best pharmacy universities in australia guides for parallel ranking methodology — then return here for economics-specific faculty fit. Once enrolled at Monash, use the WAM calculator to protect scholarship and honours positioning.',
+        'If you are comparing offers across cities, read our best universities in australia and best pharmacy universities in australia guides for parallel ranking methodology — then return here for economics-specific faculty fit. Once enrolled at Uni, use the WAM calculator to protect scholarship and honours positioning.',
         'Always verify current fees, prerequisites, and course structures on official university websites. Rankings in this article are indicative for 2026 planning and should be combined with open-day conversations and handbook research.',
       ],
     },
@@ -587,7 +587,7 @@ export const bestEconomicsUniversitiesAustraliaArticle: ArticleData = {
     {
       question: 'What are the best universities for economics in Australia?',
       answer:
-        'This guide ranks ANU, Melbourne, Sydney, UNSW, Monash, UQ, UWA, Adelaide, Macquarie, and UTS among the best universities for economics in Australia using research strength, quantitative training, and career pathways.',
+        'This guide ranks ANU, Melbourne, Sydney, UNSW, Uni, UQ, UWA, Adelaide, Macquarie, and UTS among the best universities for economics in Australia using research strength, quantitative training, and career pathways.',
     },
     {
       question: 'Which university is #1 for economics in Australia?',

@@ -19,7 +19,7 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
     links: [
       {
         href: '/',
-        title: 'Monash WAM Calculator',
+        title: 'WAM Calculator',
         description: 'Official-style credit-weighted WAM with Year 1 half-weighting.',
       },
       {
@@ -43,11 +43,6 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         description: 'Check pass, exchange, distinction, HD, and merit WAM bands.',
       },
       {
-        href: '/monash-official-wam-calculator',
-        title: 'Official vs Simple WAM',
-        description: 'Compare planning WAM with Year 1 half-weighted official WAM.',
-      },
-      {
         href: '/degree-progress-calculator',
         title: 'Degree Progress Tracker',
         description: 'Credit points completed and semesters remaining.',
@@ -57,7 +52,7 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
   {
     id: 'gpa',
     title: 'GPA & Grade Conversion',
-    description: 'Monash 4.0 GPA, CGPA, and scale conversion between WAM and GPA.',
+    description: 'Uni 4.0 GPA, CGPA, and scale conversion between WAM and GPA.',
     links: [
       {
         href: '/wam-to-gpa-calculator',
@@ -67,12 +62,12 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       {
         href: '/wam-to-4-0-gpa-calculator',
         title: 'WAM to 4.0 GPA Calculator',
-        description: 'Map Monash WAM to the US-style 4.0 GPA scale.',
+        description: 'Map WAM to the US-style 4.0 GPA scale.',
       },
       {
         href: '/wam-to-7-0-gpa-calculator',
         title: 'WAM to 7.0 GPA Calculator',
-        description: 'Map Monash WAM to the Australian 7-point GPA scale.',
+        description: 'Map WAM to the Australian 7-point GPA scale.',
       },
       {
         href: '/wam-to-cgpa-calculator',
@@ -82,17 +77,17 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       {
         href: '/gpa-to-wam-calculator',
         title: 'GPA to WAM Calculator',
-        description: 'Estimate Monash WAM range from 4.0 or 7.0 GPA.',
+        description: 'Estimate WAM range from 4.0 or 7.0 GPA.',
       },
       {
         href: '/4-0-gpa-to-wam-calculator',
         title: '4.0 GPA to WAM Calculator',
-        description: 'Convert 4.0 GPA to approximate Monash WAM ranges.',
+        description: 'Convert 4.0 GPA to approximate WAM ranges.',
       },
       {
         href: '/7-0-gpa-to-wam-calculator',
         title: '7.0 GPA to WAM Calculator',
-        description: 'Convert 7-point GPA to approximate Monash WAM ranges.',
+        description: 'Convert 7-point GPA to approximate WAM ranges.',
       },
       {
         href: '/cgpa-to-wam-calculator',
@@ -102,7 +97,7 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       {
         href: '/gpa-to-percentage-calculator',
         title: 'GPA to Percentage Calculator',
-        description: 'Map 4.0 or 7.0 GPA to Monash percentage bands.',
+        description: 'Map 4.0 or 7.0 GPA to Uni percentage bands.',
       },
       {
         href: '/4-0-to-7-0-gpa-calculator',
@@ -112,7 +107,7 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       {
         href: '/7-0-to-4-0-gpa-calculator',
         title: '7.0 to 4.0 GPA Calculator',
-        description: 'Convert Australian 7.0 GPA to Monash 4.0 scale.',
+        description: 'Convert Australian 7.0 GPA to Uni 4.0 scale.',
       },
       {
         href: '/gpa-calculator',
@@ -127,7 +122,7 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       {
         href: '/semester-gpa-calculator',
         title: 'Semester GPA Calculator',
-        description: 'SGPA for one teaching period on the Monash 4.0 scale.',
+        description: 'SGPA for one teaching period on the Uni 4.0 scale.',
       },
       {
         href: '/gpa-to-cgpa-calculator',
@@ -137,12 +132,12 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       {
         href: '/cgpa-to-gpa-calculator',
         title: 'CGPA to GPA Calculator',
-        description: 'Convert 10-point CGPA to 4.0 GPA or confirm Monash CGPA.',
+        description: 'Convert 10-point CGPA to 4.0 GPA or confirm Uni CGPA.',
       },
       {
         href: '/10-point-gpa-to-wam-calculator',
         title: '10-Point GPA to WAM',
-        description: 'Map 10.0 scale GPA/CGPA to Monash WAM bands.',
+        description: 'Map 10.0 scale GPA/CGPA to WAM bands.',
       },
       {
         href: '/atar-to-gpa-wam-calculator',
@@ -150,34 +145,9 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         description: 'Indicative ATAR ↔ WAM ↔ GPA planning bands.',
       },
       {
-        href: '/monash-atar-course-checker',
-        title: 'Monash ATAR Course Checker',
-        description: 'Check which Monash degrees you can get into with your ATAR.',
-      },
-      {
         href: '/high-school-gpa-calculator',
         title: 'High School GPA Calculator',
         description: 'Weighted and unweighted US-style school GPA.',
-      },
-      {
-        href: '/monash-gpa-calculator',
-        title: 'Monash GPA Calculator',
-        description: 'Unit-by-unit GPA on the official 4.0 scale (fail = 0.3).',
-      },
-      {
-        href: '/monash-cgpa-calculator',
-        title: 'Monash CGPA Calculator',
-        description: 'Update cumulative GPA after each semester.',
-      },
-      {
-        href: '/monash-target-gpa-calculator',
-        title: 'Monash Target GPA Calculator',
-        description: 'Semester GPA needed to reach a cumulative GPA goal.',
-      },
-      {
-        href: '/monash-grade-converter',
-        title: 'Monash Grade Converter',
-        description: 'Convert between percentage mark, letter grade, and GPA.',
       },
       {
         href: '/mark-to-grade-calculator',
@@ -187,12 +157,12 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       {
         href: '/percentage-to-gpa-calculator',
         title: 'Percentage to GPA Calculator',
-        description: 'Convert a percentage mark to Monash 4.0 and 7.0 GPA bands.',
+        description: 'Convert a percentage mark to Uni 4.0 and 7.0 GPA bands.',
       },
       {
         href: '/7-0-scale-gpa-calculator',
         title: '7.0 Scale GPA Calculator',
-        description: 'Australian 7-point GPA from Monash percentage marks.',
+        description: 'Australian 7-point GPA from Uni percentage marks.',
       },
     ],
   },
@@ -246,26 +216,6 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
     description: 'Scholarships, distinction average, honours bands, and fail recovery.',
     links: [
       {
-        href: '/monash-distinction-average-calculator',
-        title: 'Distinction Average Calculator',
-        description: 'Check WAM 70+ or GPA 3.0+ distinction status.',
-      },
-      {
-        href: '/monash-scholarship-wam-calculator',
-        title: 'Scholarship WAM Calculator',
-        description: 'Merit WAM tiers — average needed on remaining units.',
-      },
-      {
-        href: '/monash-honours-calculator',
-        title: 'Monash Honours Calculator',
-        description: 'H1, H2A, H2B classification from WAM.',
-      },
-      {
-        href: '/monash-deans-honours-calculator',
-        title: "Dean's Honours List Calculator",
-        description: 'Faculty excellence planning bands from your WAM.',
-      },
-      {
         href: '/failed-unit-wam-calculator',
         title: 'Failed Unit WAM Impact',
         description: 'How a fail, supp pass, or recovery changes WAM.',
@@ -279,11 +229,6 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/supp-repeat-wam-calculator',
         title: 'Supp vs Repeat WAM',
         description: 'Compare supplementary pass at 50 vs repeating a unit.',
-      },
-      {
-        href: '/monash-exchange-wam-calculator',
-        title: 'Exchange WAM Calculator',
-        description: 'SFR study abroad — WAM unchanged, credit progress.',
       },
     ],
   },

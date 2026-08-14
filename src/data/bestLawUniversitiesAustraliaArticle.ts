@@ -87,18 +87,18 @@ export const bestLawUniversitiesAustraliaArticle: ArticleData = {
       ]
     },
     {
-      heading: '5. Monash University (Monash Law)',
+      heading: '5. the university (Uni Law)',
       paragraphs: [
-        'Monash Law is Victoria’s premier undergraduate law school (since Melbourne only offers the JD). It is highly practical, offering an extensive clinical legal education program where students can work on real cases.'
+        'Uni Law is Victoria’s premier undergraduate law school (since Melbourne only offers the JD). It is highly practical, offering an extensive clinical legal education program where students can work on real cases.'
       ],
       blocks: [
         {
           type: 'facts',
-          title: 'Monash Law Fast Facts',
+          title: 'Uni Law Fast Facts',
           items: [
-            'Undergraduate ATAR Requirement: 97.00 (Standard) / 94.00 (Monash Guarantee).',
+            'Undergraduate ATAR Requirement: 97.00 (Standard) / 94.00 (Uni Guarantee).',
             'Program Options: Single LLB or Combined LLB.',
-            'Key Strength: Monash Law Clinics providing real-world client experience before graduation.'
+            'Key Strength: Uni Law Clinics providing real-world client experience before graduation.'
           ]
         }
       ]

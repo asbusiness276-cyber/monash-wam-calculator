@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { calculateRequiredRemainingAverage, getMonashGradeFromMark } from '../utils/monashGrades';
+import { calculateRequiredRemainingAverage, getUniGradeFromMark } from '../utils/uniGrades';
 
 function getStatus(required: number | null) {
   if (required === null) return null;
@@ -38,7 +38,7 @@ export default function WamTargetToolCore() {
       : null;
 
   const status = getStatus(required);
-  const gradeBand = required !== null && required >= 0 && required <= 100 ? getMonashGradeFromMark(required) : null;
+  const gradeBand = required !== null && required >= 0 && required <= 100 ? getUniGradeFromMark(required) : null;
 
   return (
     <div data-article-tool-screenshot="wam-target" className="space-y-6">

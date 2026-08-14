@@ -11,9 +11,9 @@ const [wcWam, wcCgpa] = PAGE_KEYWORD_LINKS['/wam-to-cgpa-calculator'];
 
 const faqs = [
   {
-    question: 'How do I convert WAM to CGPA at Monash?',
+    question: 'How do I convert WAM to CGPA at Uni?',
     answer:
-      'Monash CGPA uses the official 4.0 scale. Enter your WAM and this tool maps it to the equivalent 4.0 band value for planning.',
+      'Uni CGPA uses the official 4.0 scale. Enter your WAM and this tool maps it to the equivalent 4.0 band value for planning.',
   },
   {
     question: 'Is CGPA the same as GPA?',
@@ -27,16 +27,16 @@ const faqs = [
   },
   {
     question: 'What WAM is CGPA 3.0?',
-    answer: 'Roughly WAM 70–79 (Distinction band) maps to GPA/CGPA around 3.0 on the Monash 4.0 scale.',
+    answer: 'Roughly WAM 70–79 (Distinction band) maps to GPA/CGPA around 3.0 on the Uni 4.0 scale.',
   },
   {
     question: 'Should I use WAM or CGPA on applications?',
     answer:
-      'Report what the form requests. Monash-native WAM is often preferred when allowed; many overseas forms ask for GPA/CGPA.',
+      'Report what the form requests. Uni-native WAM is often preferred when allowed; many overseas forms ask for GPA/CGPA.',
   },
   {
     question: 'How do I calculate official CGPA?',
-    answer: 'Use the Monash CGPA calculator with your unit grades and credit points for transcript-accurate cumulative GPA.',
+    answer: 'Use the Uni CGPA calculator with your unit grades and credit points for transcript-accurate cumulative GPA.',
   },
 ];
 
@@ -44,8 +44,8 @@ export default function WamToCgpa() {
   return (
     <>
       <Seo
-        title="WAM to CGPA Calculator - Monash 4.0 Scale (2026)"
-        description="Free WAM to CGPA calculator for Monash students. Estimate your cumulative GPA band from overall WAM on the official 4.0 scale."
+        title="WAM to CGPA Calculator - Uni 4.0 Scale (2026)"
+        description="Free WAM to CGPA calculator for Uni students. Estimate your cumulative GPA band from overall WAM on the official 4.0 scale."
         canonicalPath="/wam-to-cgpa-calculator"
         faqItems={faqs}
       />
@@ -53,7 +53,7 @@ export default function WamToCgpa() {
       <section className="bg-gradient-to-br from-sky-700 to-sky-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">WAM to CGPA Calculator</h1>
         <p className="text-sky-100 max-w-xl mx-auto">
-          Estimate Monash CGPA (4.0 cumulative GPA) from your overall WAM — useful for scholarships, postgrad, and overseas forms.
+          Estimate Uni CGPA (4.0 cumulative GPA) from your overall WAM — useful for scholarships, postgrad, and overseas forms.
         </p>
         <p className="text-sky-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Official cumulative maths? Use the{' '}

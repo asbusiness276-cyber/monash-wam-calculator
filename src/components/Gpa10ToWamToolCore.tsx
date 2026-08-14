@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { convert10PointGpaToWamBand } from '../utils/monashGrades';
+import { convert10PointGpaToWamBand } from '../utils/uniGrades';
 
 export default function Gpa10ToWamToolCore() {
   const [gpa10, setGpa10] = useState('');
@@ -29,7 +29,7 @@ export default function Gpa10ToWamToolCore() {
           <div className="space-y-4">
             <div className="bg-lime-50 dark:bg-lime-900/20 border border-lime-200 dark:border-lime-800 rounded-xl p-6 text-center">
               <div className="text-xs text-lime-700 dark:text-lime-400 font-semibold uppercase mb-1">
-                Indicative Monash WAM Band
+                Indicative WAM Band
               </div>
               <div className="text-4xl font-bold text-lime-800 dark:text-lime-200">
                 {result.min}% – {result.max}%
@@ -39,7 +39,7 @@ export default function Gpa10ToWamToolCore() {
               </div>
             </div>
             <p className="text-sm text-center text-gray-600 dark:text-gray-400">
-              10-point GPA × 10 = {percentage.toFixed(1)}% equivalent, then mapped to Monash grade bands.
+              10-point GPA × 10 = {percentage.toFixed(1)}% equivalent, then mapped to Uni grade bands.
             </p>
           </div>
         )}
@@ -47,14 +47,14 @@ export default function Gpa10ToWamToolCore() {
 
       <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
         <h2 className="text-base font-bold text-gray-800 dark:text-white px-5 py-4 border-b border-gray-200 dark:border-gray-700">
-          10-Point GPA to Monash WAM Reference
+          10-Point GPA to WAM Reference
         </h2>
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
               <th className="text-left px-4 py-3 font-semibold">10-pt GPA</th>
               <th className="text-left px-4 py-3 font-semibold">% Equiv</th>
-              <th className="text-left px-4 py-3 font-semibold">Monash Grade</th>
+              <th className="text-left px-4 py-3 font-semibold">Uni Grade</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700">

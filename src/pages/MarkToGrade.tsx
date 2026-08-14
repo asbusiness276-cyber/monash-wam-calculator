@@ -11,11 +11,11 @@ const [mtgHome, mtgFinal] = PAGE_KEYWORD_LINKS['/mark-to-grade-calculator'];
 
 const markToGradeFaqs = [
   {
-    question: 'What mark is HD at Monash?',
-    answer: 'High Distinction (HD) is 80% to 100% on the standard Monash coursework grading scale.',
+    question: 'What mark is HD at Uni?',
+    answer: 'High Distinction (HD) is 80% to 100% on the standard Uni coursework grading scale.',
   },
   {
-    question: 'What is distinction at Monash?',
+    question: 'What is distinction at Uni?',
     answer: 'Distinction (D) covers marks from 70% to 79%. Credit is 60–69%, Pass is 50–59%, and below 50% is a fail.',
   },
   {
@@ -25,12 +25,12 @@ const markToGradeFaqs = [
   {
     question: 'Does this match my transcript?',
     answer:
-      'This tool uses Monash standard percentage bands. Special grades or faculty rules may differ — confirm on your official record.',
+      'This tool uses Uni standard percentage bands. Special grades or faculty rules may differ — confirm on your official record.',
   },
   {
     question: 'Can I use this for overall WAM?',
     answer:
-      'This converts a single percentage mark to a grade band. For cumulative WAM, use the Monash WAM calculator on the homepage.',
+      'This converts a single percentage mark to a grade band. For cumulative WAM, use the WAM calculator on the homepage.',
   },
   {
     question: 'How is this different from WAM to GPA?',
@@ -43,16 +43,16 @@ export default function MarkToGrade() {
   return (
     <>
       <Seo
-        title="Monash Mark to Grade Calculator - HD, D, C, P Converter (2026)"
-        description="Free Monash mark to grade calculator: convert any percentage to HD, D, C, P or N instantly. Monash grading scale with GPA bands."
+        title="Uni Mark to Grade Calculator - HD, D, C, P Converter (2026)"
+        description="Free Uni mark to grade calculator: convert any percentage to HD, D, C, P or N instantly. Uni grading scale with GPA bands."
         canonicalPath="/mark-to-grade-calculator"
         faqItems={markToGradeFaqs}
       />
 
       <section className="bg-gradient-to-br from-violet-700 to-violet-900 text-white py-12 text-center px-4">
-        <h1 className="text-4xl font-bold mb-3">Monash Mark to Grade Calculator</h1>
+        <h1 className="text-4xl font-bold mb-3">Uni Mark to Grade Calculator</h1>
         <p className="text-violet-100 max-w-xl mx-auto">
-          Convert any unit mark (0–100%) to Monash letter grade — HD, D, C, P, or N — with GPA band reference.
+          Convert any unit mark (0–100%) to Uni letter grade — HD, D, C, P, or N — with GPA band reference.
         </p>
         <p className="text-violet-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Tracking overall performance? Use the{' '}
@@ -69,16 +69,16 @@ export default function MarkToGrade() {
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">How to Use</h2>
           <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <li>Enter a unit mark from 0 to 100 (decimals allowed).</li>
-            <li>Read the Monash grade letter and full label instantly.</li>
+            <li>Read the Uni grade letter and full label instantly.</li>
             <li>Check approximate GPA band values for planning.</li>
             <li>Use the reference table below for all standard bands.</li>
           </ul>
         </div>
 
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Monash Standard Grading Scale</h2>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">Uni Standard Grading Scale</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            Monash coursework units typically use percentage marks mapped to letter grades. High Distinction (HD) starts
+            Uni coursework units typically use percentage marks mapped to letter grades. High Distinction (HD) starts
             at 80%, Distinction (D) covers 70–79%, Credit (C) is 60–69%, Pass (P) is 50–59%, and below 50% is a fail (N).
             A single percentage point can change your band — 79% is D, while 80% is HD — so this converter is useful right
             after results release or when estimating where a weighted unit mark might land.
@@ -124,10 +124,10 @@ export default function MarkToGrade() {
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             This tool converts one percentage to a grade band. Your cumulative{' '}
             <a href={absoluteUrl(mtgHome.path)} className="text-primary-600 dark:text-primary-400 hover:underline">
-              Monash WAM
+              WAM
             </a>{' '}
             is a separate credit-weighted average across all completed units. For application planning, read our{' '}
-            <a href="/articles/monash-wam-to-gpa-conversion" className="text-primary-600 dark:text-primary-400 hover:underline">
+            <a href="/articles/uni-wam-to-gpa-conversion" className="text-primary-600 dark:text-primary-400 hover:underline">
               WAM to GPA conversion guide
             </a>{' '}
             or use the{' '}

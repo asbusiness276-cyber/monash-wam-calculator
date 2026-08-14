@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { convert10PointCgpaToGpa4 } from '../utils/monashGrades';
+import { convert10PointCgpaToGpa4 } from '../utils/uniGrades';
 
 export default function CgpaToGpaToolCore() {
   const [scale, setScale] = useState<'10' | '4'>('10');
@@ -35,7 +35,7 @@ export default function CgpaToGpaToolCore() {
               scale === '4' ? 'bg-violet-600 text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
             }`}
           >
-            Monash 4.0 CGPA
+            Uni 4.0 CGPA
           </button>
         </div>
 
@@ -64,7 +64,7 @@ export default function CgpaToGpaToolCore() {
             <p className="text-sm text-center text-gray-600 dark:text-gray-400">
               {scale === '10'
                 ? '10-point CGPA is converted linearly: GPA (4.0) = CGPA ÷ 10 × 4. Confirm with your target institution.'
-                : 'On Monash transcripts, CGPA and cumulative GPA on the 4.0 scale are the same metric.'}
+                : 'On Uni transcripts, CGPA and cumulative GPA on the 4.0 scale are the same metric.'}
             </p>
           </div>
         )}

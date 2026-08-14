@@ -21,7 +21,7 @@ const unitMarkFaqs = [
       'Yes. This calculator requires weights to sum to 100% so the overall unit mark is valid. Check your unit guide or Moodle assessment table if unsure.',
   },
   {
-    question: 'Is this the same as Monash WAM?',
+    question: 'Is this the same as WAM?',
     answer:
       'No. This tool calculates one unit mark from its internal assessments. WAM combines multiple completed units using credit points across your degree.',
   },
@@ -46,8 +46,8 @@ export default function UnitMark() {
   return (
     <>
       <Seo
-        title="Unit Mark Calculator - Weighted Assessments (Monash 2026)"
-        description="Free Monash unit mark calculator: combine assignment, test, and exam marks with weights to get your overall unit percentage and grade band."
+        title="Unit Mark Calculator - Weighted Assessments (Uni 2026)"
+        description="Free Uni unit mark calculator: combine assignment, test, and exam marks with weights to get your overall unit percentage and grade band."
         canonicalPath="/unit-mark-calculator"
         faqItems={unitMarkFaqs}
       />
@@ -56,7 +56,7 @@ export default function UnitMark() {
         <h1 className="text-4xl font-bold mb-3">Unit Mark Calculator</h1>
         <p className="text-cyan-100 max-w-2xl mx-auto">
           Combine assignment, mid-semester, and exam marks using your unit weighting table — get your overall unit
-          percentage and Monash grade band instantly.
+          percentage and Uni grade band instantly.
         </p>
         <p className="text-cyan-100/95 max-w-2xl mx-auto text-sm mt-4 leading-relaxed">
           Need exam-only target maths? Open the{' '}
@@ -83,7 +83,7 @@ export default function UnitMark() {
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white">Reading Your Unit Guide</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            Every Monash unit publishes assessment weights in the handbook or Moodle site. Weights must total 100% for
+            Every Uni unit publishes assessment weights in the handbook or Moodle site. Weights must total 100% for
             this calculator to return a valid overall mark. If your unit uses hurdle requirements — such as a minimum
             exam mark to pass — this tool shows the weighted percentage only; it does not replace faculty pass rules.
           </p>
@@ -105,7 +105,7 @@ export default function UnitMark() {
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             For a full walkthrough of exam-weight planning, see our{' '}
-            <a href="/articles/monash-final-exam-mark-calculator-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
+            <a href="/articles/uni-final-exam-mark-calculator-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
               final exam mark calculator guide
             </a>
             .

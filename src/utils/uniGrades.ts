@@ -1,4 +1,4 @@
-export interface MonashGradeResult {
+export interface UniGradeResult {
   grade: string;
   label: string;
   color: string;
@@ -8,7 +8,7 @@ export interface MonashGradeResult {
   max: number;
 }
 
-const gradeBands: MonashGradeResult[] = [
+const gradeBands: UniGradeResult[] = [
   {
     grade: 'HD',
     label: 'High Distinction',
@@ -56,12 +56,12 @@ const gradeBands: MonashGradeResult[] = [
   },
 ];
 
-export function getMonashGradeFromMark(mark: number): MonashGradeResult | null {
+export function getUniGradeFromMark(mark: number): UniGradeResult | null {
   if (Number.isNaN(mark) || mark < 0 || mark > 100) return null;
   return gradeBands.find(band => mark >= band.min && mark <= band.max) ?? null;
 }
 
-export const monashGradeBands = gradeBands;
+export const uniGradeBands = gradeBands;
 
 export interface GpaBandStep {
   gpa: number;
@@ -87,16 +87,16 @@ const gpa7Steps: GpaBandStep[] = [
   { gpa: 0.0, wamMin: 0, wamMax: 49, grade: 'N', gradeLabel: 'Fail' },
 ];
 
-/** Monash GPA ↔ WAM band steps for conversion tables. */
+/** Uni GPA ↔ WAM band steps for conversion tables. */
 export function getGpaConversionSteps(scaleMax: 4 | 7): readonly GpaBandStep[] {
   return scaleMax === 4 ? gpa4Steps : gpa7Steps;
 }
 
-/** Convert GPA on one scale to the equivalent Monash band GPA on the other scale. */
+/** Convert GPA on one scale to the equivalent Uni band GPA on the other scale. */
 export function convertGpaBetweenScales(gpa: number, fromScale: 4 | 7, toScale: 4 | 7): number | null {
   if (Number.isNaN(gpa) || gpa < 0 || gpa > fromScale) return null;
   if (fromScale === toScale) return gpa;
-  const band = mapGpaToMonashBand(gpa, fromScale);
+  const band = mapGpaToUniBand(gpa, fromScale);
   if (!band) return null;
   const gradeInfo = gradeBands.find(entry => entry.grade === band.grade);
   if (!gradeInfo) return null;
@@ -108,7 +108,7 @@ export function mapGpaToPercentageRange(
   gpa: number,
   scaleMax: 4 | 7
 ): { wamMin: number; wamMax: number; midpoint: number; grade: string; gradeLabel: string } | null {
-  const band = mapGpaToMonashBand(gpa, scaleMax);
+  const band = mapGpaToUniBand(gpa, scaleMax);
   if (!band) return null;
   return {
     wamMin: band.wamMin,
@@ -119,13 +119,13 @@ export function mapGpaToPercentageRange(
   };
 }
 
-/** Map overall WAM to Monash GPA bands on 4.0 and 7.0 scales. */
-export function convertWamToGpaBands(wam: number): MonashGradeResult | null {
-  return getMonashGradeFromMark(wam);
+/** Map overall WAM to Uni GPA bands on 4.0 and 7.0 scales. */
+export function convertWamToGpaBands(wam: number): UniGradeResult | null {
+  return getUniGradeFromMark(wam);
 }
 
-/** Map a GPA value to the closest Monash-style grade band for planning. */
-export function mapGpaToMonashBand(gpa: number, scaleMax: 4 | 7): GpaBandStep | null {
+/** Map a GPA value to the closest Uni-style grade band for planning. */
+export function mapGpaToUniBand(gpa: number, scaleMax: 4 | 7): GpaBandStep | null {
   if (Number.isNaN(gpa) || gpa < 0 || gpa > scaleMax) return null;
   const steps = scaleMax === 4 ? gpa4Steps : gpa7Steps;
   const thresholds =
@@ -148,12 +148,12 @@ export function mapGpaToMonashBand(gpa: number, scaleMax: 4 | 7): GpaBandStep | 
   return thresholds.find(entry => gpa >= entry.min)?.step ?? null;
 }
 
-export function getMonashYearLevelWeight(yearLevel: number): number {
+export function getUniYearLevelWeight(yearLevel: number): number {
   return yearLevel === 1 ? 0.5 : 1.0;
 }
 
-/** First digit of the numeric portion of a Monash unit code (e.g. FIT1045 → 1). */
-export function inferMonashYearLevelFromUnitCode(unitCode: string): number | null {
+/** First digit of the numeric portion of a Uni unit code (e.g. FIT1045 → 1). */
+export function inferUniYearLevelFromUnitCode(unitCode: string): number | null {
   const match = unitCode.trim().match(/\d+/);
   if (!match) return null;
   const firstDigit = Number.parseInt(match[0][0] ?? '', 10);
@@ -161,7 +161,7 @@ export function inferMonashYearLevelFromUnitCode(unitCode: string): number | nul
   return firstDigit;
 }
 
-export function calculateMonashOfficialWam(
+export function calculateUniOfficialWam(
   units: Array<{ mark: number; credits: number; yearLevel: number }>
 ): number | null {
   let weightedMarks = 0;
@@ -169,7 +169,7 @@ export function calculateMonashOfficialWam(
 
   for (const unit of units) {
     if (Number.isNaN(unit.mark) || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
-    const levelWeight = getMonashYearLevelWeight(unit.yearLevel);
+    const levelWeight = getUniYearLevelWeight(unit.yearLevel);
     weightedMarks += unit.mark * unit.credits * levelWeight;
     weightedCredits += unit.credits * levelWeight;
   }
@@ -352,12 +352,12 @@ export interface WamComparisonResult {
   totalCredits: number;
 }
 
-/** Side-by-side planning WAM (credit-weighted) vs official Monash WAM (year-level weighting). */
+/** Side-by-side planning WAM (credit-weighted) vs official WAM (year-level weighting). */
 export function compareSimpleAndOfficialWam(
   units: Array<{ mark: number; credits: number; yearLevel: number }>
 ): WamComparisonResult | null {
   const simpleWam = calculateCreditWeightedWam(units);
-  const officialWam = calculateMonashOfficialWam(units);
+  const officialWam = calculateUniOfficialWam(units);
   if (simpleWam === null || officialWam === null) return null;
 
   const totalCredits = units
@@ -372,7 +372,7 @@ export function compareSimpleAndOfficialWam(
   };
 }
 
-export const MONASH_DEFAULT_DEGREE_CREDITS = 192;
+export const UNI_DEFAULT_DEGREE_CREDITS = 192;
 
 export interface DegreeProgressResult {
   completedCredits: number;
@@ -416,7 +416,7 @@ export function calculateDegreeProgress(
   };
 }
 
-export const MONASH_PASS_MARK = 50;
+export const UNI_PASS_MARK = 50;
 
 export function calculateRequiredFinalExamMark(
   currentMark: number,
@@ -438,7 +438,7 @@ export function calculateRequiredFinalExamMark(
   return Math.round(needed * 100) / 100;
 }
 
-const MONASH_SUPP_PASS_MARK = 50;
+const UNI_SUPP_PASS_MARK = 50;
 
 /** WAM after replacing one unit's mark (e.g. supplementary pass capped at 50). */
 export function calculateWamAfterReplacingUnitMark(
@@ -466,7 +466,7 @@ export function calculateWamAfterReplacingUnitMark(
   return Math.round((adjusted / totalCredits) * 100) / 100;
 }
 
-/** WAM when a repeat attempt is added (Monash includes failed and repeated units). */
+/** WAM when a repeat attempt is added (Uni includes failed and repeated units). */
 export function calculateWamAfterRepeatAttempt(
   currentWam: number,
   totalCredits: number,
@@ -495,7 +495,7 @@ export function calculateBreakevenRepeatMark(
   totalCredits: number,
   unitCredits: number,
   failMark: number,
-  suppPassMark: number = MONASH_SUPP_PASS_MARK
+  suppPassMark: number = UNI_SUPP_PASS_MARK
 ): number | null {
   const suppWam = calculateWamAfterReplacingUnitMark(
     currentWam,
@@ -512,7 +512,7 @@ export function calculateBreakevenRepeatMark(
   return Math.round(required * 100) / 100;
 }
 
-export const monashSupplementaryPassMark = MONASH_SUPP_PASS_MARK;
+export const uniSupplementaryPassMark = UNI_SUPP_PASS_MARK;
 
 /** Required average mark on remaining credit points to reach target WAM. */
 export function calculateRequiredRemainingAverage(
@@ -538,11 +538,11 @@ export function calculateRequiredRemainingAverage(
   return Math.round(required * 100) / 100;
 }
 
-/** Monash official GPA letter codes (Grading Schema Procedure). */
-export type MonashOfficialGpaGrade = 'HD' | 'D' | 'C' | 'P' | 'NP' | 'N' | 'NH' | 'WN';
+/** Uni official GPA letter codes (Grading Schema Procedure). */
+export type UniOfficialGpaGrade = 'HD' | 'D' | 'C' | 'P' | 'NP' | 'N' | 'NH' | 'WN';
 
-/** Official Monash 4.0 GPA grade values — fail (N/NH) = 0.3, not 0.0. */
-export const monashOfficialGpaGradeValues: Record<MonashOfficialGpaGrade, number> = {
+/** Official Uni 4.0 GPA grade values — fail (N/NH) = 0.3, not 0.0. */
+export const uniOfficialGpaGradeValues: Record<UniOfficialGpaGrade, number> = {
   HD: 4.0,
   D: 3.0,
   C: 2.0,
@@ -553,8 +553,8 @@ export const monashOfficialGpaGradeValues: Record<MonashOfficialGpaGrade, number
   WN: 0.0,
 };
 
-export const monashOfficialGpaGradeOptions: Array<{
-  grade: MonashOfficialGpaGrade;
+export const uniOfficialGpaGradeOptions: Array<{
+  grade: UniOfficialGpaGrade;
   label: string;
   gpaValue: number;
   markRange: string;
@@ -569,8 +569,8 @@ export const monashOfficialGpaGradeOptions: Array<{
   { grade: 'WN', label: 'Withdrawn Fail', gpaValue: 0.0, markRange: 'Special grade' },
 ];
 
-/** Map a percentage mark to the standard Monash coursework letter used in official GPA. */
-export function getMonashOfficialGpaGradeFromMark(mark: number): MonashOfficialGpaGrade | null {
+/** Map a percentage mark to the standard Uni coursework letter used in official GPA. */
+export function getUniOfficialGpaGradeFromMark(mark: number): UniOfficialGpaGrade | null {
   if (Number.isNaN(mark) || mark < 0 || mark > 100) return null;
   if (mark >= 80) return 'HD';
   if (mark >= 70) return 'D';
@@ -579,12 +579,12 @@ export function getMonashOfficialGpaGradeFromMark(mark: number): MonashOfficialG
   return 'N';
 }
 
-export interface MonashGpaUnitInput {
-  grade: MonashOfficialGpaGrade;
+export interface UniGpaUnitInput {
+  grade: UniOfficialGpaGrade;
   credits: number;
 }
 
-export interface MonashGpaResult {
+export interface UniGpaResult {
   gpa: number;
   totalCredits: number;
   totalGradePoints: number;
@@ -592,16 +592,16 @@ export interface MonashGpaResult {
 }
 
 /**
- * Official Monash GPA: Σ(grade value × credit points) ÷ Σ(credit points), 3 decimal places.
- * @see https://www.monash.edu/students/admin/assessments/results/gpa
+ * Official Uni GPA: Σ(grade value × credit points) ÷ Σ(credit points), 3 decimal places.
+ * @see https://www.uni.edu/students/admin/assessments/results/gpa
  */
-export function calculateMonashOfficialGpa(units: MonashGpaUnitInput[]): MonashGpaResult | null {
+export function calculateUniOfficialGpa(units: UniGpaUnitInput[]): UniGpaResult | null {
   let totalGradePoints = 0;
   let totalCredits = 0;
   let unitCount = 0;
 
   for (const unit of units) {
-    const gradeValue = monashOfficialGpaGradeValues[unit.grade];
+    const gradeValue = uniOfficialGpaGradeValues[unit.grade];
     if (gradeValue === undefined || Number.isNaN(unit.credits) || unit.credits <= 0) continue;
     totalGradePoints += gradeValue * unit.credits;
     totalCredits += unit.credits;
@@ -618,7 +618,7 @@ export function calculateMonashOfficialGpa(units: MonashGpaUnitInput[]): MonashG
   };
 }
 
-export interface MonashCgpaResult {
+export interface UniCgpaResult {
   cgpa: number;
   semesterGpa: number;
   semesterCredits: number;
@@ -626,14 +626,14 @@ export interface MonashCgpaResult {
 }
 
 /** Cumulative GPA after combining prior GPA/credits with current semester units. */
-export function calculateMonashCgpa(
+export function calculateUniCgpa(
   priorGpa: number,
   priorCredits: number,
-  semesterUnits: MonashGpaUnitInput[]
-): MonashCgpaResult | null {
+  semesterUnits: UniGpaUnitInput[]
+): UniCgpaResult | null {
   if (Number.isNaN(priorGpa) || Number.isNaN(priorCredits) || priorCredits < 0) return null;
 
-  const semester = calculateMonashOfficialGpa(semesterUnits);
+  const semester = calculateUniOfficialGpa(semesterUnits);
   if (!semester) return null;
 
   const totalCredits = priorCredits + semester.totalCredits;
@@ -650,7 +650,7 @@ export function calculateMonashCgpa(
   };
 }
 
-/** Combine prior CGPA with semester GPA using credit-weighted Monash maths. */
+/** Combine prior CGPA with semester GPA using credit-weighted Uni maths. */
 export function calculateCgpaFromSemesterGpa(
   priorCgpa: number,
   priorCredits: number,
@@ -680,16 +680,16 @@ export function calculateCgpaFromSemesterGpa(
   );
 }
 
-/** Linear 10-point CGPA/GPA to Monash 4.0 GPA (common international planning). */
+/** Linear 10-point CGPA/GPA to Uni 4.0 GPA (common international planning). */
 export function convert10PointCgpaToGpa4(cgpa10: number): number | null {
   if (Number.isNaN(cgpa10) || cgpa10 < 0 || cgpa10 > 10) return null;
   return Math.round((cgpa10 / 10) * 4 * 1000) / 1000;
 }
 
-/** Map 10-point GPA to indicative Monash WAM via percentage (GPA × 10). */
-export function convert10PointGpaToWamBand(gpa10: number): MonashGradeResult | null {
+/** Map 10-point GPA to indicative WAM via percentage (GPA × 10). */
+export function convert10PointGpaToWamBand(gpa10: number): UniGradeResult | null {
   if (Number.isNaN(gpa10) || gpa10 < 0 || gpa10 > 10) return null;
-  return getMonashGradeFromMark(gpa10 * 10);
+  return getUniGradeFromMark(gpa10 * 10);
 }
 
 export interface AtarPlanningBand {
@@ -788,7 +788,7 @@ export function calculateRequiredTermGpa(
   return Math.round(required * 1000) / 1000;
 }
 
-export interface MonashHonoursClassification {
+export interface UniHonoursClassification {
   code: 'H1' | 'H2A' | 'H2B' | 'P' | 'BELOW';
   title: string;
   description: string;
@@ -797,17 +797,17 @@ export interface MonashHonoursClassification {
 }
 
 /**
- * Monash honours degree grading schema (course grade from WAM).
+ * Uni honours degree grading schema (course grade from WAM).
  * H2A starts at 70 — not 75 like some generic Australian calculators.
  */
-export function getMonashHonoursFromWam(wam: number): MonashHonoursClassification | null {
+export function getUniHonoursFromWam(wam: number): UniHonoursClassification | null {
   if (Number.isNaN(wam) || wam < 0 || wam > 100) return null;
 
   if (wam >= 80) {
     return {
       code: 'H1',
       title: 'First Class Honours (H1)',
-      description: 'WAM 80 or above — highest honours classification at Monash.',
+      description: 'WAM 80 or above — highest honours classification at Uni.',
       minWam: 80,
       maxWam: 100,
     };
@@ -848,23 +848,23 @@ export function getMonashHonoursFromWam(wam: number): MonashHonoursClassificatio
   };
 }
 
-/** Monash distinction average: WAM 70+ or GPA 3.0+ on the official 4.0 scale. */
-export function isMonashDistinctionAverage(wam: number | null, gpa: number | null): boolean {
+/** Uni distinction average: WAM 70+ or GPA 3.0+ on the official 4.0 scale. */
+export function isUniDistinctionAverage(wam: number | null, gpa: number | null): boolean {
   if (wam !== null && !Number.isNaN(wam) && wam >= 70) return true;
   if (gpa !== null && !Number.isNaN(gpa) && gpa >= 3.0) return true;
   return false;
 }
 
-export type MonashGradeConverterField = 'mark' | 'letter' | 'gpa';
+export type UniGradeConverterField = 'mark' | 'letter' | 'gpa';
 
-export interface MonashGradeConversionResult {
+export interface UniGradeConversionResult {
   mark: number;
-  letter: MonashOfficialGpaGrade;
+  letter: UniOfficialGpaGrade;
   gpa: number;
   label: string;
 }
 
-function monashGradeMidpointMark(grade: MonashOfficialGpaGrade): number {
+function uniGradeMidpointMark(grade: UniOfficialGpaGrade): number {
   switch (grade) {
     case 'HD':
       return 90;
@@ -887,19 +887,19 @@ function monashGradeMidpointMark(grade: MonashOfficialGpaGrade): number {
   }
 }
 
-/** Convert between Monash mark, letter grade, and official 4.0 GPA value. */
-export function convertMonashGrade(
-  value: number | MonashOfficialGpaGrade,
-  from: MonashGradeConverterField
-): MonashGradeConversionResult | null {
-  let letter: MonashOfficialGpaGrade | null = null;
+/** Convert between Uni mark, letter grade, and official 4.0 GPA value. */
+export function convertUniGrade(
+  value: number | UniOfficialGpaGrade,
+  from: UniGradeConverterField
+): UniGradeConversionResult | null {
+  let letter: UniOfficialGpaGrade | null = null;
 
   if (from === 'letter') {
-    if (typeof value !== 'string' || !(value in monashOfficialGpaGradeValues)) return null;
+    if (typeof value !== 'string' || !(value in uniOfficialGpaGradeValues)) return null;
     letter = value;
   } else if (from === 'mark') {
     if (typeof value !== 'number' || Number.isNaN(value)) return null;
-    letter = getMonashOfficialGpaGradeFromMark(value);
+    letter = getUniOfficialGpaGradeFromMark(value);
   } else if (from === 'gpa') {
     if (typeof value !== 'number' || Number.isNaN(value)) return null;
     if (value >= 3.5) letter = 'HD';
@@ -912,22 +912,22 @@ export function convertMonashGrade(
 
   if (!letter) return null;
 
-  const option = monashOfficialGpaGradeOptions.find(o => o.grade === letter);
-  const mark = from === 'mark' && typeof value === 'number' ? value : monashGradeMidpointMark(letter);
+  const option = uniOfficialGpaGradeOptions.find(o => o.grade === letter);
+  const mark = from === 'mark' && typeof value === 'number' ? value : uniGradeMidpointMark(letter);
 
   return {
     mark,
     letter,
-    gpa: monashOfficialGpaGradeValues[letter],
+    gpa: uniOfficialGpaGradeValues[letter],
     label: option?.label ?? letter,
   };
 }
 
-export const MONASH_DISTINCTION_WAM_THRESHOLD = 70;
-export const MONASH_DISTINCTION_GPA_THRESHOLD = 3.0;
-export const MONASH_EXCHANGE_MIN_WAM_THRESHOLD = 60;
+export const UNI_DISTINCTION_WAM_THRESHOLD = 70;
+export const UNI_DISTINCTION_GPA_THRESHOLD = 3.0;
+export const UNI_EXCHANGE_MIN_WAM_THRESHOLD = 60;
 
-export interface MonashDistinctionStatus {
+export interface UniDistinctionStatus {
   qualifiesByWam: boolean;
   qualifiesByGpa: boolean;
   qualifies: boolean;
@@ -935,24 +935,24 @@ export interface MonashDistinctionStatus {
   gpaGap: number | null;
 }
 
-/** Distinction average at Monash: WAM 70+ or GPA 3.0+ on the official 4.0 scale. */
-export function getMonashDistinctionStatus(
+/** Distinction average at Uni: WAM 70+ or GPA 3.0+ on the official 4.0 scale. */
+export function getUniDistinctionStatus(
   wam: number | null,
   gpa: number | null
-): MonashDistinctionStatus | null {
+): UniDistinctionStatus | null {
   const hasWam = wam !== null && !Number.isNaN(wam);
   const hasGpa = gpa !== null && !Number.isNaN(gpa);
   if (!hasWam && !hasGpa) return null;
 
-  const qualifiesByWam = hasWam && wam! >= MONASH_DISTINCTION_WAM_THRESHOLD;
-  const qualifiesByGpa = hasGpa && gpa! >= MONASH_DISTINCTION_GPA_THRESHOLD;
+  const qualifiesByWam = hasWam && wam! >= UNI_DISTINCTION_WAM_THRESHOLD;
+  const qualifiesByGpa = hasGpa && gpa! >= UNI_DISTINCTION_GPA_THRESHOLD;
 
   return {
     qualifiesByWam,
     qualifiesByGpa,
     qualifies: qualifiesByWam || qualifiesByGpa,
-    wamGap: hasWam ? Math.round((MONASH_DISTINCTION_WAM_THRESHOLD - wam!) * 100) / 100 : null,
-    gpaGap: hasGpa ? Math.round((MONASH_DISTINCTION_GPA_THRESHOLD - gpa!) * 1000) / 1000 : null,
+    wamGap: hasWam ? Math.round((UNI_DISTINCTION_WAM_THRESHOLD - wam!) * 100) / 100 : null,
+    gpaGap: hasGpa ? Math.round((UNI_DISTINCTION_GPA_THRESHOLD - gpa!) * 1000) / 1000 : null,
   };
 }
 
@@ -964,10 +964,10 @@ export interface WamMilestone {
   requiredAverage: number | null;
 }
 
-export const MONASH_WAM_MILESTONES: Array<{ label: string; wam: number }> = [
+export const UNI_WAM_MILESTONES: Array<{ label: string; wam: number }> = [
   { label: 'Pass / progression floor', wam: 50 },
-  { label: 'Exchange planning floor', wam: MONASH_EXCHANGE_MIN_WAM_THRESHOLD },
-  { label: 'Distinction average', wam: MONASH_DISTINCTION_WAM_THRESHOLD },
+  { label: 'Exchange planning floor', wam: UNI_EXCHANGE_MIN_WAM_THRESHOLD },
+  { label: 'Distinction average', wam: UNI_DISTINCTION_WAM_THRESHOLD },
   { label: 'High distinction territory', wam: 80 },
   { label: 'Top merit stretch', wam: 85 },
 ];
@@ -977,7 +977,7 @@ export function calculateWamMilestones(
   currentWam: number,
   completedCredits?: number,
   remainingCredits?: number,
-  milestones: Array<{ label: string; wam: number }> = MONASH_WAM_MILESTONES
+  milestones: Array<{ label: string; wam: number }> = UNI_WAM_MILESTONES
 ): WamMilestone[] | null {
   if (Number.isNaN(currentWam) || currentWam < 0 || currentWam > 100) return null;
 
@@ -1041,10 +1041,10 @@ export function calculateWithdrawnFailImpact(
 
   const totalGpaCredits = gpaCredits + unitCredits;
   const gpaAfterWn =
-    Math.round(((currentGpa * gpaCredits + monashOfficialGpaGradeValues.WN * unitCredits) / totalGpaCredits) * 1000) /
+    Math.round(((currentGpa * gpaCredits + uniOfficialGpaGradeValues.WN * unitCredits) / totalGpaCredits) * 1000) /
     1000;
   const gpaAfterStandardFail =
-    Math.round(((currentGpa * gpaCredits + monashOfficialGpaGradeValues.N * unitCredits) / totalGpaCredits) * 1000) /
+    Math.round(((currentGpa * gpaCredits + uniOfficialGpaGradeValues.N * unitCredits) / totalGpaCredits) * 1000) /
     1000;
 
   const hasWam =
@@ -1124,7 +1124,7 @@ export interface ScholarshipTierResult {
   achievable: boolean;
 }
 
-export const MONASH_SCHOLARSHIP_WAM_TIERS: Array<{ label: string; wam: number }> = [
+export const UNI_SCHOLARSHIP_WAM_TIERS: Array<{ label: string; wam: number }> = [
   { label: 'Solid credit', wam: 65 },
   { label: 'Distinction average', wam: 70 },
   { label: 'Strong distinction', wam: 75 },
@@ -1137,7 +1137,7 @@ export function calculateScholarshipTierRequirements(
   currentWam: number,
   completedCredits: number,
   remainingCredits: number,
-  tiers: Array<{ label: string; wam: number }> = MONASH_SCHOLARSHIP_WAM_TIERS
+  tiers: Array<{ label: string; wam: number }> = UNI_SCHOLARSHIP_WAM_TIERS
 ): ScholarshipTierResult[] | null {
   if (
     Number.isNaN(currentWam) ||
@@ -1179,12 +1179,12 @@ export interface DeansHonoursStanding {
 export function getDeansHonoursStanding(wam: number): DeansHonoursStanding | null {
   if (Number.isNaN(wam)) return null;
 
-  if (wam < MONASH_DISTINCTION_WAM_THRESHOLD) {
+  if (wam < UNI_DISTINCTION_WAM_THRESHOLD) {
     return {
       tier: 'below_distinction',
       title: 'Below distinction average',
       description:
-        'Distinction average at Monash is WAM 70+ (GPA 3.0+). Many dean\'s commendation tiers start here — plan recovery on high-credit units.',
+        'Distinction average at Uni is WAM 70+ (GPA 3.0+). Many dean\'s commendation tiers start here — plan recovery on high-credit units.',
       distinctionAverage: false,
     };
   }
@@ -1221,7 +1221,7 @@ export function getDeansHonoursStanding(wam: number): DeansHonoursStanding | nul
 export interface ExchangeWamPlanning {
   currentWam: number;
   wamAfterExchange: number;
-  monashGradedCredits: number;
+  uniGradedCredits: number;
   exchangeCredits: number;
   totalDegreeCredits: number;
   meetsExchangeWamFloor: boolean;
@@ -1230,16 +1230,16 @@ export interface ExchangeWamPlanning {
 /** Exchange SFR units do not change WAM — only degree credit progress. */
 export function calculateExchangeWamPlanning(
   currentWam: number,
-  monashGradedCredits: number,
+  uniGradedCredits: number,
   exchangeCredits: number,
-  minWamFloor: number = MONASH_EXCHANGE_MIN_WAM_THRESHOLD
+  minWamFloor: number = UNI_EXCHANGE_MIN_WAM_THRESHOLD
 ): ExchangeWamPlanning | null {
   if (
     Number.isNaN(currentWam) ||
-    Number.isNaN(monashGradedCredits) ||
+    Number.isNaN(uniGradedCredits) ||
     Number.isNaN(exchangeCredits) ||
     Number.isNaN(minWamFloor) ||
-    monashGradedCredits < 0 ||
+    uniGradedCredits < 0 ||
     exchangeCredits < 0
   ) {
     return null;
@@ -1248,9 +1248,9 @@ export function calculateExchangeWamPlanning(
   return {
     currentWam,
     wamAfterExchange: currentWam,
-    monashGradedCredits,
+    uniGradedCredits,
     exchangeCredits,
-    totalDegreeCredits: monashGradedCredits + exchangeCredits,
+    totalDegreeCredits: uniGradedCredits + exchangeCredits,
     meetsExchangeWamFloor: currentWam >= minWamFloor,
   };
 }

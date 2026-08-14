@@ -11,9 +11,9 @@ const [dpHome, dpArticle] = PAGE_KEYWORD_LINKS['/degree-progress-calculator'];
 
 const faqs = [
   {
-    question: 'How many credit points is a Monash bachelor degree?',
+    question: 'How many credit points is a Uni bachelor degree?',
     answer:
-      'Most Monash bachelor courses are 192 credit points. Some courses differ — check your faculty handbook for your exact total.',
+      'Most Uni bachelor courses are 192 credit points. Some courses differ — check your faculty handbook for your exact total.',
   },
   {
     question: 'How do I find completed credit points?',
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: 'How does this relate to WAM?',
     answer:
-      'Credit progress tracks degree completion. WAM tracks academic average. Use the Monash WAM calculator separately for performance planning.',
+      'Credit progress tracks degree completion. WAM tracks academic average. Use the WAM calculator separately for performance planning.',
   },
 ];
 
@@ -41,8 +41,8 @@ export default function DegreeProgress() {
   return (
     <>
       <Seo
-        title="Degree Progress Calculator — Monash Credit Points Tracker (2026)"
-        description="Free Monash degree progress calculator: track completed credit points, percent complete, and estimated semesters remaining toward your degree."
+        title="Degree Progress Calculator — Uni Credit Points Tracker (2026)"
+        description="Free Uni degree progress calculator: track completed credit points, percent complete, and estimated semesters remaining toward your degree."
         canonicalPath="/degree-progress-calculator"
         faqItems={faqs}
       />
@@ -50,7 +50,7 @@ export default function DegreeProgress() {
       <section className="bg-gradient-to-br from-indigo-700 to-indigo-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">Degree Progress Calculator</h1>
         <p className="text-indigo-100 max-w-xl mx-auto">
-          Track credit points completed toward your Monash degree — see percent done and how many cp remain.
+          Track credit points completed toward your Uni degree — see percent done and how many cp remain.
         </p>
         <p className="text-indigo-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Track WAM separately with the{' '}
@@ -65,7 +65,7 @@ export default function DegreeProgress() {
       </CalculatorSectionWithInlineAds>
       <CalculatorPageGuide path="/degree-progress-calculator" />
       <RelatedCalculators
-        hrefs={['/', '/wam-target-calculator', '/wam-projection-calculator', '/monash-exchange-wam-calculator']}
+        hrefs={['/', '/wam-target-calculator', '/wam-projection-calculator', '/uni-exchange-wam-calculator']}
       />
       <PageFaq items={faqs} />
     </>

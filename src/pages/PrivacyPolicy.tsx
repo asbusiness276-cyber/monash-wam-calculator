@@ -37,8 +37,8 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Seo
-        title="Privacy Policy | Monash WAM Calculator"
-        description="Read how Monash WAM Calculator collects, uses, and protects your data while using our WAM and GPA conversion tools."
+        title="Privacy Policy | My Calculator Hub"
+        description="Read how My Calculator Hub collects, uses, and protects your data while using our WAM and GPA conversion tools."
         canonicalPath="/privacy-policy"
         faqItems={privacyFaqs}
       />
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
 
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p>
-            Monash WAM Calculator is designed to be privacy-friendly. The calculator works directly in your browser, and
+            My Calculator Hub is designed to be privacy-friendly. The calculator works directly in your browser, and
             we do not require account sign-up to access core features. Please read this policy alongside our{' '}
             <a href={absoluteUrl(privacyTerms.path)} className={INLINE_LINK_CLASS}>{privacyTerms.keyword}</a>
             {' '}and{' '}
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. Advertising &amp; Affiliates</h2>
             <p>
-              Monash WAM Calculator may display advertisements from partners such as Google AdSense when that account is
+              My Calculator Hub may display advertisements from partners such as Google AdSense when that account is
               approved and enabled, and may include affiliate links to student-relevant tools (for example writing aids,
               VPN, or cloud storage) via networks such as Commission Factory or Awin. Affiliate partners may track
               referrals using cookies or similar technologies after you click a tracked link.
@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
             <p className="mt-2">
               If you purchase or sign up through an affiliate link, we may earn a commission at no extra cost to you.
               Affiliate recommendations are optional and never required to use our free calculators. This site is not
-              affiliated with Monash University.
+              affiliated with the university.
             </p>
             <p className="mt-2">
               We do not sell your personal academic data to advertisers. Calculator inputs are processed locally in your

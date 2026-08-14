@@ -8,7 +8,7 @@ import PeerReviewMarkToolCore from '../components/PeerReviewMarkToolCore';
 const faqs = [
   {
     question: 'How do peer evaluation multipliers work?',
-    answer: 'Universities (like Monash using SPARKPLUS) require team members to rate each other. An algorithm creates a "factor" based on these ratings. A factor of 1.0 means you did your fair share. A factor of 0.5 means you did half the expected work.',
+    answer: 'Universities (like Uni using SPARKPLUS) require team members to rate each other. An algorithm creates a "factor" based on these ratings. A factor of 1.0 means you did your fair share. A factor of 0.5 means you did half the expected work.',
   },
   {
     question: 'Can I get over 100%?',

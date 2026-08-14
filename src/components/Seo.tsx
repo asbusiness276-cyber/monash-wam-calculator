@@ -46,7 +46,7 @@ interface SeoProps {
   };
 }
 
-const BASE_URL = 'https://monashwamcalculator.com';
+const BASE_URL = 'https://uniwamcalculator.com';
 const ORGANIZATION_LOGO = `${BASE_URL}/logo.png`;
 const ROBOTS_INDEX =
   'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
@@ -82,7 +82,7 @@ function removeJsonLd(id: string) {
 }
 
 function stripTitleSuffix(title: string): string {
-  return title.replace(/\s*\|\s*Monash WAM Calculator.*$/i, '').trim();
+  return title.replace(/\s*\|\s*WAM Calculator.*$/i, '').trim();
 }
 
 export default function Seo({
@@ -105,7 +105,7 @@ export default function Seo({
     upsertMeta('meta[name="description"]', 'name', 'description', description);
     upsertMeta('meta[property="og:title"]', 'property', 'og:title', title);
     upsertMeta('meta[property="og:type"]', 'property', 'og:type', article ? 'article' : 'website');
-    upsertMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'Monash WAM Calculator');
+    upsertMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'WAM Calculator');
     upsertMeta('meta[property="og:description"]', 'property', 'og:description', description);
     upsertMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
     upsertMeta('meta[property="og:locale"]', 'property', 'og:locale', 'en_AU');
@@ -135,15 +135,15 @@ export default function Seo({
       upsertJsonLd('webapp', {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
-        name: 'Monash WAM Calculator',
+        name: 'WAM Calculator',
         alternateName: [
           'WAM Calculator',
-          'Monash WAM calculator',
-          'WAM calculator Monash',
-          'Monash University WAM calculator',
+          'WAM calculator',
+          'WAM calculator Uni',
+          'the university WAM calculator',
         ],
         description:
-          'Free WAM calculator for Monash University students. Compute official Weighted Average Mark with Year 1 half weighting, credit points, and HD/D grade bands.',
+          'Free WAM calculator for the university students. Compute official Weighted Average Mark with Year 1 half weighting, credit points, and HD/D grade bands.',
         url: BASE_URL,
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'Any',
@@ -154,7 +154,7 @@ export default function Seo({
           priceCurrency: 'AUD',
         },
         featureList: [
-          'Official Monash WAM with Year 1 0.5 weighting',
+          'Official WAM with Year 1 0.5 weighting',
           'Planning WAM comparison',
           'WAM to GPA conversion',
           'Mobile-friendly unit entry',
@@ -163,9 +163,9 @@ export default function Seo({
       upsertJsonLd('howto', {
         '@context': 'https://schema.org',
         '@type': 'HowTo',
-        name: 'How to calculate WAM at Monash',
+        name: 'How to calculate WAM at Uni',
         description:
-          'Use the free Monash WAM calculator to compute your Weighted Average Mark from unit marks and credit points.',
+          'Use the free WAM calculator to compute your Weighted Average Mark from unit marks and credit points.',
         step: [
           {
             '@type': 'HowToStep',
@@ -197,7 +197,7 @@ export default function Seo({
         browserRequirements: 'Requires JavaScript',
         isPartOf: {
           '@type': 'WebSite',
-          name: 'Monash WAM Calculator',
+          name: 'WAM Calculator',
           url: BASE_URL,
         },
         offers: {
@@ -220,7 +220,7 @@ export default function Seo({
       inLanguage: 'en-AU',
       isPartOf: {
         '@type': 'WebSite',
-        name: 'Monash WAM Calculator',
+        name: 'WAM Calculator',
         url: BASE_URL,
       },
     });
@@ -263,7 +263,7 @@ export default function Seo({
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Monash WAM Calculator',
+          name: 'WAM Calculator',
           url: BASE_URL,
           logo: {
             '@type': 'ImageObject',
@@ -294,7 +294,7 @@ export default function Seo({
         email: person.email,
         worksFor: {
           '@type': 'Organization',
-          name: 'Monash WAM Calculator',
+          name: 'WAM Calculator',
           url: BASE_URL,
         },
       });

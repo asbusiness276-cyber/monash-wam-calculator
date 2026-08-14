@@ -21,9 +21,9 @@ const weightedAverageFaqs = [
       'Simple average treats every mark equally. Weighted average gives more influence to higher-credit units — a 12 cp distinction moves the result more than a 6 cp pass.',
   },
   {
-    question: 'Is this the same as Monash WAM?',
+    question: 'Is this the same as WAM?',
     answer:
-      'This uses standard credit-weighted planning maths. Official Monash WAM on WES also applies Year 1 half-weighting — use the main WAM calculator for transcript-aligned totals.',
+      'This uses standard credit-weighted planning maths. Official WAM on WES also applies Year 1 half-weighting — use the main WAM calculator for transcript-aligned totals.',
   },
   {
     question: 'What marks should I enter?',
@@ -36,9 +36,9 @@ const weightedAverageFaqs = [
       'Yes. Add every unit from the semester you are measuring. For a simple mean without credit weighting, use the grade average calculator.',
   },
   {
-    question: 'Why do my weights matter at Monash?',
+    question: 'Why do my weights matter at Uni?',
     answer:
-      'Monash WAM is credit-weighted. Two distinction marks do not affect your average equally if one unit is 12 cp and another is 6 cp.',
+      'WAM is credit-weighted. Two distinction marks do not affect your average equally if one unit is 12 cp and another is 6 cp.',
   },
 ];
 
@@ -46,8 +46,8 @@ export default function WeightedAverage() {
   return (
     <>
       <Seo
-        title="Weighted Average Calculator - Monash Credit-Weighted Marks (2026)"
-        description="Free weighted average calculator for Monash students: enter unit marks and credit points to get a credit-weighted percentage average instantly."
+        title="Weighted Average Calculator - Uni Credit-Weighted Marks (2026)"
+        description="Free weighted average calculator for Uni students: enter unit marks and credit points to get a credit-weighted percentage average instantly."
         canonicalPath="/weighted-average-calculator"
         faqItems={weightedAverageFaqs}
       />
@@ -55,7 +55,7 @@ export default function WeightedAverage() {
       <section className="bg-gradient-to-br from-indigo-700 to-indigo-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">Weighted Average Calculator</h1>
         <p className="text-indigo-100 max-w-2xl mx-auto">
-          Calculate a credit-weighted average from unit marks and credit points — the same maths Monash uses for WAM
+          Calculate a credit-weighted average from unit marks and credit points — the same maths Uni uses for WAM
           planning.
         </p>
         <p className="text-indigo-100/95 max-w-2xl mx-auto text-sm mt-4 leading-relaxed">

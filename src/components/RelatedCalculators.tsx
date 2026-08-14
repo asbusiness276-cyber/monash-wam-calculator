@@ -26,8 +26,8 @@ interface RelatedCalculatorsProps {
 }
 
 export default function RelatedCalculators({
-  title = 'More Monash Calculators',
-  description = 'Free planning tools built for Monash coursework — no signup required.',
+  title = 'More Uni Calculators',
+  description = 'Free planning tools built for Uni coursework — no signup required.',
   hrefs,
   maxItems = 6,
   className = '',
@@ -93,7 +93,7 @@ export default function RelatedCalculators({
                 title={link.title}
                 description={link.description}
                 image={featuredImage}
-                imageAlt={`${link.title} — Monash academic planning illustration`}
+                imageAlt={`${link.title} — Uni academic planning illustration`}
               />
             ) : isHome ? (
               <LinkCard
@@ -133,7 +133,7 @@ export default function RelatedCalculators({
               href={absoluteUrl('/calculators')}
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
             >
-              Browse all {ALL_CALCULATOR_LINKS.length} Monash calculators
+              Browse all {ALL_CALCULATOR_LINKS.length} Uni calculators
               <ArrowRight size={14} aria-hidden />
             </a>
           </p>

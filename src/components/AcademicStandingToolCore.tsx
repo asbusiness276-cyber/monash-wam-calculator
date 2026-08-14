@@ -111,7 +111,7 @@ export default function AcademicStandingToolCore() {
           
           <div className="flex items-start space-x-2 text-xs text-slate-500 bg-slate-50 p-3 rounded-lg">
             <Info size={16} className="flex-shrink-0 text-slate-400 mt-0.5" />
-            <p>Monash University (and most Australian universities) review your progress at the end of each semester to ensure you can successfully complete your course.</p>
+            <p>the university (and most Australian universities) review your progress at the end of each semester to ensure you can successfully complete your course.</p>
           </div>
         </div>
 

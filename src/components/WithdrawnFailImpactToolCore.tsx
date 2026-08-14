@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { calculateWithdrawnFailImpact } from '../utils/monashGrades';
+import { calculateWithdrawnFailImpact } from '../utils/uniGrades';
 
 function deltaText(delta: number) {
   return `${delta > 0 ? '+' : ''}${delta.toFixed(3)}`;
@@ -28,7 +28,7 @@ export default function WithdrawnFailImpactToolCore() {
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Withdrawn Fail Impact</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-          WN has GPA value 0.0 on the Monash 4.0 scale. WAM treatment can depend on result codes and exclusions, so this
+          WN has GPA value 0.0 on the Uni 4.0 scale. WAM treatment can depend on result codes and exclusions, so this
           tool shows GPA impact plus a WAM excluded vs worst-case counted-as-zero comparison.
         </p>
 
@@ -160,7 +160,7 @@ export default function WithdrawnFailImpactToolCore() {
             )}
 
             <p className="text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-900/40 rounded-lg p-3">
-              Confirm WN/WAM treatment on your official Monash record. This calculator is for planning and does not
+              Confirm WN/WAM treatment on your official Uni record. This calculator is for planning and does not
               replace faculty advice.
             </p>
           </div>

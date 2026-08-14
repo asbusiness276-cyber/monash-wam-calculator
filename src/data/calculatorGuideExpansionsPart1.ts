@@ -3,26 +3,26 @@ import { buildStandardCalculatorGuide } from '../utils/calculatorGuideBuilder';
 
 const DISTINCTION_AVERAGE_LEGACY: GuideSection[] = [
   {
-    heading: 'What Is Distinction Average at Monash?',
+    heading: 'What Is Distinction Average at Uni?',
     paragraphs: [
-      'Distinction average is a Monash University benchmark for strong academic standing. Students and employers often treat it as WAM 70 or above, or GPA 3.0 or above on the official 4.0 GPA scale. It is not the same as earning a D grade on one unit — distinction average describes your overall course performance across all completed units.',
-      'Faculties reference distinction average for merit certificates, some scholarship renewals, dean\'s commendation tiers, and progression conversations. The exact rules depend on your course and award year, so always confirm with Monash policy pages before relying on a calculator result for formal decisions.',
+      'Distinction average is a the university benchmark for strong academic standing. Students and employers often treat it as WAM 70 or above, or GPA 3.0 or above on the official 4.0 GPA scale. It is not the same as earning a D grade on one unit — distinction average describes your overall course performance across all completed units.',
+      'Faculties reference distinction average for merit certificates, some scholarship renewals, dean\'s commendation tiers, and progression conversations. The exact rules depend on your course and award year, so always confirm with Uni policy pages before relying on a calculator result for formal decisions.',
     ],
     bullets: [
       'WAM 70+ typically meets distinction average on the percentage scale.',
-      'GPA 3.0+ on Monash official 4.0 scale can also qualify.',
+      'GPA 3.0+ on Uni official 4.0 scale can also qualify.',
       'One strong unit does not guarantee distinction average — your cumulative result matters.',
     ],
   },
   {
     heading: 'How to Use This Calculator',
     paragraphs: [
-      'Enter your current WAM from WES or the main Monash WAM calculator. If you also track GPA, enter your official 4.0 GPA — the tool checks both pathways. A positive gap means you still need that many points to reach the distinction floor; a negative gap means you are already above it.',
+      'Enter your current WAM from WES or the main WAM calculator. If you also track GPA, enter your official 4.0 GPA — the tool checks both pathways. A positive gap means you still need that many points to reach the distinction floor; a negative gap means you are already above it.',
       'If you are below 70 WAM with limited credit points remaining, pair this tool with the WAM target calculator to see whether distinction average is still mathematically reachable on your remaining enrolment load.',
     ],
   },
   {
-    heading: 'Distinction Average vs Other Monash Benchmarks',
+    heading: 'Distinction Average vs Other Uni Benchmarks',
     table: {
       headers: ['Benchmark', 'Typical threshold', 'What it measures'],
       rows: [
@@ -40,9 +40,9 @@ const DISTINCTION_AVERAGE_LEGACY: GuideSection[] = [
 
 const SCHOLARSHIP_WAM_LEGACY: GuideSection[] = [
   {
-    heading: 'How Scholarships Use WAM at Monash',
+    heading: 'How Scholarships Use WAM at Uni',
     paragraphs: [
-      'Merit scholarships at Monash University often consider academic performance, but no single WAM applies to every award. Equity scholarships weigh financial need and personal circumstances. Faculty scholarships may set different floors for domestic and international students. This calculator shows planning bands — not guaranteed eligibility.',
+      'Merit scholarships at the university often consider academic performance, but no single WAM applies to every award. Equity scholarships weigh financial need and personal circumstances. Faculty scholarships may set different floors for domestic and international students. This calculator shows planning bands — not guaranteed eligibility.',
       'Use the tier table to see what average you would need on remaining units to reach common merit targets (65 through 85 WAM). If a tier shows "not achievable," your remaining credit load cannot reach that WAM without adding more performance later — adjust your goal or timeline.',
     ],
   },
@@ -61,16 +61,16 @@ const SCHOLARSHIP_WAM_LEGACY: GuideSection[] = [
   {
     heading: 'Scholarship Planning Workflow',
     paragraphs: [
-      'Step 1: Confirm current WAM on WES. Step 2: Sum completed and remaining credit points realistically. Step 3: Run this calculator for tier targets. Step 4: Cross-check distinction average status. Step 5: Read our monash scholarship wam requirements article for award-specific deadlines and criteria.',
+      'Step 1: Confirm current WAM on WES. Step 2: Sum completed and remaining credit points realistically. Step 3: Run this calculator for tier targets. Step 4: Cross-check distinction average status. Step 5: Read our uni scholarship wam requirements article for award-specific deadlines and criteria.',
     ],
   },
 ];
 
 const FAILED_UNIT_LEGACY: GuideSection[] = [
   {
-    heading: 'Why Failed Units Matter for Monash WAM',
+    heading: 'Why Failed Units Matter for WAM',
     paragraphs: [
-      'At Monash University, failed units normally remain in your WAM calculation under standard coursework rules. A fail drags your weighted average down in proportion to the unit\'s credit points — a 12-credit fail hurts twice as much as a 6-credit fail at the same mark.',
+      'At the university, failed units normally remain in your WAM calculation under standard coursework rules. A fail drags your weighted average down in proportion to the unit\'s credit points — a 12-credit fail hurts twice as much as a 6-credit fail at the same mark.',
       'This calculator shows how your WAM would change if the failed unit mark stayed the same, improved through a supplementary pass (capped at 50%), or recovered to credit or distinction levels. It helps you understand recovery options before speaking with faculty advisers.',
     ],
   },
@@ -95,7 +95,7 @@ const FAILED_UNIT_LEGACY: GuideSection[] = [
     bullets: [
       'Enter WAM with the fail already included — match your WES snapshot.',
       'Prioritise high-credit units where future distinction marks can offset the fail.',
-      'Speak with Monash Connect or your faculty about supp eligibility and repeat rules.',
+      'Speak with Uni Connect or your faculty about supp eligibility and repeat rules.',
       'Track progress each semester with the WAM projection calculator.',
     ],
     paragraphs: [
@@ -108,8 +108,8 @@ const DEANS_HONOURS_LEGACY: GuideSection[] = [
   {
     heading: 'Dean\'s Honours List vs Honours Degree',
     paragraphs: [
-      'Monash students often mix up two different ideas. An honours research degree uses H1, H2A, and H2B classifications from WAM. A dean\'s honours list award is a faculty graduation excellence recognition — often percentile-based, not a fixed WAM for every faculty.',
-      'Monash Business School publicly describes dean\'s honours list as top two percentile by WAM within a graduating cohort. Other faculties may use distinction average language, dean\'s commendation certificates, or course awards with different selection logic.',
+      'Uni students often mix up two different ideas. An honours research degree uses H1, H2A, and H2B classifications from WAM. A dean\'s honours list award is a faculty graduation excellence recognition — often percentile-based, not a fixed WAM for every faculty.',
+      'Uni Business School publicly describes dean\'s honours list as top two percentile by WAM within a graduating cohort. Other faculties may use distinction average language, dean\'s commendation certificates, or course awards with different selection logic.',
     ],
   },
   {
@@ -124,7 +124,7 @@ const DEANS_HONOURS_LEGACY: GuideSection[] = [
     bullets: [
       'Awards use certified WAM at degree completion — not mid-degree estimates.',
       'Exchange SFR units do not add marks to WAM.',
-      'Failed units and repeats both count under normal Monash WAM rules.',
+      'Failed units and repeats both count under normal WAM rules.',
       'List dean\'s honours list on applications only after faculty confirmation.',
     ],
     paragraphs: [
@@ -135,28 +135,28 @@ const DEANS_HONOURS_LEGACY: GuideSection[] = [
 
 const EXCHANGE_WAM_LEGACY: GuideSection[] = [
   {
-    heading: 'Do Exchange Grades Affect Monash WAM?',
+    heading: 'Do Exchange Grades Affect WAM?',
     paragraphs: [
-      'Successfully completed outbound exchange units at Monash University normally transfer as SFR — Satisfied Faculty Requirement. Host university percentage marks do not appear as numeric grades on your Monash transcript and do not enter WAM, GPA, or CGPA calculations.',
+      'Successfully completed outbound exchange units at the university normally transfer as SFR — Satisfied Faculty Requirement. Host university percentage marks do not appear as numeric grades on your Uni transcript and do not enter WAM, GPA, or CGPA calculations.',
       'That surprises many students who expect a strong semester abroad to boost their average. Exchange advances degree progress through credit points without mark risk to WAM — assuming you pass and faculty credit is approved.',
     ],
   },
   {
     heading: 'What This Calculator Shows',
     paragraphs: [
-      'Enter your Monash-graded WAM and credit points, then add planned exchange credit as SFR. Your WAM after exchange equals your current WAM — unchanged. Total degree credit points increase, showing progress toward completion.',
-      'The exchange WAM floor check uses a typical 60% planning benchmark referenced in Monash standing guidance. Faculty rules vary; confirm eligibility with Monash Abroad and your managing faculty before applying.',
+      'Enter your Uni-graded WAM and credit points, then add planned exchange credit as SFR. Your WAM after exchange equals your current WAM — unchanged. Total degree credit points increase, showing progress toward completion.',
+      'The exchange WAM floor check uses a typical 60% planning benchmark referenced in Uni standing guidance. Faculty rules vary; confirm eligibility with Uni Abroad and your managing faculty before applying.',
     ],
     bullets: [
       'Keep host transcripts and unit outlines for credit approval.',
       'Failed exchange units may appear as Fail if credit is not granted.',
-      'Recalculate WAM after return using only Monash-graded units.',
+      'Recalculate WAM after return using only Uni-graded units.',
     ],
   },
   {
     heading: 'Exchange and Long-Term Planning',
     paragraphs: [
-      'Strong pre-exchange WAM still matters for scholarships, honours planning, and standing reviews even though exchange itself does not add marks. Use the distinction average calculator and scholarship WAM tool on your Monash-graded baseline before you depart.',
+      'Strong pre-exchange WAM still matters for scholarships, honours planning, and standing reviews even though exchange itself does not add marks. Use the distinction average calculator and scholarship WAM tool on your Uni-graded baseline before you depart.',
       'Read our exchange grades and WAM guide for SFR definitions, application standing rules, and post-return checklist steps.',
     ],
   },
@@ -164,9 +164,9 @@ const EXCHANGE_WAM_LEGACY: GuideSection[] = [
 
 const HONOURS_LEGACY: GuideSection[] = [
   {
-    heading: 'Monash Honours Degree Classifications',
+    heading: 'Uni Honours Degree Classifications',
     paragraphs: [
-      'Monash honours course grades map from WAM using official thresholds: H1 (First Class Honours) from 80, H2A (Second Class Division A) from 70 to below 80, H2B from 60 to below 70, and pass band from 50 to below 60. Below 50 is not a passing honours course average.',
+      'Uni honours course grades map from WAM using official thresholds: H1 (First Class Honours) from 80, H2A (Second Class Division A) from 70 to below 80, H2B from 60 to below 70, and pass band from 50 to below 60. Below 50 is not a passing honours course average.',
       'These classifications describe the honours degree outcome — different from honours entry cut-offs, which faculties set separately each year and may label "competitive" without publishing a fixed minimum.',
     ],
     table: {
@@ -182,8 +182,8 @@ const HONOURS_LEGACY: GuideSection[] = [
   {
     heading: 'H2A Starts at 70 — Not 75',
     paragraphs: [
-      'Generic Australian calculators sometimes show H2A from 75 WAM. Monash official honours schema uses 70 as the H2A floor. A WAM of 79.5 is H2A; H1 begins at exactly 80.00. Small differences matter on transcripts and employer reporting.',
-      'Calculate your WAM with year-level weighting (Year 1 at 0.5) using the main Monash WAM calculator before entering your result here.',
+      'Generic Australian calculators sometimes show H2A from 75 WAM. Uni official honours schema uses 70 as the H2A floor. A WAM of 79.5 is H2A; H1 begins at exactly 80.00. Small differences matter on transcripts and employer reporting.',
+      'Calculate your WAM with year-level weighting (Year 1 at 0.5) using the main WAM calculator before entering your result here.',
     ],
   },
   {
@@ -201,17 +201,17 @@ const HONOURS_LEGACY: GuideSection[] = [
 
 const GPA_LEGACY: GuideSection[] = [
   {
-    heading: 'Monash Official 4.0 GPA Scale',
+    heading: 'Uni Official 4.0 GPA Scale',
     paragraphs: [
-      'Monash University reports GPA on a 4.0 scale where High Distinction = 4.0, Distinction = 3.0, Credit = 2.0, Pass = 1.0, and Fail (N) = 0.3 — not zero. Withdrawn fail (WN) = 0.0. This fail value surprises students migrating from institutions that use 0.0 fails.',
-      'GPA = sum of (grade value × credit points) ÷ sum of credit points, rounded to three decimal places on official records. Enter each unit by letter grade or percentage mark; the calculator maps marks to standard Monash bands before computing.',
+      'the university reports GPA on a 4.0 scale where High Distinction = 4.0, Distinction = 3.0, Credit = 2.0, Pass = 1.0, and Fail (N) = 0.3 — not zero. Withdrawn fail (WN) = 0.0. This fail value surprises students migrating from institutions that use 0.0 fails.',
+      'GPA = sum of (grade value × credit points) ÷ sum of credit points, rounded to three decimal places on official records. Enter each unit by letter grade or percentage mark; the calculator maps marks to standard Uni bands before computing.',
     ],
   },
   {
     heading: 'GPA vs WAM — When to Use Each',
     paragraphs: [
-      'WAM preserves exact percentage differences inside a grade band — two students at 71 and 79 WAM both map to D for GPA but have different WAM. Employers and Monash faculties often prefer WAM for fine comparisons; some international forms request GPA.',
-      'Use the Monash CGPA calculator to combine prior GPA with a new semester. Use WAM to GPA when applications need scale conversion from your weighted average.',
+      'WAM preserves exact percentage differences inside a grade band — two students at 71 and 79 WAM both map to D for GPA but have different WAM. Employers and Uni faculties often prefer WAM for fine comparisons; some international forms request GPA.',
+      'Use the Uni CGPA calculator to combine prior GPA with a new semester. Use WAM to GPA when applications need scale conversion from your weighted average.',
     ],
     bullets: [
       'Distinction average is often stated as GPA 3.0+ or WAM 70+.',
@@ -223,10 +223,10 @@ const GPA_LEGACY: GuideSection[] = [
 
 const CGPA_LEGACY: GuideSection[] = [
   {
-    heading: 'What Is CGPA at Monash?',
+    heading: 'What Is CGPA at Uni?',
     paragraphs: [
       'Cumulative GPA (CGPA) combines your GPA from completed study with new semester results, weighted by credit points. It answers: "What is my overall GPA after this teaching period?" — useful after each results release.',
-      'Enter your prior CGPA and completed credit points, then add this semester\'s units by grade or mark. The calculator computes semester GPA and updated cumulative GPA using Monash official grade values.',
+      'Enter your prior CGPA and completed credit points, then add this semester\'s units by grade or mark. The calculator computes semester GPA and updated cumulative GPA using Uni official grade values.',
     ],
   },
   {
@@ -241,7 +241,7 @@ const CGPA_LEGACY: GuideSection[] = [
       'Update after every official results release.',
       'Use target GPA calculator for next-semester goals.',
       'Cross-check with WAM when faculties reference distinction average.',
-      'Malaysia campus students should confirm local reporting rules with Monash.',
+      'Malaysia campus students should confirm local reporting rules with Uni.',
     ],
     paragraphs: [
       'Read our CGPA explained guide for transcript reading and renewal scholarship contexts.',
@@ -251,7 +251,7 @@ const CGPA_LEGACY: GuideSection[] = [
 
 const TARGET_GPA_LEGACY: GuideSection[] = [
   {
-    heading: 'Target GPA Planning at Monash',
+    heading: 'Target GPA Planning at Uni',
     paragraphs: [
       'This calculator answers: what semester GPA do I need on my next enrolment load to reach a cumulative GPA target? It uses your current CGPA, completed credit points, planned semester credit points, and goal GPA.',
       'Results above 4.0 mean the target is not achievable in one semester on the official scale — you may need multiple strong semesters or a longer timeline.',
@@ -261,16 +261,16 @@ const TARGET_GPA_LEGACY: GuideSection[] = [
     heading: 'How It Differs from WAM Target',
     paragraphs: [
       'WAM target tools work in percentage marks with credit weighting. GPA target tools work in grade-point space where marks compress into bands. A student aiming for distinction average might track both: WAM 70+ and GPA 3.0+.',
-      'Pair with the Monash GPA calculator to verify semester inputs and with the distinction average calculator for merit benchmarks.',
+      'Pair with the Uni GPA calculator to verify semester inputs and with the distinction average calculator for merit benchmarks.',
     ],
   },
 ];
 
 const GRADE_CONVERTER_LEGACY: GuideSection[] = [
   {
-    heading: 'Converting Monash Marks, Grades, and GPA',
+    heading: 'Converting Uni Marks, Grades, and GPA',
     paragraphs: [
-      'Monash coursework uses percentage marks mapped to letter grades with official GPA values. This converter lets you move between mark, letter, and GPA on the 4.0 scale — useful when a form asks for a different field than your transcript shows.',
+      'Uni coursework uses percentage marks mapped to letter grades with official GPA values. This converter lets you move between mark, letter, and GPA on the 4.0 scale — useful when a form asks for a different field than your transcript shows.',
       'Special grades (NP, NH, WN) have distinct GPA values. Standard HD/D/C/P/N bands follow the published grading schema procedure.',
     ],
     table: {
@@ -289,19 +289,19 @@ const GRADE_CONVERTER_LEGACY: GuideSection[] = [
     bullets: [
       'Translating a single unit result for an application form.',
       'Checking approximate GPA value before entering units in the GPA calculator.',
-      'Understanding why fail counts as 0.3, not 0.0, on Monash records.',
+      'Understanding why fail counts as 0.3, not 0.0, on Uni records.',
     ],
     paragraphs: [
-      'For overall course performance, use the Monash GPA or WAM calculators — this tool handles single-value conversion, not cumulative averages.',
+      'For overall course performance, use the Uni GPA or WAM calculators — this tool handles single-value conversion, not cumulative averages.',
     ],
   },
 ];
 
 const SUPP_REPEAT_LEGACY: GuideSection[] = [
   {
-    heading: 'Supplementary vs Repeat at Monash',
+    heading: 'Supplementary vs Repeat at Uni',
     paragraphs: [
-      'When you fail a unit, Monash may offer a supplementary assessment. Passing at 50% replaces the fail mark in WAM for that unit without adding extra credit points. Repeating the unit adds a second attempt — and under normal rules both the fail and repeat marks can count toward WAM, increasing total credit points.',
+      'When you fail a unit, Uni may offer a supplementary assessment. Passing at 50% replaces the fail mark in WAM for that unit without adding extra credit points. Repeating the unit adds a second attempt — and under normal rules both the fail and repeat marks can count toward WAM, increasing total credit points.',
       'This calculator compares WAM after a supplementary pass at 50 versus WAM after a repeat attempt at a mark you choose. It also estimates the repeat mark needed to beat the supplementary outcome.',
     ],
   },
@@ -313,7 +313,7 @@ const SUPP_REPEAT_LEGACY: GuideSection[] = [
     ],
     bullets: [
       'Enter current WAM with the fail already included.',
-      'Check supp eligibility on official Monash channels.',
+      'Check supp eligibility on official Uni channels.',
       'Read our supplementary exam WAM guide and repeat unit guide.',
     ],
   },
@@ -335,20 +335,20 @@ const WAM_PROJECTION_LEGACY: GuideSection[] = [
       'Compare projection results with WAM target goals for honours or scholarships.',
     ],
     paragraphs: [
-      'Label estimated marks clearly — only confirmed transcript marks belong in official planning documents. Update projections after every results release. For a full walkthrough with worked examples, read the monash wam projection guide.',
+      'Label estimated marks clearly — only confirmed transcript marks belong in official planning documents. Update projections after every results release. For a full walkthrough with worked examples, read the WAM projection guide.',
     ],
   },
 ];
 
 export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGuideData> = {
-  '/monash-distinction-average-calculator': buildStandardCalculatorGuide({
+  '/uni-distinction-average-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'This tool checks whether your Monash WAM or official 4.0 GPA meets the distinction average floor — WAM 70+ or GPA 3.0+. It shows your gap to each threshold so you know if you already qualify or how many points you still need.',
+        'This tool checks whether your WAM or official 4.0 GPA meets the distinction average floor — WAM 70+ or GPA 3.0+. It shows your gap to each threshold so you know if you already qualify or how many points you still need.',
         'Distinction average is a course-wide standing label, not a grade on one unit. A student with 79 WAM on FIT1045 but 68 overall WAM does not hold distinction average until the cumulative figure crosses 70.',
       ],
       bullets: [
-        'Enter WAM from WES or the main Monash WAM calculator.',
+        'Enter WAM from WES or the main WAM calculator.',
         'Optionally enter official 4.0 GPA — either metric can qualify you.',
         'Negative gap means you are already above the distinction floor.',
       ],
@@ -364,14 +364,14 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     },
     howItWorks: {
       paragraphs: [
-        'The calculator reads your WAM and GPA inputs independently. WAM gap = 70 − your WAM. GPA gap = 3.0 − your GPA. You qualify if either WAM ≥ 70 or GPA ≥ 3.0 on Monash official scale.',
-        'Because Monash recognises two pathways, a student at WAM 68 but GPA 3.02 still meets distinction average through the GPA route — common when marks cluster at the top of Distinction bands.',
+        'The calculator reads your WAM and GPA inputs independently. WAM gap = 70 − your WAM. GPA gap = 3.0 − your GPA. You qualify if either WAM ≥ 70 or GPA ≥ 3.0 on Uni official scale.',
+        'Because Uni recognises two pathways, a student at WAM 68 but GPA 3.02 still meets distinction average through the GPA route — common when marks cluster at the top of Distinction bands.',
       ],
       callouts: [
         {
           variant: 'info',
           title: 'Dual pathway rule',
-          text: 'Monash distinction average can be satisfied by WAM 70+ OR GPA 3.0+. You do not need both.',
+          text: 'Uni distinction average can be satisfied by WAM 70+ OR GPA 3.0+. You do not need both.',
         },
       ],
     },
@@ -462,10 +462,10 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Document your WES snapshot date when submitting standing to employers.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Distinction average criteria appear in Monash grading schema and faculty merit policies. Award year and course code can change wording — verify on official Monash policy pages.',
-        'This site is independent of Monash University. Calculator output is planning guidance; WES is authoritative for formal submissions.',
+        'Distinction average criteria appear in Uni grading schema and faculty merit policies. Award year and course code can change wording — verify on official Uni policy pages.',
+        'This site is independent of the university. Calculator output is planning guidance; WES is authoritative for formal submissions.',
       ],
       callout: {
         variant: 'tip',
@@ -475,24 +475,24 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     legacySections: DISTINCTION_AVERAGE_LEGACY,
   }),
 
-  '/monash-scholarship-wam-calculator': buildStandardCalculatorGuide({
+  '/uni-scholarship-wam-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
         'This calculator shows the credit-weighted average you need on remaining units to reach merit WAM bands from 65 through 85. Each tier row answers: "If I want WAM X at graduation, what must I score on everything left?"',
-        'Scholarship eligibility depends on award-specific rules — equity, faculty, domestic vs international, and application timing. The tier table is a maths planner, not a guarantee of any particular Monash scholarship.',
+        'Scholarship eligibility depends on award-specific rules — equity, faculty, domestic vs international, and application timing. The tier table is a maths planner, not a guarantee of any particular Uni scholarship.',
       ],
     },
     howItWorks: {
       paragraphs: [
         'For each target tier T: required average = (T × (completed + remaining) − current WAM × completed) ÷ remaining. If the result exceeds 100%, the tier is marked not achievable on your current remaining load.',
-        'Credit points must reflect realistic enrolment — count only units you will actually complete at Monash, excluding exchange SFR credit that carries no mark.',
+        'Credit points must reflect realistic enrolment — count only units you will actually complete at Uni, excluding exchange SFR credit that carries no mark.',
       ],
       table: {
         headers: ['Variable', 'Meaning'],
         rows: [
           ['Current WAM', 'Cumulative WAM from WES today'],
           ['Completed CP', 'Credit points already on transcript'],
-          ['Remaining CP', 'Planned Monash-graded units left'],
+          ['Remaining CP', 'Planned Uni-graded units left'],
           ['Required avg.', 'Mark needed on all remaining units'],
         ],
       },
@@ -509,7 +509,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Use before applying for merit scholarships or negotiating renewal when your award letter cites WAM bands. Also useful when choosing whether to overload final-year electives for WAM recovery.',
       ],
       bullets: [
-        'Monash Merit Scholarship planning (often high WAM bands).',
+        'Uni Merit Scholarship planning (often high WAM bands).',
         'Faculty excellence awards referencing WAM 75–80+.',
         'Deciding if WAM 85 is realistic before committing to a heavy final-year load.',
       ],
@@ -579,9 +579,9 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Save tier screenshots each semester to track whether targets are drifting.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash scholarships publish individual criteria on the scholarships website. Renewal conditions may differ from initial entry requirements.',
+        'Uni scholarships publish individual criteria on the scholarships website. Renewal conditions may differ from initial entry requirements.',
       ],
       bullets: [
         'Some awards use GPA or distinction average instead of raw WAM.',
@@ -594,7 +594,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
   '/failed-unit-wam-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Models how one failed unit affects your Monash WAM under different recovery outcomes: keeping the fail mark, supplementary pass at 50%, or recovering to credit (65), distinction (75), or HD (85).',
+        'Models how one failed unit affects your WAM under different recovery outcomes: keeping the fail mark, supplementary pass at 50%, or recovering to credit (65), distinction (75), or HD (85).',
         'Enter WAM with the fail already included — matching WES — plus total credit points and the failed unit\'s credit value and mark.',
       ],
     },
@@ -606,7 +606,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       callouts: [
         {
           variant: 'info',
-          text: 'Supplementary pass at Monash is capped at 50% for WAM planning when you pass the supp assessment.',
+          text: 'Supplementary pass at Uni is capped at 50% for WAM planning when you pass the supp assessment.',
         },
       ],
     },
@@ -684,18 +684,18 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       bullets: [
         'Prioritise supp preparation when the WAM delta from 50% protects scholarship renewal.',
         'Offset future fails by stacking HD marks on remaining 12 cp cores.',
-        'Speak with Monash Connect within faculty deadlines for supp eligibility.',
+        'Speak with Uni Connect within faculty deadlines for supp eligibility.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Failed units normally remain in WAM under Monash coursework rules. Faculty may offer supplementary assessment per unit policy — not guaranteed for every fail.',
+        'Failed units normally remain in WAM under Uni coursework rules. Faculty may offer supplementary assessment per unit policy — not guaranteed for every fail.',
       ],
     },
     legacySections: FAILED_UNIT_LEGACY,
   }),
 
-  '/monash-deans-honours-calculator': buildStandardCalculatorGuide({
+  '/uni-deans-honours-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
         'Maps your WAM against planning bands used for dean\'s honours list-style recognition: below distinction average, distinction (70–79), high distinction (80+), and competitive top-percentile (85+).',
@@ -705,7 +705,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     howItWorks: {
       paragraphs: [
         'Enter WAM only. The tool assigns a band label and explanatory text. No percentile calculation is performed — faculties select top performers within each graduating cohort using certified WAM at completion.',
-        'Monash Business School publicly cites top 2% by WAM; other faculties use different selection logic. A fixed WAM like 85 does not guarantee selection in every faculty or year.',
+        'Uni Business School publicly cites top 2% by WAM; other faculties use different selection logic. A fixed WAM like 85 does not guarantee selection in every faculty or year.',
       ],
       table: {
         headers: ['WAM band', 'Planning label'],
@@ -728,7 +728,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       ],
     },
     steps: [
-      'Calculate official WAM with year-level weighting on the main Monash WAM calculator.',
+      'Calculate official WAM with year-level weighting on the main WAM calculator.',
       'Enter the WAM figure here.',
       'Read the assigned planning band and narrative.',
       'If below target, open WAM target calculator with remaining cp.',
@@ -776,7 +776,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Pair with scholarship WAM calculator when awards overlap merit tiers.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
         'Graduation excellence awards use certified WAM at degree completion. Faculty websites describe selection methodology — verify before external reporting.',
       ],
@@ -788,17 +788,17 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     legacySections: DEANS_HONOURS_LEGACY,
   }),
 
-  '/monash-exchange-wam-calculator': buildStandardCalculatorGuide({
+  '/uni-exchange-wam-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Shows that outbound exchange credit approved as SFR (Satisfied Faculty Requirement) adds credit points toward your degree but does not change Monash WAM. Host university marks stay off your Monash transcript.',
-        'Also checks your Monash-graded WAM against a typical 60% exchange standing planning floor — faculty rules vary.',
+        'Shows that outbound exchange credit approved as SFR (Satisfied Faculty Requirement) adds credit points toward your degree but does not change WAM. Host university marks stay off your Uni transcript.',
+        'Also checks your Uni-graded WAM against a typical 60% exchange standing planning floor — faculty rules vary.',
       ],
     },
     howItWorks: {
       paragraphs: [
-        'WAM after exchange = current Monash WAM (unchanged). Total cp after exchange = Monash completed cp + exchange cp approved as SFR.',
-        'Exchange does not inject host percentages into WAM maths. Failed exchange without credit approval may appear as Fail — consult Monash Abroad.',
+        'WAM after exchange = current WAM (unchanged). Total cp after exchange = Uni completed cp + exchange cp approved as SFR.',
+        'Exchange does not inject host percentages into WAM maths. Failed exchange without credit approval may appear as Fail — consult Uni Abroad.',
       ],
       callouts: [
         {
@@ -809,7 +809,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     },
     whenToUse: {
       paragraphs: [
-        'Before applying to Monash Abroad when you wonder whether a semester in Singapore or Europe will boost WAM. It will not — but it advances degree completion.',
+        'Before applying to Uni Abroad when you wonder whether a semester in Singapore or Europe will boost WAM. It will not — but it advances degree completion.',
       ],
       bullets: [
         'Planning exchange in Year 2 with WAM 62 — check 60% floor guidance.',
@@ -818,18 +818,18 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       ],
     },
     steps: [
-      'Calculate WAM from Monash-graded units only.',
-      'Enter completed Monash credit points.',
+      'Calculate WAM from Uni-graded units only.',
+      'Enter completed Uni credit points.',
       'Enter planned exchange credit points (e.g. 24 cp one semester).',
       'Review: WAM unchanged, total cp increased.',
       'Check standing floor result against faculty exchange policy.',
-      'After return, recalculate WAM — still Monash units only.',
+      'After return, recalculate WAM — still Uni units only.',
     ],
     examples: [
       {
         title: '24 cp exchange semester',
         paragraphs: [
-          'WAM 73.5, 96 Monash cp. Add 24 cp exchange SFR. WAM stays 73.5; total cp becomes 120. Degree progress advances without mark risk.',
+          'WAM 73.5, 96 Uni cp. Add 24 cp exchange SFR. WAM stays 73.5; total cp becomes 120. Degree progress advances without mark risk.',
         ],
         table: {
           headers: ['Metric', 'Before', 'After exchange'],
@@ -841,11 +841,11 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       },
       {
         title: 'WAM 58 — below 60 floor warning',
-        paragraphs: ['Standing check may flag below typical 60% exchange eligibility floor. Confirm with Monash Abroad before applying.'],
+        paragraphs: ['Standing check may flag below typical 60% exchange eligibility floor. Confirm with Uni Abroad before applying.'],
       },
       {
         title: 'High WAM student — no WAM benefit abroad',
-        paragraphs: ['WAM 82.0, adding 30 cp exchange. WAM remains 82.0. HD marks at host university do not appear on Monash record.'],
+        paragraphs: ['WAM 82.0, adding 30 cp exchange. WAM remains 82.0. HD marks at host university do not appear on Uni record.'],
       },
       {
         title: 'Double semester abroad',
@@ -854,13 +854,13 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       {
         title: 'Post-return confusion',
         paragraphs: [
-          'Student returns with host transcript showing 78% average. Monash WES shows SFR only — recalculated Monash WAM identical to pre-departure 71.2.',
+          'Student returns with host transcript showing 78% average. Uni WES shows SFR only — recalculated WAM identical to pre-departure 71.2.',
         ],
       },
     ],
     mistakes: {
       bullets: [
-        'Expecting host HD grades to lift Monash WAM.',
+        'Expecting host HD grades to lift WAM.',
         'Mixing exchange cp into WAM numerator.',
         'Assuming 60% floor applies identically in every faculty.',
         'Forgetting failed exchange units may not earn SFR credit.',
@@ -868,23 +868,23 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     },
     tips: {
       bullets: [
-        'Build WAM before exchange if scholarships require Monash-graded performance.',
+        'Build WAM before exchange if scholarships require Uni-graded performance.',
         'Keep unit outlines for credit approval.',
-        'Use WAM projection on Monash units for post-return semesters only.',
+        'Use WAM projection on Uni units for post-return semesters only.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'SFR is Monash standard outcome for approved outbound exchange. Marks from partner institutions are not recorded as percentages on the Monash transcript.',
+        'SFR is Uni standard outcome for approved outbound exchange. Marks from partner institutions are not recorded as percentages on the Uni transcript.',
       ],
     },
     legacySections: EXCHANGE_WAM_LEGACY,
   }),
 
-  '/monash-honours-calculator': buildStandardCalculatorGuide({
+  '/uni-honours-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Converts your Monash honours course WAM into the official classification: H1 (80+), H2A (70–79.99), H2B (60–69.99), Pass (50–59.99), or below pass.',
+        'Converts your Uni honours course WAM into the official classification: H1 (80+), H2A (70–79.99), H2B (60–69.99), Pass (50–59.99), or below pass.',
         'Honours entry cut-offs are separate — faculties publish competitive WAM ranges for admission that differ from these final classification bands.',
       ],
       table: {
@@ -899,13 +899,13 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     },
     howItWorks: {
       paragraphs: [
-        'Enter cumulative WAM from your honours year (or projected WAM). The tool applies Monash official thresholds. H2A starts at 70.00 — not 75 as some generic calculators show. H1 starts at 80.00 exactly.',
+        'Enter cumulative WAM from your honours year (or projected WAM). The tool applies Uni official thresholds. H2A starts at 70.00 — not 75 as some generic calculators show. H1 starts at 80.00 exactly.',
         'Thesis-heavy honours years may weight units differently in official calculation — confirm in your course map if your faculty uses non-standard weighting.',
       ],
       callouts: [
         {
           variant: 'warning',
-          title: 'Monash-specific thresholds',
+          title: 'Uni-specific thresholds',
           text: 'WAM 79.99 is H2A. WAM 80.00 is H1. Generic Australian honours calculators may use different cut-offs.',
         },
       ],
@@ -921,7 +921,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       ],
     },
     steps: [
-      'Calculate WAM with year-level weighting using the main Monash WAM calculator.',
+      'Calculate WAM with year-level weighting using the main WAM calculator.',
       'Include all honours-year graded units per faculty rules.',
       'Enter WAM here and read classification code.',
       'If near 79.5–80.0, model thesis/exam marks with WAM projection.',
@@ -958,7 +958,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     ],
     mistakes: {
       bullets: [
-        'Using 75 as H2A floor (Monash uses 70).',
+        'Using 75 as H2A floor (Uni uses 70).',
         'Mixing honours entry competitive WAM with final classification bands.',
         'Omitting year-level weighting when sourcing WAM from a simple spreadsheet.',
         'Assuming thesis grade weighting matches coursework 6 cp units without checking handbook.',
@@ -971,24 +971,24 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Read faculty honours entry page separately from classification bands.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash honours course grades follow published WAM thresholds. Entry requirements are faculty-specific and may change annually.',
+        'Uni honours course grades follow published WAM thresholds. Entry requirements are faculty-specific and may change annually.',
       ],
     },
     legacySections: HONOURS_LEGACY,
   }),
 
-  '/monash-gpa-calculator': buildStandardCalculatorGuide({
+  '/uni-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Computes credit-weighted Monash official 4.0 GPA from your unit list. Enter letter grades or percentage marks — the tool maps to HD/D/C/P/N values and applies GPA = Σ(grade point × cp) ÷ Σ(cp).',
+        'Computes credit-weighted Uni official 4.0 GPA from your unit list. Enter letter grades or percentage marks — the tool maps to HD/D/C/P/N values and applies GPA = Σ(grade point × cp) ÷ Σ(cp).',
         'Shows whether your GPA meets distinction average (3.0+) alongside total grade points and credit count.',
       ],
     },
     howItWorks: {
       paragraphs: [
-        'Monash fail (N) = 0.3 grade points, not 0.0. Withdrawn fail (WN) = 0.0. HD=4.0, D=3.0, C=2.0, P=1.0.',
+        'Uni fail (N) = 0.3 grade points, not 0.0. Withdrawn fail (WN) = 0.0. HD=4.0, D=3.0, C=2.0, P=1.0.',
         'A 12 cp HD contributes twice the grade points of a 6 cp Pass in the same calculation.',
       ],
       table: {
@@ -1016,7 +1016,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       'List completed units with credit points from WES.',
       'Enter grade (letter or mark) for each unit row.',
       'Add or remove rows to match your transcript.',
-      'Read Monash GPA to three decimals.',
+      'Read Uni GPA to three decimals.',
       'Check distinction average flag (GPA 3.0+).',
       'Compare with WES official GPA before submitting externally.',
     ],
@@ -1054,7 +1054,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     ],
     mistakes: {
       bullets: [
-        'Using 0.0 for fail instead of Monash 0.3.',
+        'Using 0.0 for fail instead of Uni 0.3.',
         'Simple-averaging grade points without credit weighting.',
         'Entering WAM percentage as GPA directly.',
         'Excluding failed units from the unit list.',
@@ -1067,18 +1067,18 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Cross-check distinction average with WAM on distinction calculator.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Official GPA on WES rounds to three decimals. Grade values follow Monash grading schema procedure.',
+        'Official GPA on WES rounds to three decimals. Grade values follow Uni grading schema procedure.',
       ],
     },
     legacySections: GPA_LEGACY,
   }),
 
-  '/monash-cgpa-calculator': buildStandardCalculatorGuide({
+  '/uni-cgpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Updates your cumulative GPA after adding a new semester. Enter prior CGPA, completed credit points, then this semester\'s units. Outputs semester GPA and new CGPA using Monash official grade values.',
+        'Updates your cumulative GPA after adding a new semester. Enter prior CGPA, completed credit points, then this semester\'s units. Outputs semester GPA and new CGPA using Uni official grade values.',
       ],
     },
     howItWorks: {
@@ -1089,7 +1089,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       callouts: [
         {
           variant: 'info',
-          text: 'CGPA and cumulative GPA on Monash transcripts refer to the same 4.0 metric.',
+          text: 'CGPA and cumulative GPA on Uni transcripts refer to the same 4.0 metric.',
         },
       ],
     },
@@ -1157,7 +1157,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Malaysia campus: confirm local reporting with faculty.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
         'Repeated units and withdrawn fails may adjust official CGPA differently — export academic record when precision matters.',
       ],
@@ -1165,11 +1165,11 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     legacySections: CGPA_LEGACY,
   }),
 
-  '/monash-target-gpa-calculator': buildStandardCalculatorGuide({
+  '/uni-target-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
         'Calculates the semester GPA required on your next enrolment load to reach a cumulative GPA target. Inputs: current CGPA, completed cp, planned semester cp, goal GPA.',
-        'Results above 4.0 mean the goal is impossible in one semester on Monash official scale.',
+        'Results above 4.0 mean the goal is impossible in one semester on Uni official scale.',
       ],
     },
     howItWorks: {
@@ -1238,10 +1238,10 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       bullets: [
         'Run pessimistic and optimistic semester scenarios.',
         'Cross-check with WAM target when faculty cites WAM 70+.',
-        'Build unit list in Monash GPA calculator to verify semester GPA feasibility.',
+        'Build unit list in Uni GPA calculator to verify semester GPA feasibility.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
         'Distinction average is often GPA 3.0+ or WAM 70+. Track both if your award references either metric.',
       ],
@@ -1249,16 +1249,16 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
     legacySections: TARGET_GPA_LEGACY,
   }),
 
-  '/monash-grade-converter': buildStandardCalculatorGuide({
+  '/uni-grade-converter': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Converts between Monash percentage mark, letter grade, and official 4.0 GPA value for a single result. Handles standard HD/D/C/P/N bands and notes special grades.',
+        'Converts between Uni percentage mark, letter grade, and official 4.0 GPA value for a single result. Handles standard HD/D/C/P/N bands and notes special grades.',
         'Single-value tool — not for cumulative WAM or CGPA across multiple units.',
       ],
     },
     howItWorks: {
       paragraphs: [
-        'Enter mark OR select grade — the tool maps using Monash published bands. HD 80–100 = 4.0, D 70–79 = 3.0, C 60–69 = 2.0, P 50–59 = 1.0, N 0–49 = 0.3.',
+        'Enter mark OR select grade — the tool maps using Uni published bands. HD 80–100 = 4.0, D 70–79 = 3.0, C 60–69 = 2.0, P 50–59 = 1.0, N 0–49 = 0.3.',
         'Boundary marks matter: 79 → D (3.0), 80 → HD (4.0). One point changes GPA step on forms.',
       ],
     },
@@ -1268,14 +1268,14 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
       ],
       bullets: [
         'Visa or exchange paperwork with mixed field types.',
-        'Understanding why fail = 0.3 on Monash scale.',
+        'Understanding why fail = 0.3 on Uni scale.',
         'Pre-checking marks before bulk entry in GPA calculator.',
       ],
     },
     steps: [
       'Enter percentage mark (0–100) OR select letter grade.',
       'Read converted grade, mark band, and GPA value.',
-      'For special grades (WN, NP), consult Monash grading schema.',
+      'For special grades (WN, NP), consult Uni grading schema.',
       'Use GPA calculator for multi-unit cumulative figures.',
     ],
     examples: [
@@ -1319,9 +1319,9 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Note band on applications when mark is borderline.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Grade values follow Monash grading schema procedure. Policy updates can adjust special grade handling — verify on WES for official records.',
+        'Grade values follow Uni grading schema procedure. Policy updates can adjust special grade handling — verify on WES for official records.',
       ],
     },
     legacySections: GRADE_CONVERTER_LEGACY,
@@ -1414,7 +1414,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Confirm repeat policy with faculty — some courses limit attempts.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
         'Supplementary assessment availability follows unit and faculty rules. Repeat enrolment adds credit points and may affect progression timelines.',
       ],
@@ -1505,7 +1505,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART1: Record<string, CalculatorPageGui
         'Pair with WAM target to see required marks vs your estimates.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
         'Official WAM on WES uses year-level weighting (Year 1 at 0.5). This projection tool typically uses credit-weighted marks — align inputs with how you sourced your current WAM.',
       ],

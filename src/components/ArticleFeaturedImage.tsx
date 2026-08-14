@@ -14,7 +14,7 @@ export default function ArticleFeaturedImage({
   priority = false,
   className = 'w-full aspect-video object-cover block',
 }: ArticleFeaturedImageProps) {
-  const alt = getArticleImageAlt(article);
+  const alt = article.featuredImageAlt || getArticleImageAlt(article.slug || '');
 
   return (
     <img

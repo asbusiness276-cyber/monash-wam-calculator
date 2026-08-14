@@ -37,8 +37,8 @@ export default function NotFound() {
   return (
     <>
       <Seo
-        title="Page Not Found | Monash WAM Calculator"
-        description="The requested page could not be found. Explore Monash WAM Calculator tools including WAM, GPA conversion, and final grade calculators."
+        title="Page Not Found | WAM Calculator"
+        description="The requested page could not be found. Explore WAM Calculator tools including WAM, GPA conversion, and final grade calculators."
         canonicalPath={requestPath}
         faqItems={notFoundFaqs}
         noIndex

@@ -1,4 +1,5 @@
-import { lazy, Suspense, type ReactElement } from 'react';
+import { lazy, Suspense, useEffect, type ReactElement } from 'react';
+import OneSignal from 'react-onesignal';
 import { useDarkMode } from './hooks/useDarkMode';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -26,21 +27,9 @@ const ContactUs = lazy(() => import('./pages/ContactUs'));
 const Articles = lazy(() => import('./pages/Articles'));
 const ArticlePost = lazy(() => import('./pages/ArticlePost'));
 const ArticleCategory = lazy(() => import('./pages/ArticleCategory'));
-const EmbedWamToGpa = lazy(() => import('./pages/EmbedWamToGpa'));
-const EmbedMonashWam = lazy(() => import('./pages/EmbedMonashWam'));
 const WriteForUs = lazy(() => import('./pages/WriteForUs'));
-const MonashGpa = lazy(() => import('./pages/MonashGpa'));
-const MonashCgpa = lazy(() => import('./pages/MonashCgpa'));
-const MonashTargetGpa = lazy(() => import('./pages/MonashTargetGpa'));
-const MonashHonours = lazy(() => import('./pages/MonashHonours'));
-const MonashGradeConverter = lazy(() => import('./pages/MonashGradeConverter'));
-const MonashDistinctionAverage = lazy(() => import('./pages/MonashDistinctionAverage'));
-const MonashScholarshipWam = lazy(() => import('./pages/MonashScholarshipWam'));
 const FailedUnitWam = lazy(() => import('./pages/FailedUnitWam'));
-const MonashDeansHonours = lazy(() => import('./pages/MonashDeansHonours'));
-const MonashExchangeWam = lazy(() => import('./pages/MonashExchangeWam'));
 const Calculators = lazy(() => import('./pages/Calculators'));
-const MonashOfficialWam = lazy(() => import('./pages/MonashOfficialWam'));
 const PassMark = lazy(() => import('./pages/PassMark'));
 const DegreeProgress = lazy(() => import('./pages/DegreeProgress'));
 const WamMilestones = lazy(() => import('./pages/WamMilestones'));
@@ -58,13 +47,9 @@ const CgpaToWam = lazy(() => import('./pages/CgpaToWam'));
 const GpaToPercentage = lazy(() => import('./pages/GpaToPercentage'));
 const Gpa40To70 = lazy(() => import('./pages/Gpa40To70'));
 const Gpa70To40 = lazy(() => import('./pages/Gpa70To40'));
-const SemesterGpa = lazy(() => import('./pages/SemesterGpa'));
 const GpaToCgpa = lazy(() => import('./pages/GpaToCgpa'));
 const CgpaToGpa = lazy(() => import('./pages/CgpaToGpa'));
-const Gpa40Calculator = lazy(() => import('./pages/Gpa40Calculator'));
-const GpaCalculator = lazy(() => import('./pages/GpaCalculator'));
 const AtarConverter = lazy(() => import('./pages/AtarConverter'));
-const AtarCourseChecker = lazy(() => import('./pages/AtarCourseChecker'));
 const HighSchoolGpa = lazy(() => import('./pages/HighSchoolGpa'));
 const Gpa10ToWam = lazy(() => import('./pages/Gpa10ToWam'));
 const HecsHelpDebtCalculator = lazy(() => import('./pages/HecsHelpDebtCalculator'));
@@ -136,18 +121,8 @@ function getPage(path: string) {
   if (path === '/unit-mark-calculator') return withSuspense(<UnitMark />);
   if (path === '/wam-projection-calculator') return withSuspense(<WamProjection />);
   if (path === '/unit-target-calculator') return withSuspense(<UnitTarget />);
-  if (path === '/monash-gpa-calculator') return withSuspense(<MonashGpa />);
-  if (path === '/monash-cgpa-calculator') return withSuspense(<MonashCgpa />);
-  if (path === '/monash-target-gpa-calculator') return withSuspense(<MonashTargetGpa />);
-  if (path === '/monash-honours-calculator') return withSuspense(<MonashHonours />);
-  if (path === '/monash-grade-converter') return withSuspense(<MonashGradeConverter />);
-  if (path === '/monash-distinction-average-calculator') return withSuspense(<MonashDistinctionAverage />);
-  if (path === '/monash-scholarship-wam-calculator') return withSuspense(<MonashScholarshipWam />);
   if (path === '/failed-unit-wam-calculator') return withSuspense(<FailedUnitWam />);
-  if (path === '/monash-deans-honours-calculator') return withSuspense(<MonashDeansHonours />);
-  if (path === '/monash-exchange-wam-calculator') return withSuspense(<MonashExchangeWam />);
   if (path === '/calculators') return withSuspense(<Calculators />);
-  if (path === '/monash-official-wam-calculator') return withSuspense(<MonashOfficialWam />);
   if (path === '/pass-mark-calculator') return withSuspense(<PassMark />);
   if (path === '/degree-progress-calculator') return withSuspense(<DegreeProgress />);
   if (path === '/wam-milestones-calculator') return withSuspense(<WamMilestones />);
@@ -165,13 +140,9 @@ function getPage(path: string) {
   if (path === '/gpa-to-percentage-calculator') return withSuspense(<GpaToPercentage />);
   if (path === '/4-0-to-7-0-gpa-calculator') return withSuspense(<Gpa40To70 />);
   if (path === '/7-0-to-4-0-gpa-calculator') return withSuspense(<Gpa70To40 />);
-  if (path === '/semester-gpa-calculator') return withSuspense(<SemesterGpa />);
   if (path === '/gpa-to-cgpa-calculator') return withSuspense(<GpaToCgpa />);
   if (path === '/cgpa-to-gpa-calculator') return withSuspense(<CgpaToGpa />);
-  if (path === '/4-0-gpa-calculator') return withSuspense(<Gpa40Calculator />);
-  if (path === '/gpa-calculator') return withSuspense(<GpaCalculator />);
   if (path === '/atar-to-gpa-wam-calculator') return withSuspense(<AtarConverter />);
-  if (path === '/monash-atar-course-checker') return withSuspense(<AtarCourseChecker />);
   if (path === '/high-school-gpa-calculator') return withSuspense(<HighSchoolGpa />);
   if (path === '/10-point-gpa-to-wam-calculator') return withSuspense(<Gpa10ToWam />);
   if (path === '/hecs-debt-calculator') return withSuspense(<HecsHelpDebtCalculator />);
@@ -249,14 +220,17 @@ export default function App() {
   const { dark, toggle } = useDarkMode();
   const path = window.location.pathname;
 
-  if (path === '/embed/wam-to-gpa' || path === '/embed/monash-wam') {
-    return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        {withSuspense(path === '/embed/wam-to-gpa' ? <EmbedWamToGpa /> : <EmbedMonashWam />)}
-      </div>
-    );
-  }
-
+  useEffect(() => {
+    // OneSignal Push Notifications Initialization
+    // TODO: Replace 'YOUR-ONESIGNAL-APP-ID' with your actual OneSignal App ID
+    OneSignal.init({
+      appId: "YOUR-ONESIGNAL-APP-ID",
+      allowLocalhostAsSecureOrigin: true,
+      notifyButton: {
+        enable: true, // Shows a bell icon for subscribing
+      },
+    }).catch((e) => console.error("OneSignal init error:", e));
+  }, []);
   return (
     <div className="min-h-screen flex flex-col overflow-x-clip bg-gray-50 dark:bg-gray-900 transition-colors">
       <a href="#main-content" className="skip-to-content">

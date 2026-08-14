@@ -9,7 +9,7 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
   keyword: 'best pharmacy universities in australia',
   title: 'Best Pharmacy Universities in Australia: Top 10 Ranked Guide (2026)',
   description:
-    'Best pharmacy universities in Australia: Monash, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT — rankings, fees, placements, scholarships, and official links.',
+    'Best pharmacy universities in Australia: Uni, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT — rankings, fees, placements, scholarships, and official links.',
   featuredImage: '/article-images/featured-best-pharmacy-universities-in-australia.webp',
   featuredImageAlt:
     'Pharmacy textbooks, medicine bottles, and Australian university skyline graphic — best pharmacy universities in Australia guide for students',
@@ -21,26 +21,26 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
       paragraphs: [
         'Students searching best pharmacy universities in australia usually want three answers: which school has the strongest pharmacy and pharmacology reputation, which city fits their budget, and which program includes enough hospital and community placements before registration. This 2026 guide ranks ten Australian universities using pharmacy-focused global ranks from our research sheet, tuition bands, campus footprint, and graduate-relevant facts.',
         'Pharmacy is a regulated profession in Australia. After your accredited degree, you complete a supervised intern year and registration requirements through Ahpra before practising as a pharmacist. That means university choice matters for placement quality, faculty research strength, and how well the course prepares you for both community and hospital settings — not just league table position.',
-        'Use the profiles below for shortlisting, then confirm current entry scores, prerequisite subjects, and accreditation status on each university’s official pharmacy faculty page. If you are comparing Monash with other Melbourne options, also read our best universities in australia guide and monash university australia campus overview.',
+        'Use the profiles below for shortlisting, then confirm current entry scores, prerequisite subjects, and accreditation status on each university’s official pharmacy faculty page. If you are comparing Uni with other Melbourne options, also read our best universities in australia guide and the university australia campus overview.',
       ],
     },
     pharmacyProfile({
-      heading: '1. Monash University',
-      headingLink: 'https://www.monash.edu',
+      heading: '1. the university',
+      headingLink: 'https://www.uni.edu',
       blocks: [
         {
           type: 'image',
           src: 'https://manoa.hawaii.edu/mix/wp-content/uploads/2017/11/1SM_3974cm-2000x1000.jpg',
-          alt: 'Monash University campus environment — best pharmacy universities in Australia',
+          alt: 'the university campus environment — best pharmacy universities in Australia',
         },
         {
           type: 'quote',
-          text: 'Monash pharmacy is frequently cited among the world’s top programs — research depth and clinical training are the main reasons students shortlist it first.',
-          attribution: 'Monash Faculty of Pharmacy and Pharmaceutical Sciences',
+          text: 'Uni pharmacy is frequently cited among the world’s top programs — research depth and clinical training are the main reasons students shortlist it first.',
+          attribution: 'Uni Faculty of Pharmacy and Pharmaceutical Sciences',
         },
         {
           type: 'facts',
-          title: 'Interesting facts about Monash pharmacy',
+          title: 'Interesting facts about Uni pharmacy',
           items: [
             'Ranked #1 globally for pharmacy in our research sheet’s awards field.',
             'Group of Eight member with Parkville pharmacy precinct access in Melbourne.',
@@ -50,7 +50,7 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
         },
         {
           type: 'table',
-          caption: 'Monash University — pharmacy key details',
+          caption: 'the university — pharmacy key details',
           headers: ['Detail', 'Information'],
           rows: [
             ['Pharmacy rank (this guide)', '#1'],
@@ -66,16 +66,16 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
             ['Main address', 'Wellington Rd, Clayton VIC 3800'],
             ['Phone', '+61 3 9902 6000'],
             ['Other campuses', 'Caulfield, Peninsula, Parkville'],
-            ['Official website', 'https://www.monash.edu'],
+            ['Official website', 'https://www.uni.edu'],
           ],
         },
         {
           type: 'paragraph',
-          text: 'Monash University is the headline choice for students who want pharmacy and pharmacology under one research-intensive roof. The faculty’s reputation attracts applicants aiming for hospital pharmacy, industry R&D, and postgraduate pathways in pharmaceutical sciences. Melbourne’s health ecosystem — major hospitals, biomedical precincts, and community pharmacy networks — supports diverse placements if you plan early.',
+          text: 'the university is the headline choice for students who want pharmacy and pharmacology under one research-intensive roof. The faculty’s reputation attracts applicants aiming for hospital pharmacy, industry R&D, and postgraduate pathways in pharmaceutical sciences. Melbourne’s health ecosystem — major hospitals, biomedical precincts, and community pharmacy networks — supports diverse placements if you plan early.',
         },
         {
           type: 'paragraph',
-          text: 'Competition for entry is real: treat prerequisite chemistry and mathematics seriously, and budget for Melbourne living costs above tuition. Once enrolled, strong WAM performance can support scholarship renewal and competitive internship sites — use the Monash WAM calculator to model targets semester by semester.',
+          text: 'Competition for entry is real: treat prerequisite chemistry and mathematics seriously, and budget for Melbourne living costs above tuition. Once enrolled, strong WAM performance can support scholarship renewal and competitive internship sites — use the WAM calculator to model targets semester by semester.',
         },
       ],
     }),
@@ -578,7 +578,7 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
       heading: 'Pharmacy Registration Pathway After University',
       paragraphs: [
         'Completing a degree from one of the best pharmacy universities in australia is step one. You still need an APAC-accredited qualification, a supervised intern year, and Ahpra registration before you can practise as a pharmacist. Plan your degree, intern placement, and exam timeline as one pipeline — not three separate decisions.',
-        'If you are already studying at Monash or comparing offers, use our WAM calculator and best universities in australia guide to balance university prestige with living costs, placement geography, and your intended pharmacy career (hospital, community, industry, or rural).',
+        'If you are already studying at Uni or comparing offers, use our WAM calculator and best universities in australia guide to balance university prestige with living costs, placement geography, and your intended pharmacy career (hospital, community, industry, or rural).',
         'Always verify current tuition, prerequisite subjects, and accreditation on official university websites. Pharmacy ranks in this article use our 2026 research sheet and are indicative — faculty strength matters more than any single number.',
       ],
     },
@@ -587,12 +587,12 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
     {
       question: 'What are the best pharmacy universities in Australia?',
       answer:
-        'This guide ranks Monash, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT among the best pharmacy universities in Australia using pharmacy-focused ranks, fees, and placement context.',
+        'This guide ranks Uni, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT among the best pharmacy universities in Australia using pharmacy-focused ranks, fees, and placement context.',
     },
     {
       question: 'Which university is #1 for pharmacy in Australia?',
       answer:
-        'Monash University is ranked #1 in this guide and cited as #1 globally for pharmacy in our research sheet’s awards field.',
+        'the university is ranked #1 in this guide and cited as #1 globally for pharmacy in our research sheet’s awards field.',
     },
     {
       question: 'How much does pharmacy school cost in Australia?',
@@ -605,9 +605,9 @@ export const bestPharmacyUniversitiesAustraliaArticle: ArticleData = {
         'Yes. Australian pharmacist registration requires completing an accredited degree plus supervised intern training and meeting Ahpra registration requirements.',
     },
     {
-      question: 'Is Monash the best pharmacy university for Monash students?',
+      question: 'Is Uni the best pharmacy university for Uni students?',
       answer:
-        'Monash is a top global pharmacy school, but the best fit depends on placement goals, city costs, and program structure. Compare faculty handbooks before deciding.',
+        'Uni is a top global pharmacy school, but the best fit depends on placement goals, city costs, and program structure. Compare faculty handbooks before deciding.',
     },
     {
       question: 'Are pharmacy university rankings the same as general university rankings?',

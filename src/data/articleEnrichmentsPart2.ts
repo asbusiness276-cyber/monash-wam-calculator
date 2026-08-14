@@ -2,11 +2,11 @@ import type { SectionEnhancement } from '../utils/enrichArticleContent';
 
 
 export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
-  'how-to-find-wam-on-monash-transcript': [
+  'how-to-find-wam-on-uni-transcript': [
     {
       facts: [
         {
-          title: 'Where WAM lives on Monash systems',
+          title: 'Where WAM lives on Uni systems',
           items: [
             'WES (Web Enrolment System) is the fastest place to check cumulative WAM during your degree.',
             'Official academic records and transcripts are what employers and universities accept on forms.',
@@ -22,7 +22,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'WES navigation checklist',
           items: [
-            'Log in via my.monash → WES → Academic Record or Unofficial Academic Record.',
+            'Log in via my.uni → WES → Academic Record or Unofficial Academic Record.',
             'Look for cumulative WAM, GPA, and credit points completed on the summary panel.',
             'Scroll unit rows to confirm each mark matches your expectations before exporting.',
             'Screenshot or PDF only for personal planning — submit official documents on applications.',
@@ -63,7 +63,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Official transcript essentials',
           items: [
-            'Order through Monash student services or authorised digital providers for third parties.',
+            'Order through Uni student services or authorised digital providers for third parties.',
             'Transcripts list unit codes, marks, grades, credit points, and cumulative WAM when certified.',
             'Pending or NS units appear differently until finalised — do not submit mid-semester snapshots.',
             'Keep the PDF naming convention clear: include certification date in your filing system.',
@@ -77,7 +77,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           headers: ['Document', 'Source', 'When to use'],
           rows: [
             ['Unofficial academic record', 'WES', 'Personal checks and calculator inputs'],
-            ['Official transcript', 'Monash / digital vendor', 'Employers, universities, visas'],
+            ['Official transcript', 'Uni / digital vendor', 'Employers, universities, visas'],
             ['Statement of results', 'Results release', 'Interim planning only'],
             ['Completion letter', 'Graduation office', 'Proof of award after certification'],
           ],
@@ -106,7 +106,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           items: [
             'Match form WAM field to transcript cumulative WAM to one decimal if the portal allows.',
             'If a form asks for GPA, use transcript CGPA when printed before estimating.',
-            'Note Monash uses credit-weighted WAM in comments when free-text is permitted.',
+            'Note Uni uses credit-weighted WAM in comments when free-text is permitted.',
             'Re-download WES after each major results release before lodging applications.',
           ],
           afterParagraph: 0,
@@ -129,14 +129,14 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-credit-points-wam-explained': [
+  'uni-credit-points-wam-explained': [
     {
       facts: [
         {
           title: 'Credit points in the WAM formula',
           items: [
             'WAM = Σ(mark × credit points) ÷ Σ(credit points) — load scales each unit’s influence.',
-            'Monash undergraduate units commonly carry 6 or 12 credit points per semester.',
+            'Uni undergraduate units commonly carry 6 or 12 credit points per semester.',
             'A 12-credit core at 75 affects cumulative WAM roughly twice a 6-credit elective at 75.',
             'Always pair each mark with its credit value from WES before calculating.',
           ],
@@ -178,7 +178,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           items: [
             'Three units at 78 (6 cp), 72 (12 cp), 85 (6 cp) → WAM ≈ 75.0, not 78.3 simple average.',
             'Improving the 12-credit unit from 72 → 78 moves WAM more than perfecting a 6-credit breadth.',
-            'Model scenarios in the Monash WAM calculator with true credit columns.',
+            'Model scenarios in the WAM calculator with true credit columns.',
             'Label projected units separately from certified transcript rows.',
           ],
           afterParagraph: 0,
@@ -190,7 +190,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Year 1 half-weight interaction',
           items: [
-            'Official Monash WAM applies 0.5 weighting to Year 1 level units in the formula.',
+            'Official WAM applies 0.5 weighting to Year 1 level units in the formula.',
             'Hand calculators that ignore year level will diverge from WES cumulative WAM.',
             'Year 1 high marks still help progression even when official WAM moves slowly.',
             'See the Year 1 weighting guide when reconciling planning vs transcript WAM.',
@@ -245,7 +245,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Tools after credit-point clarity',
           items: [
-            'Monash WAM calculator — enter marks with correct cp per row.',
+            'WAM calculator — enter marks with correct cp per row.',
             'Final grade calculator — target high-weight assessments in large units.',
             'WAM target calculator — see required averages on remaining cp load.',
             'Year 1 weighting guide — reconcile official vs planning WAM.',
@@ -256,13 +256,13 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-final-exam-mark-calculator-guide': [
+  'uni-final-exam-mark-calculator-guide': [
     {
       facts: [
         {
           title: 'Why finals drive calculator searches',
           items: [
-            'Many Monash units weight the final exam 40–60% of the total mark.',
+            'Many Uni units weight the final exam 40–60% of the total mark.',
             'Students reverse-engineer the exam mark needed to hit HD (80), distinction (70), or pass (50).',
             'Coursework locked in early reduces remaining leverage — calculate before the final sits.',
             'Unit targets and cumulative WAM planning use different tools — keep both updated.',
@@ -301,7 +301,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     {
       facts: [
         {
-          title: 'Monash grade bands to aim for',
+          title: 'Uni grade bands to aim for',
           items: [
             'HD 80–100 — strongest WAM and GPA band movement per unit.',
             'D 70–79 — common honours and internship planning zone.',
@@ -372,7 +372,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Linking unit results to overall WAM',
           items: [
-            'After finals, enter confirmed unit marks into the Monash WAM calculator.',
+            'After finals, enter confirmed unit marks into the WAM calculator.',
             'High-credit units move cumulative WAM more than low-credit electives at the same mark.',
             'Run semester WAM separately to judge term performance vs degree average.',
             'Use WAM target tool if the final season must close a gap to distinction.',
@@ -397,7 +397,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-supplementary-exam-wam-guide': [
+  'uni-supplementary-exam-wam-guide': [
     {
       facts: [
         {
@@ -524,14 +524,14 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-cgpa-explained-guide': [
+  'uni-cgpa-explained-guide': [
     {
       facts: [
         {
-          title: 'CGPA in Monash context',
+          title: 'CGPA in Uni context',
           items: [
             'CGPA (cumulative GPA) compresses letter grades into grade-point averages across your degree.',
-            'Monash commonly reports GPA on a 4.0 scale derived from unit letter grades.',
+            'Uni commonly reports GPA on a 4.0 scale derived from unit letter grades.',
             'CGPA differs from WAM — WAM uses raw percentage marks with credit weighting.',
             'Transcript CGPA is authoritative when printed; estimates are for planning only.',
           ],
@@ -559,7 +559,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           title: 'Official CGPA formula pattern',
           items: [
             'CGPA = Σ(grade points × credit points) ÷ Σ(credit points) for graded units.',
-            'HD maps to 4.0, D to 3.0, C to 2.0, P to 1.0 on the standard Monash 4.0 scale.',
+            'HD maps to 4.0, D to 3.0, C to 2.0, P to 1.0 on the standard Uni 4.0 scale.',
             'Fails and special grades use lower fixed point values per policy.',
             'Use WES GPA/CGPA line when available instead of rebuilding from memory.',
           ],
@@ -568,7 +568,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
       ],
       tables: [
         {
-          caption: 'Monash grade bands → GPA points (typical)',
+          caption: 'Uni grade bands → GPA points (typical)',
           headers: ['Mark range', 'Grade', 'GPA 4.0'],
           rows: [
             ['80–100', 'HD', '4.0'],
@@ -588,7 +588,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
             'Academic record summary panels list cumulative GPA alongside WAM.',
             'Unit rows show letter grades used to derive GPA points.',
             'After results release, allow certification lag before exporting for applications.',
-            'Order official transcript if a third party requires Monash certification.',
+            'Order official transcript if a third party requires Uni certification.',
           ],
           afterParagraph: 0,
         },
@@ -599,7 +599,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'CGPA vs WAM reporting',
           items: [
-            'Australian employers and many Monash pathways reference WAM or distinction average.',
+            'Australian employers and many Uni pathways reference WAM or distinction average.',
             'US-style forms and some scholarships ask for GPA/CGPA on 4.0 or 7.0 scales.',
             'Lead with transcript values; add conversion notes only when comments are allowed.',
             'Never report a higher converted GPA while omitting a stronger WAM on the same form.',
@@ -612,7 +612,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           caption: 'Which metric to lead with',
           headers: ['Audience', 'Lead metric', 'Support with'],
           rows: [
-            ['Monash scholarships (merit)', 'WAM or distinction average', 'CGPA if requested'],
+            ['Uni scholarships (merit)', 'WAM or distinction average', 'CGPA if requested'],
             ['US graduate schools', 'Transcript CGPA / GPA', 'WAM + method note'],
             ['Australian internships', 'WAM', 'CGPA if portal requires'],
             ['Research honours', 'WAM + trend', 'Faculty-specific GPA rules'],
@@ -665,15 +665,15 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-exchange-grades-wam-guide': [
+  'uni-exchange-grades-wam-guide': [
     {
       facts: [
         {
           title: 'Exchange grade handling overview',
           items: [
-            'Approved exchange credit usually appears on Monash records without host percentage marks.',
+            'Approved exchange credit usually appears on Uni records without host percentage marks.',
             'SFR (satisfied requirements) is the common transcript notation for passed exchange units.',
-            'Your Monash WAM reflects Monash-graded units — not host university percentages.',
+            'Your WAM reflects Uni-graded units — not host university percentages.',
             'Exchange still advances degree completion when credit is approved.',
           ],
           afterParagraph: 0,
@@ -687,8 +687,8 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           items: [
             'SFR indicates credit granted without a numeric mark contributing to WAM.',
             'Host grades may be recorded internally for approval but not averaged into WAM.',
-            'Employers asking for “exchange WAM” need clarification — cite Monash cumulative WAM.',
-            'Keep host transcripts for portfolios even when Monash WAM unchanged.',
+            'Employers asking for “exchange WAM” need clarification — cite Uni cumulative WAM.',
+            'Keep host transcripts for portfolios even when WAM unchanged.',
           ],
           afterParagraph: 0,
         },
@@ -700,9 +700,9 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           title: 'Why host marks skip WAM',
           items: [
             'Grade scales differ internationally — direct averaging would be misleading.',
-            'Monash policy emphasises credit completion over cross-institution mark blending.',
-            'WAM therefore measures Monash-assessed performance separately.',
-            'Plan exchange knowing your average is frozen at pre-departure Monash marks until you return.',
+            'Uni policy emphasises credit completion over cross-institution mark blending.',
+            'WAM therefore measures Uni-assessed performance separately.',
+            'Plan exchange knowing your average is frozen at pre-departure Uni marks until you return.',
           ],
           afterParagraph: 0,
         },
@@ -713,8 +713,8 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           headers: ['Transcript code', 'Meaning', 'Affects WAM?'],
           rows: [
             ['SFR', 'Satisfied requirements (exchange)', 'No numeric mark added'],
-            ['Graded Monash unit', 'Standard mark & cp', 'Yes'],
-            ['N fail (Monash)', 'Fail at Monash', 'Yes'],
+            ['Graded Uni unit', 'Standard mark & cp', 'Yes'],
+            ['N fail (Uni)', 'Fail at Uni', 'Yes'],
             ['Pending approval', 'Credit in progress', 'Wait for certification'],
           ],
           afterParagraph: 0,
@@ -726,10 +726,10 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Graded credit requirement at host',
           items: [
-            'Monash still requires passing graded assessment at the partner institution for credit.',
+            'Uni still requires passing graded assessment at the partner institution for credit.',
             'Failed host units may jeopardise credit approval even without WAM impact.',
             'Document pass grades for credit transfer paperwork promptly after host results.',
-            'Coordinate with Monash global mobility if results are delayed.',
+            'Coordinate with Uni global mobility if results are delayed.',
           ],
           afterParagraph: 0,
         },
@@ -741,7 +741,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           title: 'Exchange eligibility and WAM',
           items: [
             'Many faculties set minimum WAM or distinction-average expectations for exchange approval.',
-            'Apply with certified Monash WAM — not host marks or projected post-exchange averages.',
+            'Apply with certified WAM — not host marks or projected post-exchange averages.',
             'A weak semester before exchange can delay approval — plan the prior term carefully.',
             'Scholarship conditions may still apply while abroad.',
           ],
@@ -767,10 +767,10 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Fails, repeats, and timing',
           items: [
-            'Unresolved Monash fails can block exchange departure until addressed.',
-            'Repeating units at Monash while on exchange timelines is difficult — plan sequences early.',
-            'Returning students should recalculate WAM with only Monash-graded new units.',
-            'Do not expect host HD grades to lift Monash WAM after return.',
+            'Unresolved Uni fails can block exchange departure until addressed.',
+            'Repeating units at Uni while on exchange timelines is difficult — plan sequences early.',
+            'Returning students should recalculate WAM with only Uni-graded new units.',
+            'Do not expect host HD grades to lift WAM after return.',
           ],
           afterParagraph: 0,
         },
@@ -781,10 +781,10 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Before and after exchange planning',
           items: [
-            'Boost Monash WAM pre-departure if eligibility cutoffs are tight.',
-            'After return, focus on high-credit Monash units to move cumulative average.',
+            'Boost WAM pre-departure if eligibility cutoffs are tight.',
+            'After return, focus on high-credit Uni units to move cumulative average.',
             'Use semester WAM to judge post-return terms separately from frozen cumulative periods.',
-            'Clarify SFR rows on CVs — credit earned abroad without Monash mark.',
+            'Clarify SFR rows on CVs — credit earned abroad without Uni mark.',
           ],
           afterParagraph: 0,
         },
@@ -795,8 +795,8 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
         {
           title: 'Exchange WAM misconceptions',
           items: [
-            'Believing host HD automatically raises Monash WAM.',
-            'Listing host percentage as Monash WAM on job applications.',
+            'Believing host HD automatically raises WAM.',
+            'Listing host percentage as WAM on job applications.',
             'Ignoring SFR notation when hand-calculating averages.',
             'Applying for exchange with unofficial projected WAM instead of WES figure.',
           ],
@@ -806,14 +806,14 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-deans-honours-list-wam-guide': [
+  'uni-deans-honours-list-wam-guide': [
     {
       facts: [
         {
           title: "Dean's Honours List quick facts",
           items: [
             "Faculty graduation award recognising top academic achievement — not the same as research honours (H1/H2A).",
-            'Monash Business School cites top two percentile of bachelor cohort WAM for Dean\'s Honours List.',
+            'Uni Business School cites top two percentile of bachelor cohort WAM for Dean\'s Honours List.',
             'Criteria vary by faculty — percentile, distinction average, or course awards use different rules.',
             'Certificates and events are typical rewards — not ongoing scholarship payments.',
           ],
@@ -910,7 +910,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           items: [
             'Awards use certified completing-degree WAM — not mid-semester estimates.',
             'NS, exchange SFR, and in-progress units wait until finalisation.',
-            'Repeats and fails remain in history under normal Monash rules.',
+            'Repeats and fails remain in history under normal Uni rules.',
             'Recalculate after each final-year results release.',
           ],
           afterParagraph: 0,
@@ -947,13 +947,13 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-repeat-unit-wam-guide': [
+  'uni-repeat-unit-wam-guide': [
     {
       facts: [
         {
           title: 'Repeat unit WAM rule of thumb',
           items: [
-            'Monash does not replace grades — both attempts typically remain in WAM calculations.',
+            'Uni does not replace grades — both attempts typically remain in WAM calculations.',
             'A repeat distinction can help, but the original fail still pulls the average down.',
             'Credit weight of the unit doubles the impact when both attempts are graded.',
             'Confirm faculty handbook wording before assuming grade replacement.',
@@ -1088,7 +1088,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-wam-internship-graduate-jobs-guide': [
+  'uni-wam-internship-graduate-jobs-guide': [
     {
       facts: [
         {
@@ -1178,7 +1178,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           rows: [
             ['WAM / weighted average', 'Transcript cumulative WAM', 'One decimal if allowed'],
             ['GPA 4.0', 'Transcript CGPA', 'WAM + method in comments'],
-            ['Credit average', 'Usually WAM 70+ = distinction', 'Cite Monash definition'],
+            ['Credit average', 'Usually WAM 70+ = distinction', 'Cite Uni definition'],
             ['Academic transcript upload', 'Official PDF', 'Match typed numbers exactly'],
           ],
           afterParagraph: 0,
@@ -1243,13 +1243,13 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-year-1-wam-weighting-guide': [
+  'uni-year-1-wam-weighting-guide': [
     {
       facts: [
         {
           title: 'Year 1 half-weighting rule',
           items: [
-            'Official Monash WAM applies 0.5 weighting to Year 1 level units.',
+            'Official WAM applies 0.5 weighting to Year 1 level units.',
             'Year 2 and later units typically use 1.0 weighting in the same formula.',
             'Hand calculators that treat all years equally will overstate Year 1 impact.',
             'Progression still depends on passing Year 1 units regardless of WAM weight.',
@@ -1264,7 +1264,7 @@ export const articleEnrichmentsPart2: Record<string, SectionEnhancement[]> = {
           title: 'Formula with year level',
           items: [
             'Weighted points = mark × credit points × year-level multiplier.',
-            'Year 1 multiplier = 0.5; later years = 1.0 under standard Monash policy.',
+            'Year 1 multiplier = 0.5; later years = 1.0 under standard Uni policy.',
             'Sum weighted points ÷ sum (credit × multiplier) = official WAM.',
             'Verify against WES cumulative line after entering certified marks.',
           ],

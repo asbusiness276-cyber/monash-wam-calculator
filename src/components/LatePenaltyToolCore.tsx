@@ -87,7 +87,7 @@ export default function LatePenaltyToolCore() {
             </div>
           </div>
           <p className="text-xs text-slate-500">
-            Note: Monash University typically deducts 5% of the total possible mark per day late (up to 7 days, after which it is a zero).
+            Note: the university typically deducts 5% of the total possible mark per day late (up to 7 days, after which it is a zero).
           </p>
         </div>
 

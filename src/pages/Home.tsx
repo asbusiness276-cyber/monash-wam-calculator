@@ -8,21 +8,19 @@ import HomeCalculatorArea from '../components/home/HomeCalculatorArea';
 import HomeHowItWorks from '../components/home/HomeHowItWorks';
 import HomeWhyUse from '../components/home/HomeWhyUse';
 import HomeTrustRow from '../components/home/HomeTrustRow';
-import HomeGpaPromo from '../components/home/HomeGpaPromo';
-import HomeWamEducation from '../components/home/HomeWamEducation';
 import DonationBanner from '../components/DonationBanner';
 import { HOME_FAQS } from '../data/homeFaqs';
 
 const HOME_OG_IMAGE = '/article-images/featured-calculate-wam.webp';
 const HOME_OG_ALT =
-  'Monash university student using a laptop to calculate weighted average mark from unit marks and credit points';
+  'the university student using a laptop to calculate weighted average mark from unit marks and credit points';
 
 export default function Home() {
   return (
     <>
       <Seo
-        title="Monash WAM Calculator | Free WAM Calculator Monash University (2026)"
-        description="Free Monash WAM calculator with official Year 1 (0.5) weighting. Enter marks & credit points — instant weighted average, HD/D bands & WAM to GPA. No signup."
+        title="My Calculator Hub | 100+ Free Online Calculators"
+        description="My Calculator Hub is your go-to destination for everyday calculators. From finance and health to math and utilities, we have over 100+ free online calculators."
         canonicalPath="/"
         faqItems={HOME_FAQS}
         ogImage={HOME_OG_IMAGE}
@@ -46,22 +44,20 @@ export default function Home() {
         title="Featured Calculators"
         description="Popular free tools for WAM, GPA conversion, exam targets, and merit planning."
         hrefs={[
-          '/wam-to-gpa-calculator',
-          '/gpa-to-wam-calculator',
-          '/wam-target-calculator',
-          '/final-grade-calculator',
-          '/monash-gpa-calculator',
-          '/monash-honours-calculator',
+          '/age-calculator',
+          '/salary-calculator',
+          '/bmi-calculator',
+          '/password-generator',
+          '/loan-calculator',
+          '/percentage-calculator',
         ]}
         maxItems={6}
       />
 
       <HomeTrustRow />
-      <HomeGpaPromo />
-      <HomeWamEducation />
-
+            
       <ArticlesSection featured variant="home" />
-      <FAQSection items={HOME_FAQS} title="Monash WAM Calculator — FAQs" variant="home" />
+      <FAQSection items={HOME_FAQS} title="Frequently Asked Questions" variant="home" />
     </>
   );
 }

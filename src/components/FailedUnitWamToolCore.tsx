@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { calculateUnitMarkScenarios, monashSupplementaryPassMark } from '../utils/monashGrades';
+import { calculateUnitMarkScenarios, uniSupplementaryPassMark } from '../utils/uniGrades';
 
 const DEFAULT_SCENARIOS = [
   { label: 'Keep current mark', mark: -1 },
-  { label: `Supplementary pass (${monashSupplementaryPassMark})`, mark: monashSupplementaryPassMark },
+  { label: `Supplementary pass (${uniSupplementaryPassMark})`, mark: uniSupplementaryPassMark },
   { label: 'Credit (65)', mark: 65 },
   { label: 'Distinction (75)', mark: 75 },
   { label: 'High distinction (85)', mark: 85 },

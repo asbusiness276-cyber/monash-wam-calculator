@@ -38,7 +38,7 @@ export default function GrammarlyAffiliateBanner({
           </h3>
 
           <p className="mt-3 text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-lg">
-            Monash University marks down for poor grammar and punctuation. Use the free writing assistant trusted by thousands of Aussie students to proofread essays automatically.
+            the university marks down for poor grammar and punctuation. Use the free writing assistant trusted by thousands of Aussie students to proofread essays automatically.
           </p>
 
           <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">

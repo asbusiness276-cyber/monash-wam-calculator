@@ -1,75 +1,51 @@
-import SectionHeader from './ui/SectionHeader';
-import IllustrationCard from './ui/IllustrationCard';
-import { HOME_IMAGES } from '../../data/homeImages';
-import { absoluteUrl, INLINE_LINK_CLASS } from '../../constants/site';
-
-const useSteps = [
-  {
-    image: HOME_IMAGES.steps.enterMarks,
-    imageAlt: 'Student reviewing unit marks and grades on a laptop dashboard',
-    title: 'Gather your marks',
-    description: 'Open WES or your unofficial academic record and note each unit mark, credit points, and year level.',
-  },
-  {
-    image: HOME_IMAGES.steps.addSubjects,
-    imageAlt: 'Student adding subjects, marks, and credit points to the WAM calculator',
-    title: 'Enter units below',
-    description:
-      'Add unit codes, marks (0–100), credit points, and year level. Year 1 units use Monash official 0.5 weight.',
-  },
-  {
-    image: HOME_IMAGES.steps.instantWam,
-    imageAlt: 'Instant WAM calculation dashboard with live academic analytics',
-    title: 'Read your WAM',
-    description:
-      'See official Monash WAM, planning WAM, HD/D/C/P grade band, and total credit points — updated instantly.',
-  },
-  {
-    image: HOME_IMAGES.steps.viewResults,
-    imageAlt: 'Student celebrating WAM results with academic performance charts',
-    title: "Plan what's next",
-    description:
-      'Use WAM target, projection, or WAM to GPA tools when planning scholarships, honours, or the next semester.',
-  },
-] as const;
+import { Calculator, CheckCircle, Search } from 'lucide-react';
+import CardIcon from './ui/CardIcon';
 
 export default function HomeHowItWorks() {
   return (
-    <section id="how-to-use-wam-calculator" className="home-section scroll-mt-20">
+    <div className="home-bg-subtle py-16">
       <div className="home-container">
-        <SectionHeader
-          eyebrow="How it works"
-          title="Calculate Your WAM in 4 Steps"
-          description="From WES export to honours planning — the workflow Monash students use every results period."
-        />
+        <div className="text-center max-w-2xl mx-auto mb-12 home-animate-in">
+          <p className="home-eyebrow text-center mb-3">Simple & Fast</p>
+          <h2 className="home-h2">How It Works</h2>
+        </div>
 
-        <ol className="home-steps-flow card-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {useSteps.map((step, index) => (
-            <li key={step.title} className="home-steps-flow-item">
-              <IllustrationCard
-                image={step.image}
-                imageAlt={step.imageAlt}
-                title={step.title}
-                description={step.description}
-                step={index + 1}
-                variant="step"
-              />
-            </li>
-          ))}
-        </ol>
-
-        <p className="card-body mx-auto mt-8 max-w-2xl text-center">
-          Need the full formula? Read{' '}
-          <a href={absoluteUrl('/articles/how-to-calculate-wam')} className={INLINE_LINK_CLASS}>
-            how to calculate wam
-          </a>{' '}
-          or our{' '}
-          <a href={absoluteUrl('/articles/monash-year-1-wam-weighting-guide')} className={INLINE_LINK_CLASS}>
-            Year 1 weighting guide
-          </a>
-          .
-        </p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: Search,
+              title: 'Find a Tool',
+              desc: 'Search our hub of 100+ calculators for your specific need.',
+            },
+            {
+              icon: Calculator,
+              title: 'Enter Your Values',
+              desc: 'Input your data into our easy-to-use forms.',
+            },
+            {
+              icon: CheckCircle,
+              title: 'Get Instant Results',
+              desc: 'See accurate, real-time results instantly without any signup.',
+            },
+          ].map((step, idx) => {
+            const Icon = step.icon;
+            return (
+              <div
+                key={step.title}
+                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 text-center relative home-animate-in"
+                style={{ animationDelay: `${idx * 100}ms` }}
+              >
+                <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold flex items-center justify-center border-4 border-white dark:border-gray-800 shadow-sm">
+                  {idx + 1}
+                </div>
+                <CardIcon icon={Icon} className="w-12 h-12 mx-auto mb-5" />
+                <h3 className="card-title mb-3">{step.title}</h3>
+                <p className="card-body">{step.desc}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

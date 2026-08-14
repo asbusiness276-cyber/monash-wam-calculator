@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {
   calculateDegreeProgress,
-  MONASH_DEFAULT_DEGREE_CREDITS,
-} from '../utils/monashGrades';
+  UNI_DEFAULT_DEGREE_CREDITS,
+} from '../utils/uniGrades';
 
 const degreePresets = [
   { label: 'Bachelor (192 cp)', value: 192 },
@@ -12,7 +12,7 @@ const degreePresets = [
 
 export default function DegreeProgressToolCore() {
   const [completed, setCompleted] = useState('');
-  const [total, setTotal] = useState(String(MONASH_DEFAULT_DEGREE_CREDITS));
+  const [total, setTotal] = useState(String(UNI_DEFAULT_DEGREE_CREDITS));
   const [perSemester, setPerSemester] = useState('24');
 
   const progress = (() => {
@@ -28,7 +28,7 @@ export default function DegreeProgressToolCore() {
     <div data-article-tool-screenshot="degree-progress" className="space-y-6">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-          Track how many credit points you have completed toward your degree. Most Monash bachelor courses are 192 cp —
+          Track how many credit points you have completed toward your degree. Most Uni bachelor courses are 192 cp —
           check your handbook for your exact total.
         </p>
 

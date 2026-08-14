@@ -11,9 +11,9 @@ const [wamToGpaHome, wamToGpaFinal] = PAGE_KEYWORD_LINKS['/wam-to-gpa-calculator
 
 const wamToGpaFaqs = [
   {
-    question: 'How does WAM to GPA conversion work at Monash?',
+    question: 'How does WAM to GPA conversion work at Uni?',
     answer:
-      'Enter your Monash WAM and this WAM to GPA calculator maps it to Monash grade bands (HD, D, C, P) on 4.0 and 7.0 scales. Use it for planning; confirm official GPA on your transcript when available.',
+      'Enter your WAM and this WAM to GPA calculator maps it to Uni grade bands (HD, D, C, P) on 4.0 and 7.0 scales. Use it for planning; confirm official GPA on your transcript when available.',
   },
   {
     question: 'Is WAM to GPA conversion exact?',
@@ -51,8 +51,8 @@ export default function WAMtoGPA() {
   return (
     <>
       <Seo
-        title="WAM to GPA Calculator - Free Monash WAM to GPA Converter (2026)"
-        description="WAM to GPA conversion in one click. Free WAM to GPA calculator for Monash - convert to 4.0 & 7.0 GPA for scholarships, postgrad & overseas apps. No signup."
+        title="WAM to GPA Calculator - Free WAM to GPA Converter (2026)"
+        description="WAM to GPA conversion in one click. Free WAM to GPA calculator for Uni - convert to 4.0 & 7.0 GPA for scholarships, postgrad & overseas apps. No signup."
         canonicalPath="/wam-to-gpa-calculator"
         faqItems={wamToGpaFaqs}
       />
@@ -60,7 +60,7 @@ export default function WAMtoGPA() {
       <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">WAM to GPA Calculator</h1>
         <p className="text-blue-100 max-w-xl mx-auto">
-          Free WAM to GPA conversion for Monash University students. Convert WAM to 4.0 and 7.0 GPA scales instantly.
+          Free WAM to GPA conversion for the university students. Convert WAM to 4.0 and 7.0 GPA scales instantly.
         </p>
         <p className="text-blue-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Need your overall WAM from units first? Use the{' '}
@@ -76,7 +76,7 @@ export default function WAMtoGPA() {
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">How to Use This WAM to GPA Converter</h2>
           <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-400">
-            <li>Enter your overall Monash WAM from 0 to 100.</li>
+            <li>Enter your overall WAM from 0 to 100.</li>
             <li>Read your estimated GPA on both 4.0 and 7.0 scales.</li>
             <li>Use the conversion table to compare nearby grade bands.</li>
             <li>Verify official outcomes with your university transcript or policy pages.</li>
@@ -85,10 +85,10 @@ export default function WAMtoGPA() {
 
         <div className="mt-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
-            Monash WAM to GPA: example bands
+            WAM to GPA: example bands
           </h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-            Monash reports WAM as a percentage (0–100). Many applications ask for GPA on a 4.0 or 7.0 scale instead.
+            Uni reports WAM as a percentage (0–100). Many applications ask for GPA on a 4.0 or 7.0 scale instead.
             The table below shows typical planning ranges — use the calculator above for your exact WAM.
           </p>
           <div className="overflow-x-auto">
@@ -96,7 +96,7 @@ export default function WAMtoGPA() {
               <thead>
                 <tr className="bg-gray-50 dark:bg-gray-700">
                   <th className="text-left px-3 py-2 font-semibold text-gray-600 dark:text-gray-300 rounded-tl-lg">
-                    Monash band
+                    Uni band
                   </th>
                   <th className="text-left px-3 py-2 font-semibold text-gray-600 dark:text-gray-300">WAM range</th>
                   <th className="text-left px-3 py-2 font-semibold text-gray-600 dark:text-gray-300 rounded-tr-lg">
@@ -137,7 +137,7 @@ export default function WAMtoGPA() {
 
       <CalculatorPageGuide path="/wam-to-gpa-calculator" />
       <RelatedCalculators
-        hrefs={['/gpa-to-wam-calculator', '/monash-gpa-calculator', '/monash-cgpa-calculator', '/wam-target-calculator', '/final-grade-calculator', '/']}
+        hrefs={['/gpa-to-wam-calculator', '/uni-gpa-calculator', '/uni-cgpa-calculator', '/wam-target-calculator', '/final-grade-calculator', '/']}
       />
 
       <PageFaq items={wamToGpaFaqs} />

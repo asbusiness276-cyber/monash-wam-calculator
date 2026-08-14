@@ -13,20 +13,20 @@ const faqs = [
   {
     question: 'How do I convert CGPA to GPA?',
     answer:
-      'On Monash 4.0 transcripts, CGPA and cumulative GPA are the same metric. For 10-point CGPA, use linear conversion: GPA = CGPA ÷ 10 × 4.',
+      'On Uni 4.0 transcripts, CGPA and cumulative GPA are the same metric. For 10-point CGPA, use linear conversion: GPA = CGPA ÷ 10 × 4.',
   },
   {
-    question: 'Is CGPA the same as GPA at Monash?',
-    answer: 'Yes — Monash reports cumulative GPA on the 4.0 scale; CGPA is the same value for planning.',
+    question: 'Is CGPA the same as GPA at Uni?',
+    answer: 'Yes — Uni reports cumulative GPA on the 4.0 scale; CGPA is the same value for planning.',
   },
   {
     question: '10-point CGPA from India?',
     answer:
-      'Many international students use a 10-point scale. This tool converts to 4.0 for US/Monash-style forms — verify with your evaluator.',
+      'Many international students use a 10-point scale. This tool converts to 4.0 for US/Uni-style forms — verify with your evaluator.',
   },
   {
     question: 'CGPA to WAM?',
-    answer: 'Use the CGPA to WAM calculator for Monash percentage planning ranges.',
+    answer: 'Use the CGPA to WAM calculator for Uni percentage planning ranges.',
   },
   {
     question: 'Official conversion?',
@@ -42,18 +42,18 @@ export default function CgpaToGpa() {
   return (
     <>
       <Seo
-        title="CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)"
-        description="Free CGPA to GPA calculator: convert 10-point CGPA to 4.0 GPA or confirm Monash cumulative GPA equals CGPA."
+        title="CGPA to GPA Calculator - 10-Point & Uni 4.0 (2026)"
+        description="Free CGPA to GPA calculator: convert 10-point CGPA to 4.0 GPA or confirm Uni cumulative GPA equals CGPA."
         canonicalPath="/cgpa-to-gpa-calculator"
         faqItems={faqs}
       />
       <section className="bg-gradient-to-br from-violet-700 to-violet-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">CGPA to GPA Calculator</h1>
         <p className="text-violet-100 max-w-xl mx-auto">
-          Convert 10-point CGPA to 4.0 GPA, or confirm Monash CGPA on the official 4.0 cumulative scale.
+          Convert 10-point CGPA to 4.0 GPA, or confirm Uni CGPA on the official 4.0 cumulative scale.
         </p>
         <p className="text-violet-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
-          Monash GPA tool:{' '}
+          Uni GPA tool:{' '}
           <a href={absoluteUrl(ctgGpa.path)} className={HERO_INLINE_LINK_CLASS}>{ctgGpa.keyword}</a>
           . CGPA to WAM:{' '}
           <a href={absoluteUrl(ctgWam.path)} className={HERO_INLINE_LINK_CLASS}>{ctgWam.keyword}</a>.

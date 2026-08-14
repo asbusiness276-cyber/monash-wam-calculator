@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { calculateCgpaFromSemesterGpa } from '../utils/monashGrades';
+import { calculateCgpaFromSemesterGpa } from '../utils/uniGrades';
 
 export default function GpaToCgpaToolCore() {
   const [priorCgpa, setPriorCgpa] = useState('');

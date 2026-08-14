@@ -16,14 +16,14 @@ const faqs = [
       'It checks common planning bands: 50 pass/progression, 60 exchange planning floor, 70 distinction average, 80 high distinction territory, and 85+ top merit stretch.',
   },
   {
-    question: 'Is 70 WAM distinction average at Monash?',
+    question: 'Is 70 WAM distinction average at Uni?',
     answer:
       'For planning, WAM 70+ is commonly treated as distinction average. Always confirm exact award, scholarship, or faculty rules before applying.',
   },
   {
     question: 'Why is 60 WAM included?',
     answer:
-      'Monash exchange and academic standing conversations often use 60 WAM as a planning floor. It is not a universal guarantee of eligibility.',
+      'Uni exchange and academic standing conversations often use 60 WAM as a planning floor. It is not a universal guarantee of eligibility.',
   },
   {
     question: 'Can this calculator tell me the average I need on remaining units?',
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: 'Is this different from the scholarship WAM calculator?',
     answer:
-      'Yes. Scholarship WAM focuses on merit tiers and remaining averages. WAM Milestones is a quick all-purpose standing summary across common Monash planning bands.',
+      'Yes. Scholarship WAM focuses on merit tiers and remaining averages. WAM Milestones is a quick all-purpose standing summary across common Uni planning bands.',
   },
 ];
 
@@ -41,8 +41,8 @@ export default function WamMilestones() {
   return (
     <>
       <Seo
-        title="WAM Milestones Calculator — Monash Standing Checker (2026)"
-        description="Check Monash WAM milestones for pass, exchange, distinction average, HD territory, and merit planning. Estimate remaining average needed for each band."
+        title="WAM Milestones Calculator — Uni Standing Checker (2026)"
+        description="Check WAM milestones for pass, exchange, distinction average, HD territory, and merit planning. Estimate remaining average needed for each band."
         canonicalPath="/wam-milestones-calculator"
         faqItems={faqs}
       />
@@ -69,8 +69,8 @@ export default function WamMilestones() {
         hrefs={[
           '/',
           '/wam-target-calculator',
-          '/monash-distinction-average-calculator',
-          '/monash-scholarship-wam-calculator',
+          '/uni-distinction-average-calculator',
+          '/uni-scholarship-wam-calculator',
         ]}
       />
       <PageFaq items={faqs} />

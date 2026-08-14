@@ -39,7 +39,7 @@ export default function AmazonCalculatorResultWidget({
         <div className="flex items-center justify-between gap-1.5 mb-2.5">
           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/40">
             <Award className="w-3 h-3 text-amber-400" />
-            Monash Exam Recommended
+            Uni Exam Recommended
           </span>
           <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Sponsored</span>
         </div>
@@ -72,7 +72,7 @@ export default function AmazonCalculatorResultWidget({
         <ul className="mt-2.5 space-y-1 text-[11px] text-slate-300 font-medium">
           <li className="flex items-center gap-1.5">
             <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-            <span className="truncate">Official Monash Exam Approved</span>
+            <span className="truncate">Official Uni Exam Approved</span>
           </li>
           <li className="flex items-center gap-1.5">
             <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />

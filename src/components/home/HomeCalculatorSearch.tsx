@@ -31,9 +31,9 @@ export default function HomeCalculatorSearch() {
 
   const trimmedQuery = query.trim();
   const quickSearches = [
-    { label: 'WAM target', icon: Target },
-    { label: 'GPA converter', icon: GraduationCap },
-    { label: 'Final grade', icon: Calculator },
+    { label: 'Salary Calculator', icon: Target },
+    { label: 'BMI Calculator', icon: GraduationCap },
+    { label: 'Age Calculator', icon: Calculator },
   ] as const;
 
   return (
@@ -48,14 +48,14 @@ export default function HomeCalculatorSearch() {
             </div>
           </div>
           <p className="card-body">
-            Jump to WAM target, GPA conversion, honours, or exam tools by name or keyword.
+            Jump to daily life, finance, health, or math tools by name or keyword.
           </p>
 
           <div className="mt-5">
             <SearchField
               id="home-calculator-search"
               label="Search calculators"
-              placeholder="e.g. WAM target, GPA, honours, failed unit…"
+              placeholder="e.g. Age, Salary, BMI, Margin…"
               value={query}
               onChange={setQuery}
               resultCount={trimmedQuery ? results.length : undefined}

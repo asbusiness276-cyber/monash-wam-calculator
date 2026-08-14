@@ -16,8 +16,8 @@ export default function Articles() {
   return (
     <>
       <Seo
-        title="Student Articles | Monash WAM Calculator"
-        description="Browse Monash student guides by category: WAM fundamentals, GPA conversion, honours, scholarships, exam recovery, and planning targets."
+        title="Student Articles | WAM Calculator"
+        description="Browse Uni student guides by category: WAM fundamentals, GPA conversion, honours, scholarships, exam recovery, and planning targets."
         canonicalPath="/articles"
       />
       <section className="max-w-6xl mx-auto px-4 py-10 md:py-12">
@@ -37,8 +37,8 @@ export default function Articles() {
           <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 md:p-8 shadow-sm">
             <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">What You Will Find Here</h2>
             <p>
-              MonashWAMCalculator.com publishes {articles.length} long-form guides written for students who need
-              more than a one-line FAQ. Each article explains Monash grading concepts in plain language — credit
+              UniWAMCalculator.com publishes {articles.length} long-form guides written for students who need
+              more than a one-line FAQ. Each article explains Uni grading concepts in plain language — credit
               points, year-level weighting, distinction average, supplementary exams, exchange grades — and links to
               the free calculator that matches the topic. Guides typically run 800–1,600 words with worked examples,
               tables, and actionable checklists rather than generic SEO filler.
@@ -55,7 +55,7 @@ export default function Articles() {
             <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">How to Use Articles With Calculators</h2>
             <p>
               Articles and calculators are designed to work together. Read first when you need context — for example
-              how Monash treats withdrawn fails, or what distinction average means for scholarships. Open the linked
+              how Uni treats withdrawn fails, or what distinction average means for scholarships. Open the linked
               calculator when you have marks ready and want live numbers. Many students run a projection calculator
               mid-semester, then return to the matching article before final exams to confirm policy details.
             </p>

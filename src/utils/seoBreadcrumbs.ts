@@ -1,6 +1,6 @@
 import { getArticleCategoryById } from '../data/articleCategories';
 
-const BASE_URL = 'https://monashwamcalculator.com';
+const BASE_URL = 'https://uniwamcalculator.com';
 
 export interface BreadcrumbCrumb {
   name: string;
@@ -8,7 +8,7 @@ export interface BreadcrumbCrumb {
 }
 
 function stripTitleSuffix(title: string): string {
-  return title.replace(/\s*\|\s*Monash WAM Calculator.*$/i, '').trim();
+  return title.replace(/\s*\|\s*WAM Calculator.*$/i, '').trim();
 }
 
 function isCalculatorPath(path: string): boolean {
@@ -19,7 +19,7 @@ export function buildBreadcrumbCrumbs(canonicalPath: string, pageTitle: string):
   const pageName = stripTitleSuffix(pageTitle);
 
   if (canonicalPath === '/') {
-    return [{ name: 'Monash WAM Calculator', path: '/' }];
+    return [{ name: 'WAM Calculator', path: '/' }];
   }
 
   const crumbs: BreadcrumbCrumb[] = [{ name: 'Home', path: '/' }];

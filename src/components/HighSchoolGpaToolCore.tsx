@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { calculateHighSchoolGpa } from '../utils/monashGrades';
+import { calculateHighSchoolGpa } from '../utils/uniGrades';
 
 interface CourseRow {
   id: string;

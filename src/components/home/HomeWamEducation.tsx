@@ -28,12 +28,12 @@ export default function HomeWamEducation() {
             <div className="card-row-header">
               <CardIcon icon={BookOpen} />
               <div className="min-w-0">
-                <h2 className="home-section-title text-gray-900 dark:text-white">What is WAM at Monash University?</h2>
+                <h2 className="home-section-title text-gray-900 dark:text-white">What is WAM at the university?</h2>
                 <div className="card-body mt-5 space-y-4">
                   <p>
                     WAM stands for{' '}
                     <strong className="text-gray-800 dark:text-gray-200">Weighted Average Mark</strong>. It is the
-                    percentage average Monash uses to measure your overall academic performance across completed units —
+                    percentage average Uni uses to measure your overall academic performance across completed units —
                     weighted by credit points and year level.
                   </p>
                   <p>
@@ -66,16 +66,16 @@ export default function HomeWamEducation() {
       <section id="how-wam-calculated" className="home-section scroll-mt-20 pb-4">
         <div className="home-container max-w-4xl">
           <PremiumCard padding="lg">
-            <h2 className="home-section-title text-gray-900 dark:text-white">How is Monash WAM Calculated?</h2>
+            <h2 className="home-section-title text-gray-900 dark:text-white">How is WAM Calculated?</h2>
             <p className="card-body mt-4">
-              Monash official WAM multiplies each unit by credit points and year-level weight (Year 1 = 0.5, Year 2+ =
-              1.0). Our calculator shows both official Monash WAM and a simpler planning WAM so you can compare
+              Uni official WAM multiplies each unit by credit points and year-level weight (Year 1 = 0.5, Year 2+ =
+              1.0). Our calculator shows both official WAM and a simpler planning WAM so you can compare
               scenarios and verify against WES.
             </p>
 
             <div className="mt-6 space-y-3">
               <div className="card-nested-accent">
-                <p className="text-sm font-semibold text-primary-700 dark:text-primary-300">Official Monash WAM</p>
+                <p className="text-sm font-semibold text-primary-700 dark:text-primary-300">Official WAM</p>
                 <p className="mt-2 font-mono text-sm font-bold leading-relaxed text-primary-800 dark:text-primary-200">
                   &Sigma;(Mark &times; CP &times; Year weight) &divide; &Sigma;(CP &times; Year weight)
                 </p>
@@ -121,7 +121,7 @@ export default function HomeWamEducation() {
             <p className="card-body mt-5">
               <strong className="text-gray-800 dark:text-gray-200">Planning WAM</strong> ≈{' '}
               <strong className="text-gray-800 dark:text-gray-200">78.33</strong>.{' '}
-              <strong className="text-gray-800 dark:text-gray-200">Official Monash WAM</strong> with Year 1 at 0.5
+              <strong className="text-gray-800 dark:text-gray-200">Official WAM</strong> with Year 1 at 0.5
               weight ≈ <strong className="text-gray-800 dark:text-gray-200">80.00</strong>. Track bands with the{' '}
               <a href={absoluteUrl('/wam-milestones-calculator')} className={INLINE_LINK_CLASS}>
                 WAM milestones checker

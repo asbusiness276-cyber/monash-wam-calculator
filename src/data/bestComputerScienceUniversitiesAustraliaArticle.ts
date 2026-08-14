@@ -43,10 +43,10 @@ export const bestComputerScienceUniversitiesAustraliaArticle: ArticleData = {
       ],
     },
     {
-      heading: '3. Monash University',
+      heading: '3. the university',
       paragraphs: [
-        'Monash University features the only dedicated Faculty of Information Technology in the prestigious Group of Eight (Go8). This means Computer Science students at Monash benefit from massive investment in IT infrastructure and an incredibly diverse range of double-degree options.',
-        'The Monash Bachelor of Computer Science includes an Industry Based Learning (IBL) program, which places students in half-year, fully-credited, and generously scholarship-funded placements with corporate partners. If you decide to study here, make sure you track your grades closely—you can use our Monash WAM Calculator to ensure you maintain the academic requirements for these competitive placements.'
+        'the university features the only dedicated Faculty of Information Technology in the prestigious Group of Eight (Go8). This means Computer Science students at Uni benefit from massive investment in IT infrastructure and an incredibly diverse range of double-degree options.',
+        'The Uni Bachelor of Computer Science includes an Industry Based Learning (IBL) program, which places students in half-year, fully-credited, and generously scholarship-funded placements with corporate partners. If you decide to study here, make sure you track your grades closely—you can use our WAM Calculator to ensure you maintain the academic requirements for these competitive placements.'
       ],
     },
     {

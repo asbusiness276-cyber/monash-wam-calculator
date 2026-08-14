@@ -5,8 +5,8 @@ const LEGACY_40_TO_70 = [
   {
     heading: 'Aligning 4.0 and 7.0 Scales',
     paragraphs: [
-      'Monash coursework grade bands align across both common Australian reporting scales. High Distinction is 4.0 on the US-style scale and 7.0 on the Australian scale; Distinction is 3.0 and 6.0 respectively. This one-to-one band mapping means conversion is straightforward once you know which letter grade tier you occupy.',
-      'Use this tool when one application asks for 4.0 GPA and another asks for 7.0 — you should report consistent band standing, not mathematically scaled values that do not exist in Monash policy.',
+      'Uni coursework grade bands align across both common Australian reporting scales. High Distinction is 4.0 on the US-style scale and 7.0 on the Australian scale; Distinction is 3.0 and 6.0 respectively. This one-to-one band mapping means conversion is straightforward once you know which letter grade tier you occupy.',
+      'Use this tool when one application asks for 4.0 GPA and another asks for 7.0 — you should report consistent band standing, not mathematically scaled values that do not exist in Uni policy.',
     ],
   },
   {
@@ -43,8 +43,8 @@ const LEGACY_70_TO_40 = [
   {
     heading: '7.0 to 4.0 GPA for International Forms',
     paragraphs: [
-      'Many US graduate programs, LinkedIn profile templates, and global ranking sites default to the 4.0 GPA scale. Australian students with 7-point transcripts need band-accurate conversion — not a naive multiply-by-0.57 formula — to represent Monash standing honestly.',
-      'Monash maps each 7.0 step to the equivalent 4.0 grade point: 7→4, 6→3, 5→2, 4→1, 0→0. This calculator applies that standard coursework alignment.',
+      'Many US graduate programs, LinkedIn profile templates, and global ranking sites default to the 4.0 GPA scale. Australian students with 7-point transcripts need band-accurate conversion — not a naive multiply-by-0.57 formula — to represent Uni standing honestly.',
+      'Uni maps each 7.0 step to the equivalent 4.0 grade point: 7→4, 6→3, 5→2, 4→1, 0→0. This calculator applies that standard coursework alignment.',
     ],
   },
   {
@@ -60,15 +60,15 @@ const LEGACY_70_TO_40 = [
       ],
     },
     paragraphs: [
-      'Partial values like 6.3 on a 7-point transcript usually mean your cumulative average sits between bands — check WES for the authoritative Monash 4.0 CGPA rather than inferring from a single converted number.',
+      'Partial values like 6.3 on a 7-point transcript usually mean your cumulative average sits between bands — check WES for the authoritative Uni 4.0 CGPA rather than inferring from a single converted number.',
     ],
   },
   {
     heading: 'Reporting Guidance',
     bullets: [
       'State both scales if unsure which the reader prefers.',
-      'Attach Monash grading scale documentation to international applications when allowed.',
-      'Use Monash CGPA calculator for cumulative 4.0 to three decimals.',
+      'Attach Uni grading scale documentation to international applications when allowed.',
+      'Use Uni CGPA calculator for cumulative 4.0 to three decimals.',
       'See our WAM to GPA articles for scholarship-specific reporting.',
     ],
     paragraphs: [
@@ -81,7 +81,7 @@ const LEGACY_SEMESTER_GPA = [
   {
     heading: 'Semester GPA (SGPA) Explained',
     paragraphs: [
-      'Semester GPA measures one teaching period — Semester 1, Semester 2, or Summer — using Monash official 4.0 grade values weighted by credit points. It answers "how did I perform this semester?" rather than "how am I tracking overall?" Cumulative CGPA spans your entire degree and moves more slowly.',
+      'Semester GPA measures one teaching period — Semester 1, Semester 2, or Summer — using Uni official 4.0 grade values weighted by credit points. It answers "how did I perform this semester?" rather than "how am I tracking overall?" Cumulative CGPA spans your entire degree and moves more slowly.',
       'Strong semester GPA with weak prior years lifts CGPA gradually; one bad semester after years of HDs barely dents a high cumulative average. Use SGPA to diagnose recent performance and CGPA for long-term standing.',
     ],
   },
@@ -105,11 +105,11 @@ const LEGACY_SEMESTER_GPA = [
     bullets: [
       'Track percentage-based semester performance with the semester WAM calculator.',
       'Roll SGPA into degree CGPA using the GPA to CGPA calculator.',
-      'Set next-semester targets with the Monash target GPA calculator.',
-      'Read our semester average article for Monash credit load norms.',
+      'Set next-semester targets with the Uni target GPA calculator.',
+      'Read our semester average article for Uni credit load norms.',
     ],
     paragraphs: [
-      'Withdrawn fails and incomplete grades follow Monash policy rules — confirm how WES treats them before calculating SGPA manually.',
+      'Withdrawn fails and incomplete grades follow Uni policy rules — confirm how WES treats them before calculating SGPA manually.',
     ],
   },
 ];
@@ -147,14 +147,14 @@ const LEGACY_CGPA_TO_GPA = [
   {
     heading: 'CGPA vs GPA Terminology',
     paragraphs: [
-      'On Monash official transcripts, CGPA and cumulative GPA refer to the same 4.0 metric — the credit-weighted mean across all completed coursework units. Some international systems use "CGPA" for a 10-point scale instead. Context matters: always note which scale your figure uses.',
-      'This calculator handles Monash-style 4.0 CGPA reporting and includes guidance when you hold a 10-point international CGPA that needs linear scaling for US-style 4.0 comparisons.',
+      'On Uni official transcripts, CGPA and cumulative GPA refer to the same 4.0 metric — the credit-weighted mean across all completed coursework units. Some international systems use "CGPA" for a 10-point scale instead. Context matters: always note which scale your figure uses.',
+      'This calculator handles Uni-style 4.0 CGPA reporting and includes guidance when you hold a 10-point international CGPA that needs linear scaling for US-style 4.0 comparisons.',
     ],
   },
   {
     heading: '10-Point to 4.0 Linear Scale',
     table: {
-      headers: ['10-point CGPA', 'Linear 4.0 equivalent', 'Monash planning note'],
+      headers: ['10-point CGPA', 'Linear 4.0 equivalent', 'Uni planning note'],
       rows: [
         ['9.0–10.0', '3.6–4.0', 'Near HD average'],
         ['8.0–8.9', '3.2–3.6', 'Strong Distinction'],
@@ -163,13 +163,13 @@ const LEGACY_CGPA_TO_GPA = [
       ],
     },
     paragraphs: [
-      'Linear conversion (CGPA ÷ 10 × 4) is indicative for cross-country forms — Monash band mapping may differ. Use the 10-point GPA to WAM calculator when translating into Monash percentage bands.',
+      'Linear conversion (CGPA ÷ 10 × 4) is indicative for cross-country forms — Uni band mapping may differ. Use the 10-point GPA to WAM calculator when translating into Uni percentage bands.',
     ],
   },
   {
     heading: 'When to Use This Tool',
     bullets: [
-      'Clarify Monash CGPA = cumulative 4.0 GPA on official records.',
+      'Clarify Uni CGPA = cumulative 4.0 GPA on official records.',
       'Convert international 10-point CGPA for US application drafts.',
       'Cross-check WES CGPA before employer background checks.',
       'Browse GPA conversion articles for faculty-specific rules.',
@@ -182,9 +182,9 @@ const LEGACY_CGPA_TO_GPA = [
 
 const LEGACY_40_GPA = [
   {
-    heading: 'Monash 4.0 GPA Calculator',
+    heading: 'Uni 4.0 GPA Calculator',
     paragraphs: [
-      'Monash assigns official grade points on a 4.0 scale: HD=4.0, D=3.0, C=2.0, P=1.0, N=0.0 (with marginal fail nuances per policy). This calculator computes credit-weighted GPA from your unit list — the same structure WES uses for cumulative reporting, simplified for planning.',
+      'Uni assigns official grade points on a 4.0 scale: HD=4.0, D=3.0, C=2.0, P=1.0, N=0.0 (with marginal fail nuances per policy). This calculator computes credit-weighted GPA from your unit list — the same structure WES uses for cumulative reporting, simplified for planning.',
       'Enter each unit\'s letter grade or grade point and credit points. The tool outputs semester or custom-group GPA to three decimal places, matching how scholarship panels often display cut-offs.',
     ],
   },
@@ -198,16 +198,16 @@ const LEGACY_40_GPA = [
       ],
     },
     paragraphs: [
-      'The mixed load row shows why credit weighting matters: a 12 cp HD paired with one 6 cp Pass yields weighted GPA 3.33, not the simple mean 2.5. Always weight by credit when mirroring Monash maths.',
+      'The mixed load row shows why credit weighting matters: a 12 cp HD paired with one 6 cp Pass yields weighted GPA 3.33, not the simple mean 2.5. Always weight by credit when mirroring Uni maths.',
     ],
   },
   {
     heading: 'Related Calculators',
     bullets: [
-      'Cumulative degree GPA: Monash CGPA calculator.',
+      'Cumulative degree GPA: Uni CGPA calculator.',
       'Single-semester snapshot: semester GPA calculator.',
       'Convert results to WAM bands with GPA to WAM tools.',
-      'Set improvement targets with Monash target GPA calculator.',
+      'Set improvement targets with Uni target GPA calculator.',
     ],
     paragraphs: [
       'Verify final GPA on WES — grading policy updates and unit exclusions can adjust official figures.',
@@ -219,12 +219,12 @@ const LEGACY_GPA_CALCULATOR = [
   {
     heading: 'Australian University GPA Basics',
     paragraphs: [
-      'Australian students encounter GPA on both 4.0 and 7.0 scales depending on faculty, scholarship, and destination country. Monash coursework standardises on official 4.0 grade points for transcript GPA while displaying WAM percentages alongside. This general GPA calculator uses Monash published values — the right default for Monash students and a reasonable benchmark for comparable Australian coursework.',
+      'Australian students encounter GPA on both 4.0 and 7.0 scales depending on faculty, scholarship, and destination country. Uni coursework standardises on official 4.0 grade points for transcript GPA while displaying WAM percentages alongside. This general GPA calculator uses Uni published values — the right default for Uni students and a reasonable benchmark for comparable Australian coursework.',
       'GPA differs from WAM: GPA steps in discrete bands tied to letter grades; WAM preserves percentage detail. A student with marks spread 71–78 may share GPA 3.0 but have different WAM than a peer scoring 78–79 consistently.',
     ],
   },
   {
-    heading: 'Monash Grade Point Reference',
+    heading: 'Uni Grade Point Reference',
     table: {
       headers: ['Grade', 'Mark range', '4.0 GP', '7.0 GP'],
       rows: [
@@ -242,13 +242,13 @@ const LEGACY_GPA_CALCULATOR = [
   {
     heading: 'Choose the Right Tool',
     bullets: [
-      'Degree cumulative GPA → Monash CGPA calculator.',
+      'Degree cumulative GPA → Uni CGPA calculator.',
       'One semester only → semester GPA calculator.',
       'WAM on WES, form wants GPA → WAM to 4.0 or 7.0 converters.',
       'Long-form strategy → GPA conversion articles in our library.',
     ],
     paragraphs: [
-      'This site is independent of Monash University — always confirm official figures on WES before submitting transcripts or scholarship forms.',
+      'This site is independent of the university — always confirm official figures on WES before submitting transcripts or scholarship forms.',
     ],
   },
 ];
@@ -257,18 +257,18 @@ const LEGACY_ATAR = [
   {
     heading: 'ATAR vs University Grades',
     paragraphs: [
-      'ATAR ranks Year 12 performance for university entry through UAC and VTAC — it is a percentile-style rank, not a university GPA. WAM and GPA measure coursework after enrolment. There is no official Monash or UAC formula converting ATAR to WAM because they describe different life stages and statistical models.',
+      'ATAR ranks Year 12 performance for university entry through UAC and VTAC — it is a percentile-style rank, not a university GPA. WAM and GPA measure coursework after enrolment. There is no official Uni or UAC formula converting ATAR to WAM because they describe different life stages and statistical models.',
       'This tool shows indicative bands only: high ATAR correlates with stronger first-year readiness on average, but many students with moderate ATAR achieve Distinction WAM through consistent semester work. Treat output as conversation starter, not prediction.',
     ],
   },
   {
     heading: 'What the Indicative Bands Mean',
     paragraphs: [
-      'Planning bands group typical first-year WAM trajectories reported anecdotally by students — not regression models from Monash data. Use them to set initial semester goals, then replace with actual WAM from the homepage calculator once you have results.',
+      'Planning bands group typical first-year WAM trajectories reported anecdotally by students — not regression models from Uni data. Use them to set initial semester goals, then replace with actual WAM from the homepage calculator once you have results.',
     ],
     bullets: [
       'ATAR reflects scaled school subjects; WAM reflects credit-weighted university units.',
-      'First-year Monash units use 0.5 level weighting in official WAM — GPA tools may differ.',
+      'First-year Uni units use 0.5 level weighting in official WAM — GPA tools may differ.',
       'Scholarships tied to entry rank differ from merit awards tied to university WAM.',
       'See our university pathways articles for course transfer context.',
     ],
@@ -286,7 +286,7 @@ const LEGACY_HIGH_SCHOOL_GPA = [
   {
     heading: 'US-Style High School GPA',
     paragraphs: [
-      'American high schools often report GPA from course credits and letter grades, sometimes with "weighted" bumps for Advanced Placement or honours subjects (up to 5.0 on a 4.0 scale). Australian secondary students typically receive ATAR instead — this calculator serves international students, dual-citizens, and Monash students comparing US application requirements.',
+      'American high schools often report GPA from course credits and letter grades, sometimes with "weighted" bumps for Advanced Placement or honours subjects (up to 5.0 on a 4.0 scale). Australian secondary students typically receive ATAR instead — this calculator serves international students, dual-citizens, and Uni students comparing US application requirements.',
       'Enter course name, letter grade, credit weight, and whether the course is weighted. The tool computes unweighted and weighted GPA using common US conventions — verify against your school\'s exact policy if applying domestically in the US.',
     ],
   },
@@ -308,13 +308,13 @@ const LEGACY_HIGH_SCHOOL_GPA = [
   {
     heading: 'Australian Context',
     bullets: [
-      'Monash entry uses ATAR/IB/diploma pathways — not high school GPA.',
+      'Uni entry uses ATAR/IB/diploma pathways — not high school GPA.',
       'US exchange or grad school may request US-style GPA — use this tool, then verify with registrar.',
-      'University GPA uses different scales — switch to Monash GPA calculators after enrolment.',
-      'Browse pathways articles for Monash orientation and adjustment tips.',
+      'University GPA uses different scales — switch to Uni GPA calculators after enrolment.',
+      'Browse pathways articles for Uni orientation and adjustment tips.',
     ],
     paragraphs: [
-      'Once at Monash, track WAM and official CGPA on WES — high school GPA rarely appears on Australian employment forms.',
+      'Once at Uni, track WAM and official CGPA on WES — high school GPA rarely appears on Australian employment forms.',
     ],
   },
 ];
@@ -323,14 +323,14 @@ const LEGACY_10_POINT = [
   {
     heading: 'International 10-Point CGPA',
     paragraphs: [
-      'Universities in India, parts of Europe, and other regions often report CGPA on a 10-point scale. Monash admissions and credit transfer teams frequently need those results expressed as percentage or WAM bands. A common planning step: multiply 10-point CGPA by 10 to estimate percentage (8.5 → 85%), then map to Monash HD/D/C/P bands.',
-      'This is indicative — home institutions may use different curves. Always supply official transcripts and Monash grading scale notes when applying for credit assessment.',
+      'Universities in India, parts of Europe, and other regions often report CGPA on a 10-point scale. Uni admissions and credit transfer teams frequently need those results expressed as percentage or WAM bands. A common planning step: multiply 10-point CGPA by 10 to estimate percentage (8.5 → 85%), then map to Uni HD/D/C/P bands.',
+      'This is indicative — home institutions may use different curves. Always supply official transcripts and Uni grading scale notes when applying for credit assessment.',
     ],
   },
   {
-    heading: '10-Point to Monash Bands',
+    heading: '10-Point to Uni Bands',
     table: {
-      headers: ['10-pt CGPA', 'Est. %', 'Monash band', '4.0 GP'],
+      headers: ['10-pt CGPA', 'Est. %', 'Uni band', '4.0 GP'],
       rows: [
         ['9.0–10.0', '90–100%', 'HD', '4.0'],
         ['8.0–8.9', '80–89%', 'HD/D border', '3.0–4.0'],
@@ -340,19 +340,19 @@ const LEGACY_10_POINT = [
       ],
     },
     paragraphs: [
-      'Borderline CGPA like 7.9 vs 8.0 can straddle Distinction and HD planning zones — use conservative estimates for scholarship applications until Monash confirms converted grades.',
+      'Borderline CGPA like 7.9 vs 8.0 can straddle Distinction and HD planning zones — use conservative estimates for scholarship applications until Uni confirms converted grades.',
     ],
   },
   {
     heading: 'Transfer and Postgrad Use',
     bullets: [
-      'Estimate Monash WAM targets before starting at Clayton or Caulfield.',
+      'Estimate WAM targets before starting at Clayton or Caulfield.',
       'Compare home CGPA to distinction average (WAM 70+) requirements.',
       'Cross-check with CGPA to WAM calculator for 4.0-scale transcripts.',
       'Read exchange and pathways articles for credit transfer workflow.',
     ],
     paragraphs: [
-      'Monash makes final credit decisions — calculator output does not guarantee advanced standing or GPA recognition on your Australian transcript.',
+      'Uni makes final credit decisions — calculator output does not guarantee advanced standing or GPA recognition on your Australian transcript.',
     ],
   },
 ];
@@ -361,12 +361,12 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/4-0-to-7-0-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'This converter translates a GPA figure on the 4.0 scale into the equivalent Australian 7.0 scale using Monash official grade-band alignment — not a linear multiplier. A Distinction on 4.0 (3.0) becomes 6.0 on 7.0; High Distinction (4.0) becomes 7.0.',
-        'Monash students use it when HDR applications, scholarship comparison tables, or exchange paperwork ask for 7-point GPA while WES shows 4.0 CGPA. The output preserves your standing tier rather than inventing fractional 7-point values that do not appear on Australian transcripts.',
+        'This converter translates a GPA figure on the 4.0 scale into the equivalent Australian 7.0 scale using Uni official grade-band alignment — not a linear multiplier. A Distinction on 4.0 (3.0) becomes 6.0 on 7.0; High Distinction (4.0) becomes 7.0.',
+        'Uni students use it when HDR applications, scholarship comparison tables, or exchange paperwork ask for 7-point GPA while WES shows 4.0 CGPA. The output preserves your standing tier rather than inventing fractional 7-point values that do not appear on Australian transcripts.',
       ],
       bullets: [
         'Band-accurate: HD↔7.0, D↔6.0, C↔5.0, P↔4.0, Fail↔0.',
-        'Accepts decimals like 3.2 — maps to the nearest Monash band threshold.',
+        'Accepts decimals like 3.2 — maps to the nearest Uni band threshold.',
         'Companion table shows every standard band in both scales.',
       ],
       table: {
@@ -380,18 +380,18 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     howItWorks: {
       paragraphs: [
-        'The calculator reads your 4.0 input, identifies which Monash letter-grade band it falls into using published thresholds (3.5+ → HD, 2.5–3.49 → D, 1.5–2.49 → C, 0.5–1.49 → P, below 0.5 → Fail), then returns the paired 7.0 grade point for that band.',
-        'Mid-band values like 3.2 still map to Distinction (6.0) because Monash reports discrete grade tiers, not continuous 7-point decimals on coursework transcripts. That is intentional — it matches how admissions officers read Australian results.',
+        'The calculator reads your 4.0 input, identifies which Uni letter-grade band it falls into using published thresholds (3.5+ → HD, 2.5–3.49 → D, 1.5–2.49 → C, 0.5–1.49 → P, below 0.5 → Fail), then returns the paired 7.0 grade point for that band.',
+        'Mid-band values like 3.2 still map to Distinction (6.0) because Uni reports discrete grade tiers, not continuous 7-point decimals on coursework transcripts. That is intentional — it matches how admissions officers read Australian results.',
       ],
       callouts: [
         {
           variant: 'warning',
           title: 'Do not multiply by 1.75',
-          text: 'A 4.0 GPA of 3.0 × 1.75 = 5.25, which is not a valid Monash 7.0 grade point. Band mapping always yields whole-step values: 3.0 → 6.0.',
+          text: 'A 4.0 GPA of 3.0 × 1.75 = 5.25, which is not a valid Uni 7.0 grade point. Band mapping always yields whole-step values: 3.0 → 6.0.',
         },
       ],
       table: {
-        headers: ['4.0 input range', 'Monash grade', '7.0 output'],
+        headers: ['4.0 input range', 'Uni grade', '7.0 output'],
         rows: [
           ['3.5 – 4.0', 'HD', '7.0'],
           ['2.5 – 3.49', 'D', '6.0'],
@@ -403,12 +403,12 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     whenToUse: {
       paragraphs: [
-        'Reach for this tool when you already hold a 4.0 GPA figure and the reader expects 7.0 — common for domestic Australian postgrad brochures, some Monash scholarship FAQs, and cross-university league tables.',
-        'Skip it when you only have percentage WAM; convert WAM to 4.0 GPA first, then run this converter. Also skip it when the form explicitly wants Monash CGPA on 4.0 — converting twice adds confusion.',
+        'Reach for this tool when you already hold a 4.0 GPA figure and the reader expects 7.0 — common for domestic Australian postgrad brochures, some Uni scholarship FAQs, and cross-university league tables.',
+        'Skip it when you only have percentage WAM; convert WAM to 4.0 GPA first, then run this converter. Also skip it when the form explicitly wants Uni CGPA on 4.0 — converting twice adds confusion.',
       ],
       bullets: [
         'HDR and research program applications listing 7-point entry averages.',
-        'Comparing your Monash CGPA to a friend at a university that publishes 7.0 only.',
+        'Comparing your Uni CGPA to a friend at a university that publishes 7.0 only.',
         'Drafting CV lines for Australian employers who reference 7-point scale norms.',
       ],
     },
@@ -423,7 +423,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
       {
         title: 'Distinction CGPA for 7-point HDR form',
         paragraphs: [
-          'Priya\'s WES shows cumulative GPA 3.0 on 144 cp. A Melbourne research program asks for "minimum 6.0/7.0". Enter 3.0 → output 6.0, Distinction band. She attaches Monash grading scale documentation alongside WES.',
+          'Priya\'s WES shows cumulative GPA 3.0 on 144 cp. A Melbourne research program asks for "minimum 6.0/7.0". Enter 3.0 → output 6.0, Distinction band. She attaches Uni grading scale documentation alongside WES.',
         ],
       },
       {
@@ -465,7 +465,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         'Multiplying 4.0 GPA by 1.75 and reporting the decimal result as "official 7.0 GPA".',
         'Rounding 3.49 up to 3.5 to claim HD / 7.0 when WES still shows Distinction.',
         'Converting WAM percentage directly without first mapping to 4.0 grade points.',
-        'Using US community-college 4.0 values that include A+ at 4.3 — Monash caps HD at 4.0.',
+        'Using US community-college 4.0 values that include A+ at 4.3 — Uni caps HD at 4.0.',
       ],
       callout: {
         variant: 'tip',
@@ -476,19 +476,19 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     tips: {
       bullets: [
         'Screenshot the band table when attaching evidence to international applications.',
-        'If your CGPA is exactly 3.0, you meet Monash distinction average on GPA — note both 3.0/4.0 and 6.0/7.0.',
+        'If your CGPA is exactly 3.0, you meet Uni distinction average on GPA — note both 3.0/4.0 and 6.0/7.0.',
         'For employers, lead with WAM percentage if available — it carries more detail than either GPA scale.',
         'Update conversions after each results release; one HD semester can shift band thresholds on cumulative figures.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash coursework transcripts display official GPA on the 4.0 scale. The 7.0 conversion reflects standard Australian grade-band equivalence used for comparison — not a separate Monash metric stored on WES.',
+        'Uni coursework transcripts display official GPA on the 4.0 scale. The 7.0 conversion reflects standard Australian grade-band equivalence used for comparison — not a separate Uni metric stored on WES.',
         'Honours classifications and faculty awards reference WAM bands and policy documents, not converted 7-point GPA alone.',
       ],
       callout: {
         variant: 'info',
-        text: 'Always cite WES as the authoritative source. This converter supports planning and third-party forms; it does not replace Monash academic records.',
+        text: 'Always cite WES as the authoritative source. This converter supports planning and third-party forms; it does not replace Uni academic records.',
       },
     },
     legacySections: LEGACY_40_TO_70,
@@ -497,7 +497,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/7-0-to-4-0-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'This tool converts Australian 7-point GPA figures into the US-style 4.0 scale using Monash grade-band pairing: 7→4, 6→3, 5→2, 4→1, 0→0. It answers the common US grad-school prompt "enter GPA on 4.0 scale" when your mental model is Monash or Australian 7-point results.',
+        'This tool converts Australian 7-point GPA figures into the US-style 4.0 scale using Uni grade-band pairing: 7→4, 6→3, 5→2, 4→1, 0→0. It answers the common US grad-school prompt "enter GPA on 4.0 scale" when your mental model is Uni or Australian 7-point results.',
         'Unlike dividing by 7 and multiplying by 4, band mapping keeps Pass (4.0/7) aligned with Pass (1.0/4) — a linear formula would misstate Pass as roughly 2.3/4.',
       ],
       bullets: [
@@ -508,14 +508,14 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     howItWorks: {
       paragraphs: [
-        'Input is classified against Monash 7.0 thresholds: 6.5+ HD, 5.5–6.49 D, 4.5–5.49 C, 3.5–4.49 P, below 3.5 Fail. The matched band\'s 4.0 grade point is returned.',
-        'Cumulative 7-point figures on other universities\' transcripts may use different rounding — when Monash WES shows 4.0 CGPA, prefer that figure and skip manual 7-point conversion entirely.',
+        'Input is classified against Uni 7.0 thresholds: 6.5+ HD, 5.5–6.49 D, 4.5–5.49 C, 3.5–4.49 P, below 3.5 Fail. The matched band\'s 4.0 grade point is returned.',
+        'Cumulative 7-point figures on other universities\' transcripts may use different rounding — when Uni WES shows 4.0 CGPA, prefer that figure and skip manual 7-point conversion entirely.',
       ],
       callouts: [
         {
           variant: 'info',
-          title: 'WES is authoritative for Monash',
-          text: 'If your Monash transcript lists CGPA 3.125 on 4.0, report that directly. Use this tool when you only have a 7-point estimate from a comparison table.',
+          title: 'WES is authoritative for Uni',
+          text: 'If your Uni transcript lists CGPA 3.125 on 4.0, report that directly. Use this tool when you only have a 7-point estimate from a comparison table.',
         },
       ],
       table: {
@@ -531,12 +531,12 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     whenToUse: {
       paragraphs: [
         'Use before completing Common App graduate sections, Fulbright forms, or US employer background checks that hard-code 4.0 scale fields.',
-        'Avoid when your Monash WES already exports 4.0 CGPA — duplicate conversion can introduce inconsistency if thresholds differ slightly from your input source.',
+        'Avoid when your Uni WES already exports 4.0 CGPA — duplicate conversion can introduce inconsistency if thresholds differ slightly from your input source.',
       ],
       bullets: [
         'US MBA and STEM masters applications.',
         'Dual-degree LinkedIn profiles targeting US recruiters.',
-        'Translating a friend\'s 7-point average for collaborative comparison with your Monash 4.0 CGPA.',
+        'Translating a friend\'s 7-point average for collaborative comparison with your Uni 4.0 CGPA.',
       ],
     },
     steps: [
@@ -550,13 +550,13 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
       {
         title: 'US grad school minimum 3.0/4.0',
         paragraphs: [
-          'Jamal holds 6.1/7.0 from another Go8 university. Band mapping → Distinction → 3.0/4.0. He meets the stated minimum and uploads Monash-compatible grading scale documentation.',
+          'Jamal holds 6.1/7.0 from another Go8 university. Band mapping → Distinction → 3.0/4.0. He meets the stated minimum and uploads Uni-compatible grading scale documentation.',
         ],
       },
       {
-        title: 'Monash HD average expressed for Silicon Valley internship',
+        title: 'Uni HD average expressed for Silicon Valley internship',
         paragraphs: [
-          'Recruiter asks for "GPA / 4.0". Student with 7.0/7.0 equivalent standing enters 7.0 → 4.0. She also notes Monash HD = 80%+ WAM in cover letter for context.',
+          'Recruiter asks for "GPA / 4.0". Student with 7.0/7.0 equivalent standing enters 7.0 → 4.0. She also notes Uni HD = 80%+ WAM in cover letter for context.',
         ],
       },
       {
@@ -590,26 +590,26 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         'Using formula (7.0 GPA ÷ 7 × 4) — misaligns Pass and Credit tiers.',
         'Reporting 4.0/4 because "6.9 is basically 7" — HD requires ≥ 6.5 on 7-point band logic used here.',
         'Mixing semester 7-point GPA with cumulative 4.0 CGPA on the same form line.',
-        'Ignoring Monash WES 4.0 line when it already satisfies the application.',
+        'Ignoring Uni WES 4.0 line when it already satisfies the application.',
       ],
       callout: {
         variant: 'warning',
         title: 'Verification risk',
-        text: 'US universities may request WES or Monash transcripts. Inflated 4.0 conversions are easily caught against official 4.0 CGPA.',
+        text: 'US universities may request WES or Uni transcripts. Inflated 4.0 conversions are easily caught against official 4.0 CGPA.',
       },
     },
     tips: {
       bullets: [
-        'Attach Monash grading scale PDF when applications allow supplementary documents.',
+        'Attach Uni grading scale PDF when applications allow supplementary documents.',
         'If between bands, report conservatively and explain in optional essay.',
         'Keep a spreadsheet of scale pairs you have submitted to avoid inconsistent re-reporting.',
-        'After Monash results release, switch to WES 4.0 CGPA for all US forms — simpler and official.',
+        'After Uni results release, switch to WES 4.0 CGPA for all US forms — simpler and official.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash publishes cumulative GPA on the 4.0 scale in WES. This 7→4 converter assists when you encounter 7-point framing in external materials, not when reporting Monash results officially.',
-        'Distinction average at Monash is GPA 3.0+ on 4.0 — equivalent to 6.0+ on 7.0 under band mapping.',
+        'Uni publishes cumulative GPA on the 4.0 scale in WES. This 7→4 converter assists when you encounter 7-point framing in external materials, not when reporting Uni results officially.',
+        'Distinction average at Uni is GPA 3.0+ on 4.0 — equivalent to 6.0+ on 7.0 under band mapping.',
       ],
     },
     legacySections: LEGACY_70_TO_40,
@@ -618,25 +618,25 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/semester-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Semester GPA (SGPA) summarises one teaching period — Semester 1, Semester 2, or Summer — using Monash official 4.0 grade values weighted by credit points. It isolates recent performance from your cumulative CGPA, which can hide a strong recovery or a single bad term.',
+        'Semester GPA (SGPA) summarises one teaching period — Semester 1, Semester 2, or Summer — using Uni official 4.0 grade values weighted by credit points. It isolates recent performance from your cumulative CGPA, which can hide a strong recovery or a single bad term.',
         'Enter each unit\'s letter grade (HD, D, C, P, N) and credit points. The calculator returns SGPA to three decimals plus total grade points — matching the maths WES applies before rolling results into cumulative GPA.',
       ],
       bullets: [
-        'Official Monash grade values including N = 0.3 (not zero).',
+        'Official Uni grade values including N = 0.3 (not zero).',
         'Credit-weighted: 12 cp HD counts double a 6 cp Pass.',
         'Flags distinction average when SGPA ≥ 3.0.',
       ],
     },
     howItWorks: {
       paragraphs: [
-        'For each unit: grade point × credit points = weighted points. SGPA = sum(weighted points) ÷ sum(credits). Monash uses HD=4.0, D=3.0, C=2.0, P=1.0, N=0.3, NP=0.7, NH=0.3, WN=0.0.',
+        'For each unit: grade point × credit points = weighted points. SGPA = sum(weighted points) ÷ sum(credits). Uni uses HD=4.0, D=3.0, C=2.0, P=1.0, N=0.3, NP=0.7, NH=0.3, WN=0.0.',
         'A semester with mixed grades produces a blended SGPA — three HDs and one Pass on equal credits lands near 3.25, not 4.0.',
       ],
       callouts: [
         {
           variant: 'warning',
           title: 'Fail grade value',
-          text: 'Monash N grade contributes 0.3 GPA points, not 0.0. Using zero in manual spreadsheets understates how much a fail still drags SGPA.',
+          text: 'Uni N grade contributes 0.3 GPA points, not 0.0. Using zero in manual spreadsheets understates how much a fail still drags SGPA.',
         },
       ],
       table: {
@@ -664,7 +664,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     steps: [
       'List every unit enrolled in the target teaching period — exclude prior semesters.',
       'Assign each unit its certified letter grade from WES (or best estimate for planning).',
-      'Enter credit points exactly as listed (usually 6 or 12 at Monash).',
+      'Enter credit points exactly as listed (usually 6 or 12 at Uni).',
       'Add rows for all units; remove blank rows.',
       'Read SGPA and check distinction-average flag; export totals for CGPA merge if needed.',
     ],
@@ -719,7 +719,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     mistakes: {
       bullets: [
         'Including units from previous semesters in the same row set.',
-        'Using N = 0.0 instead of Monash official 0.3.',
+        'Using N = 0.0 instead of Uni official 0.3.',
         'Averaging letter grades without credit weighting.',
         'Treating WAM percentage as GPA input without grade conversion.',
       ],
@@ -732,7 +732,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         'Archive each semester\'s SGPA in a tracker to show improvement trends to mentors.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
         'WES publishes semester and cumulative GPA after results certification. Withdrawn fails (WN) and incomplete grades follow faculty policy — confirm inclusion before manual SGPA.',
         'First-year students often see SGPA equal to CGPA until multiple semesters accumulate.',
@@ -748,12 +748,12 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/gpa-to-cgpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'This calculator merges your existing cumulative GPA (CGPA) with a new semester GPA using credit-weighted Monash maths. Enter prior CGPA, credit points completed, expected semester GPA, and semester credit load — it returns updated CGPA to three decimals.',
+        'This calculator merges your existing cumulative GPA (CGPA) with a new semester GPA using credit-weighted Uni maths. Enter prior CGPA, credit points completed, expected semester GPA, and semester credit load — it returns updated CGPA to three decimals.',
         'Mid-degree students use it to answer "if I score Distinction this semester, does my CGPA cross 3.0?" without rebuilding every unit row in a full CGPA spreadsheet.',
       ],
       bullets: [
         'Formula: (prior CGPA × prior cp + semester GPA × semester cp) ÷ total cp.',
-        'Works with official Monash 4.0 grade values only.',
+        'Works with official Uni 4.0 grade values only.',
         'Supports scenario modelling before results release.',
       ],
     },
@@ -782,7 +782,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     whenToUse: {
       paragraphs: [
         'Use after estimating semester GPA or when results are provisional. Essential for scholarship renewal panels that require CGPA 3.0+ and for tracking progress toward distinction average.',
-        'Switch to Monash CGPA calculator when you want to enter individual unit rows instead of a precomputed semester GPA.',
+        'Switch to Uni CGPA calculator when you want to enter individual unit rows instead of a precomputed semester GPA.',
       ],
       bullets: [
         'Pre-results "what if" planning each exam period.',
@@ -857,9 +857,9 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         'Save scenario screenshots for scholarship appeal documentation.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash WES CGPA uses official 4.0 grade values including N=0.3. This calculator assumes standard coursework weighting without honours thesis adjustments.',
+        'Uni WES CGPA uses official 4.0 grade values including N=0.3. This calculator assumes standard coursework weighting without honours thesis adjustments.',
         'Faculty progression and exclusion policies may reference both WAM and CGPA — confirm which metric your course handbook prioritises.',
       ],
     },
@@ -869,31 +869,31 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/cgpa-to-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'This page clarifies cumulative GPA (CGPA) terminology and converts between scale conventions. For Monash students, CGPA on a 4.0 scale is the same metric as cumulative GPA on WES — the tool echoes that figure or translates 10-point international CGPA into linear 4.0 equivalents for US forms.',
-        'Toggle between 10-point and Monash 4.0 modes depending on whether you hold an Indian/European transcript or an Australian WES export.',
+        'This page clarifies cumulative GPA (CGPA) terminology and converts between scale conventions. For Uni students, CGPA on a 4.0 scale is the same metric as cumulative GPA on WES — the tool echoes that figure or translates 10-point international CGPA into linear 4.0 equivalents for US forms.',
+        'Toggle between 10-point and Uni 4.0 modes depending on whether you hold an Indian/European transcript or an Australian WES export.',
       ],
       bullets: [
-        'Monash 4.0 mode: passthrough and terminology confirmation.',
+        'Uni 4.0 mode: passthrough and terminology confirmation.',
         '10-point mode: linear CGPA ÷ 10 × 4 for indicative US GPA.',
         'Outputs three-decimal 4.0 GPA for form fields.',
       ],
     },
     howItWorks: {
       paragraphs: [
-        'Monash 4.0 CGPA mode validates that your input already sits on the official scale — output matches input when within 0–4.',
-        '10-point mode applies linear scaling: GPA₄ = (CGPA₁₀ ÷ 10) × 4. An 8.5/10 becomes 3.400/4. This is indicative; Monash band mapping may classify 85% as HD (4.0) rather than 3.4.',
+        'Uni 4.0 CGPA mode validates that your input already sits on the official scale — output matches input when within 0–4.',
+        '10-point mode applies linear scaling: GPA₄ = (CGPA₁₀ ÷ 10) × 4. An 8.5/10 becomes 3.400/4. This is indicative; Uni band mapping may classify 85% as HD (4.0) rather than 3.4.',
       ],
       callouts: [
         {
           variant: 'info',
           title: 'Two valid interpretations',
-          text: 'US forms often want linear 10→4 scaling. Monash admission planning may prefer percentage bands via the 10-point GPA to WAM calculator — use the right tool for each audience.',
+          text: 'US forms often want linear 10→4 scaling. Uni admission planning may prefer percentage bands via the 10-point GPA to WAM calculator — use the right tool for each audience.',
         },
       ],
       table: {
         headers: ['Input scale', 'Example', 'Output 4.0', 'Method'],
         rows: [
-          ['Monash 4.0 CGPA', '3.125', '3.125', 'Direct (same metric)'],
+          ['Uni 4.0 CGPA', '3.125', '3.125', 'Direct (same metric)'],
           ['10-point CGPA', '8.0', '3.200', 'Linear × 0.4'],
           ['10-point CGPA', '9.5', '3.800', 'Linear × 0.4'],
         ],
@@ -901,12 +901,12 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     whenToUse: {
       paragraphs: [
-        'Use 10-point mode when drafting US applications with home-country CGPA. Use Monash 4.0 mode to double-check WES before employers request "GPA" without the "C" prefix.',
-        'If you need Monash WAM bands from 10-point CGPA, switch to the dedicated 10-point GPA to WAM calculator instead.',
+        'Use 10-point mode when drafting US applications with home-country CGPA. Use Uni 4.0 mode to double-check WES before employers request "GPA" without the "C" prefix.',
+        'If you need WAM bands from 10-point CGPA, switch to the dedicated 10-point GPA to WAM calculator instead.',
       ],
       bullets: [
         'International postgrad applicants comparing IIT/NIT CGPA to US cutoff lists.',
-        'Monash students verifying CGPA equals cumulative GPA on cover letters.',
+        'Uni students verifying CGPA equals cumulative GPA on cover letters.',
         'Employer forms with ambiguous "enter GPA" fields.',
       ],
     },
@@ -915,42 +915,42 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
       'Select the matching scale tab in the calculator.',
       'Enter CGPA to two or three decimals.',
       'Read 4.0 GPA output and explanatory note below the result.',
-      'For Monash band planning from 10-point scores, follow up with 10-point to WAM tool.',
+      'For Uni band planning from 10-point scores, follow up with 10-point to WAM tool.',
     ],
     examples: [
       {
-        title: 'Monash WES confirmation',
+        title: 'Uni WES confirmation',
         paragraphs: [
-          'WES shows CGPA 3.042. Monash 4.0 mode → output 3.042. Student writes "Cumulative GPA 3.042/4.0" on internship application — no conversion needed.',
+          'WES shows CGPA 3.042. Uni 4.0 mode → output 3.042. Student writes "Cumulative GPA 3.042/4.0" on internship application — no conversion needed.',
         ],
       },
       {
         title: 'Indian 10-point to US draft',
         paragraphs: [
-          'Home CGPA 8.75/10 → linear 3.500/4.0. US program cutoff 3.3 — likely competitive; student also prepares Monash band narrative via WAM tool (87.5% ≈ HD).',
+          'Home CGPA 8.75/10 → linear 3.500/4.0. US program cutoff 3.3 — likely competitive; student also prepares Uni band narrative via WAM tool (87.5% ≈ HD).',
         ],
       },
       {
         title: 'Borderline 7.0/10',
         paragraphs: [
-          'CGPA 7.0 → 2.800/4.0 linear. Monash band view treats 70% as Distinction (3.0/4.0) — student discloses both interpretations in application addendum.',
+          'CGPA 7.0 → 2.800/4.0 linear. Uni band view treats 70% as Distinction (3.0/4.0) — student discloses both interpretations in application addendum.',
         ],
         table: {
           headers: ['Method', '4.0 equivalent'],
           rows: [
             ['Linear', '2.800'],
-            ['Monash band (70%)', '3.000'],
+            ['Uni band (70%)', '3.000'],
           ],
         },
       },
       {
         title: 'Strong 9.2/10 applicant',
         paragraphs: [
-          'Linear 3.680/4.0. Percentage equivalent 92% sits firmly in HD band. Monash coursework transfer assessment still requires official documents.',
+          'Linear 3.680/4.0. Percentage equivalent 92% sits firmly in HD band. Uni coursework transfer assessment still requires official documents.',
         ],
       },
       {
-        title: 'Low 5.8/10 planning Monash entry',
+        title: 'Low 5.8/10 planning Uni entry',
         paragraphs: [
           'Linear 2.320/4.0; percentage 58% maps to Pass band. Student focuses on pathway programs rather than direct merit scholarships requiring distinction average.',
         ],
@@ -958,8 +958,8 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     ],
     mistakes: {
       bullets: [
-        'Assuming CGPA always means 10-point scale — at Monash it means 4.0 cumulative.',
-        'Applying linear 10→4 then claiming Monash HD without band check.',
+        'Assuming CGPA always means 10-point scale — at Uni it means 4.0 cumulative.',
+        'Applying linear 10→4 then claiming Uni HD without band check.',
         'Confusing semester GPA with CGPA on the same form line.',
         'Rounding 3.996 up to 4.0 when WES shows 3.996.',
       ],
@@ -969,13 +969,13 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         'Label scale explicitly: "CGPA 8.5/10 (linear US equivalent 3.4/4.0)".',
         'When both interpretations differ, provide percentage equivalent for clarity.',
         'Refresh after each semester — CGPA is cumulative, not static.',
-        'Cross-link to Monash CGPA calculator for unit-level rebuilds.',
+        'Cross-link to Uni CGPA calculator for unit-level rebuilds.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'On Monash transcripts, CGPA and cumulative GPA refer to the same 4.0 coursework metric. There is no separate 10-point CGPA stored for standard domestic coursework.',
-        'Credit transfer from 10-point systems is assessed by Monash admissions — linear calculator output is not a guarantee of recognised standing.',
+        'On Uni transcripts, CGPA and cumulative GPA refer to the same 4.0 coursework metric. There is no separate 10-point CGPA stored for standard domestic coursework.',
+        'Credit transfer from 10-point systems is assessed by Uni admissions — linear calculator output is not a guarantee of recognised standing.',
       ],
     },
     legacySections: LEGACY_CGPA_TO_GPA,
@@ -984,11 +984,11 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/4-0-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'This calculator computes credit-weighted GPA on Monash official 4.0 scale from a list of units. Enter letter grades (HD through WN) and credit points for any subset — one semester, a major sequence, or your full transcript export.',
+        'This calculator computes credit-weighted GPA on Uni official 4.0 scale from a list of units. Enter letter grades (HD through WN) and credit points for any subset — one semester, a major sequence, or your full transcript export.',
         'Output includes GPA to three decimals, total grade points, and credit count — enough to mirror WES cumulative reporting or isolate a faculty merit calculation.',
       ],
       bullets: [
-        'All official Monash grade codes: HD, D, C, P, NP, N, NH, WN.',
+        'All official Uni grade codes: HD, D, C, P, NP, N, NH, WN.',
         'Highlights distinction average when GPA ≥ 3.0.',
         'Reference table embedded for grade value lookup.',
       ],
@@ -996,7 +996,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     howItWorks: {
       paragraphs: [
         'Each unit contributes grade_value × credits to the numerator. GPA = Σ(grade value × cp) ÷ Σ(cp). A 12 cp HD (48 points) outweighs two 6 cp Pass units (12 points combined).',
-        'Simple arithmetic mean of grade values — without credit weighting — can error by 0.3+ GPA points on typical Monash loads.',
+        'Simple arithmetic mean of grade values — without credit weighting — can error by 0.3+ GPA points on typical Uni loads.',
       ],
       table: {
         headers: ['Grade', 'Value', 'Notes'],
@@ -1010,7 +1010,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     whenToUse: {
       paragraphs: [
-        'Use when building GPA from scratch — spreadsheet cross-check, hypothetical semester, or verifying WES after a policy change. Prefer Monash CGPA calculator page when merging prior + semester via dedicated CGPA workflow.',
+        'Use when building GPA from scratch — spreadsheet cross-check, hypothetical semester, or verifying WES after a policy change. Prefer Uni CGPA calculator page when merging prior + semester via dedicated CGPA workflow.',
         'Also useful for computing GPA on a subset (e.g., Law units only) when a prize rules document excludes electives.',
       ],
       bullets: [
@@ -1087,9 +1087,9 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         'Export totals to feed GPA-to-CGPA calculator without re-entering units.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash official GPA values are published in academic records policy. NP (0.7) and N (0.3) distinctions matter for accurate fail modelling.',
+        'Uni official GPA values are published in academic records policy. NP (0.7) and N (0.3) distinctions matter for accurate fail modelling.',
         'Some prizes and honours pathways reference WAM instead of GPA — confirm which metric your faculty uses before optimising the wrong number.',
       ],
     },
@@ -1099,11 +1099,11 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'A general-purpose Australian university GPA calculator defaulting to Monash official 4.0 grade values and credit weighting. Suitable for Monash students and as a benchmark for other Go8 universities with similar HD/D/C/P/N bands.',
-        'Computes weighted GPA from any unit list, displays distinction-average status, and embeds the full Monash grade reference — bridging high-level "what is GPA?" questions and concrete semester maths.',
+        'A general-purpose Australian university GPA calculator defaulting to Uni official 4.0 grade values and credit weighting. Suitable for Uni students and as a benchmark for other Go8 universities with similar HD/D/C/P/N bands.',
+        'Computes weighted GPA from any unit list, displays distinction-average status, and embeds the full Uni grade reference — bridging high-level "what is GPA?" questions and concrete semester maths.',
       ],
       bullets: [
-        'Same engine as Monash-specific GPA tools — portable across calculator pages.',
+        'Same engine as Uni-specific GPA tools — portable across calculator pages.',
         '4.0 output with three-decimal precision.',
         'Explains GPA vs WAM distinction in guide sections below.',
       ],
@@ -1111,7 +1111,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     howItWorks: {
       paragraphs: [
         'GPA compresses percentage performance into discrete grade points. Two students both at GPA 3.0 may have different WAMs if one scored 71s and another 78s — GPA hides intra-band detail by design.',
-        'Calculation: sum(grade point × credit points) / sum(credit points). Monash maps HD=4, D=3, C=2, P=1, N=0.3.',
+        'Calculation: sum(grade point × credit points) / sum(credit points). Uni maps HD=4, D=3, C=2, P=1, N=0.3.',
       ],
       callouts: [
         {
@@ -1121,7 +1121,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         },
       ],
       table: {
-        headers: ['Metric', 'Granularity', 'Typical Monash use'],
+        headers: ['Metric', 'Granularity', 'Typical Uni use'],
         rows: [
           ['WAM', 'Continuous %', 'Honours, dean\'s list, employers'],
           ['GPA 4.0', '5 bands + fail variants', 'Scholarships, US forms'],
@@ -1131,7 +1131,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     whenToUse: {
       paragraphs: [
-        'Start here if you are new to GPA and need a trustworthy 4.0 computation without Monash-branded page context. Monash students can stay on this page or use the dedicated Monash GPA calculator — maths is identical.',
+        'Start here if you are new to GPA and need a trustworthy 4.0 computation without Uni-branded page context. Uni students can stay on this page or use the dedicated Uni GPA calculator — maths is identical.',
         'Move to scale converters when forms ask for 7.0 or when translating to WAM percentages.',
       ],
       bullets: [
@@ -1175,13 +1175,13 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
       {
         title: 'Pathway student after credit transfer',
         paragraphs: [
-          'Advanced standing 24 cp at D average (3.0) plus 24 cp Monash at HD (4.0): (72+96) ÷ 48 = 3.500 GPA on combined list entered manually.',
+          'Advanced standing 24 cp at D average (3.0) plus 24 cp Uni at HD (4.0): (72+96) ÷ 48 = 3.500 GPA on combined list entered manually.',
         ],
       },
     ],
     mistakes: {
       bullets: [
-        'Applying US +/- grade increments (A− = 3.7) — Monash HD is flat 4.0.',
+        'Applying US +/- grade increments (A− = 3.7) — Uni HD is flat 4.0.',
         'Ignoring credit weighting on mixed 6/12 cp loads.',
         'Reporting GPA without stating 4.0 scale maximum.',
         'Using high school weighted GPA values in university forms.',
@@ -1190,15 +1190,15 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     tips: {
       bullets: [
         'Track both WAM and GPA each semester — faculties reference either.',
-        'Use Monash CGPA calculator when prior cumulative figure is known.',
+        'Use Uni CGPA calculator when prior cumulative figure is known.',
         'Read GPA conversion articles for faculty-specific prize rules.',
-        'Set targets with Monash target GPA calculator after baseline computation.',
+        'Set targets with Uni target GPA calculator after baseline computation.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Grade values follow Monash published coursework scale. Other Australian universities may assign slightly different points to Pass or fail — note your institution when comparing with peers.',
-        'This site is independent of Monash University; WES remains the authoritative record for official GPA.',
+        'Grade values follow Uni published coursework scale. Other Australian universities may assign slightly different points to Pass or fail — note your institution when comparing with peers.',
+        'This site is independent of the university; WES remains the authoritative record for official GPA.',
       ],
     },
     legacySections: LEGACY_GPA_CALCULATOR,
@@ -1207,8 +1207,8 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/atar-to-gpa-wam-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'This planning tool maps ATAR to indicative WAM and GPA bands — and works in reverse from WAM to estimated ATAR ranges. It does not apply an official UAC or Monash formula because none exists linking secondary rank to university grade point averages.',
-        'Output groups entry-level benchmarks (e.g., ATAR 90–95 → WAM 80–84 planning band) so school leavers set realistic first-year goals before any Monash results exist.',
+        'This planning tool maps ATAR to indicative WAM and GPA bands — and works in reverse from WAM to estimated ATAR ranges. It does not apply an official UAC or Uni formula because none exists linking secondary rank to university grade point averages.',
+        'Output groups entry-level benchmarks (e.g., ATAR 90–95 → WAM 80–84 planning band) so school leavers set realistic first-year goals before any Uni results exist.',
       ],
       bullets: [
         'Bidirectional: ATAR → WAM/GPA or WAM → ATAR range.',
@@ -1225,7 +1225,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         {
           variant: 'warning',
           title: 'Not official policy',
-          text: 'UAC does not publish ATAR↔WAM conversion. Monash employers and postgrad programs evaluate degree WAM/GPA, not Year 12 ATAR.',
+          text: 'UAC does not publish ATAR↔WAM conversion. Uni employers and postgrad programs evaluate degree WAM/GPA, not Year 12 ATAR.',
         },
       ],
       table: {
@@ -1240,7 +1240,7 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     whenToUse: {
       paragraphs: [
-        'Use briefly before starting at Monash to frame first-semester expectations — then retire it once real WAM exists. Also useful for parents or mentors unfamiliar with university grading translating familiar ATAR into WAM language.',
+        'Use briefly before starting at Uni to frame first-semester expectations — then retire it once real WAM exists. Also useful for parents or mentors unfamiliar with university grading translating familiar ATAR into WAM language.',
         'Do not use for scholarship eligibility (merit awards use university WAM), employer applications, or official reporting.',
       ],
       bullets: [
@@ -1304,20 +1304,20 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     tips: {
       bullets: [
-        'After first results, switch entirely to Monash WAM and GPA calculators.',
+        'After first results, switch entirely to WAM and GPA calculators.',
         'First-year units at 0.5 level weight affect official WAM — GPA tools may not mirror that nuance.',
         'Peer study groups should compare current WAM, not secondary school rank.',
         'Read pathways articles for transfer students without ATAR context.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash course entry cut-offs publish ATAR requirements separately each year — this tool does not replace VTAC/UAC course search.',
-        'Not official Monash policy. Monash merit assessment after enrolment uses WAM, GPA, and distinction average — never ATAR conversion.',
+        'Uni course entry cut-offs publish ATAR requirements separately each year — this tool does not replace VTAC/UAC course search.',
+        'Not official Uni policy. Uni merit assessment after enrolment uses WAM, GPA, and distinction average — never ATAR conversion.',
       ],
       callout: {
         variant: 'info',
-        text: 'Monash students should cite WES WAM and CGPA on all post-enrolment applications. ATAR belongs on school-leaver sections only where explicitly requested.',
+        text: 'Uni students should cite WES WAM and CGPA on all post-enrolment applications. ATAR belongs on school-leaver sections only where explicitly requested.',
       },
     },
     legacySections: LEGACY_ATAR,
@@ -1326,13 +1326,13 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/high-school-gpa-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Computes US-style high school GPA from course grades and credit weights, with optional +1.0 weighted bump for honours/AP-style rigour (capped at 5.0). Australian students more often hold ATAR — this tool serves dual citizens, US transfer applicants, and Monash students preparing US exchange or graduate school packets.',
+        'Computes US-style high school GPA from course grades and credit weights, with optional +1.0 weighted bump for honours/AP-style rigour (capped at 5.0). Australian students more often hold ATAR — this tool serves dual citizens, US transfer applicants, and Uni students preparing US exchange or graduate school packets.',
         'Toggle unweighted (4.0 cap) vs weighted (5.0 cap) before interpreting results for Common App or NCAA eligibility contexts.',
       ],
       bullets: [
         'Letter-grade points: A=4.0 through F=0.0 with intermediate +/- values.',
         'Per-course credit weighting (typically 0.5–1.0 per semester course).',
-        'Separate from Monash university GPA — different scale and purpose.',
+        'Separate from the university GPA — different scale and purpose.',
       ],
     },
     howItWorks: {
@@ -1351,19 +1351,19 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
       callouts: [
         {
           variant: 'info',
-          title: 'Monash entry unaffected',
-          text: 'Monash undergraduate admission uses ATAR, IB, or diploma pathways — not US high school GPA. This tool supports outbound US applications, not Monash entry.',
+          title: 'Uni entry unaffected',
+          text: 'Uni undergraduate admission uses ATAR, IB, or diploma pathways — not US high school GPA. This tool supports outbound US applications, not Uni entry.',
         },
       ],
     },
     whenToUse: {
       paragraphs: [
-        'Use when a US institution requests unweighted or weighted high school GPA and you need a draft before ordering official transcripts. Monash-enrolled students rarely need high school GPA except for US grad school or exchange applications referencing secondary performance.',
-        'Switch to university GPA calculators once you have Monash WES results — post-secondary GPA matters more for most programs.',
+        'Use when a US institution requests unweighted or weighted high school GPA and you need a draft before ordering official transcripts. Uni-enrolled students rarely need high school GPA except for US grad school or exchange applications referencing secondary performance.',
+        'Switch to university GPA calculators once you have Uni WES results — post-secondary GPA matters more for most programs.',
       ],
       bullets: [
         'US undergraduate transfer applications while still in Year 12.',
-        'Monash students applying to US summer programs citing HS performance.',
+        'Uni students applying to US summer programs citing HS performance.',
         'Comparing US cousin\'s GPA reporting format to your ATAR for family planning conversations.',
       ],
     },
@@ -1410,9 +1410,9 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         ],
       },
       {
-        title: 'Monash student drafting US grad school supplement',
+        title: 'Uni student drafting US grad school supplement',
         paragraphs: [
-          'HS weighted GPA 4.2/5.0 from junior year; Monash CGPA 3.4/4.0 from WES. Application receives both — HS GPA contextualises pre-university rigour only.',
+          'HS weighted GPA 4.2/5.0 from junior year; Uni CGPA 3.4/4.0 from WES. Application receives both — HS GPA contextualises pre-university rigour only.',
         ],
       },
     ],
@@ -1421,21 +1421,21 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         'Submitting calculator GPA when application requires official registrar figure.',
         'Applying weighted bumps to standard courses not designated honours/AP.',
         'Confusing US high school 5.0 weighted with Australian 7.0 university scale.',
-        'Using Monash unit grades in the high school GPA row format.',
+        'Using Uni unit grades in the high school GPA row format.',
       ],
     },
     tips: {
       bullets: [
         'Save both weighted and unweighted figures — colleges ask for different variants.',
-        'After Monash enrolment, lead with WES CGPA on almost all forms.',
+        'After Uni enrolment, lead with WES CGPA on almost all forms.',
         'Check whether target US school recalculates GPA internally anyway.',
         'Keep PDF transcripts — calculator assumptions may not match school policy.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Not official Monash policy. Monash does not collect or store US high school GPA for standard domestic entry. International offices may review US transcripts holistically without a single GPA cutoff.',
-        'Once enrolled, Monash students should use WAM and official CGPA for all Monash-related merit, honours, and employment reporting.',
+        'Not official Uni policy. Uni does not collect or store US high school GPA for standard domestic entry. International offices may review US transcripts holistically without a single GPA cutoff.',
+        'Once enrolled, Uni students should use WAM and official CGPA for all Uni-related merit, honours, and employment reporting.',
       ],
     },
     legacySections: LEGACY_HIGH_SCHOOL_GPA,
@@ -1444,8 +1444,8 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
   '/10-point-gpa-to-wam-calculator': buildStandardCalculatorGuide({
     whatItDoes: {
       paragraphs: [
-        'Translates 10-point CGPA (common in India, parts of Europe, and Asia-Pacific partner institutions) into indicative Monash WAM percentage bands and paired 4.0/7.0 GPA values. Method: multiply CGPA by 10 for percentage equivalent, then map to HD/D/C/P/N bands.',
-        'International applicants and Monash students returning from exchange use it to estimate where home-university performance sits against Monash distinction average (WAM 70+) before formal credit assessment completes.',
+        'Translates 10-point CGPA (common in India, parts of Europe, and Asia-Pacific partner institutions) into indicative WAM percentage bands and paired 4.0/7.0 GPA values. Method: multiply CGPA by 10 for percentage equivalent, then map to HD/D/C/P/N bands.',
+        'International applicants and Uni students returning from exchange use it to estimate where home-university performance sits against Uni distinction average (WAM 70+) before formal credit assessment completes.',
       ],
       bullets: [
         'Input 0.0–10.0 CGPA with one decimal precision.',
@@ -1455,18 +1455,18 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     howItWorks: {
       paragraphs: [
-        'Core formula: estimated % = CGPA₁₀ × 10. An 8.5 → 85% → Distinction/HD border band (80–89% zone depending on exact mark mapping). Grade bands follow Monash standard cutoffs: HD 80+, D 70–79, C 60–69, P 50–59.',
-        'Home institutions may compress or inflate grades differently — linear ×10 assumption is planning-only until Monash admissions confirms converted marks on your Australian transcript.',
+        'Core formula: estimated % = CGPA₁₀ × 10. An 8.5 → 85% → Distinction/HD border band (80–89% zone depending on exact mark mapping). Grade bands follow Uni standard cutoffs: HD 80+, D 70–79, C 60–69, P 50–59.',
+        'Home institutions may compress or inflate grades differently — linear ×10 assumption is planning-only until Uni admissions confirms converted marks on your Australian transcript.',
       ],
       callouts: [
         {
           variant: 'warning',
           title: 'Not a credit decision',
-          text: 'Monash makes final advanced standing and grade recognition decisions from certified documents. Calculator bands do not guarantee credit or GPA transfer.',
+          text: 'Uni makes final advanced standing and grade recognition decisions from certified documents. Calculator bands do not guarantee credit or GPA transfer.',
         },
       ],
       table: {
-        headers: ['10-pt CGPA', 'Est. %', 'Monash grade', '4.0 GP'],
+        headers: ['10-pt CGPA', 'Est. %', 'Uni grade', '4.0 GP'],
         rows: [
           ['9.0', '90%', 'HD', '4.0'],
           ['8.5', '85%', 'HD', '4.0'],
@@ -1477,12 +1477,12 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
     },
     whenToUse: {
       paragraphs: [
-        'Use when holding a 10-point transcript and needing Monash WAM language for self-assessment, scholarship drafting, or conversation with course advisers. Pair with CGPA to GPA calculator for US linear 4.0 forms.',
-        'Monash students without 10-point backgrounds can skip this tool — WES WAM is direct.',
+        'Use when holding a 10-point transcript and needing WAM language for self-assessment, scholarship drafting, or conversation with course advisers. Pair with CGPA to GPA calculator for US linear 4.0 forms.',
+        'Uni students without 10-point backgrounds can skip this tool — WES WAM is direct.',
       ],
       bullets: [
-        'Indian postgrad applicants comparing 8.x CGPA to Monash distinction average.',
-        'Exchange returnees merging overseas 10-point results with Monash planning.',
+        'Indian postgrad applicants comparing 8.x CGPA to Uni distinction average.',
+        'Exchange returnees merging overseas 10-point results with Uni planning.',
         'Estimating WAM targets before starting at Clayton or Caulfield campus.',
       ],
     },
@@ -1490,26 +1490,26 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
       'Locate cumulative CGPA on home institution transcript (10-point scale).',
       'Enter value in the calculator field.',
       'Read indicative WAM band, percentage equivalent, and GPA pairs.',
-      'Compare band against Monash opportunity thresholds (e.g., WAM 70+ merit).',
-      'Submit official transcripts to Monash for formal assessment — do not self-award converted grades.',
+      'Compare band against Uni opportunity thresholds (e.g., WAM 70+ merit).',
+      'Submit official transcripts to Uni for formal assessment — do not self-award converted grades.',
     ],
     examples: [
       {
         title: 'Strong Indian engineering CGPA 9.1',
         paragraphs: [
-          '9.1 × 10 = 91% → HD band (80–100%). Planning GPA 4.0/4.0 and 7.0/7.0. Competitive for merit scholarships pending Monash verification.',
+          '9.1 × 10 = 91% → HD band (80–100%). Planning GPA 4.0/4.0 and 7.0/7.0. Competitive for merit scholarships pending Uni verification.',
         ],
       },
       {
         title: 'Borderline distinction at 7.0/10',
         paragraphs: [
-          '70% equivalent → Distinction band floor. Student targets WAM 75+ at Monash to buffer against assessment variance.',
+          '70% equivalent → Distinction band floor. Student targets WAM 75+ at Uni to buffer against assessment variance.',
         ],
       },
       {
         title: '7.9 vs 8.0 sensitivity',
         paragraphs: [
-          '7.9 → 79% (Distinction, 3.0/4.0). 8.0 → 80% (HD, 4.0/4.0). One decimal can shift scholarship planning — use conservative estimate until Monash confirms.',
+          '7.9 → 79% (Distinction, 3.0/4.0). 8.0 → 80% (HD, 4.0/4.0). One decimal can shift scholarship planning — use conservative estimate until Uni confirms.',
         ],
         table: {
           headers: ['CGPA', 'Est. %', 'Band shift'],
@@ -1526,36 +1526,36 @@ export const CALCULATOR_GUIDE_EXPANSIONS_PART4: Record<string, CalculatorPageGui
         ],
       },
       {
-        title: 'Monash student comparing partner university',
+        title: 'Uni student comparing partner university',
         paragraphs: [
-          'Exchange host reports 8.2/10. Maps to 82% HD band for personal tracking while awaiting Monash credit articulation on WES.',
+          'Exchange host reports 8.2/10. Maps to 82% HD band for personal tracking while awaiting Uni credit articulation on WES.',
         ],
       },
     ],
     mistakes: {
       bullets: [
-        'Claiming Monash HD on CV from calculator output without WES certification.',
-        'Using linear CGPA-to-GPA (÷10×4) when form actually wants Monash band narrative.',
-        'Ignoring home institution grade inflation — 8.0/10 may not equal Monash 80% work.',
-        'Confusing 10-point CGPA with Monash 4.0 CGPA on the same resume line.',
+        'Claiming Uni HD on CV from calculator output without WES certification.',
+        'Using linear CGPA-to-GPA (÷10×4) when form actually wants Uni band narrative.',
+        'Ignoring home institution grade inflation — 8.0/10 may not equal Uni 80% work.',
+        'Confusing 10-point CGPA with Uni 4.0 CGPA on the same resume line.',
       ],
     },
     tips: {
       bullets: [
         'Provide percentage equivalent alongside 10-point CGPA on applications for clarity.',
         'Cross-check with CGPA to WAM calculator if you also hold 4.0-scale documents.',
-        'After Monash enrolment, prioritise WES WAM over home-scale conversions.',
+        'After Uni enrolment, prioritise WES WAM over home-scale conversions.',
         'Read exchange and pathways articles for document submission timelines.',
       ],
     },
-    monashNotes: {
+    uniNotes: {
       paragraphs: [
-        'Monash credit transfer and admissions assess 10-point transcripts individually — this tool is not official Monash policy or a substitute for faculty assessment.',
-        'Distinction average at Monash requires WAM 70+ or GPA 3.0+ on Monash coursework after enrolment; home CGPA conversion does not pre-qualify you.',
+        'Uni credit transfer and admissions assess 10-point transcripts individually — this tool is not official Uni policy or a substitute for faculty assessment.',
+        'Distinction average at Uni requires WAM 70+ or GPA 3.0+ on Uni coursework after enrolment; home CGPA conversion does not pre-qualify you.',
       ],
       callout: {
         variant: 'info',
-        text: 'Once studying at Monash, WES WAM and CGPA replace all pre-enrolment 10-point estimates for official purposes.',
+        text: 'Once studying at Uni, WES WAM and CGPA replace all pre-enrolment 10-point estimates for official purposes.',
       },
     },
     legacySections: LEGACY_10_POINT,

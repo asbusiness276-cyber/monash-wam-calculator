@@ -33,8 +33,8 @@ const faqs = [
     answer: 'Toggle to WAM → ATAR mode for reverse indicative ranges.',
   },
   {
-    question: 'Monash entry?',
-    answer: 'Course cut-offs vary by year and faculty — check Monash published ATAR requirements separately.',
+    question: 'Uni entry?',
+    answer: 'Course cut-offs vary by year and faculty — check Uni published ATAR requirements separately.',
   },
 ];
 
@@ -53,7 +53,7 @@ export default function AtarConverter() {
           Convert ATAR to indicative WAM and GPA bands — or estimate ATAR from your university WAM for planning.
         </p>
         <p className="text-fuchsia-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
-          Monash WAM:{' '}
+          WAM:{' '}
           <a href={absoluteUrl(atarWam.path)} className={HERO_INLINE_LINK_CLASS}>{atarWam.keyword}</a>
           . WAM to GPA:{' '}
           <a href={absoluteUrl(atarGpa.path)} className={HERO_INLINE_LINK_CLASS}>{atarGpa.keyword}</a>.

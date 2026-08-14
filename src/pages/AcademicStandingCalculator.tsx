@@ -34,7 +34,7 @@ export default function AcademicStandingCalculator() {
   return (
     <>
       <Seo
-        title="Academic Standing & Risk Calculator - Monash Progress Rules"
+        title="Academic Standing & Risk Calculator - Uni Progress Rules"
         description="Check if you are at risk of academic exclusion or warning. Calculate your pass rate and academic standing based on failed units."
         canonicalPath="/academic-standing-calculator"
         faqItems={faqs}

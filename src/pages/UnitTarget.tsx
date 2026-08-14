@@ -35,7 +35,7 @@ const unitTargetFaqs = [
       'Yes. The result is the average mark needed across the combined weight of all pending assessments.',
   },
   {
-    question: 'Does this match Monash official grading?',
+    question: 'Does this match Uni official grading?',
     answer:
       'It uses standard weighted percentage maths from your unit guide. Hurdles, scaling, or special rules may differ — confirm on official unit information.',
   },
@@ -45,8 +45,8 @@ export default function UnitTarget() {
   return (
     <>
       <Seo
-        title="Unit Target Mark Calculator - What Do You Need? (Monash 2026)"
-        description="Free Monash unit target calculator: enter completed assessment marks and weights to see what you need on remaining tasks to reach your target unit mark."
+        title="Unit Target Mark Calculator - What Do You Need? (Uni 2026)"
+        description="Free Uni unit target calculator: enter completed assessment marks and weights to see what you need on remaining tasks to reach your target unit mark."
         canonicalPath="/unit-target-calculator"
         faqItems={unitTargetFaqs}
       />
@@ -80,7 +80,7 @@ export default function UnitTarget() {
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white">Planning Multiple Assessments</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            Many Monash units split marks across assignments, labs, tests, and a final exam. This calculator supports
+            Many Uni units split marks across assignments, labs, tests, and a final exam. This calculator supports
             any number of weighted components: enter marks you already have, leave pending rows empty, set your target
             unit percentage, and read the required average on whatever remains. Weights must still sum to 100%.
           </p>
@@ -102,7 +102,7 @@ export default function UnitTarget() {
               unit mark calculator
             </a>
             . Read our{' '}
-            <a href="/articles/monash-final-exam-mark-calculator-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
+            <a href="/articles/uni-final-exam-mark-calculator-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
               final exam planning guide
             </a>{' '}
             for study tactics once you know the number you need.

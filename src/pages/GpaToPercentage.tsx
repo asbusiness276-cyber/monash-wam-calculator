@@ -13,11 +13,11 @@ const faqs = [
   {
     question: 'How do I convert GPA to percentage?',
     answer:
-      'Enter GPA on 4.0 or 7.0 scale. Monash maps each GPA band to a percentage range — e.g. 3.0 ≈ 70–79%.',
+      'Enter GPA on 4.0 or 7.0 scale. Uni maps each GPA band to a percentage range — e.g. 3.0 ≈ 70–79%.',
   },
   {
     question: 'What percentage is GPA 3.5?',
-    answer: '3.5 on 4.0 is High Distinction territory — roughly 80–100% at Monash.',
+    answer: '3.5 on 4.0 is High Distinction territory — roughly 80–100% at Uni.',
   },
   {
     question: 'Is GPA to percentage exact?',
@@ -31,11 +31,11 @@ const faqs = [
   {
     question: 'WAM vs percentage?',
     answer:
-      'At Monash, WAM is a percentage-style weighted average. This tool maps GPA bands to equivalent % ranges.',
+      'At Uni, WAM is a percentage-style weighted average. This tool maps GPA bands to equivalent % ranges.',
   },
   {
     question: 'Which scale should I use?',
-    answer: 'Match the scale on your transcript or application form — 4.0 for Monash official GPA, 7.0 for Australian HDR.',
+    answer: 'Match the scale on your transcript or application form — 4.0 for Uni official GPA, 7.0 for Australian HDR.',
   },
 ];
 
@@ -43,8 +43,8 @@ export default function GpaToPercentage() {
   return (
     <>
       <Seo
-        title="GPA to Percentage Calculator - Monash 4.0 & 7.0 (2026)"
-        description="Free GPA to percentage calculator for Monash students. Convert 4.0 or 7.0 GPA to approximate percentage and WAM bands."
+        title="GPA to Percentage Calculator - Uni 4.0 & 7.0 (2026)"
+        description="Free GPA to percentage calculator for Uni students. Convert 4.0 or 7.0 GPA to approximate percentage and WAM bands."
         canonicalPath="/gpa-to-percentage-calculator"
         faqItems={faqs}
       />
@@ -52,7 +52,7 @@ export default function GpaToPercentage() {
       <section className="bg-gradient-to-br from-indigo-700 to-indigo-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">GPA to Percentage Calculator</h1>
         <p className="text-indigo-100 max-w-xl mx-auto">
-          Convert GPA on the 4.0 or 7.0 scale to approximate Monash percentage / WAM ranges instantly.
+          Convert GPA on the 4.0 or 7.0 scale to approximate Uni percentage / WAM ranges instantly.
         </p>
         <p className="text-indigo-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Reverse direction:{' '}

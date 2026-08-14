@@ -34,7 +34,7 @@ export interface StandardCalculatorGuideInput {
     paragraphs?: string[];
     bullets: string[];
   };
-  monashNotes?: {
+  uniNotes?: {
     paragraphs: string[];
     bullets?: string[];
     callout?: GuideCallout;
@@ -72,7 +72,7 @@ export function buildStandardCalculatorGuide(input: StandardCalculatorGuideInput
     {
       heading: 'Practical Examples',
       paragraphs: [
-        'Worked scenarios below use realistic Monash-style marks and credit loads. Enter the same values in the calculator to verify.',
+        'Worked scenarios below use realistic Uni-style marks and credit loads. Enter the same values in the calculator to verify.',
       ],
       examples: input.examples,
     },
@@ -89,12 +89,12 @@ export function buildStandardCalculatorGuide(input: StandardCalculatorGuideInput
     },
   ];
 
-  if (input.monashNotes) {
+  if (input.uniNotes) {
     sections.push({
-      heading: 'Important Notes About Monash University Policies',
-      paragraphs: input.monashNotes.paragraphs,
-      bullets: input.monashNotes.bullets,
-      callouts: input.monashNotes.callout ? [input.monashNotes.callout] : undefined,
+      heading: 'Important Notes About the university Policies',
+      paragraphs: input.uniNotes.paragraphs,
+      bullets: input.uniNotes.bullets,
+      callouts: input.uniNotes.callout ? [input.uniNotes.callout] : undefined,
     });
   }
 

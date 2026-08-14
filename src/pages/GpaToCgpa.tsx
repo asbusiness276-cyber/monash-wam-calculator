@@ -18,19 +18,19 @@ const faqs = [
   {
     question: 'What is the difference between GPA and CGPA?',
     answer:
-      'GPA often means one semester. CGPA is cumulative across all completed study on the 4.0 scale at Monash.',
+      'GPA often means one semester. CGPA is cumulative across all completed study on the 4.0 scale at Uni.',
   },
   {
     question: 'Can I use unit rows instead of semester GPA?',
-    answer: 'Yes — the Monash CGPA calculator accepts each unit grade for more precise semester maths.',
+    answer: 'Yes — the Uni CGPA calculator accepts each unit grade for more precise semester maths.',
   },
   {
     question: 'First semester CGPA?',
     answer: 'If you have no prior credits, your semester GPA equals your CGPA.',
   },
   {
-    question: 'Monash scale?',
-    answer: 'This uses Monash 4.0 official grade values. Fail = 0.3, WN = 0.0.',
+    question: 'Uni scale?',
+    answer: 'This uses Uni 4.0 official grade values. Fail = 0.3, WN = 0.0.',
   },
   {
     question: 'Reverse conversion?',
@@ -42,15 +42,15 @@ export default function GpaToCgpa() {
   return (
     <>
       <Seo
-        title="GPA to CGPA Calculator - Monash 4.0 Scale (2026)"
-        description="Free GPA to CGPA calculator: add semester GPA to prior cumulative GPA using Monash credit-weighted 4.0 scale maths."
+        title="GPA to CGPA Calculator - Uni 4.0 Scale (2026)"
+        description="Free GPA to CGPA calculator: add semester GPA to prior cumulative GPA using Uni credit-weighted 4.0 scale maths."
         canonicalPath="/gpa-to-cgpa-calculator"
         faqItems={faqs}
       />
       <section className="bg-gradient-to-br from-emerald-700 to-emerald-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">GPA to CGPA Calculator</h1>
         <p className="text-emerald-100 max-w-xl mx-auto">
-          Add this semester&apos;s GPA to your prior CGPA — credit-weighted cumulative GPA on the Monash 4.0 scale.
+          Add this semester&apos;s GPA to your prior CGPA — credit-weighted cumulative GPA on the Uni 4.0 scale.
         </p>
         <p className="text-emerald-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Unit-by-unit:{' '}

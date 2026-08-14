@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getGpaConversionSteps, mapGpaToPercentageRange } from '../utils/monashGrades';
+import { getGpaConversionSteps, mapGpaToPercentageRange } from '../utils/uniGrades';
 
 type GpaToPercentageToolCoreProps = {
   fixedScale?: 4 | 7;
@@ -76,7 +76,7 @@ export default function GpaToPercentageToolCore({
               </div>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-              GPA maps to a grade band, not one exact percentage. Use the range for Monash planning.
+              GPA maps to a grade band, not one exact percentage. Use the range for Uni planning.
             </p>
           </div>
         )}

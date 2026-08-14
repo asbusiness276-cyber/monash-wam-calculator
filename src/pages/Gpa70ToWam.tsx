@@ -13,16 +13,16 @@ const faqs = [
   {
     question: 'How do I convert 7.0 GPA to WAM?',
     answer:
-      'Enter GPA on the Australian 7-point scale. HD (7) maps to WAM 80–100, D (6) to 70–79, and so on at Monash.',
+      'Enter GPA on the Australian 7-point scale. HD (7) maps to WAM 80–100, D (6) to 70–79, and so on at Uni.',
   },
   {
     question: 'What WAM is 6.0 GPA?',
-    answer: '6.0 on the 7.0 scale is Distinction — approximately WAM 70–79% at Monash.',
+    answer: '6.0 on the 7.0 scale is Distinction — approximately WAM 70–79% at Uni.',
   },
   {
-    question: 'Is 7.0 GPA used at Monash?',
+    question: 'Is 7.0 GPA used at Uni?',
     answer:
-      'Monash transcripts often show 4.0 GPA and WAM. The 7.0 scale is common for Australian university comparisons.',
+      'Uni transcripts often show 4.0 GPA and WAM. The 7.0 scale is common for Australian university comparisons.',
   },
   {
     question: 'Why a WAM range not one number?',
@@ -33,9 +33,9 @@ const faqs = [
     answer: 'Use the 4.0 GPA to WAM calculator or the combined GPA to WAM tool.',
   },
   {
-    question: 'Transferring to Monash?',
+    question: 'Transferring to Uni?',
     answer:
-      'Use this for planning, then confirm with official Monash assessment once you receive credit decisions.',
+      'Use this for planning, then confirm with official Uni assessment once you receive credit decisions.',
   },
 ];
 
@@ -43,8 +43,8 @@ export default function Gpa70ToWam() {
   return (
     <>
       <Seo
-        title="7.0 GPA to WAM Calculator - Australian Monash Scale (2026)"
-        description="Free 7.0 GPA to WAM calculator. Convert Australian 7-point GPA to approximate Monash weighted average mark ranges."
+        title="7.0 GPA to WAM Calculator - Australian Uni Scale (2026)"
+        description="Free 7.0 GPA to WAM calculator. Convert Australian 7-point GPA to approximate Uni weighted average mark ranges."
         canonicalPath="/7-0-gpa-to-wam-calculator"
         faqItems={faqs}
       />
@@ -52,7 +52,7 @@ export default function Gpa70ToWam() {
       <section className="bg-gradient-to-br from-emerald-700 to-emerald-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">7.0 GPA to WAM Calculator</h1>
         <p className="text-emerald-100 max-w-xl mx-auto">
-          Convert 7-point Australian GPA to approximate Monash WAM — HD (7), D (6), CR (5), P (4) bands.
+          Convert 7-point Australian GPA to approximate WAM — HD (7), D (6), CR (5), P (4) bands.
         </p>
         <p className="text-emerald-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Official WAM from units:{' '}

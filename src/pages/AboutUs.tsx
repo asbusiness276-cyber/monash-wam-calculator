@@ -17,18 +17,18 @@ const ARTICLE_COUNT = articles.length;
 
 const aboutFaqs = [
   {
-    question: 'Who should use Monash WAM Calculator?',
+    question: 'Who should use My Calculator Hub?',
     answer:
-      'Monash University coursework students who need WAM, GPA, semester averages, exam targets, honours cutoffs, scholarship planning bands, or fail-recovery modelling. The tools are built around Monash grading rules — Year 1 half-weighting, credit-point weighting, and official 4.0 GPA bands.',
+      'the university coursework students who need WAM, GPA, semester averages, exam targets, honours cutoffs, scholarship planning bands, or fail-recovery modelling. The tools are built around Uni grading rules — Year 1 half-weighting, credit-point weighting, and official 4.0 GPA bands.',
   },
   {
     question: 'Who writes and maintains the site?',
-    answer: `${ARTICLE_AUTHOR.name} produces editorial guides and calculator documentation. Content is written for clarity, checked against Monash grading references, and updated when student questions or policy wording changes — not auto-generated filler.`,
+    answer: `${ARTICLE_AUTHOR.name} produces editorial guides and calculator documentation. Content is written for clarity, checked against Uni grading references, and updated when student questions or policy wording changes — not auto-generated filler.`,
   },
   {
-    question: 'Is Monash WAM Calculator affiliated with Monash University?',
+    question: 'Is My Calculator Hub affiliated with the university?',
     answer:
-      'No. This is an independent student resource. We are not endorsed by Monash University, any faculty, or admissions office. Always verify official outcomes on WES and your transcript.',
+      'No. This is an independent student resource. We are not endorsed by the university, any faculty, or admissions office. Always verify official outcomes on WES and your transcript.',
   },
   {
     question: 'Is the site free?',
@@ -38,7 +38,7 @@ const aboutFaqs = [
   {
     question: 'How accurate are the calculators?',
     answer:
-      'With correct marks, credit points, and year levels, WAM and GPA results follow Monash published formulas. Calculator maths is tested with automated scripts. Special grade codes, repeats, withdrawn fail (WN), or faculty-specific exclusions may still differ from WES — use official records for formal decisions.',
+      'With correct marks, credit points, and year levels, WAM and GPA results follow Uni published formulas. Calculator maths is tested with automated scripts. Special grade codes, repeats, withdrawn fail (WN), or faculty-specific exclusions may still differ from WES — use official records for formal decisions.',
   },
   {
     question: 'Do you store my marks when I use a calculator?',
@@ -47,7 +47,7 @@ const aboutFaqs = [
   },
   {
     question: 'How many tools and guides are available?',
-    answer: `${CALCULATOR_COUNT} free calculators and ${ARTICLE_COUNT} long-form student guides, updated as Monash student questions evolve.`,
+    answer: `${CALCULATOR_COUNT} free calculators and ${ARTICLE_COUNT} long-form student guides, updated as Uni student questions evolve.`,
   },
   {
     question: 'Can I suggest a new calculator or article?',
@@ -57,7 +57,7 @@ const aboutFaqs = [
 ];
 
 const popularLinks = [
-  { label: 'Monash WAM Calculator', href: '/' },
+  { label: 'My Calculator Hub', href: '/' },
   { label: 'WAM to GPA', href: '/wam-to-gpa-calculator' },
   { label: 'Semester WAM', href: '/semester-wam-calculator' },
   { label: 'WAM Target', href: '/wam-target-calculator' },
@@ -68,7 +68,7 @@ const popularLinks = [
 
 const missionPoints = [
   'Turn WES numbers into actionable semester plans — not anxiety without next steps.',
-  'Explain Monash-specific rules (Year 1 weighting, credit points, supp caps) in plain language.',
+  'Explain Uni-specific rules (Year 1 weighting, credit points, supp caps) in plain language.',
   'Pair every major calculator with worked examples, mistakes to avoid, and links to related tools.',
   'Stay honest about limits: planning estimates are not official faculty decisions.',
 ];
@@ -105,21 +105,21 @@ export default function AboutUs() {
   return (
     <>
       <Seo
-        title="About Us | Monash WAM Calculator — Who We Are"
-        description={`Independent Monash WAM calculator site by ${ARTICLE_AUTHOR.name}: ${CALCULATOR_COUNT} free tools, ${ARTICLE_COUNT} student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers.`}
+        title="About Us | My Calculator Hub — Who We Are"
+        description={`Independent WAM calculator site by ${ARTICLE_AUTHOR.name}: ${CALCULATOR_COUNT} free tools, ${ARTICLE_COUNT} student guides, Uni-specific formulas, editorial standards, and honest planning disclaimers.`}
         canonicalPath="/about-us"
         faqItems={aboutFaqs}
       />
 
       <section className="max-w-3xl mx-auto px-4 pt-8 pb-4">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">About Monash WAM Calculator</h1>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">About My Calculator Hub</h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-          Independent student resource · Not affiliated with Monash University · Updated July 2026
+          Independent student resource · Not affiliated with the university · Updated July 2026
         </p>
 
         <div className="space-y-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
           <p className="text-base">
-            MonashWAMCalculator.com helps Monash students calculate Weighted Average Mark (WAM), plan semester targets,
+            MyCalculatorHub.com helps Uni students calculate Weighted Average Mark (WAM), plan semester targets,
             and understand how grades affect honours, scholarships, and applications — with{' '}
             <strong className="text-gray-900 dark:text-white">{CALCULATOR_COUNT} free calculators</strong> and{' '}
             <strong className="text-gray-900 dark:text-white">{ARTICLE_COUNT} in-depth guides</strong>. We combine fast
@@ -156,9 +156,9 @@ export default function AboutUs() {
 
           <ContentCard title="Our Mission" icon={Target}>
             <p>
-              Monash publishes WAM on WES, but students still ask practical questions every results period: How much
+              Uni publishes WAM on WES, but students still ask practical questions every results period: How much
               did that 12-credit unit move my average? Can I still reach distinction average? What mark do I need on
-              remaining units for a scholarship band? This site exists to answer those questions with Monash-accurate
+              remaining units for a scholarship band? This site exists to answer those questions with Uni-accurate
               maths and step-by-step guides — not generic GPA blog posts written for US colleges.
             </p>
             <ul className="mt-4 list-disc list-inside space-y-1.5">
@@ -183,15 +183,15 @@ export default function AboutUs() {
               </div>
             </div>
             <p className="mt-4 text-gray-600 dark:text-gray-400">
-              We do not represent Monash University. For official academic decisions, use WES, your transcript, Monash
+              We do not represent the university. For official academic decisions, use WES, your transcript, Uni
               Connect, and faculty handbooks.
             </p>
           </ContentCard>
 
           <ContentCard title="Who This Site Is For" icon={Users}>
             <p className="mb-4">
-              Tools are designed for Monash coursework students first. Other Australian undergraduates may find GPA
-              conversion pages useful, but WAM weighting and grade bands follow Monash rules unless a page states
+              Tools are designed for Uni coursework students first. Other Australian undergraduates may find GPA
+              conversion pages useful, but WAM weighting and grade bands follow Uni rules unless a page states
               otherwise.
             </p>
             <div className="overflow-x-auto rounded-xl border border-gray-100 dark:border-gray-700">
@@ -218,9 +218,9 @@ export default function AboutUs() {
 
           <ContentCard title="What We Provide" icon={Calculator}>
             <ul className="list-disc list-inside space-y-1.5">
-              <li>Official-style Monash WAM with Year 1 (0.5) weighting plus planning WAM comparison</li>
+              <li>Official-style WAM with Year 1 (0.5) weighting plus planning WAM comparison</li>
               <li>Semester WAM, WAM target, WAM projection, and WAM milestones tools</li>
-              <li>WAM ↔ GPA conversion, Monash GPA, CGPA, target GPA, and grade converters</li>
+              <li>WAM ↔ GPA conversion, Uni GPA, CGPA, target GPA, and grade converters</li>
               <li>Final grade, unit mark, pass mark, and assessment target calculators</li>
               <li>Honours, scholarship, distinction average, dean&apos;s list, fail recovery, and exchange planners</li>
               <li>
@@ -243,7 +243,7 @@ export default function AboutUs() {
           <div className="rounded-2xl border border-primary-200 dark:border-primary-900/40 bg-primary-50/70 dark:bg-primary-950/20 p-5 sm:p-6">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">How We Build & Test Calculators</h2>
             <p>
-              Each calculator implements Monash formulas from published grading guidance — credit-weighted WAM, Year 1
+              Each calculator implements Uni formulas from published grading guidance — credit-weighted WAM, Year 1
               half-weight, 4.0 GPA band mapping, and assessment-weight algebra for final exam targets. We run automated
               calculator tests in CI so regression bugs are caught before deploy.
             </p>
@@ -272,7 +272,7 @@ export default function AboutUs() {
 
           <ContentCard title="Editorial Standards" icon={ShieldCheck}>
             <p>
-              Every calculator page explains the Monash formula, when to use the tool, and how results relate to WES.
+              Every calculator page explains the Uni formula, when to use the tool, and how results relate to WES.
               Articles include worked examples, tables, and internal links to related tools — not thin widget-only
               pages. We test calculator maths with automated scripts and update copy when grading guidance or common
               student questions change.
@@ -296,8 +296,8 @@ export default function AboutUs() {
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Important Disclaimer</h2>
             <p>
               Calculator results are planning estimates only. Official WAM, GPA, grades, and progression rules appear on
-              your Monash transcript and WES. Verify honours entry, scholarship deadlines, and supp eligibility with
-              Monash directly. See our{' '}
+              your Uni transcript and WES. Verify honours entry, scholarship deadlines, and supp eligibility with
+              Uni directly. See our{' '}
               <a href={absoluteUrl('/disclaimer')} className={INLINE_LINK_CLASS}>
                 disclaimer
               </a>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function PeerReviewMarkToolCore() {
   const [groupMark, setGroupMark] = useState<number>(75);
   const [peerFactor, setPeerFactor] = useState<number>(0.8);
-  const [maxMark, setMaxMark] = useState<number>(100);
+  const [maxMark] = useState<number>(100);
 
   // Common SPARKPLUS formula: Individual Mark = Group Mark * Peer Factor
   // Usually capped at the maximum possible mark (e.g. 100)

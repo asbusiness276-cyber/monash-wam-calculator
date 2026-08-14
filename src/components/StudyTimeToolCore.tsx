@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function StudyTimeToolCore() {
   const [creditPoints, setCreditPoints] = useState<number>(24);
   
-  // A standard assumption: 1 credit point in Australia (e.g., 6 cp unit at Monash) 
+  // A standard assumption: 1 credit point in Australia (e.g., 6 cp unit at Uni) 
   // typically equates to 2 hours of total workload per week per credit point (12 hours/week for a 6cp unit).
   // Total workload = contact hours + self-directed study.
   // We can simplify and just use standard calculations.

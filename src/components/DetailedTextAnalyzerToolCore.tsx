@@ -6,7 +6,7 @@ export default function DetailedTextAnalyzerToolCore() {
   const words = text.trim() ? text.trim().split(/\s+/) : [];
   const wordCount = words.length;
   const charsTotal = text.length;
-  const charsNoSpaces = text.replace(/\s/g, '').length;
+  // const charsNoSpaces = text.replace(/\s/g, '').length;
   
   // Splitting by typical sentence enders
   const sentences = text.trim() ? text.split(/[.!?]+/).filter(s => s.trim().length > 0) : [];

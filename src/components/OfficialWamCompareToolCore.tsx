@@ -3,8 +3,8 @@ import { Plus, Trash2 } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
 import {
   compareSimpleAndOfficialWam,
-  inferMonashYearLevelFromUnitCode,
-} from '../utils/monashGrades';
+  inferUniYearLevelFromUnitCode,
+} from '../utils/uniGrades';
 
 interface CompareUnit {
   id: number;
@@ -53,7 +53,7 @@ export default function OfficialWamCompareToolCore() {
           [field]: field === 'unit' ? value.toUpperCase() : value,
         };
         if (field === 'unit') {
-          const inferred = inferMonashYearLevelFromUnitCode(value);
+          const inferred = inferUniYearLevelFromUnitCode(value);
           if (inferred !== null) next.yearLevel = String(inferred);
         }
         return next;
@@ -73,7 +73,7 @@ export default function OfficialWamCompareToolCore() {
     <div data-article-tool-screenshot="official-wam-compare" className="space-y-6">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-          Monash official WAM weights Year 1 units at 0.5 and Year 2+ at 1.0. Simple planning WAM ignores year level —
+          Uni official WAM weights Year 1 units at 0.5 and Year 2+ at 1.0. Simple planning WAM ignores year level —
           enter your units to see both side by side.
         </p>
 
@@ -159,7 +159,7 @@ export default function OfficialWamCompareToolCore() {
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Credit-weighted only</p>
             </div>
             <div className="rounded-xl border border-primary-200 dark:border-primary-800 bg-primary-50 dark:bg-primary-900/20 p-5 text-center">
-              <p className="text-xs font-semibold uppercase text-primary-600 dark:text-primary-400 mb-1">Official Monash WAM</p>
+              <p className="text-xs font-semibold uppercase text-primary-600 dark:text-primary-400 mb-1">Official WAM</p>
               <p className="text-3xl font-bold text-primary-700 dark:text-primary-300">
                 {comparison.officialWam.toFixed(2)}%
               </p>

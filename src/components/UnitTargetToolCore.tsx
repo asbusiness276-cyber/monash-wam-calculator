@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
 import {
   calculateRequiredRemainingAssessmentMark,
-  getMonashGradeFromMark,
-} from '../utils/monashGrades';
+  getUniGradeFromMark,
+} from '../utils/uniGrades';
 
 interface AssessmentRow {
   id: number;
@@ -59,7 +59,7 @@ export default function UnitTargetToolCore() {
   const status = getStatus(needed);
   const targetGrade =
     targetNum !== null && !Number.isNaN(targetNum) && targetNum >= 0 && targetNum <= 100
-      ? getMonashGradeFromMark(targetNum)
+      ? getUniGradeFromMark(targetNum)
       : null;
 
   const updateRow = (id: number, field: keyof AssessmentRow, value: string) => {

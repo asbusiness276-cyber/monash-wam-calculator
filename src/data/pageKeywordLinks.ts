@@ -14,115 +14,75 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'GPA to WAM calculator', path: '/gpa-to-wam-calculator' },
   ],
   '/wam-to-gpa-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
   ],
   '/gpa-to-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: '4.0 GPA to WAM calculator', path: '/4-0-gpa-to-wam-calculator' },
   ],
   '/final-grade-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
   ],
   '/mark-to-grade-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'final grade calculator', path: '/final-grade-calculator' },
   ],
   '/wam-target-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
   ],
   '/supp-repeat-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-monash' },
+    { keyword: 'WAM calculator', path: '/' },
+    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-uni' },
   ],
   '/semester-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'WAM target calculator', path: '/wam-target-calculator' },
   ],
   '/unit-mark-calculator': [
     { keyword: 'final grade calculator', path: '/final-grade-calculator' },
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
   ],
   '/wam-projection-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'monash wam projection guide', path: '/articles/monash-wam-projection-guide' },
+    { keyword: 'WAM calculator', path: '/' },
+    { keyword: 'WAM projection guide', path: '/articles/uni-wam-projection-guide' },
   ],
   '/unit-target-calculator': [
     { keyword: 'unit mark calculator', path: '/unit-mark-calculator' },
     { keyword: 'final grade calculator', path: '/final-grade-calculator' },
   ],
-  '/monash-gpa-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
-  ],
-  '/monash-cgpa-calculator': [
-    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
-    { keyword: 'Monash WAM calculator', path: '/' },
-  ],
-  '/monash-target-gpa-calculator': [
-    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
-    { keyword: 'WAM target calculator', path: '/wam-target-calculator' },
-  ],
-  '/monash-honours-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'monash honours WAM requirements', path: '/articles/monash-honours-wam-requirements' },
-  ],
-  '/monash-grade-converter': [
-    { keyword: 'mark to grade calculator', path: '/mark-to-grade-calculator' },
-    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
-  ],
-  '/monash-distinction-average-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'monash scholarship wam requirements', path: '/articles/monash-scholarship-wam-requirements' },
-  ],
-  '/monash-scholarship-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'monash scholarship wam requirements', path: '/articles/monash-scholarship-wam-requirements' },
-  ],
   '/failed-unit-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-monash' },
-  ],
-  '/monash-deans-honours-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: "monash dean's honours list", path: '/articles/monash-deans-honours-list-wam-guide' },
-  ],
-  '/monash-exchange-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'monash exchange grades wam', path: '/articles/monash-exchange-grades-wam-guide' },
+    { keyword: 'WAM calculator', path: '/' },
+    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-uni' },
   ],
   '/calculators': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'student articles', path: '/articles' },
-  ],
-  '/monash-official-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'how to calculate wam', path: '/articles/how-to-calculate-wam' },
   ],
   '/pass-mark-calculator': [
     { keyword: 'final grade calculator', path: '/final-grade-calculator' },
     { keyword: 'unit mark calculator', path: '/unit-mark-calculator' },
   ],
   '/degree-progress-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
-    { keyword: 'monash credit points wam', path: '/articles/monash-credit-points-wam-explained' },
+    { keyword: 'WAM calculator', path: '/' },
+    { keyword: 'uni credit points wam', path: '/articles/uni-credit-points-wam-explained' },
   ],
   '/wam-milestones-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'what is a good wam', path: '/articles/what-is-a-good-wam' },
   ],
   '/withdrawn-fail-impact-calculator': [
-    { keyword: 'Monash grade converter', path: '/monash-grade-converter' },
-    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-monash' },
+    { keyword: 'Uni grade converter', path: '/uni-grade-converter' },
+    { keyword: 'failed unit WAM guide', path: '/articles/failed-unit-wam-impact-uni' },
   ],
   '/weighted-average-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'grade average calculator', path: '/grade-average-calculator' },
   ],
   '/grade-average-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'weighted average calculator', path: '/weighted-average-calculator' },
   ],
   '/percentage-to-gpa-calculator': [
@@ -142,7 +102,7 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: '7.0 GPA to WAM calculator', path: '/7-0-gpa-to-wam-calculator' },
   ],
   '/wam-to-cgpa-calculator': [
-    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
+    { keyword: 'Uni CGPA calculator', path: '/uni-cgpa-calculator' },
     { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
   ],
   '/4-0-gpa-to-wam-calculator': [
@@ -155,7 +115,7 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
   ],
   '/cgpa-to-wam-calculator': [
     { keyword: 'WAM to CGPA calculator', path: '/wam-to-cgpa-calculator' },
-    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
+    { keyword: 'Uni CGPA calculator', path: '/uni-cgpa-calculator' },
   ],
   '/gpa-to-percentage-calculator': [
     { keyword: 'percentage to GPA calculator', path: '/percentage-to-gpa-calculator' },
@@ -174,7 +134,7 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'semester WAM calculator', path: '/semester-wam-calculator' },
   ],
   '/gpa-to-cgpa-calculator': [
-    { keyword: 'Monash CGPA calculator', path: '/monash-cgpa-calculator' },
+    { keyword: 'Uni CGPA calculator', path: '/uni-cgpa-calculator' },
     { keyword: 'semester GPA calculator', path: '/semester-gpa-calculator' },
   ],
   '/cgpa-to-gpa-calculator': [
@@ -186,11 +146,11 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'WAM to 4.0 GPA calculator', path: '/wam-to-4-0-gpa-calculator' },
   ],
   '/gpa-calculator': [
-    { keyword: 'Monash GPA calculator', path: '/monash-gpa-calculator' },
+    { keyword: 'Uni GPA calculator', path: '/uni-gpa-calculator' },
     { keyword: 'GPA to WAM calculator', path: '/gpa-to-wam-calculator' },
   ],
   '/atar-to-gpa-wam-calculator': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
   ],
   '/high-school-gpa-calculator': [
@@ -202,7 +162,7 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: '4.0 GPA to WAM calculator', path: '/4-0-gpa-to-wam-calculator' },
   ],
   '/articles': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'how to calculate WAM', path: '/articles/how-to-calculate-wam' },
   ],
   '/about-us': [
@@ -211,11 +171,11 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
   ],
   '/contact-us': [
     { keyword: 'privacy policy', path: '/privacy-policy' },
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
   ],
   '/write-for-us': [
     { keyword: 'Contact Us page', path: '/contact-us' },
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
   ],
   '/privacy-policy': [
     { keyword: 'terms and conditions', path: '/terms-and-conditions' },
@@ -230,7 +190,7 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'terms and conditions', path: '/terms-and-conditions' },
   ],
   '/404': [
-    { keyword: 'Monash WAM calculator', path: '/' },
+    { keyword: 'WAM calculator', path: '/' },
     { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
   ],
   '/student-budget-calculator': [
@@ -361,20 +321,20 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'hex to decimal converter', path: '/hex-to-decimal-converter' },
     { keyword: 'base 16 to base 10', path: '/hex-to-decimal-converter' }
   ],
-  '/bmi-calculator': [{ keyword: 'bmi calculator', path: '/bmi-calculator' }],
-  '/tip-calculator': [{ keyword: 'tip calculator', path: '/tip-calculator' }],
-  '/salary-calculator': [{ keyword: 'salary to hourly', path: '/salary-calculator' }],
-  '/discount-calculator': [{ keyword: 'discount calculator', path: '/discount-calculator' }],
-  '/loan-calculator': [{ keyword: 'loan repayment calculator', path: '/loan-calculator' }],
-  '/compound-interest-calculator': [{ keyword: 'compound interest', path: '/compound-interest-calculator' }],
-  '/margin-calculator': [{ keyword: 'margin calculator', path: '/margin-calculator' }],
-  '/word-counter-tool': [{ keyword: 'word counter', path: '/word-counter-tool' }],
-  '/roman-numeral-converter': [{ keyword: 'roman numeral converter', path: '/roman-numeral-converter' }],
-  '/password-generator': [{ keyword: 'password generator', path: '/password-generator' }],
-  '/percentage-change-calculator': [{ keyword: 'percentage change calculator', path: '/percentage-change-calculator' }],
-  '/fuel-cost-calculator': [{ keyword: 'fuel cost calculator', path: '/fuel-cost-calculator' }],
-  '/date-calculator': [{ keyword: 'date calculator', path: '/date-calculator' }],
-  '/time-duration-calculator': [{ keyword: 'time duration calculator', path: '/time-duration-calculator' }],
-  '/random-name-picker': [{ keyword: 'random name picker', path: '/random-name-picker' }],
+  '/bmi-calculator': [{ keyword: 'bmi calculator', path: '/bmi-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/tip-calculator': [{ keyword: 'tip calculator', path: '/tip-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/salary-calculator': [{ keyword: 'salary to hourly', path: '/salary-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/discount-calculator': [{ keyword: 'discount calculator', path: '/discount-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/loan-calculator': [{ keyword: 'loan repayment calculator', path: '/loan-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/compound-interest-calculator': [{ keyword: 'compound interest', path: '/compound-interest-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/margin-calculator': [{ keyword: 'margin calculator', path: '/margin-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/word-counter-tool': [{ keyword: 'word counter', path: '/word-counter-tool' }, { keyword: 'calculators', path: '/calculators' }],
+  '/roman-numeral-converter': [{ keyword: 'roman numeral converter', path: '/roman-numeral-converter' }, { keyword: 'calculators', path: '/calculators' }],
+  '/password-generator': [{ keyword: 'password generator', path: '/password-generator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/percentage-change-calculator': [{ keyword: 'percentage change calculator', path: '/percentage-change-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/fuel-cost-calculator': [{ keyword: 'fuel cost calculator', path: '/fuel-cost-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/date-calculator': [{ keyword: 'date calculator', path: '/date-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/time-duration-calculator': [{ keyword: 'time duration calculator', path: '/time-duration-calculator' }, { keyword: 'calculators', path: '/calculators' }],
+  '/random-name-picker': [{ keyword: 'random name picker', path: '/random-name-picker' }, { keyword: 'calculators', path: '/calculators' }],
 };
 

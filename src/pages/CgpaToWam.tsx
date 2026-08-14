@@ -13,7 +13,7 @@ const faqs = [
   {
     question: 'How do I convert CGPA to WAM?',
     answer:
-      'Enter your cumulative GPA on the 4.0 scale. Monash maps CGPA bands to WAM percentage ranges for planning.',
+      'Enter your cumulative GPA on the 4.0 scale. Uni maps CGPA bands to WAM percentage ranges for planning.',
   },
   {
     question: 'Is CGPA to WAM exact?',
@@ -22,16 +22,16 @@ const faqs = [
   },
   {
     question: 'What WAM is CGPA 3.0?',
-    answer: 'CGPA around 3.0 typically maps to Distinction — WAM roughly 70–79 at Monash.',
+    answer: 'CGPA around 3.0 typically maps to Distinction — WAM roughly 70–79 at Uni.',
   },
   {
-    question: 'Monash CGPA vs other universities?',
+    question: 'Uni CGPA vs other universities?',
     answer:
-      'Monash fail grades count as 0.3 on the 4.0 scale. Cross-institution CGPA comparisons need caution.',
+      'Uni fail grades count as 0.3 on the 4.0 scale. Cross-institution CGPA comparisons need caution.',
   },
   {
     question: 'How do I calculate official WAM?',
-    answer: 'Use the Monash WAM calculator with unit marks and credit points from your transcript.',
+    answer: 'Use the WAM calculator with unit marks and credit points from your transcript.',
   },
   {
     question: 'Reverse conversion?',
@@ -43,8 +43,8 @@ export default function CgpaToWam() {
   return (
     <>
       <Seo
-        title="CGPA to WAM Calculator - Monash 4.0 Scale (2026)"
-        description="Free CGPA to WAM calculator for Monash students. Convert cumulative 4.0 GPA to approximate weighted average mark ranges."
+        title="CGPA to WAM Calculator - Uni 4.0 Scale (2026)"
+        description="Free CGPA to WAM calculator for Uni students. Convert cumulative 4.0 GPA to approximate weighted average mark ranges."
         canonicalPath="/cgpa-to-wam-calculator"
         faqItems={faqs}
       />
@@ -52,7 +52,7 @@ export default function CgpaToWam() {
       <section className="bg-gradient-to-br from-cyan-700 to-cyan-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">CGPA to WAM Calculator</h1>
         <p className="text-cyan-100 max-w-xl mx-auto">
-          Convert cumulative GPA (CGPA) on the 4.0 scale to an approximate Monash WAM range for degree planning.
+          Convert cumulative GPA (CGPA) on the 4.0 scale to an approximate WAM range for degree planning.
         </p>
         <p className="text-cyan-100/95 max-w-xl mx-auto text-sm mt-4 leading-relaxed">
           Calculate WAM from units:{' '}

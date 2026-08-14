@@ -28,16 +28,16 @@ export default function HomeHero() {
           <div className="home-hero-copy home-animate-in">
             <div className="home-hero-badge">
               <Sparkles size={14} className="shrink-0 text-primary-600 dark:text-primary-400" aria-hidden />
-              Built for Monash University students · 100% free
+              Built for the university students · 100% free
             </div>
 
             <h1 id="home-hero-heading" className="home-hero-title text-gray-900 dark:text-white">
-              Plan Your Monash WAM
+              Plan Your WAM
               <span className="home-hero-title-accent">With Confidence</span>
             </h1>
 
             <p className="home-hero-lead">
-              MonashWAMCalculator.com turns official grading rules into free tools — credit-weighted WAM, Year 1
+              UniWAMCalculator.com turns official grading rules into free tools — credit-weighted WAM, Year 1
               half-weighting, GPA conversion, and semester planning. No spreadsheets. No signup.
             </p>
 
@@ -79,7 +79,7 @@ export default function HomeHero() {
           <div className="home-hero-visual home-animate-in home-animate-delay-1">
             <HomeImage
               image={HOME_IMAGES.hero}
-              alt="Monash student workspace with WAM calculator dashboard, academic charts, and Australian university setting"
+              alt="Uni student workspace with WAM calculator dashboard, academic charts, and Australian university setting"
               priority
               wrapperClassName="home-hero-image-wrap"
               className="home-hero-image"

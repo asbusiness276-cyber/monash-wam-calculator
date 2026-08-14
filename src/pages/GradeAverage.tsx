@@ -13,7 +13,7 @@ const gradeAverageFaqs = [
   {
     question: 'What is a grade average calculator?',
     answer:
-      'It averages percentage marks you enter. With credit points, it also shows a credit-weighted average — the method Monash uses for WAM.',
+      'It averages percentage marks you enter. With credit points, it also shows a credit-weighted average — the method Uni uses for WAM.',
   },
   {
     question: 'How do I calculate a simple grade average?',
@@ -36,7 +36,7 @@ const gradeAverageFaqs = [
       'Yes for a quick mean of several percentages. For assessment weights inside one unit, use the unit mark calculator.',
   },
   {
-    question: 'Does this match my Monash transcript?',
+    question: 'Does this match my Uni transcript?',
     answer:
       'Official WAM uses certified marks and year-level weighting on WES. Use this for planning and semester snapshots.',
   },
@@ -46,8 +46,8 @@ export default function GradeAverage() {
   return (
     <>
       <Seo
-        title="Grade Average Calculator - Simple & Weighted Mean (Monash 2026)"
-        description="Free grade average calculator: find the simple mean of your marks or a credit-weighted average with Monash credit points."
+        title="Grade Average Calculator - Simple & Weighted Mean (Uni 2026)"
+        description="Free grade average calculator: find the simple mean of your marks or a credit-weighted average with Uni credit points."
         canonicalPath="/grade-average-calculator"
         faqItems={gradeAverageFaqs}
       />
@@ -56,7 +56,7 @@ export default function GradeAverage() {
         <h1 className="text-4xl font-bold mb-3">Grade Average Calculator</h1>
         <p className="text-cyan-100 max-w-2xl mx-auto">
           Average your unit or assessment marks — see both a simple mean and an optional credit-weighted average for
-          Monash planning.
+          Uni planning.
         </p>
         <p className="text-cyan-100/95 max-w-2xl mx-auto text-sm mt-4 leading-relaxed">
           Tracking full degree WAM? Use the{' '}

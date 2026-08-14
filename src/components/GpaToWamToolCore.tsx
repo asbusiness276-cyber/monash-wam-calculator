@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Calculator } from 'lucide-react';
-import { getGpaConversionSteps, mapGpaToMonashBand } from '../utils/monashGrades';
+import { getGpaConversionSteps, mapGpaToUniBand } from '../utils/uniGrades';
 
 type GpaToWamToolCoreProps = {
   /** Lock to one GPA scale (hides scale toggle). */
@@ -29,7 +29,7 @@ export default function GpaToWamToolCore({
 
   const scale = scales[scaleIdx] ?? scales[0];
   const gpaNum = parseFloat(gpa);
-  const result = gpa !== '' && !Number.isNaN(gpaNum) ? mapGpaToMonashBand(gpaNum, scale.max) : null;
+  const result = gpa !== '' && !Number.isNaN(gpaNum) ? mapGpaToUniBand(gpaNum, scale.max) : null;
   const steps = getGpaConversionSteps(scale.max);
 
   const handleCheckResult = () => {
@@ -95,7 +95,7 @@ export default function GpaToWamToolCore({
               </div>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-              Grade bands span a percentage range — this is an approximate Monash WAM equivalent.
+              Grade bands span a percentage range — this is an approximate WAM equivalent.
             </p>
             
           </div>

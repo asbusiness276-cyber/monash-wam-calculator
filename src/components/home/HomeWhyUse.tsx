@@ -1,61 +1,51 @@
-import SectionHeader from './ui/SectionHeader';
-import IllustrationCard from './ui/IllustrationCard';
+import { Check, Shield, Zap } from 'lucide-react';
+import CardIcon from './ui/CardIcon';
+import HomeImage from './ui/HomeImage';
 import { HOME_IMAGES } from '../../data/homeImages';
 
-const whyUseCards = [
-  {
-    image: HOME_IMAGES.whyUse.accurate,
-    imageAlt: 'Target accuracy illustration showing precise WAM goal tracking',
-    title: 'Official Monash maths',
-    description:
-      'Credit-weighted WAM with Year 1 half weighting (0.5) — closer to WES than generic Australian average calculators.',
-  },
-  {
-    image: HOME_IMAGES.whyUse.fast,
-    imageAlt: 'Stopwatch with lightning-fast calculation and live analytics',
-    title: 'Instant as you type',
-    description:
-      'Results update live in your browser. Recalculate after every results release without spreadsheets or account setup.',
-  },
-  {
-    image: HOME_IMAGES.whyUse.secure,
-    imageAlt: 'Secure laptop with shield protecting private academic data',
-    title: 'GPA & planning tools',
-    description:
-      'Convert WAM to GPA, set semester targets, model projections, and check honours or scholarship cut-offs in one place.',
-  },
-  {
-    image: HOME_IMAGES.whyUse.free,
-    imageAlt: 'Graduation dashboard celebrating free academic planning tools',
-    title: 'Works on mobile',
-    description:
-      'Enter marks from your phone after WES updates — every calculator is responsive and touch-friendly.',
-  },
-] as const;
-
 export default function HomeWhyUse() {
-  return (
-    <section id="wam-calculator" className="home-section-alt scroll-mt-20">
-      <div className="home-container">
-        <SectionHeader
-          eyebrow="Why students choose us"
-          title="Why Use This Monash WAM Calculator?"
-          description="Generic WAM tools ignore Monash year-level weighting. This site is built around Monash coursework from the ground up."
-        />
+  const reasons = [
+    { title: '100% Free Forever', desc: 'No paywalls or signups.', icon: Check },
+    { title: 'Lightning Fast', desc: 'Instant calculations in your browser.', icon: Zap },
+    { title: 'Private & Secure', desc: 'We do not save your data.', icon: Shield },
+  ];
 
-        <div className="card-grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
-          {whyUseCards.map(card => (
-            <IllustrationCard
-              key={card.title}
-              image={card.image}
-              imageAlt={card.imageAlt}
-              title={card.title}
-              description={card.description}
-              variant="why"
+  return (
+    <div className="py-20 bg-white dark:bg-gray-900">
+      <div className="home-container">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="home-animate-in">
+            <p className="home-eyebrow mb-3">Why Choose Us</p>
+            <h2 className="home-h2 mb-6">Built for speed, accuracy, and ease of use.</h2>
+            <p className="home-lead mb-10">
+              My Calculator Hub is designed to be your one-stop destination for all daily calculations.
+            </p>
+            <div className="space-y-6">
+              {reasons.map((item) => (
+                <div key={item.title} className="flex gap-4">
+                  <div className="mt-1">
+                    <CardIcon icon={item.icon} className="h-8 w-8" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="card-body">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="lg:pl-10 home-animate-in" style={{ animationDelay: '200ms' }}>
+            <HomeImage
+              image={HOME_IMAGES.wamCalculator}
+              alt="My Calculator Hub tools"
+              wrapperClassName="aspect-square lg:aspect-auto lg:h-[500px]"
+              className="object-cover"
             />
-          ))}
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

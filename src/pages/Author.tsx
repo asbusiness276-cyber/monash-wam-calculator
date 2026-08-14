@@ -9,18 +9,18 @@ import { CALCULATOR_COUNT } from '../data/calculatorCatalog';
 
 const authorFaqs = [
   {
-    question: 'Who writes articles on Monash WAM Calculator?',
+    question: 'Who writes articles on My Calculator Hub?',
     answer: `${ARTICLE_AUTHOR.name} writes and maintains editorial guides and calculator documentation on this site.`,
   },
   {
-    question: 'Is the author affiliated with Monash University?',
+    question: 'Is the author affiliated with the university?',
     answer:
-      'No. Saahil is an independent creator. This site is not endorsed by Monash University or any faculty.',
+      'No. Saahil is an independent creator. This site is not endorsed by the university or any faculty.',
   },
   {
     question: 'How are guides fact-checked?',
     answer:
-      'Calculator formulas follow Monash grading band references and credit-weighted WAM structure. Articles are updated when students report policy changes or when Monash publishes revised grading documentation. Always confirm final decisions on WES.',
+      'Calculator formulas follow Uni grading band references and credit-weighted WAM structure. Articles are updated when students report policy changes or when Uni publishes revised grading documentation. Always confirm final decisions on WES.',
   },
   {
     question: 'How can I contact the author?',
@@ -35,8 +35,8 @@ export default function Author() {
   return (
     <>
       <Seo
-        title={`About ${ARTICLE_AUTHOR.name} | Author — Monash WAM Calculator`}
-        description={`Meet ${ARTICLE_AUTHOR.name}, founder and editor of Monash WAM Calculator — ${CALCULATOR_COUNT} free tools and ${articleCount} student guides on WAM, GPA, and Australian university life.`}
+        title={`About ${ARTICLE_AUTHOR.name} | Author — My Calculator Hub`}
+        description={`Meet ${ARTICLE_AUTHOR.name}, founder and editor of My Calculator Hub — ${CALCULATOR_COUNT} free tools and ${articleCount} student guides on WAM, GPA, and Australian university life.`}
         canonicalPath="/about-author"
         faqItems={authorFaqs}
         ogImage={ARTICLE_AUTHOR.avatarWebp}
@@ -73,13 +73,13 @@ export default function Author() {
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Editorial approach</h2>
             <p>
-              Guides are written for Monash and Australian students who need practical maths, not generic blog filler.
+              Guides are written for Uni and Australian students who need practical maths, not generic blog filler.
               Each long-form article covers one problem end to end — definition, formula, worked example, common
               mistakes, and links to the matching calculator. Calculator pages include their own multi-section guides
               with tables and FAQs so every URL stands alone as a useful resource.
             </p>
             <p className="mt-3">
-              When Monash policy language shifts or readers flag outdated cut-offs, content is revised. The site does
+              When Uni policy language shifts or readers flag outdated cut-offs, content is revised. The site does
               not scrape Wikipedia summaries or auto-generate bulk pages. {CALCULATOR_COUNT} calculators and{' '}
               {articleCount} articles are maintained as a coherent toolkit rather than disconnected landing pages.
             </p>
@@ -136,7 +136,7 @@ export default function Author() {
             </a>
             , try the{' '}
             <a href={absoluteUrl('/')} className={INLINE_LINK_CLASS}>
-              Monash WAM calculator
+              WAM calculator
             </a>
             , or{' '}
             <a href={absoluteUrl('/contact-us')} className={INLINE_LINK_CLASS}>

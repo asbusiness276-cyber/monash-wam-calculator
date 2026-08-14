@@ -1,10 +1,26 @@
 {
-  "buildCommand": "vite build",
-  "outputDirectory": "dist",
-  "rewrites": [
+  "redirects": [
+    {
+      "source": "/(.*monash.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "monashwamcalculator.com"
+        }
+      ],
+      "destination": "/404",
+      "permanent": false
+    },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "has": [
+        {
+          "type": "host",
+          "value": "monashwamcalculator.com"
+        }
+      ],
+      "destination": "https://mycalculatorhub.pro/$1",
+      "permanent": true
     }
   ]
 }

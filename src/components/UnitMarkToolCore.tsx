@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
-import { calculateWeightedUnitMark, getMonashGradeFromMark } from '../utils/monashGrades';
+import { calculateWeightedUnitMark, getUniGradeFromMark } from '../utils/uniGrades';
 
 interface AssessmentRow {
   id: number;
@@ -38,7 +38,7 @@ export default function UnitMarkToolCore() {
 
   const totalWeight = parsed.reduce((sum, row) => sum + row.weightPercent, 0);
   const unitMark = calculateWeightedUnitMark(parsed);
-  const gradeBand = unitMark !== null ? getMonashGradeFromMark(unitMark) : null;
+  const gradeBand = unitMark !== null ? getUniGradeFromMark(unitMark) : null;
 
   const weightStatus =
     parsed.length === 0
@@ -167,7 +167,7 @@ export default function UnitMarkToolCore() {
             {gradeBand.grade} — {gradeBand.label}
           </p>
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
-            Need only final-exam maths? Use the final grade calculator. For cumulative WAM across units, use the Monash
+            Need only final-exam maths? Use the final grade calculator. For cumulative WAM across units, use the Uni
             WAM calculator.
           </p>
           

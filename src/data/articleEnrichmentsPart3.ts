@@ -2,7 +2,7 @@ import type { SectionEnhancement } from '../utils/enrichArticleContent';
 
 
 export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
-  'monash-withdrawn-fail-wam-guide': [
+  'uni-withdrawn-fail-wam-guide': [
     {
       facts: [
         {
@@ -47,7 +47,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     {
       facts: [
         {
-          title: 'WN and Monash GPA',
+          title: 'WN and Uni GPA',
           items: [
             'WN often maps to low or fail-grade GPA points — similar impact to failing academically.',
             'CGPA can drop sharply when WN carries on a high-credit unit.',
@@ -61,7 +61,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     {
       facts: [
         {
-          title: 'WN and Monash WAM',
+          title: 'WN and WAM',
           items: [
             'WAM treatment depends on published policy — some systems include WN with fail-level marks.',
             'Do not omit WN rows from personal WAM spreadsheets if WES includes them.',
@@ -129,7 +129,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-wam-milestones-guide': [
+  'uni-wam-milestones-guide': [
     {
       facts: [
         {
@@ -160,7 +160,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
       ],
       tables: [
         {
-          caption: 'Milestone bands at Monash',
+          caption: 'Milestone bands at Uni',
           headers: ['Milestone', 'WAM floor', 'Grade label'],
           rows: [
             ['Pass', '50', 'P'],
@@ -177,7 +177,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
         {
           title: 'Checking which milestones you meet',
           items: [
-            'Enter transcript marks into the Monash WAM calculator for cumulative WAM.',
+            'Enter transcript marks into the WAM calculator for cumulative WAM.',
             'Compare output to each milestone band sequentially.',
             'Note how far you sit above or below the next band — not just pass/fail the check.',
             'Re-run after every major results release.',
@@ -257,13 +257,13 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-distinction-average-guide': [
+  'uni-distinction-average-guide': [
     {
       facts: [
         {
           title: 'Distinction average defined',
           items: [
-            'At Monash, distinction average commonly means WAM of at least 70 or GPA of at least 3.0.',
+            'At Uni, distinction average commonly means WAM of at least 70 or GPA of at least 3.0.',
             'Used in scholarship, honours, exchange, and faculty award language.',
             'It is a planning benchmark — always verify exact wording on the opportunity page.',
             'Sitting at 69.9 vs 70.1 matters for automated merit screens.',
@@ -279,7 +279,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           items: [
             'WAM uses percentage marks — two students at 79 and 71 both map to distinction GPA band.',
             'WAM preserves that gap; GPA may look similar if both are 3.0.',
-            'Lead with WAM when Monash forms ask for weighted average or distinction average.',
+            'Lead with WAM when Uni forms ask for weighted average or distinction average.',
             'Use CGPA from transcript when the form explicitly requests GPA.',
           ],
           afterParagraph: 0,
@@ -289,11 +289,11 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     {
       facts: [
         {
-          title: 'How Monash checks distinction average',
+          title: 'How Uni checks distinction average',
           items: [
             'Certified cumulative WAM on academic record is the usual source of truth.',
             'Some faculties reference GPA or CGPA instead — read the specific policy.',
-            'Exchange SFR credit typically does not add marks — average reflects Monash-graded units.',
+            'Exchange SFR credit typically does not add marks — average reflects Uni-graded units.',
             'Fails and WN rows can disqualify distinction even after recovery semesters.',
           ],
           afterParagraph: 0,
@@ -384,7 +384,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-wam-target-guide': [
+  'uni-wam-target-guide': [
     {
       facts: [
         {
@@ -511,7 +511,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-semester-wam-guide': [
+  'uni-semester-wam-guide': [
     {
       facts: [
         {
@@ -531,7 +531,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
         {
           title: 'Semester vs cumulative on WES',
           items: [
-            'Cumulative WAM includes all certified Monash-graded units to date.',
+            'Cumulative WAM includes all certified Uni-graded units to date.',
             'Semester WAM isolates one results release for narrative and planning.',
             'Strong semester WAM can offset a weak cumulative average in cover letters.',
             'Employers asking for “WAM” usually mean cumulative — clarify if unsure.',
@@ -624,7 +624,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
     },
   ],
 
-  'monash-wam-projection-guide': [
+  'uni-wam-projection-guide': [
     {
       facts: [
         {
@@ -645,7 +645,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           title: 'Projection formula',
           items: [
             'Projected WAM = (current weighted points + Σ(projected mark × cp)) ÷ (current cp + future cp).',
-            'Apply year-level multipliers if modelling official Monash WAM.',
+            'Apply year-level multipliers if modelling official WAM.',
             'Use realistic marks per unit — not blanket 90s on every future row.',
             'Sensitivity-test ±3 marks on high-credit futures.',
           ],
@@ -758,7 +758,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           title: 'Percentage to GPA quick answer',
           items: [
             'Map percentage to grade band first, then assign GPA points for the scale requested (4.0 or 7.0).',
-            'Monash WAM is percentage-based — conversion is for external forms, not replacing WAM.',
+            'WAM is percentage-based — conversion is for external forms, not replacing WAM.',
             'Transcript GPA beats estimated conversion when available.',
             'Document the band table used when comments are allowed.',
           ],
@@ -781,7 +781,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
       ],
       tables: [
         {
-          caption: 'Monash-style percentage bands → GPA scales',
+          caption: 'Uni-style percentage bands → GPA scales',
           headers: ['Percentage', 'Grade', 'GPA 4.0', 'GPA 7.0'],
           rows: [
             ['80–100', 'HD', '4.0', '7.0'],
@@ -825,7 +825,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
         {
           title: 'When conversion misleads',
           items: [
-            'Linear percentage÷100×4 ignores Monash band mapping.',
+            'Linear percentage÷100×4 ignores Uni band mapping.',
             'Fails and near-pass marks distort single-number shortcuts.',
             'Unit-by-unit official GPA differs from whole-degree percentage shortcuts.',
             'Prefer WAM on Australian applications when WAM is accepted.',
@@ -839,8 +839,8 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
         {
           title: 'Recommended calculator flow',
           items: [
-            'Confirm WAM in Monash WAM calculator → map bands → use WAM to GPA tool.',
-            'For Monash students, read monash wam to gpa conversion for policy nuance.',
+            'Confirm WAM in WAM calculator → map bands → use WAM to GPA tool.',
+            'For Uni students, read WAM to gpa conversion for policy nuance.',
             'Keep methodology sentence ready for application comment boxes.',
             'Update when new certified results change your percentage.',
           ],
@@ -880,7 +880,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
       ],
       tables: [
         {
-          caption: 'Monash bands → 4.0 points',
+          caption: 'Uni bands → 4.0 points',
           headers: ['Band', 'Mark range', 'GPA 4.0'],
           rows: [
             ['HD', '80–100', '4.0'],
@@ -897,7 +897,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
         {
           title: 'WAM and percentage to 4.0',
           items: [
-            'Map overall WAM to its Monash grade band, then read 4.0 points.',
+            'Map overall WAM to its Uni grade band, then read 4.0 points.',
             'Unit-level calculation is more accurate than whole-WAM shortcuts.',
             'Percentage 74 and WAM 74 both land in distinction → 3.0 planning estimate.',
             'Borderline marks need exact percentage in notes.',
@@ -942,7 +942,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
           title: '7.0 scale GPA calculator',
           items: [
             'Australian contexts often reference 7.0 where 7 = high distinction equivalent.',
-            'Maps Monash bands to 7, 6, 5, 4 points for planning estimates.',
+            'Maps Uni bands to 7, 6, 5, 4 points for planning estimates.',
             'Use when forms explicitly say “GPA out of 7.”',
             'Not interchangeable with 4.0 entries on the same field.',
           ],
@@ -999,7 +999,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Domestic postgraduate coursework applications may cite 7.0 or WAM.',
             'Some scholarships reference “credit average” parallel to 5.0–6.0 bands.',
             'Employers in Australia more often ask for WAM — confirm field label.',
-            'Keep Monash WAM visible when both metrics are accepted.',
+            'Keep WAM visible when both metrics are accepted.',
           ],
           afterParagraph: 0,
         },
@@ -1051,12 +1051,12 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
       tables: [
         {
           caption: 'Term vs cumulative metrics',
-          headers: ['Metric', 'Scope', 'Monash tool analogue'],
+          headers: ['Metric', 'Scope', 'Uni tool analogue'],
           rows: [
             ['Semester GPA', 'One term grade points', 'Semester GPA calculator'],
             ['CGPA', 'All terms', 'WES cumulative GPA'],
             ['Semester WAM', 'One term percentages', 'Semester WAM calculator'],
-            ['WAM', 'Cumulative percentages', 'Monash WAM calculator'],
+            ['WAM', 'Cumulative percentages', 'WAM calculator'],
           ],
           afterParagraph: 0,
         },
@@ -1169,7 +1169,7 @@ export const articleEnrichmentsPart3: Record<string, SectionEnhancement[]> = {
             'Set CGPA renewal floor (e.g. 3.0) alongside WAM distinction target.',
             'Model required semester GPA to lift cumulative to target.',
             'High-credit future terms offer more CGPA leverage.',
-            'Read monash cgpa explained guide for Monash-specific nuances.',
+            'Read uni cgpa explained guide for Uni-specific nuances.',
           ],
           afterParagraph: 0,
         },

@@ -31,7 +31,7 @@ const wamProjectionFaqs = [
       'WAM target works backwards: it tells you what average you need on remaining units to hit a goal. WAM projection works forwards: you enter expected marks and see the resulting WAM.',
   },
   {
-    question: 'Will this match my official Monash WAM exactly?',
+    question: 'Will this match my official WAM exactly?',
     answer:
       'It should be close for planning when inputs are correct, but official WAM also applies year-level weighting and faculty rules. Always verify on WES.',
   },
@@ -46,8 +46,8 @@ export default function WamProjection() {
   return (
     <>
       <Seo
-        title="WAM Projection Calculator - What If Your Marks? (Monash 2026)"
-        description="Free Monash WAM projection calculator: enter current WAM and upcoming unit marks to see your projected cumulative WAM after those results."
+        title="WAM Projection Calculator - What If Your Marks? (Uni 2026)"
+        description="Free WAM projection calculator: enter current WAM and upcoming unit marks to see your projected cumulative WAM after those results."
         canonicalPath="/wam-projection-calculator"
         faqItems={wamProjectionFaqs}
       />
@@ -55,7 +55,7 @@ export default function WamProjection() {
       <section className="bg-gradient-to-br from-violet-700 to-violet-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">WAM Projection Calculator</h1>
         <p className="text-violet-100 max-w-2xl mx-auto">
-          What if your next units finish at 75, 80, or 85? Model upcoming marks and see your projected cumulative Monash
+          What if your next units finish at 75, 80, or 85? Model upcoming marks and see your projected cumulative Uni
           WAM instantly.
         </p>
         <p className="text-violet-100/95 max-w-2xl mx-auto text-sm mt-4 leading-relaxed">
@@ -101,18 +101,18 @@ export default function WamProjection() {
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             For semester-by-semester improvement strategies, read{' '}
-            <a href="/articles/monash-wam-projection-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
-              monash wam projection
+            <a href="/articles/uni-wam-projection-guide" className="text-primary-600 dark:text-primary-400 hover:underline">
+              WAM projection
             </a>
             ,{' '}
-            <a href="/articles/how-to-improve-wam-at-monash" className="text-primary-600 dark:text-primary-400 hover:underline">
-              how to improve WAM at Monash
+            <a href="/articles/how-to-improve-wam-at-uni" className="text-primary-600 dark:text-primary-400 hover:underline">
+              how to improve WAM at Uni
             </a>{' '}
             and{' '}
             <a href="/articles/how-to-calculate-wam" className="text-primary-600 dark:text-primary-400 hover:underline">
               how to calculate WAM
             </a>
-            . Official Monash WAM may apply year-level weighting not reflected in simple planning projections.
+            . Official WAM may apply year-level weighting not reflected in simple planning projections.
           </p>
         </div>
       </CalculatorSectionWithInlineAds>

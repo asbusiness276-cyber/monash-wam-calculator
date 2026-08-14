@@ -13,7 +13,7 @@ interface AmazonStudentDealsProps {
 }
 
 export default function AmazonStudentDeals({
-  title = 'Essential Monash Student Gear & Approved Calculators',
+  title = 'Essential Uni Student Gear & Approved Calculators',
   subtitle = 'Hand-picked study tools, exam-approved scientific calculators, laptops, and focus gear for Australian university students.',
   defaultCategory = 'all',
   className = '',
@@ -166,7 +166,7 @@ export default function AmazonStudentDeals({
             <div className="flex items-center gap-2 text-xs text-slate-400 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>
-                As an Amazon Associate, MonashWAMCalculator earns from qualifying purchases made via links on this site.
+                As an Amazon Associate, UniWAMCalculator earns from qualifying purchases made via links on this site.
               </span>
             </div>
             <a

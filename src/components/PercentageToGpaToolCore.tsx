@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { getMonashGradeFromMark, monashGradeBands, percentageFromMarks } from '../utils/monashGrades';
+import { getUniGradeFromMark, uniGradeBands, percentageFromMarks } from '../utils/uniGrades';
 
 type PercentageToGpaToolCoreProps = {
   emphasizeGpa7?: boolean;
@@ -16,7 +16,7 @@ export default function PercentageToGpaToolCore({ emphasizeGpa7 = false }: Perce
   }, [marksObtained, marksTotal]);
 
   const effectiveMark = mark !== '' ? parseFloat(mark) : derivedFromMarks;
-  const result = effectiveMark !== null && effectiveMark !== undefined ? getMonashGradeFromMark(effectiveMark) : null;
+  const result = effectiveMark !== null && effectiveMark !== undefined ? getUniGradeFromMark(effectiveMark) : null;
 
   return (
     <div data-article-tool-screenshot="percentage-to-gpa" className="space-y-8">
@@ -75,7 +75,7 @@ export default function PercentageToGpaToolCore({ emphasizeGpa7 = false }: Perce
           <div className="space-y-4">
             <div className="bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800 rounded-xl p-6 text-center">
               <div className="text-xs text-violet-600 dark:text-violet-400 font-semibold uppercase mb-1">
-                Monash Grade
+                Uni Grade
               </div>
               <div className={`text-5xl font-bold ${result.color}`}>{result.grade}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400 mt-2">{result.label}</div>
@@ -101,7 +101,7 @@ export default function PercentageToGpaToolCore({ emphasizeGpa7 = false }: Perce
               </div>
             </div>
             <p className="text-sm text-center text-gray-600 dark:text-gray-400">
-              {effectiveMark.toFixed(1)}% maps to Monash {result.grade} ({result.gpa4.toFixed(1)} on 4.0,{' '}
+              {effectiveMark.toFixed(1)}% maps to Uni {result.grade} ({result.gpa4.toFixed(1)} on 4.0,{' '}
               {result.gpa7.toFixed(1)} on 7.0).
             </p>
             
@@ -111,7 +111,7 @@ export default function PercentageToGpaToolCore({ emphasizeGpa7 = false }: Perce
 
       <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
         <h2 className="text-base font-bold text-gray-800 dark:text-white px-5 py-4 border-b border-gray-200 dark:border-gray-700">
-          {emphasizeGpa7 ? 'Australian 7.0 GPA Scale (Monash)' : 'Percentage to GPA Table'}
+          {emphasizeGpa7 ? 'Australian 7.0 GPA Scale (Uni)' : 'Percentage to GPA Table'}
         </h2>
         <table className="w-full text-sm">
           <thead>
@@ -123,7 +123,7 @@ export default function PercentageToGpaToolCore({ emphasizeGpa7 = false }: Perce
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-            {monashGradeBands.map(row => (
+            {uniGradeBands.map(row => (
               <tr key={row.grade}>
                 <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
                   {row.min}–{row.max}%

@@ -14,13 +14,13 @@ export default function HomeTrustRow() {
             <div className="card-row-header">
               <CardIcon icon={Monitor} />
               <div className="min-w-0">
-                <h2 className="card-title-lg">Verify on Monash WES</h2>
+                <h2 className="card-title-lg">Verify on Uni WES</h2>
                 <p className="card-body mt-3">
                   Your certified cumulative WAM appears on your unofficial academic record in WES. After each results
                   release, compare WES with this calculator using the same marks, credit points, and year levels.
                   Step-by-step paths are in our{' '}
-                  <a href={absoluteUrl('/articles/how-to-find-wam-on-monash-transcript')} className={INLINE_LINK_CLASS}>
-                    Monash transcript guide
+                  <a href={absoluteUrl('/articles/how-to-find-wam-on-uni-transcript')} className={INLINE_LINK_CLASS}>
+                    Uni transcript guide
                   </a>
                   .
                 </p>

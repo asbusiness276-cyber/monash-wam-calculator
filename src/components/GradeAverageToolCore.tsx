@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Plus, Trash2, Calculator } from 'lucide-react';
-import { calculateCreditWeightedWam, calculateSimpleMarkAverage, getMonashGradeFromMark } from '../utils/monashGrades';
+import { calculateCreditWeightedWam, calculateSimpleMarkAverage, getUniGradeFromMark } from '../utils/uniGrades';
 
 interface GradeRow {
   id: number;
@@ -34,9 +34,9 @@ export default function GradeAverageToolCore() {
   const weightedAverage = calculateCreditWeightedWam(parsedWeighted);
   const gradeBand =
     weightedAverage !== null
-      ? getMonashGradeFromMark(weightedAverage)
+      ? getUniGradeFromMark(weightedAverage)
       : simpleAverage !== null
-        ? getMonashGradeFromMark(simpleAverage)
+        ? getUniGradeFromMark(simpleAverage)
         : null;
 
   const updateRow = (id: number, field: keyof GradeRow, value: string) => {

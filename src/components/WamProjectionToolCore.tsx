@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Plus, Trash2 } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
-import { calculateProjectedWam, getMonashGradeFromMark } from '../utils/monashGrades';
+import { calculateProjectedWam, getUniGradeFromMark } from '../utils/uniGrades';
 
 interface UpcomingUnit {
   id: number;
@@ -43,7 +43,7 @@ export default function WamProjectionToolCore() {
       ? calculateProjectedWam(currentWamNum, completedCpNum, parsedUpcoming)
       : null;
 
-  const gradeBand = result ? getMonashGradeFromMark(result.projectedWam) : null;
+  const gradeBand = result ? getUniGradeFromMark(result.projectedWam) : null;
 
   const updateUpcoming = (id: number, field: keyof UpcomingUnit, value: string) => {
     setUpcoming(prev =>
@@ -215,7 +215,7 @@ export default function WamProjectionToolCore() {
             </div>
           </div>
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
-            Planning projection using credit-weighted marks. Official Monash WAM on WES also uses first-year 0.5
+            Planning projection using credit-weighted marks. Official WAM on WES also uses first-year 0.5
             level weighting — verify final numbers on your transcript.
           </p>
         </div>

@@ -18,7 +18,7 @@ const gpaToWamFaqs = [
   {
     question: 'Should I use 4.0 or 7.0 input scale?',
     answer:
-      'Use the scale used by your source institution. This calculator supports both common scales so you can estimate a likely Monash-equivalent range.',
+      'Use the scale used by your source institution. This calculator supports both common scales so you can estimate a likely Uni-equivalent range.',
   },
   {
     question: 'Why do I get a WAM range instead of one number?',
@@ -46,18 +46,18 @@ export default function GPAtoWAM() {
   return (
     <>
       <Seo
-        title="GPA to WAM Calculator — Monash Percentage Range Estimator (2026)"
-        description="Convert 4.0 or 7.0 GPA to approximate Monash WAM percentage ranges using official HD/D/C/P bands — for transfer and application planning."
+        title="GPA to WAM Calculator — Uni Percentage Range Estimator (2026)"
+        description="Convert 4.0 or 7.0 GPA to approximate WAM percentage ranges using official HD/D/C/P bands — for transfer and application planning."
         canonicalPath="/gpa-to-wam-calculator"
         ogImage="/article-images/featured-convert-wam.webp"
-        ogImageAlt="Student comparing GPA and WAM conversion scales on a laptop for Monash grade planning"
+        ogImageAlt="Student comparing GPA and WAM conversion scales on a laptop for Uni grade planning"
         faqItems={gpaToWamFaqs}
       />
 
       <section className="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-12 text-center px-4">
         <h1 className="text-4xl font-bold mb-3">GPA to WAM Calculator</h1>
         <p className="text-teal-100 max-w-xl mx-auto">
-          Convert your GPA back to an approximate Monash University WAM. Choose your GPA scale and enter your GPA below.
+          Convert your GPA back to an approximate the university WAM. Choose your GPA scale and enter your GPA below.
         </p>
       </section>
 
@@ -68,7 +68,7 @@ export default function GPAtoWAM() {
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Why GPA to WAM Conversion Is Approximate</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
             Universities map grades differently across faculties and countries. This tool provides practical ranges based
-            on common Monash grading bands. Pair the estimate with your{' '}
+            on common Uni grading bands. Pair the estimate with your{' '}
             <a href={absoluteUrl(gpaToWamHome.path)} className={INLINE_LINK_CLASS}>{gpaToWamHome.keyword}</a>
             {' '}for semester-wide tracking, and use the{' '}
             <a href={absoluteUrl(gpaToWamWtg.path)} className={INLINE_LINK_CLASS}>{gpaToWamWtg.keyword}</a>
@@ -83,7 +83,7 @@ export default function GPAtoWAM() {
 
       <CalculatorPageGuide path="/gpa-to-wam-calculator" />
       <RelatedCalculators
-        hrefs={['/wam-to-gpa-calculator', '/monash-gpa-calculator', '/', '/wam-target-calculator', '/monash-cgpa-calculator', '/monash-grade-converter']}
+        hrefs={['/wam-to-gpa-calculator', '/uni-gpa-calculator', '/', '/wam-target-calculator', '/uni-cgpa-calculator', '/uni-grade-converter']}
       />
 
       <PageFaq items={gpaToWamFaqs} />

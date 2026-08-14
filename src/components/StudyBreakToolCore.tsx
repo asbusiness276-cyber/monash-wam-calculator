@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function StudyBreakToolCore() {
   const [totalHours, setTotalHours] = useState<number>(4);
@@ -15,7 +15,7 @@ export default function StudyBreakToolCore() {
     if (strategy === 'desktime') { studyLen = 52; breakLen = 17; }
     if (strategy === 'ultradian') { studyLen = 90; breakLen = 20; }
 
-    const totalMins = totalHours * 60;
+    // const totalMins = totalHours * 60;
     const cycleLen = studyLen + breakLen;
     const cycles = Math.floor(totalMins / cycleLen);
     const remainder = totalMins % cycleLen;

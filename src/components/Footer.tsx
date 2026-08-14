@@ -10,16 +10,12 @@ const POPULAR_CALCULATOR_HREFS = [
   '/wam-to-gpa-calculator',
   '/wam-target-calculator',
   '/final-grade-calculator',
-  '/monash-distinction-average-calculator',
-  '/semester-wam-calculator',
-  '/monash-honours-calculator',
+  '/age-calculator',
+  '/salary-calculator',
 ] as const;
 
 const POPULAR_ARTICLE_SLUGS = [
   'how-to-calculate-wam',
-  'monash-distinction-average-guide',
-  'monash-wam-to-gpa-conversion',
-  'how-to-improve-wam-at-monash',
 ] as const;
 
 const popularCalculators = POPULAR_CALCULATOR_HREFS.flatMap(href => {
@@ -67,12 +63,10 @@ export default function Footer() {
           <div className="lg:col-span-4 xl:col-span-3">
             <div className="inline-flex items-center gap-2.5 text-lg font-bold text-white">
               <SiteLogo size="lg" />
-              <span>MonashWAM Calculator</span>
+              <span>My Calculator Hub</span>
             </div>
             <p className="footer-brand-copy mt-4">
-              <strong className="font-medium text-gray-200">Monash WAM Calculator</strong> — free online WAM
-              calculator for Monash University students. Instantly calculate your Weighted Average Mark, convert WAM to
-              GPA, and plan your academic future.
+              My Calculator Hub — your go-to destination for everyday calculators. From finance and health to math and utilities, we have over 100+ free online calculators designed to make your life easier.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
@@ -150,9 +144,9 @@ export default function Footer() {
 
         <div className="footer-copyright mt-10 border-t border-gray-800/80 pt-6 text-center">
           <p className="text-[11px] text-gray-500 max-w-2xl mx-auto mb-2 leading-relaxed">
-            As an Amazon Associate, MonashWAMCalculator earns from qualifying purchases made through links on this site.
+            As an Amazon Associate, MyCalculatorHub earns from qualifying purchases made through links on this site.
           </p>
-          <p className="text-xs text-gray-500">&copy; 2026 MonashWAMCalculator.com. All rights reserved.</p>
+          <p className="text-xs text-gray-500">&copy; 2026 MyCalculatorHub.pro. All rights reserved.</p>
         </div>
       </div>
     </footer>

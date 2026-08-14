@@ -1,17 +1,17 @@
 import { Plus, Trash2 } from 'lucide-react';
 import UnitAutocompleteInput from './UnitAutocompleteInput';
 import {
-  getMonashOfficialGpaGradeFromMark,
-  monashOfficialGpaGradeOptions,
-  type MonashOfficialGpaGrade,
-} from '../utils/monashGrades';
+  getUniOfficialGpaGradeFromMark,
+  uniOfficialGpaGradeOptions,
+  type UniOfficialGpaGrade,
+} from '../utils/uniGrades';
 
 export interface GpaUnitRow {
   id: number;
   unit: string;
   credits: string;
   inputMode: 'grade' | 'mark';
-  grade: MonashOfficialGpaGrade;
+  grade: UniOfficialGpaGrade;
   mark: string;
 }
 
@@ -23,7 +23,7 @@ interface GpaUnitRowsProps {
 }
 
 export function createDefaultGpaUnits(count = 4): GpaUnitRow[] {
-  const samples: Array<{ unit: string; mark: string; grade: MonashOfficialGpaGrade }> = [
+  const samples: Array<{ unit: string; mark: string; grade: UniOfficialGpaGrade }> = [
     { unit: 'FIT1045', mark: '78', grade: 'D' },
     { unit: 'MAT1830', mark: '85', grade: 'HD' },
     { unit: 'ENG1005', mark: '65', grade: 'C' },
@@ -46,7 +46,7 @@ export default function GpaUnitRows({
   units,
   onChange,
   heading = 'Your Units',
-  description = 'Enter each unit grade or percentage mark and credit points. Monash GPA uses the official 4.0 scale (fail = 0.3).',
+  description = 'Enter each unit grade or percentage mark and credit points. Uni GPA uses the official 4.0 scale (fail = 0.3).',
 }: GpaUnitRowsProps) {
   const updateRow = (id: number, patch: Partial<GpaUnitRow>) => {
     onChange(
@@ -55,7 +55,7 @@ export default function GpaUnitRows({
         const next = { ...row, ...patch };
         if (patch.mark !== undefined && next.inputMode === 'mark') {
           const parsed = parseFloat(patch.mark);
-          const derived = patch.mark === '' || Number.isNaN(parsed) ? null : getMonashOfficialGpaGradeFromMark(parsed);
+          const derived = patch.mark === '' || Number.isNaN(parsed) ? null : getUniOfficialGpaGradeFromMark(parsed);
           if (derived) next.grade = derived;
         }
         return next;
@@ -141,10 +141,10 @@ export default function GpaUnitRows({
                 <label className="block text-xs font-semibold text-gray-600 dark:text-gray-300 mb-1.5">Grade</label>
                 <select
                   value={row.grade}
-                  onChange={e => updateRow(row.id, { grade: e.target.value as MonashOfficialGpaGrade })}
+                  onChange={e => updateRow(row.id, { grade: e.target.value as UniOfficialGpaGrade })}
                   className="w-full px-3 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm"
                 >
-                  {monashOfficialGpaGradeOptions.map(opt => (
+                  {uniOfficialGpaGradeOptions.map(opt => (
                     <option key={opt.grade} value={opt.grade}>
                       {opt.grade} — {opt.label}
                     </option>
@@ -164,7 +164,7 @@ export default function GpaUnitRows({
           {row.inputMode === 'mark' && row.mark !== '' && (
             <p className="sm:col-span-4 text-xs text-gray-500 dark:text-gray-400 -mt-1">
               Mapped grade: <strong>{row.grade}</strong> (GPA value{' '}
-              {monashOfficialGpaGradeOptions.find(o => o.grade === row.grade)?.gpaValue})
+              {uniOfficialGpaGradeOptions.find(o => o.grade === row.grade)?.gpaValue})
             </p>
           )}
         </div>
