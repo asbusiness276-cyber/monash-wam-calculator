@@ -1,7 +1,7 @@
 {
   "/about-us": {
     "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 55 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "description": "Independent Monash WAM calculator site by Saahil: 60 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
     "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
@@ -19,14 +19,18 @@
     "title": "Monash ATAR Course Eligibility Checker (2025)",
     "description": "Enter your ATAR to instantly see which Monash University degrees you can get into. Checks guaranteed ATARs and SEAS (Monash Guarantee) requirements."
   },
+  "/attendance-calculator": {
+    "title": "Attendance Calculator | Track Your Classes",
+    "description": "Calculate how many classes you can skip while maintaining your target university attendance percentage (e.g., 75% or 80%)."
+  },
   "/about-author": {
     "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 55 free tools and 32 student guides on WAM, GPA, and Australian university life.",
+    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 60 free tools and 32 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
   },
   "/calculators": {
-    "title": "All Monash Calculators — 55 Free WAM & GPA Tools (2026)",
-    "description": "Browse 55 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Monash Calculators — 60 Free WAM & GPA Tools (2026)",
+    "description": "Browse 60 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
     "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
@@ -61,6 +65,10 @@
     "title": "WAM to GPA Calculator (embed)",
     "description": "Embedded WAM to GPA calculator preview.",
     "noIndex": true
+  },
+  "/essay-word-count-allocator": {
+    "title": "Essay Word Count Allocator | Structure Your Writing",
+    "description": "Plan your academic essay structure. Calculate the exact word count needed for your introduction, body paragraphs, and conclusion."
   },
   "/failed-unit-wam-calculator": {
     "title": "Failed Unit WAM Impact Calculator — Monash (2026)",
@@ -191,9 +199,17 @@
     "title": "Percentage to GPA Calculator - Monash 4.0 & 7.0 Scale (2026)",
     "description": "Free percentage to GPA calculator for Monash students: convert any mark to 4.0 and 7.0 GPA using official Monash grade bands."
   },
+  "/pomodoro-study-timer": {
+    "title": "Pomodoro Study Timer | 25-Minute Focus Tool",
+    "description": "Boost your productivity with our free Pomodoro study timer. Use the 25/5 minute technique to maintain focus and avoid university burnout."
+  },
   "/privacy-policy": {
     "title": "Privacy Policy | Monash WAM Calculator",
     "description": "Read how Monash WAM Calculator collects, uses, and protects your data while using our WAM and GPA conversion tools."
+  },
+  "/reading-time-calculator": {
+    "title": "Reading Time Calculator | Words Per Minute Estimator",
+    "description": "Estimate how long it will take to read a book, essay, or textbook chapter based on word count and reading speed."
   },
   "/semester-gpa-calculator": {
     "title": "Semester GPA Calculator - Monash 4.0 Scale (2026)",
@@ -218,6 +234,10 @@
   "/terms-and-conditions": {
     "title": "Terms and Conditions | Monash WAM Calculator",
     "description": "Review the terms for using Monash WAM Calculator, including acceptable use, intellectual property, and limitation of liability."
+  },
+  "/typing-time-estimator": {
+    "title": "Typing Time Estimator | Words Per Minute Calculator",
+    "description": "Find out exactly how long it takes to type out an essay or assignment based on your Words Per Minute (WPM) speed."
   },
   "/unit-mark-calculator": {
     "title": "Unit Mark Calculator - Weighted Assessments (Monash 2026)",

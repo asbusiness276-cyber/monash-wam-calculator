@@ -74,6 +74,11 @@ const CourseTransferWamChecker = lazy(() => import('./pages/CourseTransferWamChe
 const VisaLoadCalculator = lazy(() => import('./pages/VisaLoadCalculator'));
 const StudentBudgetCalculator = lazy(() => import('./pages/StudentBudgetCalculator'));
 const StudyTimeCalculator = lazy(() => import('./pages/StudyTimeCalculator'));
+const AttendanceCalculator = lazy(() => import('./pages/AttendanceCalculator'));
+const EssayWordCountAllocator = lazy(() => import('./pages/EssayWordCountAllocator'));
+const ReadingTimeCalculator = lazy(() => import('./pages/ReadingTimeCalculator'));
+const PomodoroTimer = lazy(() => import('./pages/PomodoroTimer'));
+const TypingTimeEstimator = lazy(() => import('./pages/TypingTimeEstimator'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -136,6 +141,11 @@ function getPage(path: string) {
   if (path === '/visa-load-calculator') return withSuspense(<VisaLoadCalculator />);
   if (path === '/student-budget-calculator') return withSuspense(<StudentBudgetCalculator />);
   if (path === '/study-time-calculator') return withSuspense(<StudyTimeCalculator />);
+  if (path === '/attendance-calculator') return withSuspense(<AttendanceCalculator />);
+  if (path === '/essay-word-count-allocator') return withSuspense(<EssayWordCountAllocator />);
+  if (path === '/reading-time-calculator') return withSuspense(<ReadingTimeCalculator />);
+  if (path === '/pomodoro-study-timer') return withSuspense(<PomodoroTimer />);
+  if (path === '/typing-time-estimator') return withSuspense(<TypingTimeEstimator />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

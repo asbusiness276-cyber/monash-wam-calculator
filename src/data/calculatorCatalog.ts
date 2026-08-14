@@ -335,6 +335,38 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         description: 'Calculate your recommended weekly study hours based on your university credit points.'
       }
     ]
+  },
+  {
+    id: 'productivity-tools',
+    title: 'Productivity & Writing Tools',
+    description: 'Tools to help you study efficiently and write essays perfectly.',
+    links: [
+      {
+        href: '/attendance-calculator',
+        title: 'Attendance Calculator',
+        description: 'Find out how many classes you can skip without failing.'
+      },
+      {
+        href: '/essay-word-count-allocator',
+        title: 'Essay Word Count Allocator',
+        description: 'Plan your essay structure by section word counts.'
+      },
+      {
+        href: '/reading-time-calculator',
+        title: 'Reading Time Calculator',
+        description: 'Estimate how long it will take to read your assignments.'
+      },
+      {
+        href: '/pomodoro-study-timer',
+        title: 'Pomodoro Study Timer',
+        description: 'Use the 25/5 technique to avoid burnout.'
+      },
+      {
+        href: '/typing-time-estimator',
+        title: 'Typing Time Estimator',
+        description: 'Calculate the raw physical time needed to type an essay.'
+      }
+    ]
   }
 ];
 

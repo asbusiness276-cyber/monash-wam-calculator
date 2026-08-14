@@ -241,5 +241,25 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'balance your workload', path: '/study-time-calculator' },
     { keyword: 'plan study schedule', path: '/study-time-calculator' }
   ],
+  '/attendance-calculator': [
+    { keyword: 'track your attendance', path: '/attendance-calculator' },
+    { keyword: 'attendance calculator', path: '/attendance-calculator' }
+  ],
+  '/essay-word-count-allocator': [
+    { keyword: 'essay structure planning', path: '/essay-word-count-allocator' },
+    { keyword: 'essay word count', path: '/essay-word-count-allocator' }
+  ],
+  '/reading-time-calculator': [
+    { keyword: 'estimate reading time', path: '/reading-time-calculator' },
+    { keyword: 'reading time calculator', path: '/reading-time-calculator' }
+  ],
+  '/pomodoro-study-timer': [
+    { keyword: 'study timer', path: '/pomodoro-study-timer' },
+    { keyword: 'pomodoro timer', path: '/pomodoro-study-timer' }
+  ],
+  '/typing-time-estimator': [
+    { keyword: 'typing speed calculation', path: '/typing-time-estimator' },
+    { keyword: 'typing time estimator', path: '/typing-time-estimator' }
+  ],
 };
 

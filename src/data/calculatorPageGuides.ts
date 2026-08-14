@@ -63,10 +63,82 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
         ]
       }
     ]
+  },
+  '/attendance-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Attendance Calculator',
+        paragraphs: [
+          'Enter the total number of classes in the semester.',
+          'Enter how many classes you have missed so far.',
+          'The calculator will tell you if you can afford to skip any more classes while staying above the 75% or 80% hurdle.'
+        ]
+      }
+    ]
+  },
+  '/essay-word-count-allocator': {
+    sections: [
+      {
+        heading: 'How to use the Essay Word Count Allocator',
+        paragraphs: [
+          'Enter your total required word count.',
+          'Adjust the percentages for your introduction and conclusion (typically 10% each).',
+          'The tool will split your total words into introduction, body paragraphs, and conclusion blocks.'
+        ]
+      }
+    ]
+  },
+  '/reading-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Reading Time Calculator',
+        paragraphs: [
+          'Enter the word count of your reading material.',
+          'Select your estimated reading speed (default is 200 words per minute for average readers).',
+          'See how many hours and minutes you need to set aside to finish the text.'
+        ]
+      }
+    ]
+  },
+  '/pomodoro-study-timer': {
+    sections: [
+      {
+        heading: 'How to use the Pomodoro Study Timer',
+        paragraphs: [
+          'Click Start to begin a 25-minute study session without distractions.',
+          'When the timer ends, take a 5-minute break by clicking the Break button.',
+          'Repeat this cycle to maximize productivity without feeling burnt out.'
+        ]
+      }
+    ]
+  },
+  '/typing-time-estimator': {
+    sections: [
+      {
+        heading: 'How to use the Typing Time Estimator',
+        paragraphs: [
+          'Enter your essay word count.',
+          'Select your typing speed (Words Per Minute).',
+          'The tool will output the absolute minimum time required to physically hit the keys to write the essay.'
+        ]
+      }
+    ]
   }
 };
 
 export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
+  '/atar-course-checker': {
+    sections: [
+      {
+        heading: 'How to use the ATAR Course Checker',
+        paragraphs: [
+          'This tool helps Victorian high school students map their expected or final ATAR to Monash University undergraduate degrees.',
+          'Simply enter your ATAR and the tool will highlight courses where you meet or exceed the published ATAR cut-off.',
+          'If you are eligible for the Special Entry Access Scheme (SEAS) through VTAC, check the SEAS box to see the lowered ATAR requirements for eligible students.'
+        ]
+      }
+    ]
+  },
   '/monash-distinction-average-calculator': {
     sections: [
       {
@@ -1503,6 +1575,66 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'Enter your total credit points for the semester (e.g., 24 for a standard full-time load).',
           'The calculator will estimate your total recommended weekly workload.',
           'See the breakdown between contact hours (classes, lectures) and self-directed study hours so you can plan your schedule.'
+        ]
+      }
+    ]
+  },
+  '/attendance-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Attendance Calculator',
+        paragraphs: [
+          'Enter the total number of classes in the semester.',
+          'Enter how many classes you have missed so far.',
+          'The calculator will tell you if you can afford to skip any more classes while staying above the 75% or 80% hurdle.'
+        ]
+      }
+    ]
+  },
+  '/essay-word-count-allocator': {
+    sections: [
+      {
+        heading: 'How to use the Essay Word Count Allocator',
+        paragraphs: [
+          'Enter your total required word count.',
+          'Adjust the percentages for your introduction and conclusion (typically 10% each).',
+          'The tool will split your total words into introduction, body paragraphs, and conclusion blocks.'
+        ]
+      }
+    ]
+  },
+  '/reading-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Reading Time Calculator',
+        paragraphs: [
+          'Enter the word count of your reading material.',
+          'Select your estimated reading speed (default is 200 words per minute for average readers).',
+          'See how many hours and minutes you need to set aside to finish the text.'
+        ]
+      }
+    ]
+  },
+  '/pomodoro-study-timer': {
+    sections: [
+      {
+        heading: 'How to use the Pomodoro Study Timer',
+        paragraphs: [
+          'Click Start to begin a 25-minute study session without distractions.',
+          'When the timer ends, take a 5-minute break by clicking the Break button.',
+          'Repeat this cycle to maximize productivity without feeling burnt out.'
+        ]
+      }
+    ]
+  },
+  '/typing-time-estimator': {
+    sections: [
+      {
+        heading: 'How to use the Typing Time Estimator',
+        paragraphs: [
+          'Enter your essay word count.',
+          'Select your typing speed (Words Per Minute).',
+          'The tool will output the absolute minimum time required to physically hit the keys to write the essay.'
         ]
       }
     ]

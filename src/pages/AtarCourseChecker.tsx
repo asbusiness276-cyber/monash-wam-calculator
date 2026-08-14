@@ -28,32 +28,11 @@ export default function AtarCourseChecker() {
         faqItems={faqs}
       />
       
-      <CalculatorSectionWithInlineAds
-        title="Monash ATAR Course Checker"
-        description="Enter your expected or final ATAR to instantly see which Monash undergraduate degrees you are eligible for. Includes adjustments for SEAS and the Monash Guarantee."
-      >
+      <CalculatorSectionWithInlineAds path="/atar-course-checker">
         <AtarCourseCheckerToolCore />
       </CalculatorSectionWithInlineAds>
 
-      <CalculatorPageGuide title="How to use the ATAR Course Checker">
-        <p>
-          This tool helps Victorian high school students map their expected or final ATAR to Monash University undergraduate degrees. 
-          Simply enter your ATAR and the tool will highlight courses where you meet or exceed the published ATAR cut-off.
-        </p>
-
-        <h3>SEAS and The Monash Guarantee</h3>
-        <p>
-          If you are eligible for the Special Entry Access Scheme (SEAS) through VTAC—due to financial disadvantage, attending an under-represented school, or living in a regional area—you may qualify for the <strong>Monash Guarantee</strong>. 
-          Check the SEAS box in the calculator to see the lowered ATAR requirements for eligible students.
-        </p>
-
-        <h3>Important Limitations</h3>
-        <ul>
-          <li><strong>Prerequisites:</strong> This tool only checks ATAR scores. You must still achieve the required study scores in prerequisite subjects (e.g., VCE English, Methods, or Chemistry).</li>
-          <li><strong>Extra Requirements:</strong> Degrees like Medicine or Architecture require additional testing (UCAT), interviews, or folios. The ATAR is only one component of selection.</li>
-          <li><strong>Indicative Only:</strong> The ATAR cut-offs used are based on recent VTAC published data. Actual cut-offs can fluctuate year to year based on demand.</li>
-        </ul>
-      </CalculatorPageGuide>
+      <CalculatorPageGuide path="/atar-course-checker" />
     </>
   );
 }
