@@ -333,6 +333,31 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/study-time-calculator',
         title: 'Study Time Calculator',
         description: 'Calculate your recommended weekly study hours based on your university credit points.'
+      },
+      {
+        href: '/hecs-indexation-calculator',
+        title: 'HECS Indexation Calculator',
+        description: 'See exactly how much your Australian student debt increases on June 1st.'
+      },
+      {
+        href: '/alphabetizer',
+        title: 'Alphabetizer (List Sorter)',
+        description: 'Instantly sort your reference lists and bibliographies alphabetically.'
+      },
+      {
+        href: '/days-between-dates-calculator',
+        title: 'Days Between Dates',
+        description: 'Find out exactly how many days are left until an exam or assignment.'
+      },
+      {
+        href: '/percentage-calculator',
+        title: 'Percentage Calculator',
+        description: 'Quickly solve percentage math and growth/decrease problems.'
+      },
+      {
+        href: '/binary-to-text-converter',
+        title: 'Binary to Text Converter',
+        description: 'Encode text to binary code or decode binary back to plain text.'
       }
     ]
   },

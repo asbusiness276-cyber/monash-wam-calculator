@@ -1,11 +1,15 @@
 {
   "/about-us": {
     "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 75 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "description": "Independent Monash WAM calculator site by Saahil: 80 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
     "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
     "description": "Check if you are at risk of academic exclusion or warning. Calculate your pass rate and academic standing based on failed units."
+  },
+  "/alphabetizer": {
+    "title": "Alphabetizer | Sort Lists A-Z Instantly",
+    "description": "Instantly sort lists, references, and bibliographies alphabetically (A-Z or Z-A). Free online list sorter tool."
   },
   "/articles": {
     "title": "Student Articles | Monash WAM Calculator",
@@ -25,16 +29,20 @@
   },
   "/about-author": {
     "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 75 free tools and 32 student guides on WAM, GPA, and Australian university life.",
+    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 80 free tools and 32 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
+  },
+  "/binary-to-text-converter": {
+    "title": "Binary to Text Converter | Binary Translator",
+    "description": "Encode plain text into binary code or decode binary back to English text. Free online binary translator tool."
   },
   "/caffeine-crash-calculator": {
     "title": "Caffeine Crash & Half-Life Calculator for Students",
     "description": "Calculate the half-life of your coffee or energy drink. Find out when you will crash and when it is safe to go to sleep."
   },
   "/calculators": {
-    "title": "All Monash Calculators — 75 Free WAM & GPA Tools (2026)",
-    "description": "Browse 75 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Monash Calculators — 80 Free WAM & GPA Tools (2026)",
+    "description": "Browse 80 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
     "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
@@ -59,6 +67,10 @@
   "/course-transfer-wam-checker": {
     "title": "Course Transfer WAM Checker - Internal Transfer Requirements",
     "description": "Check if your Monash WAM meets the minimum cut-off requirements for an internal course transfer to Law, Medicine, Engineering, and more."
+  },
+  "/days-between-dates-calculator": {
+    "title": "Days Between Dates Calculator | Time Duration Counter",
+    "description": "Calculate the exact number of days, weeks, and months between any two dates. Perfect for assignment deadlines and exam countdowns."
   },
   "/degree-progress-calculator": {
     "title": "Degree Progress Calculator — Monash Credit Points Tracker (2026)",
@@ -148,6 +160,10 @@
     "title": "HECS-HELP Debt Calculator Australia - Estimate Total Debt",
     "description": "Free HECS-HELP debt calculator for Australian university students. Estimate your total degree cost and projected indexation."
   },
+  "/hecs-indexation-calculator": {
+    "title": "HECS Indexation Calculator | Student Debt Growth",
+    "description": "Calculate exactly how much your Australian HECS/HELP debt will increase on June 1st based on the latest CPI indexation rates."
+  },
   "/hecs-repayment-time-calculator": {
     "title": "HECS Debt Payoff Time Calculator | Australian Student Loan",
     "description": "Calculate exactly how many years it will take to pay off your Australian HELP/HECS student debt based on your salary and indexation rates."
@@ -222,6 +238,10 @@
   "/peer-review-mark-calculator": {
     "title": "Group Assignment Peer Mark Calculator | SPARKPLUS Evaluator",
     "description": "Calculate your individual group assignment mark based on peer review multipliers and evaluation factors."
+  },
+  "/percentage-calculator": {
+    "title": "Percentage Calculator | Find % Increase & Decrease",
+    "description": "Easily solve percentage problems. Calculate percentage increase, decrease, or find out what percent one number is of another."
   },
   "/percentage-to-gpa-calculator": {
     "title": "Percentage to GPA Calculator - Monash 4.0 & 7.0 Scale (2026)",

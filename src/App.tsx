@@ -94,6 +94,11 @@ const SleepCycleCalculator = lazy(() => import('./pages/SleepCycleCalculator'));
 const TextbookReadingTimeCalculator = lazy(() => import('./pages/TextbookReadingTimeCalculator'));
 const TextCaseConverter = lazy(() => import('./pages/TextCaseConverter'));
 const CoffeeCostCalculator = lazy(() => import('./pages/CoffeeCostCalculator'));
+const HecsIndexationCalculator = lazy(() => import('./pages/HecsIndexationCalculator'));
+const Alphabetizer = lazy(() => import('./pages/Alphabetizer'));
+const DaysBetweenDatesCalculator = lazy(() => import('./pages/DaysBetweenDatesCalculator'));
+const PercentageCalculator = lazy(() => import('./pages/PercentageCalculator'));
+const BinaryTextConverter = lazy(() => import('./pages/BinaryTextConverter'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -176,6 +181,11 @@ function getPage(path: string) {
   if (path === '/textbook-reading-time-calculator') return withSuspense(<TextbookReadingTimeCalculator />);
   if (path === '/text-case-converter') return withSuspense(<TextCaseConverter />);
   if (path === '/daily-coffee-cost-calculator') return withSuspense(<CoffeeCostCalculator />);
+  if (path === '/hecs-indexation-calculator') return withSuspense(<HecsIndexationCalculator />);
+  if (path === '/alphabetizer') return withSuspense(<Alphabetizer />);
+  if (path === '/days-between-dates-calculator') return withSuspense(<DaysBetweenDatesCalculator />);
+  if (path === '/percentage-calculator') return withSuspense(<PercentageCalculator />);
+  if (path === '/binary-to-text-converter') return withSuspense(<BinaryTextConverter />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

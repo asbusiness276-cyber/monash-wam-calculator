@@ -321,5 +321,25 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'coffee cost calculator', path: '/daily-coffee-cost-calculator' },
     { keyword: 'cost of daily coffee', path: '/daily-coffee-cost-calculator' }
   ],
+  '/hecs-indexation-calculator': [
+    { keyword: 'hecs indexation calculator', path: '/hecs-indexation-calculator' },
+    { keyword: 'help debt indexation rate', path: '/hecs-indexation-calculator' }
+  ],
+  '/alphabetizer': [
+    { keyword: 'alphabetizer', path: '/alphabetizer' },
+    { keyword: 'sort list alphabetically', path: '/alphabetizer' }
+  ],
+  '/days-between-dates-calculator': [
+    { keyword: 'days between dates', path: '/days-between-dates-calculator' },
+    { keyword: 'how many days until', path: '/days-between-dates-calculator' }
+  ],
+  '/percentage-calculator': [
+    { keyword: 'percentage calculator', path: '/percentage-calculator' },
+    { keyword: 'percentage increase calculator', path: '/percentage-calculator' }
+  ],
+  '/binary-to-text-converter': [
+    { keyword: 'binary to text converter', path: '/binary-to-text-converter' },
+    { keyword: 'binary translator', path: '/binary-to-text-converter' }
+  ],
 };
 

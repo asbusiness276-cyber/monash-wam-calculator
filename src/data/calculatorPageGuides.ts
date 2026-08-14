@@ -304,6 +304,66 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
         ]
       }
     ]
+  },
+  '/hecs-indexation-calculator': {
+    sections: [
+      {
+        heading: 'How to use the HECS Indexation Calculator',
+        paragraphs: [
+          'Enter your current HECS/HELP debt balance.',
+          'Enter the estimated or actual CPI indexation rate (usually announced in May).',
+          'The tool will instantly show you exactly how much debt will be added to your balance overnight on June 1st.'
+        ]
+      }
+    ]
+  },
+  '/alphabetizer': {
+    sections: [
+      {
+        heading: 'How to use the Alphabetizer',
+        paragraphs: [
+          'Paste your unsorted list of references, names, or words into the large text area.',
+          'Make sure each item is on its own line.',
+          'Click the "Sort A-Z" or "Sort Z-A" button. The tool will automatically remove empty lines and alphabetize the entire list for you instantly.'
+        ]
+      }
+    ]
+  },
+  '/days-between-dates-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Days Between Dates Calculator',
+        paragraphs: [
+          'Select your starting date (this defaults to today).',
+          'Select your target end date (e.g., your exam date or assignment deadline).',
+          'The tool calculates the exact number of days between the two dates (not including the final day itself), and breaks it down into weeks and months.'
+        ]
+      }
+    ]
+  },
+  '/percentage-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Percentage Calculator',
+        paragraphs: [
+          'Use the first row to calculate a specific percentage of a number (e.g., what is 20% of 150).',
+          'Use the second row to find out what percentage one number is of another (e.g., 30 is what percent of 150).',
+          'Use the third row to calculate the percentage increase or decrease between two numbers over time.'
+        ]
+      }
+    ]
+  },
+  '/binary-to-text-converter': {
+    sections: [
+      {
+        heading: 'How to use the Binary to Text Converter',
+        paragraphs: [
+          'Select your mode: "Text to Binary" or "Binary to Text".',
+          'Paste your input into the top text box.',
+          'The translated output will instantly appear in the bottom box, formatted correctly using standard ASCII 8-bit encoding.'
+        ]
+      }
+    ]
   }
 };
 
@@ -1997,6 +2057,66 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'Enter the price you pay for your daily coffee, energy drink, or treat.',
           'Enter how many times per week you make this purchase.',
           'The tool will calculate your weekly, monthly, and yearly expenditure. It will also show you how much that money would grow to if invested over 10 years at a 5% return.'
+        ]
+      }
+    ]
+  },
+  '/hecs-indexation-calculator': {
+    sections: [
+      {
+        heading: 'How to use the HECS Indexation Calculator',
+        paragraphs: [
+          'Enter your current HECS/HELP debt balance.',
+          'Enter the estimated or actual CPI indexation rate (usually announced in May).',
+          'The tool will instantly show you exactly how much debt will be added to your balance overnight on June 1st.'
+        ]
+      }
+    ]
+  },
+  '/alphabetizer': {
+    sections: [
+      {
+        heading: 'How to use the Alphabetizer',
+        paragraphs: [
+          'Paste your unsorted list of references, names, or words into the large text area.',
+          'Make sure each item is on its own line.',
+          'Click the "Sort A-Z" or "Sort Z-A" button. The tool will automatically remove empty lines and alphabetize the entire list for you instantly.'
+        ]
+      }
+    ]
+  },
+  '/days-between-dates-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Days Between Dates Calculator',
+        paragraphs: [
+          'Select your starting date (this defaults to today).',
+          'Select your target end date (e.g., your exam date or assignment deadline).',
+          'The tool calculates the exact number of days between the two dates (not including the final day itself), and breaks it down into weeks and months.'
+        ]
+      }
+    ]
+  },
+  '/percentage-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Percentage Calculator',
+        paragraphs: [
+          'Use the first row to calculate a specific percentage of a number (e.g., what is 20% of 150).',
+          'Use the second row to find out what percentage one number is of another (e.g., 30 is what percent of 150).',
+          'Use the third row to calculate the percentage increase or decrease between two numbers over time.'
+        ]
+      }
+    ]
+  },
+  '/binary-to-text-converter': {
+    sections: [
+      {
+        heading: 'How to use the Binary to Text Converter',
+        paragraphs: [
+          'Select your mode: "Text to Binary" or "Binary to Text".',
+          'Paste your input into the top text box.',
+          'The translated output will instantly appear in the bottom box, formatted correctly using standard ASCII 8-bit encoding.'
         ]
       }
     ]
