@@ -301,5 +301,25 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'presentation speaking time calculator', path: '/detailed-text-analyzer' },
     { keyword: 'word count analyzer', path: '/detailed-text-analyzer' }
   ],
+  '/lecture-speed-calculator': [
+    { keyword: 'lecture speed calculator', path: '/lecture-speed-calculator' },
+    { keyword: 'how long is a 2 hour video at 1.5x speed', path: '/lecture-speed-calculator' }
+  ],
+  '/sleep-cycle-calculator': [
+    { keyword: 'sleep cycle calculator', path: '/sleep-cycle-calculator' },
+    { keyword: '90 minute sleep cycle', path: '/sleep-cycle-calculator' }
+  ],
+  '/textbook-reading-time-calculator': [
+    { keyword: 'textbook reading time calculator', path: '/textbook-reading-time-calculator' },
+    { keyword: 'how long to read 50 pages', path: '/textbook-reading-time-calculator' }
+  ],
+  '/text-case-converter': [
+    { keyword: 'text case converter', path: '/text-case-converter' },
+    { keyword: 'title case generator', path: '/text-case-converter' }
+  ],
+  '/daily-coffee-cost-calculator': [
+    { keyword: 'coffee cost calculator', path: '/daily-coffee-cost-calculator' },
+    { keyword: 'cost of daily coffee', path: '/daily-coffee-cost-calculator' }
+  ],
 };
 

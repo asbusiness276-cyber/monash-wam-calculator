@@ -1,7 +1,7 @@
 {
   "/about-us": {
     "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 70 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "description": "Independent Monash WAM calculator site by Saahil: 75 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
     "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
@@ -25,7 +25,7 @@
   },
   "/about-author": {
     "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 70 free tools and 32 student guides on WAM, GPA, and Australian university life.",
+    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 75 free tools and 32 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
   },
   "/caffeine-crash-calculator": {
@@ -33,8 +33,8 @@
     "description": "Calculate the half-life of your coffee or energy drink. Find out when you will crash and when it is safe to go to sleep."
   },
   "/calculators": {
-    "title": "All Monash Calculators — 70 Free WAM & GPA Tools (2026)",
-    "description": "Browse 70 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Monash Calculators — 75 Free WAM & GPA Tools (2026)",
+    "description": "Browse 75 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
     "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
@@ -43,6 +43,10 @@
   "/cgpa-to-wam-calculator": {
     "title": "CGPA to WAM Calculator - Monash 4.0 Scale (2026)",
     "description": "Free CGPA to WAM calculator for Monash students. Convert cumulative 4.0 GPA to approximate weighted average mark ranges."
+  },
+  "/daily-coffee-cost-calculator": {
+    "title": "Daily Coffee Cost Calculator | Budget Reality Check",
+    "description": "Calculate exactly how much your daily coffee or energy drink habit is costing you per year, and see how much it would be worth if you invested it."
   },
   "/commute-vs-rent-calculator": {
     "title": "Commute vs Rent Calculator | Where to live for Uni",
@@ -161,6 +165,10 @@
     "title": "Late Penalty & Extension Calculator Australia - Mark Deductions",
     "description": "Calculate how many marks you will lose for submitting an assignment late. Find out your final grade after standard 5% per day university deductions."
   },
+  "/lecture-speed-calculator": {
+    "title": "Lecture Speed Calculator | 1.5x and 2x Video Time",
+    "description": "Calculate exactly how long it takes to watch a lecture or YouTube video at 1.25x, 1.5x, or 2x speed. See how much time you save."
+  },
   "/mark-to-grade-calculator": {
     "title": "Monash Mark to Grade Calculator - HD, D, C, P Converter (2026)",
     "description": "Free Monash mark to grade calculator: convert any percentage to HD, D, C, P or N instantly. Monash grading scale with GPA bands."
@@ -243,6 +251,10 @@
     "title": "Sharehouse Rent Splitter | Fair Room Calculator",
     "description": "Calculate a mathematically fair rent split for your sharehouse based on bedroom sizes and ensuites to avoid arguments with your roommates."
   },
+  "/sleep-cycle-calculator": {
+    "title": "Sleep Cycle Calculator | 90-Minute REM Wake Times",
+    "description": "Calculate the exact time you should go to bed to wake up feeling refreshed. Based on 90-minute REM sleep cycles to prevent grogginess."
+  },
   "/standard-drinks-calculator": {
     "title": "Standard Drinks Calculator | Alcohol Unit Converter",
     "description": "Calculate exactly how many Australian standard drinks are in your beer, wine, or spirits based on volume and ABV."
@@ -266,6 +278,14 @@
   "/terms-and-conditions": {
     "title": "Terms and Conditions | Monash WAM Calculator",
     "description": "Review the terms for using Monash WAM Calculator, including acceptable use, intellectual property, and limitation of liability."
+  },
+  "/textbook-reading-time-calculator": {
+    "title": "Textbook Reading Time Calculator | Study Planner",
+    "description": "Calculate how many hours it will take to read your university textbook chapters based on page count and reading speed."
+  },
+  "/text-case-converter": {
+    "title": "Text Case Converter | UPPERCASE and Title Case Generator",
+    "description": "Instantly convert text to uppercase, lowercase, Title Case, or Sentence case. A simple utility for essay formatting and titles."
   },
   "/typing-time-estimator": {
     "title": "Typing Time Estimator | Words Per Minute Calculator",

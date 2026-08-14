@@ -244,6 +244,66 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
         ]
       }
     ]
+  },
+  '/lecture-speed-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Lecture Speed Calculator',
+        paragraphs: [
+          'Enter the total hours and minutes of your lecture video.',
+          'Select your desired playback speed (e.g., 1.25x, 1.5x, 2x).',
+          'The tool will output exactly how much real time it will take you to watch the video, and how many minutes you save.'
+        ]
+      }
+    ]
+  },
+  '/sleep-cycle-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Sleep Cycle Calculator',
+        paragraphs: [
+          'Enter the exact time your alarm is set to go off in the morning.',
+          'The tool works backwards in 90-minute REM sleep cycle increments.',
+          'It will provide several exact times you should try to fall asleep (with a 15-minute buffer built in) to wake up feeling completely refreshed.'
+        ]
+      }
+    ]
+  },
+  '/textbook-reading-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Textbook Reading Time Calculator',
+        paragraphs: [
+          'Enter the total number of pages you need to read for your homework or chapter.',
+          'Select your average reading pace based on the density of the material.',
+          'The tool will output the total number of study hours you should block out in your calendar to finish the reading.'
+        ]
+      }
+    ]
+  },
+  '/text-case-converter': {
+    sections: [
+      {
+        heading: 'How to use the Text Case Converter',
+        paragraphs: [
+          'Paste any string of text into the large text box.',
+          'Click the buttons above to instantly convert the entire text to UPPERCASE, lowercase, Sentence case, or Title Case.',
+          'Use the "Copy to Clipboard" button to instantly copy the correctly formatted text.'
+        ]
+      }
+    ]
+  },
+  '/daily-coffee-cost-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Daily Coffee Cost Calculator',
+        paragraphs: [
+          'Enter the price you pay for your daily coffee, energy drink, or treat.',
+          'Enter how many times per week you make this purchase.',
+          'The tool will calculate your weekly, monthly, and yearly expenditure. It will also show you how much that money would grow to if invested over 10 years at a 5% return.'
+        ]
+      }
+    ]
   }
 };
 
@@ -1877,6 +1937,66 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'Paste your essay, speech, or presentation script into the text box.',
           'The tool will instantly count your words, characters, sentences, and paragraphs.',
           'It also accurately estimates how long it will take to present the speech out loud based on an average speaking speed of 140 words per minute.'
+        ]
+      }
+    ]
+  },
+  '/lecture-speed-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Lecture Speed Calculator',
+        paragraphs: [
+          'Enter the total hours and minutes of your lecture video.',
+          'Select your desired playback speed (e.g., 1.25x, 1.5x, 2x).',
+          'The tool will output exactly how much real time it will take you to watch the video, and how many minutes you save.'
+        ]
+      }
+    ]
+  },
+  '/sleep-cycle-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Sleep Cycle Calculator',
+        paragraphs: [
+          'Enter the exact time your alarm is set to go off in the morning.',
+          'The tool works backwards in 90-minute REM sleep cycle increments.',
+          'It will provide several exact times you should try to fall asleep (with a 15-minute buffer built in) to wake up feeling completely refreshed.'
+        ]
+      }
+    ]
+  },
+  '/textbook-reading-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Textbook Reading Time Calculator',
+        paragraphs: [
+          'Enter the total number of pages you need to read for your homework or chapter.',
+          'Select your average reading pace based on the density of the material.',
+          'The tool will output the total number of study hours you should block out in your calendar to finish the reading.'
+        ]
+      }
+    ]
+  },
+  '/text-case-converter': {
+    sections: [
+      {
+        heading: 'How to use the Text Case Converter',
+        paragraphs: [
+          'Paste any string of text into the large text box.',
+          'Click the buttons above to instantly convert the entire text to UPPERCASE, lowercase, Sentence case, or Title Case.',
+          'Use the "Copy to Clipboard" button to instantly copy the correctly formatted text.'
+        ]
+      }
+    ]
+  },
+  '/daily-coffee-cost-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Daily Coffee Cost Calculator',
+        paragraphs: [
+          'Enter the price you pay for your daily coffee, energy drink, or treat.',
+          'Enter how many times per week you make this purchase.',
+          'The tool will calculate your weekly, monthly, and yearly expenditure. It will also show you how much that money would grow to if invested over 10 years at a 5% return.'
         ]
       }
     ]

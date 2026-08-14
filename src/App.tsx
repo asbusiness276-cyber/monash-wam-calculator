@@ -89,6 +89,11 @@ const YouthAllowanceEstimator = lazy(() => import('./pages/YouthAllowanceEstimat
 const CommuteVsRentCalculator = lazy(() => import('./pages/CommuteVsRentCalculator'));
 const StandardDrinksCalculator = lazy(() => import('./pages/StandardDrinksCalculator'));
 const DetailedTextAnalyzer = lazy(() => import('./pages/DetailedTextAnalyzer'));
+const LectureSpeedCalculator = lazy(() => import('./pages/LectureSpeedCalculator'));
+const SleepCycleCalculator = lazy(() => import('./pages/SleepCycleCalculator'));
+const TextbookReadingTimeCalculator = lazy(() => import('./pages/TextbookReadingTimeCalculator'));
+const TextCaseConverter = lazy(() => import('./pages/TextCaseConverter'));
+const CoffeeCostCalculator = lazy(() => import('./pages/CoffeeCostCalculator'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -166,6 +171,11 @@ function getPage(path: string) {
   if (path === '/commute-vs-rent-calculator') return withSuspense(<CommuteVsRentCalculator />);
   if (path === '/standard-drinks-calculator') return withSuspense(<StandardDrinksCalculator />);
   if (path === '/detailed-text-analyzer') return withSuspense(<DetailedTextAnalyzer />);
+  if (path === '/lecture-speed-calculator') return withSuspense(<LectureSpeedCalculator />);
+  if (path === '/sleep-cycle-calculator') return withSuspense(<SleepCycleCalculator />);
+  if (path === '/textbook-reading-time-calculator') return withSuspense(<TextbookReadingTimeCalculator />);
+  if (path === '/text-case-converter') return withSuspense(<TextCaseConverter />);
+  if (path === '/daily-coffee-cost-calculator') return withSuspense(<CoffeeCostCalculator />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

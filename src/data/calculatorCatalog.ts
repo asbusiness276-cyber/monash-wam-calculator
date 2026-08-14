@@ -422,6 +422,31 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/detailed-text-analyzer',
         title: 'Text & Speech Analyzer',
         description: 'Count words and estimate exactly how long your presentation will take.'
+      },
+      {
+        href: '/lecture-speed-calculator',
+        title: 'Lecture Speed Calculator',
+        description: 'Calculate the real-time length of a lecture at 1.5x or 2x speed.'
+      },
+      {
+        href: '/sleep-cycle-calculator',
+        title: 'Sleep Cycle Calculator',
+        description: 'Calculate when to fall asleep based on 90-minute REM cycles.'
+      },
+      {
+        href: '/textbook-reading-time-calculator',
+        title: 'Textbook Reading Time Calculator',
+        description: 'Estimate how long it will take to read a textbook chapter.'
+      },
+      {
+        href: '/text-case-converter',
+        title: 'Text Case Converter',
+        description: 'Instantly convert your text to uppercase, lowercase, or Title Case.'
+      },
+      {
+        href: '/daily-coffee-cost-calculator',
+        title: 'Daily Coffee Cost Calculator',
+        description: 'See how much your daily caffeine habit costs you per year.'
       }
     ]
   }
