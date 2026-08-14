@@ -184,6 +184,66 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
         ]
       }
     ]
+  },
+  '/student-tax-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Student Tax Calculator',
+        paragraphs: [
+          'Enter your estimated total gross income for the financial year.',
+          'The calculator will tell you if you are under the $18,200 tax-free threshold.',
+          'If you earn over the threshold, it will estimate your income tax and Medicare levy based on the latest ATO rates.'
+        ]
+      }
+    ]
+  },
+  '/youth-allowance-estimator': {
+    sections: [
+      {
+        heading: 'How to use the Youth Allowance Estimator',
+        paragraphs: [
+          'Enter your age and select whether you are considered independent by Centrelink.',
+          'Select whether you live at the parental home or away from home.',
+          'The tool will output the maximum base fortnightly rate you may be eligible for. Note that income and asset tests apply.'
+        ]
+      }
+    ]
+  },
+  '/commute-vs-rent-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Commute vs Rent Calculator',
+        paragraphs: [
+          'Enter the weekly rent for a place close to campus, and a place further away.',
+          'Enter your daily transport costs (e.g. Myki cap) and how many hours you spend commuting each day.',
+          'The tool compares the total financial cost and reveals the "hidden" cost of your lost time.'
+        ]
+      }
+    ]
+  },
+  '/standard-drinks-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Standard Drinks Calculator',
+        paragraphs: [
+          'Enter the volume of your drink in millilitres (e.g., 375mL for a can).',
+          'Enter the Alcohol by Volume percentage (e.g., 4.8%).',
+          'The tool applies the Australian formula (Volume x ABV x 0.789) to tell you exactly how many standard drinks you are consuming.'
+        ]
+      }
+    ]
+  },
+  '/detailed-text-analyzer': {
+    sections: [
+      {
+        heading: 'How to use the Text & Speech Analyzer',
+        paragraphs: [
+          'Paste your essay, speech, or presentation script into the text box.',
+          'The tool will instantly count your words, characters, sentences, and paragraphs.',
+          'It also accurately estimates how long it will take to present the speech out loud based on an average speaking speed of 140 words per minute.'
+        ]
+      }
+    ]
   }
 };
 
@@ -1757,6 +1817,66 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'Enter the amount of caffeine you consumed in milligrams.',
           'Enter the time of day you consumed it.',
           'The tool uses the standard 5-hour half-life of caffeine to estimate when it will drop to sleep-safe levels.'
+        ]
+      }
+    ]
+  },
+  '/student-tax-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Student Tax Calculator',
+        paragraphs: [
+          'Enter your estimated total gross income for the financial year.',
+          'The calculator will tell you if you are under the $18,200 tax-free threshold.',
+          'If you earn over the threshold, it will estimate your income tax and Medicare levy based on the latest ATO rates.'
+        ]
+      }
+    ]
+  },
+  '/youth-allowance-estimator': {
+    sections: [
+      {
+        heading: 'How to use the Youth Allowance Estimator',
+        paragraphs: [
+          'Enter your age and select whether you are considered independent by Centrelink.',
+          'Select whether you live at the parental home or away from home.',
+          'The tool will output the maximum base fortnightly rate you may be eligible for. Note that income and asset tests apply.'
+        ]
+      }
+    ]
+  },
+  '/commute-vs-rent-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Commute vs Rent Calculator',
+        paragraphs: [
+          'Enter the weekly rent for a place close to campus, and a place further away.',
+          'Enter your daily transport costs (e.g. Myki cap) and how many hours you spend commuting each day.',
+          'The tool compares the total financial cost and reveals the "hidden" cost of your lost time.'
+        ]
+      }
+    ]
+  },
+  '/standard-drinks-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Standard Drinks Calculator',
+        paragraphs: [
+          'Enter the volume of your drink in millilitres (e.g., 375mL for a can).',
+          'Enter the Alcohol by Volume percentage (e.g., 4.8%).',
+          'The tool applies the Australian formula (Volume x ABV x 0.789) to tell you exactly how many standard drinks you are consuming.'
+        ]
+      }
+    ]
+  },
+  '/detailed-text-analyzer': {
+    sections: [
+      {
+        heading: 'How to use the Text & Speech Analyzer',
+        paragraphs: [
+          'Paste your essay, speech, or presentation script into the text box.',
+          'The tool will instantly count your words, characters, sentences, and paragraphs.',
+          'It also accurately estimates how long it will take to present the speech out loud based on an average speaking speed of 140 words per minute.'
         ]
       }
     ]

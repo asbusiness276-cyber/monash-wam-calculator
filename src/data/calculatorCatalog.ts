@@ -397,6 +397,31 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/words-to-pages-converter',
         title: 'Words to Pages Converter',
         description: 'Convert your essay word count to physical pages.'
+      },
+      {
+        href: '/student-tax-calculator',
+        title: 'Australian Student Tax Calculator',
+        description: 'Calculate your part-time income tax and check the tax-free threshold.'
+      },
+      {
+        href: '/youth-allowance-estimator',
+        title: 'Youth Allowance Estimator',
+        description: 'Estimate your maximum Centrelink student payment rate.'
+      },
+      {
+        href: '/commute-vs-rent-calculator',
+        title: 'Commute vs Rent Calculator',
+        description: 'Compare the true cost of living close to campus vs commuting.'
+      },
+      {
+        href: '/standard-drinks-calculator',
+        title: 'Standard Drinks Calculator',
+        description: 'Calculate how many Australian standard drinks are in your beverage.'
+      },
+      {
+        href: '/detailed-text-analyzer',
+        title: 'Text & Speech Analyzer',
+        description: 'Count words and estimate exactly how long your presentation will take.'
       }
     ]
   }

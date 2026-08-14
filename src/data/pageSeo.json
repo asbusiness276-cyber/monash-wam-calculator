@@ -1,7 +1,7 @@
 {
   "/about-us": {
     "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 65 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "description": "Independent Monash WAM calculator site by Saahil: 70 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
     "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
@@ -25,7 +25,7 @@
   },
   "/about-author": {
     "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 65 free tools and 32 student guides on WAM, GPA, and Australian university life.",
+    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 70 free tools and 32 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
   },
   "/caffeine-crash-calculator": {
@@ -33,8 +33,8 @@
     "description": "Calculate the half-life of your coffee or energy drink. Find out when you will crash and when it is safe to go to sleep."
   },
   "/calculators": {
-    "title": "All Monash Calculators — 65 Free WAM & GPA Tools (2026)",
-    "description": "Browse 65 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Monash Calculators — 70 Free WAM & GPA Tools (2026)",
+    "description": "Browse 70 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
     "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
@@ -43,6 +43,10 @@
   "/cgpa-to-wam-calculator": {
     "title": "CGPA to WAM Calculator - Monash 4.0 Scale (2026)",
     "description": "Free CGPA to WAM calculator for Monash students. Convert cumulative 4.0 GPA to approximate weighted average mark ranges."
+  },
+  "/commute-vs-rent-calculator": {
+    "title": "Commute vs Rent Calculator | Where to live for Uni",
+    "description": "Compare the true cost of living close to campus vs living further away, factoring in rent, public transport, and the hidden cost of commute time."
   },
   "/contact-us": {
     "title": "Contact Us | Monash WAM Calculator",
@@ -55,6 +59,10 @@
   "/degree-progress-calculator": {
     "title": "Degree Progress Calculator — Monash Credit Points Tracker (2026)",
     "description": "Free Monash degree progress calculator: track completed credit points, percent complete, and estimated semesters remaining toward your degree."
+  },
+  "/detailed-text-analyzer": {
+    "title": "Detailed Text Analyzer & Speech Time Calculator",
+    "description": "Count words, characters, sentences, and paragraphs. Accurately calculate presentation speaking time based on standard words-per-minute."
   },
   "/disclaimer": {
     "title": "Disclaimer | Monash WAM Calculator",
@@ -235,9 +243,17 @@
     "title": "Sharehouse Rent Splitter | Fair Room Calculator",
     "description": "Calculate a mathematically fair rent split for your sharehouse based on bedroom sizes and ensuites to avoid arguments with your roommates."
   },
+  "/standard-drinks-calculator": {
+    "title": "Standard Drinks Calculator | Alcohol Unit Converter",
+    "description": "Calculate exactly how many Australian standard drinks are in your beer, wine, or spirits based on volume and ABV."
+  },
   "/student-budget-calculator": {
     "title": "Student Budget Calculator | Manage University Expenses",
     "description": "Free student budget calculator. Easily track your weekly or monthly income, rent, groceries, and see your net savings to manage your finances better."
+  },
+  "/student-tax-calculator": {
+    "title": "Australian Student Tax Calculator | Tax-Free Threshold",
+    "description": "Calculate your estimated income tax and Medicare levy. Find out if you are under the $18,200 tax-free threshold as an Australian or international student."
   },
   "/study-time-calculator": {
     "title": "Study Time Calculator | University Workload Estimator",
@@ -312,6 +328,10 @@
   "/write-for-us": {
     "title": "Write For Us | Monash WAM Calculator",
     "description": "Contribute education-focused guest content. Read our editorial quality standards, accepted topics, and contributor guidelines."
+  },
+  "/youth-allowance-estimator": {
+    "title": "Youth Allowance Estimator | Centrelink Payment Calculator",
+    "description": "Estimate your maximum Centrelink Youth Allowance or Austudy fortnightly payment based on your age and living situation."
   },
   "/articles/best-universities-in-australia": {
     "title": "Best Universities in Australia: Top 10 Ranked Guide (2026) | Monash WAM Calculator",

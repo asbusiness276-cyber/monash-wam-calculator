@@ -281,5 +281,25 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'caffeine half life calculator', path: '/caffeine-crash-calculator' },
     { keyword: 'coffee wear off time', path: '/caffeine-crash-calculator' }
   ],
+  '/student-tax-calculator': [
+    { keyword: 'student tax calculator', path: '/student-tax-calculator' },
+    { keyword: 'tax free threshold calculator', path: '/student-tax-calculator' }
+  ],
+  '/youth-allowance-estimator': [
+    { keyword: 'youth allowance calculator', path: '/youth-allowance-estimator' },
+    { keyword: 'centrelink student payment rate', path: '/youth-allowance-estimator' }
+  ],
+  '/commute-vs-rent-calculator': [
+    { keyword: 'commute vs rent calculator', path: '/commute-vs-rent-calculator' },
+    { keyword: 'cost of commuting vs living closer', path: '/commute-vs-rent-calculator' }
+  ],
+  '/standard-drinks-calculator': [
+    { keyword: 'standard drinks calculator', path: '/standard-drinks-calculator' },
+    { keyword: 'alcohol standard drinks', path: '/standard-drinks-calculator' }
+  ],
+  '/detailed-text-analyzer': [
+    { keyword: 'presentation speaking time calculator', path: '/detailed-text-analyzer' },
+    { keyword: 'word count analyzer', path: '/detailed-text-analyzer' }
+  ],
 };
 

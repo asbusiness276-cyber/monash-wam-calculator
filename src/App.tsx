@@ -84,6 +84,11 @@ const HecsRepaymentTimeCalculator = lazy(() => import('./pages/HecsRepaymentTime
 const SharehouseRentSplitter = lazy(() => import('./pages/SharehouseRentSplitter'));
 const PeerReviewMarkCalculator = lazy(() => import('./pages/PeerReviewMarkCalculator'));
 const CaffeineCrashCalculator = lazy(() => import('./pages/CaffeineCrashCalculator'));
+const StudentTaxCalculator = lazy(() => import('./pages/StudentTaxCalculator'));
+const YouthAllowanceEstimator = lazy(() => import('./pages/YouthAllowanceEstimator'));
+const CommuteVsRentCalculator = lazy(() => import('./pages/CommuteVsRentCalculator'));
+const StandardDrinksCalculator = lazy(() => import('./pages/StandardDrinksCalculator'));
+const DetailedTextAnalyzer = lazy(() => import('./pages/DetailedTextAnalyzer'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -156,6 +161,11 @@ function getPage(path: string) {
   if (path === '/sharehouse-rent-splitter') return withSuspense(<SharehouseRentSplitter />);
   if (path === '/peer-review-mark-calculator') return withSuspense(<PeerReviewMarkCalculator />);
   if (path === '/caffeine-crash-calculator') return withSuspense(<CaffeineCrashCalculator />);
+  if (path === '/student-tax-calculator') return withSuspense(<StudentTaxCalculator />);
+  if (path === '/youth-allowance-estimator') return withSuspense(<YouthAllowanceEstimator />);
+  if (path === '/commute-vs-rent-calculator') return withSuspense(<CommuteVsRentCalculator />);
+  if (path === '/standard-drinks-calculator') return withSuspense(<StandardDrinksCalculator />);
+  if (path === '/detailed-text-analyzer') return withSuspense(<DetailedTextAnalyzer />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');
