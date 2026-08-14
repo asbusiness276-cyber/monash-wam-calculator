@@ -79,6 +79,7 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
 
   const calculateWAM = useCallback((): WAMResult | null => {
     const valid = subjects.filter(s => s.mark !== '' && s.credits !== '');
+    console.log("DEBUG: valid length", valid.length);
     if (valid.length === 0) return null;
 
     const parsedUnits = valid
@@ -88,11 +89,13 @@ export default function WAMCalculator({ shellVariant = 'default' }: WAMCalculato
         yearLevel: parseInt(s.yearLevel, 10) || 1,
       }))
       .filter(unit => !Number.isNaN(unit.mark) && !Number.isNaN(unit.credits) && unit.credits > 0);
+    console.log("DEBUG: parsedUnits", parsedUnits);
 
     if (parsedUnits.length === 0) return null;
 
     const planningWam = calculateCreditWeightedWam(parsedUnits);
     const officialWam = calculateUniOfficialWam(parsedUnits);
+    console.log("DEBUG: planningWam", planningWam, "officialWam", officialWam);
     if (planningWam === null || officialWam === null) return null;
 
     const totalCredits = parsedUnits.reduce((sum, unit) => sum + unit.credits, 0);

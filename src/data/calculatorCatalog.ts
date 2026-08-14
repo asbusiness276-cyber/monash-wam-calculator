@@ -18,7 +18,7 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
     description: 'Track and project your Weighted Average Mark across your degree or one semester.',
     links: [
       {
-        href: '/',
+        href: '/wam-calculator',
         title: 'WAM Calculator',
         description: 'Official-style credit-weighted WAM with Year 1 half-weighting.',
       },

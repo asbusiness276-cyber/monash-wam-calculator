@@ -44,6 +44,7 @@ export default function Home() {
         title="Featured Calculators"
         description="Popular free tools for WAM, GPA conversion, exam targets, and merit planning."
         hrefs={[
+          '/wam-calculator',
           '/age-calculator',
           '/salary-calculator',
           '/bmi-calculator',

@@ -7,6 +7,7 @@ import CookieConsent from './components/CookieConsent';
 import PageLoader from './components/PageLoader';
 import Home from './pages/Home';
 import AmazonStickySidebars from './components/AmazonStickySidebars';
+import WAMCalculatorPage from './pages/WAMCalculatorPage';
 const WAMtoGPA = lazy(() => import('./pages/WAMtoGPA'));
 const GPAtoWAM = lazy(() => import('./pages/GPAtoWAM'));
 const FinalGrade = lazy(() => import('./pages/FinalGrade'));
@@ -111,6 +112,7 @@ function withSuspense(element: ReactElement) {
 
 function getPage(path: string) {
   if (path === '/') return <Home />;
+  if (path === '/wam-calculator') return withSuspense(<WAMCalculatorPage />);
   if (path === '/wam-to-gpa-calculator') return withSuspense(<WAMtoGPA />);
   if (path === '/gpa-to-wam-calculator') return withSuspense(<GPAtoWAM />);
   if (path === '/final-grade-calculator') return withSuspense(<FinalGrade />);

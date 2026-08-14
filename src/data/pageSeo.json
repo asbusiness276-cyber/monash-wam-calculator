@@ -275,6 +275,10 @@
     "title": "International Student Visa Load Calculator - Australia Condition 8202",
     "description": "Calculate how many credit points you need per semester to finish on time and comply with Australian student visa condition 8202."
   },
+  "/wam-calculator": {
+    "title": "Uni WAM Calculator | Free Weighted Average Mark Calculator",
+    "description": "Calculate your Weighted Average Mark (WAM) easily. Support for credit weighting and first-year half weighting. Free online WAM calculator."
+  },
   "/wam-milestones-calculator": {
     "title": "WAM Milestones Calculator — Uni Standing Checker (2026)",
     "description": "Check WAM milestones for pass, exchange, distinction average, HD territory, and merit planning. Estimate remaining average needed for each band."
