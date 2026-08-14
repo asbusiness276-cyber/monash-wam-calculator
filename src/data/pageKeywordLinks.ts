@@ -341,5 +341,25 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'binary to text converter', path: '/binary-to-text-converter' },
     { keyword: 'binary translator', path: '/binary-to-text-converter' }
   ],
+  '/age-calculator': [
+    { keyword: 'age calculator', path: '/age-calculator' },
+    { keyword: 'how old am i exact', path: '/age-calculator' }
+  ],
+  '/random-number-generator': [
+    { keyword: 'random number generator', path: '/random-number-generator' },
+    { keyword: 'random number picker', path: '/random-number-generator' }
+  ],
+  '/number-to-words-converter': [
+    { keyword: 'number to words', path: '/number-to-words-converter' },
+    { keyword: 'how to spell number', path: '/number-to-words-converter' }
+  ],
+  '/study-break-calculator': [
+    { keyword: 'study break calculator', path: '/study-break-calculator' },
+    { keyword: 'when to take study break', path: '/study-break-calculator' }
+  ],
+  '/hex-to-decimal-converter': [
+    { keyword: 'hex to decimal converter', path: '/hex-to-decimal-converter' },
+    { keyword: 'base 16 to base 10', path: '/hex-to-decimal-converter' }
+  ],
 };
 

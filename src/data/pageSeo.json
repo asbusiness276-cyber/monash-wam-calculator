@@ -1,11 +1,15 @@
 {
   "/about-us": {
     "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 80 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "description": "Independent Monash WAM calculator site by Saahil: 85 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
     "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
     "description": "Check if you are at risk of academic exclusion or warning. Calculate your pass rate and academic standing based on failed units."
+  },
+  "/age-calculator": {
+    "title": "Age Calculator | Find Your Exact Age",
+    "description": "Calculate your exact age in years, months, and days. Find out exactly how many days you have been alive."
   },
   "/alphabetizer": {
     "title": "Alphabetizer | Sort Lists A-Z Instantly",
@@ -29,7 +33,7 @@
   },
   "/about-author": {
     "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 80 free tools and 32 student guides on WAM, GPA, and Australian university life.",
+    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 85 free tools and 32 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
   },
   "/binary-to-text-converter": {
@@ -41,8 +45,8 @@
     "description": "Calculate the half-life of your coffee or energy drink. Find out when you will crash and when it is safe to go to sleep."
   },
   "/calculators": {
-    "title": "All Monash Calculators — 80 Free WAM & GPA Tools (2026)",
-    "description": "Browse 80 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Monash Calculators — 85 Free WAM & GPA Tools (2026)",
+    "description": "Browse 85 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
     "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
@@ -168,6 +172,10 @@
     "title": "HECS Debt Payoff Time Calculator | Australian Student Loan",
     "description": "Calculate exactly how many years it will take to pay off your Australian HELP/HECS student debt based on your salary and indexation rates."
   },
+  "/hex-to-decimal-converter": {
+    "title": "Hex to Decimal Converter | Base 16 Calculator",
+    "description": "Instantly convert Hexadecimal (Base-16) values to Decimal (Base-10) numbers, and vice versa. Free tool for CS students."
+  },
   "/high-school-gpa-calculator": {
     "title": "High School GPA Calculator - Weighted & Unweighted (2026)",
     "description": "Free high school GPA calculator: compute weighted or unweighted GPA from course grades and credits for US-style transcripts."
@@ -231,6 +239,10 @@
     "title": "Monash Target GPA Calculator — Desired GPA Planner (2026)",
     "description": "Free Monash target GPA calculator: see what semester GPA you need on planned credits to reach your desired cumulative GPA."
   },
+  "/number-to-words-converter": {
+    "title": "Number to Words Converter | Write Numbers in English",
+    "description": "Instantly convert any number into its written English word equivalent. Perfect for essays, cheques, and formal writing."
+  },
   "/pass-mark-calculator": {
     "title": "Pass Mark Calculator — Exam Score Needed to Pass (Monash 2026)",
     "description": "Free pass mark calculator for Monash students: find the minimum final exam percentage needed to reach 50% overall and pass your unit."
@@ -254,6 +266,10 @@
   "/privacy-policy": {
     "title": "Privacy Policy | Monash WAM Calculator",
     "description": "Read how Monash WAM Calculator collects, uses, and protects your data while using our WAM and GPA conversion tools."
+  },
+  "/random-number-generator": {
+    "title": "Random Number Generator | Free Number Picker",
+    "description": "Generate random numbers instantly. Set your min/max range, choose how many numbers you need, and optionally prevent duplicate results."
   },
   "/reading-time-calculator": {
     "title": "Reading Time Calculator | Words Per Minute Estimator",
@@ -286,6 +302,10 @@
   "/student-tax-calculator": {
     "title": "Australian Student Tax Calculator | Tax-Free Threshold",
     "description": "Calculate your estimated income tax and Medicare levy. Find out if you are under the $18,200 tax-free threshold as an Australian or international student."
+  },
+  "/study-break-calculator": {
+    "title": "Study Break Calculator | Focus Schedule Generator",
+    "description": "Optimize your study session. Enter your total time to generate a neuroscience-backed schedule of focus blocks and breaks."
   },
   "/study-time-calculator": {
     "title": "Study Time Calculator | University Workload Estimator",

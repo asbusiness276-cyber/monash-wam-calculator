@@ -99,6 +99,11 @@ const Alphabetizer = lazy(() => import('./pages/Alphabetizer'));
 const DaysBetweenDatesCalculator = lazy(() => import('./pages/DaysBetweenDatesCalculator'));
 const PercentageCalculator = lazy(() => import('./pages/PercentageCalculator'));
 const BinaryTextConverter = lazy(() => import('./pages/BinaryTextConverter'));
+const AgeCalculator = lazy(() => import('./pages/AgeCalculator'));
+const RandomNumberGenerator = lazy(() => import('./pages/RandomNumberGenerator'));
+const NumberToWordsConverter = lazy(() => import('./pages/NumberToWordsConverter'));
+const StudyBreakCalculator = lazy(() => import('./pages/StudyBreakCalculator'));
+const HexToDecimalConverter = lazy(() => import('./pages/HexToDecimalConverter'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -186,6 +191,11 @@ function getPage(path: string) {
   if (path === '/days-between-dates-calculator') return withSuspense(<DaysBetweenDatesCalculator />);
   if (path === '/percentage-calculator') return withSuspense(<PercentageCalculator />);
   if (path === '/binary-to-text-converter') return withSuspense(<BinaryTextConverter />);
+  if (path === '/age-calculator') return withSuspense(<AgeCalculator />);
+  if (path === '/random-number-generator') return withSuspense(<RandomNumberGenerator />);
+  if (path === '/number-to-words-converter') return withSuspense(<NumberToWordsConverter />);
+  if (path === '/study-break-calculator') return withSuspense(<StudyBreakCalculator />);
+  if (path === '/hex-to-decimal-converter') return withSuspense(<HexToDecimalConverter />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

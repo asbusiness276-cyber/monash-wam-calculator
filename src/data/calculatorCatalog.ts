@@ -358,6 +358,31 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/binary-to-text-converter',
         title: 'Binary to Text Converter',
         description: 'Encode text to binary code or decode binary back to plain text.'
+      },
+      {
+        href: '/age-calculator',
+        title: 'Age Calculator',
+        description: 'Find out exactly how old you are in years, months, and days.'
+      },
+      {
+        href: '/random-number-generator',
+        title: 'Random Number Generator',
+        description: 'Generate secure random numbers with or without duplicates.'
+      },
+      {
+        href: '/number-to-words-converter',
+        title: 'Number to Words Converter',
+        description: 'Instantly convert any large digit into written English text.'
+      },
+      {
+        href: '/study-break-calculator',
+        title: 'Study Break Calculator',
+        description: 'Optimize your focus time using neuroscience-backed study intervals.'
+      },
+      {
+        href: '/hex-to-decimal-converter',
+        title: 'Hex to Decimal Converter',
+        description: 'Convert Base-16 hexadecimal codes into Base-10 decimals.'
       }
     ]
   },

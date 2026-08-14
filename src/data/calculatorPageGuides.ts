@@ -364,6 +364,66 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
         ]
       }
     ]
+  },
+  '/age-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Age Calculator',
+        paragraphs: [
+          'Select your exact Date of Birth from the calendar.',
+          'The target date automatically defaults to today, but you can change it to any future or past date.',
+          'The tool will instantly show you exactly how many years, months, and days old you are.'
+        ]
+      }
+    ]
+  },
+  '/random-number-generator': {
+    sections: [
+      {
+        heading: 'How to use the Random Number Generator',
+        paragraphs: [
+          'Set the minimum and maximum boundaries for your numbers.',
+          'Choose how many random numbers you want to generate (up to 1,000 at once).',
+          'Select whether you want to allow duplicate numbers or if every number must be unique, and hit Generate.'
+        ]
+      }
+    ]
+  },
+  '/number-to-words-converter': {
+    sections: [
+      {
+        heading: 'How to use the Number to Words Converter',
+        paragraphs: [
+          'Type any whole number into the text box (e.g., 1234).',
+          'The tool will instantly translate the digits into written English text (e.g., One Thousand Two Hundred Thirty Four).',
+          'Click the copy button to instantly paste it into your essay, legal document, or cheque.'
+        ]
+      }
+    ]
+  },
+  '/study-break-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Study Break Calculator',
+        paragraphs: [
+          'Enter the total amount of time you have available to study today.',
+          'Select a Focus Strategy. Pomodoro uses 25-minute sprints. DeskTime uses 52-minute blocks. Ultradian uses deep 90-minute focuses.',
+          'The calculator will break your total time into an optimized schedule of study blocks and recovery breaks so you don\'t burn out.'
+        ]
+      }
+    ]
+  },
+  '/hex-to-decimal-converter': {
+    sections: [
+      {
+        heading: 'How to use the Hex to Decimal Converter',
+        paragraphs: [
+          'If you have a Hex value (like 1A3F), type it into the Hexadecimal box. The Decimal value will automatically appear.',
+          'If you have a Decimal value (like 6719), type it into the Decimal box to find its Base-16 Hex equivalent.',
+          'The tool will validate your input in real-time to ensure it only contains valid characters.'
+        ]
+      }
+    ]
   }
 };
 
@@ -2117,6 +2177,66 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'Select your mode: "Text to Binary" or "Binary to Text".',
           'Paste your input into the top text box.',
           'The translated output will instantly appear in the bottom box, formatted correctly using standard ASCII 8-bit encoding.'
+        ]
+      }
+    ]
+  },
+  '/age-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Age Calculator',
+        paragraphs: [
+          'Select your exact Date of Birth from the calendar.',
+          'The target date automatically defaults to today, but you can change it to any future or past date.',
+          'The tool will instantly show you exactly how many years, months, and days old you are.'
+        ]
+      }
+    ]
+  },
+  '/random-number-generator': {
+    sections: [
+      {
+        heading: 'How to use the Random Number Generator',
+        paragraphs: [
+          'Set the minimum and maximum boundaries for your numbers.',
+          'Choose how many random numbers you want to generate (up to 1,000 at once).',
+          'Select whether you want to allow duplicate numbers or if every number must be unique, and hit Generate.'
+        ]
+      }
+    ]
+  },
+  '/number-to-words-converter': {
+    sections: [
+      {
+        heading: 'How to use the Number to Words Converter',
+        paragraphs: [
+          'Type any whole number into the text box (e.g., 1234).',
+          'The tool will instantly translate the digits into written English text (e.g., One Thousand Two Hundred Thirty Four).',
+          'Click the copy button to instantly paste it into your essay, legal document, or cheque.'
+        ]
+      }
+    ]
+  },
+  '/study-break-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Study Break Calculator',
+        paragraphs: [
+          'Enter the total amount of time you have available to study today.',
+          'Select a Focus Strategy. Pomodoro uses 25-minute sprints. DeskTime uses 52-minute blocks. Ultradian uses deep 90-minute focuses.',
+          'The calculator will break your total time into an optimized schedule of study blocks and recovery breaks so you don\'t burn out.'
+        ]
+      }
+    ]
+  },
+  '/hex-to-decimal-converter': {
+    sections: [
+      {
+        heading: 'How to use the Hex to Decimal Converter',
+        paragraphs: [
+          'If you have a Hex value (like 1A3F), type it into the Hexadecimal box. The Decimal value will automatically appear.',
+          'If you have a Decimal value (like 6719), type it into the Decimal box to find its Base-16 Hex equivalent.',
+          'The tool will validate your input in real-time to ensure it only contains valid characters.'
         ]
       }
     ]
