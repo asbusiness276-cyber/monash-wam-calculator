@@ -123,6 +123,67 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
         ]
       }
     ]
+  },
+  '/words-to-pages-converter': {
+    sections: [
+      {
+        heading: 'How to use the Words to Pages Converter',
+        paragraphs: [
+          'Enter your total word count (e.g. 2000 words).',
+          'Select your line spacing (single or double) and font type.',
+          'The tool will output the approximate number of physical pages your essay will take up.'
+        ]
+      }
+    ]
+  },
+  '/hecs-repayment-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the HECS Debt Payoff Time Calculator',
+        paragraphs: [
+          'Enter your total HELP/HECS debt amount.',
+          'Enter your expected graduate salary to determine your ATO repayment bracket.',
+          'The tool calculates how many years it will take to clear the debt, considering annual indexation.'
+        ]
+      }
+    ]
+  },
+  '/sharehouse-rent-splitter': {
+    sections: [
+      {
+        heading: 'How to use the Sharehouse Rent Splitter',
+        paragraphs: [
+          'Enter the total weekly rent for the house.',
+          'Add a roommate for each bedroom, entering their room size in square meters.',
+          'Tick the box if their room has a private ensuite.',
+          'The calculator will distribute 40% of the rent equally (for common areas) and 60% proportionally based on room size.'
+        ]
+      }
+    ]
+  },
+  '/peer-review-mark-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Group Assignment Peer Mark Calculator',
+        paragraphs: [
+          'Enter the overall mark that your group received for the assignment.',
+          'Enter your specific peer evaluation factor (e.g. SPARKPLUS multiplier like 0.8 or 1.1).',
+          'Your final individual grade will be calculated (capped at 100%).'
+        ]
+      }
+    ]
+  },
+  '/caffeine-crash-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Caffeine Crash Calculator',
+        paragraphs: [
+          'Enter the amount of caffeine you consumed in milligrams.',
+          'Enter the time of day you consumed it.',
+          'The tool uses the standard 5-hour half-life of caffeine to estimate when it will drop to sleep-safe levels.'
+        ]
+      }
+    ]
   }
 };
 
@@ -1635,6 +1696,67 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'Enter your essay word count.',
           'Select your typing speed (Words Per Minute).',
           'The tool will output the absolute minimum time required to physically hit the keys to write the essay.'
+        ]
+      }
+    ]
+  },
+  '/words-to-pages-converter': {
+    sections: [
+      {
+        heading: 'How to use the Words to Pages Converter',
+        paragraphs: [
+          'Enter your total word count (e.g. 2000 words).',
+          'Select your line spacing (single or double) and font type.',
+          'The tool will output the approximate number of physical pages your essay will take up.'
+        ]
+      }
+    ]
+  },
+  '/hecs-repayment-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the HECS Debt Payoff Time Calculator',
+        paragraphs: [
+          'Enter your total HELP/HECS debt amount.',
+          'Enter your expected graduate salary to determine your ATO repayment bracket.',
+          'The tool calculates how many years it will take to clear the debt, considering annual indexation.'
+        ]
+      }
+    ]
+  },
+  '/sharehouse-rent-splitter': {
+    sections: [
+      {
+        heading: 'How to use the Sharehouse Rent Splitter',
+        paragraphs: [
+          'Enter the total weekly rent for the house.',
+          'Add a roommate for each bedroom, entering their room size in square meters.',
+          'Tick the box if their room has a private ensuite.',
+          'The calculator will distribute 40% of the rent equally (for common areas) and 60% proportionally based on room size.'
+        ]
+      }
+    ]
+  },
+  '/peer-review-mark-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Group Assignment Peer Mark Calculator',
+        paragraphs: [
+          'Enter the overall mark that your group received for the assignment.',
+          'Enter your specific peer evaluation factor (e.g. SPARKPLUS multiplier like 0.8 or 1.1).',
+          'Your final individual grade will be calculated (capped at 100%).'
+        ]
+      }
+    ]
+  },
+  '/caffeine-crash-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Caffeine Crash Calculator',
+        paragraphs: [
+          'Enter the amount of caffeine you consumed in milligrams.',
+          'Enter the time of day you consumed it.',
+          'The tool uses the standard 5-hour half-life of caffeine to estimate when it will drop to sleep-safe levels.'
         ]
       }
     ]

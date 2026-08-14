@@ -261,5 +261,25 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'typing speed calculation', path: '/typing-time-estimator' },
     { keyword: 'typing time estimator', path: '/typing-time-estimator' }
   ],
+  '/words-to-pages-converter': [
+    { keyword: 'how many pages is 2000 words', path: '/words-to-pages-converter' },
+    { keyword: 'words to pages converter', path: '/words-to-pages-converter' }
+  ],
+  '/hecs-repayment-time-calculator': [
+    { keyword: 'how long to pay off hecs', path: '/hecs-repayment-time-calculator' },
+    { keyword: 'student loan repayment time', path: '/hecs-repayment-time-calculator' }
+  ],
+  '/sharehouse-rent-splitter': [
+    { keyword: 'split rent fairly', path: '/sharehouse-rent-splitter' },
+    { keyword: 'rent splitting calculator', path: '/sharehouse-rent-splitter' }
+  ],
+  '/peer-review-mark-calculator': [
+    { keyword: 'group assignment mark calculator', path: '/peer-review-mark-calculator' },
+    { keyword: 'peer evaluation grade', path: '/peer-review-mark-calculator' }
+  ],
+  '/caffeine-crash-calculator': [
+    { keyword: 'caffeine half life calculator', path: '/caffeine-crash-calculator' },
+    { keyword: 'coffee wear off time', path: '/caffeine-crash-calculator' }
+  ],
 };
 

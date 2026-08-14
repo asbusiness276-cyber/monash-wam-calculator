@@ -79,6 +79,11 @@ const EssayWordCountAllocator = lazy(() => import('./pages/EssayWordCountAllocat
 const ReadingTimeCalculator = lazy(() => import('./pages/ReadingTimeCalculator'));
 const PomodoroTimer = lazy(() => import('./pages/PomodoroTimer'));
 const TypingTimeEstimator = lazy(() => import('./pages/TypingTimeEstimator'));
+const WordsToPagesConverter = lazy(() => import('./pages/WordsToPagesConverter'));
+const HecsRepaymentTimeCalculator = lazy(() => import('./pages/HecsRepaymentTimeCalculator'));
+const SharehouseRentSplitter = lazy(() => import('./pages/SharehouseRentSplitter'));
+const PeerReviewMarkCalculator = lazy(() => import('./pages/PeerReviewMarkCalculator'));
+const CaffeineCrashCalculator = lazy(() => import('./pages/CaffeineCrashCalculator'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -146,6 +151,11 @@ function getPage(path: string) {
   if (path === '/reading-time-calculator') return withSuspense(<ReadingTimeCalculator />);
   if (path === '/pomodoro-study-timer') return withSuspense(<PomodoroTimer />);
   if (path === '/typing-time-estimator') return withSuspense(<TypingTimeEstimator />);
+  if (path === '/words-to-pages-converter') return withSuspense(<WordsToPagesConverter />);
+  if (path === '/hecs-repayment-time-calculator') return withSuspense(<HecsRepaymentTimeCalculator />);
+  if (path === '/sharehouse-rent-splitter') return withSuspense(<SharehouseRentSplitter />);
+  if (path === '/peer-review-mark-calculator') return withSuspense(<PeerReviewMarkCalculator />);
+  if (path === '/caffeine-crash-calculator') return withSuspense(<CaffeineCrashCalculator />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

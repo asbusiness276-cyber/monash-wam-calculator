@@ -1,7 +1,7 @@
 {
   "/about-us": {
     "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 60 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "description": "Independent Monash WAM calculator site by Saahil: 65 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
     "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
@@ -25,12 +25,16 @@
   },
   "/about-author": {
     "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 60 free tools and 32 student guides on WAM, GPA, and Australian university life.",
+    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 65 free tools and 32 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
   },
+  "/caffeine-crash-calculator": {
+    "title": "Caffeine Crash & Half-Life Calculator for Students",
+    "description": "Calculate the half-life of your coffee or energy drink. Find out when you will crash and when it is safe to go to sleep."
+  },
   "/calculators": {
-    "title": "All Monash Calculators — 60 Free WAM & GPA Tools (2026)",
-    "description": "Browse 60 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Monash Calculators — 65 Free WAM & GPA Tools (2026)",
+    "description": "Browse 65 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
     "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
@@ -132,6 +136,10 @@
     "title": "HECS-HELP Debt Calculator Australia - Estimate Total Debt",
     "description": "Free HECS-HELP debt calculator for Australian university students. Estimate your total degree cost and projected indexation."
   },
+  "/hecs-repayment-time-calculator": {
+    "title": "HECS Debt Payoff Time Calculator | Australian Student Loan",
+    "description": "Calculate exactly how many years it will take to pay off your Australian HELP/HECS student debt based on your salary and indexation rates."
+  },
   "/high-school-gpa-calculator": {
     "title": "High School GPA Calculator - Weighted & Unweighted (2026)",
     "description": "Free high school GPA calculator: compute weighted or unweighted GPA from course grades and credits for US-style transcripts."
@@ -195,6 +203,10 @@
     "title": "Pass Mark Calculator — Exam Score Needed to Pass (Monash 2026)",
     "description": "Free pass mark calculator for Monash students: find the minimum final exam percentage needed to reach 50% overall and pass your unit."
   },
+  "/peer-review-mark-calculator": {
+    "title": "Group Assignment Peer Mark Calculator | SPARKPLUS Evaluator",
+    "description": "Calculate your individual group assignment mark based on peer review multipliers and evaluation factors."
+  },
   "/percentage-to-gpa-calculator": {
     "title": "Percentage to GPA Calculator - Monash 4.0 & 7.0 Scale (2026)",
     "description": "Free percentage to GPA calculator for Monash students: convert any mark to 4.0 and 7.0 GPA using official Monash grade bands."
@@ -218,6 +230,10 @@
   "/semester-wam-calculator": {
     "title": "Semester WAM Calculator - Monash Semester Average (2026)",
     "description": "Free semester WAM calculator for Monash students: enter this semester's unit marks and credit points to get your weighted semester average instantly."
+  },
+  "/sharehouse-rent-splitter": {
+    "title": "Sharehouse Rent Splitter | Fair Room Calculator",
+    "description": "Calculate a mathematically fair rent split for your sharehouse based on bedroom sizes and ensuites to avoid arguments with your roommates."
   },
   "/student-budget-calculator": {
     "title": "Student Budget Calculator | Manage University Expenses",
@@ -288,6 +304,10 @@
     "description": "Model Monash withdrawn fail (WN) impact: see how GPA 0.0 affects your average and compare WAM excluded vs worst-case zero-counted scenarios.",
     "ogImage": "/article-images/featured-monash-withdrawn-fail-wam.webp",
     "ogImageAlt": "Monash student checking withdrawn fail impact on cumulative WAM planning"
+  },
+  "/words-to-pages-converter": {
+    "title": "Words to Pages Converter | Word Count Calculator",
+    "description": "Convert your word count to physical pages instantly. Works for single and double spacing, Times New Roman, and Arial fonts."
   },
   "/write-for-us": {
     "title": "Write For Us | Monash WAM Calculator",

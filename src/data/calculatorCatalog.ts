@@ -367,6 +367,38 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         description: 'Calculate the raw physical time needed to type an essay.'
       }
     ]
+  },
+  {
+    id: 'lifestyle-finance',
+    title: 'Student Lifestyle & Finance',
+    description: 'Calculators for rent, student loans, and university survival.',
+    links: [
+      {
+        href: '/sharehouse-rent-splitter',
+        title: 'Sharehouse Rent Splitter',
+        description: 'Split rent fairly based on bedroom sizes and ensuites.'
+      },
+      {
+        href: '/hecs-repayment-time-calculator',
+        title: 'HECS Repayment Time',
+        description: 'Calculate how many years it will take to pay off your student debt.'
+      },
+      {
+        href: '/caffeine-crash-calculator',
+        title: 'Caffeine Crash Calculator',
+        description: 'Find out when your coffee will wear off so you can sleep.'
+      },
+      {
+        href: '/peer-review-mark-calculator',
+        title: 'Group Peer Mark Calculator',
+        description: 'Calculate your grade after SPARKPLUS peer multipliers.'
+      },
+      {
+        href: '/words-to-pages-converter',
+        title: 'Words to Pages Converter',
+        description: 'Convert your essay word count to physical pages.'
+      }
+    ]
   }
 ];
 
