@@ -1,6 +1,6 @@
 {
   "/about-us": {
-    "title": "About Us | My Calculator Hub — Who We Are",
+    "title": "About Us | My Calculator Hub \u2014 Who We Are",
     "description": "Independent WAM calculator site by Saahil: 89 free tools, 0 student guides, Uni-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
@@ -21,15 +21,15 @@
   },
   "/atar-to-gpa-wam-calculator": {
     "title": "ATAR to GPA & WAM Calculator - Australia Planning (2026)",
-    "description": "Free ATAR to GPA and WAM converter for Australian students. Indicative ATAR ↔ WAM ↔ 4.0 GPA bands for university planning."
+    "description": "Free ATAR to GPA and WAM converter for Australian students. Indicative ATAR \u2194 WAM \u2194 4.0 GPA bands for university planning."
   },
   "/attendance-calculator": {
     "title": "Attendance Calculator | Track Your Classes",
     "description": "Calculate how many classes you can skip while maintaining your target university attendance percentage (e.g., 75% or 80%)."
   },
   "/about-author": {
-    "title": "About Saahil | Author — My Calculator Hub",
-    "description": "Meet Saahil, founder and editor of My Calculator Hub — 89 free tools and 0 student guides on WAM, GPA, and Australian university life.",
+    "title": "About Saahil | Author \u2014 My Calculator Hub",
+    "description": "Meet Saahil, founder and editor of My Calculator Hub \u2014 89 free tools and 0 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of WAM Calculator"
   },
   "/binary-to-text-converter": {
@@ -41,7 +41,7 @@
     "description": "Calculate the half-life of your coffee or energy drink. Find out when you will crash and when it is safe to go to sleep."
   },
   "/calculators": {
-    "title": "All Uni Calculators — 89 Free WAM & GPA Tools (2026)",
+    "title": "All Uni Calculators \u2014 89 Free WAM & GPA Tools (2026)",
     "description": "Browse 89 free Uni calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
@@ -73,7 +73,7 @@
     "description": "Calculate the exact number of days, weeks, and months between any two dates. Perfect for assignment deadlines and exam countdowns."
   },
   "/degree-progress-calculator": {
-    "title": "Degree Progress Calculator — Uni Credit Points Tracker (2026)",
+    "title": "Degree Progress Calculator \u2014 Uni Credit Points Tracker (2026)",
     "description": "Free Uni degree progress calculator: track completed credit points, percent complete, and estimated semesters remaining toward your degree."
   },
   "/detailed-text-analyzer": {
@@ -89,7 +89,7 @@
     "description": "Plan your academic essay structure. Calculate the exact word count needed for your introduction, body paragraphs, and conclusion."
   },
   "/failed-unit-wam-calculator": {
-    "title": "Failed Unit WAM Impact Calculator — Uni (2026)",
+    "title": "Failed Unit WAM Impact Calculator \u2014 Uni (2026)",
     "description": "Free failed unit WAM calculator for Uni: see how a fail, supplementary pass, or recovery marks change your weighted average."
   },
   "/final-grade-calculator": {
@@ -129,8 +129,8 @@
     "description": "Free GPA to percentage calculator for Uni students. Convert 4.0 or 7.0 GPA to approximate percentage and WAM bands."
   },
   "/gpa-to-wam-calculator": {
-    "title": "GPA to WAM Calculator — Uni Percentage Range Estimator (2026)",
-    "description": "Convert 4.0 or 7.0 GPA to approximate WAM percentage ranges using official HD/D/C/P bands — for transfer and application planning.",
+    "title": "GPA to WAM Calculator \u2014 Uni Percentage Range Estimator (2026)",
+    "description": "Convert 4.0 or 7.0 GPA to approximate WAM percentage ranges using official HD/D/C/P bands \u2014 for transfer and application planning.",
     "ogImage": "/article-images/featured-convert-wam.webp",
     "ogImageAlt": "Student comparing GPA and WAM conversion scales on a laptop for Uni grade planning"
   },
@@ -161,7 +161,7 @@
   "/": {
     "title": "My Calculator Hub | 100+ Free Online Calculators",
     "description": "My Calculator Hub is your go-to destination for everyday calculators. From finance and health to math and utilities, we have over 100+ free online calculators.",
-    "ogImageAlt": "Monash university student using a laptop to calculate weighted average mark from unit marks and credit points"
+    "ogImageAlt": "University student using a laptop to calculate weighted average mark from unit marks and credit points"
   },
   "/late-penalty-calculator": {
     "title": "Late Penalty & Extension Calculator Australia - Mark Deductions",
@@ -180,7 +180,7 @@
     "description": "Instantly convert any number into its written English word equivalent. Perfect for essays, cheques, and formal writing."
   },
   "/pass-mark-calculator": {
-    "title": "Pass Mark Calculator — Exam Score Needed to Pass (Uni 2026)",
+    "title": "Pass Mark Calculator \u2014 Exam Score Needed to Pass (Uni 2026)",
     "description": "Free pass mark calculator for Uni students: find the minimum final exam percentage needed to reach 50% overall and pass your unit."
   },
   "/peer-review-mark-calculator": {
@@ -276,7 +276,7 @@
     "description": "Calculate how many credit points you need per semester to finish on time and comply with Australian student visa condition 8202."
   },
   "/wam-milestones-calculator": {
-    "title": "WAM Milestones Calculator — Uni Standing Checker (2026)",
+    "title": "WAM Milestones Calculator \u2014 Uni Standing Checker (2026)",
     "description": "Check WAM milestones for pass, exchange, distinction average, HD territory, and merit planning. Estimate remaining average needed for each band."
   },
   "/wam-projection-calculator": {
@@ -308,7 +308,7 @@
     "description": "Free weighted average calculator for Uni students: enter unit marks and credit points to get a credit-weighted percentage average instantly."
   },
   "/withdrawn-fail-impact-calculator": {
-    "title": "Uni Withdrawn Fail (WN) Calculator — GPA 0.0 & WAM Impact (2026)",
+    "title": "Uni Withdrawn Fail (WN) Calculator \u2014 GPA 0.0 & WAM Impact (2026)",
     "description": "Model Uni withdrawn fail (WN) impact: see how GPA 0.0 affects your average and compare WAM excluded vs worst-case zero-counted scenarios.",
     "ogImage": "/article-images/featured-uni-withdrawn-fail-wam.webp",
     "ogImageAlt": "Uni student checking withdrawn fail impact on cumulative WAM planning"
@@ -326,42 +326,42 @@
     "description": "Estimate your maximum Centrelink Youth Allowance or Austudy fortnightly payment based on your age and living situation."
   },
   "/articles/best-universities-in-australia": {
-    "title": "Best Universities in Australia: Top 10 Ranked Guide (2026) | Monash WAM Calculator",
-    "description": "Best universities in Australia ranked guide: Uni, Melbourne, UNSW, Sydney, ANU, UQ, UWA, Adelaide, UTS, and Macquarie — rankings, fees, campuses, scholarships, and official links.",
+    "title": "Best Universities in Australia: Top 10 Ranked Guide (2026) | WAM Calculator",
+    "description": "Best universities in Australia ranked guide: Uni, Melbourne, UNSW, Sydney, ANU, UQ, UWA, Adelaide, UTS, and Macquarie \u2014 rankings, fees, campuses, scholarships, and official links.",
     "ogImage": "/article-images/featured-best-universities-in-australia.webp"
   },
   "/articles/best-pharmacy-universities-in-australia": {
-    "title": "Best Pharmacy Universities in Australia: Top 10 Ranked Guide (2026) | Monash WAM Calculator",
-    "description": "Best pharmacy universities in Australia: Uni, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT — rankings, fees, placements, scholarships, and official links.",
+    "title": "Best Pharmacy Universities in Australia: Top 10 Ranked Guide (2026) | WAM Calculator",
+    "description": "Best pharmacy universities in Australia: Uni, Sydney, UQ, UniSA, Griffith, Curtin, UWA, Newcastle, UTAS, and QUT \u2014 rankings, fees, placements, scholarships, and official links.",
     "ogImage": "/article-images/featured-best-pharmacy-universities-in-australia.webp"
   },
   "/articles/best-universities-for-economics-in-australia": {
-    "title": "Best Universities for Economics in Australia: Top 10 Ranked Guide (2026) | Monash WAM Calculator",
-    "description": "Best universities for economics in Australia: ANU, Melbourne, Sydney, UNSW, Uni, UQ, UWA, Adelaide, Macquarie, and UTS — rankings, fees, econometrics strength, and career pathways.",
+    "title": "Best Universities for Economics in Australia: Top 10 Ranked Guide (2026) | WAM Calculator",
+    "description": "Best universities for economics in Australia: ANU, Melbourne, Sydney, UNSW, Uni, UQ, UWA, Adelaide, Macquarie, and UTS \u2014 rankings, fees, econometrics strength, and career pathways.",
     "ogImage": "/article-images/featured-best-universities-for-economics-in-australia.webp"
   },
   "/articles/category/wam-fundamentals": {
-    "title": "WAM Fundamentals Articles | Monash WAM Calculator",
+    "title": "WAM Fundamentals Articles | WAM Calculator",
     "description": "How WAM is calculated, credit points, transcripts, semester averages, and milestone bands."
   },
   "/articles/category/wam-planning": {
-    "title": "WAM Planning & Targets Articles | Monash WAM Calculator",
+    "title": "WAM Planning & Targets Articles | WAM Calculator",
     "description": "Improvement strategy, required averages, and what-if projection before results."
   },
   "/articles/category/gpa-conversion": {
-    "title": "GPA & Conversion Articles | Monash WAM Calculator",
+    "title": "GPA & Conversion Articles | WAM Calculator",
     "description": "WAM to GPA, CGPA, postgraduate reporting, and cross-university conversion."
   },
   "/articles/category/merit-awards": {
-    "title": "Honours, Scholarships & Merit Articles | Monash WAM Calculator",
+    "title": "Honours, Scholarships & Merit Articles | WAM Calculator",
     "description": "Honours entry, scholarships, distinction average, dean\\"
   },
   "/articles/category/recovery-exams": {
-    "title": "Recovery & Exams Articles | Monash WAM Calculator",
+    "title": "Recovery & Exams Articles | WAM Calculator",
     "description": "Failed units, supplementary exams, repeats, withdrawn fail, and final exam targets."
   },
   "/articles/category/pathways": {
-    "title": "University Life & Pathways Articles | Monash WAM Calculator",
+    "title": "University Life & Pathways Articles | WAM Calculator",
     "description": "Uni orientation, exchange grades, and degree pathway context."
   }
 }
