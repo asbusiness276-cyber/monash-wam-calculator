@@ -2997,7 +2997,7 @@ const rawArticles: ArticleData[] = [
         paragraphs: [
           'After your first semester, university marks matter more than ATAR for WAM and GPA planning. Use the Semester WAM calculator, Semester GPA calculator, and WAM projection calculator with real unit results.',
           'For scholarships and internal transfers, check whether the rule uses ATAR, WAM, GPA, or a combination. Commencing student scholarships may still care about ATAR, while continuing student scholarships usually focus on university performance.',
-          'If your goal is honours, postgraduate study, or internships, move from ATAR thinking to WAM milestones, WAM target, and GPA conversion planning as soon as official university results exist.',
+          'If your goal is honours, postgraduate study, or internships, move from ATAR thinking to WAM milestones, WAM target, and GPA conversion planning as soon as official university marks, credit points, and course performance.',
         ],
       },
     ],
@@ -3038,14 +3038,14 @@ const rawArticles: ArticleData[] = [
 
 export const articles: ArticleData[] = rawArticles.map(enrichArticleContent);
 
-export function getArticleImageAlt(
-  article: Pick<ArticleData, 'featuredImageAlt' | 'title' | 'keyword'>
-): string {
-  const alt = article.featuredImageAlt.trim();
+export function getArticleImageAlt(slugOrArticle: string | any): string {
+  const slug = typeof slugOrArticle === "string" ? slugOrArticle : slugOrArticle.slug;
+  const article = getArticleBySlug(slug);
+  const alt = article?.featuredImageAlt?.trim();
   if (alt) {
     return alt;
   }
-  return `${article.title} — ${article.keyword}`;
+  return article ? `${article.title} - ${article.keyword}` : '';
 }
 
 export function getArticleBySlug(slug: string): ArticleData | undefined {
