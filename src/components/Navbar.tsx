@@ -61,38 +61,43 @@ export default function Navbar({ dark, toggleDark }: NavbarProps) {
             </button>
             {openCategoryId === 'calculators-menu' && (
               <div className="absolute left-0 top-full pt-2 z-50">
-                <div className="w-[650px] rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl p-5 grid grid-cols-2 gap-x-8 gap-y-6">
+                <div className="w-72 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl py-2">
+                  <a href="/calculators" className="block px-4 py-2.5 text-sm font-bold text-primary-600 dark:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 mb-1">
+                    All Calculators Hub &rarr;
+                  </a>
                   {CALCULATOR_CATEGORIES.map(category => (
-                     <div key={category.id}>
-                       <p className="pb-1.5 text-xs font-bold uppercase tracking-wide text-primary-600 dark:text-primary-400 border-b border-gray-100 dark:border-gray-800 mb-2">
-                         {category.title}
-                       </p>
-                       <ul className="space-y-1.5">
-                         {category.links.slice(0, 4).map(link => (
-                           <li key={link.href}>
-                             <a
-                               href={link.href}
-                               className="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
-                             >
-                               {link.title}
-                             </a>
-                           </li>
-                         ))}
-                         {category.links.length > 4 && (
-                           <li>
-                             <a href="/calculators" className="block text-xs text-gray-500 hover:text-primary-600 font-medium italic mt-1">
-                               + {category.links.length - 4} more tools...
-                             </a>
-                           </li>
-                         )}
-                       </ul>
-                     </div>
+                    <div key={category.id} className="relative group">
+                      <div className="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer">
+                        {category.title}
+                        <svg className="w-4 h-4 text-gray-400 group-hover:text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                      
+                      {/* Flyout Sub-Menu */}
+                      <div className="absolute left-full top-0 pl-1 hidden group-hover:block">
+                        <div className="w-80 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl py-2">
+                          <p className="px-4 pt-1 pb-2 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 mb-1">
+                            {category.title}
+                          </p>
+                          {category.links.slice(0, 6).map(link => (
+                            <a
+                              key={link.href}
+                              href={link.href}
+                              className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400"
+                            >
+                              {link.title}
+                            </a>
+                          ))}
+                          {category.links.length > 6 && (
+                            <a href="/calculators" className="block px-4 py-2 text-xs font-medium italic text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 mt-1 border-t border-gray-100 dark:border-gray-800">
+                              + {category.links.length - 6} more tools...
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   ))}
-                  <div className="col-span-2 mt-2 pt-4 border-t border-gray-100 dark:border-gray-800 text-center">
-                    <a href="/calculators" className="inline-flex items-center gap-1.5 text-sm font-bold text-primary-600 hover:text-primary-700 hover:underline">
-                      View All Tools Hub &rarr;
-                    </a>
-                  </div>
                 </div>
               </div>
             )}
