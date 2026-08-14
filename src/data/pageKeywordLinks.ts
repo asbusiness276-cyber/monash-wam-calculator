@@ -371,5 +371,10 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
   '/word-counter-tool': [{ keyword: 'word counter', path: '/word-counter-tool' }],
   '/roman-numeral-converter': [{ keyword: 'roman numeral converter', path: '/roman-numeral-converter' }],
   '/password-generator': [{ keyword: 'password generator', path: '/password-generator' }],
+  '/percentage-change-calculator': [{ keyword: 'percentage change calculator', path: '/percentage-change-calculator' }],
+  '/fuel-cost-calculator': [{ keyword: 'fuel cost calculator', path: '/fuel-cost-calculator' }],
+  '/date-calculator': [{ keyword: 'date calculator', path: '/date-calculator' }],
+  '/time-duration-calculator': [{ keyword: 'time duration calculator', path: '/time-duration-calculator' }],
+  '/random-name-picker': [{ keyword: 'random name picker', path: '/random-name-picker' }],
 };
 

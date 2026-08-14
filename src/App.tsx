@@ -114,6 +114,11 @@ const MarginCalculator = lazy(() => import('./pages/MarginCalculator'));
 const WordCounterTool = lazy(() => import('./pages/WordCounterTool'));
 const RomanNumeralConverter = lazy(() => import('./pages/RomanNumeralConverter'));
 const PasswordGenerator = lazy(() => import('./pages/PasswordGenerator'));
+const PercentageChangeCalculator = lazy(() => import('./pages/PercentageChangeCalculator'));
+const FuelCostCalculator = lazy(() => import('./pages/FuelCostCalculator'));
+const DateCalculator = lazy(() => import('./pages/DateCalculator'));
+const TimeDurationCalculator = lazy(() => import('./pages/TimeDurationCalculator'));
+const RandomNamePicker = lazy(() => import('./pages/RandomNamePicker'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -216,6 +221,11 @@ function getPage(path: string) {
   if (path === '/word-counter-tool') return withSuspense(<WordCounterTool />);
   if (path === '/roman-numeral-converter') return withSuspense(<RomanNumeralConverter />);
   if (path === '/password-generator') return withSuspense(<PasswordGenerator />);
+  if (path === '/percentage-change-calculator') return withSuspense(<PercentageChangeCalculator />);
+  if (path === '/fuel-cost-calculator') return withSuspense(<FuelCostCalculator />);
+  if (path === '/date-calculator') return withSuspense(<DateCalculator />);
+  if (path === '/time-duration-calculator') return withSuspense(<TimeDurationCalculator />);
+  if (path === '/random-name-picker') return withSuspense(<RandomNamePicker />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

@@ -433,6 +433,31 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/password-generator',
         title: 'Password Generator',
         description: 'Generate highly secure, random passwords instantly.'
+      },
+      {
+        href: '/percentage-change-calculator',
+        title: 'Percentage Change Calculator',
+        description: 'Calculate the exact percentage increase or decrease between two numbers.'
+      },
+      {
+        href: '/fuel-cost-calculator',
+        title: 'Fuel Cost Calculator',
+        description: 'Calculate the estimated fuel cost for your next road trip.'
+      },
+      {
+        href: '/date-calculator',
+        title: 'Date Calculator',
+        description: 'Add or subtract days, weeks, or months from any given date.'
+      },
+      {
+        href: '/time-duration-calculator',
+        title: 'Time Duration Calculator',
+        description: 'Calculate the exact number of hours and minutes between two times.'
+      },
+      {
+        href: '/random-name-picker',
+        title: 'Random Name Picker',
+        description: 'Randomly select a name or item from a list.'
       }
     ]
   },
