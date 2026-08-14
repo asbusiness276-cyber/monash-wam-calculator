@@ -361,5 +361,15 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'hex to decimal converter', path: '/hex-to-decimal-converter' },
     { keyword: 'base 16 to base 10', path: '/hex-to-decimal-converter' }
   ],
+  '/bmi-calculator': [{ keyword: 'bmi calculator', path: '/bmi-calculator' }],
+  '/tip-calculator': [{ keyword: 'tip calculator', path: '/tip-calculator' }],
+  '/salary-calculator': [{ keyword: 'salary to hourly', path: '/salary-calculator' }],
+  '/discount-calculator': [{ keyword: 'discount calculator', path: '/discount-calculator' }],
+  '/loan-calculator': [{ keyword: 'loan repayment calculator', path: '/loan-calculator' }],
+  '/compound-interest-calculator': [{ keyword: 'compound interest', path: '/compound-interest-calculator' }],
+  '/margin-calculator': [{ keyword: 'margin calculator', path: '/margin-calculator' }],
+  '/word-counter-tool': [{ keyword: 'word counter', path: '/word-counter-tool' }],
+  '/roman-numeral-converter': [{ keyword: 'roman numeral converter', path: '/roman-numeral-converter' }],
+  '/password-generator': [{ keyword: 'password generator', path: '/password-generator' }],
 };
 

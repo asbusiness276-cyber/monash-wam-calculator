@@ -424,6 +424,56 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
         ]
       }
     ]
+  },
+  '/bmi-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your height and weight to calculate your BMI and determine your health category.'] }
+    ]
+  },
+  '/tip-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter the total bill and your desired tip percentage. You can also split the total amount across multiple people.'] }
+    ]
+  },
+  '/salary-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your annual salary to instantly see how much you make per hour, per day, per week, and per month.'] }
+    ]
+  },
+  '/discount-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter the original price and the discount percentage to find out exactly how much you will save and the final price to pay.'] }
+    ]
+  },
+  '/loan-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your loan amount, interest rate, and the number of years to calculate your monthly EMI repayments and total interest costs.'] }
+    ]
+  },
+  '/compound-interest-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your starting balance, monthly contributions, and estimated interest rate to see how your money grows over time.'] }
+    ]
+  },
+  '/margin-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter the cost of an item and its selling price to instantly calculate your gross profit and profit margin percentage.'] }
+    ]
+  },
+  '/word-counter-tool': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Paste your text into the box to instantly see a live count of words, characters, and sentences.'] }
+    ]
+  },
+  '/roman-numeral-converter': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Type a standard number to convert it to Roman Numerals, or type a Roman Numeral to find out its value in digits.'] }
+    ]
+  },
+  '/password-generator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Choose your desired password length and character types, then hit generate to create a completely random, secure password.'] }
+    ]
   }
 };
 
@@ -2239,6 +2289,56 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
           'The tool will validate your input in real-time to ensure it only contains valid characters.'
         ]
       }
+    ]
+  },
+  '/bmi-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your height and weight to calculate your BMI and determine your health category.'] }
+    ]
+  },
+  '/tip-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter the total bill and your desired tip percentage. You can also split the total amount across multiple people.'] }
+    ]
+  },
+  '/salary-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your annual salary to instantly see how much you make per hour, per day, per week, and per month.'] }
+    ]
+  },
+  '/discount-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter the original price and the discount percentage to find out exactly how much you will save and the final price to pay.'] }
+    ]
+  },
+  '/loan-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your loan amount, interest rate, and the number of years to calculate your monthly EMI repayments and total interest costs.'] }
+    ]
+  },
+  '/compound-interest-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter your starting balance, monthly contributions, and estimated interest rate to see how your money grows over time.'] }
+    ]
+  },
+  '/margin-calculator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Enter the cost of an item and its selling price to instantly calculate your gross profit and profit margin percentage.'] }
+    ]
+  },
+  '/word-counter-tool': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Paste your text into the box to instantly see a live count of words, characters, and sentences.'] }
+    ]
+  },
+  '/roman-numeral-converter': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Type a standard number to convert it to Roman Numerals, or type a Roman Numeral to find out its value in digits.'] }
+    ]
+  },
+  '/password-generator': {
+    sections: [
+      { heading: 'How to use', paragraphs: ['Choose your desired password length and character types, then hit generate to create a completely random, secure password.'] }
     ]
   }
 };

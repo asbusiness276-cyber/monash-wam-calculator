@@ -104,6 +104,16 @@ const RandomNumberGenerator = lazy(() => import('./pages/RandomNumberGenerator')
 const NumberToWordsConverter = lazy(() => import('./pages/NumberToWordsConverter'));
 const StudyBreakCalculator = lazy(() => import('./pages/StudyBreakCalculator'));
 const HexToDecimalConverter = lazy(() => import('./pages/HexToDecimalConverter'));
+const BmiCalculator = lazy(() => import('./pages/BmiCalculator'));
+const TipCalculator = lazy(() => import('./pages/TipCalculator'));
+const SalaryCalculator = lazy(() => import('./pages/SalaryCalculator'));
+const DiscountCalculator = lazy(() => import('./pages/DiscountCalculator'));
+const LoanCalculator = lazy(() => import('./pages/LoanCalculator'));
+const CompoundInterestCalculator = lazy(() => import('./pages/CompoundInterestCalculator'));
+const MarginCalculator = lazy(() => import('./pages/MarginCalculator'));
+const WordCounterTool = lazy(() => import('./pages/WordCounterTool'));
+const RomanNumeralConverter = lazy(() => import('./pages/RomanNumeralConverter'));
+const PasswordGenerator = lazy(() => import('./pages/PasswordGenerator'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -196,6 +206,16 @@ function getPage(path: string) {
   if (path === '/number-to-words-converter') return withSuspense(<NumberToWordsConverter />);
   if (path === '/study-break-calculator') return withSuspense(<StudyBreakCalculator />);
   if (path === '/hex-to-decimal-converter') return withSuspense(<HexToDecimalConverter />);
+  if (path === '/bmi-calculator') return withSuspense(<BmiCalculator />);
+  if (path === '/tip-calculator') return withSuspense(<TipCalculator />);
+  if (path === '/salary-calculator') return withSuspense(<SalaryCalculator />);
+  if (path === '/discount-calculator') return withSuspense(<DiscountCalculator />);
+  if (path === '/loan-calculator') return withSuspense(<LoanCalculator />);
+  if (path === '/compound-interest-calculator') return withSuspense(<CompoundInterestCalculator />);
+  if (path === '/margin-calculator') return withSuspense(<MarginCalculator />);
+  if (path === '/word-counter-tool') return withSuspense(<WordCounterTool />);
+  if (path === '/roman-numeral-converter') return withSuspense(<RomanNumeralConverter />);
+  if (path === '/password-generator') return withSuspense(<PasswordGenerator />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

@@ -383,6 +383,56 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
         href: '/hex-to-decimal-converter',
         title: 'Hex to Decimal Converter',
         description: 'Convert Base-16 hexadecimal codes into Base-10 decimals.'
+      },
+      {
+        href: '/bmi-calculator',
+        title: 'BMI Calculator',
+        description: 'Calculate your Body Mass Index and healthy weight range.'
+      },
+      {
+        href: '/tip-calculator',
+        title: 'Tip Calculator',
+        description: 'Calculate tips and easily split the bill among friends.'
+      },
+      {
+        href: '/salary-calculator',
+        title: 'Salary to Hourly Calculator',
+        description: 'Convert an annual salary into hourly, daily, and monthly wages.'
+      },
+      {
+        href: '/discount-calculator',
+        title: 'Discount Calculator',
+        description: 'Find out the exact sale price after a percentage discount.'
+      },
+      {
+        href: '/loan-calculator',
+        title: 'Loan Calculator',
+        description: 'Calculate monthly repayments and total interest for any loan.'
+      },
+      {
+        href: '/compound-interest-calculator',
+        title: 'Compound Interest Calculator',
+        description: 'See how your investments grow over time with compound interest.'
+      },
+      {
+        href: '/margin-calculator',
+        title: 'Margin & Markup Calculator',
+        description: 'Calculate gross profit, margins, and markups instantly.'
+      },
+      {
+        href: '/word-counter-tool',
+        title: 'Word Counter',
+        description: 'Instantly count words, characters, and sentences in your text.'
+      },
+      {
+        href: '/roman-numeral-converter',
+        title: 'Roman Numeral Converter',
+        description: 'Convert standard numbers into Roman Numerals.'
+      },
+      {
+        href: '/password-generator',
+        title: 'Password Generator',
+        description: 'Generate highly secure, random passwords instantly.'
       }
     ]
   },
