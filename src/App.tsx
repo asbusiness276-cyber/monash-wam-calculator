@@ -72,6 +72,8 @@ const LatePenaltyCalculator = lazy(() => import('./pages/LatePenaltyCalculator')
 const AcademicStandingCalculator = lazy(() => import('./pages/AcademicStandingCalculator'));
 const CourseTransferWamChecker = lazy(() => import('./pages/CourseTransferWamChecker'));
 const VisaLoadCalculator = lazy(() => import('./pages/VisaLoadCalculator'));
+const StudentBudgetCalculator = lazy(() => import('./pages/StudentBudgetCalculator'));
+const StudyTimeCalculator = lazy(() => import('./pages/StudyTimeCalculator'));
 
 function withSuspense(element: ReactElement) {
   return <Suspense fallback={<PageLoader />}>{element}</Suspense>;
@@ -132,6 +134,8 @@ function getPage(path: string) {
   if (path === '/academic-standing-calculator') return withSuspense(<AcademicStandingCalculator />);
   if (path === '/course-transfer-wam-checker') return withSuspense(<CourseTransferWamChecker />);
   if (path === '/visa-load-calculator') return withSuspense(<VisaLoadCalculator />);
+  if (path === '/student-budget-calculator') return withSuspense(<StudentBudgetCalculator />);
+  if (path === '/study-time-calculator') return withSuspense(<StudyTimeCalculator />);
   if (path === '/articles') return withSuspense(<Articles />);
   if (path.startsWith('/articles/category/')) {
     const categoryId = path.replace('/articles/category/', '');

@@ -39,6 +39,31 @@ const EXPANDED_GUIDES: Record<string, CalculatorPageGuideData> = {
   ...CALCULATOR_GUIDE_EXPANSIONS_PART2,
   ...CALCULATOR_GUIDE_EXPANSIONS_PART3,
   ...CALCULATOR_GUIDE_EXPANSIONS_PART4,
+  '/student-budget-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Student Budget Calculator',
+        paragraphs: [
+          'Choose whether you want to budget weekly or monthly.',
+          'Add all your income sources, such as your part-time job, allowances, or scholarships.',
+          'Add your expenses, like rent, groceries, transportation, and entertainment.',
+          'Check your net balance to see if you are saving money or spending more than you earn!'
+        ]
+      }
+    ]
+  },
+  '/study-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Study Time Calculator',
+        paragraphs: [
+          'Enter your total credit points for the semester (e.g., 24 for a standard full-time load).',
+          'The calculator will estimate your total recommended weekly workload.',
+          'See the breakdown between contact hours (classes, lectures) and self-directed study hours so you can plan your schedule.'
+        ]
+      }
+    ]
+  }
 };
 
 export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
@@ -1457,6 +1482,31 @@ export const CALCULATOR_PAGE_GUIDES: Record<string, CalculatorPageGuideData> = {
       },
     ],
   },
+  '/student-budget-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Student Budget Calculator',
+        paragraphs: [
+          'Choose whether you want to budget weekly or monthly.',
+          'Add all your income sources, such as your part-time job, allowances, or scholarships.',
+          'Add your expenses, like rent, groceries, transportation, and entertainment.',
+          'Check your net balance to see if you are saving money or spending more than you earn!'
+        ]
+      }
+    ]
+  },
+  '/study-time-calculator': {
+    sections: [
+      {
+        heading: 'How to use the Study Time Calculator',
+        paragraphs: [
+          'Enter your total credit points for the semester (e.g., 24 for a standard full-time load).',
+          'The calculator will estimate your total recommended weekly workload.',
+          'See the breakdown between contact hours (classes, lectures) and self-directed study hours so you can plan your schedule.'
+        ]
+      }
+    ]
+  }
 };
 
 export function getCalculatorPageGuide(path: string): CalculatorPageGuideData | undefined {

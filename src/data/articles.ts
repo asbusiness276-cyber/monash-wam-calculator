@@ -5,6 +5,7 @@ import { bestPharmacyUniversitiesAustraliaArticle } from './bestPharmacyUniversi
 import { bestUniversitiesAustraliaArticle } from './bestUniversitiesAustraliaArticle';
 import { monashAtarRequirementsArticle } from './monashAtarRequirementsArticle';
 import { bestComputerScienceUniversitiesAustraliaArticle } from './bestComputerScienceUniversitiesAustraliaArticle';
+import { bestLawUniversitiesAustraliaArticle } from './bestLawUniversitiesAustraliaArticle';
 
 export type ArticleContentBlock =
   | { type: 'paragraph'; text: string }
@@ -3034,6 +3035,7 @@ const rawArticles: ArticleData[] = [
   bestEconomicsUniversitiesAustraliaArticle,
   monashAtarRequirementsArticle,
   bestComputerScienceUniversitiesAustraliaArticle,
+  bestLawUniversitiesAustraliaArticle,
 ];
 
 export const articles: ArticleData[] = rawArticles.map(enrichArticleContent);

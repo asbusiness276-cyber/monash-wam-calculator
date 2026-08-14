@@ -319,6 +319,23 @@ export const CALCULATOR_CATEGORIES: CalculatorCategory[] = [
       },
     ],
   },
+  {
+    id: 'student-tools',
+    title: 'Student Life Tools',
+    description: 'Calculators for student budgeting, time management, and more.',
+    links: [
+      {
+        href: '/student-budget-calculator',
+        title: 'Student Budget Calculator',
+        description: 'Track your income, manage expenses, and see your net savings to manage your finances better.'
+      },
+      {
+        href: '/study-time-calculator',
+        title: 'Study Time Calculator',
+        description: 'Calculate your recommended weekly study hours based on your university credit points.'
+      }
+    ]
+  }
 ];
 
 /** Flat list of all calculator tools (excludes /articles). */

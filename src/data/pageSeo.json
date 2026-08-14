@@ -1,7 +1,7 @@
 {
   "/about-us": {
     "title": "About Us | Monash WAM Calculator — Who We Are",
-    "description": "Independent Monash WAM calculator site by Saahil: 53 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
+    "description": "Independent Monash WAM calculator site by Saahil: 55 free tools, 32 student guides, Monash-specific formulas, editorial standards, and honest planning disclaimers."
   },
   "/academic-standing-calculator": {
     "title": "Academic Standing & Risk Calculator - Monash Progress Rules",
@@ -21,12 +21,12 @@
   },
   "/about-author": {
     "title": "About Saahil | Author — Monash WAM Calculator",
-    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 53 free tools and 32 student guides on WAM, GPA, and Australian university life.",
+    "description": "Meet Saahil, founder and editor of Monash WAM Calculator — 55 free tools and 32 student guides on WAM, GPA, and Australian university life.",
     "ogImageAlt": "Saahil, creator of Monash WAM Calculator"
   },
   "/calculators": {
-    "title": "All Monash Calculators — 53 Free WAM & GPA Tools (2026)",
-    "description": "Browse 53 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
+    "title": "All Monash Calculators — 55 Free WAM & GPA Tools (2026)",
+    "description": "Browse 55 free Monash calculators: WAM, GPA, CGPA, final grade, scholarship targets, honours, failed unit impact, exchange planning, and more."
   },
   "/cgpa-to-gpa-calculator": {
     "title": "CGPA to GPA Calculator - 10-Point & Monash 4.0 (2026)",
@@ -202,6 +202,14 @@
   "/semester-wam-calculator": {
     "title": "Semester WAM Calculator - Monash Semester Average (2026)",
     "description": "Free semester WAM calculator for Monash students: enter this semester's unit marks and credit points to get your weighted semester average instantly."
+  },
+  "/student-budget-calculator": {
+    "title": "Student Budget Calculator | Manage University Expenses",
+    "description": "Free student budget calculator. Easily track your weekly or monthly income, rent, groceries, and see your net savings to manage your finances better."
+  },
+  "/study-time-calculator": {
+    "title": "Study Time Calculator | University Workload Estimator",
+    "description": "Calculate your recommended weekly study hours based on your university credit points. Plan your schedule and balance your study load effectively."
   },
   "/supp-repeat-wam-calculator": {
     "title": "Supplementary vs Repeat WAM Calculator - Monash Fail Recovery (2026)",

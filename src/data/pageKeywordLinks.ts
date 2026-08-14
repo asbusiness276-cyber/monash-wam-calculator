@@ -233,5 +233,13 @@ export const PAGE_KEYWORD_LINKS: Record<string, readonly [KeywordInternalLink, K
     { keyword: 'Monash WAM calculator', path: '/' },
     { keyword: 'WAM to GPA calculator', path: '/wam-to-gpa-calculator' },
   ],
+  '/student-budget-calculator': [
+    { keyword: 'track your spending', path: '/student-budget-calculator' },
+    { keyword: 'manage university expenses', path: '/student-budget-calculator' }
+  ],
+  '/study-time-calculator': [
+    { keyword: 'balance your workload', path: '/study-time-calculator' },
+    { keyword: 'plan study schedule', path: '/study-time-calculator' }
+  ],
 };
 
